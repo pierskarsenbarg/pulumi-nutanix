@@ -101,14 +101,18 @@ import (
 // The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
 //
 // * `(CATEGORY_EXT_ID, VM)`
+// * `(EXT_ID, VM)`
+// * `(REGEX, VM)`
 // * `(CATEGORY_EXT_ID, SUBNET)`
+// * `(EXT_ID, SUBNET)`
 // * `(CATEGORY_EXT_ID, VPC)`
 // * `(EXT_ID, KUBE_CLUSTER)`
-// * `(EXT_ID, ADDRESS_GROUP)`
 // * `(LABELS, KUBE_PODS)`
 // * `(NAME, KUBE_NAMESPACE)`
 // * `(NAME, KUBE_SERVICE)`
+// * `(EXT_ID, ADDRESS_GROUP)`
 // * `(IP_VALUES, ADDRESS_GROUP)`
+// * `(FQDN_VALUES, ADDRESS_GROUP)`
 //
 // Any other combination will result in a validation error.
 //
@@ -129,7 +133,7 @@ import (
 // $ pulumi import nutanix:index/entityGroupV2:EntityGroupV2 import_entity_group <entityGroupUUID>
 // ```
 //
-// See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.2#tag/EntityGroups/operation/createEntityGroup).
+// See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&version=v4.3#tag/EntityGroups/operation/createEntityGroup).
 type EntityGroupV2 struct {
 	pulumi.CustomResourceState
 
@@ -143,6 +147,10 @@ type EntityGroupV2 struct {
 	ExceptConfig EntityGroupV2ExceptConfigOutput `pulumi:"exceptConfig"`
 	// Entity group UUID.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
+	// Indicates whether the entity group is shared with all projects.
+	IsSharedWithAllProjects pulumi.BoolOutput `pulumi:"isSharedWithAllProjects"`
+	// A flag indicating whether the entity group is system-defined.
+	IsSystemDefined pulumi.BoolOutput `pulumi:"isSystemDefined"`
 	// The timestamp when the Entity Group was last updated.
 	LastUpdateTime pulumi.StringOutput `pulumi:"lastUpdateTime"`
 	// A HATEOAS style link for the response.
@@ -153,6 +161,8 @@ type EntityGroupV2 struct {
 	OwnerExtId pulumi.StringOutput `pulumi:"ownerExtId"`
 	// List of policy external identifiers.
 	PolicyExtIds pulumi.StringArrayOutput `pulumi:"policyExtIds"`
+	// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 }
@@ -197,6 +207,10 @@ type entityGroupV2State struct {
 	ExceptConfig *EntityGroupV2ExceptConfig `pulumi:"exceptConfig"`
 	// Entity group UUID.
 	ExtId *string `pulumi:"extId"`
+	// Indicates whether the entity group is shared with all projects.
+	IsSharedWithAllProjects *bool `pulumi:"isSharedWithAllProjects"`
+	// A flag indicating whether the entity group is system-defined.
+	IsSystemDefined *bool `pulumi:"isSystemDefined"`
 	// The timestamp when the Entity Group was last updated.
 	LastUpdateTime *string `pulumi:"lastUpdateTime"`
 	// A HATEOAS style link for the response.
@@ -207,6 +221,8 @@ type entityGroupV2State struct {
 	OwnerExtId *string `pulumi:"ownerExtId"`
 	// List of policy external identifiers.
 	PolicyExtIds []string `pulumi:"policyExtIds"`
+	// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId *string `pulumi:"tenantId"`
 }
@@ -222,6 +238,10 @@ type EntityGroupV2State struct {
 	ExceptConfig EntityGroupV2ExceptConfigPtrInput
 	// Entity group UUID.
 	ExtId pulumi.StringPtrInput
+	// Indicates whether the entity group is shared with all projects.
+	IsSharedWithAllProjects pulumi.BoolPtrInput
+	// A flag indicating whether the entity group is system-defined.
+	IsSystemDefined pulumi.BoolPtrInput
 	// The timestamp when the Entity Group was last updated.
 	LastUpdateTime pulumi.StringPtrInput
 	// A HATEOAS style link for the response.
@@ -232,6 +252,8 @@ type EntityGroupV2State struct {
 	OwnerExtId pulumi.StringPtrInput
 	// List of policy external identifiers.
 	PolicyExtIds pulumi.StringArrayInput
+	// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringPtrInput
 }
@@ -257,6 +279,8 @@ type entityGroupV2Args struct {
 	Name *string `pulumi:"name"`
 	// List of policy external identifiers.
 	PolicyExtIds []string `pulumi:"policyExtIds"`
+	// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 }
 
 // The set of arguments for constructing a EntityGroupV2 resource.
@@ -271,6 +295,8 @@ type EntityGroupV2Args struct {
 	Name pulumi.StringPtrInput
 	// List of policy external identifiers.
 	PolicyExtIds pulumi.StringArrayInput
+	// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 }
 
 func (EntityGroupV2Args) ElementType() reflect.Type {
@@ -385,6 +411,16 @@ func (o EntityGroupV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *EntityGroupV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+// Indicates whether the entity group is shared with all projects.
+func (o EntityGroupV2Output) IsSharedWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v *EntityGroupV2) pulumi.BoolOutput { return v.IsSharedWithAllProjects }).(pulumi.BoolOutput)
+}
+
+// A flag indicating whether the entity group is system-defined.
+func (o EntityGroupV2Output) IsSystemDefined() pulumi.BoolOutput {
+	return o.ApplyT(func(v *EntityGroupV2) pulumi.BoolOutput { return v.IsSystemDefined }).(pulumi.BoolOutput)
+}
+
 // The timestamp when the Entity Group was last updated.
 func (o EntityGroupV2Output) LastUpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *EntityGroupV2) pulumi.StringOutput { return v.LastUpdateTime }).(pulumi.StringOutput)
@@ -408,6 +444,11 @@ func (o EntityGroupV2Output) OwnerExtId() pulumi.StringOutput {
 // List of policy external identifiers.
 func (o EntityGroupV2Output) PolicyExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *EntityGroupV2) pulumi.StringArrayOutput { return v.PolicyExtIds }).(pulumi.StringArrayOutput)
+}
+
+// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+func (o EntityGroupV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *EntityGroupV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

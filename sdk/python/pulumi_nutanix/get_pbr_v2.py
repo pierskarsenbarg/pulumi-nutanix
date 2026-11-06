@@ -27,7 +27,7 @@ class GetPbrV2Result:
     """
     A collection of values returned by getPbrV2.
     """
-    def __init__(__self__, description=None, ext_id=None, id=None, links=None, metadatas=None, name=None, policies=None, priority=None, tenant_id=None, vpc_ext_id=None, vpcs=None):
+    def __init__(__self__, description=None, ext_id=None, id=None, links=None, metadatas=None, name=None, policies=None, priority=None, project_ext_id=None, tenant_id=None, vpc_ext_id=None, vpcs=None):
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
@@ -52,6 +52,9 @@ class GetPbrV2Result:
         if priority and not isinstance(priority, int):
             raise TypeError("Expected argument 'priority' to be a int")
         pulumi.set(__self__, "priority", priority)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id and not isinstance(tenant_id, str):
             raise TypeError("Expected argument 'tenant_id' to be a str")
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -124,6 +127,14 @@ class GetPbrV2Result:
         return pulumi.get(self, "priority")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        External identifier of the project associated with the Routing Policy.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
         """
@@ -162,6 +173,7 @@ class AwaitableGetPbrV2Result(GetPbrV2Result):
             name=self.name,
             policies=self.policies,
             priority=self.priority,
+            project_ext_id=self.project_ext_id,
             tenant_id=self.tenant_id,
             vpc_ext_id=self.vpc_ext_id,
             vpcs=self.vpcs)
@@ -200,6 +212,7 @@ def get_pbr_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         policies=pulumi.get(__ret__, 'policies'),
         priority=pulumi.get(__ret__, 'priority'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         vpc_ext_id=pulumi.get(__ret__, 'vpc_ext_id'),
         vpcs=pulumi.get(__ret__, 'vpcs'))
@@ -235,6 +248,7 @@ def get_pbr_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         name=pulumi.get(__response__, 'name'),
         policies=pulumi.get(__response__, 'policies'),
         priority=pulumi.get(__response__, 'priority'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         tenant_id=pulumi.get(__response__, 'tenant_id'),
         vpc_ext_id=pulumi.get(__response__, 'vpc_ext_id'),
         vpcs=pulumi.get(__response__, 'vpcs')))

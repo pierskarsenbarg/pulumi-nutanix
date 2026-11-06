@@ -29,7 +29,10 @@ class DirectoryServicesV2Args:
                  group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DirectoryServicesV2 resource.
@@ -42,7 +45,10 @@ class DirectoryServicesV2Args:
         :param pulumi.Input[_builtins.str] group_search_type: -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
         :param pulumi.Input[_builtins.str] name: -(Required) Name for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]] open_ldap_configurations: -(Optional) Configuration for OpenLDAP Directory Service.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secondary_urls: -(Optional) Secondary URL for the Directory Service.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: -(Optional) List of projects with which the directory service is shared.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] white_listed_groups: -(Optional) List of allowed User Groups for the Directory Service.
         """
         pulumi.set(__self__, "directory_type", directory_type)
@@ -57,8 +63,14 @@ class DirectoryServicesV2Args:
             pulumi.set(__self__, "name", name)
         if open_ldap_configurations is not None:
             pulumi.set(__self__, "open_ldap_configurations", open_ldap_configurations)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if secondary_urls is not None:
             pulumi.set(__self__, "secondary_urls", secondary_urls)
+        if share_with_all_projects is not None:
+            pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
+        if shared_with_projects is not None:
+            pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if white_listed_groups is not None:
             pulumi.set(__self__, "white_listed_groups", white_listed_groups)
 
@@ -159,6 +171,18 @@ class DirectoryServicesV2Args:
         pulumi.set(self, "open_ldap_configurations", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) Project reference for the Directory Service.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="secondaryUrls")
     def secondary_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -169,6 +193,30 @@ class DirectoryServicesV2Args:
     @secondary_urls.setter
     def secondary_urls(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "secondary_urls", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @share_with_all_projects.setter
+    def share_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "share_with_all_projects", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        -(Optional) List of projects with which the directory service is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @shared_with_projects.setter
+    def shared_with_projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "shared_with_projects", value)
 
     @_builtins.property
     @pulumi.getter(name="whiteListedGroups")
@@ -195,8 +243,11 @@ class _DirectoryServicesV2State:
                  last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]]] = None,
+                 share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
                  white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
@@ -211,8 +262,11 @@ class _DirectoryServicesV2State:
         :param pulumi.Input[_builtins.str] last_updated_time: - Last updated time of the Directory Service.
         :param pulumi.Input[_builtins.str] name: -(Required) Name for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationArgs']]] open_ldap_configurations: -(Optional) Configuration for OpenLDAP Directory Service.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secondary_urls: -(Optional) Secondary URL for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]] service_accounts: -(Required) Information of Service account to connect to the Directory Service.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: -(Optional) List of projects with which the directory service is shared.
         :param pulumi.Input[_builtins.str] url: -(Required) URL for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] white_listed_groups: -(Optional) List of allowed User Groups for the Directory Service.
         """
@@ -234,10 +288,16 @@ class _DirectoryServicesV2State:
             pulumi.set(__self__, "name", name)
         if open_ldap_configurations is not None:
             pulumi.set(__self__, "open_ldap_configurations", open_ldap_configurations)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if secondary_urls is not None:
             pulumi.set(__self__, "secondary_urls", secondary_urls)
         if service_accounts is not None:
             pulumi.set(__self__, "service_accounts", service_accounts)
+        if share_with_all_projects is not None:
+            pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
+        if shared_with_projects is not None:
+            pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if url is not None:
             pulumi.set(__self__, "url", url)
         if white_listed_groups is not None:
@@ -352,6 +412,18 @@ class _DirectoryServicesV2State:
         pulumi.set(self, "open_ldap_configurations", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) Project reference for the Directory Service.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="secondaryUrls")
     def secondary_urls(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -374,6 +446,30 @@ class _DirectoryServicesV2State:
     @service_accounts.setter
     def service_accounts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DirectoryServicesV2ServiceAccountArgs']]]]):
         pulumi.set(self, "service_accounts", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @share_with_all_projects.setter
+    def share_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "share_with_all_projects", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        -(Optional) List of projects with which the directory service is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @shared_with_projects.setter
+    def shared_with_projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "shared_with_projects", value)
 
     @_builtins.property
     @pulumi.getter
@@ -412,34 +508,18 @@ class DirectoryServicesV2(pulumi.CustomResource):
                  group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]]] = None,
+                 share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
                  white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
+        > **Note:** This resource is in Beta because the underlying Nutanix SDK API is currently in Beta. The resource and its behavior may change in future releases as the SDK API evolves.
+
         Provides a resource to Create a Directory Service.
-
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        # Add Directory Service .
-        active_directory = nutanix.DirectoryServicesV2("active-directory",
-            name="example_active_directory",
-            url="ldap://10.xx.xx.xx:xxxx",
-            directory_type="ACTIVE_DIRECTORY",
-            domain_name="nutanix.com",
-            service_accounts=[{
-                "username": "username",
-                "password": "password",
-            }],
-            white_listed_groups=["example"])
-        ```
-        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -450,8 +530,11 @@ class DirectoryServicesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] group_search_type: -(Optional) Group membership search type for the Directory Service. Supported values are: "NON_RECURSIVE" (Doesn't search recursively within groups.) and "RECURSIVE" (Searches recursively within groups.)
         :param pulumi.Input[_builtins.str] name: -(Required) Name for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]] open_ldap_configurations: -(Optional) Configuration for OpenLDAP Directory Service.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secondary_urls: -(Optional) Secondary URL for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]] service_accounts: -(Required) Information of Service account to connect to the Directory Service.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: -(Optional) List of projects with which the directory service is shared.
         :param pulumi.Input[_builtins.str] url: -(Required) URL for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] white_listed_groups: -(Optional) List of allowed User Groups for the Directory Service.
         """
@@ -462,28 +545,9 @@ class DirectoryServicesV2(pulumi.CustomResource):
                  args: DirectoryServicesV2Args,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
+        > **Note:** This resource is in Beta because the underlying Nutanix SDK API is currently in Beta. The resource and its behavior may change in future releases as the SDK API evolves.
+
         Provides a resource to Create a Directory Service.
-
-        ## Example Usage
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        # Add Directory Service .
-        active_directory = nutanix.DirectoryServicesV2("active-directory",
-            name="example_active_directory",
-            url="ldap://10.xx.xx.xx:xxxx",
-            directory_type="ACTIVE_DIRECTORY",
-            domain_name="nutanix.com",
-            service_accounts=[{
-                "username": "username",
-                "password": "password",
-            }],
-            white_listed_groups=["example"])
-        ```
-        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -507,8 +571,11 @@ class DirectoryServicesV2(pulumi.CustomResource):
                  group_search_type: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]]] = None,
+                 share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  url: pulumi.Input[Optional[_builtins.str]] = None,
                  white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
@@ -530,10 +597,13 @@ class DirectoryServicesV2(pulumi.CustomResource):
             __props__.__dict__["group_search_type"] = group_search_type
             __props__.__dict__["name"] = name
             __props__.__dict__["open_ldap_configurations"] = open_ldap_configurations
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["secondary_urls"] = secondary_urls
             if service_accounts is None and not opts.urn:
                 raise TypeError("Missing required property 'service_accounts'")
             __props__.__dict__["service_accounts"] = service_accounts
+            __props__.__dict__["share_with_all_projects"] = share_with_all_projects
+            __props__.__dict__["shared_with_projects"] = shared_with_projects
             if url is None and not opts.urn:
                 raise TypeError("Missing required property 'url'")
             __props__.__dict__["url"] = url
@@ -560,8 +630,11 @@ class DirectoryServicesV2(pulumi.CustomResource):
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]]] = None,
+            share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+            shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             url: pulumi.Input[Optional[_builtins.str]] = None,
             white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DirectoryServicesV2':
         """
@@ -580,8 +653,11 @@ class DirectoryServicesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_updated_time: - Last updated time of the Directory Service.
         :param pulumi.Input[_builtins.str] name: -(Required) Name for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]] open_ldap_configurations: -(Optional) Configuration for OpenLDAP Directory Service.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secondary_urls: -(Optional) Secondary URL for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]] service_accounts: -(Required) Information of Service account to connect to the Directory Service.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] shared_with_projects: -(Optional) List of projects with which the directory service is shared.
         :param pulumi.Input[_builtins.str] url: -(Required) URL for the Directory Service.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] white_listed_groups: -(Optional) List of allowed User Groups for the Directory Service.
         """
@@ -598,8 +674,11 @@ class DirectoryServicesV2(pulumi.CustomResource):
         __props__.__dict__["last_updated_time"] = last_updated_time
         __props__.__dict__["name"] = name
         __props__.__dict__["open_ldap_configurations"] = open_ldap_configurations
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["secondary_urls"] = secondary_urls
         __props__.__dict__["service_accounts"] = service_accounts
+        __props__.__dict__["share_with_all_projects"] = share_with_all_projects
+        __props__.__dict__["shared_with_projects"] = shared_with_projects
         __props__.__dict__["url"] = url
         __props__.__dict__["white_listed_groups"] = white_listed_groups
         return DirectoryServicesV2(resource_name, opts=opts, __props__=__props__)
@@ -616,8 +695,11 @@ class DirectoryServicesV2(pulumi.CustomResource):
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             open_ldap_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2OpenLdapConfigurationArgs', 'DirectoryServicesV2OpenLdapConfigurationArgsDict', 'outputs.DirectoryServicesV2OpenLdapConfiguration']]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             secondary_urls: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             service_accounts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DirectoryServicesV2ServiceAccountArgs', 'DirectoryServicesV2ServiceAccountArgsDict', 'outputs.DirectoryServicesV2ServiceAccount']]]]] = None,
+            share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None,
+            shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             url: pulumi.Input[Optional[_builtins.str]] = None,
             white_listed_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
@@ -630,8 +712,11 @@ class DirectoryServicesV2(pulumi.CustomResource):
         __props__["lastUpdatedTime"] = last_updated_time
         __props__["name"] = name
         __props__["openLdapConfigurations"] = open_ldap_configurations
+        __props__["projectExtId"] = project_ext_id
         __props__["secondaryUrls"] = secondary_urls
         __props__["serviceAccounts"] = service_accounts
+        __props__["shareWithAllProjects"] = share_with_all_projects
+        __props__["sharedWithProjects"] = shared_with_projects
         __props__["url"] = url
         __props__["whiteListedGroups"] = white_listed_groups
         return pulumi.runtime.exists_resource(None, 'nutanix:index/directoryServicesV2:DirectoryServicesV2', id, __props__, opts or pulumi.ResourceOptions())
@@ -709,6 +794,14 @@ class DirectoryServicesV2(pulumi.CustomResource):
         return pulumi.get(self, "open_ldap_configurations")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        -(Optional) Project reference for the Directory Service.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="secondaryUrls")
     def secondary_urls(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
@@ -723,6 +816,22 @@ class DirectoryServicesV2(pulumi.CustomResource):
         -(Required) Information of Service account to connect to the Directory Service.
         """
         return pulumi.get(self, "service_accounts")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Output[_builtins.bool]:
+        """
+        -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        -(Optional) List of projects with which the directory service is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
 
     @_builtins.property
     @pulumi.getter

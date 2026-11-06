@@ -69,6 +69,10 @@ export interface GetTemplateV2Result {
      */
     readonly links: outputs.GetTemplateV2Link[];
     /**
+     * The external identifier of the project with which the template is associated.
+     */
+    readonly projectExtId: string;
+    /**
      * The user defined description of a Template.
      */
     readonly templateDescription: string;

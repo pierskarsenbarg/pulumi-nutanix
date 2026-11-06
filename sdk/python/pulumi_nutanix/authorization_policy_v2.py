@@ -27,7 +27,9 @@ class AuthorizationPolicyV2Args:
                  role: pulumi.Input[_builtins.str],
                  authorization_policy_type: pulumi.Input[Optional[_builtins.str]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
-                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_global: pulumi.Input[Optional[_builtins.bool]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a AuthorizationPolicyV2 resource.
 
@@ -43,6 +45,7 @@ class AuthorizationPolicyV2Args:
                - `USER_DEFINED` : ACP defined by an User.
         :param pulumi.Input[_builtins.str] description: Description of the Authorization Policy.
         :param pulumi.Input[_builtins.str] ext_id: ext_id of Authorization policy.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the Authorization Policy.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "entities", entities)
@@ -54,6 +57,10 @@ class AuthorizationPolicyV2Args:
             pulumi.set(__self__, "description", description)
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
+        if is_global is not None:
+            pulumi.set(__self__, "is_global", is_global)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
 
     @_builtins.property
     @pulumi.getter(name="displayName")
@@ -144,6 +151,27 @@ class AuthorizationPolicyV2Args:
     def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ext_id", value)
 
+    @_builtins.property
+    @pulumi.getter(name="isGlobal")
+    def is_global(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_global")
+
+    @is_global.setter
+    def is_global(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_global", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) Project reference for the Authorization Policy.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
 
 @pulumi.input_type
 class _AuthorizationPolicyV2State:
@@ -157,9 +185,12 @@ class _AuthorizationPolicyV2State:
                  entities: pulumi.Input[Optional[Sequence[pulumi.Input['AuthorizationPolicyV2EntityArgs']]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  identities: pulumi.Input[Optional[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]]] = None,
+                 is_global: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 role: pulumi.Input[Optional[_builtins.str]] = None):
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 role: pulumi.Input[Optional[_builtins.str]] = None,
+                 share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         Input properties used for looking up and filtering AuthorizationPolicyV2 resources.
 
@@ -179,7 +210,9 @@ class _AuthorizationPolicyV2State:
         :param pulumi.Input[Sequence[pulumi.Input['AuthorizationPolicyV2IdentityArgs']]] identities: The identities for which the Authorization Policy is created.
         :param pulumi.Input[_builtins.bool] is_system_defined: Flag identifying if the Authorization Policy is system defined or not.
         :param pulumi.Input[_builtins.str] last_updated_time: The time when the Authorization Policy was last updated.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the Authorization Policy.
         :param pulumi.Input[_builtins.str] role: The Role associated with the Authorization Policy.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: - Flag indicating whether the Authorization Policy is shared with all projects or not.
         """
         if authorization_policy_type is not None:
             pulumi.set(__self__, "authorization_policy_type", authorization_policy_type)
@@ -199,12 +232,18 @@ class _AuthorizationPolicyV2State:
             pulumi.set(__self__, "ext_id", ext_id)
         if identities is not None:
             pulumi.set(__self__, "identities", identities)
+        if is_global is not None:
+            pulumi.set(__self__, "is_global", is_global)
         if is_system_defined is not None:
             pulumi.set(__self__, "is_system_defined", is_system_defined)
         if last_updated_time is not None:
             pulumi.set(__self__, "last_updated_time", last_updated_time)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if role is not None:
             pulumi.set(__self__, "role", role)
+        if share_with_all_projects is not None:
+            pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
 
     @_builtins.property
     @pulumi.getter(name="authorizationPolicyType")
@@ -320,6 +359,15 @@ class _AuthorizationPolicyV2State:
         pulumi.set(self, "identities", value)
 
     @_builtins.property
+    @pulumi.getter(name="isGlobal")
+    def is_global(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_global")
+
+    @is_global.setter
+    def is_global(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_global", value)
+
+    @_builtins.property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -344,6 +392,18 @@ class _AuthorizationPolicyV2State:
         pulumi.set(self, "last_updated_time", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) Project reference for the Authorization Policy.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def role(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -354,6 +414,18 @@ class _AuthorizationPolicyV2State:
     @role.setter
     def role(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "role", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        - Flag indicating whether the Authorization Policy is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @share_with_all_projects.setter
+    def share_with_all_projects(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "share_with_all_projects", value)
 
 
 @pulumi.type_token("nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2")
@@ -368,36 +440,12 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                  entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]]] = None,
+                 is_global: pulumi.Input[Optional[_builtins.bool]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         Provides Nutanix resource to create authorization policy.
-
-        ## Example
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        ap_example = nutanix.AuthorizationPolicyV2("ap-example",
-            role="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-            display_name="auth_policy_example",
-            description="authorization policy example",
-            authorization_policy_type="USER_DEFINED",
-            identities=[{
-                "reserved": "{\\"user\\":{\\"uuid\\":{\\"anyof\\":[\\"00000000-0000-0000-0000-000000000000\\"]}}}",
-            }],
-            entities=[
-                {
-                    "reserved": "{\\"images\\":{\\"*\\":{\\"eq\\":\\"*\\"}}}",
-                },
-                {
-                    "reserved": "{\\"marketplace_item\\":{\\"owner_uuid\\":{\\"eq\\":\\"SELF_OWNED\\"}}}",
-                },
-            ])
-        ```
-        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -413,6 +461,7 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]] entities: The entities being qualified by the Authorization Policy.
         :param pulumi.Input[_builtins.str] ext_id: ext_id of Authorization policy.
         :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]] identities: The identities for which the Authorization Policy is created.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the Authorization Policy.
         :param pulumi.Input[_builtins.str] role: The Role associated with the Authorization Policy.
         """
         ...
@@ -423,32 +472,6 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides Nutanix resource to create authorization policy.
-
-        ## Example
-
-        <!--Start PulumiCodeChooser -->
-        ```python
-        import pulumi
-        import pulumi_nutanix as nutanix
-
-        ap_example = nutanix.AuthorizationPolicyV2("ap-example",
-            role="ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-            display_name="auth_policy_example",
-            description="authorization policy example",
-            authorization_policy_type="USER_DEFINED",
-            identities=[{
-                "reserved": "{\\"user\\":{\\"uuid\\":{\\"anyof\\":[\\"00000000-0000-0000-0000-000000000000\\"]}}}",
-            }],
-            entities=[
-                {
-                    "reserved": "{\\"images\\":{\\"*\\":{\\"eq\\":\\"*\\"}}}",
-                },
-                {
-                    "reserved": "{\\"marketplace_item\\":{\\"owner_uuid\\":{\\"eq\\":\\"SELF_OWNED\\"}}}",
-                },
-            ])
-        ```
-        <!--End PulumiCodeChooser -->
 
 
         :param str resource_name: The name of the resource.
@@ -472,6 +495,8 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
                  entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]]] = None,
+                 is_global: pulumi.Input[Optional[_builtins.bool]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  role: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -494,6 +519,8 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
             if identities is None and not opts.urn:
                 raise TypeError("Missing required property 'identities'")
             __props__.__dict__["identities"] = identities
+            __props__.__dict__["is_global"] = is_global
+            __props__.__dict__["project_ext_id"] = project_ext_id
             if role is None and not opts.urn:
                 raise TypeError("Missing required property 'role'")
             __props__.__dict__["role"] = role
@@ -502,6 +529,7 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
             __props__.__dict__["created_time"] = None
             __props__.__dict__["is_system_defined"] = None
             __props__.__dict__["last_updated_time"] = None
+            __props__.__dict__["share_with_all_projects"] = None
         super(AuthorizationPolicyV2, __self__).__init__(
             'nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2',
             resource_name,
@@ -521,9 +549,12 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
             entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]]] = None,
+            is_global: pulumi.Input[Optional[_builtins.bool]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-            role: pulumi.Input[Optional[_builtins.str]] = None) -> 'AuthorizationPolicyV2':
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None) -> 'AuthorizationPolicyV2':
         """
         Get an existing AuthorizationPolicyV2 resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -547,7 +578,9 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]] identities: The identities for which the Authorization Policy is created.
         :param pulumi.Input[_builtins.bool] is_system_defined: Flag identifying if the Authorization Policy is system defined or not.
         :param pulumi.Input[_builtins.str] last_updated_time: The time when the Authorization Policy was last updated.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project reference for the Authorization Policy.
         :param pulumi.Input[_builtins.str] role: The Role associated with the Authorization Policy.
+        :param pulumi.Input[_builtins.bool] share_with_all_projects: - Flag indicating whether the Authorization Policy is shared with all projects or not.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -562,9 +595,12 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         __props__.__dict__["entities"] = entities
         __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["identities"] = identities
+        __props__.__dict__["is_global"] = is_global
         __props__.__dict__["is_system_defined"] = is_system_defined
         __props__.__dict__["last_updated_time"] = last_updated_time
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["role"] = role
+        __props__.__dict__["share_with_all_projects"] = share_with_all_projects
         return AuthorizationPolicyV2(resource_name, opts=opts, __props__=__props__)
 
     @staticmethod
@@ -579,9 +615,12 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
             entities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2EntityArgs', 'AuthorizationPolicyV2EntityArgsDict', 'outputs.AuthorizationPolicyV2Entity']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             identities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuthorizationPolicyV2IdentityArgs', 'AuthorizationPolicyV2IdentityArgsDict', 'outputs.AuthorizationPolicyV2Identity']]]]] = None,
+            is_global: pulumi.Input[Optional[_builtins.bool]] = None,
             is_system_defined: pulumi.Input[Optional[_builtins.bool]] = None,
             last_updated_time: pulumi.Input[Optional[_builtins.str]] = None,
-            role: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            share_with_all_projects: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["authorizationPolicyType"] = authorization_policy_type
         __props__["clientName"] = client_name
@@ -592,9 +631,12 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         __props__["entities"] = entities
         __props__["extId"] = ext_id
         __props__["identities"] = identities
+        __props__["isGlobal"] = is_global
         __props__["isSystemDefined"] = is_system_defined
         __props__["lastUpdatedTime"] = last_updated_time
+        __props__["projectExtId"] = project_ext_id
         __props__["role"] = role
+        __props__["shareWithAllProjects"] = share_with_all_projects
         return pulumi.runtime.exists_resource(None, 'nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
@@ -675,6 +717,11 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         return pulumi.get(self, "identities")
 
     @_builtins.property
+    @pulumi.getter(name="isGlobal")
+    def is_global(self) -> pulumi.Output[_builtins.bool]:
+        return pulumi.get(self, "is_global")
+
+    @_builtins.property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> pulumi.Output[_builtins.bool]:
         """
@@ -691,10 +738,26 @@ class AuthorizationPolicyV2(pulumi.CustomResource):
         return pulumi.get(self, "last_updated_time")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        -(Optional) Project reference for the Authorization Policy.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter
     def role(self) -> pulumi.Output[_builtins.str]:
         """
         The Role associated with the Authorization Policy.
         """
         return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> pulumi.Output[_builtins.bool]:
+        """
+        - Flag indicating whether the Authorization Policy is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
 

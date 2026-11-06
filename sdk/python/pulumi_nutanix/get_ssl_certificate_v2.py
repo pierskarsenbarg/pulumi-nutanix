@@ -127,7 +127,7 @@ def get_ssl_certificate_v2(cluster_ext_id: Optional[_builtins.str] = None,
 
     ## API Reference
 
-    See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/SSLCertificate/operation/getSSLCertificate)
+    See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/SSLCertificate/operation/getSSLCertificate)
 
 
     :param _builtins.str cluster_ext_id: — UUID of the cluster to which the host NIC belongs.
@@ -163,7 +163,7 @@ def get_ssl_certificate_v2_output(cluster_ext_id: pulumi.Input[Optional[_builtin
 
     ## API Reference
 
-    See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/SSLCertificate/operation/getSSLCertificate)
+    See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/SSLCertificate/operation/getSSLCertificate)
 
 
     :param _builtins.str cluster_ext_id: — UUID of the cluster to which the host NIC belongs.

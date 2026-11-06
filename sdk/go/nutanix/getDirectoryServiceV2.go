@@ -79,10 +79,16 @@ type GetDirectoryServiceV2Result struct {
 	Name string `pulumi:"name"`
 	// - Configuration for OpenLDAP Directory Service.
 	OpenLdapConfigurations []GetDirectoryServiceV2OpenLdapConfiguration `pulumi:"openLdapConfigurations"`
+	// - Project reference for the Directory Service.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// - Secondary URL for the Directory Service.
 	SecondaryUrls []string `pulumi:"secondaryUrls"`
 	// - Information of Service account to connect to the Directory Service.
 	ServiceAccounts []GetDirectoryServiceV2ServiceAccount `pulumi:"serviceAccounts"`
+	// - Flag indicating whether the directory service is shared with all projects or not.
+	ShareWithAllProjects bool `pulumi:"shareWithAllProjects"`
+	// - List of projects with which the directory service is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// - URL for the Directory Service.
 	Url string `pulumi:"url"`
 	// - List of allowed User Groups for the Directory Service.
@@ -171,6 +177,11 @@ func (o GetDirectoryServiceV2ResultOutput) OpenLdapConfigurations() GetDirectory
 	}).(GetDirectoryServiceV2OpenLdapConfigurationArrayOutput)
 }
 
+// - Project reference for the Directory Service.
+func (o GetDirectoryServiceV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDirectoryServiceV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
 // - Secondary URL for the Directory Service.
 func (o GetDirectoryServiceV2ResultOutput) SecondaryUrls() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDirectoryServiceV2Result) []string { return v.SecondaryUrls }).(pulumi.StringArrayOutput)
@@ -179,6 +190,16 @@ func (o GetDirectoryServiceV2ResultOutput) SecondaryUrls() pulumi.StringArrayOut
 // - Information of Service account to connect to the Directory Service.
 func (o GetDirectoryServiceV2ResultOutput) ServiceAccounts() GetDirectoryServiceV2ServiceAccountArrayOutput {
 	return o.ApplyT(func(v GetDirectoryServiceV2Result) []GetDirectoryServiceV2ServiceAccount { return v.ServiceAccounts }).(GetDirectoryServiceV2ServiceAccountArrayOutput)
+}
+
+// - Flag indicating whether the directory service is shared with all projects or not.
+func (o GetDirectoryServiceV2ResultOutput) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDirectoryServiceV2Result) bool { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
+}
+
+// - List of projects with which the directory service is shared.
+func (o GetDirectoryServiceV2ResultOutput) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDirectoryServiceV2Result) []string { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
 }
 
 // - URL for the Directory Service.

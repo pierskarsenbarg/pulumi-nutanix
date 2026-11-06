@@ -403,6 +403,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly int Priority;
         /// <summary>
+        /// External identifier of the project associated with the Routing Policy.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity
         /// </summary>
         public readonly string TenantId;
@@ -433,6 +437,8 @@ namespace PiersKarsenbarg.Nutanix
 
             int priority,
 
+            string projectExtId,
+
             string tenantId,
 
             string vpcExtId,
@@ -447,6 +453,7 @@ namespace PiersKarsenbarg.Nutanix
             Name = name;
             Policies = policies;
             Priority = priority;
+            ProjectExtId = projectExtId;
             TenantId = tenantId;
             VpcExtId = vpcExtId;
             Vpcs = vpcs;

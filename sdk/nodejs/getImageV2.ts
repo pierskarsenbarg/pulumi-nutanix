@@ -65,6 +65,7 @@ export interface GetImageV2Result {
     readonly description: string;
     /**
      * The external identifier of VM Disk.
+     * > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
      */
     readonly extId: string;
     /**
@@ -87,6 +88,14 @@ export interface GetImageV2Result {
      * Status of an image placement policy.
      */
     readonly placementPolicyStatuses: outputs.GetImageV2PlacementPolicyStatus[];
+    /**
+     * External identifier of the project associated with the image.
+     */
+    readonly projectExtId: string;
+    /**
+     * Indicates whether the image is shared with all projects.
+     */
+    readonly shareWithAllProjects: boolean;
     /**
      * The size in bytes of an image file.
      */

@@ -142,6 +142,12 @@ type LookupProjectResult struct {
 	DefaultSubnetReference map[string]string `pulumi:"defaultSubnetReference"`
 	// Description of ACP
 	Description string `pulumi:"description"`
+	// List of directory services associated with the project.
+	// * `directory_reference_list.#.uuid` - The UUID of a directory service.
+	// * `directory_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`directoryService`" pulumi-lang-dotnet="`DirectoryService`" pulumi-lang-go="`directoryService`" pulumi-lang-python="`directory_service`" pulumi-lang-yaml="`directoryService`" pulumi-lang-java="`directoryService`" pulumi-lang-hcl="`directory_service`">`directoryService`</span>
+	DirectoryReferenceLists []GetProjectDirectoryReferenceList `pulumi:"directoryReferenceLists"`
+	// Flag indicating whether the directory services and identity providers associated with the project are shortlisted.
+	EnableDirectoryAndIdentityProviderShortlist bool `pulumi:"enableDirectoryAndIdentityProviderShortlist"`
 	// List of environments associated with the project.
 	// * `environment_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`">`environment`</span>
 	// * `environment_reference_list.#.uuid` - The UUID of an environment.
@@ -164,9 +170,13 @@ type LookupProjectResult struct {
 	//   </span>* `external_user_group_reference_list.#.name` - The name of a user_group
 	ExternalUserGroupReferenceLists []GetProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
 	// The provider-assigned unique ID for this managed resource.
-	Id        string            `pulumi:"id"`
-	IsDefault bool              `pulumi:"isDefault"`
-	Metadata  map[string]string `pulumi:"metadata"`
+	Id string `pulumi:"id"`
+	// List of identity providers associated with the project.
+	// * `identity_providers_reference_list.#.uuid` - The UUID of an identity provider.
+	// * `identity_providers_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`identityProvider`" pulumi-lang-dotnet="`IdentityProvider`" pulumi-lang-go="`identityProvider`" pulumi-lang-python="`identity_provider`" pulumi-lang-yaml="`identityProvider`" pulumi-lang-java="`identityProvider`" pulumi-lang-hcl="`identity_provider`">`identityProvider`</span>
+	IdentityProvidersReferenceLists []GetProjectIdentityProvidersReferenceList `pulumi:"identityProvidersReferenceLists"`
+	IsDefault                       bool                                       `pulumi:"isDefault"`
+	Metadata                        map[string]string                          `pulumi:"metadata"`
 	// the name.
 	Name             string            `pulumi:"name"`
 	OwnerReference   map[string]string `pulumi:"ownerReference"`
@@ -293,6 +303,18 @@ func (o LookupProjectResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
+// List of directory services associated with the project.
+// * `directory_reference_list.#.uuid` - The UUID of a directory service.
+// * `directory_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`directoryService`" pulumi-lang-dotnet="`DirectoryService`" pulumi-lang-go="`directoryService`" pulumi-lang-python="`directory_service`" pulumi-lang-yaml="`directoryService`" pulumi-lang-java="`directoryService`" pulumi-lang-hcl="`directory_service`">`directoryService`</span>
+func (o LookupProjectResultOutput) DirectoryReferenceLists() GetProjectDirectoryReferenceListArrayOutput {
+	return o.ApplyT(func(v LookupProjectResult) []GetProjectDirectoryReferenceList { return v.DirectoryReferenceLists }).(GetProjectDirectoryReferenceListArrayOutput)
+}
+
+// Flag indicating whether the directory services and identity providers associated with the project are shortlisted.
+func (o LookupProjectResultOutput) EnableDirectoryAndIdentityProviderShortlist() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupProjectResult) bool { return v.EnableDirectoryAndIdentityProviderShortlist }).(pulumi.BoolOutput)
+}
+
 // List of environments associated with the project.
 // * `environment_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`">`environment`</span>
 // * `environment_reference_list.#.uuid` - The UUID of an environment.
@@ -328,6 +350,15 @@ func (o LookupProjectResultOutput) ExternalUserGroupReferenceLists() GetProjectE
 // The provider-assigned unique ID for this managed resource.
 func (o LookupProjectResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupProjectResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of identity providers associated with the project.
+// * `identity_providers_reference_list.#.uuid` - The UUID of an identity provider.
+// * `identity_providers_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`identityProvider`" pulumi-lang-dotnet="`IdentityProvider`" pulumi-lang-go="`identityProvider`" pulumi-lang-python="`identity_provider`" pulumi-lang-yaml="`identityProvider`" pulumi-lang-java="`identityProvider`" pulumi-lang-hcl="`identity_provider`">`identityProvider`</span>
+func (o LookupProjectResultOutput) IdentityProvidersReferenceLists() GetProjectIdentityProvidersReferenceListArrayOutput {
+	return o.ApplyT(func(v LookupProjectResult) []GetProjectIdentityProvidersReferenceList {
+		return v.IdentityProvidersReferenceLists
+	}).(GetProjectIdentityProvidersReferenceListArrayOutput)
 }
 
 func (o LookupProjectResultOutput) IsDefault() pulumi.BoolOutput {

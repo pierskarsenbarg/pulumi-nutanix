@@ -22,6 +22,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetRecoveryPointsV2RecoveryPointLocationReferenceResult> LocationReferences;
         public readonly string Name;
         public readonly string OwnerExtId;
+        public readonly string ProjectExtId;
         public readonly string RecoveryPointType;
         public readonly string Status;
         public readonly string TenantId;
@@ -46,6 +47,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string ownerExtId,
 
+            string projectExtId,
+
             string recoveryPointType,
 
             string status,
@@ -64,6 +67,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             LocationReferences = locationReferences;
             Name = name;
             OwnerExtId = ownerExtId;
+            ProjectExtId = projectExtId;
             RecoveryPointType = recoveryPointType;
             Status = status;
             TenantId = tenantId;

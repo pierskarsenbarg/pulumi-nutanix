@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     public static class GetSamlIdentityProvidersV2
     {
         /// <summary>
+        /// &gt; **Note:** This data source is in Beta because the underlying Nutanix SDK API is currently in Beta. The data source and its behavior may change in future releases as the SDK API evolves.
+        /// 
         /// Provides a datasource to retrieve all the SAML Identity Provider(s).
         /// 
         /// ## Example Usage
@@ -190,6 +192,8 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSamlIdentityProvidersV2Result>("nutanix:index/getSamlIdentityProvidersV2:getSamlIdentityProvidersV2", args ?? new GetSamlIdentityProvidersV2Args(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; **Note:** This data source is in Beta because the underlying Nutanix SDK API is currently in Beta. The data source and its behavior may change in future releases as the SDK API evolves.
+        /// 
         /// Provides a datasource to retrieve all the SAML Identity Provider(s).
         /// 
         /// ## Example Usage
@@ -367,6 +371,8 @@ namespace PiersKarsenbarg.Nutanix
             => global::Pulumi.Deployment.Instance.Invoke<GetSamlIdentityProvidersV2Result>("nutanix:index/getSamlIdentityProvidersV2:getSamlIdentityProvidersV2", args ?? new GetSamlIdentityProvidersV2InvokeArgs(), options.WithDefaults());
 
         /// <summary>
+        /// &gt; **Note:** This data source is in Beta because the underlying Nutanix SDK API is currently in Beta. The data source and its behavior may change in future releases as the SDK API evolves.
+        /// 
         /// Provides a datasource to retrieve all the SAML Identity Provider(s).
         /// 
         /// ## Example Usage

@@ -31,6 +31,29 @@ namespace PiersKarsenbarg.Nutanix
     ///         Description = "category example description",
     ///     });
     /// 
+    ///     // Category with project association
+    ///     var withProject = new Nutanix.CategoryV2("with_project", new()
+    ///     {
+    ///         Key = "environment",
+    ///         Value = "production",
+    ///         Description = "Production environment category",
+    ///         ProjectExtId = "project-ext-id-here",
+    ///     });
+    /// 
+    ///     // Category shared with multiple projects
+    ///     var shared = new Nutanix.CategoryV2("shared", new()
+    ///     {
+    ///         Key = "department",
+    ///         Value = "engineering",
+    ///         Description = "Engineering department category",
+    ///         SharedWithProjects = new[]
+    ///         {
+    ///             "project-ext-id-1",
+    ///             "project-ext-id-2",
+    ///             "project-ext-id-3",
+    ///         },
+    ///     });
+    /// 
     /// });
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
@@ -47,7 +70,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
     /// 
-    /// See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.3#tag/Categories/operation/createCategory).
+    /// See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.4#tag/Categories/operation/createCategory).
     /// </summary>
     [NutanixResourceType("nutanix:index/categoryV2:CategoryV2")]
     public partial class CategoryV2 : global::Pulumi.CustomResource
@@ -81,6 +104,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("detailedAssociations")]
         public Output<ImmutableArray<Outputs.CategoryV2DetailedAssociation>> DetailedAssociations { get; private set; } = null!;
 
+        [Output("extId")]
+        public Output<string> ExtId { get; private set; } = null!;
+
         /// <summary>
         /// -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
         /// 
@@ -103,6 +129,21 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("ownerUuid")]
         public Output<string> OwnerUuid { get; private set; } = null!;
+
+        /// <summary>
+        /// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        [Output("sharedWithAllProjects")]
+        public Output<bool> SharedWithAllProjects { get; private set; } = null!;
+
+        /// <summary>
+        /// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+        /// </summary>
+        [Output("sharedWithProjects")]
+        public Output<ImmutableArray<string>> SharedWithProjects { get; private set; } = null!;
 
         /// <summary>
         /// -(Required) Denotes the type of a category.
@@ -209,6 +250,27 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? OwnerUuid { get; set; }
 
         /// <summary>
+        /// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        [Input("sharedWithAllProjects")]
+        public Input<bool>? SharedWithAllProjects { get; set; }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
+        }
+
+        /// <summary>
         /// -(Required) Denotes the type of a category.
         /// Valid values are:
         /// - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -281,6 +343,9 @@ namespace PiersKarsenbarg.Nutanix
             set => _detailedAssociations = value;
         }
 
+        [Input("extId")]
+        public Input<string>? ExtId { get; set; }
+
         /// <summary>
         /// -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
         /// 
@@ -303,6 +368,27 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("ownerUuid")]
         public Input<string>? OwnerUuid { get; set; }
+
+        /// <summary>
+        /// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        [Input("sharedWithAllProjects")]
+        public Input<bool>? SharedWithAllProjects { get; set; }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
+        }
 
         /// <summary>
         /// -(Required) Denotes the type of a category.

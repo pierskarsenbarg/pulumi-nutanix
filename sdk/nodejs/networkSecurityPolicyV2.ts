@@ -51,6 +51,36 @@ import * as utilities from "./utilities";
  *         }],
  *     }],
  * });
+ * const securedGroup = new nutanix.EntityGroupV2("secured_group", {
+ *     name: "secured-group",
+ *     description: "Secured group for an application policy",
+ *     allowedConfig: {
+ *         entities: [{
+ *             type: "VM",
+ *             selectedBy: "CATEGORY_EXT_ID",
+ *             referenceExtIds: [example.id],
+ *         }],
+ *     },
+ * });
+ * // Application rules can use an entity group as the secured group instead of categories.
+ * // Use either secured_group_category_references or secured_group_entity_group_reference, not both.
+ * const entity_group_nsp = new nutanix.NetworkSecurityPolicyV2("entity-group-nsp", {
+ *     name: "my-entity-group-policy",
+ *     description: "Application policy with secured group entity group reference",
+ *     state: "SAVE",
+ *     type: "APPLICATION",
+ *     scope: "GLOBAL",
+ *     rules: [{
+ *         type: "APPLICATION",
+ *         specs: [{
+ *             applicationRuleSpecs: [{
+ *                 securedGroupEntityGroupReference: securedGroup.id,
+ *                 srcAllowSpec: "ALL",
+ *                 isAllProtocolAllowed: true,
+ *             }],
+ *         }],
+ *     }],
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  */
@@ -118,6 +148,10 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
      */
     declare public readonly isIpv6TrafficAllowed: pulumi.Output<boolean | undefined>;
     /**
+     * Indicates whether the network security policy is shared with all projects.
+     */
+    declare public /*out*/ readonly isSharedWithAllProjects: pulumi.Output<boolean>;
+    /**
      * Is system defined NSP
      */
     declare public /*out*/ readonly isSystemDefined: pulumi.Output<boolean>;
@@ -134,11 +168,19 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     /**
-     * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+     * Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+     */
+    declare public readonly priority: pulumi.Output<number>;
+    /**
+     * Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
+     * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
      */
     declare public readonly rules: pulumi.Output<outputs.NetworkSecurityPolicyV2Rule[] | undefined>;
     /**
-     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
      */
     declare public readonly scope: pulumi.Output<string>;
     /**
@@ -154,7 +196,7 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly tenantId: pulumi.Output<string>;
     /**
-     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
      */
     declare public readonly type: pulumi.Output<string>;
     /**
@@ -181,10 +223,13 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
             resourceInputs["extId"] = state?.extId;
             resourceInputs["isHitlogEnabled"] = state?.isHitlogEnabled;
             resourceInputs["isIpv6TrafficAllowed"] = state?.isIpv6TrafficAllowed;
+            resourceInputs["isSharedWithAllProjects"] = state?.isSharedWithAllProjects;
             resourceInputs["isSystemDefined"] = state?.isSystemDefined;
             resourceInputs["lastUpdateTime"] = state?.lastUpdateTime;
             resourceInputs["links"] = state?.links;
             resourceInputs["name"] = state?.name;
+            resourceInputs["priority"] = state?.priority;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["rules"] = state?.rules;
             resourceInputs["scope"] = state?.scope;
             resourceInputs["securedGroups"] = state?.securedGroups;
@@ -201,6 +246,8 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
             resourceInputs["isHitlogEnabled"] = args?.isHitlogEnabled;
             resourceInputs["isIpv6TrafficAllowed"] = args?.isIpv6TrafficAllowed;
             resourceInputs["name"] = args?.name;
+            resourceInputs["priority"] = args?.priority;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["rules"] = args?.rules;
             resourceInputs["scope"] = args?.scope;
             resourceInputs["state"] = args?.state;
@@ -209,6 +256,7 @@ export class NetworkSecurityPolicyV2 extends pulumi.CustomResource {
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["creationTime"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
+            resourceInputs["isSharedWithAllProjects"] = undefined /*out*/;
             resourceInputs["isSystemDefined"] = undefined /*out*/;
             resourceInputs["lastUpdateTime"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
@@ -249,6 +297,10 @@ export interface NetworkSecurityPolicyV2State {
      */
     isIpv6TrafficAllowed?: pulumi.Input<boolean | undefined>;
     /**
+     * Indicates whether the network security policy is shared with all projects.
+     */
+    isSharedWithAllProjects?: pulumi.Input<boolean | undefined>;
+    /**
      * Is system defined NSP
      */
     isSystemDefined?: pulumi.Input<boolean | undefined>;
@@ -265,11 +317,19 @@ export interface NetworkSecurityPolicyV2State {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+     * Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+     */
+    priority?: pulumi.Input<number | undefined>;
+    /**
+     * Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
+     * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
      */
     rules?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Rule>[] | undefined>;
     /**
-     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
      */
     scope?: pulumi.Input<string | undefined>;
     /**
@@ -285,7 +345,7 @@ export interface NetworkSecurityPolicyV2State {
      */
     tenantId?: pulumi.Input<string | undefined>;
     /**
-     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
      */
     type?: pulumi.Input<string | undefined>;
     /**
@@ -315,11 +375,19 @@ export interface NetworkSecurityPolicyV2Args {
      */
     name?: pulumi.Input<string | undefined>;
     /**
-     * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules.
+     * Policy priority. Mandatory for the Flex policy types (WORKLOAD/CRITICAL/COREINFRASTRUCTURE/ZONE); a lower value means higher precedence. For user-defined WORKLOAD policies use 1-349 (350 is reserved for the system catch-all).
+     */
+    priority?: pulumi.Input<number | undefined>;
+    /**
+     * Project external ID to associate with the network security policy. Note: This field cannot be updated after creation.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
+     * A list of rules that form a policy. For isolation policies, use isolation rules; for application or quarantine policies, use application rules; for Flex policies, use flex rules only.
      */
     rules?: pulumi.Input<pulumi.Input<inputs.NetworkSecurityPolicyV2Rule>[] | undefined>;
     /**
-     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", and "GLOBAL".
+     * Defines the scope of the policy. Acceptable values are "ALL_VLAN", "ALL_VPC", "VPC_LIST", "GLOBAL", and "VPC_AS_CATEGORY".
      */
     scope?: pulumi.Input<string | undefined>;
     /**
@@ -327,7 +395,7 @@ export interface NetworkSecurityPolicyV2Args {
      */
     state?: pulumi.Input<string | undefined>;
     /**
-     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE".
+     * Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
      */
     type: pulumi.Input<string>;
     /**

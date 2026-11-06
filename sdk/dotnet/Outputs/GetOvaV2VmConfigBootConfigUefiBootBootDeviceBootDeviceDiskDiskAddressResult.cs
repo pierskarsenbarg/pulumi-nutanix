@@ -17,17 +17,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// Bus type for the device
         /// </summary>
-        public readonly string BusType;
+        public readonly string? BusType;
         /// <summary>
         /// Device index on the bus. This field is ignored unless the bus details are specified.
         /// </summary>
-        public readonly int Index;
+        public readonly int? Index;
 
         [OutputConstructor]
         private GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressResult(
-            string busType,
+            string? busType,
 
-            int index)
+            int? index)
         {
             BusType = busType;
             Index = index;

@@ -14,10 +14,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceNicResult
     {
-        public readonly string MacAddress;
+        public readonly string? MacAddress;
 
         [OutputConstructor]
-        private GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceNicResult(string macAddress)
+        private GetOvasV2OvaVmConfigBootConfigUefiBootBootDeviceBootDeviceNicResult(string? macAddress)
         {
             MacAddress = macAddress;
         }

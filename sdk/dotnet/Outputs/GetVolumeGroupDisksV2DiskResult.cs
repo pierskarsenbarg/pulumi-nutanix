@@ -50,6 +50,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         /// </summary>
         public readonly string TenantId;
+        /// <summary>
+        /// The external identifier of the Volume Group.
+        /// </summary>
+        public readonly string VolumeGroupExtId;
 
         [OutputConstructor]
         private GetVolumeGroupDisksV2DiskResult(
@@ -69,7 +73,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string storageContainerId,
 
-            string tenantId)
+            string tenantId,
+
+            string volumeGroupExtId)
         {
             Description = description;
             DiskDataSourceReferences = diskDataSourceReferences;
@@ -80,6 +86,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Links = links;
             StorageContainerId = storageContainerId;
             TenantId = tenantId;
+            VolumeGroupExtId = volumeGroupExtId;
         }
     }
 }

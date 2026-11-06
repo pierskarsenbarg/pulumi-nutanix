@@ -15,6 +15,20 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// Creates a protection policy to automate the recovery point creation and replication process.
     /// 
+    /// ## Notes
+    /// 
+    /// &gt; **Please review the following behaviors before configuring a protection policy:**
+    /// 
+    /// * **&lt;span pulumi-lang-nodejs="`latestRecoveryPointRetentionSeconds`" pulumi-lang-dotnet="`LatestRecoveryPointRetentionSeconds`" pulumi-lang-go="`latestRecoveryPointRetentionSeconds`" pulumi-lang-python="`latest_recovery_point_retention_seconds`" pulumi-lang-yaml="`latestRecoveryPointRetentionSeconds`" pulumi-lang-java="`latestRecoveryPointRetentionSeconds`" pulumi-lang-hcl="`latest_recovery_point_retention_seconds`"&gt;`latestRecoveryPointRetentionSeconds`&lt;/span&gt;**
+    ///   * Must be a multiple of &lt;span pulumi-lang-nodejs="`3600`" pulumi-lang-dotnet="`3600`" pulumi-lang-go="`3600`" pulumi-lang-python="`3600`" pulumi-lang-yaml="`3600`" pulumi-lang-java="`3600`" pulumi-lang-hcl="`3600`"&gt;`3600`&lt;/span&gt; seconds (i.e., whole hours).
+    ///   * Set it to &lt;span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`"&gt;`0`&lt;/span&gt; to indicate that the latest recovery point should **not** be retained past its expiry time.
+    ///   * It is only sent to the API when explicitly set in the configuration. If you omit it, it is left out of the request entirely and the latest recovery point will be retained for a minimum of 30 days.
+    ///   * It **cannot** be specified for **synchronous** replication (&lt;span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds " pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds " pulumi-lang-go="`recoveryPointObjectiveTimeSeconds " pulumi-lang-python="`recovery_point_objective_time_seconds " pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds " pulumi-lang-java="`recoveryPointObjectiveTimeSeconds " pulumi-lang-hcl="`recovery_point_objective_time_seconds "&gt;`recoveryPointObjectiveTimeSeconds &lt;/span&gt;= 0`). The API rejects the request if it is provided for a synchronous schedule.
+    /// 
+    /// * **&lt;span pulumi-lang-nodejs="`isReplicationPaused`" pulumi-lang-dotnet="`IsReplicationPaused`" pulumi-lang-go="`isReplicationPaused`" pulumi-lang-python="`is_replication_paused`" pulumi-lang-yaml="`isReplicationPaused`" pulumi-lang-java="`isReplicationPaused`" pulumi-lang-hcl="`is_replication_paused`"&gt;`isReplicationPaused`&lt;/span&gt;**
+    ///   * &lt;span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`"&gt;`true`&lt;/span&gt; is supported **only** for **synchronous** replication.
+    ///   * It can be set **only** through an **update** request.
+    /// 
     /// ## Example—Synchronous Protection Policy
     /// 
     /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -102,6 +116,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Schedule = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleArgs
     ///                 {
     ///                     RecoveryPointObjectiveTimeSeconds = 7200,
+    ///                     LatestRecoveryPointRetentionSeconds = 7200,
     ///                     RecoveryPointType = "CRASH_CONSISTENT",
     ///                     Retention = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs
     ///                     {
@@ -120,6 +135,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                 Schedule = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleArgs
     ///                 {
     ///                     RecoveryPointObjectiveTimeSeconds = 7200,
+    ///                     LatestRecoveryPointRetentionSeconds = 7200,
     ///                     RecoveryPointType = "CRASH_CONSISTENT",
     ///                     Retention = new Nutanix.Inputs.ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs
     ///                     {

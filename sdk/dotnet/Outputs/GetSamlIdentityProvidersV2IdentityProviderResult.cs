@@ -53,6 +53,18 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - Unique name of the IDP.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// - Project reference for the SAML Identity Provider.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
+        /// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+        /// </summary>
+        public readonly bool ShareWithAllProjects;
+        /// <summary>
+        /// - List of projects with which the SAML Identity Provider is shared.
+        /// </summary>
+        public readonly ImmutableArray<string> SharedWithProjects;
         public readonly string UsernameAttribute;
 
         [OutputConstructor]
@@ -81,6 +93,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string name,
 
+            string projectExtId,
+
+            bool shareWithAllProjects,
+
+            ImmutableArray<string> sharedWithProjects,
+
             string usernameAttribute)
         {
             CreatedBy = createdBy;
@@ -95,6 +113,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             IsSignedAuthnReqEnabled = isSignedAuthnReqEnabled;
             LastUpdatedTime = lastUpdatedTime;
             Name = name;
+            ProjectExtId = projectExtId;
+            ShareWithAllProjects = shareWithAllProjects;
+            SharedWithProjects = sharedWithProjects;
             UsernameAttribute = usernameAttribute;
         }
     }

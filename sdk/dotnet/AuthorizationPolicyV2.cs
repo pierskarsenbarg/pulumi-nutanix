@@ -12,47 +12,6 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides Nutanix resource to create authorization policy.
-    /// 
-    /// ## Example
-    /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var ap_example = new Nutanix.AuthorizationPolicyV2("ap-example", new()
-    ///     {
-    ///         Role = "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-    ///         DisplayName = "auth_policy_example",
-    ///         Description = "authorization policy example",
-    ///         AuthorizationPolicyType = "USER_DEFINED",
-    ///         Identities = new[]
-    ///         {
-    ///             new Nutanix.Inputs.AuthorizationPolicyV2IdentityArgs
-    ///             {
-    ///                 Reserved = "{\"user\":{\"uuid\":{\"anyof\":[\"00000000-0000-0000-0000-000000000000\"]}}}",
-    ///             },
-    ///         },
-    ///         Entities = new[]
-    ///         {
-    ///             new Nutanix.Inputs.AuthorizationPolicyV2EntityArgs
-    ///             {
-    ///                 Reserved = "{\"images\":{\"*\":{\"eq\":\"*\"}}}",
-    ///             },
-    ///             new Nutanix.Inputs.AuthorizationPolicyV2EntityArgs
-    ///             {
-    ///                 Reserved = "{\"marketplace_item\":{\"owner_uuid\":{\"eq\":\"SELF_OWNED\"}}}",
-    ///             },
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/authorizationPolicyV2:AuthorizationPolicyV2")]
     public partial class AuthorizationPolicyV2 : global::Pulumi.CustomResource
@@ -116,6 +75,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("identities")]
         public Output<ImmutableArray<Outputs.AuthorizationPolicyV2Identity>> Identities { get; private set; } = null!;
 
+        [Output("isGlobal")]
+        public Output<bool> IsGlobal { get; private set; } = null!;
+
         /// <summary>
         /// Flag identifying if the Authorization Policy is system defined or not.
         /// </summary>
@@ -129,10 +91,22 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> LastUpdatedTime { get; private set; } = null!;
 
         /// <summary>
+        /// -(Optional) Project reference for the Authorization Policy.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// The Role associated with the Authorization Policy.
         /// </summary>
         [Output("role")]
         public Output<string> Role { get; private set; } = null!;
+
+        /// <summary>
+        /// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+        /// </summary>
+        [Output("shareWithAllProjects")]
+        public Output<bool> ShareWithAllProjects { get; private set; } = null!;
 
 
         /// <summary>
@@ -234,6 +208,15 @@ namespace PiersKarsenbarg.Nutanix
             set => _identities = value;
         }
 
+        [Input("isGlobal")]
+        public Input<bool>? IsGlobal { get; set; }
+
+        /// <summary>
+        /// -(Optional) Project reference for the Authorization Policy.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         /// <summary>
         /// The Role associated with the Authorization Policy.
         /// </summary>
@@ -319,6 +302,9 @@ namespace PiersKarsenbarg.Nutanix
             set => _identities = value;
         }
 
+        [Input("isGlobal")]
+        public Input<bool>? IsGlobal { get; set; }
+
         /// <summary>
         /// Flag identifying if the Authorization Policy is system defined or not.
         /// </summary>
@@ -332,10 +318,22 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? LastUpdatedTime { get; set; }
 
         /// <summary>
+        /// -(Optional) Project reference for the Authorization Policy.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
         /// The Role associated with the Authorization Policy.
         /// </summary>
         [Input("role")]
         public Input<string>? Role { get; set; }
+
+        /// <summary>
+        /// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+        /// </summary>
+        [Input("shareWithAllProjects")]
+        public Input<bool>? ShareWithAllProjects { get; set; }
 
         public AuthorizationPolicyV2State()
         {

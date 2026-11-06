@@ -26,6 +26,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string IpPrefix;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetIpUsageResult> IpUsages;
         public readonly bool IsAdvancedNetworking;
+        public readonly bool IsConnected;
         public readonly bool IsExternal;
         public readonly bool IsNatEnabled;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetLinkResult> Links;
@@ -34,7 +35,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Name;
         public readonly string NetworkFunctionChainReference;
         public readonly int NetworkId;
+        public readonly string ProjectExtId;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetReservedIpAddressResult> ReservedIpAddresses;
+        public readonly ImmutableArray<string> SharedWithProjects;
         public readonly string SubnetType;
         public readonly string VirtualSwitchReference;
         public readonly ImmutableArray<Outputs.GetSubnetsV2SubnetVirtualSwitchResult> VirtualSwitches;
@@ -67,6 +70,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool isAdvancedNetworking,
 
+            bool isConnected,
+
             bool isExternal,
 
             bool isNatEnabled,
@@ -83,7 +88,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             int networkId,
 
+            string projectExtId,
+
             ImmutableArray<Outputs.GetSubnetsV2SubnetReservedIpAddressResult> reservedIpAddresses,
+
+            ImmutableArray<string> sharedWithProjects,
 
             string subnetType,
 
@@ -107,6 +116,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             IpPrefix = ipPrefix;
             IpUsages = ipUsages;
             IsAdvancedNetworking = isAdvancedNetworking;
+            IsConnected = isConnected;
             IsExternal = isExternal;
             IsNatEnabled = isNatEnabled;
             Links = links;
@@ -115,7 +125,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Name = name;
             NetworkFunctionChainReference = networkFunctionChainReference;
             NetworkId = networkId;
+            ProjectExtId = projectExtId;
             ReservedIpAddresses = reservedIpAddresses;
+            SharedWithProjects = sharedWithProjects;
             SubnetType = subnetType;
             VirtualSwitchReference = virtualSwitchReference;
             VirtualSwitches = virtualSwitches;

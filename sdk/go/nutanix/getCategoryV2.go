@@ -78,6 +78,11 @@ type LookupCategoryV2Result struct {
 	Links []GetCategoryV2Link `pulumi:"links"`
 	// This field contains the UUID of a user who owns the category.
 	OwnerUuid string `pulumi:"ownerUuid"`
+	// The external identifier of the project to which the category belongs.
+	ProjectExtId          string `pulumi:"projectExtId"`
+	SharedWithAllProjects bool   `pulumi:"sharedWithAllProjects"`
+	// A set of project external identifiers with which the category is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId string `pulumi:"tenantId"`
 	// Denotes the type of a category.
@@ -162,6 +167,20 @@ func (o LookupCategoryV2ResultOutput) Links() GetCategoryV2LinkArrayOutput {
 // This field contains the UUID of a user who owns the category.
 func (o LookupCategoryV2ResultOutput) OwnerUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCategoryV2Result) string { return v.OwnerUuid }).(pulumi.StringOutput)
+}
+
+// The external identifier of the project to which the category belongs.
+func (o LookupCategoryV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCategoryV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+func (o LookupCategoryV2ResultOutput) SharedWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupCategoryV2Result) bool { return v.SharedWithAllProjects }).(pulumi.BoolOutput)
+}
+
+// A set of project external identifiers with which the category is shared.
+func (o LookupCategoryV2ResultOutput) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupCategoryV2Result) []string { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

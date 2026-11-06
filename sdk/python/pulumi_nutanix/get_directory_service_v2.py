@@ -27,7 +27,7 @@ class GetDirectoryServiceV2Result:
     """
     A collection of values returned by getDirectoryServiceV2.
     """
-    def __init__(__self__, created_by=None, created_time=None, directory_type=None, domain_name=None, ext_id=None, group_search_type=None, id=None, last_updated_time=None, name=None, open_ldap_configurations=None, secondary_urls=None, service_accounts=None, url=None, white_listed_groups=None):
+    def __init__(__self__, created_by=None, created_time=None, directory_type=None, domain_name=None, ext_id=None, group_search_type=None, id=None, last_updated_time=None, name=None, open_ldap_configurations=None, project_ext_id=None, secondary_urls=None, service_accounts=None, share_with_all_projects=None, shared_with_projects=None, url=None, white_listed_groups=None):
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -58,12 +58,21 @@ class GetDirectoryServiceV2Result:
         if open_ldap_configurations and not isinstance(open_ldap_configurations, list):
             raise TypeError("Expected argument 'open_ldap_configurations' to be a list")
         pulumi.set(__self__, "open_ldap_configurations", open_ldap_configurations)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if secondary_urls and not isinstance(secondary_urls, list):
             raise TypeError("Expected argument 'secondary_urls' to be a list")
         pulumi.set(__self__, "secondary_urls", secondary_urls)
         if service_accounts and not isinstance(service_accounts, list):
             raise TypeError("Expected argument 'service_accounts' to be a list")
         pulumi.set(__self__, "service_accounts", service_accounts)
+        if share_with_all_projects and not isinstance(share_with_all_projects, bool):
+            raise TypeError("Expected argument 'share_with_all_projects' to be a bool")
+        pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
+        if shared_with_projects and not isinstance(shared_with_projects, list):
+            raise TypeError("Expected argument 'shared_with_projects' to be a list")
+        pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if url and not isinstance(url, str):
             raise TypeError("Expected argument 'url' to be a str")
         pulumi.set(__self__, "url", url)
@@ -152,6 +161,14 @@ class GetDirectoryServiceV2Result:
         return pulumi.get(self, "open_ldap_configurations")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        - Project reference for the Directory Service.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="secondaryUrls")
     def secondary_urls(self) -> Sequence[_builtins.str]:
         """
@@ -166,6 +183,22 @@ class GetDirectoryServiceV2Result:
         - Information of Service account to connect to the Directory Service.
         """
         return pulumi.get(self, "service_accounts")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> _builtins.bool:
+        """
+        - Flag indicating whether the directory service is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> Sequence[_builtins.str]:
+        """
+        - List of projects with which the directory service is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
 
     @_builtins.property
     @pulumi.getter
@@ -200,8 +233,11 @@ class AwaitableGetDirectoryServiceV2Result(GetDirectoryServiceV2Result):
             last_updated_time=self.last_updated_time,
             name=self.name,
             open_ldap_configurations=self.open_ldap_configurations,
+            project_ext_id=self.project_ext_id,
             secondary_urls=self.secondary_urls,
             service_accounts=self.service_accounts,
+            share_with_all_projects=self.share_with_all_projects,
+            shared_with_projects=self.shared_with_projects,
             url=self.url,
             white_listed_groups=self.white_listed_groups)
 
@@ -242,8 +278,11 @@ def get_directory_service_v2(ext_id: Optional[_builtins.str] = None,
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
         name=pulumi.get(__ret__, 'name'),
         open_ldap_configurations=pulumi.get(__ret__, 'open_ldap_configurations'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         secondary_urls=pulumi.get(__ret__, 'secondary_urls'),
         service_accounts=pulumi.get(__ret__, 'service_accounts'),
+        share_with_all_projects=pulumi.get(__ret__, 'share_with_all_projects'),
+        shared_with_projects=pulumi.get(__ret__, 'shared_with_projects'),
         url=pulumi.get(__ret__, 'url'),
         white_listed_groups=pulumi.get(__ret__, 'white_listed_groups'))
 def get_directory_service_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -281,7 +320,10 @@ def get_directory_service_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]
         last_updated_time=pulumi.get(__response__, 'last_updated_time'),
         name=pulumi.get(__response__, 'name'),
         open_ldap_configurations=pulumi.get(__response__, 'open_ldap_configurations'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         secondary_urls=pulumi.get(__response__, 'secondary_urls'),
         service_accounts=pulumi.get(__response__, 'service_accounts'),
+        share_with_all_projects=pulumi.get(__response__, 'share_with_all_projects'),
+        shared_with_projects=pulumi.get(__response__, 'shared_with_projects'),
         url=pulumi.get(__response__, 'url'),
         white_listed_groups=pulumi.get(__response__, 'white_listed_groups')))

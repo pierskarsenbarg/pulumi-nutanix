@@ -21,6 +21,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Key;
         public readonly ImmutableArray<Outputs.GetCategoriesV2CategoryLinkResult> Links;
         public readonly string OwnerUuid;
+        public readonly string ProjectExtId;
+        public readonly bool SharedWithAllProjects;
+        public readonly ImmutableArray<string> SharedWithProjects;
         public readonly string TenantId;
         public readonly string Type;
         public readonly string Value;
@@ -41,6 +44,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string ownerUuid,
 
+            string projectExtId,
+
+            bool sharedWithAllProjects,
+
+            ImmutableArray<string> sharedWithProjects,
+
             string tenantId,
 
             string type,
@@ -54,6 +63,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Key = key;
             Links = links;
             OwnerUuid = ownerUuid;
+            ProjectExtId = projectExtId;
+            SharedWithAllProjects = sharedWithAllProjects;
+            SharedWithProjects = sharedWithProjects;
             TenantId = tenantId;
             Type = type;
             Value = value;

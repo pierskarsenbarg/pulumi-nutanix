@@ -4,13 +4,13 @@ go 1.27.3
 
 replace (
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20260318212141-5525259d096b
-	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20260415094233-8eed0bdf7e74
+	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20261007104921-b5a0f7a680f3
 )
 
 require (
 	github.com/pulumi/pulumi-terraform-bridge/v3 v3.142.0
 	github.com/pulumi/pulumi/sdk/v3 v3.272.0
-	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20260415094233-8eed0bdf7e74
+	github.com/terraform-providers/terraform-provider-nutanix v1.9.6-0.20261007104921-b5a0f7a680f3
 )
 
 require (
@@ -31,7 +31,7 @@ require (
 	github.com/Masterminds/semver/v3 v3.2.0 // indirect
 	github.com/Masterminds/sprig/v3 v3.2.3 // indirect
 	github.com/Microsoft/go-winio v0.6.2 // indirect
-	github.com/PaesslerAG/gval v1.0.0 // indirect
+	github.com/PaesslerAG/gval v1.2.4 // indirect
 	github.com/PaesslerAG/jsonpath v0.1.1 // indirect
 	github.com/ProtonMail/go-crypto v1.5.2 // indirect
 	github.com/agext/levenshtein v1.2.3 // indirect
@@ -116,12 +116,12 @@ require (
 	github.com/hashicorp/go-retryablehttp v0.7.8 // indirect
 	github.com/hashicorp/go-uuid v1.0.3 // indirect
 	github.com/hashicorp/go-version v1.9.0 // indirect
-	github.com/hashicorp/hc-install v0.9.3 // indirect
+	github.com/hashicorp/hc-install v0.9.4 // indirect
 	github.com/hashicorp/hcl v1.0.1-vault-7 // indirect
 	github.com/hashicorp/hcl/v2 v2.24.0 // indirect
 	github.com/hashicorp/hil v0.0.0-20190212132231-97b3a9cdfa93 // indirect
 	github.com/hashicorp/logutils v1.0.0 // indirect
-	github.com/hashicorp/terraform-exec v0.25.0 // indirect
+	github.com/hashicorp/terraform-exec v0.25.1 // indirect
 	github.com/hashicorp/terraform-json v0.27.2 // indirect
 	github.com/hashicorp/terraform-plugin-go v0.31.0 // indirect
 	github.com/hashicorp/terraform-plugin-log v0.10.0 // indirect
@@ -157,18 +157,19 @@ require (
 	github.com/muesli/cancelreader v0.2.2 // indirect
 	github.com/muesli/termenv v0.16.0 // indirect
 	github.com/natefinch/atomic v1.0.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/clustermgmt-go-client/v4 v4.2.2 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/datapolicies-go-client/v4 v4.2.2 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/dataprotection-go-client/v4 v4.3.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/iam-go-client/v4 v4.1.2-beta.2 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/lifecycle-go-client/v4 v4.2.2 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/microseg-go-client/v4 v4.2.2 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/networking-go-client/v4 v4.3.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/objects-go-client/v4 v4.0.3 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/prism-go-client/v4 v4.3.1 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/security-go-client/v4 v4.1.2 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/vmm-go-client/v4 v4.2.2 // indirect
-	github.com/nutanix/ntnx-api-golang-clients/volumes-go-client/v4 v4.2.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/clustermgmt-go-client/v4 v4.3.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/datapolicies-go-client/v4 v4.3.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/dataprotection-go-client/v4 v4.4.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/iam-go-client/v4 v4.1.3-beta.3 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/lifecycle-go-client/v4 v4.3.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/microseg-go-client/v4 v4.3.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/multidomain-go-client/v4 v4.4.2-beta.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/networking-go-client/v4 v4.4.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/objects-go-client/v4 v4.1.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/prism-go-client/v4 v4.4.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/security-go-client/v4 v4.2.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/vmm-go-client/v4 v4.3.2 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/volumes-go-client/v4 v4.3.2 // indirect
 	github.com/oklog/run v1.1.0 // indirect
 	github.com/olekukonko/cat v0.0.0-20250911104152-50322a0618f6 // indirect
 	github.com/olekukonko/errors v1.1.0 // indirect
@@ -203,7 +204,7 @@ require (
 	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/sirupsen/logrus v1.9.4 // indirect
 	github.com/spf13/afero v1.15.0 // indirect
-	github.com/spf13/cast v1.8.0 // indirect
+	github.com/spf13/cast v1.10.0 // indirect
 	github.com/spf13/cobra v1.10.2 // indirect
 	github.com/spf13/pflag v1.0.10 // indirect
 	github.com/spiffe/go-spiffe/v2 v2.8.1 // indirect

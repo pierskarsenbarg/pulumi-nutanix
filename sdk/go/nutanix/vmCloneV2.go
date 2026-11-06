@@ -55,17 +55,18 @@ type VmCloneV2 struct {
 	ApcConfigs VmCloneV2ApcConfigArrayOutput `pulumi:"apcConfigs"`
 	BiosUuid   pulumi.StringOutput           `pulumi:"biosUuid"`
 	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootConfigs        VmCloneV2BootConfigArrayOutput `pulumi:"bootConfigs"`
-	Categories         VmCloneV2CategoryArrayOutput   `pulumi:"categories"`
-	CdRoms             VmCloneV2CdRomArrayOutput      `pulumi:"cdRoms"`
-	Clusters           VmCloneV2ClusterArrayOutput    `pulumi:"clusters"`
-	CreateTime         pulumi.StringOutput            `pulumi:"createTime"`
-	Description        pulumi.StringOutput            `pulumi:"description"`
-	Disks              VmCloneV2DiskArrayOutput       `pulumi:"disks"`
-	EnabledCpuFeatures pulumi.StringArrayOutput       `pulumi:"enabledCpuFeatures"`
-	ExtId              pulumi.StringOutput            `pulumi:"extId"`
-	GenerationUuid     pulumi.StringOutput            `pulumi:"generationUuid"`
-	Gpuses             VmCloneV2GpusArrayOutput       `pulumi:"gpuses"`
+	BootConfigs                     VmCloneV2BootConfigArrayOutput                 `pulumi:"bootConfigs"`
+	Categories                      VmCloneV2CategoryArrayOutput                   `pulumi:"categories"`
+	CdRoms                          VmCloneV2CdRomArrayOutput                      `pulumi:"cdRoms"`
+	Clusters                        VmCloneV2ClusterArrayOutput                    `pulumi:"clusters"`
+	CreateTime                      pulumi.StringOutput                            `pulumi:"createTime"`
+	Description                     pulumi.StringOutput                            `pulumi:"description"`
+	Disks                           VmCloneV2DiskArrayOutput                       `pulumi:"disks"`
+	EnabledCpuFeatures              pulumi.StringArrayOutput                       `pulumi:"enabledCpuFeatures"`
+	ExtId                           pulumi.StringOutput                            `pulumi:"extId"`
+	GenerationUuid                  pulumi.StringOutput                            `pulumi:"generationUuid"`
+	Gpuses                          VmCloneV2GpusArrayOutput                       `pulumi:"gpuses"`
+	GuestCustomizationProfileConfig VmCloneV2GuestCustomizationProfileConfigOutput `pulumi:"guestCustomizationProfileConfig"`
 	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations       VmCloneV2GuestCustomizationArrayOutput `pulumi:"guestCustomizations"`
 	GuestTools                VmCloneV2GuestToolArrayOutput          `pulumi:"guestTools"`
@@ -144,17 +145,18 @@ type vmCloneV2State struct {
 	ApcConfigs []VmCloneV2ApcConfig `pulumi:"apcConfigs"`
 	BiosUuid   *string              `pulumi:"biosUuid"`
 	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootConfigs        []VmCloneV2BootConfig `pulumi:"bootConfigs"`
-	Categories         []VmCloneV2Category   `pulumi:"categories"`
-	CdRoms             []VmCloneV2CdRom      `pulumi:"cdRoms"`
-	Clusters           []VmCloneV2Cluster    `pulumi:"clusters"`
-	CreateTime         *string               `pulumi:"createTime"`
-	Description        *string               `pulumi:"description"`
-	Disks              []VmCloneV2Disk       `pulumi:"disks"`
-	EnabledCpuFeatures []string              `pulumi:"enabledCpuFeatures"`
-	ExtId              *string               `pulumi:"extId"`
-	GenerationUuid     *string               `pulumi:"generationUuid"`
-	Gpuses             []VmCloneV2Gpus       `pulumi:"gpuses"`
+	BootConfigs                     []VmCloneV2BootConfig                     `pulumi:"bootConfigs"`
+	Categories                      []VmCloneV2Category                       `pulumi:"categories"`
+	CdRoms                          []VmCloneV2CdRom                          `pulumi:"cdRoms"`
+	Clusters                        []VmCloneV2Cluster                        `pulumi:"clusters"`
+	CreateTime                      *string                                   `pulumi:"createTime"`
+	Description                     *string                                   `pulumi:"description"`
+	Disks                           []VmCloneV2Disk                           `pulumi:"disks"`
+	EnabledCpuFeatures              []string                                  `pulumi:"enabledCpuFeatures"`
+	ExtId                           *string                                   `pulumi:"extId"`
+	GenerationUuid                  *string                                   `pulumi:"generationUuid"`
+	Gpuses                          []VmCloneV2Gpus                           `pulumi:"gpuses"`
+	GuestCustomizationProfileConfig *VmCloneV2GuestCustomizationProfileConfig `pulumi:"guestCustomizationProfileConfig"`
 	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations       []VmCloneV2GuestCustomization `pulumi:"guestCustomizations"`
 	GuestTools                []VmCloneV2GuestTool          `pulumi:"guestTools"`
@@ -201,17 +203,18 @@ type VmCloneV2State struct {
 	ApcConfigs VmCloneV2ApcConfigArrayInput
 	BiosUuid   pulumi.StringPtrInput
 	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootConfigs        VmCloneV2BootConfigArrayInput
-	Categories         VmCloneV2CategoryArrayInput
-	CdRoms             VmCloneV2CdRomArrayInput
-	Clusters           VmCloneV2ClusterArrayInput
-	CreateTime         pulumi.StringPtrInput
-	Description        pulumi.StringPtrInput
-	Disks              VmCloneV2DiskArrayInput
-	EnabledCpuFeatures pulumi.StringArrayInput
-	ExtId              pulumi.StringPtrInput
-	GenerationUuid     pulumi.StringPtrInput
-	Gpuses             VmCloneV2GpusArrayInput
+	BootConfigs                     VmCloneV2BootConfigArrayInput
+	Categories                      VmCloneV2CategoryArrayInput
+	CdRoms                          VmCloneV2CdRomArrayInput
+	Clusters                        VmCloneV2ClusterArrayInput
+	CreateTime                      pulumi.StringPtrInput
+	Description                     pulumi.StringPtrInput
+	Disks                           VmCloneV2DiskArrayInput
+	EnabledCpuFeatures              pulumi.StringArrayInput
+	ExtId                           pulumi.StringPtrInput
+	GenerationUuid                  pulumi.StringPtrInput
+	Gpuses                          VmCloneV2GpusArrayInput
+	GuestCustomizationProfileConfig VmCloneV2GuestCustomizationProfileConfigPtrInput
 	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations       VmCloneV2GuestCustomizationArrayInput
 	GuestTools                VmCloneV2GuestToolArrayInput
@@ -266,7 +269,8 @@ func VmCloneV2Exists(ctx *pulumi.Context,
 
 type vmCloneV2Args struct {
 	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootConfigs []VmCloneV2BootConfig `pulumi:"bootConfigs"`
+	BootConfigs                     []VmCloneV2BootConfig                     `pulumi:"bootConfigs"`
+	GuestCustomizationProfileConfig *VmCloneV2GuestCustomizationProfileConfig `pulumi:"guestCustomizationProfileConfig"`
 	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations []VmCloneV2GuestCustomization `pulumi:"guestCustomizations"`
 	MemorySizeBytes     *int                          `pulumi:"memorySizeBytes"`
@@ -287,7 +291,8 @@ type vmCloneV2Args struct {
 // The set of arguments for constructing a VmCloneV2 resource.
 type VmCloneV2Args struct {
 	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootConfigs VmCloneV2BootConfigArrayInput
+	BootConfigs                     VmCloneV2BootConfigArrayInput
+	GuestCustomizationProfileConfig VmCloneV2GuestCustomizationProfileConfigPtrInput
 	// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
 	GuestCustomizations VmCloneV2GuestCustomizationArrayInput
 	MemorySizeBytes     pulumi.IntPtrInput
@@ -443,6 +448,12 @@ func (o VmCloneV2Output) GenerationUuid() pulumi.StringOutput {
 
 func (o VmCloneV2Output) Gpuses() VmCloneV2GpusArrayOutput {
 	return o.ApplyT(func(v *VmCloneV2) VmCloneV2GpusArrayOutput { return v.Gpuses }).(VmCloneV2GpusArrayOutput)
+}
+
+func (o VmCloneV2Output) GuestCustomizationProfileConfig() VmCloneV2GuestCustomizationProfileConfigOutput {
+	return o.ApplyT(func(v *VmCloneV2) VmCloneV2GuestCustomizationProfileConfigOutput {
+		return v.GuestCustomizationProfileConfig
+	}).(VmCloneV2GuestCustomizationProfileConfigOutput)
 }
 
 // - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.

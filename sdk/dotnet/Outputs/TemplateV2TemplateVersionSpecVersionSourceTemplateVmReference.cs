@@ -15,15 +15,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class TemplateV2TemplateVersionSpecVersionSourceTemplateVmReference
     {
         public readonly string ExtId;
+        public readonly Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile? GuestCustomizationProfile;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization> GuestCustomizations;
 
         [OutputConstructor]
         private TemplateV2TemplateVersionSpecVersionSourceTemplateVmReference(
             string extId,
 
+            Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfile? guestCustomizationProfile,
+
             ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomization> guestCustomizations)
         {
             ExtId = extId;
+            GuestCustomizationProfile = guestCustomizationProfile;
             GuestCustomizations = guestCustomizations;
         }
     }

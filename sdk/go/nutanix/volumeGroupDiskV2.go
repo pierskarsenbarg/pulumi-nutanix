@@ -65,6 +65,8 @@ import (
 //
 // ```
 // <!--End PulumiCodeChooser -->
+//
+// > **Volume Group disk workflow:** Create the disk with <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> and attach it to a VM with <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span>.
 type VolumeGroupDiskV2 struct {
 	pulumi.CustomResourceState
 
@@ -80,7 +82,9 @@ type VolumeGroupDiskV2 struct {
 	ExtId pulumi.StringOutput `pulumi:"extId"`
 	// - Index of the disk in a Volume Group. This field is optional and immutable.
 	Index pulumi.IntOutput `pulumi:"index"`
-	// The external identifier of the volume group.
+	// The ID of the storage container.
+	StorageContainerId pulumi.StringOutput `pulumi:"storageContainerId"`
+	// -(Required) The external identifier of the Volume Group.
 	VolumeGroupExtId pulumi.StringOutput `pulumi:"volumeGroupExtId"`
 }
 
@@ -135,7 +139,9 @@ type volumeGroupDiskV2State struct {
 	ExtId *string `pulumi:"extId"`
 	// - Index of the disk in a Volume Group. This field is optional and immutable.
 	Index *int `pulumi:"index"`
-	// The external identifier of the volume group.
+	// The ID of the storage container.
+	StorageContainerId *string `pulumi:"storageContainerId"`
+	// -(Required) The external identifier of the Volume Group.
 	VolumeGroupExtId *string `pulumi:"volumeGroupExtId"`
 }
 
@@ -152,7 +158,9 @@ type VolumeGroupDiskV2State struct {
 	ExtId pulumi.StringPtrInput
 	// - Index of the disk in a Volume Group. This field is optional and immutable.
 	Index pulumi.IntPtrInput
-	// The external identifier of the volume group.
+	// The ID of the storage container.
+	StorageContainerId pulumi.StringPtrInput
+	// -(Required) The external identifier of the Volume Group.
 	VolumeGroupExtId pulumi.StringPtrInput
 }
 
@@ -177,7 +185,7 @@ type volumeGroupDiskV2Args struct {
 	DiskStorageFeatures []VolumeGroupDiskV2DiskStorageFeature `pulumi:"diskStorageFeatures"`
 	// - Index of the disk in a Volume Group. This field is optional and immutable.
 	Index *int `pulumi:"index"`
-	// The external identifier of the volume group.
+	// -(Required) The external identifier of the Volume Group.
 	VolumeGroupExtId string `pulumi:"volumeGroupExtId"`
 }
 
@@ -193,7 +201,7 @@ type VolumeGroupDiskV2Args struct {
 	DiskStorageFeatures VolumeGroupDiskV2DiskStorageFeatureArrayInput
 	// - Index of the disk in a Volume Group. This field is optional and immutable.
 	Index pulumi.IntPtrInput
-	// The external identifier of the volume group.
+	// -(Required) The external identifier of the Volume Group.
 	VolumeGroupExtId pulumi.StringInput
 }
 
@@ -318,7 +326,12 @@ func (o VolumeGroupDiskV2Output) Index() pulumi.IntOutput {
 	return o.ApplyT(func(v *VolumeGroupDiskV2) pulumi.IntOutput { return v.Index }).(pulumi.IntOutput)
 }
 
-// The external identifier of the volume group.
+// The ID of the storage container.
+func (o VolumeGroupDiskV2Output) StorageContainerId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VolumeGroupDiskV2) pulumi.StringOutput { return v.StorageContainerId }).(pulumi.StringOutput)
+}
+
+// -(Required) The external identifier of the Volume Group.
 func (o VolumeGroupDiskV2Output) VolumeGroupExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeGroupDiskV2) pulumi.StringOutput { return v.VolumeGroupExtId }).(pulumi.StringOutput)
 }

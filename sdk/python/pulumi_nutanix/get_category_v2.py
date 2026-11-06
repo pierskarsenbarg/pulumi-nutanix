@@ -27,7 +27,7 @@ class GetCategoryV2Result:
     """
     A collection of values returned by getCategoryV2.
     """
-    def __init__(__self__, associations=None, description=None, detailed_associations=None, expand=None, ext_id=None, id=None, key=None, links=None, owner_uuid=None, tenant_id=None, type=None, value=None):
+    def __init__(__self__, associations=None, description=None, detailed_associations=None, expand=None, ext_id=None, id=None, key=None, links=None, owner_uuid=None, project_ext_id=None, shared_with_all_projects=None, shared_with_projects=None, tenant_id=None, type=None, value=None):
         if associations and not isinstance(associations, list):
             raise TypeError("Expected argument 'associations' to be a list")
         pulumi.set(__self__, "associations", associations)
@@ -55,6 +55,15 @@ class GetCategoryV2Result:
         if owner_uuid and not isinstance(owner_uuid, str):
             raise TypeError("Expected argument 'owner_uuid' to be a str")
         pulumi.set(__self__, "owner_uuid", owner_uuid)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if shared_with_all_projects and not isinstance(shared_with_all_projects, bool):
+            raise TypeError("Expected argument 'shared_with_all_projects' to be a bool")
+        pulumi.set(__self__, "shared_with_all_projects", shared_with_all_projects)
+        if shared_with_projects and not isinstance(shared_with_projects, list):
+            raise TypeError("Expected argument 'shared_with_projects' to be a list")
+        pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if tenant_id and not isinstance(tenant_id, str):
             raise TypeError("Expected argument 'tenant_id' to be a str")
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -132,6 +141,27 @@ class GetCategoryV2Result:
         return pulumi.get(self, "owner_uuid")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        The external identifier of the project to which the category belongs.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithAllProjects")
+    def shared_with_all_projects(self) -> _builtins.bool:
+        return pulumi.get(self, "shared_with_all_projects")
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> Sequence[_builtins.str]:
+        """
+        A set of project external identifiers with which the category is shared.
+        """
+        return pulumi.get(self, "shared_with_projects")
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
         """
@@ -172,6 +202,9 @@ class AwaitableGetCategoryV2Result(GetCategoryV2Result):
             key=self.key,
             links=self.links,
             owner_uuid=self.owner_uuid,
+            project_ext_id=self.project_ext_id,
+            shared_with_all_projects=self.shared_with_all_projects,
+            shared_with_projects=self.shared_with_projects,
             tenant_id=self.tenant_id,
             type=self.type,
             value=self.value)
@@ -216,6 +249,9 @@ def get_category_v2(expand: Optional[_builtins.str] = None,
         key=pulumi.get(__ret__, 'key'),
         links=pulumi.get(__ret__, 'links'),
         owner_uuid=pulumi.get(__ret__, 'owner_uuid'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
+        shared_with_all_projects=pulumi.get(__ret__, 'shared_with_all_projects'),
+        shared_with_projects=pulumi.get(__ret__, 'shared_with_projects'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         type=pulumi.get(__ret__, 'type'),
         value=pulumi.get(__ret__, 'value'))
@@ -257,6 +293,9 @@ def get_category_v2_output(expand: pulumi.Input[Optional[Optional[_builtins.str]
         key=pulumi.get(__response__, 'key'),
         links=pulumi.get(__response__, 'links'),
         owner_uuid=pulumi.get(__response__, 'owner_uuid'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
+        shared_with_all_projects=pulumi.get(__response__, 'shared_with_all_projects'),
+        shared_with_projects=pulumi.get(__response__, 'shared_with_projects'),
         tenant_id=pulumi.get(__response__, 'tenant_id'),
         type=pulumi.get(__response__, 'type'),
         value=pulumi.get(__response__, 'value')))

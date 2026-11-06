@@ -65,6 +65,7 @@ export class LcmPrechecksV2 extends pulumi.CustomResource {
         return obj['__pulumiType'] === LcmPrechecksV2.__pulumiType;
     }
 
+    declare public readonly dryRun: pulumi.Output<boolean | undefined>;
     /**
      * List of entity update objects for getting recommendations.
      */
@@ -96,6 +97,7 @@ export class LcmPrechecksV2 extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as LcmPrechecksV2State | undefined;
+            resourceInputs["dryRun"] = state?.dryRun;
             resourceInputs["entityUpdateSpecs"] = state?.entityUpdateSpecs;
             resourceInputs["extId"] = state?.extId;
             resourceInputs["managementServer"] = state?.managementServer;
@@ -106,6 +108,7 @@ export class LcmPrechecksV2 extends pulumi.CustomResource {
             if (args?.entityUpdateSpecs === undefined && !opts.urn) {
                 throw new Error("Missing required property 'entityUpdateSpecs'");
             }
+            resourceInputs["dryRun"] = args?.dryRun;
             resourceInputs["entityUpdateSpecs"] = args?.entityUpdateSpecs;
             resourceInputs["managementServer"] = args?.managementServer;
             resourceInputs["skippedPrecheckFlags"] = args?.skippedPrecheckFlags;
@@ -121,6 +124,7 @@ export class LcmPrechecksV2 extends pulumi.CustomResource {
  * Input properties used for looking up and filtering LcmPrechecksV2 resources.
  */
 export interface LcmPrechecksV2State {
+    dryRun?: pulumi.Input<boolean | undefined>;
     /**
      * List of entity update objects for getting recommendations.
      */
@@ -144,6 +148,7 @@ export interface LcmPrechecksV2State {
  * The set of arguments for constructing a LcmPrechecksV2 resource.
  */
 export interface LcmPrechecksV2Args {
+    dryRun?: pulumi.Input<boolean | undefined>;
     /**
      * List of entity update objects for getting recommendations.
      */

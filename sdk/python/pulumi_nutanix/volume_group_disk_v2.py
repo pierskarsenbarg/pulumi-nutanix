@@ -32,7 +32,7 @@ class VolumeGroupDiskV2Args:
 
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskDataSourceReferenceArgs']]] disk_data_source_references: -(Required) Disk Data Source Reference.
         :param pulumi.Input[_builtins.int] disk_size_bytes: - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
-        :param pulumi.Input[_builtins.str] volume_group_ext_id: The external identifier of the volume group.
+        :param pulumi.Input[_builtins.str] volume_group_ext_id: -(Required) The external identifier of the Volume Group.
         :param pulumi.Input[_builtins.str] description: - Volume Disk description.
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         :param pulumi.Input[_builtins.int] index: - Index of the disk in a Volume Group. This field is optional and immutable.
@@ -75,7 +75,7 @@ class VolumeGroupDiskV2Args:
     @pulumi.getter(name="volumeGroupExtId")
     def volume_group_ext_id(self) -> pulumi.Input[_builtins.str]:
         """
-        The external identifier of the volume group.
+        -(Required) The external identifier of the Volume Group.
         """
         return pulumi.get(self, "volume_group_ext_id")
 
@@ -129,6 +129,7 @@ class _VolumeGroupDiskV2State:
                  disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  index: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage_container_id: pulumi.Input[Optional[_builtins.str]] = None,
                  volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering VolumeGroupDiskV2 resources.
@@ -139,7 +140,8 @@ class _VolumeGroupDiskV2State:
         :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupDiskV2DiskStorageFeatureArgs']]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.int] index: - Index of the disk in a Volume Group. This field is optional and immutable.
-        :param pulumi.Input[_builtins.str] volume_group_ext_id: The external identifier of the volume group.
+        :param pulumi.Input[_builtins.str] storage_container_id: The ID of the storage container.
+        :param pulumi.Input[_builtins.str] volume_group_ext_id: -(Required) The external identifier of the Volume Group.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -153,6 +155,8 @@ class _VolumeGroupDiskV2State:
             pulumi.set(__self__, "ext_id", ext_id)
         if index is not None:
             pulumi.set(__self__, "index", index)
+        if storage_container_id is not None:
+            pulumi.set(__self__, "storage_container_id", storage_container_id)
         if volume_group_ext_id is not None:
             pulumi.set(__self__, "volume_group_ext_id", volume_group_ext_id)
 
@@ -229,10 +233,22 @@ class _VolumeGroupDiskV2State:
         pulumi.set(self, "index", value)
 
     @_builtins.property
+    @pulumi.getter(name="storageContainerId")
+    def storage_container_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The ID of the storage container.
+        """
+        return pulumi.get(self, "storage_container_id")
+
+    @storage_container_id.setter
+    def storage_container_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "storage_container_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="volumeGroupExtId")
     def volume_group_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The external identifier of the volume group.
+        -(Required) The external identifier of the Volume Group.
         """
         return pulumi.get(self, "volume_group_ext_id")
 
@@ -287,6 +303,8 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         ```
         <!--End PulumiCodeChooser -->
 
+        > **Volume Group disk workflow:** Create the disk with <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> and attach it to a VM with <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span>.
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -295,7 +313,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] disk_size_bytes: - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict', 'outputs.VolumeGroupDiskV2DiskStorageFeature']]]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         :param pulumi.Input[_builtins.int] index: - Index of the disk in a Volume Group. This field is optional and immutable.
-        :param pulumi.Input[_builtins.str] volume_group_ext_id: The external identifier of the volume group.
+        :param pulumi.Input[_builtins.str] volume_group_ext_id: -(Required) The external identifier of the Volume Group.
         """
         ...
     @overload
@@ -335,6 +353,8 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
             }])
         ```
         <!--End PulumiCodeChooser -->
+
+        > **Volume Group disk workflow:** Create the disk with <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> and attach it to a VM with <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span>.
 
 
         :param str resource_name: The name of the resource.
@@ -380,6 +400,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
                 raise TypeError("Missing required property 'volume_group_ext_id'")
             __props__.__dict__["volume_group_ext_id"] = volume_group_ext_id
             __props__.__dict__["ext_id"] = None
+            __props__.__dict__["storage_container_id"] = None
         super(VolumeGroupDiskV2, __self__).__init__(
             'nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2',
             resource_name,
@@ -396,6 +417,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
             disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict', 'outputs.VolumeGroupDiskV2DiskStorageFeature']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             index: pulumi.Input[Optional[_builtins.int]] = None,
+            storage_container_id: pulumi.Input[Optional[_builtins.str]] = None,
             volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'VolumeGroupDiskV2':
         """
         Get an existing VolumeGroupDiskV2 resource's state with the given name, id, and optional extra
@@ -410,7 +432,8 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict', 'outputs.VolumeGroupDiskV2DiskStorageFeature']]]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
         :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param pulumi.Input[_builtins.int] index: - Index of the disk in a Volume Group. This field is optional and immutable.
-        :param pulumi.Input[_builtins.str] volume_group_ext_id: The external identifier of the volume group.
+        :param pulumi.Input[_builtins.str] storage_container_id: The ID of the storage container.
+        :param pulumi.Input[_builtins.str] volume_group_ext_id: -(Required) The external identifier of the Volume Group.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -422,6 +445,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         __props__.__dict__["disk_storage_features"] = disk_storage_features
         __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["index"] = index
+        __props__.__dict__["storage_container_id"] = storage_container_id
         __props__.__dict__["volume_group_ext_id"] = volume_group_ext_id
         return VolumeGroupDiskV2(resource_name, opts=opts, __props__=__props__)
 
@@ -434,6 +458,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
             disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupDiskV2DiskStorageFeatureArgs', 'VolumeGroupDiskV2DiskStorageFeatureArgsDict', 'outputs.VolumeGroupDiskV2DiskStorageFeature']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             index: pulumi.Input[Optional[_builtins.int]] = None,
+            storage_container_id: pulumi.Input[Optional[_builtins.str]] = None,
             volume_group_ext_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["description"] = description
@@ -442,6 +467,7 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         __props__["diskStorageFeatures"] = disk_storage_features
         __props__["extId"] = ext_id
         __props__["index"] = index
+        __props__["storageContainerId"] = storage_container_id
         __props__["volumeGroupExtId"] = volume_group_ext_id
         return pulumi.runtime.exists_resource(None, 'nutanix:index/volumeGroupDiskV2:VolumeGroupDiskV2', id, __props__, opts or pulumi.ResourceOptions())
 
@@ -494,10 +520,18 @@ class VolumeGroupDiskV2(pulumi.CustomResource):
         return pulumi.get(self, "index")
 
     @_builtins.property
+    @pulumi.getter(name="storageContainerId")
+    def storage_container_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The ID of the storage container.
+        """
+        return pulumi.get(self, "storage_container_id")
+
+    @_builtins.property
     @pulumi.getter(name="volumeGroupExtId")
     def volume_group_ext_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The external identifier of the volume group.
+        -(Required) The external identifier of the Volume Group.
         """
         return pulumi.get(self, "volume_group_ext_id")
 

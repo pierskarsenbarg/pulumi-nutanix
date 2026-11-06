@@ -85,6 +85,8 @@ type AddressGroupsV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Reference to policy associated with Address Group.
 	PolicyReferences pulumi.StringArrayOutput `pulumi:"policyReferences"`
+	// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 }
@@ -135,6 +137,8 @@ type addressGroupsV2State struct {
 	Name *string `pulumi:"name"`
 	// Reference to policy associated with Address Group.
 	PolicyReferences []string `pulumi:"policyReferences"`
+	// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId *string `pulumi:"tenantId"`
 }
@@ -156,6 +160,8 @@ type AddressGroupsV2State struct {
 	Name pulumi.StringPtrInput
 	// Reference to policy associated with Address Group.
 	PolicyReferences pulumi.StringArrayInput
+	// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringPtrInput
 }
@@ -179,6 +185,8 @@ type addressGroupsV2Args struct {
 	Ipv4Addresses []AddressGroupsV2Ipv4Address `pulumi:"ipv4Addresses"`
 	// - (Required) Name of the Address group
 	Name *string `pulumi:"name"`
+	// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 }
 
 // The set of arguments for constructing a AddressGroupsV2 resource.
@@ -191,6 +199,8 @@ type AddressGroupsV2Args struct {
 	Ipv4Addresses AddressGroupsV2Ipv4AddressArrayInput
 	// - (Required) Name of the Address group
 	Name pulumi.StringPtrInput
+	// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 }
 
 func (AddressGroupsV2Args) ElementType() reflect.Type {
@@ -318,6 +328,11 @@ func (o AddressGroupsV2Output) Name() pulumi.StringOutput {
 // Reference to policy associated with Address Group.
 func (o AddressGroupsV2Output) PolicyReferences() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *AddressGroupsV2) pulumi.StringArrayOutput { return v.PolicyReferences }).(pulumi.StringArrayOutput)
+}
+
+// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+func (o AddressGroupsV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *AddressGroupsV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

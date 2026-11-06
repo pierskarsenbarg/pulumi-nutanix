@@ -22,7 +22,7 @@ import * as utilities from "./utilities";
  *
  * ## API Reference
  *
- * See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/SSLCertificate/operation/getSSLCertificate)
+ * See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/SSLCertificate/operation/getSSLCertificate)
  */
 export function getSslCertificateV2(args: GetSslCertificateV2Args, opts?: pulumi.InvokeOptions): Promise<GetSslCertificateV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -80,7 +80,7 @@ export interface GetSslCertificateV2Result {
  *
  * ## API Reference
  *
- * See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/SSLCertificate/operation/getSSLCertificate)
+ * See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/SSLCertificate/operation/getSSLCertificate)
  */
 export function getSslCertificateV2Output(args: GetSslCertificateV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSslCertificateV2Result> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

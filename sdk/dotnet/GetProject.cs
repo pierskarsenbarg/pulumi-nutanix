@@ -1338,6 +1338,16 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// List of directory services associated with the project.
+        /// * `directory_reference_list.#.uuid` - The UUID of a directory service.
+        /// * `directory_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`directoryService`" pulumi-lang-dotnet="`DirectoryService`" pulumi-lang-go="`directoryService`" pulumi-lang-python="`directory_service`" pulumi-lang-yaml="`directoryService`" pulumi-lang-java="`directoryService`" pulumi-lang-hcl="`directory_service`"&gt;`directoryService`&lt;/span&gt;
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectDirectoryReferenceListResult> DirectoryReferenceLists;
+        /// <summary>
+        /// Flag indicating whether the directory services and identity providers associated with the project are shortlisted.
+        /// </summary>
+        public readonly bool EnableDirectoryAndIdentityProviderShortlist;
+        /// <summary>
         /// List of environments associated with the project.
         /// * `environment_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`"&gt;`environment`&lt;/span&gt;
         /// * `environment_reference_list.#.uuid` - The UUID of an environment.
@@ -1368,6 +1378,12 @@ namespace PiersKarsenbarg.Nutanix
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// List of identity providers associated with the project.
+        /// * `identity_providers_reference_list.#.uuid` - The UUID of an identity provider.
+        /// * `identity_providers_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`identityProvider`" pulumi-lang-dotnet="`IdentityProvider`" pulumi-lang-go="`identityProvider`" pulumi-lang-python="`identity_provider`" pulumi-lang-yaml="`identityProvider`" pulumi-lang-java="`identityProvider`" pulumi-lang-hcl="`identity_provider`"&gt;`identityProvider`&lt;/span&gt;
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectIdentityProvidersReferenceListResult> IdentityProvidersReferenceLists;
         public readonly bool IsDefault;
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
@@ -1427,6 +1443,10 @@ namespace PiersKarsenbarg.Nutanix
 
             string description,
 
+            ImmutableArray<Outputs.GetProjectDirectoryReferenceListResult> directoryReferenceLists,
+
+            bool enableDirectoryAndIdentityProviderShortlist,
+
             ImmutableArray<Outputs.GetProjectEnvironmentReferenceListResult> environmentReferenceLists,
 
             ImmutableArray<Outputs.GetProjectExternalNetworkListResult> externalNetworkLists,
@@ -1434,6 +1454,8 @@ namespace PiersKarsenbarg.Nutanix
             ImmutableArray<Outputs.GetProjectExternalUserGroupReferenceListResult> externalUserGroupReferenceLists,
 
             string id,
+
+            ImmutableArray<Outputs.GetProjectIdentityProvidersReferenceListResult> identityProvidersReferenceLists,
 
             bool isDefault,
 
@@ -1469,10 +1491,13 @@ namespace PiersKarsenbarg.Nutanix
             DefaultEnvironmentReferences = defaultEnvironmentReferences;
             DefaultSubnetReference = defaultSubnetReference;
             Description = description;
+            DirectoryReferenceLists = directoryReferenceLists;
+            EnableDirectoryAndIdentityProviderShortlist = enableDirectoryAndIdentityProviderShortlist;
             EnvironmentReferenceLists = environmentReferenceLists;
             ExternalNetworkLists = externalNetworkLists;
             ExternalUserGroupReferenceLists = externalUserGroupReferenceLists;
             Id = id;
+            IdentityProvidersReferenceLists = identityProvidersReferenceLists;
             IsDefault = isDefault;
             Metadata = metadata;
             Name = name;

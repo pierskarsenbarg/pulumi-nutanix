@@ -29,14 +29,18 @@ type Project struct {
 	DefaultEnvironmentReference ProjectDefaultEnvironmentReferenceOutput `pulumi:"defaultEnvironmentReference"`
 	DefaultSubnetReference      ProjectDefaultSubnetReferenceOutput      `pulumi:"defaultSubnetReference"`
 	// A description for project.
-	Description pulumi.StringOutput `pulumi:"description"`
+	Description             pulumi.StringOutput                      `pulumi:"description"`
+	DirectoryReferenceLists ProjectDirectoryReferenceListArrayOutput `pulumi:"directoryReferenceLists"`
 	// flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
-	EnableCollab                    pulumi.BoolPtrOutput                             `pulumi:"enableCollab"`
-	EnvironmentReferenceLists       ProjectEnvironmentReferenceListArrayOutput       `pulumi:"environmentReferenceLists"`
-	ExternalNetworkLists            ProjectExternalNetworkListArrayOutput            `pulumi:"externalNetworkLists"`
-	ExternalUserGroupReferenceLists ProjectExternalUserGroupReferenceListArrayOutput `pulumi:"externalUserGroupReferenceLists"`
-	IsDefault                       pulumi.BoolOutput                                `pulumi:"isDefault"`
-	Metadata                        pulumi.StringMapOutput                           `pulumi:"metadata"`
+	EnableCollab pulumi.BoolPtrOutput `pulumi:"enableCollab"`
+	// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+	EnableDirectoryAndIdentityProviderShortlist pulumi.BoolOutput                                `pulumi:"enableDirectoryAndIdentityProviderShortlist"`
+	EnvironmentReferenceLists                   ProjectEnvironmentReferenceListArrayOutput       `pulumi:"environmentReferenceLists"`
+	ExternalNetworkLists                        ProjectExternalNetworkListArrayOutput            `pulumi:"externalNetworkLists"`
+	ExternalUserGroupReferenceLists             ProjectExternalUserGroupReferenceListArrayOutput `pulumi:"externalUserGroupReferenceLists"`
+	IdentityProvidersReferenceLists             ProjectIdentityProvidersReferenceListArrayOutput `pulumi:"identityProvidersReferenceLists"`
+	IsDefault                                   pulumi.BoolOutput                                `pulumi:"isDefault"`
+	Metadata                                    pulumi.StringMapOutput                           `pulumi:"metadata"`
 	// The name for the project.
 	Name             pulumi.StringOutput    `pulumi:"name"`
 	OwnerReference   pulumi.StringMapOutput `pulumi:"ownerReference"`
@@ -102,14 +106,18 @@ type projectState struct {
 	DefaultEnvironmentReference *ProjectDefaultEnvironmentReference `pulumi:"defaultEnvironmentReference"`
 	DefaultSubnetReference      *ProjectDefaultSubnetReference      `pulumi:"defaultSubnetReference"`
 	// A description for project.
-	Description *string `pulumi:"description"`
+	Description             *string                         `pulumi:"description"`
+	DirectoryReferenceLists []ProjectDirectoryReferenceList `pulumi:"directoryReferenceLists"`
 	// flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
-	EnableCollab                    *bool                                   `pulumi:"enableCollab"`
-	EnvironmentReferenceLists       []ProjectEnvironmentReferenceList       `pulumi:"environmentReferenceLists"`
-	ExternalNetworkLists            []ProjectExternalNetworkList            `pulumi:"externalNetworkLists"`
-	ExternalUserGroupReferenceLists []ProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
-	IsDefault                       *bool                                   `pulumi:"isDefault"`
-	Metadata                        map[string]string                       `pulumi:"metadata"`
+	EnableCollab *bool `pulumi:"enableCollab"`
+	// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+	EnableDirectoryAndIdentityProviderShortlist *bool                                   `pulumi:"enableDirectoryAndIdentityProviderShortlist"`
+	EnvironmentReferenceLists                   []ProjectEnvironmentReferenceList       `pulumi:"environmentReferenceLists"`
+	ExternalNetworkLists                        []ProjectExternalNetworkList            `pulumi:"externalNetworkLists"`
+	ExternalUserGroupReferenceLists             []ProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
+	IdentityProvidersReferenceLists             []ProjectIdentityProvidersReferenceList `pulumi:"identityProvidersReferenceLists"`
+	IsDefault                                   *bool                                   `pulumi:"isDefault"`
+	Metadata                                    map[string]string                       `pulumi:"metadata"`
 	// The name for the project.
 	Name             *string           `pulumi:"name"`
 	OwnerReference   map[string]string `pulumi:"ownerReference"`
@@ -140,14 +148,18 @@ type ProjectState struct {
 	DefaultEnvironmentReference ProjectDefaultEnvironmentReferencePtrInput
 	DefaultSubnetReference      ProjectDefaultSubnetReferencePtrInput
 	// A description for project.
-	Description pulumi.StringPtrInput
+	Description             pulumi.StringPtrInput
+	DirectoryReferenceLists ProjectDirectoryReferenceListArrayInput
 	// flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
-	EnableCollab                    pulumi.BoolPtrInput
-	EnvironmentReferenceLists       ProjectEnvironmentReferenceListArrayInput
-	ExternalNetworkLists            ProjectExternalNetworkListArrayInput
-	ExternalUserGroupReferenceLists ProjectExternalUserGroupReferenceListArrayInput
-	IsDefault                       pulumi.BoolPtrInput
-	Metadata                        pulumi.StringMapInput
+	EnableCollab pulumi.BoolPtrInput
+	// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+	EnableDirectoryAndIdentityProviderShortlist pulumi.BoolPtrInput
+	EnvironmentReferenceLists                   ProjectEnvironmentReferenceListArrayInput
+	ExternalNetworkLists                        ProjectExternalNetworkListArrayInput
+	ExternalUserGroupReferenceLists             ProjectExternalUserGroupReferenceListArrayInput
+	IdentityProvidersReferenceLists             ProjectIdentityProvidersReferenceListArrayInput
+	IsDefault                                   pulumi.BoolPtrInput
+	Metadata                                    pulumi.StringMapInput
 	// The name for the project.
 	Name             pulumi.StringPtrInput
 	OwnerReference   pulumi.StringMapInput
@@ -188,12 +200,16 @@ type projectArgs struct {
 	DefaultEnvironmentReference *ProjectDefaultEnvironmentReference `pulumi:"defaultEnvironmentReference"`
 	DefaultSubnetReference      ProjectDefaultSubnetReference       `pulumi:"defaultSubnetReference"`
 	// A description for project.
-	Description string `pulumi:"description"`
+	Description             string                          `pulumi:"description"`
+	DirectoryReferenceLists []ProjectDirectoryReferenceList `pulumi:"directoryReferenceLists"`
 	// flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
-	EnableCollab                    *bool                                   `pulumi:"enableCollab"`
-	EnvironmentReferenceLists       []ProjectEnvironmentReferenceList       `pulumi:"environmentReferenceLists"`
-	ExternalNetworkLists            []ProjectExternalNetworkList            `pulumi:"externalNetworkLists"`
-	ExternalUserGroupReferenceLists []ProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
+	EnableCollab *bool `pulumi:"enableCollab"`
+	// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+	EnableDirectoryAndIdentityProviderShortlist *bool                                   `pulumi:"enableDirectoryAndIdentityProviderShortlist"`
+	EnvironmentReferenceLists                   []ProjectEnvironmentReferenceList       `pulumi:"environmentReferenceLists"`
+	ExternalNetworkLists                        []ProjectExternalNetworkList            `pulumi:"externalNetworkLists"`
+	ExternalUserGroupReferenceLists             []ProjectExternalUserGroupReferenceList `pulumi:"externalUserGroupReferenceLists"`
+	IdentityProvidersReferenceLists             []ProjectIdentityProvidersReferenceList `pulumi:"identityProvidersReferenceLists"`
 	// The name for the project.
 	Name             *string           `pulumi:"name"`
 	OwnerReference   map[string]string `pulumi:"ownerReference"`
@@ -224,12 +240,16 @@ type ProjectArgs struct {
 	DefaultEnvironmentReference ProjectDefaultEnvironmentReferencePtrInput
 	DefaultSubnetReference      ProjectDefaultSubnetReferenceInput
 	// A description for project.
-	Description pulumi.StringInput
+	Description             pulumi.StringInput
+	DirectoryReferenceLists ProjectDirectoryReferenceListArrayInput
 	// flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
-	EnableCollab                    pulumi.BoolPtrInput
-	EnvironmentReferenceLists       ProjectEnvironmentReferenceListArrayInput
-	ExternalNetworkLists            ProjectExternalNetworkListArrayInput
-	ExternalUserGroupReferenceLists ProjectExternalUserGroupReferenceListArrayInput
+	EnableCollab pulumi.BoolPtrInput
+	// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+	EnableDirectoryAndIdentityProviderShortlist pulumi.BoolPtrInput
+	EnvironmentReferenceLists                   ProjectEnvironmentReferenceListArrayInput
+	ExternalNetworkLists                        ProjectExternalNetworkListArrayInput
+	ExternalUserGroupReferenceLists             ProjectExternalUserGroupReferenceListArrayInput
+	IdentityProvidersReferenceLists             ProjectIdentityProvidersReferenceListArrayInput
 	// The name for the project.
 	Name             pulumi.StringPtrInput
 	OwnerReference   pulumi.StringMapInput
@@ -373,9 +393,18 @@ func (o ProjectOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *Project) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
+func (o ProjectOutput) DirectoryReferenceLists() ProjectDirectoryReferenceListArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectDirectoryReferenceListArrayOutput { return v.DirectoryReferenceLists }).(ProjectDirectoryReferenceListArrayOutput)
+}
+
 // flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
 func (o ProjectOutput) EnableCollab() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *Project) pulumi.BoolPtrOutput { return v.EnableCollab }).(pulumi.BoolPtrOutput)
+}
+
+// flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+func (o ProjectOutput) EnableDirectoryAndIdentityProviderShortlist() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Project) pulumi.BoolOutput { return v.EnableDirectoryAndIdentityProviderShortlist }).(pulumi.BoolOutput)
 }
 
 func (o ProjectOutput) EnvironmentReferenceLists() ProjectEnvironmentReferenceListArrayOutput {
@@ -390,6 +419,12 @@ func (o ProjectOutput) ExternalUserGroupReferenceLists() ProjectExternalUserGrou
 	return o.ApplyT(func(v *Project) ProjectExternalUserGroupReferenceListArrayOutput {
 		return v.ExternalUserGroupReferenceLists
 	}).(ProjectExternalUserGroupReferenceListArrayOutput)
+}
+
+func (o ProjectOutput) IdentityProvidersReferenceLists() ProjectIdentityProvidersReferenceListArrayOutput {
+	return o.ApplyT(func(v *Project) ProjectIdentityProvidersReferenceListArrayOutput {
+		return v.IdentityProvidersReferenceLists
+	}).(ProjectIdentityProvidersReferenceListArrayOutput)
 }
 
 func (o ProjectOutput) IsDefault() pulumi.BoolOutput {

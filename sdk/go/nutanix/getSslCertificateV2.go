@@ -43,7 +43,7 @@ import (
 //
 // ## API Reference
 //
-// See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/SSLCertificate/operation/getSSLCertificate)
+// See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/SSLCertificate/operation/getSSLCertificate)
 func LookupSslCertificateV2(ctx *pulumi.Context, args *LookupSslCertificateV2Args, opts ...pulumi.InvokeOption) (*LookupSslCertificateV2Result, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSslCertificateV2Result

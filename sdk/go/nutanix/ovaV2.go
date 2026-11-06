@@ -33,9 +33,11 @@ type OvaV2 struct {
 	LastUpdateTime pulumi.StringOutput  `pulumi:"lastUpdateTime"`
 	Links          OvaV2LinkArrayOutput `pulumi:"links"`
 	// -(Required) Name of the OVA.
-	Name      pulumi.StringOutput `pulumi:"name"`
-	ParentVm  pulumi.StringOutput `pulumi:"parentVm"`
-	SizeBytes pulumi.IntOutput    `pulumi:"sizeBytes"`
+	Name     pulumi.StringOutput `pulumi:"name"`
+	ParentVm pulumi.StringOutput `pulumi:"parentVm"`
+	// -(Optional) External identifier of the project associated with the OVA.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
+	SizeBytes    pulumi.IntOutput    `pulumi:"sizeBytes"`
 	// -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
 	Sources  OvaV2SourceArrayOutput `pulumi:"sources"`
 	TenantId pulumi.StringOutput    `pulumi:"tenantId"`
@@ -93,9 +95,11 @@ type ovaV2State struct {
 	LastUpdateTime *string     `pulumi:"lastUpdateTime"`
 	Links          []OvaV2Link `pulumi:"links"`
 	// -(Required) Name of the OVA.
-	Name      *string `pulumi:"name"`
-	ParentVm  *string `pulumi:"parentVm"`
-	SizeBytes *int    `pulumi:"sizeBytes"`
+	Name     *string `pulumi:"name"`
+	ParentVm *string `pulumi:"parentVm"`
+	// -(Optional) External identifier of the project associated with the OVA.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	SizeBytes    *int    `pulumi:"sizeBytes"`
 	// -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
 	Sources  []OvaV2Source `pulumi:"sources"`
 	TenantId *string       `pulumi:"tenantId"`
@@ -121,9 +125,11 @@ type OvaV2State struct {
 	LastUpdateTime pulumi.StringPtrInput
 	Links          OvaV2LinkArrayInput
 	// -(Required) Name of the OVA.
-	Name      pulumi.StringPtrInput
-	ParentVm  pulumi.StringPtrInput
-	SizeBytes pulumi.IntPtrInput
+	Name     pulumi.StringPtrInput
+	ParentVm pulumi.StringPtrInput
+	// -(Optional) External identifier of the project associated with the OVA.
+	ProjectExtId pulumi.StringPtrInput
+	SizeBytes    pulumi.IntPtrInput
 	// -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
 	Sources  OvaV2SourceArrayInput
 	TenantId pulumi.StringPtrInput
@@ -154,6 +160,8 @@ type ovaV2Args struct {
 	DiskFormat *string `pulumi:"diskFormat"`
 	// -(Required) Name of the OVA.
 	Name *string `pulumi:"name"`
+	// -(Optional) External identifier of the project associated with the OVA.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
 	Sources []OvaV2Source `pulumi:"sources"`
 }
@@ -172,6 +180,8 @@ type OvaV2Args struct {
 	DiskFormat pulumi.StringPtrInput
 	// -(Required) Name of the OVA.
 	Name pulumi.StringPtrInput
+	// -(Optional) External identifier of the project associated with the OVA.
+	ProjectExtId pulumi.StringPtrInput
 	// -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
 	Sources OvaV2SourceArrayInput
 }
@@ -310,6 +320,11 @@ func (o OvaV2Output) Name() pulumi.StringOutput {
 
 func (o OvaV2Output) ParentVm() pulumi.StringOutput {
 	return o.ApplyT(func(v *OvaV2) pulumi.StringOutput { return v.ParentVm }).(pulumi.StringOutput)
+}
+
+// -(Optional) External identifier of the project associated with the OVA.
+func (o OvaV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *OvaV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 func (o OvaV2Output) SizeBytes() pulumi.IntOutput {

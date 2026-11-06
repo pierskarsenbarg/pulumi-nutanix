@@ -78,6 +78,8 @@ type LookupVolumeGroupV2Result struct {
 	Links []GetVolumeGroupV2Link `pulumi:"links"`
 	// -(Required) Volume Group name. This is an optional field.
 	Name string `pulumi:"name"`
+	// - External identifier of the project associated with the Volume Group.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED
 	SharingStatus string `pulumi:"sharingStatus"`
 	// - Indicates whether to enable Volume Group load balancing for VM attachments. This cannot be enabled if there are iSCSI client attachments already associated with the Volume Group, and vice-versa. This is an optional field.
@@ -170,6 +172,11 @@ func (o LookupVolumeGroupV2ResultOutput) Links() GetVolumeGroupV2LinkArrayOutput
 // -(Required) Volume Group name. This is an optional field.
 func (o LookupVolumeGroupV2ResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupVolumeGroupV2Result) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// - External identifier of the project associated with the Volume Group.
+func (o LookupVolumeGroupV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupVolumeGroupV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // - Indicates whether the Volume Group can be shared across multiple iSCSI initiators. The mode cannot be changed from SHARED to NOT_SHARED on a Volume Group with multiple attachments. Similarly, a Volume Group cannot be associated with more than one attachment as long as it is in exclusive mode. This is an optional field. Valid values are SHARED, NOT_SHARED

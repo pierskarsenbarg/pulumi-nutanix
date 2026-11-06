@@ -11,43 +11,9 @@ using Pulumi;
 namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
+    /// &gt; **Note:** This resource is in Beta because the underlying Nutanix SDK API is currently in Beta. The resource and its behavior may change in future releases as the SDK API evolves.
+    /// 
     /// Provides a resource to Create a Directory Service.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// &lt;!--Start PulumiCodeChooser --&gt;
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Nutanix = PiersKarsenbarg.Nutanix;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     // Add Directory Service .
-    ///     var active_directory = new Nutanix.DirectoryServicesV2("active-directory", new()
-    ///     {
-    ///         Name = "example_active_directory",
-    ///         Url = "ldap://10.xx.xx.xx:xxxx",
-    ///         DirectoryType = "ACTIVE_DIRECTORY",
-    ///         DomainName = "nutanix.com",
-    ///         ServiceAccounts = new[]
-    ///         {
-    ///             new Nutanix.Inputs.DirectoryServicesV2ServiceAccountArgs
-    ///             {
-    ///                 Username = "username",
-    ///                 Password = "password",
-    ///             },
-    ///         },
-    ///         WhiteListedGroups = new[]
-    ///         {
-    ///             "example",
-    ///         },
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// &lt;!--End PulumiCodeChooser --&gt;
     /// </summary>
     [NutanixResourceType("nutanix:index/directoryServicesV2:DirectoryServicesV2")]
     public partial class DirectoryServicesV2 : global::Pulumi.CustomResource
@@ -107,6 +73,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.DirectoryServicesV2OpenLdapConfiguration>> OpenLdapConfigurations { get; private set; } = null!;
 
         /// <summary>
+        /// -(Optional) Project reference for the Directory Service.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// -(Optional) Secondary URL for the Directory Service.
         /// </summary>
         [Output("secondaryUrls")]
@@ -117,6 +89,18 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("serviceAccounts")]
         public Output<ImmutableArray<Outputs.DirectoryServicesV2ServiceAccount>> ServiceAccounts { get; private set; } = null!;
+
+        /// <summary>
+        /// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        /// </summary>
+        [Output("shareWithAllProjects")]
+        public Output<bool> ShareWithAllProjects { get; private set; } = null!;
+
+        /// <summary>
+        /// -(Optional) List of projects with which the directory service is shared.
+        /// </summary>
+        [Output("sharedWithProjects")]
+        public Output<ImmutableArray<string>> SharedWithProjects { get; private set; } = null!;
 
         /// <summary>
         /// -(Required) URL for the Directory Service.
@@ -219,6 +203,12 @@ namespace PiersKarsenbarg.Nutanix
             set => _openLdapConfigurations = value;
         }
 
+        /// <summary>
+        /// -(Optional) Project reference for the Directory Service.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("secondaryUrls")]
         private InputList<string>? _secondaryUrls;
 
@@ -241,6 +231,24 @@ namespace PiersKarsenbarg.Nutanix
         {
             get => _serviceAccounts ?? (_serviceAccounts = new InputList<Inputs.DirectoryServicesV2ServiceAccountArgs>());
             set => _serviceAccounts = value;
+        }
+
+        /// <summary>
+        /// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        /// </summary>
+        [Input("shareWithAllProjects")]
+        public Input<bool>? ShareWithAllProjects { get; set; }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// -(Optional) List of projects with which the directory service is shared.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
         }
 
         /// <summary>
@@ -329,6 +337,12 @@ namespace PiersKarsenbarg.Nutanix
             set => _openLdapConfigurations = value;
         }
 
+        /// <summary>
+        /// -(Optional) Project reference for the Directory Service.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("secondaryUrls")]
         private InputList<string>? _secondaryUrls;
 
@@ -351,6 +365,24 @@ namespace PiersKarsenbarg.Nutanix
         {
             get => _serviceAccounts ?? (_serviceAccounts = new InputList<Inputs.DirectoryServicesV2ServiceAccountGetArgs>());
             set => _serviceAccounts = value;
+        }
+
+        /// <summary>
+        /// -(Optional)  Flag indicating whether the directory service is shared with all projects or not.
+        /// </summary>
+        [Input("shareWithAllProjects")]
+        public Input<bool>? ShareWithAllProjects { get; set; }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// -(Optional) List of projects with which the directory service is shared.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
         }
 
         /// <summary>

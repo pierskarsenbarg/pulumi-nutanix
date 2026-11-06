@@ -28,7 +28,7 @@ class GetAddressGroupV2Result:
     """
     A collection of values returned by getAddressGroupV2.
     """
-    def __init__(__self__, created_by=None, description=None, ext_id=None, id=None, ip_ranges=None, ipv4_addresses=None, links=None, name=None, policy_references=None, tenant_id=None):
+    def __init__(__self__, created_by=None, description=None, ext_id=None, id=None, ip_ranges=None, ipv4_addresses=None, links=None, name=None, policy_references=None, project_ext_id=None, tenant_id=None):
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -56,6 +56,9 @@ class GetAddressGroupV2Result:
         if policy_references and not isinstance(policy_references, list):
             raise TypeError("Expected argument 'policy_references' to be a list")
         pulumi.set(__self__, "policy_references", policy_references)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id and not isinstance(tenant_id, str):
             raise TypeError("Expected argument 'tenant_id' to be a str")
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -130,6 +133,14 @@ class GetAddressGroupV2Result:
         return pulumi.get(self, "policy_references")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        Project external ID associated with the address group.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
         """
@@ -153,6 +164,7 @@ class AwaitableGetAddressGroupV2Result(GetAddressGroupV2Result):
             links=self.links,
             name=self.name,
             policy_references=self.policy_references,
+            project_ext_id=self.project_ext_id,
             tenant_id=self.tenant_id)
 
 
@@ -193,6 +205,7 @@ def get_address_group_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         name=pulumi.get(__ret__, 'name'),
         policy_references=pulumi.get(__ret__, 'policy_references'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
 def get_address_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                 ipv4_addresses: pulumi.Input[Optional[Optional[Sequence[Union['GetAddressGroupV2Ipv4AddressArgs', 'GetAddressGroupV2Ipv4AddressArgsDict', 'outputs.GetAddressGroupV2Ipv4AddressResult']]]]] = None,
@@ -230,4 +243,5 @@ def get_address_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = 
         links=pulumi.get(__response__, 'links'),
         name=pulumi.get(__response__, 'name'),
         policy_references=pulumi.get(__response__, 'policy_references'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         tenant_id=pulumi.get(__response__, 'tenant_id')))

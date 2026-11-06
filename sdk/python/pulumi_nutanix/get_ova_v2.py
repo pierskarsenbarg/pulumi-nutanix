@@ -27,7 +27,7 @@ class GetOvaV2Result:
     """
     A collection of values returned by getOvaV2.
     """
-    def __init__(__self__, checksums=None, cluster_location_ext_ids=None, create_time=None, created_bies=None, disk_format=None, ext_id=None, id=None, last_update_time=None, links=None, name=None, parent_vm=None, size_bytes=None, sources=None, tenant_id=None, vm_configs=None):
+    def __init__(__self__, checksums=None, cluster_location_ext_ids=None, create_time=None, created_bies=None, disk_format=None, ext_id=None, id=None, last_update_time=None, links=None, name=None, parent_vm=None, project_ext_id=None, size_bytes=None, sources=None, tenant_id=None, vm_configs=None):
         if checksums and not isinstance(checksums, list):
             raise TypeError("Expected argument 'checksums' to be a list")
         pulumi.set(__self__, "checksums", checksums)
@@ -61,6 +61,9 @@ class GetOvaV2Result:
         if parent_vm and not isinstance(parent_vm, str):
             raise TypeError("Expected argument 'parent_vm' to be a str")
         pulumi.set(__self__, "parent_vm", parent_vm)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if size_bytes and not isinstance(size_bytes, int):
             raise TypeError("Expected argument 'size_bytes' to be a int")
         pulumi.set(__self__, "size_bytes", size_bytes)
@@ -167,6 +170,14 @@ class GetOvaV2Result:
         return pulumi.get(self, "parent_vm")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        - External identifier of the project associated with the OVA.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="sizeBytes")
     def size_bytes(self) -> _builtins.int:
         """
@@ -216,6 +227,7 @@ class AwaitableGetOvaV2Result(GetOvaV2Result):
             links=self.links,
             name=self.name,
             parent_vm=self.parent_vm,
+            project_ext_id=self.project_ext_id,
             size_bytes=self.size_bytes,
             sources=self.sources,
             tenant_id=self.tenant_id,
@@ -262,6 +274,7 @@ def get_ova_v2(cluster_location_ext_ids: Optional[Sequence[_builtins.str]] = Non
         links=pulumi.get(__ret__, 'links'),
         name=pulumi.get(__ret__, 'name'),
         parent_vm=pulumi.get(__ret__, 'parent_vm'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         size_bytes=pulumi.get(__ret__, 'size_bytes'),
         sources=pulumi.get(__ret__, 'sources'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
@@ -305,6 +318,7 @@ def get_ova_v2_output(cluster_location_ext_ids: pulumi.Input[Optional[Optional[S
         links=pulumi.get(__response__, 'links'),
         name=pulumi.get(__response__, 'name'),
         parent_vm=pulumi.get(__response__, 'parent_vm'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         size_bytes=pulumi.get(__response__, 'size_bytes'),
         sources=pulumi.get(__response__, 'sources'),
         tenant_id=pulumi.get(__response__, 'tenant_id'),

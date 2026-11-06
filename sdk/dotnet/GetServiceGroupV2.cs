@@ -407,6 +407,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableArray<string> PolicyReferences;
         /// <summary>
+        /// Project external ID associated with the service group.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// List of TCP ports in the service.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetServiceGroupV2TcpServiceResult> TcpServices;
@@ -439,6 +443,8 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableArray<string> policyReferences,
 
+            string projectExtId,
+
             ImmutableArray<Outputs.GetServiceGroupV2TcpServiceResult> tcpServices,
 
             string tenantId,
@@ -454,6 +460,7 @@ namespace PiersKarsenbarg.Nutanix
             Links = links;
             Name = name;
             PolicyReferences = policyReferences;
+            ProjectExtId = projectExtId;
             TcpServices = tcpServices;
             TenantId = tenantId;
             UdpServices = udpServices;

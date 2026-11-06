@@ -50,7 +50,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## API Reference
     /// 
-    /// See detailed information in [Nutanix SSL Certificate v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/SSLCertificate/operation/updateSSLCertificate)
+    /// See detailed information in [Nutanix SSL Certificate v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/SSLCertificate/operation/updateSSLCertificate)
     /// </summary>
     [NutanixResourceType("nutanix:index/sslCertificateV2:SslCertificateV2")]
     public partial class SslCertificateV2 : global::Pulumi.CustomResource

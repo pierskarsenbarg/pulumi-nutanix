@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class VolumeGroupV2IscsiFeature
     {
         /// <summary>
-        /// - The authentication type enabled for the Volume Group.
+        /// -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
         /// </summary>
         public readonly string? EnabledAuthentications;
         /// <summary>

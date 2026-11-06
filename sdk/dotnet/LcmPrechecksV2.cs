@@ -44,6 +44,9 @@ namespace PiersKarsenbarg.Nutanix
     [NutanixResourceType("nutanix:index/lcmPrechecksV2:LcmPrechecksV2")]
     public partial class LcmPrechecksV2 : global::Pulumi.CustomResource
     {
+        [Output("dryRun")]
+        public Output<bool?> DryRun { get; private set; } = null!;
+
         /// <summary>
         /// List of entity update objects for getting recommendations.
         /// </summary>
@@ -118,6 +121,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class LcmPrechecksV2Args : global::Pulumi.ResourceArgs
     {
+        [Input("dryRun")]
+        public Input<bool>? DryRun { get; set; }
+
         [Input("entityUpdateSpecs", required: true)]
         private InputList<Inputs.LcmPrechecksV2EntityUpdateSpecArgs>? _entityUpdateSpecs;
 
@@ -162,6 +168,9 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class LcmPrechecksV2State : global::Pulumi.ResourceArgs
     {
+        [Input("dryRun")]
+        public Input<bool>? DryRun { get; set; }
+
         [Input("entityUpdateSpecs")]
         private InputList<Inputs.LcmPrechecksV2EntityUpdateSpecGetArgs>? _entityUpdateSpecs;
 

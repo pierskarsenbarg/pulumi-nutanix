@@ -23,6 +23,7 @@ class VmCloneV2Args:
     def __init__(__self__, *,
                  vm_ext_id: pulumi.Input[_builtins.str],
                  boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2BootConfigArgs']]]] = None,
+                 guest_customization_profile_config: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigArgs']] = None,
                  guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GuestCustomizationArgs']]]] = None,
                  memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -45,6 +46,8 @@ class VmCloneV2Args:
         pulumi.set(__self__, "vm_ext_id", vm_ext_id)
         if boot_configs is not None:
             pulumi.set(__self__, "boot_configs", boot_configs)
+        if guest_customization_profile_config is not None:
+            pulumi.set(__self__, "guest_customization_profile_config", guest_customization_profile_config)
         if guest_customizations is not None:
             pulumi.set(__self__, "guest_customizations", guest_customizations)
         if memory_size_bytes is not None:
@@ -83,6 +86,15 @@ class VmCloneV2Args:
     @boot_configs.setter
     def boot_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2BootConfigArgs']]]]):
         pulumi.set(self, "boot_configs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="guestCustomizationProfileConfig")
+    def guest_customization_profile_config(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigArgs']]:
+        return pulumi.get(self, "guest_customization_profile_config")
+
+    @guest_customization_profile_config.setter
+    def guest_customization_profile_config(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigArgs']]):
+        pulumi.set(self, "guest_customization_profile_config", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
@@ -182,6 +194,7 @@ class _VmCloneV2State:
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  gpuses: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GpusArgs']]]] = None,
+                 guest_customization_profile_config: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigArgs']] = None,
                  guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GuestCustomizationArgs']]]] = None,
                  guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GuestToolArgs']]]] = None,
                  hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -253,6 +266,8 @@ class _VmCloneV2State:
             pulumi.set(__self__, "generation_uuid", generation_uuid)
         if gpuses is not None:
             pulumi.set(__self__, "gpuses", gpuses)
+        if guest_customization_profile_config is not None:
+            pulumi.set(__self__, "guest_customization_profile_config", guest_customization_profile_config)
         if guest_customizations is not None:
             pulumi.set(__self__, "guest_customizations", guest_customizations)
         if guest_tools is not None:
@@ -439,6 +454,15 @@ class _VmCloneV2State:
     @gpuses.setter
     def gpuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GpusArgs']]]]):
         pulumi.set(self, "gpuses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="guestCustomizationProfileConfig")
+    def guest_customization_profile_config(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigArgs']]:
+        return pulumi.get(self, "guest_customization_profile_config")
+
+    @guest_customization_profile_config.setter
+    def guest_customization_profile_config(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigArgs']]):
+        pulumi.set(self, "guest_customization_profile_config", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
@@ -766,6 +790,7 @@ class VmCloneV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict', 'outputs.VmCloneV2BootConfig']]]]] = None,
+                 guest_customization_profile_config: pulumi.Input[Optional[Union['VmCloneV2GuestCustomizationProfileConfigArgs', 'VmCloneV2GuestCustomizationProfileConfigArgsDict', 'outputs.VmCloneV2GuestCustomizationProfileConfig']]] = None,
                  guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]]] = None,
                  memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -850,6 +875,7 @@ class VmCloneV2(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  boot_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2BootConfigArgs', 'VmCloneV2BootConfigArgsDict', 'outputs.VmCloneV2BootConfig']]]]] = None,
+                 guest_customization_profile_config: pulumi.Input[Optional[Union['VmCloneV2GuestCustomizationProfileConfigArgs', 'VmCloneV2GuestCustomizationProfileConfigArgsDict', 'outputs.VmCloneV2GuestCustomizationProfileConfig']]] = None,
                  guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]]] = None,
                  memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -868,6 +894,7 @@ class VmCloneV2(pulumi.CustomResource):
             __props__ = VmCloneV2Args.__new__(VmCloneV2Args)
 
             __props__.__dict__["boot_configs"] = boot_configs
+            __props__.__dict__["guest_customization_profile_config"] = guest_customization_profile_config
             __props__.__dict__["guest_customizations"] = guest_customizations
             __props__.__dict__["memory_size_bytes"] = memory_size_bytes
             __props__.__dict__["name"] = name
@@ -938,6 +965,7 @@ class VmCloneV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
             gpuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GpusArgs', 'VmCloneV2GpusArgsDict', 'outputs.VmCloneV2Gpus']]]]] = None,
+            guest_customization_profile_config: pulumi.Input[Optional[Union['VmCloneV2GuestCustomizationProfileConfigArgs', 'VmCloneV2GuestCustomizationProfileConfigArgsDict', 'outputs.VmCloneV2GuestCustomizationProfileConfig']]] = None,
             guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]]] = None,
             guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestToolArgs', 'VmCloneV2GuestToolArgsDict', 'outputs.VmCloneV2GuestTool']]]]] = None,
             hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1004,6 +1032,7 @@ class VmCloneV2(pulumi.CustomResource):
         __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["generation_uuid"] = generation_uuid
         __props__.__dict__["gpuses"] = gpuses
+        __props__.__dict__["guest_customization_profile_config"] = guest_customization_profile_config
         __props__.__dict__["guest_customizations"] = guest_customizations
         __props__.__dict__["guest_tools"] = guest_tools
         __props__.__dict__["hardware_clock_timezone"] = hardware_clock_timezone
@@ -1055,6 +1084,7 @@ class VmCloneV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             generation_uuid: pulumi.Input[Optional[_builtins.str]] = None,
             gpuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GpusArgs', 'VmCloneV2GpusArgsDict', 'outputs.VmCloneV2Gpus']]]]] = None,
+            guest_customization_profile_config: pulumi.Input[Optional[Union['VmCloneV2GuestCustomizationProfileConfigArgs', 'VmCloneV2GuestCustomizationProfileConfigArgsDict', 'outputs.VmCloneV2GuestCustomizationProfileConfig']]] = None,
             guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestCustomizationArgs', 'VmCloneV2GuestCustomizationArgsDict', 'outputs.VmCloneV2GuestCustomization']]]]] = None,
             guest_tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmCloneV2GuestToolArgs', 'VmCloneV2GuestToolArgsDict', 'outputs.VmCloneV2GuestTool']]]]] = None,
             hardware_clock_timezone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1102,6 +1132,7 @@ class VmCloneV2(pulumi.CustomResource):
         __props__["extId"] = ext_id
         __props__["generationUuid"] = generation_uuid
         __props__["gpuses"] = gpuses
+        __props__["guestCustomizationProfileConfig"] = guest_customization_profile_config
         __props__["guestCustomizations"] = guest_customizations
         __props__["guestTools"] = guest_tools
         __props__["hardwareClockTimezone"] = hardware_clock_timezone
@@ -1204,6 +1235,11 @@ class VmCloneV2(pulumi.CustomResource):
     @pulumi.getter
     def gpuses(self) -> pulumi.Output[Sequence['outputs.VmCloneV2Gpus']]:
         return pulumi.get(self, "gpuses")
+
+    @_builtins.property
+    @pulumi.getter(name="guestCustomizationProfileConfig")
+    def guest_customization_profile_config(self) -> pulumi.Output['outputs.VmCloneV2GuestCustomizationProfileConfig']:
+        return pulumi.get(self, "guest_customization_profile_config")
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")

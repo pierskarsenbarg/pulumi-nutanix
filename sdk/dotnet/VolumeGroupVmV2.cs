@@ -33,6 +33,8 @@ namespace PiersKarsenbarg.Nutanix
     /// });
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
+    /// 
+    /// &gt; **Volume Group disk attachments:** To add a Volume Group disk to a VM, manage the disk with &lt;span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`"&gt;`nutanix.VolumeGroupDiskV2`&lt;/span&gt; and attach the VM to the Volume Group with &lt;span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`"&gt;`nutanix.VolumeGroupVmV2`&lt;/span&gt;.
     /// </summary>
     [NutanixResourceType("nutanix:index/volumeGroupVmV2:VolumeGroupVmV2")]
     public partial class VolumeGroupVmV2 : global::Pulumi.CustomResource
@@ -46,7 +48,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
         /// 
-        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/attachVm).
+        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.3#tag/VolumeGroups/operation/attachVm).
         /// </summary>
         [Output("index")]
         public Output<int?> Index { get; private set; } = null!;
@@ -113,7 +115,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
         /// 
-        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/attachVm).
+        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.3#tag/VolumeGroups/operation/attachVm).
         /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }
@@ -147,7 +149,7 @@ namespace PiersKarsenbarg.Nutanix
         /// <summary>
         /// -(Optional) The index on the SCSI bus to attach the VM to the Volume Group.
         /// 
-        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.2#tag/VolumeGroups/operation/attachVm).
+        /// See detailed information in [Nutanix Attach VM to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&amp;version=v4.3#tag/VolumeGroups/operation/attachVm).
         /// </summary>
         [Input("index")]
         public Input<int>? Index { get; set; }

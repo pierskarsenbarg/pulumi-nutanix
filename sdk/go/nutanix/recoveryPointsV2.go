@@ -68,6 +68,8 @@ type RecoveryPointsV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
 	OwnerExtId pulumi.StringOutput `pulumi:"ownerExtId"`
+	// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// -(Optional) Type of the Recovery point.
 	// * supported values:
 	// * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -131,6 +133,8 @@ type recoveryPointsV2State struct {
 	Name *string `pulumi:"name"`
 	// A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
 	OwnerExtId *string `pulumi:"ownerExtId"`
+	// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// -(Optional) Type of the Recovery point.
 	// * supported values:
 	// * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -165,6 +169,8 @@ type RecoveryPointsV2State struct {
 	Name pulumi.StringPtrInput
 	// A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
 	OwnerExtId pulumi.StringPtrInput
+	// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 	// -(Optional) Type of the Recovery point.
 	// * supported values:
 	// * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -197,6 +203,8 @@ type recoveryPointsV2Args struct {
 	ExpirationTime *string `pulumi:"expirationTime"`
 	// -(Optional) The name of the Recovery point.
 	Name *string `pulumi:"name"`
+	// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// -(Optional) Type of the Recovery point.
 	// * supported values:
 	// * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -218,6 +226,8 @@ type RecoveryPointsV2Args struct {
 	ExpirationTime pulumi.StringPtrInput
 	// -(Optional) The name of the Recovery point.
 	Name pulumi.StringPtrInput
+	// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 	// -(Optional) Type of the Recovery point.
 	// * supported values:
 	// * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -358,6 +368,11 @@ func (o RecoveryPointsV2Output) Name() pulumi.StringOutput {
 // A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
 func (o RecoveryPointsV2Output) OwnerExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RecoveryPointsV2) pulumi.StringOutput { return v.OwnerExtId }).(pulumi.StringOutput)
+}
+
+// -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+func (o RecoveryPointsV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *RecoveryPointsV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // -(Optional) Type of the Recovery point.

@@ -92,6 +92,18 @@ export interface GetSamlIdentityProviderV2Result {
      * - Unique name of the IDP.
      */
     readonly name: string;
+    /**
+     * - Project reference for the SAML Identity Provider.
+     */
+    readonly projectExtId: string;
+    /**
+     * - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+     */
+    readonly shareWithAllProjects: boolean;
+    /**
+     * - List of projects with which the SAML Identity Provider is shared.
+     */
+    readonly sharedWithProjects: string[];
     readonly usernameAttribute: string;
 }
 /**

@@ -98,6 +98,10 @@ export interface GetOvaV2Result {
      */
     readonly parentVm: string;
     /**
+     * - External identifier of the project associated with the OVA.
+     */
+    readonly projectExtId: string;
+    /**
      * - Size of OVA in bytes.
      */
     readonly sizeBytes: number;

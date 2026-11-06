@@ -80,6 +80,10 @@ export interface GetRecoveryPointV2Result {
      */
     readonly ownerExtId: string;
     /**
+     * Project external ID associated with the recovery point.
+     */
+    readonly projectExtId: string;
+    /**
      * Type of the Recovery point.
      */
     readonly recoveryPointType: string;

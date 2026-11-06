@@ -14,17 +14,25 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class RecoveryPlanParameters
     {
+        public readonly ImmutableArray<Outputs.RecoveryPlanParametersAvailabilityZoneList> AvailabilityZoneLists;
         public readonly ImmutableArray<Outputs.RecoveryPlanParametersFloatingIpAssignmentList> FloatingIpAssignmentLists;
         public readonly ImmutableArray<Outputs.RecoveryPlanParametersNetworkMappingList> NetworkMappingLists;
+        public readonly int? PrimaryLocationIndex;
 
         [OutputConstructor]
         private RecoveryPlanParameters(
+            ImmutableArray<Outputs.RecoveryPlanParametersAvailabilityZoneList> availabilityZoneLists,
+
             ImmutableArray<Outputs.RecoveryPlanParametersFloatingIpAssignmentList> floatingIpAssignmentLists,
 
-            ImmutableArray<Outputs.RecoveryPlanParametersNetworkMappingList> networkMappingLists)
+            ImmutableArray<Outputs.RecoveryPlanParametersNetworkMappingList> networkMappingLists,
+
+            int? primaryLocationIndex)
         {
+            AvailabilityZoneLists = availabilityZoneLists;
             FloatingIpAssignmentLists = floatingIpAssignmentLists;
             NetworkMappingLists = networkMappingLists;
+            PrimaryLocationIndex = primaryLocationIndex;
         }
     }
 }

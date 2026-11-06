@@ -47,6 +47,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<string> PolicyReferences;
         /// <summary>
+        /// Project external ID associated with the address group.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
         public readonly string TenantId;
@@ -69,6 +73,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<string> policyReferences,
 
+            string projectExtId,
+
             string tenantId)
         {
             CreatedBy = createdBy;
@@ -79,6 +85,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Links = links;
             Name = name;
             PolicyReferences = policyReferences;
+            ProjectExtId = projectExtId;
             TenantId = tenantId;
         }
     }

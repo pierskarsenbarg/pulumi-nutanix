@@ -410,6 +410,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string OwnerExtId;
         /// <summary>
+        /// Project external ID associated with the recovery point.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// Type of the Recovery point.
         /// </summary>
         public readonly string RecoveryPointType;
@@ -452,6 +456,8 @@ namespace PiersKarsenbarg.Nutanix
 
             string ownerExtId,
 
+            string projectExtId,
+
             string recoveryPointType,
 
             string status,
@@ -471,6 +477,7 @@ namespace PiersKarsenbarg.Nutanix
             LocationReferences = locationReferences;
             Name = name;
             OwnerExtId = ownerExtId;
+            ProjectExtId = projectExtId;
             RecoveryPointType = recoveryPointType;
             Status = status;
             TenantId = tenantId;

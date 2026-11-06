@@ -27,7 +27,7 @@ class GetRoleV2Result:
     """
     A collection of values returned by getRoleV2.
     """
-    def __init__(__self__, accessible_clients=None, accessible_entity_types=None, assigned_users_count=None, assigned_users_groups_count=None, client_name=None, created_by=None, created_time=None, description=None, display_name=None, ext_id=None, id=None, is_system_defined=None, last_updated_time=None, links=None, operations=None, tenant_id=None):
+    def __init__(__self__, accessible_clients=None, accessible_entity_types=None, assigned_users_count=None, assigned_users_groups_count=None, client_name=None, created_by=None, created_time=None, description=None, display_name=None, ext_id=None, id=None, is_system_defined=None, last_updated_time=None, links=None, operations=None, project_ext_id=None, share_with_all_projects=None, tenant_id=None):
         if accessible_clients and not isinstance(accessible_clients, list):
             raise TypeError("Expected argument 'accessible_clients' to be a list")
         pulumi.set(__self__, "accessible_clients", accessible_clients)
@@ -73,6 +73,12 @@ class GetRoleV2Result:
         if operations and not isinstance(operations, list):
             raise TypeError("Expected argument 'operations' to be a list")
         pulumi.set(__self__, "operations", operations)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if share_with_all_projects and not isinstance(share_with_all_projects, bool):
+            raise TypeError("Expected argument 'share_with_all_projects' to be a bool")
+        pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
         if tenant_id and not isinstance(tenant_id, str):
             raise TypeError("Expected argument 'tenant_id' to be a str")
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -198,6 +204,22 @@ class GetRoleV2Result:
         return pulumi.get(self, "operations")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        - Project reference for the role.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> _builtins.bool:
+        """
+        - Flag indicating whether the role is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
         """
@@ -227,6 +249,8 @@ class AwaitableGetRoleV2Result(GetRoleV2Result):
             last_updated_time=self.last_updated_time,
             links=self.links,
             operations=self.operations,
+            project_ext_id=self.project_ext_id,
+            share_with_all_projects=self.share_with_all_projects,
             tenant_id=self.tenant_id)
 
 
@@ -270,6 +294,8 @@ def get_role_v2(ext_id: Optional[_builtins.str] = None,
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
         links=pulumi.get(__ret__, 'links'),
         operations=pulumi.get(__ret__, 'operations'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
+        share_with_all_projects=pulumi.get(__ret__, 'share_with_all_projects'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'))
 def get_role_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetRoleV2Result]:
@@ -310,4 +336,6 @@ def get_role_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         last_updated_time=pulumi.get(__response__, 'last_updated_time'),
         links=pulumi.get(__response__, 'links'),
         operations=pulumi.get(__response__, 'operations'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
+        share_with_all_projects=pulumi.get(__response__, 'share_with_all_projects'),
         tenant_id=pulumi.get(__response__, 'tenant_id')))

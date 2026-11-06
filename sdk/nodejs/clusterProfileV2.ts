@@ -175,6 +175,10 @@ export class ClusterProfileV2 extends pulumi.CustomResource {
      * | PULSE_CONFIG                | Pulse status for a cluster                 |
      * | NAME_SERVER_CONFIG          | Name server configuration                  |
      * | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+     * | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+     * | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+     * | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+     * | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
      */
     declare public readonly allowedOverrides: pulumi.Output<string[]>;
     declare public /*out*/ readonly clusterCount: pulumi.Output<number>;
@@ -188,6 +192,14 @@ export class ClusterProfileV2 extends pulumi.CustomResource {
     declare public /*out*/ readonly driftedClusterCount: pulumi.Output<number>;
     declare public readonly dryrun: pulumi.Output<boolean | undefined>;
     declare public /*out*/ readonly extId: pulumi.Output<string>;
+    /**
+     * - (Optional) Fault tolerant state of cluster.
+     */
+    declare public readonly faultToleranceConfig: pulumi.Output<outputs.ClusterProfileV2FaultToleranceConfig>;
+    /**
+     * - (Optional) HTTP proxy configuration for the cluster.
+     */
+    declare public readonly httpProxyConfig: pulumi.Output<outputs.ClusterProfileV2HttpProxyConfig>;
     declare public /*out*/ readonly lastUpdateTime: pulumi.Output<string>;
     declare public /*out*/ readonly lastUpdatedBy: pulumi.Output<string>;
     declare public /*out*/ readonly links: pulumi.Output<outputs.ClusterProfileV2Link[]>;
@@ -204,6 +216,10 @@ export class ClusterProfileV2 extends pulumi.CustomResource {
      */
     declare public readonly nfsSubnetWhiteLists: pulumi.Output<string[]>;
     /**
+     * - (Optional) List of NTP server configurations with encryption authentication.
+     */
+    declare public readonly ntpServerConfigLists: pulumi.Output<outputs.ClusterProfileV2NtpServerConfigList[]>;
+    /**
      * - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
     declare public readonly ntpServerIpLists: pulumi.Output<outputs.ClusterProfileV2NtpServerIpList[]>;
@@ -211,6 +227,14 @@ export class ClusterProfileV2 extends pulumi.CustomResource {
      * - (Optional) Pulse status for a cluster.
      */
     declare public readonly pulseStatuses: pulumi.Output<outputs.ClusterProfileV2PulseStatus[]>;
+    /**
+     * - (Optional) Rebuild capacity reservation configuration.
+     */
+    declare public readonly rebuildReservationConfig: pulumi.Output<outputs.ClusterProfileV2RebuildReservationConfig>;
+    /**
+     * - (Optional) Resilient capacity warning threshold configuration.
+     */
+    declare public readonly resilientCapacityWarningThresholdConfig: pulumi.Output<outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig>;
     /**
      * - (Optional) RSYSLOG Server.
      */
@@ -247,14 +271,19 @@ export class ClusterProfileV2 extends pulumi.CustomResource {
             resourceInputs["driftedClusterCount"] = state?.driftedClusterCount;
             resourceInputs["dryrun"] = state?.dryrun;
             resourceInputs["extId"] = state?.extId;
+            resourceInputs["faultToleranceConfig"] = state?.faultToleranceConfig;
+            resourceInputs["httpProxyConfig"] = state?.httpProxyConfig;
             resourceInputs["lastUpdateTime"] = state?.lastUpdateTime;
             resourceInputs["lastUpdatedBy"] = state?.lastUpdatedBy;
             resourceInputs["links"] = state?.links;
             resourceInputs["name"] = state?.name;
             resourceInputs["nameServerIpLists"] = state?.nameServerIpLists;
             resourceInputs["nfsSubnetWhiteLists"] = state?.nfsSubnetWhiteLists;
+            resourceInputs["ntpServerConfigLists"] = state?.ntpServerConfigLists;
             resourceInputs["ntpServerIpLists"] = state?.ntpServerIpLists;
             resourceInputs["pulseStatuses"] = state?.pulseStatuses;
+            resourceInputs["rebuildReservationConfig"] = state?.rebuildReservationConfig;
+            resourceInputs["resilientCapacityWarningThresholdConfig"] = state?.resilientCapacityWarningThresholdConfig;
             resourceInputs["rsyslogServerLists"] = state?.rsyslogServerLists;
             resourceInputs["smtpServer"] = state?.smtpServer;
             resourceInputs["snmpConfig"] = state?.snmpConfig;
@@ -264,11 +293,16 @@ export class ClusterProfileV2 extends pulumi.CustomResource {
             resourceInputs["allowedOverrides"] = args?.allowedOverrides;
             resourceInputs["description"] = args?.description;
             resourceInputs["dryrun"] = args?.dryrun;
+            resourceInputs["faultToleranceConfig"] = args?.faultToleranceConfig;
+            resourceInputs["httpProxyConfig"] = args?.httpProxyConfig;
             resourceInputs["name"] = args?.name;
             resourceInputs["nameServerIpLists"] = args?.nameServerIpLists;
             resourceInputs["nfsSubnetWhiteLists"] = args?.nfsSubnetWhiteLists;
+            resourceInputs["ntpServerConfigLists"] = args?.ntpServerConfigLists;
             resourceInputs["ntpServerIpLists"] = args?.ntpServerIpLists;
             resourceInputs["pulseStatuses"] = args?.pulseStatuses;
+            resourceInputs["rebuildReservationConfig"] = args?.rebuildReservationConfig;
+            resourceInputs["resilientCapacityWarningThresholdConfig"] = args?.resilientCapacityWarningThresholdConfig;
             resourceInputs["rsyslogServerLists"] = args?.rsyslogServerLists;
             resourceInputs["smtpServer"] = args?.smtpServer;
             resourceInputs["snmpConfig"] = args?.snmpConfig;
@@ -304,6 +338,10 @@ export interface ClusterProfileV2State {
      * | PULSE_CONFIG                | Pulse status for a cluster                 |
      * | NAME_SERVER_CONFIG          | Name server configuration                  |
      * | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+     * | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+     * | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+     * | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+     * | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
      */
     allowedOverrides?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     clusterCount?: pulumi.Input<number | undefined>;
@@ -317,6 +355,14 @@ export interface ClusterProfileV2State {
     driftedClusterCount?: pulumi.Input<number | undefined>;
     dryrun?: pulumi.Input<boolean | undefined>;
     extId?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) Fault tolerant state of cluster.
+     */
+    faultToleranceConfig?: pulumi.Input<inputs.ClusterProfileV2FaultToleranceConfig | undefined>;
+    /**
+     * - (Optional) HTTP proxy configuration for the cluster.
+     */
+    httpProxyConfig?: pulumi.Input<inputs.ClusterProfileV2HttpProxyConfig | undefined>;
     lastUpdateTime?: pulumi.Input<string | undefined>;
     lastUpdatedBy?: pulumi.Input<string | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2Link>[] | undefined>;
@@ -333,6 +379,10 @@ export interface ClusterProfileV2State {
      */
     nfsSubnetWhiteLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * - (Optional) List of NTP server configurations with encryption authentication.
+     */
+    ntpServerConfigLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerConfigList>[] | undefined>;
+    /**
      * - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
     ntpServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpList>[] | undefined>;
@@ -340,6 +390,14 @@ export interface ClusterProfileV2State {
      * - (Optional) Pulse status for a cluster.
      */
     pulseStatuses?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2PulseStatus>[] | undefined>;
+    /**
+     * - (Optional) Rebuild capacity reservation configuration.
+     */
+    rebuildReservationConfig?: pulumi.Input<inputs.ClusterProfileV2RebuildReservationConfig | undefined>;
+    /**
+     * - (Optional) Resilient capacity warning threshold configuration.
+     */
+    resilientCapacityWarningThresholdConfig?: pulumi.Input<inputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig | undefined>;
     /**
      * - (Optional) RSYSLOG Server.
      */
@@ -371,6 +429,10 @@ export interface ClusterProfileV2Args {
      * | PULSE_CONFIG                | Pulse status for a cluster                 |
      * | NAME_SERVER_CONFIG          | Name server configuration                  |
      * | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+     * | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+     * | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+     * | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+     * | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
      */
     allowedOverrides?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -378,6 +440,14 @@ export interface ClusterProfileV2Args {
      */
     description?: pulumi.Input<string | undefined>;
     dryrun?: pulumi.Input<boolean | undefined>;
+    /**
+     * - (Optional) Fault tolerant state of cluster.
+     */
+    faultToleranceConfig?: pulumi.Input<inputs.ClusterProfileV2FaultToleranceConfig | undefined>;
+    /**
+     * - (Optional) HTTP proxy configuration for the cluster.
+     */
+    httpProxyConfig?: pulumi.Input<inputs.ClusterProfileV2HttpProxyConfig | undefined>;
     /**
      * - (Required) Name of the cluster profile.
      */
@@ -391,6 +461,10 @@ export interface ClusterProfileV2Args {
      */
     nfsSubnetWhiteLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * - (Optional) List of NTP server configurations with encryption authentication.
+     */
+    ntpServerConfigLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerConfigList>[] | undefined>;
+    /**
      * - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
      */
     ntpServerIpLists?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2NtpServerIpList>[] | undefined>;
@@ -398,6 +472,14 @@ export interface ClusterProfileV2Args {
      * - (Optional) Pulse status for a cluster.
      */
     pulseStatuses?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2PulseStatus>[] | undefined>;
+    /**
+     * - (Optional) Rebuild capacity reservation configuration.
+     */
+    rebuildReservationConfig?: pulumi.Input<inputs.ClusterProfileV2RebuildReservationConfig | undefined>;
+    /**
+     * - (Optional) Resilient capacity warning threshold configuration.
+     */
+    resilientCapacityWarningThresholdConfig?: pulumi.Input<inputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig | undefined>;
     /**
      * - (Optional) RSYSLOG Server.
      */

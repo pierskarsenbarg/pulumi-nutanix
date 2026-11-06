@@ -15,21 +15,37 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         [Input("categoryIds")]
         private InputList<string>? _categoryIds;
+
+        /// <summary>
+        /// Set of category external identifiers associated with the subnet.
+        /// </summary>
         public InputList<string> CategoryIds
         {
             get => _categoryIds ?? (_categoryIds = new InputList<string>());
             set => _categoryIds = value;
         }
 
+        /// <summary>
+        /// External identifier of the owner associated with the subnet.
+        /// </summary>
         [Input("ownerReferenceId")]
         public Input<string>? OwnerReferenceId { get; set; }
 
+        /// <summary>
+        /// User name of the subnet owner.
+        /// </summary>
         [Input("ownerUserName")]
         public Input<string>? OwnerUserName { get; set; }
 
+        /// <summary>
+        /// Name of the project associated with the subnet.
+        /// </summary>
         [Input("projectName")]
         public Input<string>? ProjectName { get; set; }
 
+        /// <summary>
+        /// External identifier of the project associated with the subnet.
+        /// </summary>
         [Input("projectReferenceId")]
         public Input<string>? ProjectReferenceId { get; set; }
 

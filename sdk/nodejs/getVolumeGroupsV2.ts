@@ -47,6 +47,7 @@ import * as utilities from "./utilities";
  * * <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`" pulumi-lang-hcl="`expand`">`expand`</span> : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
  *   - clusterReference
  *   - metadata
+ *   - volumeGroupStats
  * * <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`">`select`</span> : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., \*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
  *   - clusterReference
  *   - extId
@@ -71,6 +72,7 @@ import * as utilities from "./utilities";
  * * <span pulumi-lang-nodejs="`storageFeatures`" pulumi-lang-dotnet="`StorageFeatures`" pulumi-lang-go="`storageFeatures`" pulumi-lang-python="`storage_features`" pulumi-lang-yaml="`storageFeatures`" pulumi-lang-java="`storageFeatures`" pulumi-lang-hcl="`storage_features`">`storageFeatures`</span>: - Storage optimization features which must be enabled on the Volume Group.
  * * <span pulumi-lang-nodejs="`usageType`" pulumi-lang-dotnet="`UsageType`" pulumi-lang-go="`usageType`" pulumi-lang-python="`usage_type`" pulumi-lang-yaml="`usageType`" pulumi-lang-java="`usageType`" pulumi-lang-hcl="`usage_type`">`usageType`</span>: - Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
  * * <span pulumi-lang-nodejs="`isHidden`" pulumi-lang-dotnet="`IsHidden`" pulumi-lang-go="`isHidden`" pulumi-lang-python="`is_hidden`" pulumi-lang-yaml="`isHidden`" pulumi-lang-java="`isHidden`" pulumi-lang-hcl="`is_hidden`">`isHidden`</span>: - Indicates whether the Volume Group is meant to be hidden or not.
+ * * <span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`">`projectExtId`</span>: - External identifier of the project associated with the Volume Group.
  *
  * #### Links
  *
@@ -97,7 +99,7 @@ import * as utilities from "./utilities";
  *
  * * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`" pulumi-lang-hcl="`is_enabled`">`isEnabled`</span>: - Indicates whether the flash mode is enabled for the Volume Group.
  *
- * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
+ * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/listVolumeGroups).
  */
 export function getVolumeGroupsV2(args?: GetVolumeGroupsV2Args, opts?: pulumi.InvokeOptions): Promise<GetVolumeGroupsV2Result> {
     args = args || {};
@@ -181,6 +183,7 @@ export interface GetVolumeGroupsV2Result {
  * * <span pulumi-lang-nodejs="`expand`" pulumi-lang-dotnet="`Expand`" pulumi-lang-go="`expand`" pulumi-lang-python="`expand`" pulumi-lang-yaml="`expand`" pulumi-lang-java="`expand`" pulumi-lang-hcl="`expand`">`expand`</span> : A URL query parameter that allows clients to request related resources when a resource that satisfies a particular request is retrieved. Each expanded item is evaluated relative to the entity containing the property being expanded. Other query options can be applied to an expanded property by appending a semicolon-separated list of query options, enclosed in parentheses, to the property name. Permissible system query options are \$filter, \$select and \$orderby. The following expansion keys are supported. The expand can be applied to the following fields:
  *   - clusterReference
  *   - metadata
+ *   - volumeGroupStats
  * * <span pulumi-lang-nodejs="`select`" pulumi-lang-dotnet="`Select`" pulumi-lang-go="`select`" pulumi-lang-python="`select`" pulumi-lang-yaml="`select`" pulumi-lang-java="`select`" pulumi-lang-hcl="`select`">`select`</span> : A query parameter that allows clients to request a specific set of properties for each entity or complex type. Expression specified with the \$select must conform to the OData V4.01 URL conventions. If a \$select expression consists of a single select item that is an asterisk (i.e., \*), then all properties on the matching resource will be returned. The select can be applied to the following fields:
  *   - clusterReference
  *   - extId
@@ -205,6 +208,7 @@ export interface GetVolumeGroupsV2Result {
  * * <span pulumi-lang-nodejs="`storageFeatures`" pulumi-lang-dotnet="`StorageFeatures`" pulumi-lang-go="`storageFeatures`" pulumi-lang-python="`storage_features`" pulumi-lang-yaml="`storageFeatures`" pulumi-lang-java="`storageFeatures`" pulumi-lang-hcl="`storage_features`">`storageFeatures`</span>: - Storage optimization features which must be enabled on the Volume Group.
  * * <span pulumi-lang-nodejs="`usageType`" pulumi-lang-dotnet="`UsageType`" pulumi-lang-go="`usageType`" pulumi-lang-python="`usage_type`" pulumi-lang-yaml="`usageType`" pulumi-lang-java="`usageType`" pulumi-lang-hcl="`usage_type`">`usageType`</span>: - Expected usage type for the Volume Group. This is an indicative hint on how the caller will consume the Volume Group.  Valid values are BACKUP_TARGET, INTERNAL, TEMPORARY, USER
  * * <span pulumi-lang-nodejs="`isHidden`" pulumi-lang-dotnet="`IsHidden`" pulumi-lang-go="`isHidden`" pulumi-lang-python="`is_hidden`" pulumi-lang-yaml="`isHidden`" pulumi-lang-java="`isHidden`" pulumi-lang-hcl="`is_hidden`">`isHidden`</span>: - Indicates whether the Volume Group is meant to be hidden or not.
+ * * <span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`">`projectExtId`</span>: - External identifier of the project associated with the Volume Group.
  *
  * #### Links
  *
@@ -231,7 +235,7 @@ export interface GetVolumeGroupsV2Result {
  *
  * * <span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`" pulumi-lang-hcl="`is_enabled`">`isEnabled`</span>: - Indicates whether the flash mode is enabled for the Volume Group.
  *
- * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/listVolumeGroups).
+ * See detailed information in [Nutanix List Volume Groups V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/listVolumeGroups).
  */
 export function getVolumeGroupsV2Output(args?: GetVolumeGroupsV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetVolumeGroupsV2Result> {
     args = args || {};

@@ -73,6 +73,10 @@ export interface GetPbrV2Result {
      */
     readonly priority: number;
     /**
+     * External identifier of the project associated with the Routing Policy.
+     */
+    readonly projectExtId: string;
+    /**
      * A globally unique identifier that represents the tenant that owns this entity
      */
     readonly tenantId: string;

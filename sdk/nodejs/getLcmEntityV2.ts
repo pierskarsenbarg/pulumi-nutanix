@@ -102,6 +102,10 @@ export interface GetLcmEntityV2Result {
      */
     readonly hardwareVendor: string;
     /**
+     * (default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Indicates whether the most recent inventory operation failed for this entity. When true, the entity's version or available-version data may be stale.
+     */
+    readonly hasPreviousInventoryFailed: boolean;
+    /**
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;

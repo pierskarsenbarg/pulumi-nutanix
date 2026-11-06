@@ -25,7 +25,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly ImmutableArray<Outputs.GetAuthorizationPoliciesV2AuthPolicyIdentityResult> Identities;
         public readonly bool IsSystemDefined;
         public readonly string LastUpdatedTime;
+        public readonly string ProjectExtId;
         public readonly string Role;
+        public readonly bool ShareWithAllProjects;
 
         [OutputConstructor]
         private GetAuthorizationPoliciesV2AuthPolicyResult(
@@ -51,7 +53,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string lastUpdatedTime,
 
-            string role)
+            string projectExtId,
+
+            string role,
+
+            bool shareWithAllProjects)
         {
             AuthorizationPolicyType = authorizationPolicyType;
             ClientName = clientName;
@@ -64,7 +70,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Identities = identities;
             IsSystemDefined = isSystemDefined;
             LastUpdatedTime = lastUpdatedTime;
+            ProjectExtId = projectExtId;
             Role = role;
+            ShareWithAllProjects = shareWithAllProjects;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Result
     {
         /// <summary>
-        /// IP of address
+        /// The base IP address of the subnet. The address's own &lt;span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`"&gt;`prefixLength`&lt;/span&gt; is canonicalized by the server to &lt;span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`"&gt;`32`&lt;/span&gt; for IPv4 (&lt;span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`"&gt;`128`&lt;/span&gt; for IPv6).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpResult> Ips;
         /// <summary>

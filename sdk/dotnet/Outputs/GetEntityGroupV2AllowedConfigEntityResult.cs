@@ -19,6 +19,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEntityGroupV2AllowedConfigEntityAddressResult> Addresses;
         /// <summary>
+        /// List of FQDNs.
+        /// </summary>
+        public readonly ImmutableArray<string> Fqdns;
+        /// <summary>
         /// With &lt;span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`"&gt;`ipv4Ranges`&lt;/span&gt; (start_ip, end_ip).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetEntityGroupV2AllowedConfigEntityIpRangeResult> IpRanges;
@@ -27,11 +31,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<string> KubeEntities;
         /// <summary>
+        /// Match criteria for regex-based selection (CONTAINS, STARTS_WITH, ENDS_WITH, EQUALS).
+        /// </summary>
+        public readonly string MatchCriteria;
+        /// <summary>
         /// List of reference external identifiers.
         /// </summary>
         public readonly ImmutableArray<string> ReferenceExtIds;
         /// <summary>
-        /// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES).
+        /// String pattern for matching entities.
+        /// </summary>
+        public readonly string ReferenceString;
+        /// <summary>
+        /// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
         /// </summary>
         public readonly string SelectedBy;
         /// <summary>
@@ -43,20 +55,29 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private GetEntityGroupV2AllowedConfigEntityResult(
             ImmutableArray<Outputs.GetEntityGroupV2AllowedConfigEntityAddressResult> addresses,
 
+            ImmutableArray<string> fqdns,
+
             ImmutableArray<Outputs.GetEntityGroupV2AllowedConfigEntityIpRangeResult> ipRanges,
 
             ImmutableArray<string> kubeEntities,
 
+            string matchCriteria,
+
             ImmutableArray<string> referenceExtIds,
+
+            string referenceString,
 
             string selectedBy,
 
             string type)
         {
             Addresses = addresses;
+            Fqdns = fqdns;
             IpRanges = ipRanges;
             KubeEntities = kubeEntities;
+            MatchCriteria = matchCriteria;
             ReferenceExtIds = referenceExtIds;
+            ReferenceString = referenceString;
             SelectedBy = selectedBy;
             Type = type;
         }

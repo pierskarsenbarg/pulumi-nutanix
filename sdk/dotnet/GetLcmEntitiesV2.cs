@@ -487,6 +487,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `entityType`
         /// * `entityVersion`
         /// * `hardwareVendor`
+        /// * `hasPreviousInventoryFailed`
         /// </summary>
         [Input("filter")]
         public string? Filter { get; set; }
@@ -514,6 +515,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `entityType`
         /// * `entityVersion`
         /// * `hardwareVendor`
+        /// * `hasPreviousInventoryFailed`
         /// </summary>
         [Input("select")]
         public string? Select { get; set; }
@@ -535,6 +537,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `entityType`
         /// * `entityVersion`
         /// * `hardwareVendor`
+        /// * `hasPreviousInventoryFailed`
         /// </summary>
         [Input("filter")]
         public Input<string>? Filter { get; set; }
@@ -562,6 +565,7 @@ namespace PiersKarsenbarg.Nutanix
         /// * `entityType`
         /// * `entityVersion`
         /// * `hardwareVendor`
+        /// * `hasPreviousInventoryFailed`
         /// </summary>
         [Input("select")]
         public Input<string>? Select { get; set; }

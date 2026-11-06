@@ -85,6 +85,10 @@ export interface GetDirectoryServiceV2Result {
      */
     readonly openLdapConfigurations: outputs.GetDirectoryServiceV2OpenLdapConfiguration[];
     /**
+     * - Project reference for the Directory Service.
+     */
+    readonly projectExtId: string;
+    /**
      * - Secondary URL for the Directory Service.
      */
     readonly secondaryUrls: string[];
@@ -92,6 +96,14 @@ export interface GetDirectoryServiceV2Result {
      * - Information of Service account to connect to the Directory Service.
      */
     readonly serviceAccounts: outputs.GetDirectoryServiceV2ServiceAccount[];
+    /**
+     * - Flag indicating whether the directory service is shared with all projects or not.
+     */
+    readonly shareWithAllProjects: boolean;
+    /**
+     * - List of projects with which the directory service is shared.
+     */
+    readonly sharedWithProjects: string[];
     /**
      * - URL for the Directory Service.
      */

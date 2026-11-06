@@ -29,7 +29,7 @@ class RestoreProtectedResourceV2Args:
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         :param pulumi.Input[_builtins.str] restore_time: -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
                
-               See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
+               See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/restoreProtectedResource).
         """
         pulumi.set(__self__, "cluster_ext_id", cluster_ext_id)
         pulumi.set(__self__, "ext_id", ext_id)
@@ -66,7 +66,7 @@ class RestoreProtectedResourceV2Args:
         """
         -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 
-        See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
+        See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/restoreProtectedResource).
         """
         return pulumi.get(self, "restore_time")
 
@@ -88,7 +88,7 @@ class _RestoreProtectedResourceV2State:
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         :param pulumi.Input[_builtins.str] restore_time: -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
                
-               See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
+               See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/restoreProtectedResource).
         """
         if cluster_ext_id is not None:
             pulumi.set(__self__, "cluster_ext_id", cluster_ext_id)
@@ -127,7 +127,7 @@ class _RestoreProtectedResourceV2State:
         """
         -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 
-        See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
+        See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/restoreProtectedResource).
         """
         return pulumi.get(self, "restore_time")
 
@@ -186,7 +186,7 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         :param pulumi.Input[_builtins.str] restore_time: -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
                
-               See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
+               See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/restoreProtectedResource).
         """
         ...
     @overload
@@ -286,7 +286,7 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] ext_id: -(Required) The external identifier of a protected VM or volume group that can be used to retrieve the protected resource.
         :param pulumi.Input[_builtins.str] restore_time: -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
                
-               See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
+               See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/restoreProtectedResource).
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -331,7 +331,7 @@ class RestoreProtectedResourceV2(pulumi.CustomResource):
         """
         -(Optional) UTC date and time in ISO 8601 format representing the time from when the state of the entity should be restored. This needs to be a valid time within the restorable time range(s) for the protected resource.
 
-        See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.3#tag/ProtectedResources/operation/restoreProtectedResource).
+        See detailed information in [Nutanix Restore Protected Resource v4](https://developers.nutanix.com/api-reference?namespace=dataprotection&version=v4.4#tag/ProtectedResources/operation/restoreProtectedResource).
         """
         return pulumi.get(self, "restore_time")
 

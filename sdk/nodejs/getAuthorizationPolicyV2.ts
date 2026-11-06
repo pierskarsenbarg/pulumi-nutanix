@@ -97,9 +97,17 @@ export interface GetAuthorizationPolicyV2Result {
      */
     readonly lastUpdatedTime: string;
     /**
+     * - Project reference for the Authorization Policy.
+     */
+    readonly projectExtId: string;
+    /**
      * The Role associated with the Authorization Policy.
      */
     readonly role: string;
+    /**
+     * - Flag indicating whether the Authorization Policy is shared with all projects or not.
+     */
+    readonly shareWithAllProjects: boolean;
 }
 /**
  * Provides a datasource to retrieve authorization policy with  authorization policy uuid .

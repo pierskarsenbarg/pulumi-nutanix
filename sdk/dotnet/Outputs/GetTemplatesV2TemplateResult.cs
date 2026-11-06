@@ -20,6 +20,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string ExtId;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateGuestUpdateStatusResult> GuestUpdateStatuses;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateLinkResult> Links;
+        public readonly string ProjectExtId;
         public readonly string TemplateDescription;
         public readonly string TemplateName;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecResult> TemplateVersionSpecs;
@@ -41,6 +42,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetTemplatesV2TemplateLinkResult> links,
 
+            string projectExtId,
+
             string templateDescription,
 
             string templateName,
@@ -59,6 +62,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             ExtId = extId;
             GuestUpdateStatuses = guestUpdateStatuses;
             Links = links;
+            ProjectExtId = projectExtId;
             TemplateDescription = templateDescription;
             TemplateName = templateName;
             TemplateVersionSpecs = templateVersionSpecs;

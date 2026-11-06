@@ -24,6 +24,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string Name;
         public readonly string OwnerExtId;
         public readonly ImmutableArray<Outputs.GetImagesV2ImagePlacementPolicyStatusResult> PlacementPolicyStatuses;
+        public readonly string ProjectExtId;
+        public readonly bool ShareWithAllProjects;
         public readonly int SizeBytes;
         public readonly ImmutableArray<Outputs.GetImagesV2ImageSourceResult> Sources;
         public readonly string Type;
@@ -50,6 +52,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<Outputs.GetImagesV2ImagePlacementPolicyStatusResult> placementPolicyStatuses,
 
+            string projectExtId,
+
+            bool shareWithAllProjects,
+
             int sizeBytes,
 
             ImmutableArray<Outputs.GetImagesV2ImageSourceResult> sources,
@@ -66,6 +72,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Name = name;
             OwnerExtId = ownerExtId;
             PlacementPolicyStatuses = placementPolicyStatuses;
+            ProjectExtId = projectExtId;
+            ShareWithAllProjects = shareWithAllProjects;
             SizeBytes = sizeBytes;
             Sources = sources;
             Type = type;

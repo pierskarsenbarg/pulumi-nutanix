@@ -356,7 +356,7 @@ class VmHostAffinityPolicyV2(pulumi.CustomResource):
         ```
         <!--End PulumiCodeChooser -->
 
-        See detailed information in [Nutanix VM-Host Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/VmHostAffinityPolicies)
+        See detailed information in [Nutanix VM-Host Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/VmHostAffinityPolicies/operation/createVmHostAffinityPolicy)
 
 
         :param str resource_name: The name of the resource.
@@ -413,7 +413,7 @@ class VmHostAffinityPolicyV2(pulumi.CustomResource):
         ```
         <!--End PulumiCodeChooser -->
 
-        See detailed information in [Nutanix VM-Host Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/VmHostAffinityPolicies)
+        See detailed information in [Nutanix VM-Host Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/VmHostAffinityPolicies/operation/createVmHostAffinityPolicy)
 
 
         :param str resource_name: The name of the resource.

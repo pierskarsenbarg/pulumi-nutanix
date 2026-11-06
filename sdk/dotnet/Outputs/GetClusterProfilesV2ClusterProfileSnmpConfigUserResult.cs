@@ -43,7 +43,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string TenantId;
         /// <summary>
-        /// (String, max 64 chars) SNMP username. Required for SNMP trap v3 version.
+        /// HTTP proxy server username.
         /// </summary>
         public readonly string Username;
 

@@ -87,8 +87,12 @@ type LookupAuthorizationPolicyV2Result struct {
 	IsSystemDefined bool `pulumi:"isSystemDefined"`
 	// The time when the Authorization Policy was last updated.
 	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
+	// - Project reference for the Authorization Policy.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// The Role associated with the Authorization Policy.
 	Role string `pulumi:"role"`
+	// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+	ShareWithAllProjects bool `pulumi:"shareWithAllProjects"`
 }
 
 func LookupAuthorizationPolicyV2Output(ctx *pulumi.Context, args LookupAuthorizationPolicyV2OutputArgs, opts ...pulumi.InvokeOption) LookupAuthorizationPolicyV2ResultOutput {
@@ -186,9 +190,19 @@ func (o LookupAuthorizationPolicyV2ResultOutput) LastUpdatedTime() pulumi.String
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
 }
 
+// - Project reference for the Authorization Policy.
+func (o LookupAuthorizationPolicyV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
 // The Role associated with the Authorization Policy.
 func (o LookupAuthorizationPolicyV2ResultOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+func (o LookupAuthorizationPolicyV2ResultOutput) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupAuthorizationPolicyV2Result) bool { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
 }
 
 func init() {

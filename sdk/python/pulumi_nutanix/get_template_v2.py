@@ -27,7 +27,7 @@ class GetTemplateV2Result:
     """
     A collection of values returned by getTemplateV2.
     """
-    def __init__(__self__, category_ext_ids=None, create_time=None, created_bies=None, ext_id=None, guest_update_statuses=None, id=None, links=None, template_description=None, template_name=None, template_version_specs=None, tenant_id=None, update_time=None, updated_bies=None):
+    def __init__(__self__, category_ext_ids=None, create_time=None, created_bies=None, ext_id=None, guest_update_statuses=None, id=None, links=None, project_ext_id=None, template_description=None, template_name=None, template_version_specs=None, tenant_id=None, update_time=None, updated_bies=None):
         if category_ext_ids and not isinstance(category_ext_ids, list):
             raise TypeError("Expected argument 'category_ext_ids' to be a list")
         pulumi.set(__self__, "category_ext_ids", category_ext_ids)
@@ -49,6 +49,9 @@ class GetTemplateV2Result:
         if links and not isinstance(links, list):
             raise TypeError("Expected argument 'links' to be a list")
         pulumi.set(__self__, "links", links)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if template_description and not isinstance(template_description, str):
             raise TypeError("Expected argument 'template_description' to be a str")
         pulumi.set(__self__, "template_description", template_description)
@@ -122,6 +125,14 @@ class GetTemplateV2Result:
         return pulumi.get(self, "links")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        The external identifier of the project with which the template is associated.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="templateDescription")
     def template_description(self) -> _builtins.str:
         """
@@ -183,6 +194,7 @@ class AwaitableGetTemplateV2Result(GetTemplateV2Result):
             guest_update_statuses=self.guest_update_statuses,
             id=self.id,
             links=self.links,
+            project_ext_id=self.project_ext_id,
             template_description=self.template_description,
             template_name=self.template_name,
             template_version_specs=self.template_version_specs,
@@ -223,6 +235,7 @@ def get_template_v2(ext_id: Optional[_builtins.str] = None,
         guest_update_statuses=pulumi.get(__ret__, 'guest_update_statuses'),
         id=pulumi.get(__ret__, 'id'),
         links=pulumi.get(__ret__, 'links'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         template_description=pulumi.get(__ret__, 'template_description'),
         template_name=pulumi.get(__ret__, 'template_name'),
         template_version_specs=pulumi.get(__ret__, 'template_version_specs'),
@@ -260,6 +273,7 @@ def get_template_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         guest_update_statuses=pulumi.get(__response__, 'guest_update_statuses'),
         id=pulumi.get(__response__, 'id'),
         links=pulumi.get(__response__, 'links'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         template_description=pulumi.get(__response__, 'template_description'),
         template_name=pulumi.get(__response__, 'template_name'),
         template_version_specs=pulumi.get(__response__, 'template_version_specs'),

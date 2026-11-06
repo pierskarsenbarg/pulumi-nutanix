@@ -67,7 +67,7 @@ namespace PiersKarsenbarg.Nutanix
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
     /// 
-    /// See detailed information in [Nutanix VM-VM Anti-Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.2#tag/VmAntiAffinityPolicies)
+    /// See detailed information in [Nutanix VM-VM Anti-Affinity Policies V4](https://developers.nutanix.com/api-reference?namespace=vmm&amp;version=v4.3#tag/VmAntiAffinityPolicies/operation/createVmAntiAffinityPolicy)
     /// </summary>
     [NutanixResourceType("nutanix:index/vmAntiAffinityPolicyV2:VmAntiAffinityPolicyV2")]
     public partial class VmAntiAffinityPolicyV2 : global::Pulumi.CustomResource
@@ -125,6 +125,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("numPendingVms")]
         public Output<int> NumPendingVms { get; private set; } = null!;
+
+        /// <summary>
+        /// The external identifier of the project that this policy is associated with.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
 
         /// <summary>
         /// The timestamp when the policy was last updated.
@@ -209,6 +215,12 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// The external identifier of the project that this policy is associated with.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         public VmAntiAffinityPolicyV2Args()
         {
         }
@@ -282,6 +294,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("numPendingVms")]
         public Input<int>? NumPendingVms { get; set; }
+
+        /// <summary>
+        /// The external identifier of the project that this policy is associated with.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// The timestamp when the policy was last updated.

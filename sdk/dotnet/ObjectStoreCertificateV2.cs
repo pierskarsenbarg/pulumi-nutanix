@@ -36,7 +36,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// ## JSON Example
     /// 
-    /// See detailed information in [Nutanix Create a SSL certificate for an Object store V4 ](https://developers.nutanix.com/api-reference?namespace=objects&amp;version=v4.0#tag/ObjectStores/operation/createCertificate).
+    /// See detailed information in [Nutanix Create a SSL certificate for an Object store V4 ](https://developers.nutanix.com/api-reference?namespace=objects&amp;version=v4.1#tag/ObjectStores/operation/createCertificate).
     /// </summary>
     [NutanixResourceType("nutanix:index/objectStoreCertificateV2:ObjectStoreCertificateV2")]
     public partial class ObjectStoreCertificateV2 : global::Pulumi.CustomResource

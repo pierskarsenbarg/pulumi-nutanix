@@ -381,6 +381,9 @@ namespace PiersKarsenbarg.Nutanix
         /// Description of the VPC.
         /// </summary>
         public readonly string Description;
+        /// <summary>
+        /// ExtID of the Kubernetes cluster.
+        /// </summary>
         public readonly string ExtId;
         /// <summary>
         /// External routing domain associated with this route table
@@ -399,6 +402,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// List of Kubernetes clusters associated with the VPC.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetVpcV2KubernetesClusterResult> KubernetesClusters;
+        /// <summary>
         /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcV2LinkResult> Links;
@@ -411,9 +418,29 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string Name;
         /// <summary>
+        /// External identifier of the project associated with the VPC.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
+        /// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        /// </summary>
+        public readonly string Scope;
+        /// <summary>
+        /// List of project external identifiers with which the VPC is shared.
+        /// </summary>
+        public readonly ImmutableArray<string> SharedWithProjects;
+        /// <summary>
+        /// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes.
+        /// </summary>
+        public readonly bool ShouldAdvertiseConnectedSubnets;
+        /// <summary>
         /// List of IP Addresses used for SNAT.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetVpcV2SnatIpResult> SnatIps;
+        /// <summary>
+        /// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        /// </summary>
+        public readonly string SupportedMultipleExternalSubnetType;
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
@@ -439,13 +466,25 @@ namespace PiersKarsenbarg.Nutanix
 
             string id,
 
+            ImmutableArray<Outputs.GetVpcV2KubernetesClusterResult> kubernetesClusters,
+
             ImmutableArray<Outputs.GetVpcV2LinkResult> links,
 
             ImmutableArray<Outputs.GetVpcV2MetadataResult> metadatas,
 
             string name,
 
+            string projectExtId,
+
+            string scope,
+
+            ImmutableArray<string> sharedWithProjects,
+
+            bool shouldAdvertiseConnectedSubnets,
+
             ImmutableArray<Outputs.GetVpcV2SnatIpResult> snatIps,
+
+            string supportedMultipleExternalSubnetType,
 
             string tenantId,
 
@@ -458,10 +497,16 @@ namespace PiersKarsenbarg.Nutanix
             ExternalSubnets = externalSubnets;
             ExternallyRoutablePrefixes = externallyRoutablePrefixes;
             Id = id;
+            KubernetesClusters = kubernetesClusters;
             Links = links;
             Metadatas = metadatas;
             Name = name;
+            ProjectExtId = projectExtId;
+            Scope = scope;
+            SharedWithProjects = sharedWithProjects;
+            ShouldAdvertiseConnectedSubnets = shouldAdvertiseConnectedSubnets;
             SnatIps = snatIps;
+            SupportedMultipleExternalSubnetType = supportedMultipleExternalSubnetType;
             TenantId = tenantId;
             VpcType = vpcType;
         }

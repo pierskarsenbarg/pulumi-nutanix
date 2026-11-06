@@ -35,6 +35,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string Description;
         /// <summary>
+        /// List of directory services associated with the project.
+        /// * `directory_reference_list.#.uuid` - The UUID of a directory service.
+        /// * `directory_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`directoryService`" pulumi-lang-dotnet="`DirectoryService`" pulumi-lang-go="`directoryService`" pulumi-lang-python="`directory_service`" pulumi-lang-yaml="`directoryService`" pulumi-lang-java="`directoryService`" pulumi-lang-hcl="`directory_service`"&gt;`directoryService`&lt;/span&gt;
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectsEntityDirectoryReferenceListResult> DirectoryReferenceLists;
+        /// <summary>
+        /// Flag indicating whether the directory services and identity providers associated with the project are shortlisted.
+        /// </summary>
+        public readonly bool EnableDirectoryAndIdentityProviderShortlist;
+        /// <summary>
         /// List of environments associated with the project.
         /// * `environment_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`"&gt;`environment`&lt;/span&gt;
         /// * `environment_reference_list.#.uuid` - The UUID of an environment.
@@ -61,6 +71,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         ///   &lt;/span&gt;* `external_user_group_reference_list.#.name` - The name of a user_group
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProjectsEntityExternalUserGroupReferenceListResult> ExternalUserGroupReferenceLists;
+        /// <summary>
+        /// List of identity providers associated with the project.
+        /// * `identity_providers_reference_list.#.uuid` - The UUID of an identity provider.
+        /// * `identity_providers_reference_list.#.kind` - The kind name. Default value is &lt;span pulumi-lang-nodejs="`identityProvider`" pulumi-lang-dotnet="`IdentityProvider`" pulumi-lang-go="`identityProvider`" pulumi-lang-python="`identity_provider`" pulumi-lang-yaml="`identityProvider`" pulumi-lang-java="`identityProvider`" pulumi-lang-hcl="`identity_provider`"&gt;`identityProvider`&lt;/span&gt;
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetProjectsEntityIdentityProvidersReferenceListResult> IdentityProvidersReferenceLists;
         public readonly bool IsDefault;
         public readonly ImmutableDictionary<string, string> Metadata;
         /// <summary>
@@ -101,11 +117,17 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string description,
 
+            ImmutableArray<Outputs.GetProjectsEntityDirectoryReferenceListResult> directoryReferenceLists,
+
+            bool enableDirectoryAndIdentityProviderShortlist,
+
             ImmutableArray<Outputs.GetProjectsEntityEnvironmentReferenceListResult> environmentReferenceLists,
 
             ImmutableArray<Outputs.GetProjectsEntityExternalNetworkListResult> externalNetworkLists,
 
             ImmutableArray<Outputs.GetProjectsEntityExternalUserGroupReferenceListResult> externalUserGroupReferenceLists,
+
+            ImmutableArray<Outputs.GetProjectsEntityIdentityProvidersReferenceListResult> identityProvidersReferenceLists,
 
             bool isDefault,
 
@@ -130,9 +152,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Categories = categories;
             DefaultSubnetReference = defaultSubnetReference;
             Description = description;
+            DirectoryReferenceLists = directoryReferenceLists;
+            EnableDirectoryAndIdentityProviderShortlist = enableDirectoryAndIdentityProviderShortlist;
             EnvironmentReferenceLists = environmentReferenceLists;
             ExternalNetworkLists = externalNetworkLists;
             ExternalUserGroupReferenceLists = externalUserGroupReferenceLists;
+            IdentityProvidersReferenceLists = identityProvidersReferenceLists;
             IsDefault = isDefault;
             Metadata = metadata;
             Name = name;

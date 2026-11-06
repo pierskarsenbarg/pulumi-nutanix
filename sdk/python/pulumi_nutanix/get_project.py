@@ -28,7 +28,7 @@ class GetProjectResult:
     """
     A collection of values returned by getProject.
     """
-    def __init__(__self__, account_reference_lists=None, acps=None, api_version=None, categories=None, cluster_reference_lists=None, default_environment_references=None, default_subnet_reference=None, description=None, environment_reference_lists=None, external_network_lists=None, external_user_group_reference_lists=None, id=None, is_default=None, metadata=None, name=None, owner_reference=None, project_id=None, project_name=None, project_reference=None, resource_domains=None, state=None, subnet_reference_lists=None, tunnel_reference_lists=None, user_reference_lists=None, vpc_reference_lists=None):
+    def __init__(__self__, account_reference_lists=None, acps=None, api_version=None, categories=None, cluster_reference_lists=None, default_environment_references=None, default_subnet_reference=None, description=None, directory_reference_lists=None, enable_directory_and_identity_provider_shortlist=None, environment_reference_lists=None, external_network_lists=None, external_user_group_reference_lists=None, id=None, identity_providers_reference_lists=None, is_default=None, metadata=None, name=None, owner_reference=None, project_id=None, project_name=None, project_reference=None, resource_domains=None, state=None, subnet_reference_lists=None, tunnel_reference_lists=None, user_reference_lists=None, vpc_reference_lists=None):
         if account_reference_lists and not isinstance(account_reference_lists, list):
             raise TypeError("Expected argument 'account_reference_lists' to be a list")
         pulumi.set(__self__, "account_reference_lists", account_reference_lists)
@@ -53,6 +53,12 @@ class GetProjectResult:
         if description and not isinstance(description, str):
             raise TypeError("Expected argument 'description' to be a str")
         pulumi.set(__self__, "description", description)
+        if directory_reference_lists and not isinstance(directory_reference_lists, list):
+            raise TypeError("Expected argument 'directory_reference_lists' to be a list")
+        pulumi.set(__self__, "directory_reference_lists", directory_reference_lists)
+        if enable_directory_and_identity_provider_shortlist and not isinstance(enable_directory_and_identity_provider_shortlist, bool):
+            raise TypeError("Expected argument 'enable_directory_and_identity_provider_shortlist' to be a bool")
+        pulumi.set(__self__, "enable_directory_and_identity_provider_shortlist", enable_directory_and_identity_provider_shortlist)
         if environment_reference_lists and not isinstance(environment_reference_lists, list):
             raise TypeError("Expected argument 'environment_reference_lists' to be a list")
         pulumi.set(__self__, "environment_reference_lists", environment_reference_lists)
@@ -65,6 +71,9 @@ class GetProjectResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if identity_providers_reference_lists and not isinstance(identity_providers_reference_lists, list):
+            raise TypeError("Expected argument 'identity_providers_reference_lists' to be a list")
+        pulumi.set(__self__, "identity_providers_reference_lists", identity_providers_reference_lists)
         if is_default and not isinstance(is_default, bool):
             raise TypeError("Expected argument 'is_default' to be a bool")
         pulumi.set(__self__, "is_default", is_default)
@@ -170,6 +179,24 @@ class GetProjectResult:
         return pulumi.get(self, "description")
 
     @_builtins.property
+    @pulumi.getter(name="directoryReferenceLists")
+    def directory_reference_lists(self) -> Sequence['outputs.GetProjectDirectoryReferenceListResult']:
+        """
+        List of directory services associated with the project.
+        * `directory_reference_list.#.uuid` - The UUID of a directory service.
+        * `directory_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`directoryService`" pulumi-lang-dotnet="`DirectoryService`" pulumi-lang-go="`directoryService`" pulumi-lang-python="`directory_service`" pulumi-lang-yaml="`directoryService`" pulumi-lang-java="`directoryService`" pulumi-lang-hcl="`directory_service`">`directoryService`</span>
+        """
+        return pulumi.get(self, "directory_reference_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="enableDirectoryAndIdentityProviderShortlist")
+    def enable_directory_and_identity_provider_shortlist(self) -> _builtins.bool:
+        """
+        Flag indicating whether the directory services and identity providers associated with the project are shortlisted.
+        """
+        return pulumi.get(self, "enable_directory_and_identity_provider_shortlist")
+
+    @_builtins.property
     @pulumi.getter(name="environmentReferenceLists")
     def environment_reference_lists(self) -> Sequence['outputs.GetProjectEnvironmentReferenceListResult']:
         """
@@ -215,6 +242,16 @@ class GetProjectResult:
         The provider-assigned unique ID for this managed resource.
         """
         return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="identityProvidersReferenceLists")
+    def identity_providers_reference_lists(self) -> Sequence['outputs.GetProjectIdentityProvidersReferenceListResult']:
+        """
+        List of identity providers associated with the project.
+        * `identity_providers_reference_list.#.uuid` - The UUID of an identity provider.
+        * `identity_providers_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`identityProvider`" pulumi-lang-dotnet="`IdentityProvider`" pulumi-lang-go="`identityProvider`" pulumi-lang-python="`identity_provider`" pulumi-lang-yaml="`identityProvider`" pulumi-lang-java="`identityProvider`" pulumi-lang-hcl="`identity_provider`">`identityProvider`</span>
+        """
+        return pulumi.get(self, "identity_providers_reference_lists")
 
     @_builtins.property
     @pulumi.getter(name="isDefault")
@@ -323,10 +360,13 @@ class AwaitableGetProjectResult(GetProjectResult):
             default_environment_references=self.default_environment_references,
             default_subnet_reference=self.default_subnet_reference,
             description=self.description,
+            directory_reference_lists=self.directory_reference_lists,
+            enable_directory_and_identity_provider_shortlist=self.enable_directory_and_identity_provider_shortlist,
             environment_reference_lists=self.environment_reference_lists,
             external_network_lists=self.external_network_lists,
             external_user_group_reference_lists=self.external_user_group_reference_lists,
             id=self.id,
+            identity_providers_reference_lists=self.identity_providers_reference_lists,
             is_default=self.is_default,
             metadata=self.metadata,
             name=self.name,
@@ -435,10 +475,13 @@ def get_project(categories: Optional[Sequence[Union['GetProjectCategoryArgs', 'G
         default_environment_references=pulumi.get(__ret__, 'default_environment_references'),
         default_subnet_reference=pulumi.get(__ret__, 'default_subnet_reference'),
         description=pulumi.get(__ret__, 'description'),
+        directory_reference_lists=pulumi.get(__ret__, 'directory_reference_lists'),
+        enable_directory_and_identity_provider_shortlist=pulumi.get(__ret__, 'enable_directory_and_identity_provider_shortlist'),
         environment_reference_lists=pulumi.get(__ret__, 'environment_reference_lists'),
         external_network_lists=pulumi.get(__ret__, 'external_network_lists'),
         external_user_group_reference_lists=pulumi.get(__ret__, 'external_user_group_reference_lists'),
         id=pulumi.get(__ret__, 'id'),
+        identity_providers_reference_lists=pulumi.get(__ret__, 'identity_providers_reference_lists'),
         is_default=pulumi.get(__ret__, 'is_default'),
         metadata=pulumi.get(__ret__, 'metadata'),
         name=pulumi.get(__ret__, 'name'),
@@ -544,10 +587,13 @@ def get_project_output(categories: pulumi.Input[Optional[Optional[Sequence[Union
         default_environment_references=pulumi.get(__response__, 'default_environment_references'),
         default_subnet_reference=pulumi.get(__response__, 'default_subnet_reference'),
         description=pulumi.get(__response__, 'description'),
+        directory_reference_lists=pulumi.get(__response__, 'directory_reference_lists'),
+        enable_directory_and_identity_provider_shortlist=pulumi.get(__response__, 'enable_directory_and_identity_provider_shortlist'),
         environment_reference_lists=pulumi.get(__response__, 'environment_reference_lists'),
         external_network_lists=pulumi.get(__response__, 'external_network_lists'),
         external_user_group_reference_lists=pulumi.get(__response__, 'external_user_group_reference_lists'),
         id=pulumi.get(__response__, 'id'),
+        identity_providers_reference_lists=pulumi.get(__response__, 'identity_providers_reference_lists'),
         is_default=pulumi.get(__response__, 'is_default'),
         metadata=pulumi.get(__response__, 'metadata'),
         name=pulumi.get(__response__, 'name'),

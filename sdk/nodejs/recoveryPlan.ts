@@ -33,7 +33,38 @@ import * as utilities from "./utilities";
  *         stageUuid: "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
  *         delayTimeSecs: 0,
  *     }],
- *     parameters: {},
+ *     parameters: {
+ *         availabilityZoneLists: [{
+ *             availabilityZoneUrl: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+ *             clusterReferenceLists: [{
+ *                 kind: "cluster",
+ *                 uuid: "00000000-0000-0000-0000-000000000001",
+ *             }],
+ *         }],
+ *         primaryLocationIndex: 0,
+ *         networkMappingLists: [{
+ *             areNetworksStretched: false,
+ *             availabilityZoneNetworkMappingLists: [{
+ *                 availabilityZoneUrl: "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+ *                 recoveryNetwork: {
+ *                     name: "DEV",
+ *                     subnetUuid: "11111111-2222-3333-4444-555555555555",
+ *                     subnetLists: [{
+ *                         gatewayIp: "10.12.63.254",
+ *                         prefixLength: 24,
+ *                     }],
+ *                 },
+ *                 testNetwork: {
+ *                     name: "DEV",
+ *                     subnetUuid: "11111111-2222-3333-4444-555555555555",
+ *                     subnetLists: [{
+ *                         gatewayIp: "10.12.63.254",
+ *                         prefixLength: 24,
+ *                     }],
+ *                 },
+ *             }],
+ *         }],
+ *     },
  * });
  * ```
  * <!--End PulumiCodeChooser -->

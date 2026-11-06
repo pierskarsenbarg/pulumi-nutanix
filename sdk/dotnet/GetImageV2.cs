@@ -395,6 +395,7 @@ namespace PiersKarsenbarg.Nutanix
         public readonly string Description;
         /// <summary>
         /// The external identifier of VM Disk.
+        /// &gt; **Deprecation Notice:** Providing &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt; without &lt;span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`"&gt;`vmExtId`&lt;/span&gt; is deprecated and will not be supported in a future release.
         /// </summary>
         public readonly string ExtId;
         /// <summary>
@@ -417,6 +418,14 @@ namespace PiersKarsenbarg.Nutanix
         /// Status of an image placement policy.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetImageV2PlacementPolicyStatusResult> PlacementPolicyStatuses;
+        /// <summary>
+        /// External identifier of the project associated with the image.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
+        /// Indicates whether the image is shared with all projects.
+        /// </summary>
+        public readonly bool ShareWithAllProjects;
         /// <summary>
         /// The size in bytes of an image file.
         /// </summary>
@@ -454,6 +463,10 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableArray<Outputs.GetImageV2PlacementPolicyStatusResult> placementPolicyStatuses,
 
+            string projectExtId,
+
+            bool shareWithAllProjects,
+
             int sizeBytes,
 
             ImmutableArray<Outputs.GetImageV2SourceResult> sources,
@@ -471,6 +484,8 @@ namespace PiersKarsenbarg.Nutanix
             Name = name;
             OwnerExtId = ownerExtId;
             PlacementPolicyStatuses = placementPolicyStatuses;
+            ProjectExtId = projectExtId;
+            ShareWithAllProjects = shareWithAllProjects;
             SizeBytes = sizeBytes;
             Sources = sources;
             Type = type;

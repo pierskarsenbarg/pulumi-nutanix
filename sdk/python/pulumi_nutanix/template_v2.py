@@ -26,6 +26,7 @@ class TemplateV2Args:
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2CreatedByArgs']]]] = None,
                  guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  template_description: pulumi.Input[Optional[_builtins.str]] = None,
                  updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2UpdatedByArgs']]]] = None):
         """
@@ -34,6 +35,7 @@ class TemplateV2Args:
         :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
         :param pulumi.Input['TemplateV2TemplateVersionSpecArgs'] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
         :param pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[_builtins.str] project_ext_id: The external identifier of the project with which the template is associated.
         :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
         """
         pulumi.set(__self__, "template_name", template_name)
@@ -44,6 +46,8 @@ class TemplateV2Args:
             pulumi.set(__self__, "created_bies", created_bies)
         if guest_update_statuses is not None:
             pulumi.set(__self__, "guest_update_statuses", guest_update_statuses)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if template_description is not None:
             pulumi.set(__self__, "template_description", template_description)
         if updated_bies is not None:
@@ -104,6 +108,18 @@ class TemplateV2Args:
         pulumi.set(self, "guest_update_statuses", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external identifier of the project with which the template is associated.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="templateDescription")
     def template_description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -134,6 +150,7 @@ class _TemplateV2State:
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]]] = None,
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2LinkArgs']]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  template_description: pulumi.Input[Optional[_builtins.str]] = None,
                  template_name: pulumi.Input[Optional[_builtins.str]] = None,
                  template_version_spec: pulumi.Input[Optional['TemplateV2TemplateVersionSpecArgs']] = None,
@@ -144,6 +161,7 @@ class _TemplateV2State:
         Input properties used for looking up and filtering TemplateV2 resources.
 
         :param pulumi.Input[Sequence[pulumi.Input['TemplateV2GuestUpdateStatusArgs']]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[_builtins.str] project_ext_id: The external identifier of the project with which the template is associated.
         :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
         :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
         :param pulumi.Input['TemplateV2TemplateVersionSpecArgs'] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
@@ -160,6 +178,8 @@ class _TemplateV2State:
             pulumi.set(__self__, "guest_update_statuses", guest_update_statuses)
         if links is not None:
             pulumi.set(__self__, "links", links)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if template_description is not None:
             pulumi.set(__self__, "template_description", template_description)
         if template_name is not None:
@@ -229,6 +249,18 @@ class _TemplateV2State:
     @links.setter
     def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2LinkArgs']]]]):
         pulumi.set(self, "links", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external identifier of the project with which the template is associated.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="templateDescription")
@@ -303,6 +335,7 @@ class TemplateV2(pulumi.CustomResource):
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict', 'outputs.TemplateV2CreatedBy']]]]] = None,
                  guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  template_description: pulumi.Input[Optional[_builtins.str]] = None,
                  template_name: pulumi.Input[Optional[_builtins.str]] = None,
                  template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']]] = None,
@@ -315,6 +348,7 @@ class TemplateV2(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[_builtins.str] project_ext_id: The external identifier of the project with which the template is associated.
         :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
         :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
         :param pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
@@ -347,6 +381,7 @@ class TemplateV2(pulumi.CustomResource):
                  category_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2CreatedByArgs', 'TemplateV2CreatedByArgsDict', 'outputs.TemplateV2CreatedBy']]]]] = None,
                  guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  template_description: pulumi.Input[Optional[_builtins.str]] = None,
                  template_name: pulumi.Input[Optional[_builtins.str]] = None,
                  template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']]] = None,
@@ -363,6 +398,7 @@ class TemplateV2(pulumi.CustomResource):
             __props__.__dict__["category_ext_ids"] = category_ext_ids
             __props__.__dict__["created_bies"] = created_bies
             __props__.__dict__["guest_update_statuses"] = guest_update_statuses
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["template_description"] = template_description
             if template_name is None and not opts.urn:
                 raise TypeError("Missing required property 'template_name'")
@@ -392,6 +428,7 @@ class TemplateV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2LinkArgs', 'TemplateV2LinkArgsDict', 'outputs.TemplateV2Link']]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             template_description: pulumi.Input[Optional[_builtins.str]] = None,
             template_name: pulumi.Input[Optional[_builtins.str]] = None,
             template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']]] = None,
@@ -406,6 +443,7 @@ class TemplateV2(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]] guest_update_statuses: Status of a guest update.
+        :param pulumi.Input[_builtins.str] project_ext_id: The external identifier of the project with which the template is associated.
         :param pulumi.Input[_builtins.str] template_description: The user defined description of a Template.
         :param pulumi.Input[_builtins.str] template_name: The user defined name of a Template.
         :param pulumi.Input[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']] template_version_spec: A model that represents an object instance that is accessible through an API endpoint. Instances of this type get an extId field that contains the globally unique identifier for that instance. Externally accessible instances are always tenant aware and, therefore, extend the TenantAwareModel
@@ -420,6 +458,7 @@ class TemplateV2(pulumi.CustomResource):
         __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["guest_update_statuses"] = guest_update_statuses
         __props__.__dict__["links"] = links
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["template_description"] = template_description
         __props__.__dict__["template_name"] = template_name
         __props__.__dict__["template_version_spec"] = template_version_spec
@@ -437,6 +476,7 @@ class TemplateV2(pulumi.CustomResource):
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             guest_update_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2GuestUpdateStatusArgs', 'TemplateV2GuestUpdateStatusArgsDict', 'outputs.TemplateV2GuestUpdateStatus']]]]] = None,
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TemplateV2LinkArgs', 'TemplateV2LinkArgsDict', 'outputs.TemplateV2Link']]]]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             template_description: pulumi.Input[Optional[_builtins.str]] = None,
             template_name: pulumi.Input[Optional[_builtins.str]] = None,
             template_version_spec: pulumi.Input[Optional[Union['TemplateV2TemplateVersionSpecArgs', 'TemplateV2TemplateVersionSpecArgsDict', 'outputs.TemplateV2TemplateVersionSpec']]] = None,
@@ -450,6 +490,7 @@ class TemplateV2(pulumi.CustomResource):
         __props__["extId"] = ext_id
         __props__["guestUpdateStatuses"] = guest_update_statuses
         __props__["links"] = links
+        __props__["projectExtId"] = project_ext_id
         __props__["templateDescription"] = template_description
         __props__["templateName"] = template_name
         __props__["templateVersionSpec"] = template_version_spec
@@ -490,6 +531,14 @@ class TemplateV2(pulumi.CustomResource):
     @pulumi.getter
     def links(self) -> pulumi.Output[Sequence['outputs.TemplateV2Link']]:
         return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The external identifier of the project with which the template is associated.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="templateDescription")

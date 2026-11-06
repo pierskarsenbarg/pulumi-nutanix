@@ -86,13 +86,17 @@ export interface GetRouteV2Result {
      */
     readonly name: string;
     /**
-     * Route nexthop.
+     * Route nexthop(s). Supports multiple entries.
      */
     readonly nextHops: outputs.GetRouteV2NextHop[];
     /**
      * Route priority. A higher value implies greater preference is assigned to the route.
      */
     readonly priority: number;
+    /**
+     * External identifier of the project associated with the Route.
+     */
+    readonly projectExtId: string;
     readonly routeTableExtId: string;
     /**
      * Route table reference.

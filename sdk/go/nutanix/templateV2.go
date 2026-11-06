@@ -23,6 +23,8 @@ type TemplateV2 struct {
 	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayOutput `pulumi:"guestUpdateStatuses"`
 	Links               TemplateV2LinkArrayOutput              `pulumi:"links"`
+	// The external identifier of the project with which the template is associated.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// The user defined description of a Template.
 	TemplateDescription pulumi.StringOutput `pulumi:"templateDescription"`
 	// The user defined name of a Template.
@@ -77,6 +79,8 @@ type templateV2State struct {
 	// Status of a guest update.
 	GuestUpdateStatuses []TemplateV2GuestUpdateStatus `pulumi:"guestUpdateStatuses"`
 	Links               []TemplateV2Link              `pulumi:"links"`
+	// The external identifier of the project with which the template is associated.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// The user defined description of a Template.
 	TemplateDescription *string `pulumi:"templateDescription"`
 	// The user defined name of a Template.
@@ -96,6 +100,8 @@ type TemplateV2State struct {
 	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayInput
 	Links               TemplateV2LinkArrayInput
+	// The external identifier of the project with which the template is associated.
+	ProjectExtId pulumi.StringPtrInput
 	// The user defined description of a Template.
 	TemplateDescription pulumi.StringPtrInput
 	// The user defined name of a Template.
@@ -122,6 +128,8 @@ type templateV2Args struct {
 	CreatedBies    []TemplateV2CreatedBy `pulumi:"createdBies"`
 	// Status of a guest update.
 	GuestUpdateStatuses []TemplateV2GuestUpdateStatus `pulumi:"guestUpdateStatuses"`
+	// The external identifier of the project with which the template is associated.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// The user defined description of a Template.
 	TemplateDescription *string `pulumi:"templateDescription"`
 	// The user defined name of a Template.
@@ -137,6 +145,8 @@ type TemplateV2Args struct {
 	CreatedBies    TemplateV2CreatedByArrayInput
 	// Status of a guest update.
 	GuestUpdateStatuses TemplateV2GuestUpdateStatusArrayInput
+	// The external identifier of the project with which the template is associated.
+	ProjectExtId pulumi.StringPtrInput
 	// The user defined description of a Template.
 	TemplateDescription pulumi.StringPtrInput
 	// The user defined name of a Template.
@@ -256,6 +266,11 @@ func (o TemplateV2Output) GuestUpdateStatuses() TemplateV2GuestUpdateStatusArray
 
 func (o TemplateV2Output) Links() TemplateV2LinkArrayOutput {
 	return o.ApplyT(func(v *TemplateV2) TemplateV2LinkArrayOutput { return v.Links }).(TemplateV2LinkArrayOutput)
+}
+
+// The external identifier of the project with which the template is associated.
+func (o TemplateV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *TemplateV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // The user defined description of a Template.

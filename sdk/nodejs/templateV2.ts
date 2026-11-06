@@ -58,6 +58,10 @@ export class TemplateV2 extends pulumi.CustomResource {
     declare public readonly guestUpdateStatuses: pulumi.Output<outputs.TemplateV2GuestUpdateStatus[]>;
     declare public /*out*/ readonly links: pulumi.Output<outputs.TemplateV2Link[]>;
     /**
+     * The external identifier of the project with which the template is associated.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
      * The user defined description of a Template.
      */
     declare public readonly templateDescription: pulumi.Output<string>;
@@ -92,6 +96,7 @@ export class TemplateV2 extends pulumi.CustomResource {
             resourceInputs["extId"] = state?.extId;
             resourceInputs["guestUpdateStatuses"] = state?.guestUpdateStatuses;
             resourceInputs["links"] = state?.links;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["templateDescription"] = state?.templateDescription;
             resourceInputs["templateName"] = state?.templateName;
             resourceInputs["templateVersionSpec"] = state?.templateVersionSpec;
@@ -109,6 +114,7 @@ export class TemplateV2 extends pulumi.CustomResource {
             resourceInputs["categoryExtIds"] = args?.categoryExtIds;
             resourceInputs["createdBies"] = args?.createdBies;
             resourceInputs["guestUpdateStatuses"] = args?.guestUpdateStatuses;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["templateDescription"] = args?.templateDescription;
             resourceInputs["templateName"] = args?.templateName;
             resourceInputs["templateVersionSpec"] = args?.templateVersionSpec;
@@ -138,6 +144,10 @@ export interface TemplateV2State {
     guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[] | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.TemplateV2Link>[] | undefined>;
     /**
+     * The external identifier of the project with which the template is associated.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
      * The user defined description of a Template.
      */
     templateDescription?: pulumi.Input<string | undefined>;
@@ -164,6 +174,10 @@ export interface TemplateV2Args {
      * Status of a guest update.
      */
     guestUpdateStatuses?: pulumi.Input<pulumi.Input<inputs.TemplateV2GuestUpdateStatus>[] | undefined>;
+    /**
+     * The external identifier of the project with which the template is associated.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * The user defined description of a Template.
      */

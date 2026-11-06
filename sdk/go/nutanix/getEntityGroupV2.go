@@ -78,6 +78,10 @@ type LookupEntityGroupV2Result struct {
 	ExtId string `pulumi:"extId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
+	// Indicates whether the Entity Group is shared with all projects.
+	IsSharedWithAllProjects bool `pulumi:"isSharedWithAllProjects"`
+	// A flag indicating whether the entity group is system-defined.
+	IsSystemDefined bool `pulumi:"isSystemDefined"`
 	// The timestamp when the Entity Group was last updated.
 	LastUpdateTime string `pulumi:"lastUpdateTime"`
 	// A HATEOAS style link for the response.
@@ -88,6 +92,8 @@ type LookupEntityGroupV2Result struct {
 	OwnerExtId string `pulumi:"ownerExtId"`
 	// Mapping of entity group to the list of policy external identifiers.
 	PolicyExtIds []string `pulumi:"policyExtIds"`
+	// Project external ID associated with the entity group.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId string `pulumi:"tenantId"`
 }
@@ -152,6 +158,16 @@ func (o LookupEntityGroupV2ResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEntityGroupV2Result) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// Indicates whether the Entity Group is shared with all projects.
+func (o LookupEntityGroupV2ResultOutput) IsSharedWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupEntityGroupV2Result) bool { return v.IsSharedWithAllProjects }).(pulumi.BoolOutput)
+}
+
+// A flag indicating whether the entity group is system-defined.
+func (o LookupEntityGroupV2ResultOutput) IsSystemDefined() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupEntityGroupV2Result) bool { return v.IsSystemDefined }).(pulumi.BoolOutput)
+}
+
 // The timestamp when the Entity Group was last updated.
 func (o LookupEntityGroupV2ResultOutput) LastUpdateTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEntityGroupV2Result) string { return v.LastUpdateTime }).(pulumi.StringOutput)
@@ -175,6 +191,11 @@ func (o LookupEntityGroupV2ResultOutput) OwnerExtId() pulumi.StringOutput {
 // Mapping of entity group to the list of policy external identifiers.
 func (o LookupEntityGroupV2ResultOutput) PolicyExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupEntityGroupV2Result) []string { return v.PolicyExtIds }).(pulumi.StringArrayOutput)
+}
+
+// Project external ID associated with the entity group.
+func (o LookupEntityGroupV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupEntityGroupV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

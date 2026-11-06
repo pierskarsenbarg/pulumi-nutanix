@@ -103,14 +103,18 @@ namespace PiersKarsenbarg.Nutanix
     /// The combination of &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt; must be one of the following valid pairs:
     /// 
     /// * `(CATEGORY_EXT_ID, VM)`
+    /// * `(EXT_ID, VM)`
+    /// * `(REGEX, VM)`
     /// * `(CATEGORY_EXT_ID, SUBNET)`
+    /// * `(EXT_ID, SUBNET)`
     /// * `(CATEGORY_EXT_ID, VPC)`
     /// * `(EXT_ID, KUBE_CLUSTER)`
-    /// * `(EXT_ID, ADDRESS_GROUP)`
     /// * `(LABELS, KUBE_PODS)`
     /// * `(NAME, KUBE_NAMESPACE)`
     /// * `(NAME, KUBE_SERVICE)`
+    /// * `(EXT_ID, ADDRESS_GROUP)`
     /// * `(IP_VALUES, ADDRESS_GROUP)`
+    /// * `(FQDN_VALUES, ADDRESS_GROUP)`
     /// 
     /// Any other combination will result in a validation error.
     /// 
@@ -131,7 +135,7 @@ namespace PiersKarsenbarg.Nutanix
     /// $ pulumi import nutanix:index/entityGroupV2:EntityGroupV2 import_entity_group &lt;entityGroupUUID&gt;
     /// ```
     /// 
-    /// See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&amp;version=v4.2#tag/EntityGroups/operation/createEntityGroup).
+    /// See detailed information in [Nutanix Entity Groups V4](https://developers.nutanix.com/api-reference?namespace=microseg&amp;version=v4.3#tag/EntityGroups/operation/createEntityGroup).
     /// </summary>
     [NutanixResourceType("nutanix:index/entityGroupV2:EntityGroupV2")]
     public partial class EntityGroupV2 : global::Pulumi.CustomResource
@@ -167,6 +171,18 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the entity group is shared with all projects.
+        /// </summary>
+        [Output("isSharedWithAllProjects")]
+        public Output<bool> IsSharedWithAllProjects { get; private set; } = null!;
+
+        /// <summary>
+        /// A flag indicating whether the entity group is system-defined.
+        /// </summary>
+        [Output("isSystemDefined")]
+        public Output<bool> IsSystemDefined { get; private set; } = null!;
+
+        /// <summary>
         /// The timestamp when the Entity Group was last updated.
         /// </summary>
         [Output("lastUpdateTime")]
@@ -195,6 +211,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("policyExtIds")]
         public Output<ImmutableArray<string>> PolicyExtIds { get; private set; } = null!;
+
+        /// <summary>
+        /// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
@@ -285,6 +307,12 @@ namespace PiersKarsenbarg.Nutanix
             set => _policyExtIds = value;
         }
 
+        /// <summary>
+        /// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         public EntityGroupV2Args()
         {
         }
@@ -322,6 +350,18 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
+
+        /// <summary>
+        /// Indicates whether the entity group is shared with all projects.
+        /// </summary>
+        [Input("isSharedWithAllProjects")]
+        public Input<bool>? IsSharedWithAllProjects { get; set; }
+
+        /// <summary>
+        /// A flag indicating whether the entity group is system-defined.
+        /// </summary>
+        [Input("isSystemDefined")]
+        public Input<bool>? IsSystemDefined { get; set; }
 
         /// <summary>
         /// The timestamp when the Entity Group was last updated.
@@ -364,6 +404,12 @@ namespace PiersKarsenbarg.Nutanix
             get => _policyExtIds ?? (_policyExtIds = new InputList<string>());
             set => _policyExtIds = value;
         }
+
+        /// <summary>
+        /// Project external ID to associate with the entity group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.

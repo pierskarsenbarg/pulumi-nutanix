@@ -28,7 +28,8 @@ class RoutesV2Args:
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional['RoutesV2MetadataArgs']] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_hop: pulumi.Input[Optional['RoutesV2NextHopArgs']] = None,
+                 next_hops: pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopArgs']]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  vpc_reference: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -41,7 +42,8 @@ class RoutesV2Args:
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table.
         :param pulumi.Input['RoutesV2MetadataArgs'] metadata: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Route name.
-        :param pulumi.Input['RoutesV2NextHopArgs'] next_hop: Route nexthop.
+        :param pulumi.Input[Sequence[pulumi.Input['RoutesV2NextHopArgs']]] next_hops: Route nexthop. Supports multiple entries.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Route.
         :param pulumi.Input[_builtins.str] route_table_reference: Route table reference.
         :param pulumi.Input[_builtins.str] vpc_reference: VPC reference.
         """
@@ -57,8 +59,10 @@ class RoutesV2Args:
             pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if next_hop is not None:
-            pulumi.set(__self__, "next_hop", next_hop)
+        if next_hops is not None:
+            pulumi.set(__self__, "next_hops", next_hops)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if route_table_reference is not None:
             pulumi.set(__self__, "route_table_reference", route_table_reference)
         if vpc_reference is not None:
@@ -149,16 +153,28 @@ class RoutesV2Args:
         pulumi.set(self, "name", value)
 
     @_builtins.property
-    @pulumi.getter(name="nextHop")
-    def next_hop(self) -> pulumi.Input[Optional['RoutesV2NextHopArgs']]:
+    @pulumi.getter(name="nextHops")
+    def next_hops(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopArgs']]]]:
         """
-        Route nexthop.
+        Route nexthop. Supports multiple entries.
         """
-        return pulumi.get(self, "next_hop")
+        return pulumi.get(self, "next_hops")
 
-    @next_hop.setter
-    def next_hop(self, value: pulumi.Input[Optional['RoutesV2NextHopArgs']]):
-        pulumi.set(self, "next_hop", value)
+    @next_hops.setter
+    def next_hops(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopArgs']]]]):
+        pulumi.set(self, "next_hops", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the Route.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableReference")
@@ -196,8 +212,9 @@ class _RoutesV2State:
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2LinkArgs']]]] = None,
                  metadata: pulumi.Input[Optional['RoutesV2MetadataArgs']] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_hop: pulumi.Input[Optional['RoutesV2NextHopArgs']] = None,
+                 next_hops: pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopArgs']]]] = None,
                  priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  route_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -214,8 +231,9 @@ class _RoutesV2State:
         :param pulumi.Input[Sequence[pulumi.Input['RoutesV2LinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input['RoutesV2MetadataArgs'] metadata: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Route name.
-        :param pulumi.Input['RoutesV2NextHopArgs'] next_hop: Route nexthop.
+        :param pulumi.Input[Sequence[pulumi.Input['RoutesV2NextHopArgs']]] next_hops: Route nexthop. Supports multiple entries.
         :param pulumi.Input[_builtins.int] priority: Route priority. A higher value implies greater preference is assigned to the route.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Route.
         :param pulumi.Input[_builtins.str] route_table_ext_id: Route table UUID
         :param pulumi.Input[_builtins.str] route_table_reference: Route table reference.
         :param pulumi.Input[_builtins.str] route_type: Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
@@ -238,10 +256,12 @@ class _RoutesV2State:
             pulumi.set(__self__, "metadata", metadata)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if next_hop is not None:
-            pulumi.set(__self__, "next_hop", next_hop)
+        if next_hops is not None:
+            pulumi.set(__self__, "next_hops", next_hops)
         if priority is not None:
             pulumi.set(__self__, "priority", priority)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if route_table_ext_id is not None:
             pulumi.set(__self__, "route_table_ext_id", route_table_ext_id)
         if route_table_reference is not None:
@@ -350,16 +370,16 @@ class _RoutesV2State:
         pulumi.set(self, "name", value)
 
     @_builtins.property
-    @pulumi.getter(name="nextHop")
-    def next_hop(self) -> pulumi.Input[Optional['RoutesV2NextHopArgs']]:
+    @pulumi.getter(name="nextHops")
+    def next_hops(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopArgs']]]]:
         """
-        Route nexthop.
+        Route nexthop. Supports multiple entries.
         """
-        return pulumi.get(self, "next_hop")
+        return pulumi.get(self, "next_hops")
 
-    @next_hop.setter
-    def next_hop(self, value: pulumi.Input[Optional['RoutesV2NextHopArgs']]):
-        pulumi.set(self, "next_hop", value)
+    @next_hops.setter
+    def next_hops(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopArgs']]]]):
+        pulumi.set(self, "next_hops", value)
 
     @_builtins.property
     @pulumi.getter
@@ -372,6 +392,18 @@ class _RoutesV2State:
     @priority.setter
     def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "priority", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the Route.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="routeTableExtId")
@@ -445,7 +477,8 @@ class RoutesV2(pulumi.CustomResource):
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]] = None,
+                 next_hops: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  route_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -475,10 +508,10 @@ class RoutesV2(pulumi.CustomResource):
                     "prefix_length": 32,
                 },
             },
-            next_hop={
+            next_hops=[{
                 "next_hop_type": "EXTERNAL_SUBNET",
                 "next_hop_reference": "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-            },
+            }],
             metadata={
                 "owner_reference_id": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
                 "project_reference_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
@@ -495,7 +528,8 @@ class RoutesV2(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table.
         :param pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']] metadata: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Route name.
-        :param pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']] next_hop: Route nexthop.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]]] next_hops: Route nexthop. Supports multiple entries.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Route.
         :param pulumi.Input[_builtins.str] route_table_ext_id: Route table UUID
         :param pulumi.Input[_builtins.str] route_table_reference: Route table reference.
         :param pulumi.Input[_builtins.str] route_type: Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
@@ -531,10 +565,10 @@ class RoutesV2(pulumi.CustomResource):
                     "prefix_length": 32,
                 },
             },
-            next_hop={
+            next_hops=[{
                 "next_hop_type": "EXTERNAL_SUBNET",
                 "next_hop_reference": "ba250e3e-1db1-4950-917f-a9e2ea35b8e3",
-            },
+            }],
             metadata={
                 "owner_reference_id": "a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b",
                 "project_reference_id": "ab520e1d-4950-1db1-917f-a9e2ea35b8e3",
@@ -564,7 +598,8 @@ class RoutesV2(pulumi.CustomResource):
                  external_routing_domain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
-                 next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]] = None,
+                 next_hops: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]]]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  route_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -583,7 +618,8 @@ class RoutesV2(pulumi.CustomResource):
             __props__.__dict__["external_routing_domain_reference"] = external_routing_domain_reference
             __props__.__dict__["metadata"] = metadata
             __props__.__dict__["name"] = name
-            __props__.__dict__["next_hop"] = next_hop
+            __props__.__dict__["next_hops"] = next_hops
+            __props__.__dict__["project_ext_id"] = project_ext_id
             if route_table_ext_id is None and not opts.urn:
                 raise TypeError("Missing required property 'route_table_ext_id'")
             __props__.__dict__["route_table_ext_id"] = route_table_ext_id
@@ -615,8 +651,9 @@ class RoutesV2(pulumi.CustomResource):
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict', 'outputs.RoutesV2Link']]]]] = None,
             metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]] = None,
+            next_hops: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]]]] = None,
             priority: pulumi.Input[Optional[_builtins.int]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
             route_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -637,8 +674,9 @@ class RoutesV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict', 'outputs.RoutesV2Link']]]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']] metadata: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Route name.
-        :param pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']] next_hop: Route nexthop.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]]] next_hops: Route nexthop. Supports multiple entries.
         :param pulumi.Input[_builtins.int] priority: Route priority. A higher value implies greater preference is assigned to the route.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Route.
         :param pulumi.Input[_builtins.str] route_table_ext_id: Route table UUID
         :param pulumi.Input[_builtins.str] route_table_reference: Route table reference.
         :param pulumi.Input[_builtins.str] route_type: Route type. Acceptable values are "STATIC", "LOCAL", "DYNAMIC"
@@ -657,8 +695,9 @@ class RoutesV2(pulumi.CustomResource):
         __props__.__dict__["links"] = links
         __props__.__dict__["metadata"] = metadata
         __props__.__dict__["name"] = name
-        __props__.__dict__["next_hop"] = next_hop
+        __props__.__dict__["next_hops"] = next_hops
         __props__.__dict__["priority"] = priority
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["route_table_ext_id"] = route_table_ext_id
         __props__.__dict__["route_table_reference"] = route_table_reference
         __props__.__dict__["route_type"] = route_type
@@ -677,8 +716,9 @@ class RoutesV2(pulumi.CustomResource):
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2LinkArgs', 'RoutesV2LinkArgsDict', 'outputs.RoutesV2Link']]]]] = None,
             metadata: pulumi.Input[Optional[Union['RoutesV2MetadataArgs', 'RoutesV2MetadataArgsDict', 'outputs.RoutesV2Metadata']]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
-            next_hop: pulumi.Input[Optional[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]] = None,
+            next_hops: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RoutesV2NextHopArgs', 'RoutesV2NextHopArgsDict', 'outputs.RoutesV2NextHop']]]]] = None,
             priority: pulumi.Input[Optional[_builtins.int]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             route_table_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             route_table_reference: pulumi.Input[Optional[_builtins.str]] = None,
             route_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -693,8 +733,9 @@ class RoutesV2(pulumi.CustomResource):
         __props__["links"] = links
         __props__["metadata"] = metadata
         __props__["name"] = name
-        __props__["nextHop"] = next_hop
+        __props__["nextHops"] = next_hops
         __props__["priority"] = priority
+        __props__["projectExtId"] = project_ext_id
         __props__["routeTableExtId"] = route_table_ext_id
         __props__["routeTableReference"] = route_table_reference
         __props__["routeType"] = route_type
@@ -767,12 +808,12 @@ class RoutesV2(pulumi.CustomResource):
         return pulumi.get(self, "name")
 
     @_builtins.property
-    @pulumi.getter(name="nextHop")
-    def next_hop(self) -> pulumi.Output['outputs.RoutesV2NextHop']:
+    @pulumi.getter(name="nextHops")
+    def next_hops(self) -> pulumi.Output[Sequence['outputs.RoutesV2NextHop']]:
         """
-        Route nexthop.
+        Route nexthop. Supports multiple entries.
         """
-        return pulumi.get(self, "next_hop")
+        return pulumi.get(self, "next_hops")
 
     @_builtins.property
     @pulumi.getter
@@ -781,6 +822,14 @@ class RoutesV2(pulumi.CustomResource):
         Route priority. A higher value implies greater preference is assigned to the route.
         """
         return pulumi.get(self, "priority")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        External identifier of the project associated with the Route.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="routeTableExtId")

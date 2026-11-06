@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VolumeGroupV2DiskDiskStorageFeatureFlashMode
     {
-        /// <summary>
-        /// - Indicates whether the flash mode is enabled for the Volume Group Disk.
-        /// </summary>
         public readonly bool? IsEnabled;
 
         [OutputConstructor]

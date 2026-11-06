@@ -427,9 +427,17 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly string LastUpdatedTime;
         /// <summary>
+        /// - Project reference for the Authorization Policy.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// The Role associated with the Authorization Policy.
         /// </summary>
         public readonly string Role;
+        /// <summary>
+        /// - Flag indicating whether the Authorization Policy is shared with all projects or not.
+        /// </summary>
+        public readonly bool ShareWithAllProjects;
 
         [OutputConstructor]
         private GetAuthorizationPolicyV2Result(
@@ -457,7 +465,11 @@ namespace PiersKarsenbarg.Nutanix
 
             string lastUpdatedTime,
 
-            string role)
+            string projectExtId,
+
+            string role,
+
+            bool shareWithAllProjects)
         {
             AuthorizationPolicyType = authorizationPolicyType;
             ClientName = clientName;
@@ -471,7 +483,9 @@ namespace PiersKarsenbarg.Nutanix
             Identities = identities;
             IsSystemDefined = isSystemDefined;
             LastUpdatedTime = lastUpdatedTime;
+            ProjectExtId = projectExtId;
             Role = role;
+            ShareWithAllProjects = shareWithAllProjects;
         }
     }
 }

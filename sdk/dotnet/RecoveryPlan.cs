@@ -56,7 +56,65 @@ namespace PiersKarsenbarg.Nutanix
     ///                 DelayTimeSecs = 0,
     ///             },
     ///         },
-    ///         Parameters = new() { },
+    ///         Parameters = new Nutanix.Inputs.RecoveryPlanParametersArgs
+    ///         {
+    ///             AvailabilityZoneLists = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.RecoveryPlanParametersAvailabilityZoneListArgs
+    ///                 {
+    ///                     AvailabilityZoneUrl = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    ///                     ClusterReferenceLists = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgs
+    ///                         {
+    ///                             Kind = "cluster",
+    ///                             Uuid = "00000000-0000-0000-0000-000000000001",
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///             PrimaryLocationIndex = 0,
+    ///             NetworkMappingLists = new[]
+    ///             {
+    ///                 new Nutanix.Inputs.RecoveryPlanParametersNetworkMappingListArgs
+    ///                 {
+    ///                     AreNetworksStretched = false,
+    ///                     AvailabilityZoneNetworkMappingLists = new[]
+    ///                     {
+    ///                         new Nutanix.Inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs
+    ///                         {
+    ///                             AvailabilityZoneUrl = "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+    ///                             RecoveryNetwork = new Nutanix.Inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkArgs
+    ///                             {
+    ///                                 Name = "DEV",
+    ///                                 SubnetUuid = "11111111-2222-3333-4444-555555555555",
+    ///                                 SubnetLists = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs
+    ///                                     {
+    ///                                         GatewayIp = "10.12.63.254",
+    ///                                         PrefixLength = 24,
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                             TestNetwork = new Nutanix.Inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkArgs
+    ///                             {
+    ///                                 Name = "DEV",
+    ///                                 SubnetUuid = "11111111-2222-3333-4444-555555555555",
+    ///                                 SubnetLists = new[]
+    ///                                 {
+    ///                                     new Nutanix.Inputs.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgs
+    ///                                     {
+    ///                                         GatewayIp = "10.12.63.254",
+    ///                                         PrefixLength = 24,
+    ///                                     },
+    ///                                 },
+    ///                             },
+    ///                         },
+    ///                     },
+    ///                 },
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });

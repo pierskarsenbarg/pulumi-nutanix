@@ -200,7 +200,7 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
 
         ## JSON Example
 
-        See detailed information in [Nutanix Create a SSL certificate for an Object store V4 ](https://developers.nutanix.com/api-reference?namespace=objects&version=v4.0#tag/ObjectStores/operation/createCertificate).
+        See detailed information in [Nutanix Create a SSL certificate for an Object store V4 ](https://developers.nutanix.com/api-reference?namespace=objects&version=v4.1#tag/ObjectStores/operation/createCertificate).
 
 
         :param str resource_name: The name of the resource.
@@ -231,7 +231,7 @@ class ObjectStoreCertificateV2(pulumi.CustomResource):
 
         ## JSON Example
 
-        See detailed information in [Nutanix Create a SSL certificate for an Object store V4 ](https://developers.nutanix.com/api-reference?namespace=objects&version=v4.0#tag/ObjectStores/operation/createCertificate).
+        See detailed information in [Nutanix Create a SSL certificate for an Object store V4 ](https://developers.nutanix.com/api-reference?namespace=objects&version=v4.1#tag/ObjectStores/operation/createCertificate).
 
 
         :param str resource_name: The name of the resource.

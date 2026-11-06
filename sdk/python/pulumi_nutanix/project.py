@@ -30,10 +30,13 @@ class ProjectArgs:
                  cluster_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectClusterReferenceListArgs']]]] = None,
                  cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  default_environment_reference: pulumi.Input[Optional['ProjectDefaultEnvironmentReferenceArgs']] = None,
+                 directory_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectDirectoryReferenceListArgs']]]] = None,
                  enable_collab: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_directory_and_identity_provider_shortlist: pulumi.Input[Optional[_builtins.bool]] = None,
                  environment_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectEnvironmentReferenceListArgs']]]] = None,
                  external_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectExternalNetworkListArgs']]]] = None,
                  external_user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]]] = None,
+                 identity_providers_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectIdentityProvidersReferenceListArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -52,6 +55,7 @@ class ProjectArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ProjectCategoryArgs']]] categories: - (Optional) The category values represented as a dictionary of key > list of values.
         :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
+        :param pulumi.Input[_builtins.bool] enable_directory_and_identity_provider_shortlist: flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
         :param pulumi.Input[_builtins.str] name: The name for the project.
         :param pulumi.Input[_builtins.bool] use_project_internal: flag to use project internal for user role mapping
         :param pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]] user_reference_lists: List of Reference of users.
@@ -72,14 +76,20 @@ class ProjectArgs:
             pulumi.set(__self__, "cluster_uuid", cluster_uuid)
         if default_environment_reference is not None:
             pulumi.set(__self__, "default_environment_reference", default_environment_reference)
+        if directory_reference_lists is not None:
+            pulumi.set(__self__, "directory_reference_lists", directory_reference_lists)
         if enable_collab is not None:
             pulumi.set(__self__, "enable_collab", enable_collab)
+        if enable_directory_and_identity_provider_shortlist is not None:
+            pulumi.set(__self__, "enable_directory_and_identity_provider_shortlist", enable_directory_and_identity_provider_shortlist)
         if environment_reference_lists is not None:
             pulumi.set(__self__, "environment_reference_lists", environment_reference_lists)
         if external_network_lists is not None:
             pulumi.set(__self__, "external_network_lists", external_network_lists)
         if external_user_group_reference_lists is not None:
             pulumi.set(__self__, "external_user_group_reference_lists", external_user_group_reference_lists)
+        if identity_providers_reference_lists is not None:
+            pulumi.set(__self__, "identity_providers_reference_lists", identity_providers_reference_lists)
         if name is not None:
             pulumi.set(__self__, "name", name)
         if owner_reference is not None:
@@ -197,6 +207,15 @@ class ProjectArgs:
         pulumi.set(self, "default_environment_reference", value)
 
     @_builtins.property
+    @pulumi.getter(name="directoryReferenceLists")
+    def directory_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProjectDirectoryReferenceListArgs']]]]:
+        return pulumi.get(self, "directory_reference_lists")
+
+    @directory_reference_lists.setter
+    def directory_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectDirectoryReferenceListArgs']]]]):
+        pulumi.set(self, "directory_reference_lists", value)
+
+    @_builtins.property
     @pulumi.getter(name="enableCollab")
     def enable_collab(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -207,6 +226,18 @@ class ProjectArgs:
     @enable_collab.setter
     def enable_collab(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_collab", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enableDirectoryAndIdentityProviderShortlist")
+    def enable_directory_and_identity_provider_shortlist(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+        """
+        return pulumi.get(self, "enable_directory_and_identity_provider_shortlist")
+
+    @enable_directory_and_identity_provider_shortlist.setter
+    def enable_directory_and_identity_provider_shortlist(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_directory_and_identity_provider_shortlist", value)
 
     @_builtins.property
     @pulumi.getter(name="environmentReferenceLists")
@@ -234,6 +265,15 @@ class ProjectArgs:
     @external_user_group_reference_lists.setter
     def external_user_group_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]]]):
         pulumi.set(self, "external_user_group_reference_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="identityProvidersReferenceLists")
+    def identity_providers_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProjectIdentityProvidersReferenceListArgs']]]]:
+        return pulumi.get(self, "identity_providers_reference_lists")
+
+    @identity_providers_reference_lists.setter
+    def identity_providers_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectIdentityProvidersReferenceListArgs']]]]):
+        pulumi.set(self, "identity_providers_reference_lists", value)
 
     @_builtins.property
     @pulumi.getter
@@ -357,10 +397,13 @@ class _ProjectState:
                  default_environment_reference: pulumi.Input[Optional['ProjectDefaultEnvironmentReferenceArgs']] = None,
                  default_subnet_reference: pulumi.Input[Optional['ProjectDefaultSubnetReferenceArgs']] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 directory_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectDirectoryReferenceListArgs']]]] = None,
                  enable_collab: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_directory_and_identity_provider_shortlist: pulumi.Input[Optional[_builtins.bool]] = None,
                  environment_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectEnvironmentReferenceListArgs']]]] = None,
                  external_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectExternalNetworkListArgs']]]] = None,
                  external_user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]]] = None,
+                 identity_providers_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectIdentityProvidersReferenceListArgs']]]] = None,
                  is_default: pulumi.Input[Optional[_builtins.bool]] = None,
                  metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -382,6 +425,7 @@ class _ProjectState:
         :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         :param pulumi.Input[_builtins.str] description: A description for project.
         :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
+        :param pulumi.Input[_builtins.bool] enable_directory_and_identity_provider_shortlist: flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
         :param pulumi.Input[_builtins.str] name: The name for the project.
         :param pulumi.Input[_builtins.bool] use_project_internal: flag to use project internal for user role mapping
         :param pulumi.Input[Sequence[pulumi.Input['ProjectUserReferenceListArgs']]] user_reference_lists: List of Reference of users.
@@ -404,14 +448,20 @@ class _ProjectState:
             pulumi.set(__self__, "default_subnet_reference", default_subnet_reference)
         if description is not None:
             pulumi.set(__self__, "description", description)
+        if directory_reference_lists is not None:
+            pulumi.set(__self__, "directory_reference_lists", directory_reference_lists)
         if enable_collab is not None:
             pulumi.set(__self__, "enable_collab", enable_collab)
+        if enable_directory_and_identity_provider_shortlist is not None:
+            pulumi.set(__self__, "enable_directory_and_identity_provider_shortlist", enable_directory_and_identity_provider_shortlist)
         if environment_reference_lists is not None:
             pulumi.set(__self__, "environment_reference_lists", environment_reference_lists)
         if external_network_lists is not None:
             pulumi.set(__self__, "external_network_lists", external_network_lists)
         if external_user_group_reference_lists is not None:
             pulumi.set(__self__, "external_user_group_reference_lists", external_user_group_reference_lists)
+        if identity_providers_reference_lists is not None:
+            pulumi.set(__self__, "identity_providers_reference_lists", identity_providers_reference_lists)
         if is_default is not None:
             pulumi.set(__self__, "is_default", is_default)
         if metadata is not None:
@@ -535,6 +585,15 @@ class _ProjectState:
         pulumi.set(self, "description", value)
 
     @_builtins.property
+    @pulumi.getter(name="directoryReferenceLists")
+    def directory_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProjectDirectoryReferenceListArgs']]]]:
+        return pulumi.get(self, "directory_reference_lists")
+
+    @directory_reference_lists.setter
+    def directory_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectDirectoryReferenceListArgs']]]]):
+        pulumi.set(self, "directory_reference_lists", value)
+
+    @_builtins.property
     @pulumi.getter(name="enableCollab")
     def enable_collab(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -545,6 +604,18 @@ class _ProjectState:
     @enable_collab.setter
     def enable_collab(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_collab", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enableDirectoryAndIdentityProviderShortlist")
+    def enable_directory_and_identity_provider_shortlist(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+        """
+        return pulumi.get(self, "enable_directory_and_identity_provider_shortlist")
+
+    @enable_directory_and_identity_provider_shortlist.setter
+    def enable_directory_and_identity_provider_shortlist(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_directory_and_identity_provider_shortlist", value)
 
     @_builtins.property
     @pulumi.getter(name="environmentReferenceLists")
@@ -572,6 +643,15 @@ class _ProjectState:
     @external_user_group_reference_lists.setter
     def external_user_group_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectExternalUserGroupReferenceListArgs']]]]):
         pulumi.set(self, "external_user_group_reference_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="identityProvidersReferenceLists")
+    def identity_providers_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ProjectIdentityProvidersReferenceListArgs']]]]:
+        return pulumi.get(self, "identity_providers_reference_lists")
+
+    @identity_providers_reference_lists.setter
+    def identity_providers_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ProjectIdentityProvidersReferenceListArgs']]]]):
+        pulumi.set(self, "identity_providers_reference_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="isDefault")
@@ -725,10 +805,13 @@ class Project(pulumi.CustomResource):
                  default_environment_reference: pulumi.Input[Optional[Union['ProjectDefaultEnvironmentReferenceArgs', 'ProjectDefaultEnvironmentReferenceArgsDict', 'outputs.ProjectDefaultEnvironmentReference']]] = None,
                  default_subnet_reference: pulumi.Input[Optional[Union['ProjectDefaultSubnetReferenceArgs', 'ProjectDefaultSubnetReferenceArgsDict', 'outputs.ProjectDefaultSubnetReference']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 directory_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectDirectoryReferenceListArgs', 'ProjectDirectoryReferenceListArgsDict', 'outputs.ProjectDirectoryReferenceList']]]]] = None,
                  enable_collab: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_directory_and_identity_provider_shortlist: pulumi.Input[Optional[_builtins.bool]] = None,
                  environment_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectEnvironmentReferenceListArgs', 'ProjectEnvironmentReferenceListArgsDict', 'outputs.ProjectEnvironmentReferenceList']]]]] = None,
                  external_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalNetworkListArgs', 'ProjectExternalNetworkListArgsDict', 'outputs.ProjectExternalNetworkList']]]]] = None,
                  external_user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalUserGroupReferenceListArgs', 'ProjectExternalUserGroupReferenceListArgsDict', 'outputs.ProjectExternalUserGroupReferenceList']]]]] = None,
+                 identity_providers_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectIdentityProvidersReferenceListArgs', 'ProjectIdentityProvidersReferenceListArgsDict', 'outputs.ProjectIdentityProvidersReferenceList']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -753,6 +836,7 @@ class Project(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         :param pulumi.Input[_builtins.str] description: A description for project.
         :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
+        :param pulumi.Input[_builtins.bool] enable_directory_and_identity_provider_shortlist: flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
         :param pulumi.Input[_builtins.str] name: The name for the project.
         :param pulumi.Input[_builtins.bool] use_project_internal: flag to use project internal for user role mapping
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict', 'outputs.ProjectUserReferenceList']]]] user_reference_lists: List of Reference of users.
@@ -793,10 +877,13 @@ class Project(pulumi.CustomResource):
                  default_environment_reference: pulumi.Input[Optional[Union['ProjectDefaultEnvironmentReferenceArgs', 'ProjectDefaultEnvironmentReferenceArgsDict', 'outputs.ProjectDefaultEnvironmentReference']]] = None,
                  default_subnet_reference: pulumi.Input[Optional[Union['ProjectDefaultSubnetReferenceArgs', 'ProjectDefaultSubnetReferenceArgsDict', 'outputs.ProjectDefaultSubnetReference']]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
+                 directory_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectDirectoryReferenceListArgs', 'ProjectDirectoryReferenceListArgsDict', 'outputs.ProjectDirectoryReferenceList']]]]] = None,
                  enable_collab: pulumi.Input[Optional[_builtins.bool]] = None,
+                 enable_directory_and_identity_provider_shortlist: pulumi.Input[Optional[_builtins.bool]] = None,
                  environment_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectEnvironmentReferenceListArgs', 'ProjectEnvironmentReferenceListArgsDict', 'outputs.ProjectEnvironmentReferenceList']]]]] = None,
                  external_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalNetworkListArgs', 'ProjectExternalNetworkListArgsDict', 'outputs.ProjectExternalNetworkList']]]]] = None,
                  external_user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalUserGroupReferenceListArgs', 'ProjectExternalUserGroupReferenceListArgsDict', 'outputs.ProjectExternalUserGroupReferenceList']]]]] = None,
+                 identity_providers_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectIdentityProvidersReferenceListArgs', 'ProjectIdentityProvidersReferenceListArgsDict', 'outputs.ProjectIdentityProvidersReferenceList']]]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  project_reference: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -830,10 +917,13 @@ class Project(pulumi.CustomResource):
             if description is None and not opts.urn:
                 raise TypeError("Missing required property 'description'")
             __props__.__dict__["description"] = description
+            __props__.__dict__["directory_reference_lists"] = directory_reference_lists
             __props__.__dict__["enable_collab"] = enable_collab
+            __props__.__dict__["enable_directory_and_identity_provider_shortlist"] = enable_directory_and_identity_provider_shortlist
             __props__.__dict__["environment_reference_lists"] = environment_reference_lists
             __props__.__dict__["external_network_lists"] = external_network_lists
             __props__.__dict__["external_user_group_reference_lists"] = external_user_group_reference_lists
+            __props__.__dict__["identity_providers_reference_lists"] = identity_providers_reference_lists
             __props__.__dict__["name"] = name
             __props__.__dict__["owner_reference"] = owner_reference
             __props__.__dict__["project_reference"] = project_reference
@@ -867,10 +957,13 @@ class Project(pulumi.CustomResource):
             default_environment_reference: pulumi.Input[Optional[Union['ProjectDefaultEnvironmentReferenceArgs', 'ProjectDefaultEnvironmentReferenceArgsDict', 'outputs.ProjectDefaultEnvironmentReference']]] = None,
             default_subnet_reference: pulumi.Input[Optional[Union['ProjectDefaultSubnetReferenceArgs', 'ProjectDefaultSubnetReferenceArgsDict', 'outputs.ProjectDefaultSubnetReference']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
+            directory_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectDirectoryReferenceListArgs', 'ProjectDirectoryReferenceListArgsDict', 'outputs.ProjectDirectoryReferenceList']]]]] = None,
             enable_collab: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_directory_and_identity_provider_shortlist: pulumi.Input[Optional[_builtins.bool]] = None,
             environment_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectEnvironmentReferenceListArgs', 'ProjectEnvironmentReferenceListArgsDict', 'outputs.ProjectEnvironmentReferenceList']]]]] = None,
             external_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalNetworkListArgs', 'ProjectExternalNetworkListArgsDict', 'outputs.ProjectExternalNetworkList']]]]] = None,
             external_user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalUserGroupReferenceListArgs', 'ProjectExternalUserGroupReferenceListArgsDict', 'outputs.ProjectExternalUserGroupReferenceList']]]]] = None,
+            identity_providers_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectIdentityProvidersReferenceListArgs', 'ProjectIdentityProvidersReferenceListArgsDict', 'outputs.ProjectIdentityProvidersReferenceList']]]]] = None,
             is_default: pulumi.Input[Optional[_builtins.bool]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -896,6 +989,7 @@ class Project(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] cluster_uuid: The UUID of cluster. (Required when using<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag).
         :param pulumi.Input[_builtins.str] description: A description for project.
         :param pulumi.Input[_builtins.bool] enable_collab: flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
+        :param pulumi.Input[_builtins.bool] enable_directory_and_identity_provider_shortlist: flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
         :param pulumi.Input[_builtins.str] name: The name for the project.
         :param pulumi.Input[_builtins.bool] use_project_internal: flag to use project internal for user role mapping
         :param pulumi.Input[Sequence[pulumi.Input[Union['ProjectUserReferenceListArgs', 'ProjectUserReferenceListArgsDict', 'outputs.ProjectUserReferenceList']]]] user_reference_lists: List of Reference of users.
@@ -913,10 +1007,13 @@ class Project(pulumi.CustomResource):
         __props__.__dict__["default_environment_reference"] = default_environment_reference
         __props__.__dict__["default_subnet_reference"] = default_subnet_reference
         __props__.__dict__["description"] = description
+        __props__.__dict__["directory_reference_lists"] = directory_reference_lists
         __props__.__dict__["enable_collab"] = enable_collab
+        __props__.__dict__["enable_directory_and_identity_provider_shortlist"] = enable_directory_and_identity_provider_shortlist
         __props__.__dict__["environment_reference_lists"] = environment_reference_lists
         __props__.__dict__["external_network_lists"] = external_network_lists
         __props__.__dict__["external_user_group_reference_lists"] = external_user_group_reference_lists
+        __props__.__dict__["identity_providers_reference_lists"] = identity_providers_reference_lists
         __props__.__dict__["is_default"] = is_default
         __props__.__dict__["metadata"] = metadata
         __props__.__dict__["name"] = name
@@ -945,10 +1042,13 @@ class Project(pulumi.CustomResource):
             default_environment_reference: pulumi.Input[Optional[Union['ProjectDefaultEnvironmentReferenceArgs', 'ProjectDefaultEnvironmentReferenceArgsDict', 'outputs.ProjectDefaultEnvironmentReference']]] = None,
             default_subnet_reference: pulumi.Input[Optional[Union['ProjectDefaultSubnetReferenceArgs', 'ProjectDefaultSubnetReferenceArgsDict', 'outputs.ProjectDefaultSubnetReference']]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
+            directory_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectDirectoryReferenceListArgs', 'ProjectDirectoryReferenceListArgsDict', 'outputs.ProjectDirectoryReferenceList']]]]] = None,
             enable_collab: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_directory_and_identity_provider_shortlist: pulumi.Input[Optional[_builtins.bool]] = None,
             environment_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectEnvironmentReferenceListArgs', 'ProjectEnvironmentReferenceListArgsDict', 'outputs.ProjectEnvironmentReferenceList']]]]] = None,
             external_network_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalNetworkListArgs', 'ProjectExternalNetworkListArgsDict', 'outputs.ProjectExternalNetworkList']]]]] = None,
             external_user_group_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectExternalUserGroupReferenceListArgs', 'ProjectExternalUserGroupReferenceListArgsDict', 'outputs.ProjectExternalUserGroupReferenceList']]]]] = None,
+            identity_providers_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProjectIdentityProvidersReferenceListArgs', 'ProjectIdentityProvidersReferenceListArgsDict', 'outputs.ProjectIdentityProvidersReferenceList']]]]] = None,
             is_default: pulumi.Input[Optional[_builtins.bool]] = None,
             metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -973,10 +1073,13 @@ class Project(pulumi.CustomResource):
         __props__["defaultEnvironmentReference"] = default_environment_reference
         __props__["defaultSubnetReference"] = default_subnet_reference
         __props__["description"] = description
+        __props__["directoryReferenceLists"] = directory_reference_lists
         __props__["enableCollab"] = enable_collab
+        __props__["enableDirectoryAndIdentityProviderShortlist"] = enable_directory_and_identity_provider_shortlist
         __props__["environmentReferenceLists"] = environment_reference_lists
         __props__["externalNetworkLists"] = external_network_lists
         __props__["externalUserGroupReferenceLists"] = external_user_group_reference_lists
+        __props__["identityProvidersReferenceLists"] = identity_providers_reference_lists
         __props__["isDefault"] = is_default
         __props__["metadata"] = metadata
         __props__["name"] = name
@@ -1048,12 +1151,25 @@ class Project(pulumi.CustomResource):
         return pulumi.get(self, "description")
 
     @_builtins.property
+    @pulumi.getter(name="directoryReferenceLists")
+    def directory_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectDirectoryReferenceList']]:
+        return pulumi.get(self, "directory_reference_lists")
+
+    @_builtins.property
     @pulumi.getter(name="enableCollab")
     def enable_collab(self) -> pulumi.Output[Optional[_builtins.bool]]:
         """
         flag to allow collaboration of projects. (Use with<span pulumi-lang-nodejs=" projectInternal " pulumi-lang-dotnet=" ProjectInternal " pulumi-lang-go=" projectInternal " pulumi-lang-python=" project_internal " pulumi-lang-yaml=" projectInternal " pulumi-lang-java=" projectInternal " pulumi-lang-hcl=" project_internal "> projectInternal </span>flag)
         """
         return pulumi.get(self, "enable_collab")
+
+    @_builtins.property
+    @pulumi.getter(name="enableDirectoryAndIdentityProviderShortlist")
+    def enable_directory_and_identity_provider_shortlist(self) -> pulumi.Output[_builtins.bool]:
+        """
+        flag to shortlist the directory services and identity providers associated with the project. If omitted, Prism Central's default is used.
+        """
+        return pulumi.get(self, "enable_directory_and_identity_provider_shortlist")
 
     @_builtins.property
     @pulumi.getter(name="environmentReferenceLists")
@@ -1069,6 +1185,11 @@ class Project(pulumi.CustomResource):
     @pulumi.getter(name="externalUserGroupReferenceLists")
     def external_user_group_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectExternalUserGroupReferenceList']]:
         return pulumi.get(self, "external_user_group_reference_lists")
+
+    @_builtins.property
+    @pulumi.getter(name="identityProvidersReferenceLists")
+    def identity_providers_reference_lists(self) -> pulumi.Output[Sequence['outputs.ProjectIdentityProvidersReferenceList']]:
+        return pulumi.get(self, "identity_providers_reference_lists")
 
     @_builtins.property
     @pulumi.getter(name="isDefault")

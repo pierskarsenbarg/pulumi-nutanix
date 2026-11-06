@@ -156,6 +156,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.VpcV2ExternallyRoutablePrefix>> ExternallyRoutablePrefixes { get; private set; } = null!;
 
         /// <summary>
+        /// List of Kubernetes clusters associated with the VPC.
+        /// </summary>
+        [Output("kubernetesClusters")]
+        public Output<ImmutableArray<Outputs.VpcV2KubernetesCluster>> KubernetesClusters { get; private set; } = null!;
+
+        /// <summary>
         /// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         /// </summary>
         [Output("links")]
@@ -173,8 +179,38 @@ namespace PiersKarsenbarg.Nutanix
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
 
+        /// <summary>
+        /// External identifier of the project associated with the VPC.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
+        /// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        /// </summary>
+        [Output("scope")]
+        public Output<string> Scope { get; private set; } = null!;
+
+        /// <summary>
+        /// List of project external identifiers with which the VPC is shared.
+        /// </summary>
+        [Output("sharedWithProjects")]
+        public Output<ImmutableArray<string>> SharedWithProjects { get; private set; } = null!;
+
+        /// <summary>
+        /// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        /// </summary>
+        [Output("shouldAdvertiseConnectedSubnets")]
+        public Output<bool> ShouldAdvertiseConnectedSubnets { get; private set; } = null!;
+
         [Output("snatIps")]
         public Output<ImmutableArray<Outputs.VpcV2SnatIp>> SnatIps { get; private set; } = null!;
+
+        /// <summary>
+        /// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        /// </summary>
+        [Output("supportedMultipleExternalSubnetType")]
+        public Output<string> SupportedMultipleExternalSubnetType { get; private set; } = null!;
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
@@ -283,6 +319,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _externallyRoutablePrefixes = value;
         }
 
+        [Input("kubernetesClusters")]
+        private InputList<Inputs.VpcV2KubernetesClusterArgs>? _kubernetesClusters;
+
+        /// <summary>
+        /// List of Kubernetes clusters associated with the VPC.
+        /// </summary>
+        public InputList<Inputs.VpcV2KubernetesClusterArgs> KubernetesClusters
+        {
+            get => _kubernetesClusters ?? (_kubernetesClusters = new InputList<Inputs.VpcV2KubernetesClusterArgs>());
+            set => _kubernetesClusters = value;
+        }
+
         [Input("metadatas")]
         private InputList<Inputs.VpcV2MetadataArgs>? _metadatas;
 
@@ -300,6 +348,42 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// External identifier of the project associated with the VPC.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
+        /// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        /// </summary>
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// List of project external identifiers with which the VPC is shared.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
+        }
+
+        /// <summary>
+        /// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        /// </summary>
+        [Input("shouldAdvertiseConnectedSubnets")]
+        public Input<bool>? ShouldAdvertiseConnectedSubnets { get; set; }
+
+        /// <summary>
+        /// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        /// </summary>
+        [Input("supportedMultipleExternalSubnetType")]
+        public Input<string>? SupportedMultipleExternalSubnetType { get; set; }
 
         /// <summary>
         /// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
@@ -369,6 +453,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _externallyRoutablePrefixes = value;
         }
 
+        [Input("kubernetesClusters")]
+        private InputList<Inputs.VpcV2KubernetesClusterGetArgs>? _kubernetesClusters;
+
+        /// <summary>
+        /// List of Kubernetes clusters associated with the VPC.
+        /// </summary>
+        public InputList<Inputs.VpcV2KubernetesClusterGetArgs> KubernetesClusters
+        {
+            get => _kubernetesClusters ?? (_kubernetesClusters = new InputList<Inputs.VpcV2KubernetesClusterGetArgs>());
+            set => _kubernetesClusters = value;
+        }
+
         [Input("links")]
         private InputList<Inputs.VpcV2LinkGetArgs>? _links;
 
@@ -399,6 +495,36 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// External identifier of the project associated with the VPC.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
+        /// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+        /// </summary>
+        [Input("scope")]
+        public Input<string>? Scope { get; set; }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+
+        /// <summary>
+        /// List of project external identifiers with which the VPC is shared.
+        /// </summary>
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
+        }
+
+        /// <summary>
+        /// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+        /// </summary>
+        [Input("shouldAdvertiseConnectedSubnets")]
+        public Input<bool>? ShouldAdvertiseConnectedSubnets { get; set; }
+
         [Input("snatIps")]
         private InputList<Inputs.VpcV2SnatIpGetArgs>? _snatIps;
         public InputList<Inputs.VpcV2SnatIpGetArgs> SnatIps
@@ -406,6 +532,12 @@ namespace PiersKarsenbarg.Nutanix
             get => _snatIps ?? (_snatIps = new InputList<Inputs.VpcV2SnatIpGetArgs>());
             set => _snatIps = value;
         }
+
+        /// <summary>
+        /// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+        /// </summary>
+        [Input("supportedMultipleExternalSubnetType")]
+        public Input<string>? SupportedMultipleExternalSubnetType { get; set; }
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.

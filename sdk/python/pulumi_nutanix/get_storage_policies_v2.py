@@ -155,7 +155,7 @@ def get_storage_policies_v2(filter: Optional[_builtins.str] = None,
       * <span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`">`replicationFactor`</span>:- Replication factor value.
     * <span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`">`policyType`</span>:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
 
-    See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
+    See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.3#tag/StoragePolicies/operation/listStoragePolicies).
 
 
     :param _builtins.str filter: - (Optional) A URL query parameter that allows clients to filter a collection of resources.
@@ -221,7 +221,7 @@ def get_storage_policies_v2_output(filter: pulumi.Input[Optional[Optional[_built
       * <span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`">`replicationFactor`</span>:- Replication factor value.
     * <span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`">`policyType`</span>:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
 
-    See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
+    See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.3#tag/StoragePolicies/operation/listStoragePolicies).
 
 
     :param _builtins.str filter: - (Optional) A URL query parameter that allows clients to filter a collection of resources.

@@ -36,6 +36,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly bool? IsDefault;
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchLink> Links;
+        /// <summary>
+        /// Metadata associated with the subnet.
+        /// </summary>
         public readonly ImmutableArray<Outputs.SubnetV2VirtualSwitchMetadata> Metadatas;
         /// <summary>
         /// MTU

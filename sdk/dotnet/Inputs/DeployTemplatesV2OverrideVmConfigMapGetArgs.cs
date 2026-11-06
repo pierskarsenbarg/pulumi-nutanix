@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class DeployTemplatesV2OverrideVmConfigMapGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("guestCustomizationProfileConfig")]
+        public Input<Inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigGetArgs>? GuestCustomizationProfileConfig { get; set; }
+
         [Input("guestCustomizations")]
         private InputList<Inputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationGetArgs>? _guestCustomizations;
 

@@ -39,6 +39,10 @@ __all__ = [
     'AccessControlPolicyUserGroupReferenceListArgsDict',
     'AccessControlPolicyUserReferenceListArgs',
     'AccessControlPolicyUserReferenceListArgsDict',
+    'AdGroupCategoryMappingV2AdInfoArgs',
+    'AdGroupCategoryMappingV2AdInfoArgsDict',
+    'AdGroupCategoryMappingV2LinkArgs',
+    'AdGroupCategoryMappingV2LinkArgsDict',
     'AddressGroupIpAddressBlockListArgs',
     'AddressGroupIpAddressBlockListArgsDict',
     'AddressGroupsV2IpRangeArgs',
@@ -125,6 +129,20 @@ __all__ = [
     'ClusterAddNodeV2RemoveNodeParamExtraParamArgsDict',
     'ClusterProfileV2ClusterArgs',
     'ClusterProfileV2ClusterArgsDict',
+    'ClusterProfileV2FaultToleranceConfigArgs',
+    'ClusterProfileV2FaultToleranceConfigArgsDict',
+    'ClusterProfileV2HttpProxyConfigArgs',
+    'ClusterProfileV2HttpProxyConfigArgsDict',
+    'ClusterProfileV2HttpProxyConfigProxyListArgs',
+    'ClusterProfileV2HttpProxyConfigProxyListArgsDict',
+    'ClusterProfileV2HttpProxyConfigProxyListIpAddressArgs',
+    'ClusterProfileV2HttpProxyConfigProxyListIpAddressArgsDict',
+    'ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4Args',
+    'ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4ArgsDict',
+    'ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6Args',
+    'ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6ArgsDict',
+    'ClusterProfileV2HttpProxyConfigProxyWhiteListArgs',
+    'ClusterProfileV2HttpProxyConfigProxyWhiteListArgsDict',
     'ClusterProfileV2LinkArgs',
     'ClusterProfileV2LinkArgsDict',
     'ClusterProfileV2NameServerIpListArgs',
@@ -133,6 +151,16 @@ __all__ = [
     'ClusterProfileV2NameServerIpListIpv4ArgsDict',
     'ClusterProfileV2NameServerIpListIpv6Args',
     'ClusterProfileV2NameServerIpListIpv6ArgsDict',
+    'ClusterProfileV2NtpServerConfigListArgs',
+    'ClusterProfileV2NtpServerConfigListArgsDict',
+    'ClusterProfileV2NtpServerConfigListNtpServerAddressArgs',
+    'ClusterProfileV2NtpServerConfigListNtpServerAddressArgsDict',
+    'ClusterProfileV2NtpServerConfigListNtpServerAddressFqdnArgs',
+    'ClusterProfileV2NtpServerConfigListNtpServerAddressFqdnArgsDict',
+    'ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4Args',
+    'ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4ArgsDict',
+    'ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6Args',
+    'ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6ArgsDict',
     'ClusterProfileV2NtpServerIpListArgs',
     'ClusterProfileV2NtpServerIpListArgsDict',
     'ClusterProfileV2NtpServerIpListFqdnArgs',
@@ -143,6 +171,10 @@ __all__ = [
     'ClusterProfileV2NtpServerIpListIpv6ArgsDict',
     'ClusterProfileV2PulseStatusArgs',
     'ClusterProfileV2PulseStatusArgsDict',
+    'ClusterProfileV2RebuildReservationConfigArgs',
+    'ClusterProfileV2RebuildReservationConfigArgsDict',
+    'ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs',
+    'ClusterProfileV2ResilientCapacityWarningThresholdConfigArgsDict',
     'ClusterProfileV2RsyslogServerListArgs',
     'ClusterProfileV2RsyslogServerListArgsDict',
     'ClusterProfileV2RsyslogServerListIpAddressArgs',
@@ -397,6 +429,62 @@ __all__ = [
     'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfStringArgsDict',
     'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs',
     'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfileArgs',
+    'DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfileArgsDict',
     'DeployTemplatesV2OverrideVmConfigMapNicArgs',
     'DeployTemplatesV2OverrideVmConfigMapNicArgsDict',
     'DeployTemplatesV2OverrideVmConfigMapNicBackingInfoArgs',
@@ -475,6 +563,18 @@ __all__ = [
     'DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoNetworkFunctionChainArgsDict',
     'DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArgs',
     'DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNetworkInfoSubnetArgsDict',
+    'DirectoryServerConfigV2DomainControllerArgs',
+    'DirectoryServerConfigV2DomainControllerArgsDict',
+    'DirectoryServerConfigV2DomainControllerFqdnArgs',
+    'DirectoryServerConfigV2DomainControllerFqdnArgsDict',
+    'DirectoryServerConfigV2DomainControllerIpv4Args',
+    'DirectoryServerConfigV2DomainControllerIpv4ArgsDict',
+    'DirectoryServerConfigV2DomainControllerIpv6Args',
+    'DirectoryServerConfigV2DomainControllerIpv6ArgsDict',
+    'DirectoryServerConfigV2LinkArgs',
+    'DirectoryServerConfigV2LinkArgsDict',
+    'DirectoryServerConfigV2MatchingCriteriaArgs',
+    'DirectoryServerConfigV2MatchingCriteriaArgsDict',
     'DirectoryServicesV2OpenLdapConfigurationArgs',
     'DirectoryServicesV2OpenLdapConfigurationArgsDict',
     'DirectoryServicesV2OpenLdapConfigurationUserConfigurationArgs',
@@ -785,6 +885,8 @@ __all__ = [
     'ImagePlacementPolicyV2ClusterEntityFilterArgsDict',
     'ImagePlacementPolicyV2ImageEntityFilterArgs',
     'ImagePlacementPolicyV2ImageEntityFilterArgsDict',
+    'ImageRateLimitPolicyV2ClusterEntityFilterArgs',
+    'ImageRateLimitPolicyV2ClusterEntityFilterArgsDict',
     'ImagesV2ChecksumArgs',
     'ImagesV2ChecksumArgsDict',
     'ImagesV2LinkArgs',
@@ -1557,6 +1659,20 @@ __all__ = [
     'NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpServiceArgsDict',
     'NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpServiceArgs',
     'NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpServiceArgsDict',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgs',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgsDict',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgs',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgsDict',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgs',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgsDict',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgs',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgsDict',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgs',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgsDict',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgs',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgsDict',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgs',
+    'NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgsDict',
     'NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgs',
     'NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgsDict',
     'NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecIcmpServiceArgs',
@@ -2625,12 +2741,16 @@ __all__ = [
     'ProjectDefaultEnvironmentReferenceArgsDict',
     'ProjectDefaultSubnetReferenceArgs',
     'ProjectDefaultSubnetReferenceArgsDict',
+    'ProjectDirectoryReferenceListArgs',
+    'ProjectDirectoryReferenceListArgsDict',
     'ProjectEnvironmentReferenceListArgs',
     'ProjectEnvironmentReferenceListArgsDict',
     'ProjectExternalNetworkListArgs',
     'ProjectExternalNetworkListArgsDict',
     'ProjectExternalUserGroupReferenceListArgs',
     'ProjectExternalUserGroupReferenceListArgsDict',
+    'ProjectIdentityProvidersReferenceListArgs',
+    'ProjectIdentityProvidersReferenceListArgsDict',
     'ProjectResourceDomainArgs',
     'ProjectResourceDomainArgsDict',
     'ProjectResourceDomainResourceArgs',
@@ -2659,6 +2779,8 @@ __all__ = [
     'ProjectUserListIdentityProviderUserIdentityProviderReferenceArgsDict',
     'ProjectUserReferenceListArgs',
     'ProjectUserReferenceListArgsDict',
+    'ProjectV2LinkArgs',
+    'ProjectV2LinkArgsDict',
     'ProjectVpcReferenceListArgs',
     'ProjectVpcReferenceListArgsDict',
     'ProtectionPolicyV2LinkArgs',
@@ -2709,6 +2831,10 @@ __all__ = [
     'RecoveryPlanOwnerReferenceArgsDict',
     'RecoveryPlanParametersArgs',
     'RecoveryPlanParametersArgsDict',
+    'RecoveryPlanParametersAvailabilityZoneListArgs',
+    'RecoveryPlanParametersAvailabilityZoneListArgsDict',
+    'RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgs',
+    'RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgsDict',
     'RecoveryPlanParametersFloatingIpAssignmentListArgs',
     'RecoveryPlanParametersFloatingIpAssignmentListArgsDict',
     'RecoveryPlanParametersFloatingIpAssignmentListVmIpAssignmentListArgs',
@@ -2793,8 +2919,18 @@ __all__ = [
     'RecoveryPointsV2VolumeGroupRecoveryPointDiskRecoveryPointArgsDict',
     'RecoveryPointsV2VolumeGroupRecoveryPointLinkArgs',
     'RecoveryPointsV2VolumeGroupRecoveryPointLinkArgsDict',
+    'ResourceGroupV2LinkArgs',
+    'ResourceGroupV2LinkArgsDict',
+    'ResourceGroupV2PlacementTargetArgs',
+    'ResourceGroupV2PlacementTargetArgsDict',
+    'ResourceGroupV2PlacementTargetStorageContainerArgs',
+    'ResourceGroupV2PlacementTargetStorageContainerArgsDict',
     'RoleCategoryArgs',
     'RoleCategoryArgsDict',
+    'RoleMembershipV2LinkArgs',
+    'RoleMembershipV2LinkArgsDict',
+    'RoleMembershipV2ScopeTemplateNameValueArgs',
+    'RoleMembershipV2ScopeTemplateNameValueArgsDict',
     'RoleOwnerReferenceArgs',
     'RoleOwnerReferenceArgsDict',
     'RolePermissionReferenceListArgs',
@@ -2887,6 +3023,18 @@ __all__ = [
     'ServiceGroupsV2TcpServiceArgsDict',
     'ServiceGroupsV2UdpServiceArgs',
     'ServiceGroupsV2UdpServiceArgsDict',
+    'SnmpConfigV2LinkArgs',
+    'SnmpConfigV2LinkArgsDict',
+    'SnmpTrapV2AddressArgs',
+    'SnmpTrapV2AddressArgsDict',
+    'SnmpTrapV2AddressIpv4Args',
+    'SnmpTrapV2AddressIpv4ArgsDict',
+    'SnmpTrapV2AddressIpv6Args',
+    'SnmpTrapV2AddressIpv6ArgsDict',
+    'SnmpTrapV2LinkArgs',
+    'SnmpTrapV2LinkArgsDict',
+    'SnmpUserV2LinkArgs',
+    'SnmpUserV2LinkArgsDict',
     'StaticRoutesDefaultRouteNexthopArgs',
     'StaticRoutesDefaultRouteNexthopArgsDict',
     'StaticRoutesStaticRoutesListArgs',
@@ -3045,6 +3193,10 @@ __all__ = [
     'SubnetV2VpcSnatIpIpv4ArgsDict',
     'SubnetV2VpcSnatIpIpv6Args',
     'SubnetV2VpcSnatIpIpv6ArgsDict',
+    'TemplatePlacementPolicyV2ClusterFilterArgs',
+    'TemplatePlacementPolicyV2ClusterFilterArgsDict',
+    'TemplatePlacementPolicyV2ContentFilterArgs',
+    'TemplatePlacementPolicyV2ContentFilterArgsDict',
     'TemplateV2CreatedByArgs',
     'TemplateV2CreatedByArgsDict',
     'TemplateV2CreatedByAdditionalAttributeArgs',
@@ -3067,6 +3219,8 @@ __all__ = [
     'TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueArgsDict',
     'TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfStringArgs',
     'TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfStringArgsDict',
+    'TemplateV2TemplateVersionSpecGuestCustomizationProfileArgs',
+    'TemplateV2TemplateVersionSpecGuestCustomizationProfileArgsDict',
     'TemplateV2TemplateVersionSpecLinkArgs',
     'TemplateV2TemplateVersionSpecLinkArgsDict',
     'TemplateV2TemplateVersionSpecVersionSourceArgs',
@@ -3221,6 +3375,8 @@ __all__ = [
     'TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairValueMapOfStringArgsDict',
     'TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs',
     'TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgsDict',
+    'TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgs',
+    'TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgsDict',
     'TemplateV2TemplateVersionSpecVmSpecArgs',
     'TemplateV2TemplateVersionSpecVmSpecArgsDict',
     'TemplateV2TemplateVersionSpecVmSpecApcConfigArgs',
@@ -3793,6 +3949,24 @@ __all__ = [
     'VirtualMachineV2StorageConfigQosConfigArgsDict',
     'VirtualMachineV2VtpmConfigArgs',
     'VirtualMachineV2VtpmConfigArgsDict',
+    'VirtualSwitchV2ClusterArgs',
+    'VirtualSwitchV2ClusterArgsDict',
+    'VirtualSwitchV2ClusterGatewayIpAddressArgs',
+    'VirtualSwitchV2ClusterGatewayIpAddressArgsDict',
+    'VirtualSwitchV2ClusterHostArgs',
+    'VirtualSwitchV2ClusterHostArgsDict',
+    'VirtualSwitchV2ClusterHostIpAddressArgs',
+    'VirtualSwitchV2ClusterHostIpAddressArgsDict',
+    'VirtualSwitchV2ClusterHostIpAddressIpArgs',
+    'VirtualSwitchV2ClusterHostIpAddressIpArgsDict',
+    'VirtualSwitchV2IgmpSpecArgs',
+    'VirtualSwitchV2IgmpSpecArgsDict',
+    'VirtualSwitchV2IgmpSpecQuerierSpecArgs',
+    'VirtualSwitchV2IgmpSpecQuerierSpecArgsDict',
+    'VirtualSwitchV2LinkArgs',
+    'VirtualSwitchV2LinkArgsDict',
+    'VirtualSwitchV2MetadataArgs',
+    'VirtualSwitchV2MetadataArgsDict',
     'VmCdromInsertEjectV2BackingInfoArgs',
     'VmCdromInsertEjectV2BackingInfoArgsDict',
     'VmCdromInsertEjectV2BackingInfoDataSourceArgs',
@@ -3939,6 +4113,62 @@ __all__ = [
     'VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArgsDict',
     'VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs',
     'VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigArgs',
+    'VmCloneV2GuestCustomizationProfileConfigArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs',
+    'VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict',
+    'VmCloneV2GuestCustomizationProfileConfigProfileArgs',
+    'VmCloneV2GuestCustomizationProfileConfigProfileArgsDict',
     'VmCloneV2GuestToolArgs',
     'VmCloneV2GuestToolArgsDict',
     'VmCloneV2HostArgs',
@@ -4063,6 +4293,42 @@ __all__ = [
     'VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArgsDict',
     'VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXmlArgs',
     'VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXmlArgsDict',
+    'VmGuestCustomizationProfileV2ConfigArgs',
+    'VmGuestCustomizationProfileV2ConfigArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs',
+    'VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict',
+    'VmGuestCustomizationProfileV2LinkArgs',
+    'VmGuestCustomizationProfileV2LinkArgsDict',
     'VmNetworkDeviceAssignIpV2IpAddressArgs',
     'VmNetworkDeviceAssignIpV2IpAddressArgsDict',
     'VmNetworkDeviceMigrateV2IpAddressArgs',
@@ -4071,6 +4337,24 @@ __all__ = [
     'VmNetworkDeviceMigrateV2SubnetArgsDict',
     'VmShutdownActionV2GuestPowerStateTransitionConfigArgs',
     'VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict',
+    'VmStartupPolicyV2CreatedByArgs',
+    'VmStartupPolicyV2CreatedByArgsDict',
+    'VmStartupPolicyV2GroupArgs',
+    'VmStartupPolicyV2GroupArgsDict',
+    'VmStartupPolicyV2GroupCategoryArgs',
+    'VmStartupPolicyV2GroupCategoryArgsDict',
+    'VmStartupPolicyV2LinkArgs',
+    'VmStartupPolicyV2LinkArgsDict',
+    'VmStartupPolicyV2StartConditionArgs',
+    'VmStartupPolicyV2StartConditionArgsDict',
+    'VmStartupPolicyV2StartConditionPowerStateCriteriaArgs',
+    'VmStartupPolicyV2StartConditionPowerStateCriteriaArgsDict',
+    'VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgs',
+    'VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgsDict',
+    'VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgs',
+    'VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgsDict',
+    'VmStartupPolicyV2UpdatedByArgs',
+    'VmStartupPolicyV2UpdatedByArgsDict',
     'VolumeGroupDiskV2DiskDataSourceReferenceArgs',
     'VolumeGroupDiskV2DiskDataSourceReferenceArgsDict',
     'VolumeGroupDiskV2DiskStorageFeatureArgs',
@@ -4141,6 +4425,28 @@ __all__ = [
     'VpcV2ExternallyRoutablePrefixIpv6ArgsDict',
     'VpcV2ExternallyRoutablePrefixIpv6IpArgs',
     'VpcV2ExternallyRoutablePrefixIpv6IpArgsDict',
+    'VpcV2KubernetesClusterArgs',
+    'VpcV2KubernetesClusterArgsDict',
+    'VpcV2KubernetesClusterGatewayNodesSelectorArgs',
+    'VpcV2KubernetesClusterGatewayNodesSelectorArgsDict',
+    'VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgs',
+    'VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgsDict',
+    'VpcV2KubernetesClusterNamespaceSelectorArgs',
+    'VpcV2KubernetesClusterNamespaceSelectorArgsDict',
+    'VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgs',
+    'VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgsDict',
+    'VpcV2KubernetesClusterPodNetworkArgs',
+    'VpcV2KubernetesClusterPodNetworkArgsDict',
+    'VpcV2KubernetesClusterPodNetworkCidrArgs',
+    'VpcV2KubernetesClusterPodNetworkCidrArgsDict',
+    'VpcV2KubernetesClusterPodNetworkCidrIpv4Args',
+    'VpcV2KubernetesClusterPodNetworkCidrIpv4ArgsDict',
+    'VpcV2KubernetesClusterPodNetworkCidrIpv4IpArgs',
+    'VpcV2KubernetesClusterPodNetworkCidrIpv4IpArgsDict',
+    'VpcV2KubernetesClusterPodNetworkCidrIpv6Args',
+    'VpcV2KubernetesClusterPodNetworkCidrIpv6ArgsDict',
+    'VpcV2KubernetesClusterPodNetworkCidrIpv6IpArgs',
+    'VpcV2KubernetesClusterPodNetworkCidrIpv6IpArgsDict',
     'VpcV2LinkArgs',
     'VpcV2LinkArgsDict',
     'VpcV2MetadataArgs',
@@ -4151,6 +4457,10 @@ __all__ = [
     'VpcV2SnatIpIpv4ArgsDict',
     'VpcV2SnatIpIpv6Args',
     'VpcV2SnatIpIpv6ArgsDict',
+    'VpcVirtualSwitchMappingV2MappingArgs',
+    'VpcVirtualSwitchMappingV2MappingArgsDict',
+    'VpcVirtualSwitchMappingV2MappingMetadataArgs',
+    'VpcVirtualSwitchMappingV2MappingMetadataArgsDict',
     'GetAccessControlPoliciesMetadataArgs',
     'GetAccessControlPoliciesMetadataArgsDict',
     'GetAccessControlPolicyCategoryArgs',
@@ -4225,6 +4535,8 @@ __all__ = [
     'GetRecoveryPlanCategoryArgsDict',
     'GetRoleCategoryArgs',
     'GetRoleCategoryArgsDict',
+    'GetRoleMembershipV2ScopeTemplateNameValueArgs',
+    'GetRoleMembershipV2ScopeTemplateNameValueArgsDict',
     'GetRolesMetadataArgs',
     'GetRolesMetadataArgsDict',
     'GetServiceGroupsMetadataArgs',
@@ -4999,6 +5311,126 @@ class AccessControlPolicyUserReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+class AdGroupCategoryMappingV2AdInfoArgsDict(TypedDict):
+    directory_service_reference: pulumi.Input[_builtins.str]
+    """
+    The ExtID of the directory service that will be used for mapping.
+    """
+    object_identifier: pulumi.Input[_builtins.str]
+    """
+    The objectGUID for the object in AD. Use <span pulumi-lang-nodejs="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-dotnet="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-go="`getDirectoryServiceUsersSearchV2`" pulumi-lang-python="`get_directory_service_users_search_v2`" pulumi-lang-yaml="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-java="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-hcl="`data.nutanix_directory_service_users_search_v2`">`nutanix.getDirectoryServiceUsersSearchV2`</span> to look up this value. Cannot be updated once created.
+    """
+    object_path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The path for the mapped object in AD. Returned by the API.
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The mapping status of AD Mapping. Valid values: `USABLE`, `DELETED`, `DIRECTORY_NOT_CONFIGURED`.
+    """
+
+@pulumi.input_type
+class AdGroupCategoryMappingV2AdInfoArgs:
+    def __init__(__self__, *,
+                 directory_service_reference: pulumi.Input[_builtins.str],
+                 object_identifier: pulumi.Input[_builtins.str],
+                 object_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] directory_service_reference: The ExtID of the directory service that will be used for mapping.
+        :param pulumi.Input[_builtins.str] object_identifier: The objectGUID for the object in AD. Use <span pulumi-lang-nodejs="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-dotnet="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-go="`getDirectoryServiceUsersSearchV2`" pulumi-lang-python="`get_directory_service_users_search_v2`" pulumi-lang-yaml="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-java="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-hcl="`data.nutanix_directory_service_users_search_v2`">`nutanix.getDirectoryServiceUsersSearchV2`</span> to look up this value. Cannot be updated once created.
+        :param pulumi.Input[_builtins.str] object_path: The path for the mapped object in AD. Returned by the API.
+        :param pulumi.Input[_builtins.str] status: The mapping status of AD Mapping. Valid values: `USABLE`, `DELETED`, `DIRECTORY_NOT_CONFIGURED`.
+        """
+        pulumi.set(__self__, "directory_service_reference", directory_service_reference)
+        pulumi.set(__self__, "object_identifier", object_identifier)
+        if object_path is not None:
+            pulumi.set(__self__, "object_path", object_path)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="directoryServiceReference")
+    def directory_service_reference(self) -> pulumi.Input[_builtins.str]:
+        """
+        The ExtID of the directory service that will be used for mapping.
+        """
+        return pulumi.get(self, "directory_service_reference")
+
+    @directory_service_reference.setter
+    def directory_service_reference(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "directory_service_reference", value)
+
+    @_builtins.property
+    @pulumi.getter(name="objectIdentifier")
+    def object_identifier(self) -> pulumi.Input[_builtins.str]:
+        """
+        The objectGUID for the object in AD. Use <span pulumi-lang-nodejs="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-dotnet="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-go="`getDirectoryServiceUsersSearchV2`" pulumi-lang-python="`get_directory_service_users_search_v2`" pulumi-lang-yaml="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-java="`nutanix.getDirectoryServiceUsersSearchV2`" pulumi-lang-hcl="`data.nutanix_directory_service_users_search_v2`">`nutanix.getDirectoryServiceUsersSearchV2`</span> to look up this value. Cannot be updated once created.
+        """
+        return pulumi.get(self, "object_identifier")
+
+    @object_identifier.setter
+    def object_identifier(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "object_identifier", value)
+
+    @_builtins.property
+    @pulumi.getter(name="objectPath")
+    def object_path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The path for the mapped object in AD. Returned by the API.
+        """
+        return pulumi.get(self, "object_path")
+
+    @object_path.setter
+    def object_path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "object_path", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The mapping status of AD Mapping. Valid values: `USABLE`, `DELETED`, `DIRECTORY_NOT_CONFIGURED`.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+
+class AdGroupCategoryMappingV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class AdGroupCategoryMappingV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
 class AddressGroupIpAddressBlockListArgsDict(TypedDict):
     ip: pulumi.Input[_builtins.str]
     """
@@ -5193,7 +5625,7 @@ class AssociateCategoryToVolumeGroupV2CategoryArgsDict(TypedDict):
     -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
     * "CATEGORY".
 
-    See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/associateCategory).
+    See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/associateCategory).
     """
     name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -5216,7 +5648,7 @@ class AssociateCategoryToVolumeGroupV2CategoryArgs:
         :param pulumi.Input[_builtins.str] entity_type: -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
                * "CATEGORY".
                
-               See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/associateCategory).
+               See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/associateCategory).
         :param pulumi.Input[_builtins.str] name: -(Optional) Name of entity that's represented by this reference
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] uris: -(Optional) URI of entities that's represented by this reference.
         """
@@ -5247,7 +5679,7 @@ class AssociateCategoryToVolumeGroupV2CategoryArgs:
         -(Optional) Type of entity that's represented by this reference. Default value is "CATEGORY". Valid values are:
         * "CATEGORY".
 
-        See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/associateCategory).
+        See detailed information in [Nutanix Associate/Disassociate category to/from a Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/associateCategory).
         """
         return pulumi.get(self, "entity_type")
 
@@ -7755,7 +8187,7 @@ class ClusterAddNodeV2RemoveNodeParamExtraParamArgsDict(TypedDict):
     """
     -(Optional) Indicates if add check needs to be skipped or not.
 
-    See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
+    See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/Clusters/operation/expandCluster).
     """
     should_skip_upgrade_check: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
@@ -7775,7 +8207,7 @@ class ClusterAddNodeV2RemoveNodeParamExtraParamArgs:
         """
         :param pulumi.Input[_builtins.bool] should_skip_add_check: -(Optional) Indicates if add check needs to be skipped or not.
                
-               See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
+               See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/Clusters/operation/expandCluster).
         :param pulumi.Input[_builtins.bool] should_skip_upgrade_check: -(Optional) Indicates if upgrade check needs to be skipped or not.
         :param pulumi.Input[_builtins.bool] skip_space_check: -(Optional) Indicates if space check needs to be skipped or not.
         """
@@ -7792,7 +8224,7 @@ class ClusterAddNodeV2RemoveNodeParamExtraParamArgs:
         """
         -(Optional) Indicates if add check needs to be skipped or not.
 
-        See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.2#tag/Clusters/operation/expandCluster).
+        See detailed information in [Nutanix Cluster - Add Node on a Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/Clusters/operation/expandCluster).
         """
         return pulumi.get(self, "should_skip_add_check")
 
@@ -7882,6 +8314,422 @@ class ClusterProfileV2ClusterArgs:
     @last_synced_time.setter
     def last_synced_time(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "last_synced_time", value)
+
+
+class ClusterProfileV2FaultToleranceConfigArgsDict(TypedDict):
+    desired_cluster_fault_tolerance: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) Desired cluster fault tolerance level. Allowed values:
+
+    | Enum             | Description                         |
+    |------------------|-------------------------------------|
+    | CFT_0N_AND_0D    | No fault tolerance                  |
+    | CFT_1N_OR_1D     | Tolerate 1 node or 1 disk failure   |
+    | CFT_2N_OR_2D     | Tolerate 2 node or 2 disk failures  |
+    | CFT_1N_AND_1D    | Tolerate 1 node and 1 disk failure  |
+    | CFT_1N_OR_2D     | Tolerate 1 node or 2 disk failures  |
+    """
+
+@pulumi.input_type
+class ClusterProfileV2FaultToleranceConfigArgs:
+    def __init__(__self__, *,
+                 desired_cluster_fault_tolerance: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] desired_cluster_fault_tolerance: - (Optional) Desired cluster fault tolerance level. Allowed values:
+               
+               | Enum             | Description                         |
+               |------------------|-------------------------------------|
+               | CFT_0N_AND_0D    | No fault tolerance                  |
+               | CFT_1N_OR_1D     | Tolerate 1 node or 1 disk failure   |
+               | CFT_2N_OR_2D     | Tolerate 2 node or 2 disk failures  |
+               | CFT_1N_AND_1D    | Tolerate 1 node and 1 disk failure  |
+               | CFT_1N_OR_2D     | Tolerate 1 node or 2 disk failures  |
+        """
+        if desired_cluster_fault_tolerance is not None:
+            pulumi.set(__self__, "desired_cluster_fault_tolerance", desired_cluster_fault_tolerance)
+
+    @_builtins.property
+    @pulumi.getter(name="desiredClusterFaultTolerance")
+    def desired_cluster_fault_tolerance(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Desired cluster fault tolerance level. Allowed values:
+
+        | Enum             | Description                         |
+        |------------------|-------------------------------------|
+        | CFT_0N_AND_0D    | No fault tolerance                  |
+        | CFT_1N_OR_1D     | Tolerate 1 node or 1 disk failure   |
+        | CFT_2N_OR_2D     | Tolerate 2 node or 2 disk failures  |
+        | CFT_1N_AND_1D    | Tolerate 1 node and 1 disk failure  |
+        | CFT_1N_OR_2D     | Tolerate 1 node or 2 disk failures  |
+        """
+        return pulumi.get(self, "desired_cluster_fault_tolerance")
+
+    @desired_cluster_fault_tolerance.setter
+    def desired_cluster_fault_tolerance(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "desired_cluster_fault_tolerance", value)
+
+
+class ClusterProfileV2HttpProxyConfigArgsDict(TypedDict):
+    proxy_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListArgsDict']]]]]
+    """
+    - (Optional) List of HTTP proxy server configurations. Each proxy object supports:
+    """
+    proxy_white_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyWhiteListArgsDict']]]]]
+    """
+    - (Optional) Targets exempted from going through the configured HTTP proxy. Each whitelist entry supports:
+    """
+
+@pulumi.input_type
+class ClusterProfileV2HttpProxyConfigArgs:
+    def __init__(__self__, *,
+                 proxy_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListArgs']]]] = None,
+                 proxy_white_lists: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyWhiteListArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListArgs']]] proxy_lists: - (Optional) List of HTTP proxy server configurations. Each proxy object supports:
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyWhiteListArgs']]] proxy_white_lists: - (Optional) Targets exempted from going through the configured HTTP proxy. Each whitelist entry supports:
+        """
+        if proxy_lists is not None:
+            pulumi.set(__self__, "proxy_lists", proxy_lists)
+        if proxy_white_lists is not None:
+            pulumi.set(__self__, "proxy_white_lists", proxy_white_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="proxyLists")
+    def proxy_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListArgs']]]]:
+        """
+        - (Optional) List of HTTP proxy server configurations. Each proxy object supports:
+        """
+        return pulumi.get(self, "proxy_lists")
+
+    @proxy_lists.setter
+    def proxy_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListArgs']]]]):
+        pulumi.set(self, "proxy_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="proxyWhiteLists")
+    def proxy_white_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyWhiteListArgs']]]]:
+        """
+        - (Optional) Targets exempted from going through the configured HTTP proxy. Each whitelist entry supports:
+        """
+        return pulumi.get(self, "proxy_white_lists")
+
+    @proxy_white_lists.setter
+    def proxy_white_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyWhiteListArgs']]]]):
+        pulumi.set(self, "proxy_white_lists", value)
+
+
+class ClusterProfileV2HttpProxyConfigProxyListArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    HTTP proxy server name.
+    """
+    ip_address: NotRequired[pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigProxyListIpAddressArgsDict']]]
+    """
+    IP address of the proxy server.
+    """
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    HTTP proxy server password.
+    """
+    port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    HTTP proxy server port.
+    """
+    proxy_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of HTTP proxy types. Allowed values:
+
+    | Enum     | Description         |
+    |----------|---------------------|
+    | HTTP     | HTTP proxy          |
+    | HTTPS    | HTTPS proxy         |
+    | SOCKS    | SOCKS proxy         |
+    """
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    HTTP proxy server username.
+    """
+
+@pulumi.input_type
+class ClusterProfileV2HttpProxyConfigProxyListArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str],
+                 ip_address: pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigProxyListIpAddressArgs']] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 port: pulumi.Input[Optional[_builtins.int]] = None,
+                 proxy_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: HTTP proxy server name.
+        :param pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressArgs'] ip_address: IP address of the proxy server.
+        :param pulumi.Input[_builtins.str] password: HTTP proxy server password.
+        :param pulumi.Input[_builtins.int] port: HTTP proxy server port.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] proxy_types: List of HTTP proxy types. Allowed values:
+               
+               | Enum     | Description         |
+               |----------|---------------------|
+               | HTTP     | HTTP proxy          |
+               | HTTPS    | HTTPS proxy         |
+               | SOCKS    | SOCKS proxy         |
+        :param pulumi.Input[_builtins.str] username: HTTP proxy server username.
+        """
+        pulumi.set(__self__, "name", name)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if port is not None:
+            pulumi.set(__self__, "port", port)
+        if proxy_types is not None:
+            pulumi.set(__self__, "proxy_types", proxy_types)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        HTTP proxy server name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigProxyListIpAddressArgs']]:
+        """
+        IP address of the proxy server.
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: pulumi.Input[Optional['ClusterProfileV2HttpProxyConfigProxyListIpAddressArgs']]):
+        pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        HTTP proxy server password.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def port(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        HTTP proxy server port.
+        """
+        return pulumi.get(self, "port")
+
+    @port.setter
+    def port(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "port", value)
+
+    @_builtins.property
+    @pulumi.getter(name="proxyTypes")
+    def proxy_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of HTTP proxy types. Allowed values:
+
+        | Enum     | Description         |
+        |----------|---------------------|
+        | HTTP     | HTTP proxy          |
+        | HTTPS    | HTTPS proxy         |
+        | SOCKS    | SOCKS proxy         |
+        """
+        return pulumi.get(self, "proxy_types")
+
+    @proxy_types.setter
+    def proxy_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "proxy_types", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        HTTP proxy server username.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "username", value)
+
+
+class ClusterProfileV2HttpProxyConfigProxyListIpAddressArgsDict(TypedDict):
+    ipv4s: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4ArgsDict']]]]]
+    ipv6s: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6ArgsDict']]]]]
+
+@pulumi.input_type
+class ClusterProfileV2HttpProxyConfigProxyListIpAddressArgs:
+    def __init__(__self__, *,
+                 ipv4s: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4Args']]]] = None,
+                 ipv6s: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6Args']]]] = None):
+        if ipv4s is not None:
+            pulumi.set(__self__, "ipv4s", ipv4s)
+        if ipv6s is not None:
+            pulumi.set(__self__, "ipv6s", ipv6s)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4Args']]]]:
+        return pulumi.get(self, "ipv4s")
+
+    @ipv4s.setter
+    def ipv4s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4Args']]]]):
+        pulumi.set(self, "ipv4s", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6Args']]]]:
+        return pulumi.get(self, "ipv6s")
+
+    @ipv6s.setter
+    def ipv6s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6Args']]]]):
+        pulumi.set(self, "ipv6s", value)
+
+
+class ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4ArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv4Args:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6ArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class ClusterProfileV2HttpProxyConfigProxyListIpAddressIpv6Args:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class ClusterProfileV2HttpProxyConfigProxyWhiteListArgsDict(TypedDict):
+    target: pulumi.Input[_builtins.str]
+    """
+    Target identifier exempted from HTTP proxy.
+    """
+    target_type: pulumi.Input[_builtins.str]
+    """
+    Type of the whitelist target. Allowed values:
+
+    | Enum                 | Description              |
+    |----------------------|--------------------------|
+    | IPV4_ADDRESS         | IPv4 address             |
+    | IPV6_ADDRESS         | IPv6 address             |
+    | IPV4_NETWORK_MASK    | IPv4 network mask        |
+    | DOMAIN_NAME_SUFFIX   | Domain name suffix       |
+    | HOST_NAME            | Host name                |
+    """
+
+@pulumi.input_type
+class ClusterProfileV2HttpProxyConfigProxyWhiteListArgs:
+    def __init__(__self__, *,
+                 target: pulumi.Input[_builtins.str],
+                 target_type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] target: Target identifier exempted from HTTP proxy.
+        :param pulumi.Input[_builtins.str] target_type: Type of the whitelist target. Allowed values:
+               
+               | Enum                 | Description              |
+               |----------------------|--------------------------|
+               | IPV4_ADDRESS         | IPv4 address             |
+               | IPV6_ADDRESS         | IPv6 address             |
+               | IPV4_NETWORK_MASK    | IPv4 network mask        |
+               | DOMAIN_NAME_SUFFIX   | Domain name suffix       |
+               | HOST_NAME            | Host name                |
+        """
+        pulumi.set(__self__, "target", target)
+        pulumi.set(__self__, "target_type", target_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def target(self) -> pulumi.Input[_builtins.str]:
+        """
+        Target identifier exempted from HTTP proxy.
+        """
+        return pulumi.get(self, "target")
+
+    @target.setter
+    def target(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetType")
+    def target_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Type of the whitelist target. Allowed values:
+
+        | Enum                 | Description              |
+        |----------------------|--------------------------|
+        | IPV4_ADDRESS         | IPv4 address             |
+        | IPV6_ADDRESS         | IPv6 address             |
+        | IPV4_NETWORK_MASK    | IPv4 network mask        |
+        | DOMAIN_NAME_SUFFIX   | Domain name suffix       |
+        | HOST_NAME            | Host name                |
+        """
+        return pulumi.get(self, "target_type")
+
+    @target_type.setter
+    def target_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "target_type", value)
 
 
 class ClusterProfileV2LinkArgsDict(TypedDict):
@@ -8055,6 +8903,242 @@ class ClusterProfileV2NameServerIpListIpv6Args:
         """
         - (Optional, default 128) The prefix length of the network to which this host IPv6 address belongs.
         """
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class ClusterProfileV2NtpServerConfigListArgsDict(TypedDict):
+    ntp_server_address: pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressArgsDict']
+    """
+    - (Required) NTP server address (supports IPv4, IPv6, and FQDN).
+    """
+    encryption_algorithm: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) Encryption algorithm used for NTP server authentication.
+
+    | Enum     | Description         |
+    |----------|---------------------|
+    | SHA256   | SHA-256 algorithm   |
+    | SHA384   | SHA-384 algorithm   |
+    | SHA512   | SHA-512 algorithm   |
+    """
+    encryption_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional, Sensitive) Encryption key in hexadecimal format used for NTP server authentication.
+    """
+    encryption_key_id: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    - (Optional) Encryption key ID used for NTP server authentication.
+    """
+
+@pulumi.input_type
+class ClusterProfileV2NtpServerConfigListArgs:
+    def __init__(__self__, *,
+                 ntp_server_address: pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressArgs'],
+                 encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key_id: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressArgs'] ntp_server_address: - (Required) NTP server address (supports IPv4, IPv6, and FQDN).
+        :param pulumi.Input[_builtins.str] encryption_algorithm: - (Optional) Encryption algorithm used for NTP server authentication.
+               
+               | Enum     | Description         |
+               |----------|---------------------|
+               | SHA256   | SHA-256 algorithm   |
+               | SHA384   | SHA-384 algorithm   |
+               | SHA512   | SHA-512 algorithm   |
+        :param pulumi.Input[_builtins.str] encryption_key: - (Optional, Sensitive) Encryption key in hexadecimal format used for NTP server authentication.
+        :param pulumi.Input[_builtins.int] encryption_key_id: - (Optional) Encryption key ID used for NTP server authentication.
+        """
+        pulumi.set(__self__, "ntp_server_address", ntp_server_address)
+        if encryption_algorithm is not None:
+            pulumi.set(__self__, "encryption_algorithm", encryption_algorithm)
+        if encryption_key is not None:
+            pulumi.set(__self__, "encryption_key", encryption_key)
+        if encryption_key_id is not None:
+            pulumi.set(__self__, "encryption_key_id", encryption_key_id)
+
+    @_builtins.property
+    @pulumi.getter(name="ntpServerAddress")
+    def ntp_server_address(self) -> pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressArgs']:
+        """
+        - (Required) NTP server address (supports IPv4, IPv6, and FQDN).
+        """
+        return pulumi.get(self, "ntp_server_address")
+
+    @ntp_server_address.setter
+    def ntp_server_address(self, value: pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressArgs']):
+        pulumi.set(self, "ntp_server_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionAlgorithm")
+    def encryption_algorithm(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Encryption algorithm used for NTP server authentication.
+
+        | Enum     | Description         |
+        |----------|---------------------|
+        | SHA256   | SHA-256 algorithm   |
+        | SHA384   | SHA-384 algorithm   |
+        | SHA512   | SHA-512 algorithm   |
+        """
+        return pulumi.get(self, "encryption_algorithm")
+
+    @encryption_algorithm.setter
+    def encryption_algorithm(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "encryption_algorithm", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional, Sensitive) Encryption key in hexadecimal format used for NTP server authentication.
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @encryption_key.setter
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "encryption_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKeyId")
+    def encryption_key_id(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        - (Optional) Encryption key ID used for NTP server authentication.
+        """
+        return pulumi.get(self, "encryption_key_id")
+
+    @encryption_key_id.setter
+    def encryption_key_id(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "encryption_key_id", value)
+
+
+class ClusterProfileV2NtpServerConfigListNtpServerAddressArgsDict(TypedDict):
+    fqdns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressFqdnArgsDict']]]]]
+    ipv4s: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4ArgsDict']]]]]
+    ipv6s: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6ArgsDict']]]]]
+
+@pulumi.input_type
+class ClusterProfileV2NtpServerConfigListNtpServerAddressArgs:
+    def __init__(__self__, *,
+                 fqdns: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressFqdnArgs']]]] = None,
+                 ipv4s: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4Args']]]] = None,
+                 ipv6s: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6Args']]]] = None):
+        if fqdns is not None:
+            pulumi.set(__self__, "fqdns", fqdns)
+        if ipv4s is not None:
+            pulumi.set(__self__, "ipv4s", ipv4s)
+        if ipv6s is not None:
+            pulumi.set(__self__, "ipv6s", ipv6s)
+
+    @_builtins.property
+    @pulumi.getter
+    def fqdns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressFqdnArgs']]]]:
+        return pulumi.get(self, "fqdns")
+
+    @fqdns.setter
+    def fqdns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressFqdnArgs']]]]):
+        pulumi.set(self, "fqdns", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4Args']]]]:
+        return pulumi.get(self, "ipv4s")
+
+    @ipv4s.setter
+    def ipv4s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4Args']]]]):
+        pulumi.set(self, "ipv4s", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6s(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6Args']]]]:
+        return pulumi.get(self, "ipv6s")
+
+    @ipv6s.setter
+    def ipv6s(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6Args']]]]):
+        pulumi.set(self, "ipv6s", value)
+
+
+class ClusterProfileV2NtpServerConfigListNtpServerAddressFqdnArgsDict(TypedDict):
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class ClusterProfileV2NtpServerConfigListNtpServerAddressFqdnArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4ArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class ClusterProfileV2NtpServerConfigListNtpServerAddressIpv4Args:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6ArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class ClusterProfileV2NtpServerConfigListNtpServerAddressIpv6Args:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "prefix_length")
 
     @prefix_length.setter
@@ -8318,6 +9402,64 @@ class ClusterProfileV2PulseStatusArgs:
     @pii_scrubbing_level.setter
     def pii_scrubbing_level(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pii_scrubbing_level", value)
+
+
+class ClusterProfileV2RebuildReservationConfigArgsDict(TypedDict):
+    is_rebuild_reservation_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    - (Optional, default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Enable rebuild capacity reservation to maintain free space for fault tolerance recovery operations.
+    """
+
+@pulumi.input_type
+class ClusterProfileV2RebuildReservationConfigArgs:
+    def __init__(__self__, *,
+                 is_rebuild_reservation_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_rebuild_reservation_enabled: - (Optional, default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Enable rebuild capacity reservation to maintain free space for fault tolerance recovery operations.
+        """
+        if is_rebuild_reservation_enabled is not None:
+            pulumi.set(__self__, "is_rebuild_reservation_enabled", is_rebuild_reservation_enabled)
+
+    @_builtins.property
+    @pulumi.getter(name="isRebuildReservationEnabled")
+    def is_rebuild_reservation_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        - (Optional, default <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>) Enable rebuild capacity reservation to maintain free space for fault tolerance recovery operations.
+        """
+        return pulumi.get(self, "is_rebuild_reservation_enabled")
+
+    @is_rebuild_reservation_enabled.setter
+    def is_rebuild_reservation_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_rebuild_reservation_enabled", value)
+
+
+class ClusterProfileV2ResilientCapacityWarningThresholdConfigArgsDict(TypedDict):
+    resilient_capacity_warning_threshold_percentage: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    - (Optional, default <span pulumi-lang-nodejs="`75`" pulumi-lang-dotnet="`75`" pulumi-lang-go="`75`" pulumi-lang-python="`75`" pulumi-lang-yaml="`75`" pulumi-lang-java="`75`" pulumi-lang-hcl="`75`">`75`</span>) Warning threshold percentage for resilient storage capacity.
+    """
+
+@pulumi.input_type
+class ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs:
+    def __init__(__self__, *,
+                 resilient_capacity_warning_threshold_percentage: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] resilient_capacity_warning_threshold_percentage: - (Optional, default <span pulumi-lang-nodejs="`75`" pulumi-lang-dotnet="`75`" pulumi-lang-go="`75`" pulumi-lang-python="`75`" pulumi-lang-yaml="`75`" pulumi-lang-java="`75`" pulumi-lang-hcl="`75`">`75`</span>) Warning threshold percentage for resilient storage capacity.
+        """
+        if resilient_capacity_warning_threshold_percentage is not None:
+            pulumi.set(__self__, "resilient_capacity_warning_threshold_percentage", resilient_capacity_warning_threshold_percentage)
+
+    @_builtins.property
+    @pulumi.getter(name="resilientCapacityWarningThresholdPercentage")
+    def resilient_capacity_warning_threshold_percentage(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        - (Optional, default <span pulumi-lang-nodejs="`75`" pulumi-lang-dotnet="`75`" pulumi-lang-go="`75`" pulumi-lang-python="`75`" pulumi-lang-yaml="`75`" pulumi-lang-java="`75`" pulumi-lang-hcl="`75`">`75`</span>) Warning threshold percentage for resilient storage capacity.
+        """
+        return pulumi.get(self, "resilient_capacity_warning_threshold_percentage")
+
+    @resilient_capacity_warning_threshold_percentage.setter
+    def resilient_capacity_warning_threshold_percentage(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "resilient_capacity_warning_threshold_percentage", value)
 
 
 class ClusterProfileV2RsyslogServerListArgsDict(TypedDict):
@@ -9881,6 +11023,10 @@ class ClusterProfileV2SnmpConfigUserArgsDict(TypedDict):
     |-----------|------------------------------|
     | SHA       | SHA SNMP authentication      |
     | MD5       | MD5 SNMP authentication      |
+    | SHA224    | SHA-224 SNMP authentication  |
+    | SHA256    | SHA-256 SNMP authentication  |
+    | SHA384    | SHA-384 SNMP authentication  |
+    | SHA512    | SHA-512 SNMP authentication  |
     """
     username: pulumi.Input[_builtins.str]
     """
@@ -9900,6 +11046,8 @@ class ClusterProfileV2SnmpConfigUserArgsDict(TypedDict):
     |-----------|--------------------|
     | DES       | DES SNMP key       |
     | AES       | AES SNMP key       |
+    | AES192    | AES-192 SNMP key   |
+    | AES256    | AES-256 SNMP key   |
     """
     tenant_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
 
@@ -9922,6 +11070,10 @@ class ClusterProfileV2SnmpConfigUserArgs:
                |-----------|------------------------------|
                | SHA       | SHA SNMP authentication      |
                | MD5       | MD5 SNMP authentication      |
+               | SHA224    | SHA-224 SNMP authentication  |
+               | SHA256    | SHA-256 SNMP authentication  |
+               | SHA384    | SHA-384 SNMP authentication  |
+               | SHA512    | SHA-512 SNMP authentication  |
         :param pulumi.Input[_builtins.str] username: SNMP username. Required for SNMP trap v3 version.
         :param pulumi.Input[_builtins.str] priv_key: SNMP user encryption key (must not contain single quotes).
         :param pulumi.Input[_builtins.str] priv_type: SNMP user encryption type. Allowed values:
@@ -9930,6 +11082,8 @@ class ClusterProfileV2SnmpConfigUserArgs:
                |-----------|--------------------|
                | DES       | DES SNMP key       |
                | AES       | AES SNMP key       |
+               | AES192    | AES-192 SNMP key   |
+               | AES256    | AES-256 SNMP key   |
         """
         pulumi.set(__self__, "auth_key", auth_key)
         pulumi.set(__self__, "auth_type", auth_type)
@@ -9967,6 +11121,10 @@ class ClusterProfileV2SnmpConfigUserArgs:
         |-----------|------------------------------|
         | SHA       | SHA SNMP authentication      |
         | MD5       | MD5 SNMP authentication      |
+        | SHA224    | SHA-224 SNMP authentication  |
+        | SHA256    | SHA-256 SNMP authentication  |
+        | SHA384    | SHA-384 SNMP authentication  |
+        | SHA512    | SHA-512 SNMP authentication  |
         """
         return pulumi.get(self, "auth_type")
 
@@ -10026,6 +11184,8 @@ class ClusterProfileV2SnmpConfigUserArgs:
         |-----------|--------------------|
         | DES       | DES SNMP key       |
         | AES       | AES SNMP key       |
+        | AES192    | AES-192 SNMP key   |
+        | AES256    | AES-256 SNMP key   |
         """
         return pulumi.get(self, "priv_type")
 
@@ -16241,6 +17401,7 @@ class ClustersUnconfiguredNodeNetworksV2NodesNetworkingDetailUplinkUplinkListArg
 
 
 class DeployTemplatesV2OverrideVmConfigMapArgsDict(TypedDict):
+    guest_customization_profile_config: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigArgsDict']]]
     guest_customizations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationArgsDict']]]]]
     """
     Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
@@ -16273,6 +17434,7 @@ class DeployTemplatesV2OverrideVmConfigMapArgsDict(TypedDict):
 @pulumi.input_type
 class DeployTemplatesV2OverrideVmConfigMapArgs:
     def __init__(__self__, *,
+                 guest_customization_profile_config: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigArgs']] = None,
                  guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationArgs']]]] = None,
                  memory_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -16289,6 +17451,8 @@ class DeployTemplatesV2OverrideVmConfigMapArgs:
         :param pulumi.Input[_builtins.int] num_sockets: Number of vCPU sockets.
         :param pulumi.Input[_builtins.int] num_threads_per_core: Number of threads per core.
         """
+        if guest_customization_profile_config is not None:
+            pulumi.set(__self__, "guest_customization_profile_config", guest_customization_profile_config)
         if guest_customizations is not None:
             pulumi.set(__self__, "guest_customizations", guest_customizations)
         if memory_size_bytes is not None:
@@ -16303,6 +17467,15 @@ class DeployTemplatesV2OverrideVmConfigMapArgs:
             pulumi.set(__self__, "num_sockets", num_sockets)
         if num_threads_per_core is not None:
             pulumi.set(__self__, "num_threads_per_core", num_threads_per_core)
+
+    @_builtins.property
+    @pulumi.getter(name="guestCustomizationProfileConfig")
+    def guest_customization_profile_config(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigArgs']]:
+        return pulumi.get(self, "guest_customization_profile_config")
+
+    @guest_customization_profile_config.setter
+    def guest_customization_profile_config(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigArgs']]):
+        pulumi.set(self, "guest_customization_profile_config", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
@@ -16467,7 +17640,7 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgsD
     * `cloud_init_script.user_data`: (Optional) user data object
     * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
 
-    See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
+    See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Templates/operation/deployTemplate).
     """
     datasource_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -16489,7 +17662,7 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgs:
                * `cloud_init_script.user_data`: (Optional) user data object
                * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
                
-               See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
+               See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Templates/operation/deployTemplate).
         :param pulumi.Input[_builtins.str] datasource_type: Type of datasource. Default: CONFIG_DRIVE_V2
         :param pulumi.Input[_builtins.str] metadata: The contents of the<span pulumi-lang-nodejs=" metaData " pulumi-lang-dotnet=" MetaData " pulumi-lang-go=" metaData " pulumi-lang-python=" meta_data " pulumi-lang-yaml=" metaData " pulumi-lang-java=" metaData " pulumi-lang-hcl=" meta_data "> metaData </span>configuration for cloud-init. This can be formatted as YAML or JSON. The value must be base64 encoded. Default value is 'CONFIG_DRIVE_V2'.
         """
@@ -16508,7 +17681,7 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigCloudInitArgs:
         * `cloud_init_script.user_data`: (Optional) user data object
         * `cloud_init_script.custom_keys`: (Optional) The list of the individual KeyValuePair elements.
 
-        See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Templates/operation/deployTemplate).
+        See detailed information in [Nutanix Deploy Template V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Templates/operation/deployTemplate).
         """
         return pulumi.get(self, "cloud_init_scripts")
 
@@ -17059,6 +18232,1017 @@ class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationConfigSysprepSysprep
     @value.setter
     def value(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigArgsDict(TypedDict):
+    profile: pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfileArgsDict']
+    config_override_spec: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecArgsDict']]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigArgs:
+    def __init__(__self__, *,
+                 profile: pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfileArgs'],
+                 config_override_spec: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecArgs']] = None):
+        pulumi.set(__self__, "profile", profile)
+        if config_override_spec is not None:
+            pulumi.set(__self__, "config_override_spec", config_override_spec)
+
+    @_builtins.property
+    @pulumi.getter
+    def profile(self) -> pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfileArgs']:
+        return pulumi.get(self, "profile")
+
+    @profile.setter
+    def profile(self, value: pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfileArgs']):
+        pulumi.set(self, "profile", value)
+
+    @_builtins.property
+    @pulumi.getter(name="configOverrideSpec")
+    def config_override_spec(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecArgs']]:
+        return pulumi.get(self, "config_override_spec")
+
+    @config_override_spec.setter
+    def config_override_spec(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecArgs']]):
+        pulumi.set(self, "config_override_spec", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecArgsDict(TypedDict):
+    sysprep_config: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgsDict']]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecArgs:
+    def __init__(__self__, *,
+                 sysprep_config: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs']] = None):
+        if sysprep_config is not None:
+            pulumi.set(__self__, "sysprep_config", sysprep_config)
+
+    @_builtins.property
+    @pulumi.getter(name="sysprepConfig")
+    def sysprep_config(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs']]:
+        return pulumi.get(self, "sysprep_config")
+
+    @sysprep_config.setter
+    def sysprep_config(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs']]):
+        pulumi.set(self, "sysprep_config", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgsDict(TypedDict):
+    customization: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgsDict']]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs:
+    def __init__(__self__, *,
+                 customization: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs']] = None):
+        if customization is not None:
+            pulumi.set(__self__, "customization", customization)
+
+    @_builtins.property
+    @pulumi.getter
+    def customization(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs']]:
+        return pulumi.get(self, "customization")
+
+    @customization.setter
+    def customization(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs']]):
+        pulumi.set(self, "customization", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgsDict(TypedDict):
+    answer_file: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgsDict']]]
+    sysprep_params: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgsDict']]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs:
+    def __init__(__self__, *,
+                 answer_file: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs']] = None,
+                 sysprep_params: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs']] = None):
+        if answer_file is not None:
+            pulumi.set(__self__, "answer_file", answer_file)
+        if sysprep_params is not None:
+            pulumi.set(__self__, "sysprep_params", sysprep_params)
+
+    @_builtins.property
+    @pulumi.getter(name="answerFile")
+    def answer_file(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs']]:
+        return pulumi.get(self, "answer_file")
+
+    @answer_file.setter
+    def answer_file(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs']]):
+        pulumi.set(self, "answer_file", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sysprepParams")
+    def sysprep_params(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs']]:
+        return pulumi.get(self, "sysprep_params")
+
+    @sysprep_params.setter
+    def sysprep_params(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs']]):
+        pulumi.set(self, "sysprep_params", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgsDict(TypedDict):
+    unattend_xml: pulumi.Input[_builtins.str]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs:
+    def __init__(__self__, *,
+                 unattend_xml: pulumi.Input[_builtins.str]):
+        pulumi.set(__self__, "unattend_xml", unattend_xml)
+
+    @_builtins.property
+    @pulumi.getter(name="unattendXml")
+    def unattend_xml(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "unattend_xml")
+
+    @unattend_xml.setter
+    def unattend_xml(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "unattend_xml", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgsDict(TypedDict):
+    first_logon_commands: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    general_settings: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict']]]
+    locale_settings: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict']]]
+    network_settings: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict']]]
+    workgroup_or_domain_info: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict']]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs:
+    def __init__(__self__, *,
+                 first_logon_commands: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 general_settings: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']] = None,
+                 locale_settings: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']] = None,
+                 network_settings: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']] = None,
+                 workgroup_or_domain_info: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']] = None):
+        if first_logon_commands is not None:
+            pulumi.set(__self__, "first_logon_commands", first_logon_commands)
+        if general_settings is not None:
+            pulumi.set(__self__, "general_settings", general_settings)
+        if locale_settings is not None:
+            pulumi.set(__self__, "locale_settings", locale_settings)
+        if network_settings is not None:
+            pulumi.set(__self__, "network_settings", network_settings)
+        if workgroup_or_domain_info is not None:
+            pulumi.set(__self__, "workgroup_or_domain_info", workgroup_or_domain_info)
+
+    @_builtins.property
+    @pulumi.getter(name="firstLogonCommands")
+    def first_logon_commands(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "first_logon_commands")
+
+    @first_logon_commands.setter
+    def first_logon_commands(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "first_logon_commands", value)
+
+    @_builtins.property
+    @pulumi.getter(name="generalSettings")
+    def general_settings(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']]:
+        return pulumi.get(self, "general_settings")
+
+    @general_settings.setter
+    def general_settings(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']]):
+        pulumi.set(self, "general_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localeSettings")
+    def locale_settings(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']]:
+        return pulumi.get(self, "locale_settings")
+
+    @locale_settings.setter
+    def locale_settings(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']]):
+        pulumi.set(self, "locale_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkSettings")
+    def network_settings(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']]:
+        return pulumi.get(self, "network_settings")
+
+    @network_settings.setter
+    def network_settings(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']]):
+        pulumi.set(self, "network_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="workgroupOrDomainInfo")
+    def workgroup_or_domain_info(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']]:
+        return pulumi.get(self, "workgroup_or_domain_info")
+
+    @workgroup_or_domain_info.setter
+    def workgroup_or_domain_info(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']]):
+        pulumi.set(self, "workgroup_or_domain_info", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict(TypedDict):
+    administrator_password: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgsDict']]]
+    auto_logon_settings: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict']]]
+    computer_name: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict']]]
+    registered_organization: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgsDict']]]
+    registered_owner: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgsDict']]]
+    timezone: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgsDict']]]
+    windows_product_key: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgsDict']]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs:
+    def __init__(__self__, *,
+                 administrator_password: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs']] = None,
+                 auto_logon_settings: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']] = None,
+                 computer_name: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']] = None,
+                 registered_organization: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs']] = None,
+                 registered_owner: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs']] = None,
+                 timezone: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs']] = None,
+                 windows_product_key: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs']] = None):
+        if administrator_password is not None:
+            pulumi.set(__self__, "administrator_password", administrator_password)
+        if auto_logon_settings is not None:
+            pulumi.set(__self__, "auto_logon_settings", auto_logon_settings)
+        if computer_name is not None:
+            pulumi.set(__self__, "computer_name", computer_name)
+        if registered_organization is not None:
+            pulumi.set(__self__, "registered_organization", registered_organization)
+        if registered_owner is not None:
+            pulumi.set(__self__, "registered_owner", registered_owner)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
+        if windows_product_key is not None:
+            pulumi.set(__self__, "windows_product_key", windows_product_key)
+
+    @_builtins.property
+    @pulumi.getter(name="administratorPassword")
+    def administrator_password(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs']]:
+        return pulumi.get(self, "administrator_password")
+
+    @administrator_password.setter
+    def administrator_password(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs']]):
+        pulumi.set(self, "administrator_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoLogonSettings")
+    def auto_logon_settings(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']]:
+        return pulumi.get(self, "auto_logon_settings")
+
+    @auto_logon_settings.setter
+    def auto_logon_settings(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']]):
+        pulumi.set(self, "auto_logon_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computerName")
+    def computer_name(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']]:
+        return pulumi.get(self, "computer_name")
+
+    @computer_name.setter
+    def computer_name(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']]):
+        pulumi.set(self, "computer_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="registeredOrganization")
+    def registered_organization(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs']]:
+        return pulumi.get(self, "registered_organization")
+
+    @registered_organization.setter
+    def registered_organization(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs']]):
+        pulumi.set(self, "registered_organization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="registeredOwner")
+    def registered_owner(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs']]:
+        return pulumi.get(self, "registered_owner")
+
+    @registered_owner.setter
+    def registered_owner(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs']]):
+        pulumi.set(self, "registered_owner", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def timezone(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs']]:
+        return pulumi.get(self, "timezone")
+
+    @timezone.setter
+    def timezone(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs']]):
+        pulumi.set(self, "timezone", value)
+
+    @_builtins.property
+    @pulumi.getter(name="windowsProductKey")
+    def windows_product_key(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs']]:
+        return pulumi.get(self, "windows_product_key")
+
+    @windows_product_key.setter
+    def windows_product_key(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs']]):
+        pulumi.set(self, "windows_product_key", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict(TypedDict):
+    logon_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs:
+    def __init__(__self__, *,
+                 logon_count: pulumi.Input[Optional[_builtins.int]] = None):
+        if logon_count is not None:
+            pulumi.set(__self__, "logon_count", logon_count)
+
+    @_builtins.property
+    @pulumi.getter(name="logonCount")
+    def logon_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "logon_count")
+
+    @logon_count.setter
+    def logon_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "logon_count", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    use_vm_name: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_vm_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if use_vm_name is not None:
+            pulumi.set(__self__, "use_vm_name", use_vm_name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useVmName")
+    def use_vm_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "use_vm_name")
+
+    @use_vm_name.setter
+    def use_vm_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_vm_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict(TypedDict):
+    system_locale: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgsDict']]]
+    ui_language: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgsDict']]]
+    user_locale: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgsDict']]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs:
+    def __init__(__self__, *,
+                 system_locale: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs']] = None,
+                 ui_language: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs']] = None,
+                 user_locale: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs']] = None):
+        if system_locale is not None:
+            pulumi.set(__self__, "system_locale", system_locale)
+        if ui_language is not None:
+            pulumi.set(__self__, "ui_language", ui_language)
+        if user_locale is not None:
+            pulumi.set(__self__, "user_locale", user_locale)
+
+    @_builtins.property
+    @pulumi.getter(name="systemLocale")
+    def system_locale(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs']]:
+        return pulumi.get(self, "system_locale")
+
+    @system_locale.setter
+    def system_locale(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs']]):
+        pulumi.set(self, "system_locale", value)
+
+    @_builtins.property
+    @pulumi.getter(name="uiLanguage")
+    def ui_language(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs']]:
+        return pulumi.get(self, "ui_language")
+
+    @ui_language.setter
+    def ui_language(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs']]):
+        pulumi.set(self, "ui_language", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userLocale")
+    def user_locale(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs']]:
+        return pulumi.get(self, "user_locale")
+
+    @user_locale.setter
+    def user_locale(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs']]):
+        pulumi.set(self, "user_locale", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict(TypedDict):
+    nic_config_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict']]]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs:
+    def __init__(__self__, *,
+                 nic_config_lists: pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]] = None):
+        if nic_config_lists is not None:
+            pulumi.set(__self__, "nic_config_lists", nic_config_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="nicConfigLists")
+    def nic_config_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]]:
+        return pulumi.get(self, "nic_config_lists")
+
+    @nic_config_lists.setter
+    def nic_config_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]]):
+        pulumi.set(self, "nic_config_lists", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict(TypedDict):
+    dns_config: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict']]]
+    ipv4_config: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict']]]
+    """
+    The IP address configurations.
+    """
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs:
+    def __init__(__self__, *,
+                 dns_config: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']] = None,
+                 ipv4_config: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs']] = None):
+        """
+        :param pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs'] ipv4_config: The IP address configurations.
+        """
+        if dns_config is not None:
+            pulumi.set(__self__, "dns_config", dns_config)
+        if ipv4_config is not None:
+            pulumi.set(__self__, "ipv4_config", ipv4_config)
+
+    @_builtins.property
+    @pulumi.getter(name="dnsConfig")
+    def dns_config(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']]:
+        return pulumi.get(self, "dns_config")
+
+    @dns_config.setter
+    def dns_config(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']]):
+        pulumi.set(self, "dns_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4Config")
+    def ipv4_config(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs']]:
+        """
+        The IP address configurations.
+        """
+        return pulumi.get(self, "ipv4_config")
+
+    @ipv4_config.setter
+    def ipv4_config(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs']]):
+        pulumi.set(self, "ipv4_config", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict(TypedDict):
+    alternate_dns_server_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    preferred_dns_server_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs:
+    def __init__(__self__, *,
+                 alternate_dns_server_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preferred_dns_server_address: pulumi.Input[Optional[_builtins.str]] = None):
+        if alternate_dns_server_addresses is not None:
+            pulumi.set(__self__, "alternate_dns_server_addresses", alternate_dns_server_addresses)
+        if preferred_dns_server_address is not None:
+            pulumi.set(__self__, "preferred_dns_server_address", preferred_dns_server_address)
+
+    @_builtins.property
+    @pulumi.getter(name="alternateDnsServerAddresses")
+    def alternate_dns_server_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "alternate_dns_server_addresses")
+
+    @alternate_dns_server_addresses.setter
+    def alternate_dns_server_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "alternate_dns_server_addresses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="preferredDnsServerAddress")
+    def preferred_dns_server_address(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "preferred_dns_server_address")
+
+    @preferred_dns_server_address.setter
+    def preferred_dns_server_address(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "preferred_dns_server_address", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict(TypedDict):
+    default_gateways: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    ip_address: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgsDict']]]
+    use_dhcp: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs:
+    def __init__(__self__, *,
+                 default_gateways: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ip_address: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs']] = None,
+                 use_dhcp: pulumi.Input[Optional[_builtins.bool]] = None):
+        if default_gateways is not None:
+            pulumi.set(__self__, "default_gateways", default_gateways)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if use_dhcp is not None:
+            pulumi.set(__self__, "use_dhcp", use_dhcp)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultGateways")
+    def default_gateways(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "default_gateways")
+
+    @default_gateways.setter
+    def default_gateways(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "default_gateways", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs']]:
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs']]):
+        pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useDhcp")
+    def use_dhcp(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "use_dhcp")
+
+    @use_dhcp.setter
+    def use_dhcp(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_dhcp", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgsDict(TypedDict):
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs:
+    def __init__(__self__, *,
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    domain_settings: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict']]]
+    workgroup: NotRequired[pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict']]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 domain_settings: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']] = None,
+                 workgroup: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if domain_settings is not None:
+            pulumi.set(__self__, "domain_settings", domain_settings)
+        if workgroup is not None:
+            pulumi.set(__self__, "workgroup", workgroup)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domainSettings")
+    def domain_settings(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']]:
+        return pulumi.get(self, "domain_settings")
+
+    @domain_settings.setter
+    def domain_settings(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']]):
+        pulumi.set(self, "domain_settings", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def workgroup(self) -> pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']]:
+        return pulumi.get(self, "workgroup")
+
+    @workgroup.setter
+    def workgroup(self, value: pulumi.Input[Optional['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']]):
+        pulumi.set(self, "workgroup", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict(TypedDict):
+    credentials: pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict']
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs:
+    def __init__(__self__, *,
+                 credentials: pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']):
+        pulumi.set(__self__, "credentials", credentials)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']:
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: pulumi.Input['DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']):
+        pulumi.set(self, "credentials", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict(TypedDict):
+    domain_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs:
+    def __init__(__self__, *,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "username", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    VM name.
+    """
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] name: VM name.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        VM name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfileArgsDict(TypedDict):
+    ext_id: pulumi.Input[_builtins.str]
+    """
+    The identifier of a Template.
+    """
+
+@pulumi.input_type
+class DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfigProfileArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: The identifier of a Template.
+        """
+        pulumi.set(__self__, "ext_id", ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The identifier of a Template.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "ext_id", value)
 
 
 class DeployTemplatesV2OverrideVmConfigMapNicArgsDict(TypedDict):
@@ -18983,6 +21167,281 @@ class DeployTemplatesV2OverrideVmConfigMapNicNicNetworkInfoVirtualEthernetNicNet
         pulumi.set(self, "ext_id", value)
 
 
+class DirectoryServerConfigV2DomainControllerArgsDict(TypedDict):
+    fqdn: NotRequired[pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerFqdnArgsDict']]]
+    """
+    A fully qualified domain name with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Optional).
+    """
+    ipv4: NotRequired[pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerIpv4ArgsDict']]]
+    """
+    An IPv4 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+    """
+    ipv6: NotRequired[pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerIpv6ArgsDict']]]
+    """
+    An IPv6 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+    """
+
+@pulumi.input_type
+class DirectoryServerConfigV2DomainControllerArgs:
+    def __init__(__self__, *,
+                 fqdn: pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerFqdnArgs']] = None,
+                 ipv4: pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerIpv4Args']] = None,
+                 ipv6: pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerIpv6Args']] = None):
+        """
+        :param pulumi.Input['DirectoryServerConfigV2DomainControllerFqdnArgs'] fqdn: A fully qualified domain name with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Optional).
+        :param pulumi.Input['DirectoryServerConfigV2DomainControllerIpv4Args'] ipv4: An IPv4 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+        :param pulumi.Input['DirectoryServerConfigV2DomainControllerIpv6Args'] ipv6: An IPv6 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+        """
+        if fqdn is not None:
+            pulumi.set(__self__, "fqdn", fqdn)
+        if ipv4 is not None:
+            pulumi.set(__self__, "ipv4", ipv4)
+        if ipv6 is not None:
+            pulumi.set(__self__, "ipv6", ipv6)
+
+    @_builtins.property
+    @pulumi.getter
+    def fqdn(self) -> pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerFqdnArgs']]:
+        """
+        A fully qualified domain name with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Optional).
+        """
+        return pulumi.get(self, "fqdn")
+
+    @fqdn.setter
+    def fqdn(self, value: pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerFqdnArgs']]):
+        pulumi.set(self, "fqdn", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4(self) -> pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerIpv4Args']]:
+        """
+        An IPv4 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+        """
+        return pulumi.get(self, "ipv4")
+
+    @ipv4.setter
+    def ipv4(self, value: pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerIpv4Args']]):
+        pulumi.set(self, "ipv4", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6(self) -> pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerIpv6Args']]:
+        """
+        An IPv6 address with <span pulumi-lang-nodejs="`value`" pulumi-lang-dotnet="`Value`" pulumi-lang-go="`value`" pulumi-lang-python="`value`" pulumi-lang-yaml="`value`" pulumi-lang-java="`value`" pulumi-lang-hcl="`value`">`value`</span> (Required) and <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> (Optional).
+        """
+        return pulumi.get(self, "ipv6")
+
+    @ipv6.setter
+    def ipv6(self, value: pulumi.Input[Optional['DirectoryServerConfigV2DomainControllerIpv6Args']]):
+        pulumi.set(self, "ipv6", value)
+
+
+class DirectoryServerConfigV2DomainControllerFqdnArgsDict(TypedDict):
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DirectoryServerConfigV2DomainControllerFqdnArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class DirectoryServerConfigV2DomainControllerIpv4ArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class DirectoryServerConfigV2DomainControllerIpv4Args:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class DirectoryServerConfigV2DomainControllerIpv6ArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class DirectoryServerConfigV2DomainControllerIpv6Args:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class DirectoryServerConfigV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class DirectoryServerConfigV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class DirectoryServerConfigV2MatchingCriteriaArgsDict(TypedDict):
+    criteria: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The criteria to use for matching entities to be categorized. Only allowed when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `CONTAINS`. Must not be set when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `ALL`.
+    """
+    match_entity: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The entity type to match on. Valid values: `VM`.
+    """
+    match_field: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The field to match on. Today only `NAME` is supported, which matches on an entity's name.
+    """
+    match_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The type of match. Valid values: `CONTAINS`, `ALL`. `CONTAINS` performs a substring match on the given entity and field for the criteria value whereas `ALL` allows all strings to match on the given entity.
+    """
+
+@pulumi.input_type
+class DirectoryServerConfigV2MatchingCriteriaArgs:
+    def __init__(__self__, *,
+                 criteria: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_entity: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_field: pulumi.Input[Optional[_builtins.str]] = None,
+                 match_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] criteria: The criteria to use for matching entities to be categorized. Only allowed when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `CONTAINS`. Must not be set when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `ALL`.
+        :param pulumi.Input[_builtins.str] match_entity: The entity type to match on. Valid values: `VM`.
+        :param pulumi.Input[_builtins.str] match_field: The field to match on. Today only `NAME` is supported, which matches on an entity's name.
+        :param pulumi.Input[_builtins.str] match_type: The type of match. Valid values: `CONTAINS`, `ALL`. `CONTAINS` performs a substring match on the given entity and field for the criteria value whereas `ALL` allows all strings to match on the given entity.
+        """
+        if criteria is not None:
+            pulumi.set(__self__, "criteria", criteria)
+        if match_entity is not None:
+            pulumi.set(__self__, "match_entity", match_entity)
+        if match_field is not None:
+            pulumi.set(__self__, "match_field", match_field)
+        if match_type is not None:
+            pulumi.set(__self__, "match_type", match_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def criteria(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The criteria to use for matching entities to be categorized. Only allowed when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `CONTAINS`. Must not be set when <span pulumi-lang-nodejs="`matchType`" pulumi-lang-dotnet="`MatchType`" pulumi-lang-go="`matchType`" pulumi-lang-python="`match_type`" pulumi-lang-yaml="`matchType`" pulumi-lang-java="`matchType`" pulumi-lang-hcl="`match_type`">`matchType`</span> is `ALL`.
+        """
+        return pulumi.get(self, "criteria")
+
+    @criteria.setter
+    def criteria(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "criteria", value)
+
+    @_builtins.property
+    @pulumi.getter(name="matchEntity")
+    def match_entity(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The entity type to match on. Valid values: `VM`.
+        """
+        return pulumi.get(self, "match_entity")
+
+    @match_entity.setter
+    def match_entity(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "match_entity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="matchField")
+    def match_field(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The field to match on. Today only `NAME` is supported, which matches on an entity's name.
+        """
+        return pulumi.get(self, "match_field")
+
+    @match_field.setter
+    def match_field(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "match_field", value)
+
+    @_builtins.property
+    @pulumi.getter(name="matchType")
+    def match_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of match. Valid values: `CONTAINS`, `ALL`. `CONTAINS` performs a substring match on the given entity and field for the criteria value whereas `ALL` allows all strings to match on the given entity.
+        """
+        return pulumi.get(self, "match_type")
+
+    @match_type.setter
+    def match_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "match_type", value)
+
+
 class DirectoryServicesV2OpenLdapConfigurationArgsDict(TypedDict):
     user_configurations: pulumi.Input[Sequence[pulumi.Input['DirectoryServicesV2OpenLdapConfigurationUserConfigurationArgsDict']]]
     """
@@ -19262,6 +21721,10 @@ class EntityGroupV2AllowedConfigEntityArgsDict(TypedDict):
     """
     With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s):
     """
+    fqdns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+    """
     ip_ranges: NotRequired[pulumi.Input[Optional['EntityGroupV2AllowedConfigEntityIpRangesArgsDict']]]
     """
     With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
@@ -19270,13 +21733,21 @@ class EntityGroupV2AllowedConfigEntityArgsDict(TypedDict):
     """
     List of kube entity identifiers. Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
     """
+    match_criteria: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
+    """
     reference_ext_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
     """
+    reference_string: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+    """
     selected_by: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+    The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
     """
     type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -19287,27 +21758,39 @@ class EntityGroupV2AllowedConfigEntityArgsDict(TypedDict):
 class EntityGroupV2AllowedConfigEntityArgs:
     def __init__(__self__, *,
                  addresses: pulumi.Input[Optional['EntityGroupV2AllowedConfigEntityAddressesArgs']] = None,
+                 fqdns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ip_ranges: pulumi.Input[Optional['EntityGroupV2AllowedConfigEntityIpRangesArgs']] = None,
                  kube_entities: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 match_criteria: pulumi.Input[Optional[_builtins.str]] = None,
                  reference_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 reference_string: pulumi.Input[Optional[_builtins.str]] = None,
                  selected_by: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['EntityGroupV2AllowedConfigEntityAddressesArgs'] addresses: With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s):
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fqdns: List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
         :param pulumi.Input['EntityGroupV2AllowedConfigEntityIpRangesArgs'] ip_ranges: With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] kube_entities: List of kube entity identifiers. Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
+        :param pulumi.Input[_builtins.str] match_criteria: Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
-        :param pulumi.Input[_builtins.str] selected_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+        :param pulumi.Input[_builtins.str] reference_string: String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+        :param pulumi.Input[_builtins.str] selected_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
         :param pulumi.Input[_builtins.str] type: The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
         """
         if addresses is not None:
             pulumi.set(__self__, "addresses", addresses)
+        if fqdns is not None:
+            pulumi.set(__self__, "fqdns", fqdns)
         if ip_ranges is not None:
             pulumi.set(__self__, "ip_ranges", ip_ranges)
         if kube_entities is not None:
             pulumi.set(__self__, "kube_entities", kube_entities)
+        if match_criteria is not None:
+            pulumi.set(__self__, "match_criteria", match_criteria)
         if reference_ext_ids is not None:
             pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
+        if reference_string is not None:
+            pulumi.set(__self__, "reference_string", reference_string)
         if selected_by is not None:
             pulumi.set(__self__, "selected_by", selected_by)
         if type is not None:
@@ -19324,6 +21807,18 @@ class EntityGroupV2AllowedConfigEntityArgs:
     @addresses.setter
     def addresses(self, value: pulumi.Input[Optional['EntityGroupV2AllowedConfigEntityAddressesArgs']]):
         pulumi.set(self, "addresses", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def fqdns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+        """
+        return pulumi.get(self, "fqdns")
+
+    @fqdns.setter
+    def fqdns(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "fqdns", value)
 
     @_builtins.property
     @pulumi.getter(name="ipRanges")
@@ -19350,6 +21845,18 @@ class EntityGroupV2AllowedConfigEntityArgs:
         pulumi.set(self, "kube_entities", value)
 
     @_builtins.property
+    @pulumi.getter(name="matchCriteria")
+    def match_criteria(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
+        """
+        return pulumi.get(self, "match_criteria")
+
+    @match_criteria.setter
+    def match_criteria(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "match_criteria", value)
+
+    @_builtins.property
     @pulumi.getter(name="referenceExtIds")
     def reference_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -19362,10 +21869,22 @@ class EntityGroupV2AllowedConfigEntityArgs:
         pulumi.set(self, "reference_ext_ids", value)
 
     @_builtins.property
+    @pulumi.getter(name="referenceString")
+    def reference_string(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+        """
+        return pulumi.get(self, "reference_string")
+
+    @reference_string.setter
+    def reference_string(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "reference_string", value)
+
+    @_builtins.property
     @pulumi.getter(name="selectedBy")
     def selected_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+        The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
         """
         return pulumi.get(self, "selected_by")
 
@@ -19565,7 +22084,7 @@ class EntityGroupV2ExceptConfigEntityArgsDict(TypedDict):
     """
     selected_by: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+    The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
     """
     type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -19584,7 +22103,7 @@ class EntityGroupV2ExceptConfigEntityArgs:
         :param pulumi.Input['EntityGroupV2ExceptConfigEntityAddressesArgs'] addresses: With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s).
         :param pulumi.Input['EntityGroupV2ExceptConfigEntityIpRangesArgs'] ip_ranges: With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
-        :param pulumi.Input[_builtins.str] selected_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+        :param pulumi.Input[_builtins.str] selected_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
         :param pulumi.Input[_builtins.str] type: The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
         """
         if addresses is not None:
@@ -19638,7 +22157,7 @@ class EntityGroupV2ExceptConfigEntityArgs:
     @pulumi.getter(name="selectedBy")
     def selected_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+        The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
         """
         return pulumi.get(self, "selected_by")
 
@@ -20139,6 +22658,7 @@ class FloatingIpV2ExternalSubnetArgsDict(TypedDict):
     ip_prefix: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     ip_usages: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetIpUsageArgsDict']]]]]
     is_advanced_networking: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    is_connected: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     is_external: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     is_nat_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetLinkArgsDict']]]]]
@@ -20156,7 +22676,12 @@ class FloatingIpV2ExternalSubnetArgsDict(TypedDict):
     """
     network_function_chain_reference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     network_id: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    project_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    External identifier of the project associated with the Floating IP.
+    """
     reserved_ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetReservedIpAddressArgsDict']]]]]
+    shared_with_projects: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     subnet_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     virtual_switch_reference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     virtual_switches: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetVirtualSwitchArgsDict']]]]]
@@ -20184,6 +22709,7 @@ class FloatingIpV2ExternalSubnetArgs:
                  ip_prefix: pulumi.Input[Optional[_builtins.str]] = None,
                  ip_usages: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetIpUsageArgs']]]] = None,
                  is_advanced_networking: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_connected: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_external: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_nat_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetLinkArgs']]]] = None,
@@ -20192,7 +22718,9 @@ class FloatingIpV2ExternalSubnetArgs:
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  network_function_chain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  network_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  reserved_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetReservedIpAddressArgs']]]] = None,
+                 shared_with_projects: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  subnet_type: pulumi.Input[Optional[_builtins.str]] = None,
                  virtual_switch_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  virtual_switches: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetVirtualSwitchArgs']]]] = None,
@@ -20203,6 +22731,7 @@ class FloatingIpV2ExternalSubnetArgs:
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetLinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetMetadataArgs']]] metadatas: Metadata associated with this resource.
         :param pulumi.Input[_builtins.str] name: Name of the floating IP.
+        :param pulumi.Input[_builtins.str] project_ext_id: External identifier of the project associated with the Floating IP.
         :param pulumi.Input[_builtins.str] vpc_reference: VPC reference UUID
         :param pulumi.Input[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetVpcArgs']]] vpcs: Networking common base object
         """
@@ -20229,6 +22758,8 @@ class FloatingIpV2ExternalSubnetArgs:
             pulumi.set(__self__, "ip_usages", ip_usages)
         if is_advanced_networking is not None:
             pulumi.set(__self__, "is_advanced_networking", is_advanced_networking)
+        if is_connected is not None:
+            pulumi.set(__self__, "is_connected", is_connected)
         if is_external is not None:
             pulumi.set(__self__, "is_external", is_external)
         if is_nat_enabled is not None:
@@ -20245,8 +22776,12 @@ class FloatingIpV2ExternalSubnetArgs:
             pulumi.set(__self__, "network_function_chain_reference", network_function_chain_reference)
         if network_id is not None:
             pulumi.set(__self__, "network_id", network_id)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if reserved_ip_addresses is not None:
             pulumi.set(__self__, "reserved_ip_addresses", reserved_ip_addresses)
+        if shared_with_projects is not None:
+            pulumi.set(__self__, "shared_with_projects", shared_with_projects)
         if subnet_type is not None:
             pulumi.set(__self__, "subnet_type", subnet_type)
         if virtual_switch_reference is not None:
@@ -20370,6 +22905,15 @@ class FloatingIpV2ExternalSubnetArgs:
         pulumi.set(self, "is_advanced_networking", value)
 
     @_builtins.property
+    @pulumi.getter(name="isConnected")
+    def is_connected(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "is_connected")
+
+    @is_connected.setter
+    def is_connected(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_connected", value)
+
+    @_builtins.property
     @pulumi.getter(name="isExternal")
     def is_external(self) -> pulumi.Input[Optional[_builtins.bool]]:
         return pulumi.get(self, "is_external")
@@ -20451,6 +22995,18 @@ class FloatingIpV2ExternalSubnetArgs:
         pulumi.set(self, "network_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the Floating IP.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="reservedIpAddresses")
     def reserved_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetReservedIpAddressArgs']]]]:
         return pulumi.get(self, "reserved_ip_addresses")
@@ -20458,6 +23014,15 @@ class FloatingIpV2ExternalSubnetArgs:
     @reserved_ip_addresses.setter
     def reserved_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['FloatingIpV2ExternalSubnetReservedIpAddressArgs']]]]):
         pulumi.set(self, "reserved_ip_addresses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sharedWithProjects")
+    def shared_with_projects(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "shared_with_projects")
+
+    @shared_with_projects.setter
+    def shared_with_projects(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "shared_with_projects", value)
 
     @_builtins.property
     @pulumi.getter(name="subnetType")
@@ -29512,6 +32077,53 @@ class ImagePlacementPolicyV2ImageEntityFilterArgs:
         pulumi.set(self, "category_ext_ids", value)
 
 
+class ImageRateLimitPolicyV2ClusterEntityFilterArgsDict(TypedDict):
+    category_ext_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    Filter matches entities that have these categories attached.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    Filter matching type. Valid values: "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY".
+    """
+
+@pulumi.input_type
+class ImageRateLimitPolicyV2ClusterEntityFilterArgs:
+    def __init__(__self__, *,
+                 category_ext_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: Filter matches entities that have these categories attached.
+        :param pulumi.Input[_builtins.str] type: Filter matching type. Valid values: "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY".
+        """
+        pulumi.set(__self__, "category_ext_ids", category_ext_ids)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryExtIds")
+    def category_ext_ids(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        Filter matches entities that have these categories attached.
+        """
+        return pulumi.get(self, "category_ext_ids")
+
+    @category_ext_ids.setter
+    def category_ext_ids(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "category_ext_ids", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Filter matching type. Valid values: "CATEGORIES_MATCH_ALL", "CATEGORIES_MATCH_ANY".
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+
 class ImagesV2ChecksumArgsDict(TypedDict):
     hex_digest: pulumi.Input[_builtins.str]
     """
@@ -29927,28 +32539,51 @@ class ImagesV2SourceVmDiskSourceArgsDict(TypedDict):
     ext_id: pulumi.Input[_builtins.str]
     """
     The external identifier of VM Disk.
+    > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
+    """
+    vm_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The external identifier of the source VM for the specified disk.
     """
 
 @pulumi.input_type
 class ImagesV2SourceVmDiskSourceArgs:
     def __init__(__self__, *,
-                 ext_id: pulumi.Input[_builtins.str]):
+                 ext_id: pulumi.Input[_builtins.str],
+                 vm_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] ext_id: The external identifier of VM Disk.
+               > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
+        :param pulumi.Input[_builtins.str] vm_ext_id: The external identifier of the source VM for the specified disk.
         """
         pulumi.set(__self__, "ext_id", ext_id)
+        if vm_ext_id is not None:
+            pulumi.set(__self__, "vm_ext_id", vm_ext_id)
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Input[_builtins.str]:
         """
         The external identifier of VM Disk.
+        > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
         """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
     def ext_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vmExtId")
+    def vm_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external identifier of the source VM for the specified disk.
+        """
+        return pulumi.get(self, "vm_ext_id")
+
+    @vm_ext_id.setter
+    def vm_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vm_ext_id", value)
 
 
 class KarbonClusterActivePassiveConfigArgsDict(TypedDict):
@@ -31792,7 +34427,7 @@ class LcmPrechecksV2EntityUpdateSpecArgsDict(TypedDict):
     """
     Version to upgrade to.
 
-    See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Prechecks/operation/performPrechecks)
+    See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Prechecks/operation/performPrechecks)
     """
 
 @pulumi.input_type
@@ -31804,7 +34439,7 @@ class LcmPrechecksV2EntityUpdateSpecArgs:
         :param pulumi.Input[_builtins.str] entity_uuid: UUID of the LCM entity.
         :param pulumi.Input[_builtins.str] to_version: Version to upgrade to.
                
-               See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Prechecks/operation/performPrechecks)
+               See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Prechecks/operation/performPrechecks)
         """
         pulumi.set(__self__, "entity_uuid", entity_uuid)
         pulumi.set(__self__, "to_version", to_version)
@@ -31827,7 +34462,7 @@ class LcmPrechecksV2EntityUpdateSpecArgs:
         """
         Version to upgrade to.
 
-        See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Prechecks/operation/performPrechecks)
+        See detailed information in [Nutanix LCM Prechecks v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Prechecks/operation/performPrechecks)
         """
         return pulumi.get(self, "to_version")
 
@@ -31939,7 +34574,7 @@ class LcmUpgradeV2EntityUpdateSpecArgsDict(TypedDict):
     """
     Version to upgrade to.
 
-    See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
+    See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Upgrades/operation/performUpgrade).
     """
 
 @pulumi.input_type
@@ -31951,7 +34586,7 @@ class LcmUpgradeV2EntityUpdateSpecArgs:
         :param pulumi.Input[_builtins.str] entity_uuid: UUID of the LCM entity.
         :param pulumi.Input[_builtins.str] to_version: Version to upgrade to.
                
-               See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
+               See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Upgrades/operation/performUpgrade).
         """
         pulumi.set(__self__, "entity_uuid", entity_uuid)
         pulumi.set(__self__, "to_version", to_version)
@@ -31974,7 +34609,7 @@ class LcmUpgradeV2EntityUpdateSpecArgs:
         """
         Version to upgrade to.
 
-        See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.2#tag/Upgrades/operation/performUpgrade).
+        See detailed information in [Nutanix LCM Upgrade v4](https://developers.nutanix.com/api-reference?namespace=lifecycle&version=v4.3#tag/Upgrades/operation/performUpgrade).
         """
         return pulumi.get(self, "to_version")
 
@@ -61812,7 +64447,7 @@ class NetworkSecurityPolicyV2RuleArgsDict(TypedDict):
     """
     type: pulumi.Input[_builtins.str]
     """
-    The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE".
+    The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE", "FLEX".
     """
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -61822,9 +64457,17 @@ class NetworkSecurityPolicyV2RuleArgsDict(TypedDict):
     """
     A globally unique identifier of an instance that is suitable for external consumption.
     """
+    is_logging_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Specifies whether hit log is enabled for the rule.
+    """
     links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleLinkArgsDict']]]]]
     """
     A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A user-defined name for the rule. Primarily used for Flex policy rules.
     """
 
 @pulumi.input_type
@@ -61834,13 +64477,17 @@ class NetworkSecurityPolicyV2RuleArgs:
                  type: pulumi.Input[_builtins.str],
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 links: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleLinkArgs']]]] = None):
+                 is_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 links: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleLinkArgs']]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecArgs']]] specs: Spec for rules.
-        :param pulumi.Input[_builtins.str] type: The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE".
+        :param pulumi.Input[_builtins.str] type: The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE", "FLEX".
         :param pulumi.Input[_builtins.str] description: A user defined annotation for a rule.
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
+        :param pulumi.Input[_builtins.bool] is_logging_enabled: Specifies whether hit log is enabled for the rule.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleLinkArgs']]] links: A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+        :param pulumi.Input[_builtins.str] name: A user-defined name for the rule. Primarily used for Flex policy rules.
         """
         pulumi.set(__self__, "specs", specs)
         pulumi.set(__self__, "type", type)
@@ -61848,8 +64495,12 @@ class NetworkSecurityPolicyV2RuleArgs:
             pulumi.set(__self__, "description", description)
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
+        if is_logging_enabled is not None:
+            pulumi.set(__self__, "is_logging_enabled", is_logging_enabled)
         if links is not None:
             pulumi.set(__self__, "links", links)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
 
     @_builtins.property
     @pulumi.getter
@@ -61867,7 +64518,7 @@ class NetworkSecurityPolicyV2RuleArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[_builtins.str]:
         """
-        The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE".
+        The type for a rule—the value chosen here restricts which specification can be chosen. Acceptable values are "QUARANTINE", "TWO_ENV_ISOLATION", "APPLICATION", "INTRA_GROUP", "MULTI_ENV_ISOLATION", "SHARED_SERVICE", "FLEX".
         """
         return pulumi.get(self, "type")
 
@@ -61900,6 +64551,18 @@ class NetworkSecurityPolicyV2RuleArgs:
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="isLoggingEnabled")
+    def is_logging_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Specifies whether hit log is enabled for the rule.
+        """
+        return pulumi.get(self, "is_logging_enabled")
+
+    @is_logging_enabled.setter
+    def is_logging_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_logging_enabled", value)
+
+    @_builtins.property
     @pulumi.getter
     def links(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleLinkArgs']]]]:
         """
@@ -61910,6 +64573,18 @@ class NetworkSecurityPolicyV2RuleArgs:
     @links.setter
     def links(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleLinkArgs']]]]):
         pulumi.set(self, "links", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A user-defined name for the rule. Primarily used for Flex policy rules.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
 
 
 class NetworkSecurityPolicyV2RuleLinkArgsDict(TypedDict):
@@ -61950,6 +64625,10 @@ class NetworkSecurityPolicyV2RuleSpecArgsDict(TypedDict):
     """
     Application Rule Spec.
     """
+    flex_rule_specs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgsDict']]]]]
+    """
+    Flex Rule Spec.
+    """
     intra_entity_group_rule_specs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgsDict']]]]]
     """
     Intra entity group Rule Spec
@@ -61967,17 +64646,21 @@ class NetworkSecurityPolicyV2RuleSpecArgsDict(TypedDict):
 class NetworkSecurityPolicyV2RuleSpecArgs:
     def __init__(__self__, *,
                  application_rule_specs: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs']]]] = None,
+                 flex_rule_specs: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgs']]]] = None,
                  intra_entity_group_rule_specs: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgs']]]] = None,
                  multi_env_isolation_rule_specs: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecArgs']]]] = None,
                  two_env_isolation_rule_specs: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpecArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs']]] application_rule_specs: Application Rule Spec.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgs']]] flex_rule_specs: Flex Rule Spec.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgs']]] intra_entity_group_rule_specs: Intra entity group Rule Spec
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecMultiEnvIsolationRuleSpecArgs']]] multi_env_isolation_rule_specs: Multi Environment Isolation Rule Spec.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecTwoEnvIsolationRuleSpecArgs']]] two_env_isolation_rule_specs: Two Environment Isolation Rule Spec.
         """
         if application_rule_specs is not None:
             pulumi.set(__self__, "application_rule_specs", application_rule_specs)
+        if flex_rule_specs is not None:
+            pulumi.set(__self__, "flex_rule_specs", flex_rule_specs)
         if intra_entity_group_rule_specs is not None:
             pulumi.set(__self__, "intra_entity_group_rule_specs", intra_entity_group_rule_specs)
         if multi_env_isolation_rule_specs is not None:
@@ -61996,6 +64679,18 @@ class NetworkSecurityPolicyV2RuleSpecArgs:
     @application_rule_specs.setter
     def application_rule_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs']]]]):
         pulumi.set(self, "application_rule_specs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="flexRuleSpecs")
+    def flex_rule_specs(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgs']]]]:
+        """
+        Flex Rule Spec.
+        """
+        return pulumi.get(self, "flex_rule_specs")
+
+    @flex_rule_specs.setter
+    def flex_rule_specs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgs']]]]):
+        pulumi.set(self, "flex_rule_specs", value)
 
     @_builtins.property
     @pulumi.getter(name="intraEntityGroupRuleSpecs")
@@ -62035,10 +64730,6 @@ class NetworkSecurityPolicyV2RuleSpecArgs:
 
 
 class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgsDict(TypedDict):
-    secured_group_category_references: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
-    """
-    A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
-    """
     dest_address_group_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
     A list of address group references.
@@ -62083,9 +64774,13 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgsDict(TypedDict):
     """
     Entity type for the secured group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
     """
+    secured_group_category_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
+    """
     secured_group_entity_group_reference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Reference to the secured group entity group.
+    Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
     """
     service_group_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
@@ -62127,7 +64822,6 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgsDict(TypedDict):
 @pulumi.input_type
 class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs:
     def __init__(__self__, *,
-                 secured_group_category_references: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
                  dest_address_group_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  dest_allow_spec: pulumi.Input[Optional[_builtins.str]] = None,
                  dest_category_associated_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -62139,6 +64833,7 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs:
                  network_function_chain_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  network_function_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  secured_group_category_associated_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 secured_group_category_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  secured_group_entity_group_reference: pulumi.Input[Optional[_builtins.str]] = None,
                  service_group_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  src_address_group_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -62150,7 +64845,6 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs:
                  tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpServiceArgs']]]] = None,
                  udp_services: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpServiceArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_group_category_references: A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dest_address_group_references: A list of address group references.
         :param pulumi.Input[_builtins.str] dest_allow_spec: A specification to how allow mode traffic should be applied, either ALL or NONE.
         :param pulumi.Input[_builtins.str] dest_category_associated_entity_type: Entity type for the destination category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
@@ -62162,7 +64856,8 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs:
         :param pulumi.Input[_builtins.str] network_function_chain_reference: A reference to the network function chain in the rule.
         :param pulumi.Input[_builtins.str] network_function_reference: A reference to the network function in the rule.
         :param pulumi.Input[_builtins.str] secured_group_category_associated_entity_type: Entity type for the secured group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
-        :param pulumi.Input[_builtins.str] secured_group_entity_group_reference: Reference to the secured group entity group.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_group_category_references: A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
+        :param pulumi.Input[_builtins.str] secured_group_entity_group_reference: Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_group_references: A list of service group references.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] src_address_group_references: A list of address group references.
         :param pulumi.Input[_builtins.str] src_allow_spec: A specification to how allow mode traffic should be applied, either ALL or NONE.
@@ -62173,7 +64868,6 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs:
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpServiceArgs']]] tcp_services: tcp services
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpServiceArgs']]] udp_services: udp services
         """
-        pulumi.set(__self__, "secured_group_category_references", secured_group_category_references)
         if dest_address_group_references is not None:
             pulumi.set(__self__, "dest_address_group_references", dest_address_group_references)
         if dest_allow_spec is not None:
@@ -62196,6 +64890,8 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs:
             pulumi.set(__self__, "network_function_reference", network_function_reference)
         if secured_group_category_associated_entity_type is not None:
             pulumi.set(__self__, "secured_group_category_associated_entity_type", secured_group_category_associated_entity_type)
+        if secured_group_category_references is not None:
+            pulumi.set(__self__, "secured_group_category_references", secured_group_category_references)
         if secured_group_entity_group_reference is not None:
             pulumi.set(__self__, "secured_group_entity_group_reference", secured_group_entity_group_reference)
         if service_group_references is not None:
@@ -62216,18 +64912,6 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs:
             pulumi.set(__self__, "tcp_services", tcp_services)
         if udp_services is not None:
             pulumi.set(__self__, "udp_services", udp_services)
-
-    @_builtins.property
-    @pulumi.getter(name="securedGroupCategoryReferences")
-    def secured_group_category_references(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
-        """
-        A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories.
-        """
-        return pulumi.get(self, "secured_group_category_references")
-
-    @secured_group_category_references.setter
-    def secured_group_category_references(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
-        pulumi.set(self, "secured_group_category_references", value)
 
     @_builtins.property
     @pulumi.getter(name="destAddressGroupReferences")
@@ -62362,10 +65046,22 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecArgs:
         pulumi.set(self, "secured_group_category_associated_entity_type", value)
 
     @_builtins.property
+    @pulumi.getter(name="securedGroupCategoryReferences")
+    def secured_group_category_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A set of network endpoints which is protected by a Network Security Policy and defined as a list of categories. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
+        """
+        return pulumi.get(self, "secured_group_category_references")
+
+    @secured_group_category_references.setter
+    def secured_group_category_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "secured_group_category_references", value)
+
+    @_builtins.property
     @pulumi.getter(name="securedGroupEntityGroupReference")
     def secured_group_entity_group_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Reference to the secured group entity group.
+        Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
         """
         return pulumi.get(self, "secured_group_entity_group_reference")
 
@@ -62711,6 +65407,691 @@ class NetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpServiceArgs:
         pulumi.set(self, "start_port", value)
 
 
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgsDict(TypedDict):
+    action: pulumi.Input[_builtins.str]
+    """
+    Action for the flex rule. Acceptable values are "ALLOW", "DENY", "REJECT".
+    """
+    direction: pulumi.Input[_builtins.str]
+    """
+    Direction of traffic. Acceptable values are "IN", "OUT", "IN_OUT".
+    """
+    applied_to_entity_group_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Entity group references to which the flex rule is applied.
+    """
+    dest_entity_group_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Destination entity group references.
+    """
+    dest_subnet: NotRequired[pulumi.Input[Optional['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgsDict']]]
+    """
+    Destination subnet (value, prefix_length).
+    """
+    icmp_services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgsDict']]]]]
+    """
+    ICMP type/code specs.
+    """
+    icmpv6_services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgsDict']]]]]
+    """
+    ICMPv6 type/code specs.
+    """
+    ip_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    IP version scope. Acceptable values are "IPV4", "IPV6", "IPV4_IPV6".
+    """
+    is_all_protocol_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether traffic is allowed for all protocols.
+    """
+    is_system_rule: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the flex rule is system-defined.
+    """
+    network_function_reference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A reference to the network function.
+    """
+    priority: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Priority for the flex rule. Lower numbers indicate higher priority.
+    """
+    service_group_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    A list of service group references.
+    """
+    should_allow_any_dst: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the rule should allow all destinations.
+    """
+    should_allow_any_src: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the rule should allow all sources.
+    """
+    src_entity_group_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Source entity group references.
+    """
+    src_subnet: NotRequired[pulumi.Input[Optional['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgsDict']]]
+    """
+    Source subnet (value, prefix_length).
+    """
+    tcp_services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgsDict']]]]]
+    """
+    TCP port ranges (start_port, end_port).
+    """
+    udp_services: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgsDict']]]]]
+    """
+    UDP port ranges (start_port, end_port).
+    """
+
+@pulumi.input_type
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecArgs:
+    def __init__(__self__, *,
+                 action: pulumi.Input[_builtins.str],
+                 direction: pulumi.Input[_builtins.str],
+                 applied_to_entity_group_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dest_entity_group_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 dest_subnet: pulumi.Input[Optional['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgs']] = None,
+                 icmp_services: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgs']]]] = None,
+                 icmpv6_services: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgs']]]] = None,
+                 ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+                 is_all_protocol_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_system_rule: pulumi.Input[Optional[_builtins.bool]] = None,
+                 network_function_reference: pulumi.Input[Optional[_builtins.str]] = None,
+                 priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 service_group_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 should_allow_any_dst: pulumi.Input[Optional[_builtins.bool]] = None,
+                 should_allow_any_src: pulumi.Input[Optional[_builtins.bool]] = None,
+                 src_entity_group_references: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 src_subnet: pulumi.Input[Optional['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgs']] = None,
+                 tcp_services: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgs']]]] = None,
+                 udp_services: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] action: Action for the flex rule. Acceptable values are "ALLOW", "DENY", "REJECT".
+        :param pulumi.Input[_builtins.str] direction: Direction of traffic. Acceptable values are "IN", "OUT", "IN_OUT".
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] applied_to_entity_group_references: Entity group references to which the flex rule is applied.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] dest_entity_group_references: Destination entity group references.
+        :param pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgs'] dest_subnet: Destination subnet (value, prefix_length).
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgs']]] icmp_services: ICMP type/code specs.
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgs']]] icmpv6_services: ICMPv6 type/code specs.
+        :param pulumi.Input[_builtins.str] ip_version: IP version scope. Acceptable values are "IPV4", "IPV6", "IPV4_IPV6".
+        :param pulumi.Input[_builtins.bool] is_all_protocol_allowed: Whether traffic is allowed for all protocols.
+        :param pulumi.Input[_builtins.bool] is_system_rule: Whether the flex rule is system-defined.
+        :param pulumi.Input[_builtins.str] network_function_reference: A reference to the network function.
+        :param pulumi.Input[_builtins.int] priority: Priority for the flex rule. Lower numbers indicate higher priority.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] service_group_references: A list of service group references.
+        :param pulumi.Input[_builtins.bool] should_allow_any_dst: Whether the rule should allow all destinations.
+        :param pulumi.Input[_builtins.bool] should_allow_any_src: Whether the rule should allow all sources.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] src_entity_group_references: Source entity group references.
+        :param pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgs'] src_subnet: Source subnet (value, prefix_length).
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgs']]] tcp_services: TCP port ranges (start_port, end_port).
+        :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgs']]] udp_services: UDP port ranges (start_port, end_port).
+        """
+        pulumi.set(__self__, "action", action)
+        pulumi.set(__self__, "direction", direction)
+        if applied_to_entity_group_references is not None:
+            pulumi.set(__self__, "applied_to_entity_group_references", applied_to_entity_group_references)
+        if dest_entity_group_references is not None:
+            pulumi.set(__self__, "dest_entity_group_references", dest_entity_group_references)
+        if dest_subnet is not None:
+            pulumi.set(__self__, "dest_subnet", dest_subnet)
+        if icmp_services is not None:
+            pulumi.set(__self__, "icmp_services", icmp_services)
+        if icmpv6_services is not None:
+            pulumi.set(__self__, "icmpv6_services", icmpv6_services)
+        if ip_version is not None:
+            pulumi.set(__self__, "ip_version", ip_version)
+        if is_all_protocol_allowed is not None:
+            pulumi.set(__self__, "is_all_protocol_allowed", is_all_protocol_allowed)
+        if is_system_rule is not None:
+            pulumi.set(__self__, "is_system_rule", is_system_rule)
+        if network_function_reference is not None:
+            pulumi.set(__self__, "network_function_reference", network_function_reference)
+        if priority is not None:
+            pulumi.set(__self__, "priority", priority)
+        if service_group_references is not None:
+            pulumi.set(__self__, "service_group_references", service_group_references)
+        if should_allow_any_dst is not None:
+            pulumi.set(__self__, "should_allow_any_dst", should_allow_any_dst)
+        if should_allow_any_src is not None:
+            pulumi.set(__self__, "should_allow_any_src", should_allow_any_src)
+        if src_entity_group_references is not None:
+            pulumi.set(__self__, "src_entity_group_references", src_entity_group_references)
+        if src_subnet is not None:
+            pulumi.set(__self__, "src_subnet", src_subnet)
+        if tcp_services is not None:
+            pulumi.set(__self__, "tcp_services", tcp_services)
+        if udp_services is not None:
+            pulumi.set(__self__, "udp_services", udp_services)
+
+    @_builtins.property
+    @pulumi.getter
+    def action(self) -> pulumi.Input[_builtins.str]:
+        """
+        Action for the flex rule. Acceptable values are "ALLOW", "DENY", "REJECT".
+        """
+        return pulumi.get(self, "action")
+
+    @action.setter
+    def action(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "action", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def direction(self) -> pulumi.Input[_builtins.str]:
+        """
+        Direction of traffic. Acceptable values are "IN", "OUT", "IN_OUT".
+        """
+        return pulumi.get(self, "direction")
+
+    @direction.setter
+    def direction(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "direction", value)
+
+    @_builtins.property
+    @pulumi.getter(name="appliedToEntityGroupReferences")
+    def applied_to_entity_group_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Entity group references to which the flex rule is applied.
+        """
+        return pulumi.get(self, "applied_to_entity_group_references")
+
+    @applied_to_entity_group_references.setter
+    def applied_to_entity_group_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "applied_to_entity_group_references", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destEntityGroupReferences")
+    def dest_entity_group_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Destination entity group references.
+        """
+        return pulumi.get(self, "dest_entity_group_references")
+
+    @dest_entity_group_references.setter
+    def dest_entity_group_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "dest_entity_group_references", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destSubnet")
+    def dest_subnet(self) -> pulumi.Input[Optional['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgs']]:
+        """
+        Destination subnet (value, prefix_length).
+        """
+        return pulumi.get(self, "dest_subnet")
+
+    @dest_subnet.setter
+    def dest_subnet(self, value: pulumi.Input[Optional['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgs']]):
+        pulumi.set(self, "dest_subnet", value)
+
+    @_builtins.property
+    @pulumi.getter(name="icmpServices")
+    def icmp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgs']]]]:
+        """
+        ICMP type/code specs.
+        """
+        return pulumi.get(self, "icmp_services")
+
+    @icmp_services.setter
+    def icmp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgs']]]]):
+        pulumi.set(self, "icmp_services", value)
+
+    @_builtins.property
+    @pulumi.getter(name="icmpv6Services")
+    def icmpv6_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgs']]]]:
+        """
+        ICMPv6 type/code specs.
+        """
+        return pulumi.get(self, "icmpv6_services")
+
+    @icmpv6_services.setter
+    def icmpv6_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgs']]]]):
+        pulumi.set(self, "icmpv6_services", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipVersion")
+    def ip_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        IP version scope. Acceptable values are "IPV4", "IPV6", "IPV4_IPV6".
+        """
+        return pulumi.get(self, "ip_version")
+
+    @ip_version.setter
+    def ip_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ip_version", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAllProtocolAllowed")
+    def is_all_protocol_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether traffic is allowed for all protocols.
+        """
+        return pulumi.get(self, "is_all_protocol_allowed")
+
+    @is_all_protocol_allowed.setter
+    def is_all_protocol_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_all_protocol_allowed", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isSystemRule")
+    def is_system_rule(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the flex rule is system-defined.
+        """
+        return pulumi.get(self, "is_system_rule")
+
+    @is_system_rule.setter
+    def is_system_rule(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_system_rule", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkFunctionReference")
+    def network_function_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A reference to the network function.
+        """
+        return pulumi.get(self, "network_function_reference")
+
+    @network_function_reference.setter
+    def network_function_reference(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "network_function_reference", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def priority(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Priority for the flex rule. Lower numbers indicate higher priority.
+        """
+        return pulumi.get(self, "priority")
+
+    @priority.setter
+    def priority(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "priority", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceGroupReferences")
+    def service_group_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of service group references.
+        """
+        return pulumi.get(self, "service_group_references")
+
+    @service_group_references.setter
+    def service_group_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "service_group_references", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shouldAllowAnyDst")
+    def should_allow_any_dst(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the rule should allow all destinations.
+        """
+        return pulumi.get(self, "should_allow_any_dst")
+
+    @should_allow_any_dst.setter
+    def should_allow_any_dst(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "should_allow_any_dst", value)
+
+    @_builtins.property
+    @pulumi.getter(name="shouldAllowAnySrc")
+    def should_allow_any_src(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the rule should allow all sources.
+        """
+        return pulumi.get(self, "should_allow_any_src")
+
+    @should_allow_any_src.setter
+    def should_allow_any_src(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "should_allow_any_src", value)
+
+    @_builtins.property
+    @pulumi.getter(name="srcEntityGroupReferences")
+    def src_entity_group_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Source entity group references.
+        """
+        return pulumi.get(self, "src_entity_group_references")
+
+    @src_entity_group_references.setter
+    def src_entity_group_references(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "src_entity_group_references", value)
+
+    @_builtins.property
+    @pulumi.getter(name="srcSubnet")
+    def src_subnet(self) -> pulumi.Input[Optional['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgs']]:
+        """
+        Source subnet (value, prefix_length).
+        """
+        return pulumi.get(self, "src_subnet")
+
+    @src_subnet.setter
+    def src_subnet(self, value: pulumi.Input[Optional['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgs']]):
+        pulumi.set(self, "src_subnet", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tcpServices")
+    def tcp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgs']]]]:
+        """
+        TCP port ranges (start_port, end_port).
+        """
+        return pulumi.get(self, "tcp_services")
+
+    @tcp_services.setter
+    def tcp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgs']]]]):
+        pulumi.set(self, "tcp_services", value)
+
+    @_builtins.property
+    @pulumi.getter(name="udpServices")
+    def udp_services(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgs']]]]:
+        """
+        UDP port ranges (start_port, end_port).
+        """
+        return pulumi.get(self, "udp_services")
+
+    @udp_services.setter
+    def udp_services(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgs']]]]):
+        pulumi.set(self, "udp_services", value)
+
+
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgsDict(TypedDict):
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecDestSubnetArgs:
+    def __init__(__self__, *,
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgsDict(TypedDict):
+    code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Icmp service Code. Ignore this field if Code has to be ANY.
+    """
+    is_all_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Set this field to true if both Type and Code is ANY.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Icmp service Type. Ignore this field if Type has to be ANY.
+    """
+
+@pulumi.input_type
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpServiceArgs:
+    def __init__(__self__, *,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_all_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] code: Icmp service Code. Ignore this field if Code has to be ANY.
+        :param pulumi.Input[_builtins.bool] is_all_allowed: Set this field to true if both Type and Code is ANY.
+        :param pulumi.Input[_builtins.int] type: Icmp service Type. Ignore this field if Type has to be ANY.
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if is_all_allowed is not None:
+            pulumi.set(__self__, "is_all_allowed", is_all_allowed)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Icmp service Code. Ignore this field if Code has to be ANY.
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAllAllowed")
+    def is_all_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Set this field to true if both Type and Code is ANY.
+        """
+        return pulumi.get(self, "is_all_allowed")
+
+    @is_all_allowed.setter
+    def is_all_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_all_allowed", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Icmp service Type. Ignore this field if Type has to be ANY.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "type", value)
+
+
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgsDict(TypedDict):
+    code: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Icmp service Code. Ignore this field if Code has to be ANY.
+    """
+    is_all_allowed: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Set this field to true if both Type and Code is ANY.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
+    """
+
+@pulumi.input_type
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecIcmpv6ServiceArgs:
+    def __init__(__self__, *,
+                 code: pulumi.Input[Optional[_builtins.int]] = None,
+                 is_all_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+                 type: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] code: Icmp service Code. Ignore this field if Code has to be ANY.
+        :param pulumi.Input[_builtins.bool] is_all_allowed: Set this field to true if both Type and Code is ANY.
+        :param pulumi.Input[_builtins.int] type: Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
+        """
+        if code is not None:
+            pulumi.set(__self__, "code", code)
+        if is_all_allowed is not None:
+            pulumi.set(__self__, "is_all_allowed", is_all_allowed)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def code(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Icmp service Code. Ignore this field if Code has to be ANY.
+        """
+        return pulumi.get(self, "code")
+
+    @code.setter
+    def code(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "code", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAllAllowed")
+    def is_all_allowed(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Set this field to true if both Type and Code is ANY.
+        """
+        return pulumi.get(self, "is_all_allowed")
+
+    @is_all_allowed.setter
+    def is_all_allowed(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_all_allowed", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Defines the type of rules that can be used in a policy. Acceptable values are "QUARANTINE", "ISOLATION", "APPLICATION", "SHAREDSERVICE", "CRITICAL", "COREINFRASTRUCTURE", "ZONE", "WORKLOAD". The "WORKLOAD", "CRITICAL", "COREINFRASTRUCTURE" and "ZONE" types are used with Flex rules (rule-centric / SMSP mode) and require <span pulumi-lang-nodejs="`priority`" pulumi-lang-dotnet="`Priority`" pulumi-lang-go="`priority`" pulumi-lang-python="`priority`" pulumi-lang-yaml="`priority`" pulumi-lang-java="`priority`" pulumi-lang-hcl="`priority`">`priority`</span> to be set.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "type", value)
+
+
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgsDict(TypedDict):
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecSrcSubnetArgs:
+    def __init__(__self__, *,
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgsDict(TypedDict):
+    end_port: pulumi.Input[_builtins.int]
+    """
+    end port
+    """
+    start_port: pulumi.Input[_builtins.int]
+    """
+    start port
+    """
+
+@pulumi.input_type
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecTcpServiceArgs:
+    def __init__(__self__, *,
+                 end_port: pulumi.Input[_builtins.int],
+                 start_port: pulumi.Input[_builtins.int]):
+        """
+        :param pulumi.Input[_builtins.int] end_port: end port
+        :param pulumi.Input[_builtins.int] start_port: start port
+        """
+        pulumi.set(__self__, "end_port", end_port)
+        pulumi.set(__self__, "start_port", start_port)
+
+    @_builtins.property
+    @pulumi.getter(name="endPort")
+    def end_port(self) -> pulumi.Input[_builtins.int]:
+        """
+        end port
+        """
+        return pulumi.get(self, "end_port")
+
+    @end_port.setter
+    def end_port(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "end_port", value)
+
+    @_builtins.property
+    @pulumi.getter(name="startPort")
+    def start_port(self) -> pulumi.Input[_builtins.int]:
+        """
+        start port
+        """
+        return pulumi.get(self, "start_port")
+
+    @start_port.setter
+    def start_port(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "start_port", value)
+
+
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgsDict(TypedDict):
+    end_port: pulumi.Input[_builtins.int]
+    """
+    end port
+    """
+    start_port: pulumi.Input[_builtins.int]
+    """
+    start port
+    """
+
+@pulumi.input_type
+class NetworkSecurityPolicyV2RuleSpecFlexRuleSpecUdpServiceArgs:
+    def __init__(__self__, *,
+                 end_port: pulumi.Input[_builtins.int],
+                 start_port: pulumi.Input[_builtins.int]):
+        """
+        :param pulumi.Input[_builtins.int] end_port: end port
+        :param pulumi.Input[_builtins.int] start_port: start port
+        """
+        pulumi.set(__self__, "end_port", end_port)
+        pulumi.set(__self__, "start_port", start_port)
+
+    @_builtins.property
+    @pulumi.getter(name="endPort")
+    def end_port(self) -> pulumi.Input[_builtins.int]:
+        """
+        end port
+        """
+        return pulumi.get(self, "end_port")
+
+    @end_port.setter
+    def end_port(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "end_port", value)
+
+    @_builtins.property
+    @pulumi.getter(name="startPort")
+    def start_port(self) -> pulumi.Input[_builtins.int]:
+        """
+        start port
+        """
+        return pulumi.get(self, "start_port")
+
+    @start_port.setter
+    def start_port(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "start_port", value)
+
+
 class NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgsDict(TypedDict):
     secured_group_action: pulumi.Input[_builtins.str]
     """
@@ -62726,11 +66107,11 @@ class NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgsDict(TypedDict)
     """
     secured_group_category_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    List of category references for the secured group.
+    List of category references for the secured group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
     """
     secured_group_entity_group_reference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    Reference to the secured group entity group.
+    Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
     """
     secured_group_service_references: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
@@ -62760,8 +66141,8 @@ class NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgs:
         :param pulumi.Input[_builtins.str] secured_group_action: Whether traffic between intra secured group entities should be allowed or denied. Acceptable values are "ALLOW", "DENY".
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecIcmpServiceArgs']]] icmp_services: ICMP type/code for the rule.
         :param pulumi.Input[_builtins.str] secured_group_category_associated_entity_type: Entity type for the secured group category. Acceptable values are "SUBNET", "VM", "VPC". Default is "VM".
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_group_category_references: List of category references for the secured group.
-        :param pulumi.Input[_builtins.str] secured_group_entity_group_reference: Reference to the secured group entity group.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_group_category_references: List of category references for the secured group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
+        :param pulumi.Input[_builtins.str] secured_group_entity_group_reference: Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] secured_group_service_references: List of service group references for the secured group.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecTcpServiceArgs']]] tcp_services: TCP port ranges for the rule.
         :param pulumi.Input[Sequence[pulumi.Input['NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecUdpServiceArgs']]] udp_services: UDP port ranges for the rule.
@@ -62822,7 +66203,7 @@ class NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgs:
     @pulumi.getter(name="securedGroupCategoryReferences")
     def secured_group_category_references(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        List of category references for the secured group.
+        List of category references for the secured group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
         """
         return pulumi.get(self, "secured_group_category_references")
 
@@ -62834,7 +66215,7 @@ class NetworkSecurityPolicyV2RuleSpecIntraEntityGroupRuleSpecArgs:
     @pulumi.getter(name="securedGroupEntityGroupReference")
     def secured_group_entity_group_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Reference to the secured group entity group.
+        Reference to the secured group entity group. Exactly one of <span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`">`securedGroupCategoryReferences`</span> and <span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`">`securedGroupEntityGroupReference`</span> must be set.
         """
         return pulumi.get(self, "secured_group_entity_group_reference")
 
@@ -73983,7 +77364,7 @@ class OvaVmDeployV2OverrideVmConfigCategoryArgsDict(TypedDict):
     """
     A globally unique identifier of a VM category of type UUID.
 
-    See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
+    See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Ovas/operation/deployOva).
     """
 
 @pulumi.input_type
@@ -73993,7 +77374,7 @@ class OvaVmDeployV2OverrideVmConfigCategoryArgs:
         """
         :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of a VM category of type UUID.
                
-               See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
+               See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Ovas/operation/deployOva).
         """
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
@@ -74004,7 +77385,7 @@ class OvaVmDeployV2OverrideVmConfigCategoryArgs:
         """
         A globally unique identifier of a VM category of type UUID.
 
-        See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Ovas/operation/deployOva).
+        See detailed information in [Nutanix Deploy VMs from an OVA V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Ovas/operation/deployOva).
         """
         return pulumi.get(self, "ext_id")
 
@@ -78644,7 +82025,7 @@ class PbrV2PolicyPolicyMatchDestinationSubnetPrefixArgs:
 class PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4ArgsDict(TypedDict):
     ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgsDict']]]]]
     """
-    IP of address
+    The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
     """
     prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -78657,7 +82038,7 @@ class PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Args:
                  ips: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgs']]]] = None,
                  prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgs']]] ips: IP of address
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgs']]] ips: The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
         :param pulumi.Input[_builtins.int] prefix_length: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         """
         if ips is not None:
@@ -78669,7 +82050,7 @@ class PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4Args:
     @pulumi.getter
     def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgs']]]]:
         """
-        IP of address
+        The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
         """
         return pulumi.get(self, "ips")
 
@@ -78735,7 +82116,7 @@ class PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv4IpArgs:
 class PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6ArgsDict(TypedDict):
     ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArgsDict']]]]]
     """
-    IP of address
+    The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
     """
     prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
 
@@ -78745,7 +82126,7 @@ class PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Args:
                  ips: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArgs']]]] = None,
                  prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArgs']]] ips: IP of address
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArgs']]] ips: The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
         """
         if ips is not None:
             pulumi.set(__self__, "ips", ips)
@@ -78756,7 +82137,7 @@ class PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6Args:
     @pulumi.getter
     def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchDestinationSubnetPrefixIpv6IpArgs']]]]:
         """
-        IP of address
+        The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
         """
         return pulumi.get(self, "ips")
 
@@ -79205,7 +82586,7 @@ class PbrV2PolicyPolicyMatchSourceSubnetPrefixArgs:
 class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4ArgsDict(TypedDict):
     ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgsDict']]]]]
     """
-    IP of address
+    The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
     """
     prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -79218,7 +82599,7 @@ class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Args:
                  ips: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgs']]]] = None,
                  prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgs']]] ips: IP of address
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgs']]] ips: The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
         :param pulumi.Input[_builtins.int] prefix_length: The prefix length of the network to which this host IPv4/IPv6 address belongs.
         """
         if ips is not None:
@@ -79230,7 +82611,7 @@ class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4Args:
     @pulumi.getter
     def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgs']]]]:
         """
-        IP of address
+        The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
         """
         return pulumi.get(self, "ips")
 
@@ -79296,7 +82677,7 @@ class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv4IpArgs:
 class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6ArgsDict(TypedDict):
     ips: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArgsDict']]]]]
     """
-    IP of address
+    The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
     """
     prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
 
@@ -79306,7 +82687,7 @@ class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Args:
                  ips: pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArgs']]]] = None,
                  prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArgs']]] ips: IP of address
+        :param pulumi.Input[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArgs']]] ips: The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
         """
         if ips is not None:
             pulumi.set(__self__, "ips", ips)
@@ -79317,7 +82698,7 @@ class PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6Args:
     @pulumi.getter
     def ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['PbrV2PolicyPolicyMatchSourceSubnetPrefixIpv6IpArgs']]]]:
         """
-        IP of address
+        The base IP address of the subnet (see the `ipv4,ipv6 Configuration format` below). The address's own <span pulumi-lang-nodejs="`prefixLength`" pulumi-lang-dotnet="`PrefixLength`" pulumi-lang-go="`prefixLength`" pulumi-lang-python="`prefix_length`" pulumi-lang-yaml="`prefixLength`" pulumi-lang-java="`prefixLength`" pulumi-lang-hcl="`prefix_length`">`prefixLength`</span> is canonicalized by the server to <span pulumi-lang-nodejs="`32`" pulumi-lang-dotnet="`32`" pulumi-lang-go="`32`" pulumi-lang-python="`32`" pulumi-lang-yaml="`32`" pulumi-lang-java="`32`" pulumi-lang-hcl="`32`">`32`</span> for IPv4 (<span pulumi-lang-nodejs="`128`" pulumi-lang-dotnet="`128`" pulumi-lang-go="`128`" pulumi-lang-python="`128`" pulumi-lang-yaml="`128`" pulumi-lang-java="`128`" pulumi-lang-hcl="`128`">`128`</span> for IPv6), so set it to that value to avoid a perpetual update-in-place diff.
         """
         return pulumi.get(self, "ips")
 
@@ -80933,7 +84314,7 @@ class PcDeployV2NetworkExternalNetworkDefaultGatewayFqdnArgsDict(TypedDict):
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
     """
 
 @pulumi.input_type
@@ -80943,7 +84324,7 @@ class PcDeployV2NetworkExternalNetworkDefaultGatewayFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         pulumi.set(__self__, "value", value)
 
@@ -80953,7 +84334,7 @@ class PcDeployV2NetworkExternalNetworkDefaultGatewayFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         return pulumi.get(self, "value")
 
@@ -81471,7 +84852,7 @@ class PcDeployV2NetworkExternalNetworkSubnetMaskFqdnArgsDict(TypedDict):
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
     """
 
 @pulumi.input_type
@@ -81481,7 +84862,7 @@ class PcDeployV2NetworkExternalNetworkSubnetMaskFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         pulumi.set(__self__, "value", value)
 
@@ -81491,7 +84872,7 @@ class PcDeployV2NetworkExternalNetworkSubnetMaskFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         return pulumi.get(self, "value")
 
@@ -81736,7 +85117,7 @@ class PcDeployV2NetworkInternalNetworksDefaultGatewayFqdnArgsDict(TypedDict):
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
     """
 
 @pulumi.input_type
@@ -81746,7 +85127,7 @@ class PcDeployV2NetworkInternalNetworksDefaultGatewayFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         pulumi.set(__self__, "value", value)
 
@@ -81756,7 +85137,7 @@ class PcDeployV2NetworkInternalNetworksDefaultGatewayFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         return pulumi.get(self, "value")
 
@@ -82274,7 +85655,7 @@ class PcDeployV2NetworkInternalNetworksSubnetMaskFqdnArgsDict(TypedDict):
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
     """
 
 @pulumi.input_type
@@ -82284,7 +85665,7 @@ class PcDeployV2NetworkInternalNetworksSubnetMaskFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         pulumi.set(__self__, "value", value)
 
@@ -82294,7 +85675,7 @@ class PcDeployV2NetworkInternalNetworksSubnetMaskFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         return pulumi.get(self, "value")
 
@@ -82473,7 +85854,7 @@ class PcDeployV2NetworkNameServerFqdnArgsDict(TypedDict):
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
     """
 
 @pulumi.input_type
@@ -82483,7 +85864,7 @@ class PcDeployV2NetworkNameServerFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         pulumi.set(__self__, "value", value)
 
@@ -82493,7 +85874,7 @@ class PcDeployV2NetworkNameServerFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         return pulumi.get(self, "value")
 
@@ -82672,7 +86053,7 @@ class PcDeployV2NetworkNtpServerFqdnArgsDict(TypedDict):
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+    See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
     """
 
 @pulumi.input_type
@@ -82682,7 +86063,7 @@ class PcDeployV2NetworkNtpServerFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+               See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         pulumi.set(__self__, "value", value)
 
@@ -82692,7 +86073,7 @@ class PcDeployV2NetworkNtpServerFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/createDomainManager).
+        See detailed information in [Nutanix Deploy PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/createDomainManager).
         """
         return pulumi.get(self, "value")
 
@@ -83275,7 +86656,7 @@ class PcRegistrationV2ConfigCredentialArgsDict(TypedDict):
     """
     -(Required)  Password required for the basic auth scheme.
 
-    See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+    See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
     """
     username: pulumi.Input[_builtins.str]
     """
@@ -83290,7 +86671,7 @@ class PcRegistrationV2ConfigCredentialArgs:
         """
         :param pulumi.Input[_builtins.str] password: -(Required)  Password required for the basic auth scheme.
                
-               See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+               See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param pulumi.Input[_builtins.str] username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
         """
         pulumi.set(__self__, "password", password)
@@ -83302,7 +86683,7 @@ class PcRegistrationV2ConfigCredentialArgs:
         """
         -(Required)  Password required for the basic auth scheme.
 
-        See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+        See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
         return pulumi.get(self, "password")
 
@@ -85840,7 +89221,7 @@ class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsA
     """
     -(Required)  Password required for the basic auth scheme.
 
-    See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+    See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
     """
     username: pulumi.Input[_builtins.str]
     """
@@ -85855,7 +89236,7 @@ class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsA
         """
         :param pulumi.Input[_builtins.str] password: -(Required)  Password required for the basic auth scheme.
                
-               See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+               See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param pulumi.Input[_builtins.str] username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
         """
         pulumi.set(__self__, "password", password)
@@ -85867,7 +89248,7 @@ class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsA
         """
         -(Required)  Password required for the basic auth scheme.
 
-        See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+        See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
         return pulumi.get(self, "password")
 
@@ -86235,7 +89616,7 @@ class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCr
     """
     -(Required)  Password required for the basic auth scheme.
 
-    See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+    See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
     """
     username: pulumi.Input[_builtins.str]
     """
@@ -86250,7 +89631,7 @@ class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCr
         """
         :param pulumi.Input[_builtins.str] password: -(Required)  Password required for the basic auth scheme.
                
-               See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+               See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param pulumi.Input[_builtins.str] username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
         """
         pulumi.set(__self__, "password", password)
@@ -86262,7 +89643,7 @@ class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCr
         """
         -(Required)  Password required for the basic auth scheme.
 
-        See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/register).
+        See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
         return pulumi.get(self, "password")
 
@@ -87916,7 +91297,7 @@ class PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgsDict(T
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
     """
 
 @pulumi.input_type
@@ -87926,7 +91307,7 @@ class PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         pulumi.set(__self__, "value", value)
 
@@ -87936,7 +91317,7 @@ class PcRestoreV2DomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         return pulumi.get(self, "value")
 
@@ -88454,7 +91835,7 @@ class PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskFqdnArgsDict(Typed
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
     """
 
 @pulumi.input_type
@@ -88464,7 +91845,7 @@ class PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         pulumi.set(__self__, "value", value)
 
@@ -88474,7 +91855,7 @@ class PcRestoreV2DomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         return pulumi.get(self, "value")
 
@@ -88719,7 +92100,7 @@ class PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgsDict(
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
     """
 
 @pulumi.input_type
@@ -88729,7 +92110,7 @@ class PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         pulumi.set(__self__, "value", value)
 
@@ -88739,7 +92120,7 @@ class PcRestoreV2DomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         return pulumi.get(self, "value")
 
@@ -89257,7 +92638,7 @@ class PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskFqdnArgsDict(Type
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
     """
 
 @pulumi.input_type
@@ -89267,7 +92648,7 @@ class PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         pulumi.set(__self__, "value", value)
 
@@ -89277,7 +92658,7 @@ class PcRestoreV2DomainManagerNetworkInternalNetworksSubnetMaskFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         return pulumi.get(self, "value")
 
@@ -89456,7 +92837,7 @@ class PcRestoreV2DomainManagerNetworkNameServerFqdnArgsDict(TypedDict):
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
     """
 
 @pulumi.input_type
@@ -89466,7 +92847,7 @@ class PcRestoreV2DomainManagerNetworkNameServerFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         pulumi.set(__self__, "value", value)
 
@@ -89476,7 +92857,7 @@ class PcRestoreV2DomainManagerNetworkNameServerFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         return pulumi.get(self, "value")
 
@@ -89655,7 +93036,7 @@ class PcRestoreV2DomainManagerNetworkNtpServerFqdnArgsDict(TypedDict):
     """
     -(Optional) The fully qualified domain name of the host.
 
-    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+    See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
     """
 
 @pulumi.input_type
@@ -89665,7 +93046,7 @@ class PcRestoreV2DomainManagerNetworkNtpServerFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: -(Optional) The fully qualified domain name of the host.
                
-               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+               See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         pulumi.set(__self__, "value", value)
 
@@ -89675,7 +93056,7 @@ class PcRestoreV2DomainManagerNetworkNtpServerFqdnArgs:
         """
         -(Optional) The fully qualified domain name of the host.
 
-        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/DomainManager/operation/restore).
+        See detailed information in [Nutanix Restore PC V4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/restore).
         """
         return pulumi.get(self, "value")
 
@@ -90862,6 +94243,54 @@ class ProjectDefaultSubnetReferenceArgs:
         pulumi.set(self, "name", value)
 
 
+class ProjectDirectoryReferenceListArgsDict(TypedDict):
+    uuid: pulumi.Input[_builtins.str]
+    """
+    (Required) the UUID.
+    """
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+    """
+
+@pulumi.input_type
+class ProjectDirectoryReferenceListArgs:
+    def __init__(__self__, *,
+                 uuid: pulumi.Input[_builtins.str],
+                 kind: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] uuid: (Required) the UUID.
+        :param pulumi.Input[_builtins.str] kind: (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+        """
+        pulumi.set(__self__, "uuid", uuid)
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Required) the UUID.
+        """
+        return pulumi.get(self, "uuid")
+
+    @uuid.setter
+    def uuid(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "uuid", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kind", value)
+
+
 class ProjectEnvironmentReferenceListArgsDict(TypedDict):
     uuid: pulumi.Input[_builtins.str]
     """
@@ -91044,6 +94473,54 @@ class ProjectExternalUserGroupReferenceListArgs:
     @name.setter
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
+
+
+class ProjectIdentityProvidersReferenceListArgsDict(TypedDict):
+    uuid: pulumi.Input[_builtins.str]
+    """
+    (Required) the UUID.
+    """
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+    """
+
+@pulumi.input_type
+class ProjectIdentityProvidersReferenceListArgs:
+    def __init__(__self__, *,
+                 uuid: pulumi.Input[_builtins.str],
+                 kind: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] uuid: (Required) the UUID.
+        :param pulumi.Input[_builtins.str] kind: (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+        """
+        pulumi.set(__self__, "uuid", uuid)
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Required) the UUID.
+        """
+        return pulumi.get(self, "uuid")
+
+    @uuid.setter
+    def uuid(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "uuid", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kind", value)
 
 
 class ProjectResourceDomainArgsDict(TypedDict):
@@ -91731,6 +95208,55 @@ class ProjectUserReferenceListArgs:
         pulumi.set(self, "name", value)
 
 
+class ProjectV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - The URL at which the entity described by the link can be accessed.
+    """
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - A name that identifies the relationship of the link to the object.
+    """
+
+@pulumi.input_type
+class ProjectV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] href: - The URL at which the entity described by the link can be accessed.
+        :param pulumi.Input[_builtins.str] rel: - A name that identifies the relationship of the link to the object.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - A name that identifies the relationship of the link to the object.
+        """
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
 class ProjectVpcReferenceListArgsDict(TypedDict):
     uuid: pulumi.Input[_builtins.str]
     """
@@ -91900,6 +95426,14 @@ class ProtectionPolicyV2ReplicationConfigurationArgs:
 
 
 class ProtectionPolicyV2ReplicationConfigurationScheduleArgsDict(TypedDict):
+    is_replication_paused: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    -(Optional) Indicates whether replication is paused for all VMs and volume groups associated with the remote replication location. Ignored in create requests, only used in update requests. Only 0 RPO schedules support this field. Pause replication is not supported for asynchronous or near synchronous replications.
+    """
+    latest_recovery_point_retention_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    -(Optional) Duration (in seconds) that the latest recovery point is retained past its expiry time if the entity is unprotected, deleted, or migrated. If not specified, the latest recovery point will be retained for a minimum of 30 days. Set to 0 to not retain past expiry. This attribute is only applicable to asynchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> > 0); it must not be specified for synchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> = 0).
+    """
     recovery_point_objective_time_seconds: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     -(Required) The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
@@ -91918,6 +95452,10 @@ class ProtectionPolicyV2ReplicationConfigurationScheduleArgsDict(TypedDict):
     """
     -(Optional) Specifies the retention policy for the recovery point schedule.
     """
+    schedule_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    -(Optional) System-generated schedule ID for the replication configuration. Must not be provided in create requests. In update requests, it can be included to identify and retain the same schedule.
+    """
     start_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     -(Optional) Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
@@ -91930,12 +95468,17 @@ class ProtectionPolicyV2ReplicationConfigurationScheduleArgsDict(TypedDict):
 @pulumi.input_type
 class ProtectionPolicyV2ReplicationConfigurationScheduleArgs:
     def __init__(__self__, *,
+                 is_replication_paused: pulumi.Input[Optional[_builtins.bool]] = None,
+                 latest_recovery_point_retention_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  recovery_point_objective_time_seconds: pulumi.Input[Optional[_builtins.int]] = None,
                  recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
                  retention: pulumi.Input[Optional['ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs']] = None,
+                 schedule_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  start_time: pulumi.Input[Optional[_builtins.str]] = None,
                  sync_replication_auto_suspend_timeout_seconds: pulumi.Input[Optional[_builtins.int]] = None):
         """
+        :param pulumi.Input[_builtins.bool] is_replication_paused: -(Optional) Indicates whether replication is paused for all VMs and volume groups associated with the remote replication location. Ignored in create requests, only used in update requests. Only 0 RPO schedules support this field. Pause replication is not supported for asynchronous or near synchronous replications.
+        :param pulumi.Input[_builtins.int] latest_recovery_point_retention_seconds: -(Optional) Duration (in seconds) that the latest recovery point is retained past its expiry time if the entity is unprotected, deleted, or migrated. If not specified, the latest recovery point will be retained for a minimum of 30 days. Set to 0 to not retain past expiry. This attribute is only applicable to asynchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> > 0); it must not be specified for synchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> = 0).
         :param pulumi.Input[_builtins.int] recovery_point_objective_time_seconds: -(Required) The Recovery point objective of the schedule in seconds and specified in multiple of 60 seconds. Only following RPO values can be provided for rollup retention type:
                - Minute(s): 1, 2, 3, 4, 5, 6, 10, 12, 15
                - Hour(s): 1, 2, 3, 4, 6, 8, 12
@@ -91945,19 +95488,50 @@ class ProtectionPolicyV2ReplicationConfigurationScheduleArgs:
                * `CRASH_CONSISTENT`: Crash-consistent Recovery points capture all the VM and application level details.
                * `APP_CONSISTENT`: Application-consistent Recovery points can capture all the data stored in the memory and also the in-progress transaction details.
         :param pulumi.Input['ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs'] retention: -(Optional) Specifies the retention policy for the recovery point schedule.
+        :param pulumi.Input[_builtins.str] schedule_ext_id: -(Optional) System-generated schedule ID for the replication configuration. Must not be provided in create requests. In update requests, it can be included to identify and retain the same schedule.
         :param pulumi.Input[_builtins.str] start_time: -(Optional) Represents the protection start time for the new entities added to the policy after the policy is created in h:m format. The values must be between 00h:00m and 23h:59m and in UTC timezone. It specifies the time when the first snapshot is taken and replicated for any entity added to the policy. If this is not specified, the snapshot is taken immediately and replicated for any new entity added to the policy.
         :param pulumi.Input[_builtins.int] sync_replication_auto_suspend_timeout_seconds: -(Optional) Auto suspend timeout if there is a connection failure between locations for synchronous replication. If this value is not set, then the policy will not be suspended.
         """
+        if is_replication_paused is not None:
+            pulumi.set(__self__, "is_replication_paused", is_replication_paused)
+        if latest_recovery_point_retention_seconds is not None:
+            pulumi.set(__self__, "latest_recovery_point_retention_seconds", latest_recovery_point_retention_seconds)
         if recovery_point_objective_time_seconds is not None:
             pulumi.set(__self__, "recovery_point_objective_time_seconds", recovery_point_objective_time_seconds)
         if recovery_point_type is not None:
             pulumi.set(__self__, "recovery_point_type", recovery_point_type)
         if retention is not None:
             pulumi.set(__self__, "retention", retention)
+        if schedule_ext_id is not None:
+            pulumi.set(__self__, "schedule_ext_id", schedule_ext_id)
         if start_time is not None:
             pulumi.set(__self__, "start_time", start_time)
         if sync_replication_auto_suspend_timeout_seconds is not None:
             pulumi.set(__self__, "sync_replication_auto_suspend_timeout_seconds", sync_replication_auto_suspend_timeout_seconds)
+
+    @_builtins.property
+    @pulumi.getter(name="isReplicationPaused")
+    def is_replication_paused(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        -(Optional) Indicates whether replication is paused for all VMs and volume groups associated with the remote replication location. Ignored in create requests, only used in update requests. Only 0 RPO schedules support this field. Pause replication is not supported for asynchronous or near synchronous replications.
+        """
+        return pulumi.get(self, "is_replication_paused")
+
+    @is_replication_paused.setter
+    def is_replication_paused(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_replication_paused", value)
+
+    @_builtins.property
+    @pulumi.getter(name="latestRecoveryPointRetentionSeconds")
+    def latest_recovery_point_retention_seconds(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        -(Optional) Duration (in seconds) that the latest recovery point is retained past its expiry time if the entity is unprotected, deleted, or migrated. If not specified, the latest recovery point will be retained for a minimum of 30 days. Set to 0 to not retain past expiry. This attribute is only applicable to asynchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> > 0); it must not be specified for synchronous replication (<span pulumi-lang-nodejs="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-dotnet="`RecoveryPointObjectiveTimeSeconds`" pulumi-lang-go="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-python="`recovery_point_objective_time_seconds`" pulumi-lang-yaml="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-java="`recoveryPointObjectiveTimeSeconds`" pulumi-lang-hcl="`recovery_point_objective_time_seconds`">`recoveryPointObjectiveTimeSeconds`</span> = 0).
+        """
+        return pulumi.get(self, "latest_recovery_point_retention_seconds")
+
+    @latest_recovery_point_retention_seconds.setter
+    def latest_recovery_point_retention_seconds(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "latest_recovery_point_retention_seconds", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointObjectiveTimeSeconds")
@@ -92000,6 +95574,18 @@ class ProtectionPolicyV2ReplicationConfigurationScheduleArgs:
     @retention.setter
     def retention(self, value: pulumi.Input[Optional['ProtectionPolicyV2ReplicationConfigurationScheduleRetentionArgs']]):
         pulumi.set(self, "retention", value)
+
+    @_builtins.property
+    @pulumi.getter(name="scheduleExtId")
+    def schedule_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) System-generated schedule ID for the replication configuration. Must not be provided in create requests. In update requests, it can be included to identify and retain the same schedule.
+        """
+        return pulumi.get(self, "schedule_ext_id")
+
+    @schedule_ext_id.setter
+    def schedule_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "schedule_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="startTime")
@@ -93074,18 +96660,35 @@ class RecoveryPlanOwnerReferenceArgs:
 
 
 class RecoveryPlanParametersArgsDict(TypedDict):
+    availability_zone_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersAvailabilityZoneListArgsDict']]]]]
     floating_ip_assignment_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListArgsDict']]]]]
     network_mapping_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListArgsDict']]]]]
+    primary_location_index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
 
 @pulumi.input_type
 class RecoveryPlanParametersArgs:
     def __init__(__self__, *,
+                 availability_zone_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersAvailabilityZoneListArgs']]]] = None,
                  floating_ip_assignment_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersFloatingIpAssignmentListArgs']]]] = None,
-                 network_mapping_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListArgs']]]] = None):
+                 network_mapping_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListArgs']]]] = None,
+                 primary_location_index: pulumi.Input[Optional[_builtins.int]] = None):
+        if availability_zone_lists is not None:
+            pulumi.set(__self__, "availability_zone_lists", availability_zone_lists)
         if floating_ip_assignment_lists is not None:
             pulumi.set(__self__, "floating_ip_assignment_lists", floating_ip_assignment_lists)
         if network_mapping_lists is not None:
             pulumi.set(__self__, "network_mapping_lists", network_mapping_lists)
+        if primary_location_index is not None:
+            pulumi.set(__self__, "primary_location_index", primary_location_index)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZoneLists")
+    def availability_zone_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersAvailabilityZoneListArgs']]]]:
+        return pulumi.get(self, "availability_zone_lists")
+
+    @availability_zone_lists.setter
+    def availability_zone_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersAvailabilityZoneListArgs']]]]):
+        pulumi.set(self, "availability_zone_lists", value)
 
     @_builtins.property
     @pulumi.getter(name="floatingIpAssignmentLists")
@@ -93104,6 +96707,117 @@ class RecoveryPlanParametersArgs:
     @network_mapping_lists.setter
     def network_mapping_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListArgs']]]]):
         pulumi.set(self, "network_mapping_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="primaryLocationIndex")
+    def primary_location_index(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "primary_location_index")
+
+    @primary_location_index.setter
+    def primary_location_index(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "primary_location_index", value)
+
+
+class RecoveryPlanParametersAvailabilityZoneListArgsDict(TypedDict):
+    availability_zone_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    cluster_reference_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgsDict']]]]]
+
+@pulumi.input_type
+class RecoveryPlanParametersAvailabilityZoneListArgs:
+    def __init__(__self__, *,
+                 availability_zone_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 cluster_reference_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgs']]]] = None):
+        if availability_zone_url is not None:
+            pulumi.set(__self__, "availability_zone_url", availability_zone_url)
+        if cluster_reference_lists is not None:
+            pulumi.set(__self__, "cluster_reference_lists", cluster_reference_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="availabilityZoneUrl")
+    def availability_zone_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "availability_zone_url")
+
+    @availability_zone_url.setter
+    def availability_zone_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "availability_zone_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterReferenceLists")
+    def cluster_reference_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgs']]]]:
+        return pulumi.get(self, "cluster_reference_lists")
+
+    @cluster_reference_lists.setter
+    def cluster_reference_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgs']]]]):
+        pulumi.set(self, "cluster_reference_lists", value)
+
+
+class RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgsDict(TypedDict):
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name for the Recovery Plan.
+    """
+    uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Required) the UUID.
+    """
+
+@pulumi.input_type
+class RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 uuid: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] kind: (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+        :param pulumi.Input[_builtins.str] name: The name for the Recovery Plan.
+        :param pulumi.Input[_builtins.str] uuid: (Required) the UUID.
+        """
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Required) The kind name (Default value: <span pulumi-lang-nodejs="`project`" pulumi-lang-dotnet="`Project`" pulumi-lang-go="`project`" pulumi-lang-python="`project`" pulumi-lang-yaml="`project`" pulumi-lang-java="`project`" pulumi-lang-hcl="`project`">`project`</span>).
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name for the Recovery Plan.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Required) the UUID.
+        """
+        return pulumi.get(self, "uuid")
+
+    @uuid.setter
+    def uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "uuid", value)
 
 
 class RecoveryPlanParametersFloatingIpAssignmentListArgsDict(TypedDict):
@@ -93677,6 +97391,7 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     The name for the Recovery Plan.
     """
     subnet_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgsDict']]]]]
+    subnet_uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     use_vpc_reference: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     virtual_network_reference: NotRequired[pulumi.Input[Optional['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgsDict']]]
     vpc_reference: NotRequired[pulumi.Input[Optional['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgsDict']]]
@@ -93686,6 +97401,7 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def __init__(__self__, *,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs']]]] = None,
+                 subnet_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  use_vpc_reference: pulumi.Input[Optional[_builtins.bool]] = None,
                  virtual_network_reference: pulumi.Input[Optional['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVirtualNetworkReferenceArgs']] = None,
                  vpc_reference: pulumi.Input[Optional['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkVpcReferenceArgs']] = None):
@@ -93696,6 +97412,8 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
             pulumi.set(__self__, "name", name)
         if subnet_lists is not None:
             pulumi.set(__self__, "subnet_lists", subnet_lists)
+        if subnet_uuid is not None:
+            pulumi.set(__self__, "subnet_uuid", subnet_uuid)
         if use_vpc_reference is not None:
             pulumi.set(__self__, "use_vpc_reference", use_vpc_reference)
         if virtual_network_reference is not None:
@@ -93723,6 +97441,15 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     @subnet_lists.setter
     def subnet_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs']]]]):
         pulumi.set(self, "subnet_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetUuid")
+    def subnet_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "subnet_uuid")
+
+    @subnet_uuid.setter
+    def subnet_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "subnet_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="useVpcReference")
@@ -94058,6 +97785,7 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     The name for the Recovery Plan.
     """
     subnet_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgsDict']]]]]
+    subnet_uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     use_vpc_reference: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     virtual_network_reference: NotRequired[pulumi.Input[Optional['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgsDict']]]
     vpc_reference: NotRequired[pulumi.Input[Optional['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgsDict']]]
@@ -94067,6 +97795,7 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     def __init__(__self__, *,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_lists: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgs']]]] = None,
+                 subnet_uuid: pulumi.Input[Optional[_builtins.str]] = None,
                  use_vpc_reference: pulumi.Input[Optional[_builtins.bool]] = None,
                  virtual_network_reference: pulumi.Input[Optional['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVirtualNetworkReferenceArgs']] = None,
                  vpc_reference: pulumi.Input[Optional['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkVpcReferenceArgs']] = None):
@@ -94077,6 +97806,8 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
             pulumi.set(__self__, "name", name)
         if subnet_lists is not None:
             pulumi.set(__self__, "subnet_lists", subnet_lists)
+        if subnet_uuid is not None:
+            pulumi.set(__self__, "subnet_uuid", subnet_uuid)
         if use_vpc_reference is not None:
             pulumi.set(__self__, "use_vpc_reference", use_vpc_reference)
         if virtual_network_reference is not None:
@@ -94104,6 +97835,15 @@ class RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingList
     @subnet_lists.setter
     def subnet_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgs']]]]):
         pulumi.set(self, "subnet_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetUuid")
+    def subnet_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "subnet_uuid")
+
+    @subnet_uuid.setter
+    def subnet_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "subnet_uuid", value)
 
     @_builtins.property
     @pulumi.getter(name="useVpcReference")
@@ -95579,6 +99319,99 @@ class RecoveryPointsV2VolumeGroupRecoveryPointLinkArgs:
         pulumi.set(self, "rel", value)
 
 
+class ResourceGroupV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class ResourceGroupV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class ResourceGroupV2PlacementTargetArgsDict(TypedDict):
+    cluster_ext_id: pulumi.Input[_builtins.str]
+    storage_containers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ResourceGroupV2PlacementTargetStorageContainerArgsDict']]]]]
+
+@pulumi.input_type
+class ResourceGroupV2PlacementTargetArgs:
+    def __init__(__self__, *,
+                 cluster_ext_id: pulumi.Input[_builtins.str],
+                 storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['ResourceGroupV2PlacementTargetStorageContainerArgs']]]] = None):
+        pulumi.set(__self__, "cluster_ext_id", cluster_ext_id)
+        if storage_containers is not None:
+            pulumi.set(__self__, "storage_containers", storage_containers)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterExtId")
+    def cluster_ext_id(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "cluster_ext_id")
+
+    @cluster_ext_id.setter
+    def cluster_ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "cluster_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageContainers")
+    def storage_containers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ResourceGroupV2PlacementTargetStorageContainerArgs']]]]:
+        return pulumi.get(self, "storage_containers")
+
+    @storage_containers.setter
+    def storage_containers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ResourceGroupV2PlacementTargetStorageContainerArgs']]]]):
+        pulumi.set(self, "storage_containers", value)
+
+
+class ResourceGroupV2PlacementTargetStorageContainerArgsDict(TypedDict):
+    ext_id: pulumi.Input[_builtins.str]
+    """
+    - A globally unique identifier of the resource group.
+    """
+
+@pulumi.input_type
+class ResourceGroupV2PlacementTargetStorageContainerArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of the resource group.
+        """
+        pulumi.set(__self__, "ext_id", ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        - A globally unique identifier of the resource group.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "ext_id", value)
+
+
 class RoleCategoryArgsDict(TypedDict):
     name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -95620,6 +99453,88 @@ class RoleCategoryArgs:
     def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         - value of the key.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class RoleMembershipV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class RoleMembershipV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class RoleMembershipV2ScopeTemplateNameValueArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name of the variable.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The value to substitute.
+    """
+
+@pulumi.input_type
+class RoleMembershipV2ScopeTemplateNameValueArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: The name of the variable.
+        :param pulumi.Input[_builtins.str] value: The value to substitute.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the variable.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The value to substitute.
         """
         return pulumi.get(self, "value")
 
@@ -96294,9 +100209,21 @@ class RoutesV2MetadataArgs:
 
 class RoutesV2NextHopArgsDict(TypedDict):
     next_hop_type: pulumi.Input[_builtins.str]
+    """
+    Nexthop type. Supported values: `LOCAL_SUBNET`, `DIRECT_CONNECT_VIF`, `VPN_CONNECTION`, `IP_ADDRESS`, `EXTERNAL_SUBNET`.
+    """
     next_hop_ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopNextHopIpAddressArgsDict']]]]]
+    """
+    IP address of the nexthop. See <span pulumi-lang-nodejs="`nextHopIpAddress`" pulumi-lang-dotnet="`NextHopIpAddress`" pulumi-lang-go="`nextHopIpAddress`" pulumi-lang-python="`next_hop_ip_address`" pulumi-lang-yaml="`nextHopIpAddress`" pulumi-lang-java="`nextHopIpAddress`" pulumi-lang-hcl="`next_hop_ip_address`">`nextHopIpAddress`</span> below.
+    """
     next_hop_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the nexthop.
+    """
     next_hop_reference: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The reference to a link, such as a VPN connection or a subnet.
+    """
 
 @pulumi.input_type
 class RoutesV2NextHopArgs:
@@ -96305,6 +100232,12 @@ class RoutesV2NextHopArgs:
                  next_hop_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopNextHopIpAddressArgs']]]] = None,
                  next_hop_name: pulumi.Input[Optional[_builtins.str]] = None,
                  next_hop_reference: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] next_hop_type: Nexthop type. Supported values: `LOCAL_SUBNET`, `DIRECT_CONNECT_VIF`, `VPN_CONNECTION`, `IP_ADDRESS`, `EXTERNAL_SUBNET`.
+        :param pulumi.Input[Sequence[pulumi.Input['RoutesV2NextHopNextHopIpAddressArgs']]] next_hop_ip_addresses: IP address of the nexthop. See <span pulumi-lang-nodejs="`nextHopIpAddress`" pulumi-lang-dotnet="`NextHopIpAddress`" pulumi-lang-go="`nextHopIpAddress`" pulumi-lang-python="`next_hop_ip_address`" pulumi-lang-yaml="`nextHopIpAddress`" pulumi-lang-java="`nextHopIpAddress`" pulumi-lang-hcl="`next_hop_ip_address`">`nextHopIpAddress`</span> below.
+        :param pulumi.Input[_builtins.str] next_hop_name: Name of the nexthop.
+        :param pulumi.Input[_builtins.str] next_hop_reference: The reference to a link, such as a VPN connection or a subnet.
+        """
         pulumi.set(__self__, "next_hop_type", next_hop_type)
         if next_hop_ip_addresses is not None:
             pulumi.set(__self__, "next_hop_ip_addresses", next_hop_ip_addresses)
@@ -96316,6 +100249,9 @@ class RoutesV2NextHopArgs:
     @_builtins.property
     @pulumi.getter(name="nextHopType")
     def next_hop_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        Nexthop type. Supported values: `LOCAL_SUBNET`, `DIRECT_CONNECT_VIF`, `VPN_CONNECTION`, `IP_ADDRESS`, `EXTERNAL_SUBNET`.
+        """
         return pulumi.get(self, "next_hop_type")
 
     @next_hop_type.setter
@@ -96325,6 +100261,9 @@ class RoutesV2NextHopArgs:
     @_builtins.property
     @pulumi.getter(name="nextHopIpAddresses")
     def next_hop_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RoutesV2NextHopNextHopIpAddressArgs']]]]:
+        """
+        IP address of the nexthop. See <span pulumi-lang-nodejs="`nextHopIpAddress`" pulumi-lang-dotnet="`NextHopIpAddress`" pulumi-lang-go="`nextHopIpAddress`" pulumi-lang-python="`next_hop_ip_address`" pulumi-lang-yaml="`nextHopIpAddress`" pulumi-lang-java="`nextHopIpAddress`" pulumi-lang-hcl="`next_hop_ip_address`">`nextHopIpAddress`</span> below.
+        """
         return pulumi.get(self, "next_hop_ip_addresses")
 
     @next_hop_ip_addresses.setter
@@ -96334,6 +100273,9 @@ class RoutesV2NextHopArgs:
     @_builtins.property
     @pulumi.getter(name="nextHopName")
     def next_hop_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the nexthop.
+        """
         return pulumi.get(self, "next_hop_name")
 
     @next_hop_name.setter
@@ -96343,6 +100285,9 @@ class RoutesV2NextHopArgs:
     @_builtins.property
     @pulumi.getter(name="nextHopReference")
     def next_hop_reference(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The reference to a link, such as a VPN connection or a subnet.
+        """
         return pulumi.get(self, "next_hop_reference")
 
     @next_hop_reference.setter
@@ -96353,11 +100298,19 @@ class RoutesV2NextHopArgs:
 class RoutesV2NextHopNextHopIpAddressArgsDict(TypedDict):
     ipv4: pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv4ArgsDict']
     """
-    IPv4 Address
+    IPv4 Subnet Object
+    - `ipv4.ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 format.
+    - `ipv4.ip.value`: (Required) The IPv4 address of the host.
+    - `ipv4.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv4 address belongs.
+    - `ipv4.prefix_length`: (Required) The prefix length of the network to which this host IPv4 address belongs.
     """
     ipv6: pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv6ArgsDict']
     """
-    IPv6 Address
+    IPv6 Subnet Object
+    - `ipv6.ip`: (Required) IP address format
+    - `ipv6.ip.value`: (Required) The IPv6 address of the host.
+    - `ipv6.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv6 address belongs.
+    - `ipv6.prefix_length`: (Required) The prefix length of the network to which this host IPv6 address belongs.
     """
 
 @pulumi.input_type
@@ -96366,8 +100319,16 @@ class RoutesV2NextHopNextHopIpAddressArgs:
                  ipv4: pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv4Args'],
                  ipv6: pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv6Args']):
         """
-        :param pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv4Args'] ipv4: IPv4 Address
-        :param pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv6Args'] ipv6: IPv6 Address
+        :param pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv4Args'] ipv4: IPv4 Subnet Object
+               - `ipv4.ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 format.
+               - `ipv4.ip.value`: (Required) The IPv4 address of the host.
+               - `ipv4.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv4 address belongs.
+               - `ipv4.prefix_length`: (Required) The prefix length of the network to which this host IPv4 address belongs.
+        :param pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv6Args'] ipv6: IPv6 Subnet Object
+               - `ipv6.ip`: (Required) IP address format
+               - `ipv6.ip.value`: (Required) The IPv6 address of the host.
+               - `ipv6.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv6 address belongs.
+               - `ipv6.prefix_length`: (Required) The prefix length of the network to which this host IPv6 address belongs.
         """
         pulumi.set(__self__, "ipv4", ipv4)
         pulumi.set(__self__, "ipv6", ipv6)
@@ -96376,7 +100337,11 @@ class RoutesV2NextHopNextHopIpAddressArgs:
     @pulumi.getter
     def ipv4(self) -> pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv4Args']:
         """
-        IPv4 Address
+        IPv4 Subnet Object
+        - `ipv4.ip`: (Required) An unique address that identifies a device on the internet or a local network in IPv4 format.
+        - `ipv4.ip.value`: (Required) The IPv4 address of the host.
+        - `ipv4.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv4 address belongs.
+        - `ipv4.prefix_length`: (Required) The prefix length of the network to which this host IPv4 address belongs.
         """
         return pulumi.get(self, "ipv4")
 
@@ -96388,7 +100353,11 @@ class RoutesV2NextHopNextHopIpAddressArgs:
     @pulumi.getter
     def ipv6(self) -> pulumi.Input['RoutesV2NextHopNextHopIpAddressIpv6Args']:
         """
-        IPv6 Address
+        IPv6 Subnet Object
+        - `ipv6.ip`: (Required) IP address format
+        - `ipv6.ip.value`: (Required) The IPv6 address of the host.
+        - `ipv6.ip.prefix_length`: (Optional) The prefix length of the network to which this host IPv6 address belongs.
+        - `ipv6.prefix_length`: (Required) The prefix length of the network to which this host IPv6 address belongs.
         """
         return pulumi.get(self, "ipv6")
 
@@ -99481,6 +103450,316 @@ class ServiceGroupsV2UdpServiceArgs:
         pulumi.set(self, "start_port", value)
 
 
+class SnmpConfigV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - The URL at which the entity described by the link can be accessed.
+    """
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - A name that identifies the relationship of the link to the object
+      that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+      for the object.
+    """
+
+@pulumi.input_type
+class SnmpConfigV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] href: - The URL at which the entity described by the link can be accessed.
+        :param pulumi.Input[_builtins.str] rel: - A name that identifies the relationship of the link to the object
+                 that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+                 for the object.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - A name that identifies the relationship of the link to the object
+          that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+          for the object.
+        """
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class SnmpTrapV2AddressArgsDict(TypedDict):
+    ipv4: NotRequired[pulumi.Input[Optional['SnmpTrapV2AddressIpv4ArgsDict']]]
+    """
+    - (Optional) IPv4 address block. Contains:
+    """
+    ipv6: NotRequired[pulumi.Input[Optional['SnmpTrapV2AddressIpv6ArgsDict']]]
+    """
+    - (Optional) IPv6 address block. Contains:
+    """
+
+@pulumi.input_type
+class SnmpTrapV2AddressArgs:
+    def __init__(__self__, *,
+                 ipv4: pulumi.Input[Optional['SnmpTrapV2AddressIpv4Args']] = None,
+                 ipv6: pulumi.Input[Optional['SnmpTrapV2AddressIpv6Args']] = None):
+        """
+        :param pulumi.Input['SnmpTrapV2AddressIpv4Args'] ipv4: - (Optional) IPv4 address block. Contains:
+        :param pulumi.Input['SnmpTrapV2AddressIpv6Args'] ipv6: - (Optional) IPv6 address block. Contains:
+        """
+        if ipv4 is not None:
+            pulumi.set(__self__, "ipv4", ipv4)
+        if ipv6 is not None:
+            pulumi.set(__self__, "ipv6", ipv6)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4(self) -> pulumi.Input[Optional['SnmpTrapV2AddressIpv4Args']]:
+        """
+        - (Optional) IPv4 address block. Contains:
+        """
+        return pulumi.get(self, "ipv4")
+
+    @ipv4.setter
+    def ipv4(self, value: pulumi.Input[Optional['SnmpTrapV2AddressIpv4Args']]):
+        pulumi.set(self, "ipv4", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6(self) -> pulumi.Input[Optional['SnmpTrapV2AddressIpv6Args']]:
+        """
+        - (Optional) IPv6 address block. Contains:
+        """
+        return pulumi.get(self, "ipv6")
+
+    @ipv6.setter
+    def ipv6(self, value: pulumi.Input[Optional['SnmpTrapV2AddressIpv6Args']]):
+        pulumi.set(self, "ipv6", value)
+
+
+class SnmpTrapV2AddressIpv4ArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    """
+    - (Required) The IPv4 address of the host.
+    """
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    - (Optional, Computed) The prefix length of the network
+      to which this host IPv4 address belongs.
+    """
+
+@pulumi.input_type
+class SnmpTrapV2AddressIpv4Args:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] value: - (Required) The IPv4 address of the host.
+        :param pulumi.Input[_builtins.int] prefix_length: - (Optional, Computed) The prefix length of the network
+                 to which this host IPv4 address belongs.
+        """
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        - (Required) The IPv4 address of the host.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        - (Optional, Computed) The prefix length of the network
+          to which this host IPv4 address belongs.
+        """
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class SnmpTrapV2AddressIpv6ArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    """
+    - (Required) The IPv6 address of the host.
+    """
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    - (Optional, Computed) The prefix length of the network
+      to which this host IPv6 address belongs.
+    """
+
+@pulumi.input_type
+class SnmpTrapV2AddressIpv6Args:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] value: - (Required) The IPv6 address of the host.
+        :param pulumi.Input[_builtins.int] prefix_length: - (Optional, Computed) The prefix length of the network
+                 to which this host IPv6 address belongs.
+        """
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        """
+        - (Required) The IPv6 address of the host.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        - (Optional, Computed) The prefix length of the network
+          to which this host IPv6 address belongs.
+        """
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class SnmpTrapV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - The URL at which the entity described by the link can be accessed.
+    """
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - A name that identifies the relationship of the link to the object
+      that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+      for the object.
+    """
+
+@pulumi.input_type
+class SnmpTrapV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] href: - The URL at which the entity described by the link can be accessed.
+        :param pulumi.Input[_builtins.str] rel: - A name that identifies the relationship of the link to the object
+                 that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+                 for the object.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - A name that identifies the relationship of the link to the object
+          that is returned by the URL. The unique value of <span pulumi-lang-nodejs="`self`" pulumi-lang-dotnet="`Self`" pulumi-lang-go="`self`" pulumi-lang-python="`self`" pulumi-lang-yaml="`self`" pulumi-lang-java="`self`" pulumi-lang-hcl="`self`">`self`</span> identifies the URL
+          for the object.
+        """
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class SnmpUserV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - The URL at which the entity described by the link can be accessed.
+    """
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+    """
+
+@pulumi.input_type
+class SnmpUserV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] href: - The URL at which the entity described by the link can be accessed.
+        :param pulumi.Input[_builtins.str] rel: - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+        """
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
 class StaticRoutesDefaultRouteNexthopArgsDict(TypedDict):
     external_subnet_reference_uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -101676,10 +105955,25 @@ class SubnetV2LinkArgs:
 
 class SubnetV2MetadataArgsDict(TypedDict):
     category_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Set of category external identifiers associated with the subnet.
+    """
     owner_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    External identifier of the owner associated with the subnet.
+    """
     owner_user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    User name of the subnet owner.
+    """
     project_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the project associated with the subnet.
+    """
     project_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    External identifier of the project associated with the subnet.
+    """
 
 @pulumi.input_type
 class SubnetV2MetadataArgs:
@@ -101689,6 +105983,13 @@ class SubnetV2MetadataArgs:
                  owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  project_reference_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: Set of category external identifiers associated with the subnet.
+        :param pulumi.Input[_builtins.str] owner_reference_id: External identifier of the owner associated with the subnet.
+        :param pulumi.Input[_builtins.str] owner_user_name: User name of the subnet owner.
+        :param pulumi.Input[_builtins.str] project_name: Name of the project associated with the subnet.
+        :param pulumi.Input[_builtins.str] project_reference_id: External identifier of the project associated with the subnet.
+        """
         if category_ids is not None:
             pulumi.set(__self__, "category_ids", category_ids)
         if owner_reference_id is not None:
@@ -101703,6 +106004,9 @@ class SubnetV2MetadataArgs:
     @_builtins.property
     @pulumi.getter(name="categoryIds")
     def category_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Set of category external identifiers associated with the subnet.
+        """
         return pulumi.get(self, "category_ids")
 
     @category_ids.setter
@@ -101712,6 +106016,9 @@ class SubnetV2MetadataArgs:
     @_builtins.property
     @pulumi.getter(name="ownerReferenceId")
     def owner_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the owner associated with the subnet.
+        """
         return pulumi.get(self, "owner_reference_id")
 
     @owner_reference_id.setter
@@ -101721,6 +106028,9 @@ class SubnetV2MetadataArgs:
     @_builtins.property
     @pulumi.getter(name="ownerUserName")
     def owner_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        User name of the subnet owner.
+        """
         return pulumi.get(self, "owner_user_name")
 
     @owner_user_name.setter
@@ -101730,6 +106040,9 @@ class SubnetV2MetadataArgs:
     @_builtins.property
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the project associated with the subnet.
+        """
         return pulumi.get(self, "project_name")
 
     @project_name.setter
@@ -101739,6 +106052,9 @@ class SubnetV2MetadataArgs:
     @_builtins.property
     @pulumi.getter(name="projectReferenceId")
     def project_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the subnet.
+        """
         return pulumi.get(self, "project_reference_id")
 
     @project_reference_id.setter
@@ -101812,6 +106128,9 @@ class SubnetV2VirtualSwitchArgsDict(TypedDict):
     """
     links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchLinkArgsDict']]]]]
     metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchMetadataArgsDict']]]]]
+    """
+    Metadata associated with the subnet.
+    """
     mtu: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
     MTU
@@ -101842,6 +106161,7 @@ class SubnetV2VirtualSwitchArgs:
         :param pulumi.Input[_builtins.str] description: Input body to configure a Virtual Switch
         :param pulumi.Input[_builtins.bool] has_deployment_error: When true, the node is not put in maintenance mode during the create/update operation.
         :param pulumi.Input[_builtins.bool] is_default: Indicates whether it is a default Virtual Switch which cannot be deleted
+        :param pulumi.Input[Sequence[pulumi.Input['SubnetV2VirtualSwitchMetadataArgs']]] metadatas: Metadata associated with the subnet.
         :param pulumi.Input[_builtins.int] mtu: MTU
         :param pulumi.Input[_builtins.str] name: User-visible Virtual Switch name
         """
@@ -101949,6 +106269,9 @@ class SubnetV2VirtualSwitchArgs:
     @_builtins.property
     @pulumi.getter
     def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VirtualSwitchMetadataArgs']]]]:
+        """
+        Metadata associated with the subnet.
+        """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
@@ -102320,10 +106643,25 @@ class SubnetV2VirtualSwitchLinkArgs:
 
 class SubnetV2VirtualSwitchMetadataArgsDict(TypedDict):
     category_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Set of category external identifiers associated with the subnet.
+    """
     owner_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    External identifier of the owner associated with the subnet.
+    """
     owner_user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    User name of the subnet owner.
+    """
     project_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the project associated with the subnet.
+    """
     project_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    External identifier of the project associated with the subnet.
+    """
 
 @pulumi.input_type
 class SubnetV2VirtualSwitchMetadataArgs:
@@ -102333,6 +106671,13 @@ class SubnetV2VirtualSwitchMetadataArgs:
                  owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  project_reference_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: Set of category external identifiers associated with the subnet.
+        :param pulumi.Input[_builtins.str] owner_reference_id: External identifier of the owner associated with the subnet.
+        :param pulumi.Input[_builtins.str] owner_user_name: User name of the subnet owner.
+        :param pulumi.Input[_builtins.str] project_name: Name of the project associated with the subnet.
+        :param pulumi.Input[_builtins.str] project_reference_id: External identifier of the project associated with the subnet.
+        """
         if category_ids is not None:
             pulumi.set(__self__, "category_ids", category_ids)
         if owner_reference_id is not None:
@@ -102347,6 +106692,9 @@ class SubnetV2VirtualSwitchMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="categoryIds")
     def category_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Set of category external identifiers associated with the subnet.
+        """
         return pulumi.get(self, "category_ids")
 
     @category_ids.setter
@@ -102356,6 +106704,9 @@ class SubnetV2VirtualSwitchMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="ownerReferenceId")
     def owner_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the owner associated with the subnet.
+        """
         return pulumi.get(self, "owner_reference_id")
 
     @owner_reference_id.setter
@@ -102365,6 +106716,9 @@ class SubnetV2VirtualSwitchMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="ownerUserName")
     def owner_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        User name of the subnet owner.
+        """
         return pulumi.get(self, "owner_user_name")
 
     @owner_user_name.setter
@@ -102374,6 +106728,9 @@ class SubnetV2VirtualSwitchMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the project associated with the subnet.
+        """
         return pulumi.get(self, "project_name")
 
     @project_name.setter
@@ -102383,6 +106740,9 @@ class SubnetV2VirtualSwitchMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="projectReferenceId")
     def project_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the subnet.
+        """
         return pulumi.get(self, "project_reference_id")
 
     @project_reference_id.setter
@@ -102417,6 +106777,9 @@ class SubnetV2VpcArgsDict(TypedDict):
     """
     links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcLinkArgsDict']]]]]
     metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcMetadataArgsDict']]]]]
+    """
+    Metadata associated with the subnet.
+    """
     name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Name of the VPC.
@@ -102450,6 +106813,7 @@ class SubnetV2VpcArgs:
         :param pulumi.Input[_builtins.str] external_routing_domain_reference: External routing domain associated with this route table
         :param pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcExternalSubnetArgs']]] external_subnets: List of external subnets that the VPC is attached to.
         :param pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcExternallyRoutablePrefixArgs']]] externally_routable_prefixes: CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
+        :param pulumi.Input[Sequence[pulumi.Input['SubnetV2VpcMetadataArgs']]] metadatas: Metadata associated with the subnet.
         :param pulumi.Input[_builtins.str] name: Name of the VPC.
         :param pulumi.Input[_builtins.str] vpc_type: Type of VPC. Acceptables values are "REGULAR" , "TRANSIT".
         """
@@ -102562,6 +106926,9 @@ class SubnetV2VpcArgs:
     @_builtins.property
     @pulumi.getter
     def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SubnetV2VpcMetadataArgs']]]]:
+        """
+        Metadata associated with the subnet.
+        """
         return pulumi.get(self, "metadatas")
 
     @metadatas.setter
@@ -103478,10 +107845,25 @@ class SubnetV2VpcLinkArgs:
 
 class SubnetV2VpcMetadataArgsDict(TypedDict):
     category_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Set of category external identifiers associated with the subnet.
+    """
     owner_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    External identifier of the owner associated with the subnet.
+    """
     owner_user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    User name of the subnet owner.
+    """
     project_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the project associated with the subnet.
+    """
     project_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    External identifier of the project associated with the subnet.
+    """
 
 @pulumi.input_type
 class SubnetV2VpcMetadataArgs:
@@ -103491,6 +107873,13 @@ class SubnetV2VpcMetadataArgs:
                  owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  project_reference_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: Set of category external identifiers associated with the subnet.
+        :param pulumi.Input[_builtins.str] owner_reference_id: External identifier of the owner associated with the subnet.
+        :param pulumi.Input[_builtins.str] owner_user_name: User name of the subnet owner.
+        :param pulumi.Input[_builtins.str] project_name: Name of the project associated with the subnet.
+        :param pulumi.Input[_builtins.str] project_reference_id: External identifier of the project associated with the subnet.
+        """
         if category_ids is not None:
             pulumi.set(__self__, "category_ids", category_ids)
         if owner_reference_id is not None:
@@ -103505,6 +107894,9 @@ class SubnetV2VpcMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="categoryIds")
     def category_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Set of category external identifiers associated with the subnet.
+        """
         return pulumi.get(self, "category_ids")
 
     @category_ids.setter
@@ -103514,6 +107906,9 @@ class SubnetV2VpcMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="ownerReferenceId")
     def owner_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the owner associated with the subnet.
+        """
         return pulumi.get(self, "owner_reference_id")
 
     @owner_reference_id.setter
@@ -103523,6 +107918,9 @@ class SubnetV2VpcMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="ownerUserName")
     def owner_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        User name of the subnet owner.
+        """
         return pulumi.get(self, "owner_user_name")
 
     @owner_user_name.setter
@@ -103532,6 +107930,9 @@ class SubnetV2VpcMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the project associated with the subnet.
+        """
         return pulumi.get(self, "project_name")
 
     @project_name.setter
@@ -103541,6 +107942,9 @@ class SubnetV2VpcMetadataArgs:
     @_builtins.property
     @pulumi.getter(name="projectReferenceId")
     def project_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project associated with the subnet.
+        """
         return pulumi.get(self, "project_reference_id")
 
     @project_reference_id.setter
@@ -103670,6 +108074,100 @@ class SubnetV2VpcSnatIpIpv6Args:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class TemplatePlacementPolicyV2ClusterFilterArgsDict(TypedDict):
+    category_ext_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    Filter to match entities based on the provided categories.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+    """
+
+@pulumi.input_type
+class TemplatePlacementPolicyV2ClusterFilterArgs:
+    def __init__(__self__, *,
+                 category_ext_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: Filter to match entities based on the provided categories.
+        :param pulumi.Input[_builtins.str] type: The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+        """
+        pulumi.set(__self__, "category_ext_ids", category_ext_ids)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryExtIds")
+    def category_ext_ids(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        Filter to match entities based on the provided categories.
+        """
+        return pulumi.get(self, "category_ext_ids")
+
+    @category_ext_ids.setter
+    def category_ext_ids(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "category_ext_ids", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+
+class TemplatePlacementPolicyV2ContentFilterArgsDict(TypedDict):
+    category_ext_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    Filter to match entities based on the provided categories.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+    """
+
+@pulumi.input_type
+class TemplatePlacementPolicyV2ContentFilterArgs:
+    def __init__(__self__, *,
+                 category_ext_ids: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ext_ids: Filter to match entities based on the provided categories.
+        :param pulumi.Input[_builtins.str] type: The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+        """
+        pulumi.set(__self__, "category_ext_ids", category_ext_ids)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryExtIds")
+    def category_ext_ids(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        Filter to match entities based on the provided categories.
+        """
+        return pulumi.get(self, "category_ext_ids")
+
+    @category_ext_ids.setter
+    def category_ext_ids(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "category_ext_ids", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        The match type for categories. Valid values: `CATEGORIES_MATCH_ALL`, `CATEGORIES_MATCH_ANY`.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
 
 
 class TemplateV2CreatedByArgsDict(TypedDict):
@@ -104114,11 +108612,12 @@ class TemplateV2LinkArgs:
 class TemplateV2TemplateVersionSpecArgsDict(TypedDict):
     version_source: pulumi.Input['TemplateV2TemplateVersionSpecVersionSourceArgsDict']
     """
-    Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> .
+    Source of the created Template Version. When creating a **new template**, the source must be a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>). When creating a **new version** of an existing template (an update), the source can be either a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>) or an existing version within the template (<span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>). Specify exactly **one** of <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> - they are mutually exclusive.
     """
     create_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     created_bies: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecCreatedByArgsDict']]]]]
     ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    guest_customization_profile: NotRequired[pulumi.Input[Optional['TemplateV2TemplateVersionSpecGuestCustomizationProfileArgsDict']]]
     is_active_version: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
@@ -104126,8 +108625,8 @@ class TemplateV2TemplateVersionSpecArgsDict(TypedDict):
     is_gc_override_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Allow or disallow overriding guest customization during template deployment.
-    * `version_source.template_vm_reference`: (Optional) Template VM Reference
-    * `version_source.template_version_reference`: (Optional) Template Version Reference
+    * `version_source.template_vm_reference`: (Optional) Template VM Reference. Used to source a version from a VM. This is the **only** valid source when creating a new template. Mutually exclusive with <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>.
+    * `version_source.template_version_reference`: (Optional) Template Version Reference. Used to source a new version from an existing version of the template (update only). Mutually exclusive with <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>.
     """
     links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecLinkArgsDict']]]]]
     tenant_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
@@ -104155,6 +108654,7 @@ class TemplateV2TemplateVersionSpecArgs:
                  create_time: pulumi.Input[Optional[_builtins.str]] = None,
                  created_bies: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecCreatedByArgs']]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 guest_customization_profile: pulumi.Input[Optional['TemplateV2TemplateVersionSpecGuestCustomizationProfileArgs']] = None,
                  is_active_version: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_gc_override_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecLinkArgs']]]] = None,
@@ -104164,11 +108664,11 @@ class TemplateV2TemplateVersionSpecArgs:
                  version_source_discriminator: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_specs: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecArgs']]]] = None):
         """
-        :param pulumi.Input['TemplateV2TemplateVersionSpecVersionSourceArgs'] version_source: Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> .
+        :param pulumi.Input['TemplateV2TemplateVersionSpecVersionSourceArgs'] version_source: Source of the created Template Version. When creating a **new template**, the source must be a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>). When creating a **new version** of an existing template (an update), the source can be either a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>) or an existing version within the template (<span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>). Specify exactly **one** of <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> - they are mutually exclusive.
         :param pulumi.Input[_builtins.bool] is_active_version: Default: <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>  Specify whether to mark the template version as active or not. The newly created version during template creation, update, or guest OS update is set to active by default unless specified otherwise.
         :param pulumi.Input[_builtins.bool] is_gc_override_enabled: Allow or disallow overriding guest customization during template deployment.
-               * `version_source.template_vm_reference`: (Optional) Template VM Reference
-               * `version_source.template_version_reference`: (Optional) Template Version Reference
+               * `version_source.template_vm_reference`: (Optional) Template VM Reference. Used to source a version from a VM. This is the **only** valid source when creating a new template. Mutually exclusive with <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>.
+               * `version_source.template_version_reference`: (Optional) Template Version Reference. Used to source a new version from an existing version of the template (update only). Mutually exclusive with <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>.
         :param pulumi.Input[_builtins.str] version_description: The user defined description of a Template Version. Version description `Required` when updating a Template Version.
         :param pulumi.Input[_builtins.str] version_name: The user defined name of a Template Version. Version name `Required` when updating a Template Version.
         :param pulumi.Input[_builtins.str] version_source_discriminator: Source type of the template version created. It can be either a VM or a template version.
@@ -104181,6 +108681,8 @@ class TemplateV2TemplateVersionSpecArgs:
             pulumi.set(__self__, "created_bies", created_bies)
         if ext_id is not None:
             pulumi.set(__self__, "ext_id", ext_id)
+        if guest_customization_profile is not None:
+            pulumi.set(__self__, "guest_customization_profile", guest_customization_profile)
         if is_active_version is not None:
             pulumi.set(__self__, "is_active_version", is_active_version)
         if is_gc_override_enabled is not None:
@@ -104202,7 +108704,7 @@ class TemplateV2TemplateVersionSpecArgs:
     @pulumi.getter(name="versionSource")
     def version_source(self) -> pulumi.Input['TemplateV2TemplateVersionSpecVersionSourceArgs']:
         """
-        Source of the created Template Version. The source can either be a VM when creating a new Template Version or an existing Version within a Template when creating a new Version. Either <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> .
+        Source of the created Template Version. When creating a **new template**, the source must be a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>). When creating a **new version** of an existing template (an update), the source can be either a VM (<span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>) or an existing version within the template (<span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>). Specify exactly **one** of <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span> or <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span> - they are mutually exclusive.
         """
         return pulumi.get(self, "version_source")
 
@@ -104238,6 +108740,15 @@ class TemplateV2TemplateVersionSpecArgs:
         pulumi.set(self, "ext_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="guestCustomizationProfile")
+    def guest_customization_profile(self) -> pulumi.Input[Optional['TemplateV2TemplateVersionSpecGuestCustomizationProfileArgs']]:
+        return pulumi.get(self, "guest_customization_profile")
+
+    @guest_customization_profile.setter
+    def guest_customization_profile(self, value: pulumi.Input[Optional['TemplateV2TemplateVersionSpecGuestCustomizationProfileArgs']]):
+        pulumi.set(self, "guest_customization_profile", value)
+
+    @_builtins.property
     @pulumi.getter(name="isActiveVersion")
     def is_active_version(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
@@ -104254,8 +108765,8 @@ class TemplateV2TemplateVersionSpecArgs:
     def is_gc_override_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
         Allow or disallow overriding guest customization during template deployment.
-        * `version_source.template_vm_reference`: (Optional) Template VM Reference
-        * `version_source.template_version_reference`: (Optional) Template Version Reference
+        * `version_source.template_vm_reference`: (Optional) Template VM Reference. Used to source a version from a VM. This is the **only** valid source when creating a new template. Mutually exclusive with <span pulumi-lang-nodejs="`templateVersionReference`" pulumi-lang-dotnet="`TemplateVersionReference`" pulumi-lang-go="`templateVersionReference`" pulumi-lang-python="`template_version_reference`" pulumi-lang-yaml="`templateVersionReference`" pulumi-lang-java="`templateVersionReference`" pulumi-lang-hcl="`template_version_reference`">`templateVersionReference`</span>.
+        * `version_source.template_version_reference`: (Optional) Template Version Reference. Used to source a new version from an existing version of the template (update only). Mutually exclusive with <span pulumi-lang-nodejs="`templateVmReference`" pulumi-lang-dotnet="`TemplateVmReference`" pulumi-lang-go="`templateVmReference`" pulumi-lang-python="`template_vm_reference`" pulumi-lang-yaml="`templateVmReference`" pulumi-lang-java="`templateVmReference`" pulumi-lang-hcl="`template_vm_reference`">`templateVmReference`</span>.
         """
         return pulumi.get(self, "is_gc_override_enabled")
 
@@ -104714,6 +109225,26 @@ class TemplateV2TemplateVersionSpecCreatedByAdditionalAttributeValueMapOfStringA
     @map.setter
     def map(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "map", value)
+
+
+class TemplateV2TemplateVersionSpecGuestCustomizationProfileArgsDict(TypedDict):
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class TemplateV2TemplateVersionSpecGuestCustomizationProfileArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
 
 
 class TemplateV2TemplateVersionSpecLinkArgsDict(TypedDict):
@@ -107495,14 +112026,18 @@ class TemplateV2TemplateVersionSpecVersionSourceTemplateVersionReferenceOverride
 
 class TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceArgsDict(TypedDict):
     ext_id: pulumi.Input[_builtins.str]
+    guest_customization_profile: NotRequired[pulumi.Input[Optional['TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgsDict']]]
     guest_customizations: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationArgsDict']]]]]
 
 @pulumi.input_type
 class TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceArgs:
     def __init__(__self__, *,
                  ext_id: pulumi.Input[_builtins.str],
+                 guest_customization_profile: pulumi.Input[Optional['TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgs']] = None,
                  guest_customizations: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationArgs']]]] = None):
         pulumi.set(__self__, "ext_id", ext_id)
+        if guest_customization_profile is not None:
+            pulumi.set(__self__, "guest_customization_profile", guest_customization_profile)
         if guest_customizations is not None:
             pulumi.set(__self__, "guest_customizations", guest_customizations)
 
@@ -107514,6 +112049,15 @@ class TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceArgs:
     @ext_id.setter
     def ext_id(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="guestCustomizationProfile")
+    def guest_customization_profile(self) -> pulumi.Input[Optional['TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgs']]:
+        return pulumi.get(self, "guest_customization_profile")
+
+    @guest_customization_profile.setter
+    def guest_customization_profile(self, value: pulumi.Input[Optional['TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgs']]):
+        pulumi.set(self, "guest_customization_profile", value)
 
     @_builtins.property
     @pulumi.getter(name="guestCustomizations")
@@ -108172,6 +112716,26 @@ class TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomiz
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgsDict(TypedDict):
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class TemplateV2TemplateVersionSpecVersionSourceTemplateVmReferenceGuestCustomizationProfileArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
 
 
 class TemplateV2TemplateVersionSpecVmSpecArgsDict(TypedDict):
@@ -119028,6 +123592,8 @@ class VirtualMachineV2DiskArgsDict(TypedDict):
     * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
     * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
     * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+
+    > **Note (Volume Group disk workflow):** Until now, Volume Group disk attachment could be managed as part of the <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> workflow. Starting with the next release, managing Volume Group disk attach/detach through the VM resource is deprecated. Use <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> to manage Volume Group disks and <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span> to attach or detach VMs from a Volume Group. When a Volume Group disk is attached out-of-band, <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> may not include that externally attached disk in its <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> state unless the corresponding disk backing is explicitly configured, which reduces drift noise.
     """
     disk_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskDiskAddressArgsDict']]]]]
     """
@@ -119051,6 +123617,8 @@ class VirtualMachineV2DiskArgs:
                * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
                * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
                * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+               
+               > **Note (Volume Group disk workflow):** Until now, Volume Group disk attachment could be managed as part of the <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> workflow. Starting with the next release, managing Volume Group disk attach/detach through the VM resource is deprecated. Use <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> to manage Volume Group disks and <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span> to attach or detach VMs from a Volume Group. When a Volume Group disk is attached out-of-band, <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> may not include that externally attached disk in its <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> state unless the corresponding disk backing is explicitly configured, which reduces drift noise.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2DiskDiskAddressArgs']]] disk_addresses: Disk address.
                * `disk_address.bus_type`: (Required) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
                * `disk_address.index`: (Required) Device index on the bus. This field is ignored unless the bus details are specified.
@@ -119071,6 +123639,8 @@ class VirtualMachineV2DiskArgs:
         * `backing_info.vm_disk`:(Optional) backing Info for vmDisk
         * `backing_info.adfs_volume_group_reference`: (Required) Volume Group Reference
         * `backing_info.adfs_volume_group_reference.volume_group_ext_id`: (Required) The globally unique identifier of an ADSF volume group. It should be of type UUID.
+
+        > **Note (Volume Group disk workflow):** Until now, Volume Group disk attachment could be managed as part of the <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> workflow. Starting with the next release, managing Volume Group disk attach/detach through the VM resource is deprecated. Use <span pulumi-lang-nodejs="`nutanix.VolumeGroupDiskV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupDiskV2`" pulumi-lang-go="`VolumeGroupDiskV2`" pulumi-lang-python="`VolumeGroupDiskV2`" pulumi-lang-yaml="`nutanix.VolumeGroupDiskV2`" pulumi-lang-java="`nutanix.VolumeGroupDiskV2`" pulumi-lang-hcl="`nutanix_volume_group_disk_v2`">`nutanix.VolumeGroupDiskV2`</span> to manage Volume Group disks and <span pulumi-lang-nodejs="`nutanix.VolumeGroupVmV2`" pulumi-lang-dotnet="`nutanix.VolumeGroupVmV2`" pulumi-lang-go="`VolumeGroupVmV2`" pulumi-lang-python="`VolumeGroupVmV2`" pulumi-lang-yaml="`nutanix.VolumeGroupVmV2`" pulumi-lang-java="`nutanix.VolumeGroupVmV2`" pulumi-lang-hcl="`nutanix_volume_group_vm_v2`">`nutanix.VolumeGroupVmV2`</span> to attach or detach VMs from a Volume Group. When a Volume Group disk is attached out-of-band, <span pulumi-lang-nodejs="`nutanix.VirtualMachineV2`" pulumi-lang-dotnet="`nutanix.VirtualMachineV2`" pulumi-lang-go="`VirtualMachineV2`" pulumi-lang-python="`VirtualMachineV2`" pulumi-lang-yaml="`nutanix.VirtualMachineV2`" pulumi-lang-java="`nutanix.VirtualMachineV2`" pulumi-lang-hcl="`nutanix_virtual_machine_v2`">`nutanix.VirtualMachineV2`</span> may not include that externally attached disk in its <span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`">`disks`</span> state unless the corresponding disk backing is explicitly configured, which reduces drift noise.
         """
         return pulumi.get(self, "backing_infos")
 
@@ -123250,6 +127820,591 @@ class VirtualMachineV2VtpmConfigArgs:
         pulumi.set(self, "version", value)
 
 
+class VirtualSwitchV2ClusterArgsDict(TypedDict):
+    existing_bridge_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name of an existing OVS bridge on the host (e.g., <span pulumi-lang-nodejs="`br1`" pulumi-lang-dotnet="`Br1`" pulumi-lang-go="`br1`" pulumi-lang-python="`br1`" pulumi-lang-yaml="`br1`" pulumi-lang-java="`br1`" pulumi-lang-hcl="`br1`">`br1`</span>) to convert into this Virtual Switch. Setting this triggers the migration path.
+    """
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The UUID of the cluster where this Virtual Switch configuration is applied. When using the migrate path, this acts as the `clusterReference`.
+    """
+    gateway_ip_address: NotRequired[pulumi.Input[Optional['VirtualSwitchV2ClusterGatewayIpAddressArgsDict']]]
+    """
+    The Gateway IP address for the virtual switch on this cluster. *(Only applicable during Standard Create; ignored during Migration).*
+    """
+    hosts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VirtualSwitchV2ClusterHostArgsDict']]]]]
+    """
+    A list of host-specific configurations within the cluster. See <span pulumi-lang-nodejs="`hosts`" pulumi-lang-dotnet="`Hosts`" pulumi-lang-go="`hosts`" pulumi-lang-python="`hosts`" pulumi-lang-yaml="`hosts`" pulumi-lang-java="`hosts`" pulumi-lang-hcl="`hosts`">`hosts`</span> below.
+    """
+    vlan_identifier: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The VLAN Identifier for this virtual switch within the cluster. Set to <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> to explicitly remove VLAN tagging.
+    """
+
+@pulumi.input_type
+class VirtualSwitchV2ClusterArgs:
+    def __init__(__self__, *,
+                 existing_bridge_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 gateway_ip_address: pulumi.Input[Optional['VirtualSwitchV2ClusterGatewayIpAddressArgs']] = None,
+                 hosts: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualSwitchV2ClusterHostArgs']]]] = None,
+                 vlan_identifier: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] existing_bridge_name: The name of an existing OVS bridge on the host (e.g., <span pulumi-lang-nodejs="`br1`" pulumi-lang-dotnet="`Br1`" pulumi-lang-go="`br1`" pulumi-lang-python="`br1`" pulumi-lang-yaml="`br1`" pulumi-lang-java="`br1`" pulumi-lang-hcl="`br1`">`br1`</span>) to convert into this Virtual Switch. Setting this triggers the migration path.
+        :param pulumi.Input[_builtins.str] ext_id: The UUID of the cluster where this Virtual Switch configuration is applied. When using the migrate path, this acts as the `clusterReference`.
+        :param pulumi.Input['VirtualSwitchV2ClusterGatewayIpAddressArgs'] gateway_ip_address: The Gateway IP address for the virtual switch on this cluster. *(Only applicable during Standard Create; ignored during Migration).*
+        :param pulumi.Input[Sequence[pulumi.Input['VirtualSwitchV2ClusterHostArgs']]] hosts: A list of host-specific configurations within the cluster. See <span pulumi-lang-nodejs="`hosts`" pulumi-lang-dotnet="`Hosts`" pulumi-lang-go="`hosts`" pulumi-lang-python="`hosts`" pulumi-lang-yaml="`hosts`" pulumi-lang-java="`hosts`" pulumi-lang-hcl="`hosts`">`hosts`</span> below.
+        :param pulumi.Input[_builtins.int] vlan_identifier: The VLAN Identifier for this virtual switch within the cluster. Set to <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> to explicitly remove VLAN tagging.
+        """
+        if existing_bridge_name is not None:
+            pulumi.set(__self__, "existing_bridge_name", existing_bridge_name)
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if gateway_ip_address is not None:
+            pulumi.set(__self__, "gateway_ip_address", gateway_ip_address)
+        if hosts is not None:
+            pulumi.set(__self__, "hosts", hosts)
+        if vlan_identifier is not None:
+            pulumi.set(__self__, "vlan_identifier", vlan_identifier)
+
+    @_builtins.property
+    @pulumi.getter(name="existingBridgeName")
+    def existing_bridge_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of an existing OVS bridge on the host (e.g., <span pulumi-lang-nodejs="`br1`" pulumi-lang-dotnet="`Br1`" pulumi-lang-go="`br1`" pulumi-lang-python="`br1`" pulumi-lang-yaml="`br1`" pulumi-lang-java="`br1`" pulumi-lang-hcl="`br1`">`br1`</span>) to convert into this Virtual Switch. Setting this triggers the migration path.
+        """
+        return pulumi.get(self, "existing_bridge_name")
+
+    @existing_bridge_name.setter
+    def existing_bridge_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "existing_bridge_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The UUID of the cluster where this Virtual Switch configuration is applied. When using the migrate path, this acts as the `clusterReference`.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="gatewayIpAddress")
+    def gateway_ip_address(self) -> pulumi.Input[Optional['VirtualSwitchV2ClusterGatewayIpAddressArgs']]:
+        """
+        The Gateway IP address for the virtual switch on this cluster. *(Only applicable during Standard Create; ignored during Migration).*
+        """
+        return pulumi.get(self, "gateway_ip_address")
+
+    @gateway_ip_address.setter
+    def gateway_ip_address(self, value: pulumi.Input[Optional['VirtualSwitchV2ClusterGatewayIpAddressArgs']]):
+        pulumi.set(self, "gateway_ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def hosts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VirtualSwitchV2ClusterHostArgs']]]]:
+        """
+        A list of host-specific configurations within the cluster. See <span pulumi-lang-nodejs="`hosts`" pulumi-lang-dotnet="`Hosts`" pulumi-lang-go="`hosts`" pulumi-lang-python="`hosts`" pulumi-lang-yaml="`hosts`" pulumi-lang-java="`hosts`" pulumi-lang-hcl="`hosts`">`hosts`</span> below.
+        """
+        return pulumi.get(self, "hosts")
+
+    @hosts.setter
+    def hosts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualSwitchV2ClusterHostArgs']]]]):
+        pulumi.set(self, "hosts", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vlanIdentifier")
+    def vlan_identifier(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The VLAN Identifier for this virtual switch within the cluster. Set to <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> to explicitly remove VLAN tagging.
+        """
+        return pulumi.get(self, "vlan_identifier")
+
+    @vlan_identifier.setter
+    def vlan_identifier(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "vlan_identifier", value)
+
+
+class VirtualSwitchV2ClusterGatewayIpAddressArgsDict(TypedDict):
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The prefix length of the network to which this host IPv4 address belongs.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The IPv4 address of the host.
+    """
+
+@pulumi.input_type
+class VirtualSwitchV2ClusterGatewayIpAddressArgs:
+    def __init__(__self__, *,
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] prefix_length: The prefix length of the network to which this host IPv4 address belongs.
+        :param pulumi.Input[_builtins.str] value: The IPv4 address of the host.
+        """
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The prefix length of the network to which this host IPv4 address belongs.
+        """
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The IPv4 address of the host.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VirtualSwitchV2ClusterHostArgsDict(TypedDict):
+    active_uplink: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Specifies the active uplink interface when using the `ACTIVE_BACKUP` bond mode. *(Standard create only).*
+    """
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The UUID of the physical host.
+    """
+    host_nics: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    A list of physical Network Interface Cards (e.g., `["eth0", "eth1"]`) to bind to this virtual switch as uplinks. *(Only applicable during Standard Create; ignored during Migration).*
+    """
+    internal_bridge_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The internal logical bridge name (e.g., <span pulumi-lang-nodejs="`br0`" pulumi-lang-dotnet="`Br0`" pulumi-lang-go="`br0`" pulumi-lang-python="`br0`" pulumi-lang-yaml="`br0`" pulumi-lang-java="`br0`" pulumi-lang-hcl="`br0`">`br0`</span>). In practice, this is **read-only**. The standard create endpoint auto-allocates this and ignores user input. To target a specific bridge, use `clusters[].existing_bridge_name` instead.
+    """
+    ip_address: NotRequired[pulumi.Input[Optional['VirtualSwitchV2ClusterHostIpAddressArgsDict']]]
+    """
+    The IPv4 subnet address for the bridge interface on this host. *(Only applicable during Standard Create; ignored during Migration).*
+    """
+    route_table: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The internal route table number utilized by this host.
+    """
+
+@pulumi.input_type
+class VirtualSwitchV2ClusterHostArgs:
+    def __init__(__self__, *,
+                 active_uplink: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 host_nics: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 internal_bridge_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 ip_address: pulumi.Input[Optional['VirtualSwitchV2ClusterHostIpAddressArgs']] = None,
+                 route_table: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] active_uplink: Specifies the active uplink interface when using the `ACTIVE_BACKUP` bond mode. *(Standard create only).*
+        :param pulumi.Input[_builtins.str] ext_id: The UUID of the physical host.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] host_nics: A list of physical Network Interface Cards (e.g., `["eth0", "eth1"]`) to bind to this virtual switch as uplinks. *(Only applicable during Standard Create; ignored during Migration).*
+        :param pulumi.Input[_builtins.str] internal_bridge_name: The internal logical bridge name (e.g., <span pulumi-lang-nodejs="`br0`" pulumi-lang-dotnet="`Br0`" pulumi-lang-go="`br0`" pulumi-lang-python="`br0`" pulumi-lang-yaml="`br0`" pulumi-lang-java="`br0`" pulumi-lang-hcl="`br0`">`br0`</span>). In practice, this is **read-only**. The standard create endpoint auto-allocates this and ignores user input. To target a specific bridge, use `clusters[].existing_bridge_name` instead.
+        :param pulumi.Input['VirtualSwitchV2ClusterHostIpAddressArgs'] ip_address: The IPv4 subnet address for the bridge interface on this host. *(Only applicable during Standard Create; ignored during Migration).*
+        :param pulumi.Input[_builtins.int] route_table: The internal route table number utilized by this host.
+        """
+        if active_uplink is not None:
+            pulumi.set(__self__, "active_uplink", active_uplink)
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if host_nics is not None:
+            pulumi.set(__self__, "host_nics", host_nics)
+        if internal_bridge_name is not None:
+            pulumi.set(__self__, "internal_bridge_name", internal_bridge_name)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if route_table is not None:
+            pulumi.set(__self__, "route_table", route_table)
+
+    @_builtins.property
+    @pulumi.getter(name="activeUplink")
+    def active_uplink(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specifies the active uplink interface when using the `ACTIVE_BACKUP` bond mode. *(Standard create only).*
+        """
+        return pulumi.get(self, "active_uplink")
+
+    @active_uplink.setter
+    def active_uplink(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "active_uplink", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The UUID of the physical host.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hostNics")
+    def host_nics(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of physical Network Interface Cards (e.g., `["eth0", "eth1"]`) to bind to this virtual switch as uplinks. *(Only applicable during Standard Create; ignored during Migration).*
+        """
+        return pulumi.get(self, "host_nics")
+
+    @host_nics.setter
+    def host_nics(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "host_nics", value)
+
+    @_builtins.property
+    @pulumi.getter(name="internalBridgeName")
+    def internal_bridge_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The internal logical bridge name (e.g., <span pulumi-lang-nodejs="`br0`" pulumi-lang-dotnet="`Br0`" pulumi-lang-go="`br0`" pulumi-lang-python="`br0`" pulumi-lang-yaml="`br0`" pulumi-lang-java="`br0`" pulumi-lang-hcl="`br0`">`br0`</span>). In practice, this is **read-only**. The standard create endpoint auto-allocates this and ignores user input. To target a specific bridge, use `clusters[].existing_bridge_name` instead.
+        """
+        return pulumi.get(self, "internal_bridge_name")
+
+    @internal_bridge_name.setter
+    def internal_bridge_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "internal_bridge_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> pulumi.Input[Optional['VirtualSwitchV2ClusterHostIpAddressArgs']]:
+        """
+        The IPv4 subnet address for the bridge interface on this host. *(Only applicable during Standard Create; ignored during Migration).*
+        """
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: pulumi.Input[Optional['VirtualSwitchV2ClusterHostIpAddressArgs']]):
+        pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="routeTable")
+    def route_table(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The internal route table number utilized by this host.
+        """
+        return pulumi.get(self, "route_table")
+
+    @route_table.setter
+    def route_table(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "route_table", value)
+
+
+class VirtualSwitchV2ClusterHostIpAddressArgsDict(TypedDict):
+    ip: NotRequired[pulumi.Input[Optional['VirtualSwitchV2ClusterHostIpAddressIpArgsDict']]]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Prefix length of the IPv4 subnet.
+    """
+
+@pulumi.input_type
+class VirtualSwitchV2ClusterHostIpAddressArgs:
+    def __init__(__self__, *,
+                 ip: pulumi.Input[Optional['VirtualSwitchV2ClusterHostIpAddressIpArgs']] = None,
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] prefix_length: Prefix length of the IPv4 subnet.
+        """
+        if ip is not None:
+            pulumi.set(__self__, "ip", ip)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def ip(self) -> pulumi.Input[Optional['VirtualSwitchV2ClusterHostIpAddressIpArgs']]:
+        return pulumi.get(self, "ip")
+
+    @ip.setter
+    def ip(self, value: pulumi.Input[Optional['VirtualSwitchV2ClusterHostIpAddressIpArgs']]):
+        pulumi.set(self, "ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Prefix length of the IPv4 subnet.
+        """
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class VirtualSwitchV2ClusterHostIpAddressIpArgsDict(TypedDict):
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VirtualSwitchV2ClusterHostIpAddressIpArgs:
+    def __init__(__self__, *,
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VirtualSwitchV2IgmpSpecArgsDict(TypedDict):
+    is_snooping_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Enables IGMP snooping to optimize multicast traffic delivery.
+    """
+    querier_spec: NotRequired[pulumi.Input[Optional['VirtualSwitchV2IgmpSpecQuerierSpecArgsDict']]]
+    """
+    A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
+    """
+    snooping_timeout: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The timeout value in seconds before an inactive multicast group membership expires.
+    """
+
+@pulumi.input_type
+class VirtualSwitchV2IgmpSpecArgs:
+    def __init__(__self__, *,
+                 is_snooping_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 querier_spec: pulumi.Input[Optional['VirtualSwitchV2IgmpSpecQuerierSpecArgs']] = None,
+                 snooping_timeout: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_snooping_enabled: Enables IGMP snooping to optimize multicast traffic delivery.
+        :param pulumi.Input['VirtualSwitchV2IgmpSpecQuerierSpecArgs'] querier_spec: A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
+        :param pulumi.Input[_builtins.int] snooping_timeout: The timeout value in seconds before an inactive multicast group membership expires.
+        """
+        if is_snooping_enabled is not None:
+            pulumi.set(__self__, "is_snooping_enabled", is_snooping_enabled)
+        if querier_spec is not None:
+            pulumi.set(__self__, "querier_spec", querier_spec)
+        if snooping_timeout is not None:
+            pulumi.set(__self__, "snooping_timeout", snooping_timeout)
+
+    @_builtins.property
+    @pulumi.getter(name="isSnoopingEnabled")
+    def is_snooping_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Enables IGMP snooping to optimize multicast traffic delivery.
+        """
+        return pulumi.get(self, "is_snooping_enabled")
+
+    @is_snooping_enabled.setter
+    def is_snooping_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_snooping_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="querierSpec")
+    def querier_spec(self) -> pulumi.Input[Optional['VirtualSwitchV2IgmpSpecQuerierSpecArgs']]:
+        """
+        A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
+        """
+        return pulumi.get(self, "querier_spec")
+
+    @querier_spec.setter
+    def querier_spec(self, value: pulumi.Input[Optional['VirtualSwitchV2IgmpSpecQuerierSpecArgs']]):
+        pulumi.set(self, "querier_spec", value)
+
+    @_builtins.property
+    @pulumi.getter(name="snoopingTimeout")
+    def snooping_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The timeout value in seconds before an inactive multicast group membership expires.
+        """
+        return pulumi.get(self, "snooping_timeout")
+
+    @snooping_timeout.setter
+    def snooping_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "snooping_timeout", value)
+
+
+class VirtualSwitchV2IgmpSpecQuerierSpecArgsDict(TypedDict):
+    is_querier_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Enables the Virtual Switch to act as an IGMP querier.
+    """
+    vlan_id_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
+    """
+    A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
+    """
+
+@pulumi.input_type
+class VirtualSwitchV2IgmpSpecQuerierSpecArgs:
+    def __init__(__self__, *,
+                 is_querier_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 vlan_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] is_querier_enabled: Enables the Virtual Switch to act as an IGMP querier.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] vlan_id_lists: A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
+        """
+        if is_querier_enabled is not None:
+            pulumi.set(__self__, "is_querier_enabled", is_querier_enabled)
+        if vlan_id_lists is not None:
+            pulumi.set(__self__, "vlan_id_lists", vlan_id_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="isQuerierEnabled")
+    def is_querier_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Enables the Virtual Switch to act as an IGMP querier.
+        """
+        return pulumi.get(self, "is_querier_enabled")
+
+    @is_querier_enabled.setter
+    def is_querier_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_querier_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vlanIdLists")
+    def vlan_id_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
+        """
+        return pulumi.get(self, "vlan_id_lists")
+
+    @vlan_id_lists.setter
+    def vlan_id_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "vlan_id_lists", value)
+
+
+class VirtualSwitchV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VirtualSwitchV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class VirtualSwitchV2MetadataArgsDict(TypedDict):
+    category_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    owner_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    owner_user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    project_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    project_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VirtualSwitchV2MetadataArgs:
+    def __init__(__self__, *,
+                 category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_reference_id: pulumi.Input[Optional[_builtins.str]] = None):
+        if category_ids is not None:
+            pulumi.set(__self__, "category_ids", category_ids)
+        if owner_reference_id is not None:
+            pulumi.set(__self__, "owner_reference_id", owner_reference_id)
+        if owner_user_name is not None:
+            pulumi.set(__self__, "owner_user_name", owner_user_name)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if project_reference_id is not None:
+            pulumi.set(__self__, "project_reference_id", project_reference_id)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryIds")
+    def category_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "category_ids")
+
+    @category_ids.setter
+    def category_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "category_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ownerReferenceId")
+    def owner_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "owner_reference_id")
+
+    @owner_reference_id.setter
+    def owner_reference_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "owner_reference_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ownerUserName")
+    def owner_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "owner_user_name")
+
+    @owner_user_name.setter
+    def owner_user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "owner_user_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectReferenceId")
+    def project_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "project_reference_id")
+
+    @project_reference_id.setter
+    def project_reference_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_reference_id", value)
+
+
 class VmCdromInsertEjectV2BackingInfoArgsDict(TypedDict):
     data_sources: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoDataSourceArgsDict']]]]]
     """
@@ -126435,7 +131590,7 @@ class VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValue
     """
     - (Optional) The value associated with the key for this key-value pair.
 
-    See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+    See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
     """
 
 @pulumi.input_type
@@ -126447,7 +131602,7 @@ class VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValue
         :param pulumi.Input[_builtins.str] name: - (Optional) The key of this key-value pair
         :param pulumi.Input[_builtins.str] value: - (Optional) The value associated with the key for this key-value pair.
                
-               See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+               See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -126472,7 +131627,7 @@ class VmCloneV2GuestCustomizationConfigCloudInitCloudInitScriptCustomKeyKeyValue
         """
         - (Optional) The value associated with the key for this key-value pair.
 
-        See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+        See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
         """
         return pulumi.get(self, "value")
 
@@ -126648,7 +131803,7 @@ class VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValu
     """
     - (Optional) The value associated with the key for this key-value pair.
 
-    See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+    See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
     """
 
 @pulumi.input_type
@@ -126660,7 +131815,7 @@ class VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValu
         :param pulumi.Input[_builtins.str] name: - (Optional) The key of this key-value pair
         :param pulumi.Input[_builtins.str] value: - (Optional) The value associated with the key for this key-value pair.
                
-               See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+               See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -126685,7 +131840,7 @@ class VmCloneV2GuestCustomizationConfigSysprepSysprepScriptCustomKeyValueKeyValu
         """
         - (Optional) The value associated with the key for this key-value pair.
 
-        See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/cloneVm).
+        See detailed information in [Nutanix Clone Virtual Machine V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/cloneVm).
         """
         return pulumi.get(self, "value")
 
@@ -126712,6 +131867,1033 @@ class VmCloneV2GuestCustomizationConfigSysprepSysprepScriptUnattendXmlArgs:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigArgsDict(TypedDict):
+    profile: pulumi.Input['VmCloneV2GuestCustomizationProfileConfigProfileArgsDict']
+    config_override_spec: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecArgsDict']]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigArgs:
+    def __init__(__self__, *,
+                 profile: pulumi.Input['VmCloneV2GuestCustomizationProfileConfigProfileArgs'],
+                 config_override_spec: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecArgs']] = None):
+        pulumi.set(__self__, "profile", profile)
+        if config_override_spec is not None:
+            pulumi.set(__self__, "config_override_spec", config_override_spec)
+
+    @_builtins.property
+    @pulumi.getter
+    def profile(self) -> pulumi.Input['VmCloneV2GuestCustomizationProfileConfigProfileArgs']:
+        return pulumi.get(self, "profile")
+
+    @profile.setter
+    def profile(self, value: pulumi.Input['VmCloneV2GuestCustomizationProfileConfigProfileArgs']):
+        pulumi.set(self, "profile", value)
+
+    @_builtins.property
+    @pulumi.getter(name="configOverrideSpec")
+    def config_override_spec(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecArgs']]:
+        return pulumi.get(self, "config_override_spec")
+
+    @config_override_spec.setter
+    def config_override_spec(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecArgs']]):
+        pulumi.set(self, "config_override_spec", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecArgsDict(TypedDict):
+    sysprep_config: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgsDict']]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecArgs:
+    def __init__(__self__, *,
+                 sysprep_config: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs']] = None):
+        if sysprep_config is not None:
+            pulumi.set(__self__, "sysprep_config", sysprep_config)
+
+    @_builtins.property
+    @pulumi.getter(name="sysprepConfig")
+    def sysprep_config(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs']]:
+        return pulumi.get(self, "sysprep_config")
+
+    @sysprep_config.setter
+    def sysprep_config(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs']]):
+        pulumi.set(self, "sysprep_config", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgsDict(TypedDict):
+    customization: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgsDict']]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigArgs:
+    def __init__(__self__, *,
+                 customization: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs']] = None):
+        if customization is not None:
+            pulumi.set(__self__, "customization", customization)
+
+    @_builtins.property
+    @pulumi.getter
+    def customization(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs']]:
+        return pulumi.get(self, "customization")
+
+    @customization.setter
+    def customization(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs']]):
+        pulumi.set(self, "customization", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgsDict(TypedDict):
+    answer_file: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgsDict']]]
+    sysprep_params: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgsDict']]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationArgs:
+    def __init__(__self__, *,
+                 answer_file: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs']] = None,
+                 sysprep_params: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs']] = None):
+        if answer_file is not None:
+            pulumi.set(__self__, "answer_file", answer_file)
+        if sysprep_params is not None:
+            pulumi.set(__self__, "sysprep_params", sysprep_params)
+
+    @_builtins.property
+    @pulumi.getter(name="answerFile")
+    def answer_file(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs']]:
+        return pulumi.get(self, "answer_file")
+
+    @answer_file.setter
+    def answer_file(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs']]):
+        pulumi.set(self, "answer_file", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sysprepParams")
+    def sysprep_params(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs']]:
+        return pulumi.get(self, "sysprep_params")
+
+    @sysprep_params.setter
+    def sysprep_params(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs']]):
+        pulumi.set(self, "sysprep_params", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgsDict(TypedDict):
+    unattend_xml: pulumi.Input[_builtins.str]
+    """
+    - (Optional) Generic key value pair used for custom attributes.
+    """
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationAnswerFileArgs:
+    def __init__(__self__, *,
+                 unattend_xml: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] unattend_xml: - (Optional) Generic key value pair used for custom attributes.
+        """
+        pulumi.set(__self__, "unattend_xml", unattend_xml)
+
+    @_builtins.property
+    @pulumi.getter(name="unattendXml")
+    def unattend_xml(self) -> pulumi.Input[_builtins.str]:
+        """
+        - (Optional) Generic key value pair used for custom attributes.
+        """
+        return pulumi.get(self, "unattend_xml")
+
+    @unattend_xml.setter
+    def unattend_xml(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "unattend_xml", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgsDict(TypedDict):
+    first_logon_commands: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    general_settings: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict']]]
+    locale_settings: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict']]]
+    network_settings: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict']]]
+    workgroup_or_domain_info: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict']]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsArgs:
+    def __init__(__self__, *,
+                 first_logon_commands: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 general_settings: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']] = None,
+                 locale_settings: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']] = None,
+                 network_settings: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']] = None,
+                 workgroup_or_domain_info: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']] = None):
+        if first_logon_commands is not None:
+            pulumi.set(__self__, "first_logon_commands", first_logon_commands)
+        if general_settings is not None:
+            pulumi.set(__self__, "general_settings", general_settings)
+        if locale_settings is not None:
+            pulumi.set(__self__, "locale_settings", locale_settings)
+        if network_settings is not None:
+            pulumi.set(__self__, "network_settings", network_settings)
+        if workgroup_or_domain_info is not None:
+            pulumi.set(__self__, "workgroup_or_domain_info", workgroup_or_domain_info)
+
+    @_builtins.property
+    @pulumi.getter(name="firstLogonCommands")
+    def first_logon_commands(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "first_logon_commands")
+
+    @first_logon_commands.setter
+    def first_logon_commands(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "first_logon_commands", value)
+
+    @_builtins.property
+    @pulumi.getter(name="generalSettings")
+    def general_settings(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']]:
+        return pulumi.get(self, "general_settings")
+
+    @general_settings.setter
+    def general_settings(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']]):
+        pulumi.set(self, "general_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localeSettings")
+    def locale_settings(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']]:
+        return pulumi.get(self, "locale_settings")
+
+    @locale_settings.setter
+    def locale_settings(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']]):
+        pulumi.set(self, "locale_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkSettings")
+    def network_settings(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']]:
+        return pulumi.get(self, "network_settings")
+
+    @network_settings.setter
+    def network_settings(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']]):
+        pulumi.set(self, "network_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="workgroupOrDomainInfo")
+    def workgroup_or_domain_info(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']]:
+        return pulumi.get(self, "workgroup_or_domain_info")
+
+    @workgroup_or_domain_info.setter
+    def workgroup_or_domain_info(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']]):
+        pulumi.set(self, "workgroup_or_domain_info", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict(TypedDict):
+    administrator_password: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgsDict']]]
+    auto_logon_settings: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict']]]
+    computer_name: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict']]]
+    registered_organization: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgsDict']]]
+    registered_owner: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgsDict']]]
+    timezone: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgsDict']]]
+    windows_product_key: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgsDict']]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs:
+    def __init__(__self__, *,
+                 administrator_password: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs']] = None,
+                 auto_logon_settings: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']] = None,
+                 computer_name: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']] = None,
+                 registered_organization: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs']] = None,
+                 registered_owner: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs']] = None,
+                 timezone: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs']] = None,
+                 windows_product_key: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs']] = None):
+        if administrator_password is not None:
+            pulumi.set(__self__, "administrator_password", administrator_password)
+        if auto_logon_settings is not None:
+            pulumi.set(__self__, "auto_logon_settings", auto_logon_settings)
+        if computer_name is not None:
+            pulumi.set(__self__, "computer_name", computer_name)
+        if registered_organization is not None:
+            pulumi.set(__self__, "registered_organization", registered_organization)
+        if registered_owner is not None:
+            pulumi.set(__self__, "registered_owner", registered_owner)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
+        if windows_product_key is not None:
+            pulumi.set(__self__, "windows_product_key", windows_product_key)
+
+    @_builtins.property
+    @pulumi.getter(name="administratorPassword")
+    def administrator_password(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs']]:
+        return pulumi.get(self, "administrator_password")
+
+    @administrator_password.setter
+    def administrator_password(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs']]):
+        pulumi.set(self, "administrator_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoLogonSettings")
+    def auto_logon_settings(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']]:
+        return pulumi.get(self, "auto_logon_settings")
+
+    @auto_logon_settings.setter
+    def auto_logon_settings(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']]):
+        pulumi.set(self, "auto_logon_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computerName")
+    def computer_name(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']]:
+        return pulumi.get(self, "computer_name")
+
+    @computer_name.setter
+    def computer_name(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']]):
+        pulumi.set(self, "computer_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="registeredOrganization")
+    def registered_organization(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs']]:
+        return pulumi.get(self, "registered_organization")
+
+    @registered_organization.setter
+    def registered_organization(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs']]):
+        pulumi.set(self, "registered_organization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="registeredOwner")
+    def registered_owner(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs']]:
+        return pulumi.get(self, "registered_owner")
+
+    @registered_owner.setter
+    def registered_owner(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs']]):
+        pulumi.set(self, "registered_owner", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def timezone(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs']]:
+        return pulumi.get(self, "timezone")
+
+    @timezone.setter
+    def timezone(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs']]):
+        pulumi.set(self, "timezone", value)
+
+    @_builtins.property
+    @pulumi.getter(name="windowsProductKey")
+    def windows_product_key(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs']]:
+        return pulumi.get(self, "windows_product_key")
+
+    @windows_product_key.setter
+    def windows_product_key(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs']]):
+        pulumi.set(self, "windows_product_key", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAdministratorPasswordArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict(TypedDict):
+    logon_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs:
+    def __init__(__self__, *,
+                 logon_count: pulumi.Input[Optional[_builtins.int]] = None):
+        if logon_count is not None:
+            pulumi.set(__self__, "logon_count", logon_count)
+
+    @_builtins.property
+    @pulumi.getter(name="logonCount")
+    def logon_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "logon_count")
+
+    @logon_count.setter
+    def logon_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "logon_count", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    use_vm_name: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_vm_name: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if use_vm_name is not None:
+            pulumi.set(__self__, "use_vm_name", use_vm_name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useVmName")
+    def use_vm_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "use_vm_name")
+
+    @use_vm_name.setter
+    def use_vm_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_vm_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOrganizationArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsRegisteredOwnerArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsTimezoneArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsGeneralSettingsWindowsProductKeyArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict(TypedDict):
+    system_locale: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgsDict']]]
+    ui_language: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgsDict']]]
+    user_locale: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgsDict']]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs:
+    def __init__(__self__, *,
+                 system_locale: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs']] = None,
+                 ui_language: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs']] = None,
+                 user_locale: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs']] = None):
+        if system_locale is not None:
+            pulumi.set(__self__, "system_locale", system_locale)
+        if ui_language is not None:
+            pulumi.set(__self__, "ui_language", ui_language)
+        if user_locale is not None:
+            pulumi.set(__self__, "user_locale", user_locale)
+
+    @_builtins.property
+    @pulumi.getter(name="systemLocale")
+    def system_locale(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs']]:
+        return pulumi.get(self, "system_locale")
+
+    @system_locale.setter
+    def system_locale(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs']]):
+        pulumi.set(self, "system_locale", value)
+
+    @_builtins.property
+    @pulumi.getter(name="uiLanguage")
+    def ui_language(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs']]:
+        return pulumi.get(self, "ui_language")
+
+    @ui_language.setter
+    def ui_language(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs']]):
+        pulumi.set(self, "ui_language", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userLocale")
+    def user_locale(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs']]:
+        return pulumi.get(self, "user_locale")
+
+    @user_locale.setter
+    def user_locale(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs']]):
+        pulumi.set(self, "user_locale", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsSystemLocaleArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUiLanguageArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsLocaleSettingsUserLocaleArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict(TypedDict):
+    nic_config_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict']]]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs:
+    def __init__(__self__, *,
+                 nic_config_lists: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]] = None):
+        if nic_config_lists is not None:
+            pulumi.set(__self__, "nic_config_lists", nic_config_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="nicConfigLists")
+    def nic_config_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]]:
+        return pulumi.get(self, "nic_config_lists")
+
+    @nic_config_lists.setter
+    def nic_config_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]]):
+        pulumi.set(self, "nic_config_lists", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict(TypedDict):
+    dns_config: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict']]]
+    ipv4_config: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict']]]
+    """
+    - (Optional) The IP address configurations.
+    """
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs:
+    def __init__(__self__, *,
+                 dns_config: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']] = None,
+                 ipv4_config: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs']] = None):
+        """
+        :param pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs'] ipv4_config: - (Optional) The IP address configurations.
+        """
+        if dns_config is not None:
+            pulumi.set(__self__, "dns_config", dns_config)
+        if ipv4_config is not None:
+            pulumi.set(__self__, "ipv4_config", ipv4_config)
+
+    @_builtins.property
+    @pulumi.getter(name="dnsConfig")
+    def dns_config(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']]:
+        return pulumi.get(self, "dns_config")
+
+    @dns_config.setter
+    def dns_config(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']]):
+        pulumi.set(self, "dns_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4Config")
+    def ipv4_config(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs']]:
+        """
+        - (Optional) The IP address configurations.
+        """
+        return pulumi.get(self, "ipv4_config")
+
+    @ipv4_config.setter
+    def ipv4_config(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs']]):
+        pulumi.set(self, "ipv4_config", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict(TypedDict):
+    alternate_dns_server_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    preferred_dns_server_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs:
+    def __init__(__self__, *,
+                 alternate_dns_server_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 preferred_dns_server_address: pulumi.Input[Optional[_builtins.str]] = None):
+        if alternate_dns_server_addresses is not None:
+            pulumi.set(__self__, "alternate_dns_server_addresses", alternate_dns_server_addresses)
+        if preferred_dns_server_address is not None:
+            pulumi.set(__self__, "preferred_dns_server_address", preferred_dns_server_address)
+
+    @_builtins.property
+    @pulumi.getter(name="alternateDnsServerAddresses")
+    def alternate_dns_server_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "alternate_dns_server_addresses")
+
+    @alternate_dns_server_addresses.setter
+    def alternate_dns_server_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "alternate_dns_server_addresses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="preferredDnsServerAddress")
+    def preferred_dns_server_address(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "preferred_dns_server_address")
+
+    @preferred_dns_server_address.setter
+    def preferred_dns_server_address(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "preferred_dns_server_address", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict(TypedDict):
+    default_gateways: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    ip_address: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgsDict']]]
+    use_dhcp: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs:
+    def __init__(__self__, *,
+                 default_gateways: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 ip_address: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs']] = None,
+                 use_dhcp: pulumi.Input[Optional[_builtins.bool]] = None):
+        if default_gateways is not None:
+            pulumi.set(__self__, "default_gateways", default_gateways)
+        if ip_address is not None:
+            pulumi.set(__self__, "ip_address", ip_address)
+        if use_dhcp is not None:
+            pulumi.set(__self__, "use_dhcp", use_dhcp)
+
+    @_builtins.property
+    @pulumi.getter(name="defaultGateways")
+    def default_gateways(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "default_gateways")
+
+    @default_gateways.setter
+    def default_gateways(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "default_gateways", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ipAddress")
+    def ip_address(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs']]:
+        return pulumi.get(self, "ip_address")
+
+    @ip_address.setter
+    def ip_address(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs']]):
+        pulumi.set(self, "ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useDhcp")
+    def use_dhcp(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "use_dhcp")
+
+    @use_dhcp.setter
+    def use_dhcp(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_dhcp", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgsDict(TypedDict):
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Ip address.
+    """
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigIpAddressArgs:
+    def __init__(__self__, *,
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] prefix_length: - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+        :param pulumi.Input[_builtins.str] value: - Ip address.
+        """
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        - (Optional) The prefix length of the network to which this host IPv4 address belongs.
+        """
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Ip address.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict(TypedDict):
+    discard: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    domain_settings: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict']]]
+    workgroup: NotRequired[pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict']]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs:
+    def __init__(__self__, *,
+                 discard: pulumi.Input[Optional[_builtins.bool]] = None,
+                 domain_settings: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']] = None,
+                 workgroup: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']] = None):
+        if discard is not None:
+            pulumi.set(__self__, "discard", discard)
+        if domain_settings is not None:
+            pulumi.set(__self__, "domain_settings", domain_settings)
+        if workgroup is not None:
+            pulumi.set(__self__, "workgroup", workgroup)
+
+    @_builtins.property
+    @pulumi.getter
+    def discard(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "discard")
+
+    @discard.setter
+    def discard(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "discard", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domainSettings")
+    def domain_settings(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']]:
+        return pulumi.get(self, "domain_settings")
+
+    @domain_settings.setter
+    def domain_settings(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']]):
+        pulumi.set(self, "domain_settings", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def workgroup(self) -> pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']]:
+        return pulumi.get(self, "workgroup")
+
+    @workgroup.setter
+    def workgroup(self, value: pulumi.Input[Optional['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']]):
+        pulumi.set(self, "workgroup", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict(TypedDict):
+    credentials: pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict']
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs:
+    def __init__(__self__, *,
+                 credentials: pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']):
+        pulumi.set(__self__, "credentials", credentials)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']:
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: pulumi.Input['VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']):
+        pulumi.set(self, "credentials", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict(TypedDict):
+    domain_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    username: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs:
+    def __init__(__self__, *,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 username: pulumi.Input[Optional[_builtins.str]] = None):
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "username", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    - (Optional) The name for the vm.
+    """
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigConfigOverrideSpecSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] name: - (Optional) The name for the vm.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        - (Optional) The name for the vm.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+
+class VmCloneV2GuestCustomizationProfileConfigProfileArgsDict(TypedDict):
+    ext_id: pulumi.Input[_builtins.str]
+
+@pulumi.input_type
+class VmCloneV2GuestCustomizationProfileConfigProfileArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[_builtins.str]):
+        pulumi.set(__self__, "ext_id", ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "ext_id", value)
 
 
 class VmCloneV2GuestToolArgsDict(TypedDict):
@@ -129498,7 +135680,7 @@ class VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArgsDict(Ty
     """
     - (Optional) The value associated with the key for this key-value pair.
 
-    See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+    See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
     """
 
 @pulumi.input_type
@@ -129510,7 +135692,7 @@ class VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArgs:
         :param pulumi.Input[_builtins.str] name: - (Optional) The key of this key-value pair
         :param pulumi.Input[_builtins.str] value: - (Optional) The value associated with the key for this key-value pair.
                
-               See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+               See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -129535,7 +135717,7 @@ class VmGcUpdateV2ConfigCloudInitCloudInitScriptCustomKeyKeyValuePairArgs:
         """
         - (Optional) The value associated with the key for this key-value pair.
 
-        See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+        See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
         """
         return pulumi.get(self, "value")
 
@@ -129711,7 +135893,7 @@ class VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArgsDict(T
     """
     - (Optional) The value associated with the key for this key-value pair.
 
-    See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+    See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
     """
 
 @pulumi.input_type
@@ -129723,7 +135905,7 @@ class VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArgs:
         :param pulumi.Input[_builtins.str] name: - (Optional) The key of this key-value pair
         :param pulumi.Input[_builtins.str] value: - (Optional) The value associated with the key for this key-value pair.
                
-               See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+               See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -129748,7 +135930,7 @@ class VmGcUpdateV2ConfigSysprepSysprepScriptCustomKeyValueKeyValuePairArgs:
         """
         - (Optional) The value associated with the key for this key-value pair.
 
-        See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/customizeGuestVm).
+        See detailed information in [Nutanix Customize Gest VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/customizeGuestVm).
         """
         return pulumi.get(self, "value")
 
@@ -129777,12 +135959,928 @@ class VmGcUpdateV2ConfigSysprepSysprepScriptUnattendXmlArgs:
         pulumi.set(self, "value", value)
 
 
+class VmGuestCustomizationProfileV2ConfigArgsDict(TypedDict):
+    sysprep_config: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigArgsDict']]]
+    """
+    Configuration for customization of a Windows guest operating system.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigArgs:
+    def __init__(__self__, *,
+                 sysprep_config: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigArgs']] = None):
+        """
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigArgs'] sysprep_config: Configuration for customization of a Windows guest operating system.
+        """
+        if sysprep_config is not None:
+            pulumi.set(__self__, "sysprep_config", sysprep_config)
+
+    @_builtins.property
+    @pulumi.getter(name="sysprepConfig")
+    def sysprep_config(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigArgs']]:
+        """
+        Configuration for customization of a Windows guest operating system.
+        """
+        return pulumi.get(self, "sysprep_config")
+
+    @sysprep_config.setter
+    def sysprep_config(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigArgs']]):
+        pulumi.set(self, "sysprep_config", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigArgsDict(TypedDict):
+    customization: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgsDict']]]
+    """
+    Either specify the values for the parameters or an unattend XML file.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigArgs:
+    def __init__(__self__, *,
+                 customization: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgs']] = None):
+        """
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgs'] customization: Either specify the values for the parameters or an unattend XML file.
+        """
+        if customization is not None:
+            pulumi.set(__self__, "customization", customization)
+
+    @_builtins.property
+    @pulumi.getter
+    def customization(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgs']]:
+        """
+        Either specify the values for the parameters or an unattend XML file.
+        """
+        return pulumi.get(self, "customization")
+
+    @customization.setter
+    def customization(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgs']]):
+        pulumi.set(self, "customization", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgsDict(TypedDict):
+    answer_file: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgsDict']]]
+    """
+    The answer file (unattend.xml) for sysprep.
+    """
+    sysprep_params: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgsDict']]]
+    """
+    A set of various unattended settings supported by Windows.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationArgs:
+    def __init__(__self__, *,
+                 answer_file: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgs']] = None,
+                 sysprep_params: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgs']] = None):
+        """
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgs'] answer_file: The answer file (unattend.xml) for sysprep.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgs'] sysprep_params: A set of various unattended settings supported by Windows.
+        """
+        if answer_file is not None:
+            pulumi.set(__self__, "answer_file", answer_file)
+        if sysprep_params is not None:
+            pulumi.set(__self__, "sysprep_params", sysprep_params)
+
+    @_builtins.property
+    @pulumi.getter(name="answerFile")
+    def answer_file(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgs']]:
+        """
+        The answer file (unattend.xml) for sysprep.
+        """
+        return pulumi.get(self, "answer_file")
+
+    @answer_file.setter
+    def answer_file(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgs']]):
+        pulumi.set(self, "answer_file", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sysprepParams")
+    def sysprep_params(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgs']]:
+        """
+        A set of various unattended settings supported by Windows.
+        """
+        return pulumi.get(self, "sysprep_params")
+
+    @sysprep_params.setter
+    def sysprep_params(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgs']]):
+        pulumi.set(self, "sysprep_params", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgsDict(TypedDict):
+    unattend_xml: pulumi.Input[_builtins.str]
+    """
+    The unattend XML file as a string value. Note that double quotes in the XML file need to be escaped.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationAnswerFileArgs:
+    def __init__(__self__, *,
+                 unattend_xml: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] unattend_xml: The unattend XML file as a string value. Note that double quotes in the XML file need to be escaped.
+        """
+        pulumi.set(__self__, "unattend_xml", unattend_xml)
+
+    @_builtins.property
+    @pulumi.getter(name="unattendXml")
+    def unattend_xml(self) -> pulumi.Input[_builtins.str]:
+        """
+        The unattend XML file as a string value. Note that double quotes in the XML file need to be escaped.
+        """
+        return pulumi.get(self, "unattend_xml")
+
+    @unattend_xml.setter
+    def unattend_xml(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "unattend_xml", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgsDict(TypedDict):
+    first_logon_commands: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of commands to be executed automatically when a user logs in for the first time after Windows setup.
+    """
+    general_settings: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict']]]
+    """
+    A set of general unattended settings supported by Windows.
+    """
+    locale_settings: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict']]]
+    """
+    Language and locale settings for the system and the user.
+    """
+    network_settings: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict']]]
+    """
+    Network settings to apply to the NICs attached to the VM.
+    """
+    workgroup_or_domain_info: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict']]]
+    """
+    JoinWorkgroup or JoinDomain settings of the computer.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsArgs:
+    def __init__(__self__, *,
+                 first_logon_commands: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 general_settings: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']] = None,
+                 locale_settings: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']] = None,
+                 network_settings: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']] = None,
+                 workgroup_or_domain_info: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] first_logon_commands: List of commands to be executed automatically when a user logs in for the first time after Windows setup.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs'] general_settings: A set of general unattended settings supported by Windows.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs'] locale_settings: Language and locale settings for the system and the user.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs'] network_settings: Network settings to apply to the NICs attached to the VM.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs'] workgroup_or_domain_info: JoinWorkgroup or JoinDomain settings of the computer.
+        """
+        if first_logon_commands is not None:
+            pulumi.set(__self__, "first_logon_commands", first_logon_commands)
+        if general_settings is not None:
+            pulumi.set(__self__, "general_settings", general_settings)
+        if locale_settings is not None:
+            pulumi.set(__self__, "locale_settings", locale_settings)
+        if network_settings is not None:
+            pulumi.set(__self__, "network_settings", network_settings)
+        if workgroup_or_domain_info is not None:
+            pulumi.set(__self__, "workgroup_or_domain_info", workgroup_or_domain_info)
+
+    @_builtins.property
+    @pulumi.getter(name="firstLogonCommands")
+    def first_logon_commands(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of commands to be executed automatically when a user logs in for the first time after Windows setup.
+        """
+        return pulumi.get(self, "first_logon_commands")
+
+    @first_logon_commands.setter
+    def first_logon_commands(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "first_logon_commands", value)
+
+    @_builtins.property
+    @pulumi.getter(name="generalSettings")
+    def general_settings(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']]:
+        """
+        A set of general unattended settings supported by Windows.
+        """
+        return pulumi.get(self, "general_settings")
+
+    @general_settings.setter
+    def general_settings(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs']]):
+        pulumi.set(self, "general_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localeSettings")
+    def locale_settings(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']]:
+        """
+        Language and locale settings for the system and the user.
+        """
+        return pulumi.get(self, "locale_settings")
+
+    @locale_settings.setter
+    def locale_settings(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs']]):
+        pulumi.set(self, "locale_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkSettings")
+    def network_settings(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']]:
+        """
+        Network settings to apply to the NICs attached to the VM.
+        """
+        return pulumi.get(self, "network_settings")
+
+    @network_settings.setter
+    def network_settings(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs']]):
+        pulumi.set(self, "network_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="workgroupOrDomainInfo")
+    def workgroup_or_domain_info(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']]:
+        """
+        JoinWorkgroup or JoinDomain settings of the computer.
+        """
+        return pulumi.get(self, "workgroup_or_domain_info")
+
+    @workgroup_or_domain_info.setter
+    def workgroup_or_domain_info(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs']]):
+        pulumi.set(self, "workgroup_or_domain_info", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgsDict(TypedDict):
+    administrator_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Password to be configured for built-in Administrator account.
+    """
+    auto_logon_settings: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict']]]
+    """
+    Autologon settings.
+    """
+    computer_name: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict']]]
+    """
+    Mechanism to use to generate the computer name of the VM. Either <span pulumi-lang-nodejs="`useVmName`" pulumi-lang-dotnet="`UseVmName`" pulumi-lang-go="`useVmName`" pulumi-lang-python="`use_vm_name`" pulumi-lang-yaml="`useVmName`" pulumi-lang-java="`useVmName`" pulumi-lang-hcl="`use_vm_name`">`useVmName`</span> or <span pulumi-lang-nodejs="`mustProvideDuringDeployment`" pulumi-lang-dotnet="`MustProvideDuringDeployment`" pulumi-lang-go="`mustProvideDuringDeployment`" pulumi-lang-python="`must_provide_during_deployment`" pulumi-lang-yaml="`mustProvideDuringDeployment`" pulumi-lang-java="`mustProvideDuringDeployment`" pulumi-lang-hcl="`must_provide_during_deployment`">`mustProvideDuringDeployment`</span> should be set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
+    """
+    registered_organization: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the organization of the end user.
+    """
+    registered_owner: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Full name of the end user.
+    """
+    timezone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The computer's time zone in string format.
+    """
+    windows_product_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The product key to use to install and activate Windows.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsArgs:
+    def __init__(__self__, *,
+                 administrator_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 auto_logon_settings: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']] = None,
+                 computer_name: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']] = None,
+                 registered_organization: pulumi.Input[Optional[_builtins.str]] = None,
+                 registered_owner: pulumi.Input[Optional[_builtins.str]] = None,
+                 timezone: pulumi.Input[Optional[_builtins.str]] = None,
+                 windows_product_key: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] administrator_password: Password to be configured for built-in Administrator account.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs'] auto_logon_settings: Autologon settings.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs'] computer_name: Mechanism to use to generate the computer name of the VM. Either <span pulumi-lang-nodejs="`useVmName`" pulumi-lang-dotnet="`UseVmName`" pulumi-lang-go="`useVmName`" pulumi-lang-python="`use_vm_name`" pulumi-lang-yaml="`useVmName`" pulumi-lang-java="`useVmName`" pulumi-lang-hcl="`use_vm_name`">`useVmName`</span> or <span pulumi-lang-nodejs="`mustProvideDuringDeployment`" pulumi-lang-dotnet="`MustProvideDuringDeployment`" pulumi-lang-go="`mustProvideDuringDeployment`" pulumi-lang-python="`must_provide_during_deployment`" pulumi-lang-yaml="`mustProvideDuringDeployment`" pulumi-lang-java="`mustProvideDuringDeployment`" pulumi-lang-hcl="`must_provide_during_deployment`">`mustProvideDuringDeployment`</span> should be set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
+        :param pulumi.Input[_builtins.str] registered_organization: Name of the organization of the end user.
+        :param pulumi.Input[_builtins.str] registered_owner: Full name of the end user.
+        :param pulumi.Input[_builtins.str] timezone: The computer's time zone in string format.
+        :param pulumi.Input[_builtins.str] windows_product_key: The product key to use to install and activate Windows.
+        """
+        if administrator_password is not None:
+            pulumi.set(__self__, "administrator_password", administrator_password)
+        if auto_logon_settings is not None:
+            pulumi.set(__self__, "auto_logon_settings", auto_logon_settings)
+        if computer_name is not None:
+            pulumi.set(__self__, "computer_name", computer_name)
+        if registered_organization is not None:
+            pulumi.set(__self__, "registered_organization", registered_organization)
+        if registered_owner is not None:
+            pulumi.set(__self__, "registered_owner", registered_owner)
+        if timezone is not None:
+            pulumi.set(__self__, "timezone", timezone)
+        if windows_product_key is not None:
+            pulumi.set(__self__, "windows_product_key", windows_product_key)
+
+    @_builtins.property
+    @pulumi.getter(name="administratorPassword")
+    def administrator_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Password to be configured for built-in Administrator account.
+        """
+        return pulumi.get(self, "administrator_password")
+
+    @administrator_password.setter
+    def administrator_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "administrator_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="autoLogonSettings")
+    def auto_logon_settings(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']]:
+        """
+        Autologon settings.
+        """
+        return pulumi.get(self, "auto_logon_settings")
+
+    @auto_logon_settings.setter
+    def auto_logon_settings(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs']]):
+        pulumi.set(self, "auto_logon_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="computerName")
+    def computer_name(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']]:
+        """
+        Mechanism to use to generate the computer name of the VM. Either <span pulumi-lang-nodejs="`useVmName`" pulumi-lang-dotnet="`UseVmName`" pulumi-lang-go="`useVmName`" pulumi-lang-python="`use_vm_name`" pulumi-lang-yaml="`useVmName`" pulumi-lang-java="`useVmName`" pulumi-lang-hcl="`use_vm_name`">`useVmName`</span> or <span pulumi-lang-nodejs="`mustProvideDuringDeployment`" pulumi-lang-dotnet="`MustProvideDuringDeployment`" pulumi-lang-go="`mustProvideDuringDeployment`" pulumi-lang-python="`must_provide_during_deployment`" pulumi-lang-yaml="`mustProvideDuringDeployment`" pulumi-lang-java="`mustProvideDuringDeployment`" pulumi-lang-hcl="`must_provide_during_deployment`">`mustProvideDuringDeployment`</span> should be set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
+        """
+        return pulumi.get(self, "computer_name")
+
+    @computer_name.setter
+    def computer_name(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs']]):
+        pulumi.set(self, "computer_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="registeredOrganization")
+    def registered_organization(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the organization of the end user.
+        """
+        return pulumi.get(self, "registered_organization")
+
+    @registered_organization.setter
+    def registered_organization(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "registered_organization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="registeredOwner")
+    def registered_owner(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Full name of the end user.
+        """
+        return pulumi.get(self, "registered_owner")
+
+    @registered_owner.setter
+    def registered_owner(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "registered_owner", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def timezone(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The computer's time zone in string format.
+        """
+        return pulumi.get(self, "timezone")
+
+    @timezone.setter
+    def timezone(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "timezone", value)
+
+    @_builtins.property
+    @pulumi.getter(name="windowsProductKey")
+    def windows_product_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The product key to use to install and activate Windows.
+        """
+        return pulumi.get(self, "windows_product_key")
+
+    @windows_product_key.setter
+    def windows_product_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "windows_product_key", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgsDict(TypedDict):
+    logon_count: pulumi.Input[_builtins.int]
+    """
+    The number of automatic logons allowed for the computer.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsAutoLogonSettingsArgs:
+    def __init__(__self__, *,
+                 logon_count: pulumi.Input[_builtins.int]):
+        """
+        :param pulumi.Input[_builtins.int] logon_count: The number of automatic logons allowed for the computer.
+        """
+        pulumi.set(__self__, "logon_count", logon_count)
+
+    @_builtins.property
+    @pulumi.getter(name="logonCount")
+    def logon_count(self) -> pulumi.Input[_builtins.int]:
+        """
+        The number of automatic logons allowed for the computer.
+        """
+        return pulumi.get(self, "logon_count")
+
+    @logon_count.setter
+    def logon_count(self, value: pulumi.Input[_builtins.int]):
+        pulumi.set(self, "logon_count", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgsDict(TypedDict):
+    must_provide_during_deployment: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the computer name must be provided during deployment.
+    """
+    use_vm_name: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to use the VM name as the computer name.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsGeneralSettingsComputerNameArgs:
+    def __init__(__self__, *,
+                 must_provide_during_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_vm_name: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] must_provide_during_deployment: Whether the computer name must be provided during deployment.
+        :param pulumi.Input[_builtins.bool] use_vm_name: Whether to use the VM name as the computer name.
+        """
+        if must_provide_during_deployment is not None:
+            pulumi.set(__self__, "must_provide_during_deployment", must_provide_during_deployment)
+        if use_vm_name is not None:
+            pulumi.set(__self__, "use_vm_name", use_vm_name)
+
+    @_builtins.property
+    @pulumi.getter(name="mustProvideDuringDeployment")
+    def must_provide_during_deployment(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the computer name must be provided during deployment.
+        """
+        return pulumi.get(self, "must_provide_during_deployment")
+
+    @must_provide_during_deployment.setter
+    def must_provide_during_deployment(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "must_provide_during_deployment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useVmName")
+    def use_vm_name(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to use the VM name as the computer name.
+        """
+        return pulumi.get(self, "use_vm_name")
+
+    @use_vm_name.setter
+    def use_vm_name(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_vm_name", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgsDict(TypedDict):
+    system_locale: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Default language to use for non-Unicode programs.
+    """
+    ui_language: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Default system language to use to display UI items.
+    """
+    user_locale: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Per-user settings for formatting dates, times, currency, and numbers.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsLocaleSettingsArgs:
+    def __init__(__self__, *,
+                 system_locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 ui_language: pulumi.Input[Optional[_builtins.str]] = None,
+                 user_locale: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] system_locale: Default language to use for non-Unicode programs.
+        :param pulumi.Input[_builtins.str] ui_language: Default system language to use to display UI items.
+        :param pulumi.Input[_builtins.str] user_locale: Per-user settings for formatting dates, times, currency, and numbers.
+        """
+        if system_locale is not None:
+            pulumi.set(__self__, "system_locale", system_locale)
+        if ui_language is not None:
+            pulumi.set(__self__, "ui_language", ui_language)
+        if user_locale is not None:
+            pulumi.set(__self__, "user_locale", user_locale)
+
+    @_builtins.property
+    @pulumi.getter(name="systemLocale")
+    def system_locale(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Default language to use for non-Unicode programs.
+        """
+        return pulumi.get(self, "system_locale")
+
+    @system_locale.setter
+    def system_locale(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "system_locale", value)
+
+    @_builtins.property
+    @pulumi.getter(name="uiLanguage")
+    def ui_language(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Default system language to use to display UI items.
+        """
+        return pulumi.get(self, "ui_language")
+
+    @ui_language.setter
+    def ui_language(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ui_language", value)
+
+    @_builtins.property
+    @pulumi.getter(name="userLocale")
+    def user_locale(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Per-user settings for formatting dates, times, currency, and numbers.
+        """
+        return pulumi.get(self, "user_locale")
+
+    @user_locale.setter
+    def user_locale(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "user_locale", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgsDict(TypedDict):
+    nic_config_lists: pulumi.Input[Sequence[pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict']]]
+    """
+    List of NIC configurations to be applied to the NICs attached to the VM in serial order.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsArgs:
+    def __init__(__self__, *,
+                 nic_config_lists: pulumi.Input[Sequence[pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]] nic_config_lists: List of NIC configurations to be applied to the NICs attached to the VM in serial order.
+        """
+        pulumi.set(__self__, "nic_config_lists", nic_config_lists)
+
+    @_builtins.property
+    @pulumi.getter(name="nicConfigLists")
+    def nic_config_lists(self) -> pulumi.Input[Sequence[pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]:
+        """
+        List of NIC configurations to be applied to the NICs attached to the VM in serial order.
+        """
+        return pulumi.get(self, "nic_config_lists")
+
+    @nic_config_lists.setter
+    def nic_config_lists(self, value: pulumi.Input[Sequence[pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs']]]):
+        pulumi.set(self, "nic_config_lists", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgsDict(TypedDict):
+    ipv4_config: pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict']
+    """
+    Mechanism to configure IPv4 settings of the NIC.
+    """
+    dns_config: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict']]]
+    """
+    DNS configuration to be applied to the NIC.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListArgs:
+    def __init__(__self__, *,
+                 ipv4_config: pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs'],
+                 dns_config: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']] = None):
+        """
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs'] ipv4_config: Mechanism to configure IPv4 settings of the NIC.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs'] dns_config: DNS configuration to be applied to the NIC.
+        """
+        pulumi.set(__self__, "ipv4_config", ipv4_config)
+        if dns_config is not None:
+            pulumi.set(__self__, "dns_config", dns_config)
+
+    @_builtins.property
+    @pulumi.getter(name="ipv4Config")
+    def ipv4_config(self) -> pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs']:
+        """
+        Mechanism to configure IPv4 settings of the NIC.
+        """
+        return pulumi.get(self, "ipv4_config")
+
+    @ipv4_config.setter
+    def ipv4_config(self, value: pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs']):
+        pulumi.set(self, "ipv4_config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dnsConfig")
+    def dns_config(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']]:
+        """
+        DNS configuration to be applied to the NIC.
+        """
+        return pulumi.get(self, "dns_config")
+
+    @dns_config.setter
+    def dns_config(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs']]):
+        pulumi.set(self, "dns_config", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgsDict(TypedDict):
+    preferred_dns_server_address: pulumi.Input[_builtins.str]
+    """
+    An IPv4 address preferred to search first for the DNS server.
+    """
+    alternate_dns_server_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    List of IPv4 addresses to look for after preferred DNS server.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListDnsConfigArgs:
+    def __init__(__self__, *,
+                 preferred_dns_server_address: pulumi.Input[_builtins.str],
+                 alternate_dns_server_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] preferred_dns_server_address: An IPv4 address preferred to search first for the DNS server.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] alternate_dns_server_addresses: List of IPv4 addresses to look for after preferred DNS server.
+        """
+        pulumi.set(__self__, "preferred_dns_server_address", preferred_dns_server_address)
+        if alternate_dns_server_addresses is not None:
+            pulumi.set(__self__, "alternate_dns_server_addresses", alternate_dns_server_addresses)
+
+    @_builtins.property
+    @pulumi.getter(name="preferredDnsServerAddress")
+    def preferred_dns_server_address(self) -> pulumi.Input[_builtins.str]:
+        """
+        An IPv4 address preferred to search first for the DNS server.
+        """
+        return pulumi.get(self, "preferred_dns_server_address")
+
+    @preferred_dns_server_address.setter
+    def preferred_dns_server_address(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "preferred_dns_server_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="alternateDnsServerAddresses")
+    def alternate_dns_server_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of IPv4 addresses to look for after preferred DNS server.
+        """
+        return pulumi.get(self, "alternate_dns_server_addresses")
+
+    @alternate_dns_server_addresses.setter
+    def alternate_dns_server_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "alternate_dns_server_addresses", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgsDict(TypedDict):
+    must_provide_during_deployment: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether IPv4 configuration must be provided during deployment.
+    """
+    use_dhcp: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to use DHCP for IPv4 configuration.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsNetworkSettingsNicConfigListIpv4ConfigArgs:
+    def __init__(__self__, *,
+                 must_provide_during_deployment: pulumi.Input[Optional[_builtins.bool]] = None,
+                 use_dhcp: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] must_provide_during_deployment: Whether IPv4 configuration must be provided during deployment.
+        :param pulumi.Input[_builtins.bool] use_dhcp: Whether to use DHCP for IPv4 configuration.
+        """
+        if must_provide_during_deployment is not None:
+            pulumi.set(__self__, "must_provide_during_deployment", must_provide_during_deployment)
+        if use_dhcp is not None:
+            pulumi.set(__self__, "use_dhcp", use_dhcp)
+
+    @_builtins.property
+    @pulumi.getter(name="mustProvideDuringDeployment")
+    def must_provide_during_deployment(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether IPv4 configuration must be provided during deployment.
+        """
+        return pulumi.get(self, "must_provide_during_deployment")
+
+    @must_provide_during_deployment.setter
+    def must_provide_during_deployment(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "must_provide_during_deployment", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useDhcp")
+    def use_dhcp(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to use DHCP for IPv4 configuration.
+        """
+        return pulumi.get(self, "use_dhcp")
+
+    @use_dhcp.setter
+    def use_dhcp(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_dhcp", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgsDict(TypedDict):
+    domain_settings: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict']]]
+    """
+    Domain settings.
+    """
+    workgroup: NotRequired[pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict']]]
+    """
+    Workgroup settings.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoArgs:
+    def __init__(__self__, *,
+                 domain_settings: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']] = None,
+                 workgroup: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']] = None):
+        """
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs'] domain_settings: Domain settings.
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs'] workgroup: Workgroup settings.
+        """
+        if domain_settings is not None:
+            pulumi.set(__self__, "domain_settings", domain_settings)
+        if workgroup is not None:
+            pulumi.set(__self__, "workgroup", workgroup)
+
+    @_builtins.property
+    @pulumi.getter(name="domainSettings")
+    def domain_settings(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']]:
+        """
+        Domain settings.
+        """
+        return pulumi.get(self, "domain_settings")
+
+    @domain_settings.setter
+    def domain_settings(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs']]):
+        pulumi.set(self, "domain_settings", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def workgroup(self) -> pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']]:
+        """
+        Workgroup settings.
+        """
+        return pulumi.get(self, "workgroup")
+
+    @workgroup.setter
+    def workgroup(self, value: pulumi.Input[Optional['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs']]):
+        pulumi.set(self, "workgroup", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgsDict(TypedDict):
+    credentials: pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict']
+    """
+    Credentials for the domain account.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsArgs:
+    def __init__(__self__, *,
+                 credentials: pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']):
+        """
+        :param pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs'] credentials: Credentials for the domain account.
+        """
+        pulumi.set(__self__, "credentials", credentials)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']:
+        """
+        Credentials for the domain account.
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: pulumi.Input['VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs']):
+        pulumi.set(self, "credentials", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgsDict(TypedDict):
+    domain_name: pulumi.Input[_builtins.str]
+    """
+    The name of the domain.
+    """
+    password: pulumi.Input[_builtins.str]
+    """
+    The password of the domain user account.
+    """
+    username: pulumi.Input[_builtins.str]
+    """
+    Name of the domain user account with permission to add the computer to a domain.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoDomainSettingsCredentialsArgs:
+    def __init__(__self__, *,
+                 domain_name: pulumi.Input[_builtins.str],
+                 password: pulumi.Input[_builtins.str],
+                 username: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] domain_name: The name of the domain.
+        :param pulumi.Input[_builtins.str] password: The password of the domain user account.
+        :param pulumi.Input[_builtins.str] username: Name of the domain user account with permission to add the computer to a domain.
+        """
+        pulumi.set(__self__, "domain_name", domain_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The name of the domain.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "domain_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[_builtins.str]:
+        """
+        The password of the domain user account.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of the domain user account with permission to add the computer to a domain.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "username", value)
+
+
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgsDict(TypedDict):
+    name: pulumi.Input[_builtins.str]
+    """
+    Name of workgroup to be applied to the computer. It must be a valid NetBIOS name.
+    """
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2ConfigSysprepConfigCustomizationSysprepParamsWorkgroupOrDomainInfoWorkgroupArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of workgroup to be applied to the computer. It must be a valid NetBIOS name.
+        """
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[_builtins.str]:
+        """
+        Name of workgroup to be applied to the computer. It must be a valid NetBIOS name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "name", value)
+
+
+class VmGuestCustomizationProfileV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VmGuestCustomizationProfileV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
 class VmNetworkDeviceAssignIpV2IpAddressArgsDict(TypedDict):
     value: pulumi.Input[_builtins.str]
     """
     - Ip address.
 
-    See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/assignIpById).
+    See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/assignIpById).
     """
     prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -129797,7 +136895,7 @@ class VmNetworkDeviceAssignIpV2IpAddressArgs:
         """
         :param pulumi.Input[_builtins.str] value: - Ip address.
                
-               See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/assignIpById).
+               See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/assignIpById).
         :param pulumi.Input[_builtins.int] prefix_length: - (Optional) The prefix length of the network to which this host IPv4 address belongs.
         """
         pulumi.set(__self__, "value", value)
@@ -129810,7 +136908,7 @@ class VmNetworkDeviceAssignIpV2IpAddressArgs:
         """
         - Ip address.
 
-        See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/assignIpById).
+        See detailed information in [Nutanix Assign an IP address to the VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/assignIpById).
         """
         return pulumi.get(self, "value")
 
@@ -129836,7 +136934,7 @@ class VmNetworkDeviceMigrateV2IpAddressArgsDict(TypedDict):
     """
     - Ip address.
 
-    See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/migrateNicById).
+    See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/migrateNicById).
     """
     prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -129851,7 +136949,7 @@ class VmNetworkDeviceMigrateV2IpAddressArgs:
         """
         :param pulumi.Input[_builtins.str] value: - Ip address.
                
-               See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/migrateNicById).
+               See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/migrateNicById).
         :param pulumi.Input[_builtins.int] prefix_length: - (Optional) The prefix length of the network to which this host IPv4 address belongs.
         """
         pulumi.set(__self__, "value", value)
@@ -129864,7 +136962,7 @@ class VmNetworkDeviceMigrateV2IpAddressArgs:
         """
         - Ip address.
 
-        See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/migrateNicById).
+        See detailed information in [Nutanix Migrate NIC to another Subnet for VM V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/migrateNicById).
         """
         return pulumi.get(self, "value")
 
@@ -129923,10 +137021,10 @@ class VmShutdownActionV2GuestPowerStateTransitionConfigArgsDict(TypedDict):
     """
     Indicates whether to abort VM shutdown/restart if the script fails.
 
-    See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
-    See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
-    See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
-    See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootGuestVm).
+    See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownVm).
+    See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownGuestVm).
+    See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootVm).
+    See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootGuestVm).
     """
 
 @pulumi.input_type
@@ -129938,10 +137036,10 @@ class VmShutdownActionV2GuestPowerStateTransitionConfigArgs:
         :param pulumi.Input[_builtins.bool] should_enable_script_exec: Indicates whether to run the set script before the VM shutdowns/restarts.
         :param pulumi.Input[_builtins.bool] should_fail_on_script_failure: Indicates whether to abort VM shutdown/restart if the script fails.
                
-               See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
-               See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
-               See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
-               See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootGuestVm).
+               See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownVm).
+               See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownGuestVm).
+               See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootVm).
+               See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootGuestVm).
         """
         if should_enable_script_exec is not None:
             pulumi.set(__self__, "should_enable_script_exec", should_enable_script_exec)
@@ -129966,16 +137064,317 @@ class VmShutdownActionV2GuestPowerStateTransitionConfigArgs:
         """
         Indicates whether to abort VM shutdown/restart if the script fails.
 
-        See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownVm).
-        See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/shutdownGuestVm).
-        See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootVm).
-        See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.2#tag/Vm/operation/rebootGuestVm).
+        See detailed information in [Nutanix VMs Power Action Shutdown V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownVm).
+        See detailed information in [Nutanix VMs Power Action Shutdown Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/shutdownGuestVm).
+        See detailed information in [Nutanix VMs Power Action Reboot V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootVm).
+        See detailed information in [Nutanix VMs Power Action Reboot Guest Vm V4](https://developers.nutanix.com/api-reference?namespace=vmm&version=v4.3#tag/Vm/operation/rebootGuestVm).
         """
         return pulumi.get(self, "should_fail_on_script_failure")
 
     @should_fail_on_script_failure.setter
     def should_fail_on_script_failure(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "should_fail_on_script_failure", value)
+
+
+class VmStartupPolicyV2CreatedByArgsDict(TypedDict):
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The external ID (UUID) of the user.
+    """
+
+@pulumi.input_type
+class VmStartupPolicyV2CreatedByArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: The external ID (UUID) of the user.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external ID (UUID) of the user.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+
+class VmStartupPolicyV2GroupArgsDict(TypedDict):
+    categories: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmStartupPolicyV2GroupCategoryArgsDict']]]]]
+    """
+    Categories configured for the group. Minimum 1, maximum 5 categories per group.
+    """
+
+@pulumi.input_type
+class VmStartupPolicyV2GroupArgs:
+    def __init__(__self__, *,
+                 categories: pulumi.Input[Optional[Sequence[pulumi.Input['VmStartupPolicyV2GroupCategoryArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['VmStartupPolicyV2GroupCategoryArgs']]] categories: Categories configured for the group. Minimum 1, maximum 5 categories per group.
+        """
+        if categories is not None:
+            pulumi.set(__self__, "categories", categories)
+
+    @_builtins.property
+    @pulumi.getter
+    def categories(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VmStartupPolicyV2GroupCategoryArgs']]]]:
+        """
+        Categories configured for the group. Minimum 1, maximum 5 categories per group.
+        """
+        return pulumi.get(self, "categories")
+
+    @categories.setter
+    def categories(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VmStartupPolicyV2GroupCategoryArgs']]]]):
+        pulumi.set(self, "categories", value)
+
+
+class VmStartupPolicyV2GroupCategoryArgsDict(TypedDict):
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The external ID (UUID) of the category.
+    """
+
+@pulumi.input_type
+class VmStartupPolicyV2GroupCategoryArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: The external ID (UUID) of the category.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external ID (UUID) of the category.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+
+class VmStartupPolicyV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The URL at which the entity described by the link can be accessed.
+    """
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A name that identifies the relationship of the link to the object that is returned by the URL.
+    """
+
+@pulumi.input_type
+class VmStartupPolicyV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] href: The URL at which the entity described by the link can be accessed.
+        :param pulumi.Input[_builtins.str] rel: A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class VmStartupPolicyV2StartConditionArgsDict(TypedDict):
+    delay_duration_secs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The delay in seconds after the power state criteria is met before the dependent VMs are started. Valid range: 0–600. Default: 0.
+    """
+    power_state_criteria: NotRequired[pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaArgsDict']]]
+    """
+    The power state criteria that the VM must attain before the dependent VMs are started. Exactly one of <span pulumi-lang-nodejs="`powerOn`" pulumi-lang-dotnet="`PowerOn`" pulumi-lang-go="`powerOn`" pulumi-lang-python="`power_on`" pulumi-lang-yaml="`powerOn`" pulumi-lang-java="`powerOn`" pulumi-lang-hcl="`power_on`">`powerOn`</span> or <span pulumi-lang-nodejs="`guestBootup`" pulumi-lang-dotnet="`GuestBootup`" pulumi-lang-go="`guestBootup`" pulumi-lang-python="`guest_bootup`" pulumi-lang-yaml="`guestBootup`" pulumi-lang-java="`guestBootup`" pulumi-lang-hcl="`guest_bootup`">`guestBootup`</span> must be specified.
+    """
+
+@pulumi.input_type
+class VmStartupPolicyV2StartConditionArgs:
+    def __init__(__self__, *,
+                 delay_duration_secs: pulumi.Input[Optional[_builtins.int]] = None,
+                 power_state_criteria: pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.int] delay_duration_secs: The delay in seconds after the power state criteria is met before the dependent VMs are started. Valid range: 0–600. Default: 0.
+        :param pulumi.Input['VmStartupPolicyV2StartConditionPowerStateCriteriaArgs'] power_state_criteria: The power state criteria that the VM must attain before the dependent VMs are started. Exactly one of <span pulumi-lang-nodejs="`powerOn`" pulumi-lang-dotnet="`PowerOn`" pulumi-lang-go="`powerOn`" pulumi-lang-python="`power_on`" pulumi-lang-yaml="`powerOn`" pulumi-lang-java="`powerOn`" pulumi-lang-hcl="`power_on`">`powerOn`</span> or <span pulumi-lang-nodejs="`guestBootup`" pulumi-lang-dotnet="`GuestBootup`" pulumi-lang-go="`guestBootup`" pulumi-lang-python="`guest_bootup`" pulumi-lang-yaml="`guestBootup`" pulumi-lang-java="`guestBootup`" pulumi-lang-hcl="`guest_bootup`">`guestBootup`</span> must be specified.
+        """
+        if delay_duration_secs is not None:
+            pulumi.set(__self__, "delay_duration_secs", delay_duration_secs)
+        if power_state_criteria is not None:
+            pulumi.set(__self__, "power_state_criteria", power_state_criteria)
+
+    @_builtins.property
+    @pulumi.getter(name="delayDurationSecs")
+    def delay_duration_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The delay in seconds after the power state criteria is met before the dependent VMs are started. Valid range: 0–600. Default: 0.
+        """
+        return pulumi.get(self, "delay_duration_secs")
+
+    @delay_duration_secs.setter
+    def delay_duration_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "delay_duration_secs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="powerStateCriteria")
+    def power_state_criteria(self) -> pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaArgs']]:
+        """
+        The power state criteria that the VM must attain before the dependent VMs are started. Exactly one of <span pulumi-lang-nodejs="`powerOn`" pulumi-lang-dotnet="`PowerOn`" pulumi-lang-go="`powerOn`" pulumi-lang-python="`power_on`" pulumi-lang-yaml="`powerOn`" pulumi-lang-java="`powerOn`" pulumi-lang-hcl="`power_on`">`powerOn`</span> or <span pulumi-lang-nodejs="`guestBootup`" pulumi-lang-dotnet="`GuestBootup`" pulumi-lang-go="`guestBootup`" pulumi-lang-python="`guest_bootup`" pulumi-lang-yaml="`guestBootup`" pulumi-lang-java="`guestBootup`" pulumi-lang-hcl="`guest_bootup`">`guestBootup`</span> must be specified.
+        """
+        return pulumi.get(self, "power_state_criteria")
+
+    @power_state_criteria.setter
+    def power_state_criteria(self, value: pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaArgs']]):
+        pulumi.set(self, "power_state_criteria", value)
+
+
+class VmStartupPolicyV2StartConditionPowerStateCriteriaArgsDict(TypedDict):
+    guest_bootup: NotRequired[pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgsDict']]]
+    """
+    Guest bootup criteria.
+    """
+    power_on: NotRequired[pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgsDict']]]
+    """
+    Power on criteria. Empty block.
+    """
+
+@pulumi.input_type
+class VmStartupPolicyV2StartConditionPowerStateCriteriaArgs:
+    def __init__(__self__, *,
+                 guest_bootup: pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgs']] = None,
+                 power_on: pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgs']] = None):
+        """
+        :param pulumi.Input['VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgs'] guest_bootup: Guest bootup criteria.
+        :param pulumi.Input['VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgs'] power_on: Power on criteria. Empty block.
+        """
+        if guest_bootup is not None:
+            pulumi.set(__self__, "guest_bootup", guest_bootup)
+        if power_on is not None:
+            pulumi.set(__self__, "power_on", power_on)
+
+    @_builtins.property
+    @pulumi.getter(name="guestBootup")
+    def guest_bootup(self) -> pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgs']]:
+        """
+        Guest bootup criteria.
+        """
+        return pulumi.get(self, "guest_bootup")
+
+    @guest_bootup.setter
+    def guest_bootup(self, value: pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgs']]):
+        pulumi.set(self, "guest_bootup", value)
+
+    @_builtins.property
+    @pulumi.getter(name="powerOn")
+    def power_on(self) -> pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgs']]:
+        """
+        Power on criteria. Empty block.
+        """
+        return pulumi.get(self, "power_on")
+
+    @power_on.setter
+    def power_on(self, value: pulumi.Input[Optional['VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgs']]):
+        pulumi.set(self, "power_on", value)
+
+
+class VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgsDict(TypedDict):
+    timeout_duration_secs: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The timeout in seconds in which the VM's Guest OS boot up should be detected successfully.
+    """
+
+@pulumi.input_type
+class VmStartupPolicyV2StartConditionPowerStateCriteriaGuestBootupArgs:
+    def __init__(__self__, *,
+                 timeout_duration_secs: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] timeout_duration_secs: The timeout in seconds in which the VM's Guest OS boot up should be detected successfully.
+        """
+        if timeout_duration_secs is not None:
+            pulumi.set(__self__, "timeout_duration_secs", timeout_duration_secs)
+
+    @_builtins.property
+    @pulumi.getter(name="timeoutDurationSecs")
+    def timeout_duration_secs(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The timeout in seconds in which the VM's Guest OS boot up should be detected successfully.
+        """
+        return pulumi.get(self, "timeout_duration_secs")
+
+    @timeout_duration_secs.setter
+    def timeout_duration_secs(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "timeout_duration_secs", value)
+
+
+class VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgsDict(TypedDict):
+    pass
+
+@pulumi.input_type
+class VmStartupPolicyV2StartConditionPowerStateCriteriaPowerOnArgs:
+    def __init__(__self__):
+        pass
+
+
+class VmStartupPolicyV2UpdatedByArgsDict(TypedDict):
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The external ID (UUID) of the user.
+    """
+
+@pulumi.input_type
+class VmStartupPolicyV2UpdatedByArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: The external ID (UUID) of the user.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external ID (UUID) of the user.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
 
 
 class VolumeGroupDiskV2DiskDataSourceReferenceArgsDict(TypedDict):
@@ -130210,7 +137609,7 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdnArgsDict(TypedDict):
     """
     - The fully qualified domain name.
 
-    See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
+    See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachIscsiClient).
     """
 
 @pulumi.input_type
@@ -130220,7 +137619,7 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdnArgs:
         """
         :param pulumi.Input[_builtins.str] value: - The fully qualified domain name.
                
-               See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
+               See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachIscsiClient).
         """
         if value is not None:
             pulumi.set(__self__, "value", value)
@@ -130231,7 +137630,7 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdFqdnArgs:
         """
         - The fully qualified domain name.
 
-        See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.2#tag/VolumeGroups/operation/attachIscsiClient).
+        See detailed information in [Nutanix Attach an iSCSI Client to Volume Group V4](https://developers.nutanix.com/api-reference?namespace=volumes&version=v4.3#tag/VolumeGroups/operation/attachIscsiClient).
         """
         return pulumi.get(self, "value")
 
@@ -130340,25 +137739,13 @@ class VolumeGroupIscsiClientV2IscsiInitiatorNetworkIdIpv6Args:
 
 class VolumeGroupV2DiskArgsDict(TypedDict):
     disk_data_source_references: pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskDiskDataSourceReferenceArgsDict']]]
-    """
-    -(Required) Disk Data Source Reference.
-    """
     disk_size_bytes: pulumi.Input[_builtins.int]
-    """
-    - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
-    """
     description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    - Volume Disk description.
+    -(Optional) Volume Group description. This is an optional field.
     """
     disk_storage_features: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskDiskStorageFeatureArgsDict']]]]]
-    """
-    - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
-    """
     index: NotRequired[pulumi.Input[Optional[_builtins.int]]]
-    """
-    - Index of the disk in a Volume Group. This field is optional and immutable.
-    """
 
 @pulumi.input_type
 class VolumeGroupV2DiskArgs:
@@ -130369,11 +137756,7 @@ class VolumeGroupV2DiskArgs:
                  disk_storage_features: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskDiskStorageFeatureArgs']]]] = None,
                  index: pulumi.Input[Optional[_builtins.int]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskDiskDataSourceReferenceArgs']]] disk_data_source_references: -(Required) Disk Data Source Reference.
-        :param pulumi.Input[_builtins.int] disk_size_bytes: - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
-        :param pulumi.Input[_builtins.str] description: - Volume Disk description.
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskDiskStorageFeatureArgs']]] disk_storage_features: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
-        :param pulumi.Input[_builtins.int] index: - Index of the disk in a Volume Group. This field is optional and immutable.
+        :param pulumi.Input[_builtins.str] description: -(Optional) Volume Group description. This is an optional field.
         """
         pulumi.set(__self__, "disk_data_source_references", disk_data_source_references)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
@@ -130387,9 +137770,6 @@ class VolumeGroupV2DiskArgs:
     @_builtins.property
     @pulumi.getter(name="diskDataSourceReferences")
     def disk_data_source_references(self) -> pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskDiskDataSourceReferenceArgs']]]:
-        """
-        -(Required) Disk Data Source Reference.
-        """
         return pulumi.get(self, "disk_data_source_references")
 
     @disk_data_source_references.setter
@@ -130399,9 +137779,6 @@ class VolumeGroupV2DiskArgs:
     @_builtins.property
     @pulumi.getter(name="diskSizeBytes")
     def disk_size_bytes(self) -> pulumi.Input[_builtins.int]:
-        """
-        - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
-        """
         return pulumi.get(self, "disk_size_bytes")
 
     @disk_size_bytes.setter
@@ -130412,7 +137789,7 @@ class VolumeGroupV2DiskArgs:
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - Volume Disk description.
+        -(Optional) Volume Group description. This is an optional field.
         """
         return pulumi.get(self, "description")
 
@@ -130423,9 +137800,6 @@ class VolumeGroupV2DiskArgs:
     @_builtins.property
     @pulumi.getter(name="diskStorageFeatures")
     def disk_storage_features(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskDiskStorageFeatureArgs']]]]:
-        """
-        - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
-        """
         return pulumi.get(self, "disk_storage_features")
 
     @disk_storage_features.setter
@@ -130435,9 +137809,6 @@ class VolumeGroupV2DiskArgs:
     @_builtins.property
     @pulumi.getter
     def index(self) -> pulumi.Input[Optional[_builtins.int]]:
-        """
-        - Index of the disk in a Volume Group. This field is optional and immutable.
-        """
         return pulumi.get(self, "index")
 
     @index.setter
@@ -130448,20 +137819,14 @@ class VolumeGroupV2DiskArgs:
 class VolumeGroupV2DiskDiskDataSourceReferenceArgsDict(TypedDict):
     ext_id: pulumi.Input[_builtins.str]
     """
-    - The external identifier of the Data Source Reference.
+    -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
     """
     entity_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    - The Entity Type of the Data Source Reference.
-    """
     name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    - The name of the Data Source Reference. for the Volume Group.
+    -(Required) Volume Group name. This is an optional field.
     """
     uris: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
-    """
-    - The uri list of the Data Source Reference.
-    """
 
 @pulumi.input_type
 class VolumeGroupV2DiskDiskDataSourceReferenceArgs:
@@ -130471,10 +137836,8 @@ class VolumeGroupV2DiskDiskDataSourceReferenceArgs:
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  uris: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
-        :param pulumi.Input[_builtins.str] ext_id: - The external identifier of the Data Source Reference.
-        :param pulumi.Input[_builtins.str] entity_type: - The Entity Type of the Data Source Reference.
-        :param pulumi.Input[_builtins.str] name: - The name of the Data Source Reference. for the Volume Group.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] uris: - The uri list of the Data Source Reference.
+        :param pulumi.Input[_builtins.str] ext_id: -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
+        :param pulumi.Input[_builtins.str] name: -(Required) Volume Group name. This is an optional field.
         """
         pulumi.set(__self__, "ext_id", ext_id)
         if entity_type is not None:
@@ -130488,7 +137851,7 @@ class VolumeGroupV2DiskDiskDataSourceReferenceArgs:
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Input[_builtins.str]:
         """
-        - The external identifier of the Data Source Reference.
+        -(Optional) A globally unique identifier of an instance that is suitable for external consumption.
         """
         return pulumi.get(self, "ext_id")
 
@@ -130499,9 +137862,6 @@ class VolumeGroupV2DiskDiskDataSourceReferenceArgs:
     @_builtins.property
     @pulumi.getter(name="entityType")
     def entity_type(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        - The Entity Type of the Data Source Reference.
-        """
         return pulumi.get(self, "entity_type")
 
     @entity_type.setter
@@ -130512,7 +137872,7 @@ class VolumeGroupV2DiskDiskDataSourceReferenceArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - The name of the Data Source Reference. for the Volume Group.
+        -(Required) Volume Group name. This is an optional field.
         """
         return pulumi.get(self, "name")
 
@@ -130523,9 +137883,6 @@ class VolumeGroupV2DiskDiskDataSourceReferenceArgs:
     @_builtins.property
     @pulumi.getter
     def uris(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
-        """
-        - The uri list of the Data Source Reference.
-        """
         return pulumi.get(self, "uris")
 
     @uris.setter
@@ -130535,26 +137892,17 @@ class VolumeGroupV2DiskDiskDataSourceReferenceArgs:
 
 class VolumeGroupV2DiskDiskStorageFeatureArgsDict(TypedDict):
     flash_modes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskDiskStorageFeatureFlashModeArgsDict']]]]]
-    """
-    - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
-    """
 
 @pulumi.input_type
 class VolumeGroupV2DiskDiskStorageFeatureArgs:
     def __init__(__self__, *,
                  flash_modes: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskDiskStorageFeatureFlashModeArgs']]]] = None):
-        """
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2DiskDiskStorageFeatureFlashModeArgs']]] flash_modes: - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
-        """
         if flash_modes is not None:
             pulumi.set(__self__, "flash_modes", flash_modes)
 
     @_builtins.property
     @pulumi.getter(name="flashModes")
     def flash_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2DiskDiskStorageFeatureFlashModeArgs']]]]:
-        """
-        - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
-        """
         return pulumi.get(self, "flash_modes")
 
     @flash_modes.setter
@@ -130564,26 +137912,17 @@ class VolumeGroupV2DiskDiskStorageFeatureArgs:
 
 class VolumeGroupV2DiskDiskStorageFeatureFlashModeArgsDict(TypedDict):
     is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
-    """
-    - Indicates whether the flash mode is enabled for the Volume Group Disk.
-    """
 
 @pulumi.input_type
 class VolumeGroupV2DiskDiskStorageFeatureFlashModeArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
-        """
-        :param pulumi.Input[_builtins.bool] is_enabled: - Indicates whether the flash mode is enabled for the Volume Group Disk.
-        """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
 
     @_builtins.property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
-        """
-        - Indicates whether the flash mode is enabled for the Volume Group Disk.
-        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -130594,7 +137933,7 @@ class VolumeGroupV2DiskDiskStorageFeatureFlashModeArgs:
 class VolumeGroupV2IscsiFeatureArgsDict(TypedDict):
     enabled_authentications: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    - The authentication type enabled for the Volume Group.
+    -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
     """
     target_secret: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -130607,7 +137946,7 @@ class VolumeGroupV2IscsiFeatureArgs:
                  enabled_authentications: pulumi.Input[Optional[_builtins.str]] = None,
                  target_secret: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] enabled_authentications: - The authentication type enabled for the Volume Group.
+        :param pulumi.Input[_builtins.str] enabled_authentications: -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
         :param pulumi.Input[_builtins.str] target_secret: Target secret in case of a CHAP authentication. This field must only be provided in case the authentication type is not set to CHAP. This is an optional field and it cannot be retrieved once configured.
         """
         if enabled_authentications is not None:
@@ -130619,7 +137958,7 @@ class VolumeGroupV2IscsiFeatureArgs:
     @pulumi.getter(name="enabledAuthentications")
     def enabled_authentications(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - The authentication type enabled for the Volume Group.
+        -(Optional) The authentication type enabled for the Volume Group. Valid values are CHAP, NONE
         """
         return pulumi.get(self, "enabled_authentications")
 
@@ -130643,7 +137982,7 @@ class VolumeGroupV2IscsiFeatureArgs:
 class VolumeGroupV2StorageFeatureArgsDict(TypedDict):
     flash_modes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureFlashModeArgsDict']]]]]
     """
-    - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+    Once configured, this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
     """
 
 @pulumi.input_type
@@ -130651,7 +137990,7 @@ class VolumeGroupV2StorageFeatureArgs:
     def __init__(__self__, *,
                  flash_modes: pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureFlashModeArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureFlashModeArgs']]] flash_modes: - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+        :param pulumi.Input[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureFlashModeArgs']]] flash_modes: Once configured, this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
         """
         if flash_modes is not None:
             pulumi.set(__self__, "flash_modes", flash_modes)
@@ -130660,7 +137999,7 @@ class VolumeGroupV2StorageFeatureArgs:
     @pulumi.getter(name="flashModes")
     def flash_modes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VolumeGroupV2StorageFeatureFlashModeArgs']]]]:
         """
-        - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+        Once configured, this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
         """
         return pulumi.get(self, "flash_modes")
 
@@ -130672,7 +138011,7 @@ class VolumeGroupV2StorageFeatureArgs:
 class VolumeGroupV2StorageFeatureFlashModeArgsDict(TypedDict):
     is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
-    - Indicates whether the flash mode is enabled for the Volume Group Disk.
+    Indicates whether the flash mode is enabled for the Volume Group.
     """
 
 @pulumi.input_type
@@ -130680,7 +138019,7 @@ class VolumeGroupV2StorageFeatureFlashModeArgs:
     def __init__(__self__, *,
                  is_enabled: pulumi.Input[Optional[_builtins.bool]] = None):
         """
-        :param pulumi.Input[_builtins.bool] is_enabled: - Indicates whether the flash mode is enabled for the Volume Group Disk.
+        :param pulumi.Input[_builtins.bool] is_enabled: Indicates whether the flash mode is enabled for the Volume Group.
         """
         if is_enabled is not None:
             pulumi.set(__self__, "is_enabled", is_enabled)
@@ -130689,7 +138028,7 @@ class VolumeGroupV2StorageFeatureFlashModeArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        - Indicates whether the flash mode is enabled for the Volume Group Disk.
+        Indicates whether the flash mode is enabled for the Volume Group.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -131524,6 +138863,463 @@ class VpcV2ExternallyRoutablePrefixIpv6IpArgs:
         pulumi.set(self, "value", value)
 
 
+class VpcV2KubernetesClusterArgsDict(TypedDict):
+    ext_id: pulumi.Input[_builtins.str]
+    """
+    ExtID of the Kubernetes cluster.
+    """
+    gateway_nodes_selector: NotRequired[pulumi.Input[Optional['VpcV2KubernetesClusterGatewayNodesSelectorArgsDict']]]
+    """
+    Selector used to identify gateway node candidates within the Kubernetes cluster.
+    """
+    namespace_selector: NotRequired[pulumi.Input[Optional['VpcV2KubernetesClusterNamespaceSelectorArgsDict']]]
+    """
+    Selector used to identify namespaces within the Kubernetes cluster.
+    """
+    pod_network: NotRequired[pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkArgsDict']]]
+    """
+    Pod network of the Kubernetes cluster.
+    """
+
+@pulumi.input_type
+class VpcV2KubernetesClusterArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[_builtins.str],
+                 gateway_nodes_selector: pulumi.Input[Optional['VpcV2KubernetesClusterGatewayNodesSelectorArgs']] = None,
+                 namespace_selector: pulumi.Input[Optional['VpcV2KubernetesClusterNamespaceSelectorArgs']] = None,
+                 pod_network: pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkArgs']] = None):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: ExtID of the Kubernetes cluster.
+        :param pulumi.Input['VpcV2KubernetesClusterGatewayNodesSelectorArgs'] gateway_nodes_selector: Selector used to identify gateway node candidates within the Kubernetes cluster.
+        :param pulumi.Input['VpcV2KubernetesClusterNamespaceSelectorArgs'] namespace_selector: Selector used to identify namespaces within the Kubernetes cluster.
+        :param pulumi.Input['VpcV2KubernetesClusterPodNetworkArgs'] pod_network: Pod network of the Kubernetes cluster.
+        """
+        pulumi.set(__self__, "ext_id", ext_id)
+        if gateway_nodes_selector is not None:
+            pulumi.set(__self__, "gateway_nodes_selector", gateway_nodes_selector)
+        if namespace_selector is not None:
+            pulumi.set(__self__, "namespace_selector", namespace_selector)
+        if pod_network is not None:
+            pulumi.set(__self__, "pod_network", pod_network)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        ExtID of the Kubernetes cluster.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="gatewayNodesSelector")
+    def gateway_nodes_selector(self) -> pulumi.Input[Optional['VpcV2KubernetesClusterGatewayNodesSelectorArgs']]:
+        """
+        Selector used to identify gateway node candidates within the Kubernetes cluster.
+        """
+        return pulumi.get(self, "gateway_nodes_selector")
+
+    @gateway_nodes_selector.setter
+    def gateway_nodes_selector(self, value: pulumi.Input[Optional['VpcV2KubernetesClusterGatewayNodesSelectorArgs']]):
+        pulumi.set(self, "gateway_nodes_selector", value)
+
+    @_builtins.property
+    @pulumi.getter(name="namespaceSelector")
+    def namespace_selector(self) -> pulumi.Input[Optional['VpcV2KubernetesClusterNamespaceSelectorArgs']]:
+        """
+        Selector used to identify namespaces within the Kubernetes cluster.
+        """
+        return pulumi.get(self, "namespace_selector")
+
+    @namespace_selector.setter
+    def namespace_selector(self, value: pulumi.Input[Optional['VpcV2KubernetesClusterNamespaceSelectorArgs']]):
+        pulumi.set(self, "namespace_selector", value)
+
+    @_builtins.property
+    @pulumi.getter(name="podNetwork")
+    def pod_network(self) -> pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkArgs']]:
+        """
+        Pod network of the Kubernetes cluster.
+        """
+        return pulumi.get(self, "pod_network")
+
+    @pod_network.setter
+    def pod_network(self, value: pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkArgs']]):
+        pulumi.set(self, "pod_network", value)
+
+
+class VpcV2KubernetesClusterGatewayNodesSelectorArgsDict(TypedDict):
+    match_labels: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgsDict']]]]]
+    """
+    Labels (key-value pairs) used to select entities.
+    - `match_labels.name`: (Optional) The key of the label.
+    - `match_labels.value`: (Optional) The value of the label.
+    """
+
+@pulumi.input_type
+class VpcV2KubernetesClusterGatewayNodesSelectorArgs:
+    def __init__(__self__, *,
+                 match_labels: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgs']]] match_labels: Labels (key-value pairs) used to select entities.
+               - `match_labels.name`: (Optional) The key of the label.
+               - `match_labels.value`: (Optional) The value of the label.
+        """
+        if match_labels is not None:
+            pulumi.set(__self__, "match_labels", match_labels)
+
+    @_builtins.property
+    @pulumi.getter(name="matchLabels")
+    def match_labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgs']]]]:
+        """
+        Labels (key-value pairs) used to select entities.
+        - `match_labels.name`: (Optional) The key of the label.
+        - `match_labels.value`: (Optional) The value of the label.
+        """
+        return pulumi.get(self, "match_labels")
+
+    @match_labels.setter
+    def match_labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgs']]]]):
+        pulumi.set(self, "match_labels", value)
+
+
+class VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the VPC.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VpcV2KubernetesClusterGatewayNodesSelectorMatchLabelArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of the VPC.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VpcV2KubernetesClusterNamespaceSelectorArgsDict(TypedDict):
+    match_labels: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgsDict']]]]]
+    """
+    Labels (key-value pairs) used to select entities.
+    - `match_labels.name`: (Optional) The key of the label.
+    - `match_labels.value`: (Optional) The value of the label.
+    """
+
+@pulumi.input_type
+class VpcV2KubernetesClusterNamespaceSelectorArgs:
+    def __init__(__self__, *,
+                 match_labels: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgs']]] match_labels: Labels (key-value pairs) used to select entities.
+               - `match_labels.name`: (Optional) The key of the label.
+               - `match_labels.value`: (Optional) The value of the label.
+        """
+        if match_labels is not None:
+            pulumi.set(__self__, "match_labels", match_labels)
+
+    @_builtins.property
+    @pulumi.getter(name="matchLabels")
+    def match_labels(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgs']]]]:
+        """
+        Labels (key-value pairs) used to select entities.
+        - `match_labels.name`: (Optional) The key of the label.
+        - `match_labels.value`: (Optional) The value of the label.
+        """
+        return pulumi.get(self, "match_labels")
+
+    @match_labels.setter
+    def match_labels(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgs']]]]):
+        pulumi.set(self, "match_labels", value)
+
+
+class VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgsDict(TypedDict):
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the VPC.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class VpcV2KubernetesClusterNamespaceSelectorMatchLabelArgs:
+    def __init__(__self__, *,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] name: Name of the VPC.
+        """
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the VPC.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class VpcV2KubernetesClusterPodNetworkArgsDict(TypedDict):
+    cidrs: pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrArgsDict']]]
+    """
+    CIDR of the pod network (IPSubnet).
+    - `cidr.ipv4`: (Optional) IPv4 Subnet Configuration.
+    - `cidr.ipv6`: (Optional) IPv6 Subnet Configuration.
+    """
+    host_slice: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Host slice of the pod network. Default value is 24.
+    """
+
+@pulumi.input_type
+class VpcV2KubernetesClusterPodNetworkArgs:
+    def __init__(__self__, *,
+                 cidrs: pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrArgs']]],
+                 host_slice: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrArgs']]] cidrs: CIDR of the pod network (IPSubnet).
+               - `cidr.ipv4`: (Optional) IPv4 Subnet Configuration.
+               - `cidr.ipv6`: (Optional) IPv6 Subnet Configuration.
+        :param pulumi.Input[_builtins.int] host_slice: Host slice of the pod network. Default value is 24.
+        """
+        pulumi.set(__self__, "cidrs", cidrs)
+        if host_slice is not None:
+            pulumi.set(__self__, "host_slice", host_slice)
+
+    @_builtins.property
+    @pulumi.getter
+    def cidrs(self) -> pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrArgs']]]:
+        """
+        CIDR of the pod network (IPSubnet).
+        - `cidr.ipv4`: (Optional) IPv4 Subnet Configuration.
+        - `cidr.ipv6`: (Optional) IPv6 Subnet Configuration.
+        """
+        return pulumi.get(self, "cidrs")
+
+    @cidrs.setter
+    def cidrs(self, value: pulumi.Input[Sequence[pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrArgs']]]):
+        pulumi.set(self, "cidrs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hostSlice")
+    def host_slice(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Host slice of the pod network. Default value is 24.
+        """
+        return pulumi.get(self, "host_slice")
+
+    @host_slice.setter
+    def host_slice(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "host_slice", value)
+
+
+class VpcV2KubernetesClusterPodNetworkCidrArgsDict(TypedDict):
+    ipv4: NotRequired[pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkCidrIpv4ArgsDict']]]
+    ipv6: NotRequired[pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkCidrIpv6ArgsDict']]]
+
+@pulumi.input_type
+class VpcV2KubernetesClusterPodNetworkCidrArgs:
+    def __init__(__self__, *,
+                 ipv4: pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkCidrIpv4Args']] = None,
+                 ipv6: pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkCidrIpv6Args']] = None):
+        if ipv4 is not None:
+            pulumi.set(__self__, "ipv4", ipv4)
+        if ipv6 is not None:
+            pulumi.set(__self__, "ipv6", ipv6)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv4(self) -> pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkCidrIpv4Args']]:
+        return pulumi.get(self, "ipv4")
+
+    @ipv4.setter
+    def ipv4(self, value: pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkCidrIpv4Args']]):
+        pulumi.set(self, "ipv4", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ipv6(self) -> pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkCidrIpv6Args']]:
+        return pulumi.get(self, "ipv6")
+
+    @ipv6.setter
+    def ipv6(self, value: pulumi.Input[Optional['VpcV2KubernetesClusterPodNetworkCidrIpv6Args']]):
+        pulumi.set(self, "ipv6", value)
+
+
+class VpcV2KubernetesClusterPodNetworkCidrIpv4ArgsDict(TypedDict):
+    ip: pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrIpv4IpArgsDict']
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class VpcV2KubernetesClusterPodNetworkCidrIpv4Args:
+    def __init__(__self__, *,
+                 ip: pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrIpv4IpArgs'],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "ip", ip)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def ip(self) -> pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrIpv4IpArgs']:
+        return pulumi.get(self, "ip")
+
+    @ip.setter
+    def ip(self, value: pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrIpv4IpArgs']):
+        pulumi.set(self, "ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class VpcV2KubernetesClusterPodNetworkCidrIpv4IpArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class VpcV2KubernetesClusterPodNetworkCidrIpv4IpArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class VpcV2KubernetesClusterPodNetworkCidrIpv6ArgsDict(TypedDict):
+    ip: pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrIpv6IpArgsDict']
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class VpcV2KubernetesClusterPodNetworkCidrIpv6Args:
+    def __init__(__self__, *,
+                 ip: pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrIpv6IpArgs'],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "ip", ip)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def ip(self) -> pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrIpv6IpArgs']:
+        return pulumi.get(self, "ip")
+
+    @ip.setter
+    def ip(self, value: pulumi.Input['VpcV2KubernetesClusterPodNetworkCidrIpv6IpArgs']):
+        pulumi.set(self, "ip", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
+class VpcV2KubernetesClusterPodNetworkCidrIpv6IpArgsDict(TypedDict):
+    value: pulumi.Input[_builtins.str]
+    prefix_length: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+
+@pulumi.input_type
+class VpcV2KubernetesClusterPodNetworkCidrIpv6IpArgs:
+    def __init__(__self__, *,
+                 value: pulumi.Input[_builtins.str],
+                 prefix_length: pulumi.Input[Optional[_builtins.int]] = None):
+        pulumi.set(__self__, "value", value)
+        if prefix_length is not None:
+            pulumi.set(__self__, "prefix_length", prefix_length)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[_builtins.str]:
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="prefixLength")
+    def prefix_length(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "prefix_length")
+
+    @prefix_length.setter
+    def prefix_length(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "prefix_length", value)
+
+
 class VpcV2LinkArgsDict(TypedDict):
     href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
@@ -131726,6 +139522,209 @@ class VpcV2SnatIpIpv6Args:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class VpcVirtualSwitchMappingV2MappingArgsDict(TypedDict):
+    virtual_switch_uuid: pulumi.Input[_builtins.str]
+    """
+    The Universally Unique Identifier (UUID) of the target Virtual Switch. This is the switch where the VPC traffic policies will be applied.
+    """
+    cluster_uuids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    A list of cluster UUIDs where this Virtual Switch mapping is effective. This defines the physical cluster boundaries for the networking configuration.
+    """
+    is_all_traffic_permitted: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    A boolean flag indicating the traffic permission policy. When set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>, all network traffic is permitted to flow through the virtual switch. When set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, the switch drops standard traffic and only permits basic ICMP and essential statistics collection requests.
+    """
+    metadatas: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VpcVirtualSwitchMappingV2MappingMetadataArgsDict']]]]]
+    """
+    A block containing administrative and organizational metadata for the mapping. See the <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`">`metadata`</span> block below for details.
+    """
+
+@pulumi.input_type
+class VpcVirtualSwitchMappingV2MappingArgs:
+    def __init__(__self__, *,
+                 virtual_switch_uuid: pulumi.Input[_builtins.str],
+                 cluster_uuids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 is_all_traffic_permitted: pulumi.Input[Optional[_builtins.bool]] = None,
+                 metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['VpcVirtualSwitchMappingV2MappingMetadataArgs']]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] virtual_switch_uuid: The Universally Unique Identifier (UUID) of the target Virtual Switch. This is the switch where the VPC traffic policies will be applied.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] cluster_uuids: A list of cluster UUIDs where this Virtual Switch mapping is effective. This defines the physical cluster boundaries for the networking configuration.
+        :param pulumi.Input[_builtins.bool] is_all_traffic_permitted: A boolean flag indicating the traffic permission policy. When set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>, all network traffic is permitted to flow through the virtual switch. When set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, the switch drops standard traffic and only permits basic ICMP and essential statistics collection requests.
+        :param pulumi.Input[Sequence[pulumi.Input['VpcVirtualSwitchMappingV2MappingMetadataArgs']]] metadatas: A block containing administrative and organizational metadata for the mapping. See the <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`">`metadata`</span> block below for details.
+        """
+        pulumi.set(__self__, "virtual_switch_uuid", virtual_switch_uuid)
+        if cluster_uuids is not None:
+            pulumi.set(__self__, "cluster_uuids", cluster_uuids)
+        if is_all_traffic_permitted is not None:
+            pulumi.set(__self__, "is_all_traffic_permitted", is_all_traffic_permitted)
+        if metadatas is not None:
+            pulumi.set(__self__, "metadatas", metadatas)
+
+    @_builtins.property
+    @pulumi.getter(name="virtualSwitchUuid")
+    def virtual_switch_uuid(self) -> pulumi.Input[_builtins.str]:
+        """
+        The Universally Unique Identifier (UUID) of the target Virtual Switch. This is the switch where the VPC traffic policies will be applied.
+        """
+        return pulumi.get(self, "virtual_switch_uuid")
+
+    @virtual_switch_uuid.setter
+    def virtual_switch_uuid(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "virtual_switch_uuid", value)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterUuids")
+    def cluster_uuids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of cluster UUIDs where this Virtual Switch mapping is effective. This defines the physical cluster boundaries for the networking configuration.
+        """
+        return pulumi.get(self, "cluster_uuids")
+
+    @cluster_uuids.setter
+    def cluster_uuids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "cluster_uuids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isAllTrafficPermitted")
+    def is_all_traffic_permitted(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        A boolean flag indicating the traffic permission policy. When set to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>, all network traffic is permitted to flow through the virtual switch. When set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>, the switch drops standard traffic and only permits basic ICMP and essential statistics collection requests.
+        """
+        return pulumi.get(self, "is_all_traffic_permitted")
+
+    @is_all_traffic_permitted.setter
+    def is_all_traffic_permitted(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_all_traffic_permitted", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def metadatas(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['VpcVirtualSwitchMappingV2MappingMetadataArgs']]]]:
+        """
+        A block containing administrative and organizational metadata for the mapping. See the <span pulumi-lang-nodejs="`metadata`" pulumi-lang-dotnet="`Metadata`" pulumi-lang-go="`metadata`" pulumi-lang-python="`metadata`" pulumi-lang-yaml="`metadata`" pulumi-lang-java="`metadata`" pulumi-lang-hcl="`metadata`">`metadata`</span> block below for details.
+        """
+        return pulumi.get(self, "metadatas")
+
+    @metadatas.setter
+    def metadatas(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['VpcVirtualSwitchMappingV2MappingMetadataArgs']]]]):
+        pulumi.set(self, "metadatas", value)
+
+
+class VpcVirtualSwitchMappingV2MappingMetadataArgsDict(TypedDict):
+    category_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    A list of globally unique identifiers (UUIDs) representing the categories (tags) associated with the mapping. Categories are useful for policy enforcement, granular filtering, or billing attribution.
+
+    See detailed information in [Nutanix VPC Virtual Switch Mapping V4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/VpcVirtualSwitchMappings/operation/createVpcVirtualSwitchMapping).
+    """
+    owner_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A globally unique identifier (UUID) that represents the user, group, or service account that owns this mapping resource.
+    """
+    owner_user_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The human-readable username of the resource owner.
+    """
+    project_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The human-readable name of the Nutanix Project this resource is assigned to.
+    """
+    project_reference_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A globally unique identifier (UUID) of the Nutanix Project this resource belongs to. This is heavily used for multi-tenancy and resource isolation.
+    """
+
+@pulumi.input_type
+class VpcVirtualSwitchMappingV2MappingMetadataArgs:
+    def __init__(__self__, *,
+                 category_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 owner_reference_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_reference_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] category_ids: A list of globally unique identifiers (UUIDs) representing the categories (tags) associated with the mapping. Categories are useful for policy enforcement, granular filtering, or billing attribution.
+               
+               See detailed information in [Nutanix VPC Virtual Switch Mapping V4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/VpcVirtualSwitchMappings/operation/createVpcVirtualSwitchMapping).
+        :param pulumi.Input[_builtins.str] owner_reference_id: A globally unique identifier (UUID) that represents the user, group, or service account that owns this mapping resource.
+        :param pulumi.Input[_builtins.str] owner_user_name: The human-readable username of the resource owner.
+        :param pulumi.Input[_builtins.str] project_name: The human-readable name of the Nutanix Project this resource is assigned to.
+        :param pulumi.Input[_builtins.str] project_reference_id: A globally unique identifier (UUID) of the Nutanix Project this resource belongs to. This is heavily used for multi-tenancy and resource isolation.
+        """
+        if category_ids is not None:
+            pulumi.set(__self__, "category_ids", category_ids)
+        if owner_reference_id is not None:
+            pulumi.set(__self__, "owner_reference_id", owner_reference_id)
+        if owner_user_name is not None:
+            pulumi.set(__self__, "owner_user_name", owner_user_name)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if project_reference_id is not None:
+            pulumi.set(__self__, "project_reference_id", project_reference_id)
+
+    @_builtins.property
+    @pulumi.getter(name="categoryIds")
+    def category_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        A list of globally unique identifiers (UUIDs) representing the categories (tags) associated with the mapping. Categories are useful for policy enforcement, granular filtering, or billing attribution.
+
+        See detailed information in [Nutanix VPC Virtual Switch Mapping V4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/VpcVirtualSwitchMappings/operation/createVpcVirtualSwitchMapping).
+        """
+        return pulumi.get(self, "category_ids")
+
+    @category_ids.setter
+    def category_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "category_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ownerReferenceId")
+    def owner_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A globally unique identifier (UUID) that represents the user, group, or service account that owns this mapping resource.
+        """
+        return pulumi.get(self, "owner_reference_id")
+
+    @owner_reference_id.setter
+    def owner_reference_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "owner_reference_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="ownerUserName")
+    def owner_user_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The human-readable username of the resource owner.
+        """
+        return pulumi.get(self, "owner_user_name")
+
+    @owner_user_name.setter
+    def owner_user_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "owner_user_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The human-readable name of the Nutanix Project this resource is assigned to.
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectReferenceId")
+    def project_reference_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A globally unique identifier (UUID) of the Nutanix Project this resource belongs to. This is heavily used for multi-tenancy and resource isolation.
+        """
+        return pulumi.get(self, "project_reference_id")
+
+    @project_reference_id.setter
+    def project_reference_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_reference_id", value)
 
 
 class GetAccessControlPoliciesMetadataArgsDict(TypedDict):
@@ -134227,6 +142226,53 @@ class GetRoleCategoryArgs:
     def value(self) -> _builtins.str:
         """
         - value of the key.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: _builtins.str):
+        pulumi.set(self, "value", value)
+
+
+class GetRoleMembershipV2ScopeTemplateNameValueArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    The name of the variable.
+    """
+    value: _builtins.str
+    """
+    The value to substitute.
+    """
+
+@pulumi.input_type
+class GetRoleMembershipV2ScopeTemplateNameValueArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str name: The name of the variable.
+        :param _builtins.str value: The value to substitute.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the variable.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        The value to substitute.
         """
         return pulumi.get(self, "value")
 

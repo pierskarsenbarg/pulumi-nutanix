@@ -77,6 +77,10 @@ export class OvaV2 extends pulumi.CustomResource {
      */
     declare public readonly name: pulumi.Output<string>;
     declare public /*out*/ readonly parentVm: pulumi.Output<string>;
+    /**
+     * -(Optional) External identifier of the project associated with the OVA.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
     declare public /*out*/ readonly sizeBytes: pulumi.Output<number>;
     /**
      * -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
@@ -111,6 +115,7 @@ export class OvaV2 extends pulumi.CustomResource {
             resourceInputs["links"] = state?.links;
             resourceInputs["name"] = state?.name;
             resourceInputs["parentVm"] = state?.parentVm;
+            resourceInputs["projectExtId"] = state?.projectExtId;
             resourceInputs["sizeBytes"] = state?.sizeBytes;
             resourceInputs["sources"] = state?.sources;
             resourceInputs["tenantId"] = state?.tenantId;
@@ -124,6 +129,7 @@ export class OvaV2 extends pulumi.CustomResource {
             resourceInputs["clusterLocationExtIds"] = args?.clusterLocationExtIds;
             resourceInputs["diskFormat"] = args?.diskFormat;
             resourceInputs["name"] = args?.name;
+            resourceInputs["projectExtId"] = args?.projectExtId;
             resourceInputs["sources"] = args?.sources;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["createdBies"] = undefined /*out*/;
@@ -173,6 +179,10 @@ export interface OvaV2State {
      */
     name?: pulumi.Input<string | undefined>;
     parentVm?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) External identifier of the project associated with the OVA.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     sizeBytes?: pulumi.Input<number | undefined>;
     /**
      * -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
@@ -209,6 +219,10 @@ export interface OvaV2Args {
      * -(Required) Name of the OVA.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) External identifier of the project associated with the OVA.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
      */

@@ -45,9 +45,10 @@ import (
 //				return err
 //			}
 //			_, err = nutanix.NewImagesV2(ctx, "img-2", &nutanix.ImagesV2Args{
-//				Name:        pulumi.String("test-image"),
-//				Description: pulumi.String("img desc"),
-//				Type:        pulumi.String("DISK_IMAGE"),
+//				Name:         pulumi.String("test-image"),
+//				Description:  pulumi.String("img desc"),
+//				Type:         pulumi.String("DISK_IMAGE"),
+//				ProjectExtId: pulumi.String("<project_uuid>"),
 //				Sources: nutanix.ImagesV2SourceArray{
 //					&nutanix.ImagesV2SourceArgs{
 //						UrlSources: nutanix.ImagesV2SourceUrlSourceArray{
@@ -110,6 +111,10 @@ type ImagesV2 struct {
 	OwnerExtId pulumi.StringOutput `pulumi:"ownerExtId"`
 	// Status of an image placement policy.
 	PlacementPolicyStatuses ImagesV2PlacementPolicyStatusArrayOutput `pulumi:"placementPolicyStatuses"`
+	// External identifier of the project associated with the image.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
+	// Indicates whether the image is shared with all projects.
+	ShareWithAllProjects pulumi.BoolOutput `pulumi:"shareWithAllProjects"`
 	// The size in bytes of an image file.
 	SizeBytes pulumi.IntOutput `pulumi:"sizeBytes"`
 	// The source of an image. It can be a VM disk or a URL.
@@ -172,6 +177,10 @@ type imagesV2State struct {
 	OwnerExtId *string `pulumi:"ownerExtId"`
 	// Status of an image placement policy.
 	PlacementPolicyStatuses []ImagesV2PlacementPolicyStatus `pulumi:"placementPolicyStatuses"`
+	// External identifier of the project associated with the image.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	// Indicates whether the image is shared with all projects.
+	ShareWithAllProjects *bool `pulumi:"shareWithAllProjects"`
 	// The size in bytes of an image file.
 	SizeBytes *int `pulumi:"sizeBytes"`
 	// The source of an image. It can be a VM disk or a URL.
@@ -202,6 +211,10 @@ type ImagesV2State struct {
 	OwnerExtId pulumi.StringPtrInput
 	// Status of an image placement policy.
 	PlacementPolicyStatuses ImagesV2PlacementPolicyStatusArrayInput
+	// External identifier of the project associated with the image.
+	ProjectExtId pulumi.StringPtrInput
+	// Indicates whether the image is shared with all projects.
+	ShareWithAllProjects pulumi.BoolPtrInput
 	// The size in bytes of an image file.
 	SizeBytes pulumi.IntPtrInput
 	// The source of an image. It can be a VM disk or a URL.
@@ -232,6 +245,8 @@ type imagesV2Args struct {
 	Description *string `pulumi:"description"`
 	// The user defined name of an image.
 	Name *string `pulumi:"name"`
+	// External identifier of the project associated with the image.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// The source of an image. It can be a VM disk or a URL.
 	Sources []ImagesV2Source `pulumi:"sources"`
 	// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
@@ -250,6 +265,8 @@ type ImagesV2Args struct {
 	Description pulumi.StringPtrInput
 	// The user defined name of an image.
 	Name pulumi.StringPtrInput
+	// External identifier of the project associated with the image.
+	ProjectExtId pulumi.StringPtrInput
 	// The source of an image. It can be a VM disk or a URL.
 	Sources ImagesV2SourceArrayInput
 	// The type of an image. Valid values "DISK_IMAGE", "ISO_IMAGE"
@@ -394,6 +411,16 @@ func (o ImagesV2Output) OwnerExtId() pulumi.StringOutput {
 // Status of an image placement policy.
 func (o ImagesV2Output) PlacementPolicyStatuses() ImagesV2PlacementPolicyStatusArrayOutput {
 	return o.ApplyT(func(v *ImagesV2) ImagesV2PlacementPolicyStatusArrayOutput { return v.PlacementPolicyStatuses }).(ImagesV2PlacementPolicyStatusArrayOutput)
+}
+
+// External identifier of the project associated with the image.
+func (o ImagesV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ImagesV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// Indicates whether the image is shared with all projects.
+func (o ImagesV2Output) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ImagesV2) pulumi.BoolOutput { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
 }
 
 // The size in bytes of an image file.

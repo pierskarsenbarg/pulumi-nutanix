@@ -78,7 +78,7 @@ namespace PiersKarsenbarg.Nutanix
     /// `terraform import nutanix_pbr_v2.pbr_import &lt;UUID&gt;
     /// `
     /// 
-    /// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.3#tag/RoutingPolicies/operation/createRoutingPolicy).
+    /// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&amp;version=v4.4#tag/RoutingPolicies/operation/createRoutingPolicy).
     /// </summary>
     [NutanixResourceType("nutanix:index/pbrV2:PbrV2")]
     public partial class PbrV2 : global::Pulumi.CustomResource
@@ -124,6 +124,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("priority")]
         public Output<int> Priority { get; private set; } = null!;
+
+        /// <summary>
+        /// External identifier of the project associated with the Routing Policy.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity
@@ -227,6 +233,12 @@ namespace PiersKarsenbarg.Nutanix
         public Input<int> Priority { get; set; } = null!;
 
         /// <summary>
+        /// External identifier of the project associated with the Routing Policy.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
         /// ExtId of the VPC extId to which the routing policy belongs.
         /// </summary>
         [Input("vpcExtId", required: true)]
@@ -299,6 +311,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("priority")]
         public Input<int>? Priority { get; set; }
+
+        /// <summary>
+        /// External identifier of the project associated with the Routing Policy.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity

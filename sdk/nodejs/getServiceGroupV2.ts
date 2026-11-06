@@ -77,6 +77,10 @@ export interface GetServiceGroupV2Result {
      */
     readonly policyReferences: string[];
     /**
+     * Project external ID associated with the service group.
+     */
+    readonly projectExtId: string;
+    /**
      * List of TCP ports in the service.
      */
     readonly tcpServices: outputs.GetServiceGroupV2TcpService[];

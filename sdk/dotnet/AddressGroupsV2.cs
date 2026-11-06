@@ -115,6 +115,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<string>> PolicyReferences { get; private set; } = null!;
 
         /// <summary>
+        /// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
         [Output("tenantId")]
@@ -203,6 +209,12 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         public AddressGroupsV2Args()
         {
         }
@@ -282,6 +294,12 @@ namespace PiersKarsenbarg.Nutanix
             get => _policyReferences ?? (_policyReferences = new InputList<string>());
             set => _policyReferences = value;
         }
+
+        /// <summary>
+        /// - (Optional) Project external ID to associate with the address group. Note: This field cannot be updated after creation.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.

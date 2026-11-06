@@ -113,6 +113,8 @@ type ServiceGroupsV2 struct {
 	Name pulumi.StringOutput `pulumi:"name"`
 	// Reference to policy associated with Address Group.
 	PolicyReferences pulumi.StringArrayOutput `pulumi:"policyReferences"`
+	// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// List of TCP ports in the service.
 	TcpServices ServiceGroupsV2TcpServiceArrayOutput `pulumi:"tcpServices"`
 	// A globally unique identifier that represents the tenant that owns this entity.
@@ -167,6 +169,8 @@ type serviceGroupsV2State struct {
 	Name *string `pulumi:"name"`
 	// Reference to policy associated with Address Group.
 	PolicyReferences []string `pulumi:"policyReferences"`
+	// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// List of TCP ports in the service.
 	TcpServices []ServiceGroupsV2TcpService `pulumi:"tcpServices"`
 	// A globally unique identifier that represents the tenant that owns this entity.
@@ -192,6 +196,8 @@ type ServiceGroupsV2State struct {
 	Name pulumi.StringPtrInput
 	// Reference to policy associated with Address Group.
 	PolicyReferences pulumi.StringArrayInput
+	// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 	// List of TCP ports in the service.
 	TcpServices ServiceGroupsV2TcpServiceArrayInput
 	// A globally unique identifier that represents the tenant that owns this entity.
@@ -217,6 +223,8 @@ type serviceGroupsV2Args struct {
 	IcmpServices []ServiceGroupsV2IcmpService `pulumi:"icmpServices"`
 	// Name of the service group
 	Name *string `pulumi:"name"`
+	// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// List of TCP ports in the service.
 	TcpServices []ServiceGroupsV2TcpService `pulumi:"tcpServices"`
 	// List of UDP ports in the service.
@@ -231,6 +239,8 @@ type ServiceGroupsV2Args struct {
 	IcmpServices ServiceGroupsV2IcmpServiceArrayInput
 	// Name of the service group
 	Name pulumi.StringPtrInput
+	// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+	ProjectExtId pulumi.StringPtrInput
 	// List of TCP ports in the service.
 	TcpServices ServiceGroupsV2TcpServiceArrayInput
 	// List of UDP ports in the service.
@@ -362,6 +372,11 @@ func (o ServiceGroupsV2Output) Name() pulumi.StringOutput {
 // Reference to policy associated with Address Group.
 func (o ServiceGroupsV2Output) PolicyReferences() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ServiceGroupsV2) pulumi.StringArrayOutput { return v.PolicyReferences }).(pulumi.StringArrayOutput)
+}
+
+// Project external ID to associate with the service group. Note: This field cannot be updated after creation.
+func (o ServiceGroupsV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ServiceGroupsV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // List of TCP ports in the service.

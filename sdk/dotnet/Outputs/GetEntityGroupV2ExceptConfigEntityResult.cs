@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<string> ReferenceExtIds;
         /// <summary>
-        /// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES).
+        /// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
         /// </summary>
         public readonly string SelectedBy;
         /// <summary>

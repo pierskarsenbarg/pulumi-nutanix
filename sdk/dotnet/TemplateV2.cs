@@ -38,6 +38,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<Outputs.TemplateV2Link>> Links { get; private set; } = null!;
 
         /// <summary>
+        /// The external identifier of the project with which the template is associated.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// The user defined description of a Template.
         /// </summary>
         [Output("templateDescription")]
@@ -140,6 +146,12 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
+        /// The external identifier of the project with which the template is associated.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
         /// The user defined description of a Template.
         /// </summary>
         [Input("templateDescription")]
@@ -214,6 +226,12 @@ namespace PiersKarsenbarg.Nutanix
             get => _links ?? (_links = new InputList<Inputs.TemplateV2LinkGetArgs>());
             set => _links = value;
         }
+
+        /// <summary>
+        /// The external identifier of the project with which the template is associated.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// The user defined description of a Template.

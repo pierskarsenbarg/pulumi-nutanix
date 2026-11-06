@@ -7,6 +7,8 @@ import * as outputs from "./types/output";
 import * as utilities from "./utilities";
 
 /**
+ * > **Note:** This data source is in Beta because the underlying Nutanix SDK API is currently in Beta. The data source and its behavior may change in future releases as the SDK API evolves.
+ *
  * Provides a datasource to retrieve all the SAML Identity Provider(s).
  *
  * ## Example Usage
@@ -103,6 +105,8 @@ export interface GetSamlIdentityProvidersV2Result {
     readonly select?: string;
 }
 /**
+ * > **Note:** This data source is in Beta because the underlying Nutanix SDK API is currently in Beta. The data source and its behavior may change in future releases as the SDK API evolves.
+ *
  * Provides a datasource to retrieve all the SAML Identity Provider(s).
  *
  * ## Example Usage

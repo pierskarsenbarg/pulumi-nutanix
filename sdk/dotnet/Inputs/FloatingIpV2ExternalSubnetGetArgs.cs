@@ -72,6 +72,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("isAdvancedNetworking")]
         public Input<bool>? IsAdvancedNetworking { get; set; }
 
+        [Input("isConnected")]
+        public Input<bool>? IsConnected { get; set; }
+
         [Input("isExternal")]
         public Input<bool>? IsExternal { get; set; }
 
@@ -117,12 +120,26 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("networkId")]
         public Input<int>? NetworkId { get; set; }
 
+        /// <summary>
+        /// External identifier of the project associated with the Floating IP.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("reservedIpAddresses")]
         private InputList<Inputs.FloatingIpV2ExternalSubnetReservedIpAddressGetArgs>? _reservedIpAddresses;
         public InputList<Inputs.FloatingIpV2ExternalSubnetReservedIpAddressGetArgs> ReservedIpAddresses
         {
             get => _reservedIpAddresses ?? (_reservedIpAddresses = new InputList<Inputs.FloatingIpV2ExternalSubnetReservedIpAddressGetArgs>());
             set => _reservedIpAddresses = value;
+        }
+
+        [Input("sharedWithProjects")]
+        private InputList<string>? _sharedWithProjects;
+        public InputList<string> SharedWithProjects
+        {
+            get => _sharedWithProjects ?? (_sharedWithProjects = new InputList<string>());
+            set => _sharedWithProjects = value;
         }
 
         [Input("subnetType")]

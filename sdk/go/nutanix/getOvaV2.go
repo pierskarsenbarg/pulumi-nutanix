@@ -87,6 +87,8 @@ type LookupOvaV2Result struct {
 	Name string `pulumi:"name"`
 	// - The parent VM used for creating the OVA.
 	ParentVm string `pulumi:"parentVm"`
+	// - External identifier of the project associated with the OVA.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// - Size of OVA in bytes.
 	SizeBytes int `pulumi:"sizeBytes"`
 	// Reference to an entity that the VM should be cloned or created from
@@ -186,6 +188,11 @@ func (o LookupOvaV2ResultOutput) Name() pulumi.StringOutput {
 // - The parent VM used for creating the OVA.
 func (o LookupOvaV2ResultOutput) ParentVm() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOvaV2Result) string { return v.ParentVm }).(pulumi.StringOutput)
+}
+
+// - External identifier of the project associated with the OVA.
+func (o LookupOvaV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupOvaV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // - Size of OVA in bytes.

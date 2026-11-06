@@ -78,6 +78,8 @@ type LookupNetworkFunctionV2Result struct {
 	Name string `pulumi:"name"`
 	// List of NIC pairs part of this network function.
 	NicPairs []GetNetworkFunctionV2NicPair `pulumi:"nicPairs"`
+	// Project external ID associated with the network function.
+	ProjectExtId string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId string `pulumi:"tenantId"`
 	// Traffic forwarding mode. Values:
@@ -164,6 +166,11 @@ func (o LookupNetworkFunctionV2ResultOutput) Name() pulumi.StringOutput {
 // List of NIC pairs part of this network function.
 func (o LookupNetworkFunctionV2ResultOutput) NicPairs() GetNetworkFunctionV2NicPairArrayOutput {
 	return o.ApplyT(func(v LookupNetworkFunctionV2Result) []GetNetworkFunctionV2NicPair { return v.NicPairs }).(GetNetworkFunctionV2NicPairArrayOutput)
+}
+
+// Project external ID associated with the network function.
+func (o LookupNetworkFunctionV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupNetworkFunctionV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

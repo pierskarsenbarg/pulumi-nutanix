@@ -147,6 +147,16 @@ export interface GetProjectResult {
      */
     readonly description: string;
     /**
+     * List of directory services associated with the project.
+     * * `directory_reference_list.#.uuid` - The UUID of a directory service.
+     * * `directory_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`directoryService`" pulumi-lang-dotnet="`DirectoryService`" pulumi-lang-go="`directoryService`" pulumi-lang-python="`directory_service`" pulumi-lang-yaml="`directoryService`" pulumi-lang-java="`directoryService`" pulumi-lang-hcl="`directory_service`">`directoryService`</span>
+     */
+    readonly directoryReferenceLists: outputs.GetProjectDirectoryReferenceList[];
+    /**
+     * Flag indicating whether the directory services and identity providers associated with the project are shortlisted.
+     */
+    readonly enableDirectoryAndIdentityProviderShortlist: boolean;
+    /**
      * List of environments associated with the project.
      * * `environment_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`environment`" pulumi-lang-dotnet="`Environment`" pulumi-lang-go="`environment`" pulumi-lang-python="`environment`" pulumi-lang-yaml="`environment`" pulumi-lang-java="`environment`" pulumi-lang-hcl="`environment`">`environment`</span>
      * * `environment_reference_list.#.uuid` - The UUID of an environment.
@@ -177,6 +187,12 @@ export interface GetProjectResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    /**
+     * List of identity providers associated with the project.
+     * * `identity_providers_reference_list.#.uuid` - The UUID of an identity provider.
+     * * `identity_providers_reference_list.#.kind` - The kind name. Default value is <span pulumi-lang-nodejs="`identityProvider`" pulumi-lang-dotnet="`IdentityProvider`" pulumi-lang-go="`identityProvider`" pulumi-lang-python="`identity_provider`" pulumi-lang-yaml="`identityProvider`" pulumi-lang-java="`identityProvider`" pulumi-lang-hcl="`identity_provider`">`identityProvider`</span>
+     */
+    readonly identityProvidersReferenceLists: outputs.GetProjectIdentityProvidersReferenceList[];
     readonly isDefault: boolean;
     readonly metadata: {[key: string]: string};
     /**

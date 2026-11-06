@@ -39,7 +39,7 @@ import * as utilities from "./utilities";
  *   * <span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`">`replicationFactor`</span>:- Replication factor value.
  * * <span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`">`policyType`</span>:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
  *
- * See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
+ * See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.3#tag/StoragePolicies/operation/listStoragePolicies).
  */
 export function getStoragePoliciesV2(args?: GetStoragePoliciesV2Args, opts?: pulumi.InvokeOptions): Promise<GetStoragePoliciesV2Result> {
     args = args || {};
@@ -131,7 +131,7 @@ export interface GetStoragePoliciesV2Result {
  *   * <span pulumi-lang-nodejs="`replicationFactor`" pulumi-lang-dotnet="`ReplicationFactor`" pulumi-lang-go="`replicationFactor`" pulumi-lang-python="`replication_factor`" pulumi-lang-yaml="`replicationFactor`" pulumi-lang-java="`replicationFactor`" pulumi-lang-hcl="`replication_factor`">`replicationFactor`</span>:- Replication factor value.
  * * <span pulumi-lang-nodejs="`policyType`" pulumi-lang-dotnet="`PolicyType`" pulumi-lang-go="`policyType`" pulumi-lang-python="`policy_type`" pulumi-lang-yaml="`policyType`" pulumi-lang-java="`policyType`" pulumi-lang-hcl="`policy_type`">`policyType`</span>:- Indicates whether the policy is user-created or system-created. Valid values: `"USER"`, `"SYSTEM"`.
  *
- * See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.2#tag/StoragePolicies/operation/listStoragePolicies).
+ * See detailed information in [Nutanix Get Storage Policies v4](https://developers.nutanix.com/api-reference?namespace=datapolicies&version=v4.3#tag/StoragePolicies/operation/listStoragePolicies).
  */
 export function getStoragePoliciesV2Output(args?: GetStoragePoliciesV2OutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetStoragePoliciesV2Result> {
     args = args || {};

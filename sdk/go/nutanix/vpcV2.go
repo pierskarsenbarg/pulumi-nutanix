@@ -121,13 +121,25 @@ type VpcV2 struct {
 	ExternalSubnets VpcV2ExternalSubnetArrayOutput `pulumi:"externalSubnets"`
 	// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
 	ExternallyRoutablePrefixes VpcV2ExternallyRoutablePrefixArrayOutput `pulumi:"externallyRoutablePrefixes"`
+	// List of Kubernetes clusters associated with the VPC.
+	KubernetesClusters VpcV2KubernetesClusterArrayOutput `pulumi:"kubernetesClusters"`
 	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links VpcV2LinkArrayOutput `pulumi:"links"`
 	// The vpc kind metadata.
 	Metadatas VpcV2MetadataArrayOutput `pulumi:"metadatas"`
 	// Name of the VPC.
-	Name    pulumi.StringOutput    `pulumi:"name"`
-	SnatIps VpcV2SnatIpArrayOutput `pulumi:"snatIps"`
+	Name pulumi.StringOutput `pulumi:"name"`
+	// External identifier of the project associated with the VPC.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
+	// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+	Scope pulumi.StringOutput `pulumi:"scope"`
+	// List of project external identifiers with which the VPC is shared.
+	SharedWithProjects pulumi.StringArrayOutput `pulumi:"sharedWithProjects"`
+	// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+	ShouldAdvertiseConnectedSubnets pulumi.BoolOutput      `pulumi:"shouldAdvertiseConnectedSubnets"`
+	SnatIps                         VpcV2SnatIpArrayOutput `pulumi:"snatIps"`
+	// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+	SupportedMultipleExternalSubnetType pulumi.StringOutput `pulumi:"supportedMultipleExternalSubnetType"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
@@ -176,13 +188,25 @@ type vpcV2State struct {
 	ExternalSubnets []VpcV2ExternalSubnet `pulumi:"externalSubnets"`
 	// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
 	ExternallyRoutablePrefixes []VpcV2ExternallyRoutablePrefix `pulumi:"externallyRoutablePrefixes"`
+	// List of Kubernetes clusters associated with the VPC.
+	KubernetesClusters []VpcV2KubernetesCluster `pulumi:"kubernetesClusters"`
 	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links []VpcV2Link `pulumi:"links"`
 	// The vpc kind metadata.
 	Metadatas []VpcV2Metadata `pulumi:"metadatas"`
 	// Name of the VPC.
-	Name    *string       `pulumi:"name"`
-	SnatIps []VpcV2SnatIp `pulumi:"snatIps"`
+	Name *string `pulumi:"name"`
+	// External identifier of the project associated with the VPC.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+	Scope *string `pulumi:"scope"`
+	// List of project external identifiers with which the VPC is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
+	// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+	ShouldAdvertiseConnectedSubnets *bool         `pulumi:"shouldAdvertiseConnectedSubnets"`
+	SnatIps                         []VpcV2SnatIp `pulumi:"snatIps"`
+	// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+	SupportedMultipleExternalSubnetType *string `pulumi:"supportedMultipleExternalSubnetType"`
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId *string `pulumi:"tenantId"`
 	// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
@@ -202,13 +226,25 @@ type VpcV2State struct {
 	ExternalSubnets VpcV2ExternalSubnetArrayInput
 	// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
 	ExternallyRoutablePrefixes VpcV2ExternallyRoutablePrefixArrayInput
+	// List of Kubernetes clusters associated with the VPC.
+	KubernetesClusters VpcV2KubernetesClusterArrayInput
 	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 	Links VpcV2LinkArrayInput
 	// The vpc kind metadata.
 	Metadatas VpcV2MetadataArrayInput
 	// Name of the VPC.
-	Name    pulumi.StringPtrInput
-	SnatIps VpcV2SnatIpArrayInput
+	Name pulumi.StringPtrInput
+	// External identifier of the project associated with the VPC.
+	ProjectExtId pulumi.StringPtrInput
+	// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+	Scope pulumi.StringPtrInput
+	// List of project external identifiers with which the VPC is shared.
+	SharedWithProjects pulumi.StringArrayInput
+	// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+	ShouldAdvertiseConnectedSubnets pulumi.BoolPtrInput
+	SnatIps                         VpcV2SnatIpArrayInput
+	// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+	SupportedMultipleExternalSubnetType pulumi.StringPtrInput
 	// A globally unique identifier that represents the tenant that owns this entity.
 	TenantId pulumi.StringPtrInput
 	// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
@@ -236,10 +272,22 @@ type vpcV2Args struct {
 	ExternalSubnets []VpcV2ExternalSubnet `pulumi:"externalSubnets"`
 	// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
 	ExternallyRoutablePrefixes []VpcV2ExternallyRoutablePrefix `pulumi:"externallyRoutablePrefixes"`
+	// List of Kubernetes clusters associated with the VPC.
+	KubernetesClusters []VpcV2KubernetesCluster `pulumi:"kubernetesClusters"`
 	// The vpc kind metadata.
 	Metadatas []VpcV2Metadata `pulumi:"metadatas"`
 	// Name of the VPC.
 	Name *string `pulumi:"name"`
+	// External identifier of the project associated with the VPC.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+	Scope *string `pulumi:"scope"`
+	// List of project external identifiers with which the VPC is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
+	// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+	ShouldAdvertiseConnectedSubnets *bool `pulumi:"shouldAdvertiseConnectedSubnets"`
+	// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+	SupportedMultipleExternalSubnetType *string `pulumi:"supportedMultipleExternalSubnetType"`
 	// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
 	VpcType *string `pulumi:"vpcType"`
 }
@@ -256,10 +304,22 @@ type VpcV2Args struct {
 	ExternalSubnets VpcV2ExternalSubnetArrayInput
 	// CIDR blocks from the VPC which can talk externally without performing NAT. This is applicable when connecting to external subnets which have disabled NAT.
 	ExternallyRoutablePrefixes VpcV2ExternallyRoutablePrefixArrayInput
+	// List of Kubernetes clusters associated with the VPC.
+	KubernetesClusters VpcV2KubernetesClusterArrayInput
 	// The vpc kind metadata.
 	Metadatas VpcV2MetadataArrayInput
 	// Name of the VPC.
 	Name pulumi.StringPtrInput
+	// External identifier of the project associated with the VPC.
+	ProjectExtId pulumi.StringPtrInput
+	// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+	Scope pulumi.StringPtrInput
+	// List of project external identifiers with which the VPC is shared.
+	SharedWithProjects pulumi.StringArrayInput
+	// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+	ShouldAdvertiseConnectedSubnets pulumi.BoolPtrInput
+	// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+	SupportedMultipleExternalSubnetType pulumi.StringPtrInput
 	// Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
 	VpcType pulumi.StringPtrInput
 }
@@ -381,6 +441,11 @@ func (o VpcV2Output) ExternallyRoutablePrefixes() VpcV2ExternallyRoutablePrefixA
 	return o.ApplyT(func(v *VpcV2) VpcV2ExternallyRoutablePrefixArrayOutput { return v.ExternallyRoutablePrefixes }).(VpcV2ExternallyRoutablePrefixArrayOutput)
 }
 
+// List of Kubernetes clusters associated with the VPC.
+func (o VpcV2Output) KubernetesClusters() VpcV2KubernetesClusterArrayOutput {
+	return o.ApplyT(func(v *VpcV2) VpcV2KubernetesClusterArrayOutput { return v.KubernetesClusters }).(VpcV2KubernetesClusterArrayOutput)
+}
+
 // A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
 func (o VpcV2Output) Links() VpcV2LinkArrayOutput {
 	return o.ApplyT(func(v *VpcV2) VpcV2LinkArrayOutput { return v.Links }).(VpcV2LinkArrayOutput)
@@ -396,8 +461,33 @@ func (o VpcV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *VpcV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
+// External identifier of the project associated with the VPC.
+func (o VpcV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *VpcV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+func (o VpcV2Output) Scope() pulumi.StringOutput {
+	return o.ApplyT(func(v *VpcV2) pulumi.StringOutput { return v.Scope }).(pulumi.StringOutput)
+}
+
+// List of project external identifiers with which the VPC is shared.
+func (o VpcV2Output) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *VpcV2) pulumi.StringArrayOutput { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
+}
+
+// When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+func (o VpcV2Output) ShouldAdvertiseConnectedSubnets() pulumi.BoolOutput {
+	return o.ApplyT(func(v *VpcV2) pulumi.BoolOutput { return v.ShouldAdvertiseConnectedSubnets }).(pulumi.BoolOutput)
+}
+
 func (o VpcV2Output) SnatIps() VpcV2SnatIpArrayOutput {
 	return o.ApplyT(func(v *VpcV2) VpcV2SnatIpArrayOutput { return v.SnatIps }).(VpcV2SnatIpArrayOutput)
+}
+
+// Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+func (o VpcV2Output) SupportedMultipleExternalSubnetType() pulumi.StringOutput {
+	return o.ApplyT(func(v *VpcV2) pulumi.StringOutput { return v.SupportedMultipleExternalSubnetType }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity.

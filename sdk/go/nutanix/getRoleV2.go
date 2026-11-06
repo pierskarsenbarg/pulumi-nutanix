@@ -88,6 +88,10 @@ type GetRoleV2Result struct {
 	Links []GetRoleV2Link `pulumi:"links"`
 	// - List of operations for the role.
 	Operations []string `pulumi:"operations"`
+	// - Project reference for the role.
+	ProjectExtId string `pulumi:"projectExtId"`
+	// - Flag indicating whether the role is shared with all projects or not.
+	ShareWithAllProjects bool `pulumi:"shareWithAllProjects"`
 	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
 	TenantId string `pulumi:"tenantId"`
 }
@@ -195,6 +199,16 @@ func (o GetRoleV2ResultOutput) Links() GetRoleV2LinkArrayOutput {
 // - List of operations for the role.
 func (o GetRoleV2ResultOutput) Operations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetRoleV2Result) []string { return v.Operations }).(pulumi.StringArrayOutput)
+}
+
+// - Project reference for the role.
+func (o GetRoleV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRoleV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// - Flag indicating whether the role is shared with all projects or not.
+func (o GetRoleV2ResultOutput) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRoleV2Result) bool { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
 }
 
 // - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).

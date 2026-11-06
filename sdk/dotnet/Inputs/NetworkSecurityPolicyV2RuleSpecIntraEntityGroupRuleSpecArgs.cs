@@ -41,7 +41,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<string>? _securedGroupCategoryReferences;
 
         /// <summary>
-        /// List of category references for the secured group.
+        /// List of category references for the secured group. Exactly one of &lt;span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`"&gt;`securedGroupCategoryReferences`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`"&gt;`securedGroupEntityGroupReference`&lt;/span&gt; must be set.
         /// </summary>
         public InputList<string> SecuredGroupCategoryReferences
         {
@@ -50,7 +50,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// Reference to the secured group entity group.
+        /// Reference to the secured group entity group. Exactly one of &lt;span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`"&gt;`securedGroupCategoryReferences`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`"&gt;`securedGroupEntityGroupReference`&lt;/span&gt; must be set.
         /// </summary>
         [Input("securedGroupEntityGroupReference")]
         public Input<string>? SecuredGroupEntityGroupReference { get; set; }

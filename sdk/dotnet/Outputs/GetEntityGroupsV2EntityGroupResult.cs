@@ -35,6 +35,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string ExtId;
         /// <summary>
+        /// Indicates whether the Entity Group is shared with all projects.
+        /// </summary>
+        public readonly bool IsSharedWithAllProjects;
+        /// <summary>
+        /// A flag indicating whether the entity group is system-defined.
+        /// </summary>
+        public readonly bool IsSystemDefined;
+        /// <summary>
         /// The timestamp when the Entity Group was last updated.
         /// </summary>
         public readonly string LastUpdateTime;
@@ -55,6 +63,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<string> PolicyExtIds;
         /// <summary>
+        /// Project external ID associated with the entity group.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
         public readonly string TenantId;
@@ -71,6 +83,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string extId,
 
+            bool isSharedWithAllProjects,
+
+            bool isSystemDefined,
+
             string lastUpdateTime,
 
             ImmutableArray<Outputs.GetEntityGroupsV2EntityGroupLinkResult> links,
@@ -81,6 +97,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<string> policyExtIds,
 
+            string projectExtId,
+
             string tenantId)
         {
             AllowedConfigs = allowedConfigs;
@@ -88,11 +106,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Description = description;
             ExceptConfigs = exceptConfigs;
             ExtId = extId;
+            IsSharedWithAllProjects = isSharedWithAllProjects;
+            IsSystemDefined = isSystemDefined;
             LastUpdateTime = lastUpdateTime;
             Links = links;
             Name = name;
             OwnerExtId = ownerExtId;
             PolicyExtIds = policyExtIds;
+            ProjectExtId = projectExtId;
             TenantId = tenantId;
         }
     }

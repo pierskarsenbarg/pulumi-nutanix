@@ -14,7 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class VolumeGroupV2StorageFeatureFlashModeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// - Indicates whether the flash mode is enabled for the Volume Group Disk.
+        /// Indicates whether the flash mode is enabled for the Volume Group.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

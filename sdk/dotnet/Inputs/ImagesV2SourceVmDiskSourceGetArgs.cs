@@ -15,9 +15,16 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     {
         /// <summary>
         /// The external identifier of VM Disk.
+        /// &gt; **Deprecation Notice:** Providing &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt; without &lt;span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`"&gt;`vmExtId`&lt;/span&gt; is deprecated and will not be supported in a future release.
         /// </summary>
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
+
+        /// <summary>
+        /// The external identifier of the source VM for the specified disk.
+        /// </summary>
+        [Input("vmExtId")]
+        public Input<string>? VmExtId { get; set; }
 
         public ImagesV2SourceVmDiskSourceGetArgs()
         {

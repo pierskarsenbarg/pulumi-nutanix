@@ -47,6 +47,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string ExtId;
         /// <summary>
+        /// - Fault tolerant state of cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileFaultToleranceConfigResult> FaultToleranceConfigs;
+        /// <summary>
+        /// - HTTP proxy configuration for the cluster.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileHttpProxyConfigResult> HttpProxyConfigs;
+        /// <summary>
         /// - The last updated time of a cluster profile.
         /// </summary>
         public readonly string LastUpdateTime;
@@ -59,7 +67,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileLinkResult> Links;
         /// <summary>
-        /// - Name of the cluster profile.
+        /// HTTP proxy server name.
         /// </summary>
         public readonly string Name;
         /// <summary>
@@ -71,6 +79,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<string> NfsSubnetWhiteLists;
         /// <summary>
+        /// - List of NTP server configurations with encryption authentication.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileNtpServerConfigListResult> NtpServerConfigLists;
+        /// <summary>
         /// - List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileNtpServerIpListResult> NtpServerIpLists;
@@ -78,6 +90,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// - Pulse status for a cluster.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfilePulseStatusResult> PulseStatuses;
+        /// <summary>
+        /// - Rebuild capacity reservation configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileRebuildReservationConfigResult> RebuildReservationConfigs;
+        /// <summary>
+        /// - Resilient capacity warning threshold configuration.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileResilientCapacityWarningThresholdConfigResult> ResilientCapacityWarningThresholdConfigs;
         /// <summary>
         /// - RSYSLOG Server.
         /// </summary>
@@ -113,6 +133,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string extId,
 
+            ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileFaultToleranceConfigResult> faultToleranceConfigs,
+
+            ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileHttpProxyConfigResult> httpProxyConfigs,
+
             string lastUpdateTime,
 
             string lastUpdatedBy,
@@ -125,9 +149,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<string> nfsSubnetWhiteLists,
 
+            ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileNtpServerConfigListResult> ntpServerConfigLists,
+
             ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileNtpServerIpListResult> ntpServerIpLists,
 
             ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfilePulseStatusResult> pulseStatuses,
+
+            ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileRebuildReservationConfigResult> rebuildReservationConfigs,
+
+            ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileResilientCapacityWarningThresholdConfigResult> resilientCapacityWarningThresholdConfigs,
 
             ImmutableArray<Outputs.GetClusterProfilesV2ClusterProfileRsyslogServerListResult> rsyslogServerLists,
 
@@ -145,14 +175,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Description = description;
             DriftedClusterCount = driftedClusterCount;
             ExtId = extId;
+            FaultToleranceConfigs = faultToleranceConfigs;
+            HttpProxyConfigs = httpProxyConfigs;
             LastUpdateTime = lastUpdateTime;
             LastUpdatedBy = lastUpdatedBy;
             Links = links;
             Name = name;
             NameServerIpLists = nameServerIpLists;
             NfsSubnetWhiteLists = nfsSubnetWhiteLists;
+            NtpServerConfigLists = ntpServerConfigLists;
             NtpServerIpLists = ntpServerIpLists;
             PulseStatuses = pulseStatuses;
+            RebuildReservationConfigs = rebuildReservationConfigs;
+            ResilientCapacityWarningThresholdConfigs = resilientCapacityWarningThresholdConfigs;
             RsyslogServerLists = rsyslogServerLists;
             SmtpServers = smtpServers;
             SnmpConfigs = snmpConfigs;

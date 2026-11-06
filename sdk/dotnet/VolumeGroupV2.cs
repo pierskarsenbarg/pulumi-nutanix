@@ -61,6 +61,64 @@ namespace PiersKarsenbarg.Nutanix
     /// });
     /// ```
     /// &lt;!--End PulumiCodeChooser --&gt;
+    /// 
+    /// ## Update
+    /// 
+    /// - The following arguments can be updated in place (via the Update Volume Group API):
+    ///   &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`shouldLoadBalanceVmAttachments`" pulumi-lang-dotnet="`ShouldLoadBalanceVmAttachments`" pulumi-lang-go="`shouldLoadBalanceVmAttachments`" pulumi-lang-python="`should_load_balance_vm_attachments`" pulumi-lang-yaml="`shouldLoadBalanceVmAttachments`" pulumi-lang-java="`shouldLoadBalanceVmAttachments`" pulumi-lang-hcl="`should_load_balance_vm_attachments`"&gt;`shouldLoadBalanceVmAttachments`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`sharingStatus`" pulumi-lang-dotnet="`SharingStatus`" pulumi-lang-go="`sharingStatus`" pulumi-lang-python="`sharing_status`" pulumi-lang-yaml="`sharingStatus`" pulumi-lang-java="`sharingStatus`" pulumi-lang-hcl="`sharing_status`"&gt;`sharingStatus`&lt;/span&gt;,
+    ///   &lt;span pulumi-lang-nodejs="`targetPrefix`" pulumi-lang-dotnet="`TargetPrefix`" pulumi-lang-go="`targetPrefix`" pulumi-lang-python="`target_prefix`" pulumi-lang-yaml="`targetPrefix`" pulumi-lang-java="`targetPrefix`" pulumi-lang-hcl="`target_prefix`"&gt;`targetPrefix`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`targetName`" pulumi-lang-dotnet="`TargetName`" pulumi-lang-go="`targetName`" pulumi-lang-python="`target_name`" pulumi-lang-yaml="`targetName`" pulumi-lang-java="`targetName`" pulumi-lang-hcl="`target_name`"&gt;`targetName`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`" pulumi-lang-hcl="`enabled_authentications`"&gt;`enabledAuthentications`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`iscsiFeatures`" pulumi-lang-dotnet="`IscsiFeatures`" pulumi-lang-go="`iscsiFeatures`" pulumi-lang-python="`iscsi_features`" pulumi-lang-yaml="`iscsiFeatures`" pulumi-lang-java="`iscsiFeatures`" pulumi-lang-hcl="`iscsi_features`"&gt;`iscsiFeatures`&lt;/span&gt;,
+    ///   &lt;span pulumi-lang-nodejs="`createdBy`" pulumi-lang-dotnet="`CreatedBy`" pulumi-lang-go="`createdBy`" pulumi-lang-python="`created_by`" pulumi-lang-yaml="`createdBy`" pulumi-lang-java="`createdBy`" pulumi-lang-hcl="`created_by`"&gt;`createdBy`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`storageFeatures`" pulumi-lang-dotnet="`StorageFeatures`" pulumi-lang-go="`storageFeatures`" pulumi-lang-python="`storage_features`" pulumi-lang-yaml="`storageFeatures`" pulumi-lang-java="`storageFeatures`" pulumi-lang-hcl="`storage_features`"&gt;`storageFeatures`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`usageType`" pulumi-lang-dotnet="`UsageType`" pulumi-lang-go="`usageType`" pulumi-lang-python="`usage_type`" pulumi-lang-yaml="`usageType`" pulumi-lang-java="`usageType`" pulumi-lang-hcl="`usage_type`"&gt;`usageType`&lt;/span&gt;, and &lt;span pulumi-lang-nodejs="`isHidden`" pulumi-lang-dotnet="`IsHidden`" pulumi-lang-go="`isHidden`" pulumi-lang-python="`is_hidden`" pulumi-lang-yaml="`isHidden`" pulumi-lang-java="`isHidden`" pulumi-lang-hcl="`is_hidden`"&gt;`isHidden`&lt;/span&gt;.
+    /// - &lt;span pulumi-lang-nodejs="`disks`" pulumi-lang-dotnet="`Disks`" pulumi-lang-go="`disks`" pulumi-lang-python="`disks`" pulumi-lang-yaml="`disks`" pulumi-lang-java="`disks`" pulumi-lang-hcl="`disks`"&gt;`disks`&lt;/span&gt; can be updated in place.
+    /// - Updating &lt;span pulumi-lang-nodejs="`projectExtId`" pulumi-lang-dotnet="`ProjectExtId`" pulumi-lang-go="`projectExtId`" pulumi-lang-python="`project_ext_id`" pulumi-lang-yaml="`projectExtId`" pulumi-lang-java="`projectExtId`" pulumi-lang-hcl="`project_ext_id`"&gt;`projectExtId`&lt;/span&gt; is not supported.
+    /// 
+    /// ### Iscsi Features
+    /// 
+    /// The&lt;span pulumi-lang-nodejs=" iscsiFeatures " pulumi-lang-dotnet=" IscsiFeatures " pulumi-lang-go=" iscsiFeatures " pulumi-lang-python=" iscsi_features " pulumi-lang-yaml=" iscsiFeatures " pulumi-lang-java=" iscsiFeatures " pulumi-lang-hcl=" iscsi_features "&gt; iscsiFeatures &lt;/span&gt;attribute supports the following:
+    /// 
+    /// - &lt;span pulumi-lang-nodejs="`enabledAuthentications`" pulumi-lang-dotnet="`EnabledAuthentications`" pulumi-lang-go="`enabledAuthentications`" pulumi-lang-python="`enabled_authentications`" pulumi-lang-yaml="`enabledAuthentications`" pulumi-lang-java="`enabledAuthentications`" pulumi-lang-hcl="`enabled_authentications`"&gt;`enabledAuthentications`&lt;/span&gt;: - The authentication type enabled for the Volume Group.
+    /// 
+    /// ### Storage Features
+    /// 
+    /// The storage features attribute supports the following:
+    /// 
+    /// - &lt;span pulumi-lang-nodejs="`flashMode`" pulumi-lang-dotnet="`FlashMode`" pulumi-lang-go="`flashMode`" pulumi-lang-python="`flash_mode`" pulumi-lang-yaml="`flashMode`" pulumi-lang-java="`flashMode`" pulumi-lang-hcl="`flash_mode`"&gt;`flashMode`&lt;/span&gt;: - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+    /// 
+    /// #### Flash Mode
+    /// 
+    /// The flash mode features attribute supports the following:
+    /// 
+    /// - &lt;span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`" pulumi-lang-hcl="`is_enabled`"&gt;`isEnabled`&lt;/span&gt;: - Indicates whether the flash mode is enabled for the Volume Group.
+    /// 
+    /// ### Disks
+    /// 
+    /// The disks attribute supports the following:
+    /// 
+    /// - &lt;span pulumi-lang-nodejs="`index`" pulumi-lang-dotnet="`Index`" pulumi-lang-go="`index`" pulumi-lang-python="`index`" pulumi-lang-yaml="`index`" pulumi-lang-java="`index`" pulumi-lang-hcl="`index`"&gt;`index`&lt;/span&gt;: - Index of the disk in a Volume Group. This field is optional and immutable.
+    /// - &lt;span pulumi-lang-nodejs="`diskSizeBytes`" pulumi-lang-dotnet="`DiskSizeBytes`" pulumi-lang-go="`diskSizeBytes`" pulumi-lang-python="`disk_size_bytes`" pulumi-lang-yaml="`diskSizeBytes`" pulumi-lang-java="`diskSizeBytes`" pulumi-lang-hcl="`disk_size_bytes`"&gt;`diskSizeBytes`&lt;/span&gt;: - Size of the disk in bytes. This field is mandatory during Volume Group creation if a new disk is being created on the storage container.
+    /// - &lt;span pulumi-lang-nodejs="`description`" pulumi-lang-dotnet="`Description`" pulumi-lang-go="`description`" pulumi-lang-python="`description`" pulumi-lang-yaml="`description`" pulumi-lang-java="`description`" pulumi-lang-hcl="`description`"&gt;`description`&lt;/span&gt;: - Volume Disk description.
+    /// - &lt;span pulumi-lang-nodejs="`diskDataSourceReference`" pulumi-lang-dotnet="`DiskDataSourceReference`" pulumi-lang-go="`diskDataSourceReference`" pulumi-lang-python="`disk_data_source_reference`" pulumi-lang-yaml="`diskDataSourceReference`" pulumi-lang-java="`diskDataSourceReference`" pulumi-lang-hcl="`disk_data_source_reference`"&gt;`diskDataSourceReference`&lt;/span&gt;: -(Required) Disk Data Source Reference.
+    /// - &lt;span pulumi-lang-nodejs="`diskStorageFeatures`" pulumi-lang-dotnet="`DiskStorageFeatures`" pulumi-lang-go="`diskStorageFeatures`" pulumi-lang-python="`disk_storage_features`" pulumi-lang-yaml="`diskStorageFeatures`" pulumi-lang-java="`diskStorageFeatures`" pulumi-lang-hcl="`disk_storage_features`"&gt;`diskStorageFeatures`&lt;/span&gt;: - Storage optimization features which must be enabled on the Volume Disks. This is an optional field. If omitted, the disks will honor the Volume Group specific storage features setting.
+    /// 
+    /// #### Disk Data Source Reference
+    /// 
+    /// The&lt;span pulumi-lang-nodejs=" diskDataSourceReference " pulumi-lang-dotnet=" DiskDataSourceReference " pulumi-lang-go=" diskDataSourceReference " pulumi-lang-python=" disk_data_source_reference " pulumi-lang-yaml=" diskDataSourceReference " pulumi-lang-java=" diskDataSourceReference " pulumi-lang-hcl=" disk_data_source_reference "&gt; diskDataSourceReference &lt;/span&gt;attribute supports the following:
+    /// 
+    /// - &lt;span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`"&gt;`extId`&lt;/span&gt;: - The external identifier of the Data Source Reference.
+    /// - &lt;span pulumi-lang-nodejs="`name`" pulumi-lang-dotnet="`Name`" pulumi-lang-go="`name`" pulumi-lang-python="`name`" pulumi-lang-yaml="`name`" pulumi-lang-java="`name`" pulumi-lang-hcl="`name`"&gt;`name`&lt;/span&gt;: - The name of the Data Source Reference. for the Volume Group.
+    /// - &lt;span pulumi-lang-nodejs="`uris`" pulumi-lang-dotnet="`Uris`" pulumi-lang-go="`uris`" pulumi-lang-python="`uris`" pulumi-lang-yaml="`uris`" pulumi-lang-java="`uris`" pulumi-lang-hcl="`uris`"&gt;`uris`&lt;/span&gt;: - The uri list of the Data Source Reference.
+    /// - &lt;span pulumi-lang-nodejs="`entityType`" pulumi-lang-dotnet="`EntityType`" pulumi-lang-go="`entityType`" pulumi-lang-python="`entity_type`" pulumi-lang-yaml="`entityType`" pulumi-lang-java="`entityType`" pulumi-lang-hcl="`entity_type`"&gt;`entityType`&lt;/span&gt;: - The Entity Type of the Data Source Reference.
+    /// 
+    /// #### Disk Storage Features
+    /// 
+    /// The&lt;span pulumi-lang-nodejs=" diskStorageFeatures " pulumi-lang-dotnet=" DiskStorageFeatures " pulumi-lang-go=" diskStorageFeatures " pulumi-lang-python=" disk_storage_features " pulumi-lang-yaml=" diskStorageFeatures " pulumi-lang-java=" diskStorageFeatures " pulumi-lang-hcl=" disk_storage_features "&gt; diskStorageFeatures &lt;/span&gt;attribute supports the following:
+    /// 
+    /// - &lt;span pulumi-lang-nodejs="`flashMode`" pulumi-lang-dotnet="`FlashMode`" pulumi-lang-go="`flashMode`" pulumi-lang-python="`flash_mode`" pulumi-lang-yaml="`flashMode`" pulumi-lang-java="`flashMode`" pulumi-lang-hcl="`flash_mode`"&gt;`flashMode`&lt;/span&gt;: - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
+    /// 
+    /// ##### Flash Mode
+    /// 
+    /// The flash mode features attribute supports the following:
+    /// 
+    /// - &lt;span pulumi-lang-nodejs="`isEnabled`" pulumi-lang-dotnet="`IsEnabled`" pulumi-lang-go="`isEnabled`" pulumi-lang-python="`is_enabled`" pulumi-lang-yaml="`isEnabled`" pulumi-lang-java="`isEnabled`" pulumi-lang-hcl="`is_enabled`"&gt;`isEnabled`&lt;/span&gt;: - Indicates whether the flash mode is enabled for the Volume Group Disk.
     /// </summary>
     [NutanixResourceType("nutanix:index/volumeGroupV2:VolumeGroupV2")]
     public partial class VolumeGroupV2 : global::Pulumi.CustomResource
@@ -127,6 +185,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
+
+        /// <summary>
+        /// -(Optional) External identifier of the project associated with the Volume Group. Updating this field is not supported.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
 
         /// <summary>
         /// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
@@ -290,6 +354,12 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Name { get; set; }
 
         /// <summary>
+        /// -(Optional) External identifier of the project associated with the Volume Group. Updating this field is not supported.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
         /// -(Optional) Type of protocol to be used for Volume Group. Valid values are :
         /// - NOT_ASSIGNED : Volume Group does not use any protocol.
         /// - ISCSI : Volume Group uses iSCSI protocol.
@@ -422,6 +492,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// -(Optional) External identifier of the project associated with the Volume Group. Updating this field is not supported.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// -(Optional) Type of protocol to be used for Volume Group. Valid values are :

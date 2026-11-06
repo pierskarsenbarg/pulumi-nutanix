@@ -19,6 +19,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly Outputs.EntityGroupV2AllowedConfigEntityAddresses? Addresses;
         /// <summary>
+        /// List of FQDNs. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `FQDN_VALUES`.
+        /// </summary>
+        public readonly ImmutableArray<string> Fqdns;
+        /// <summary>
         /// With &lt;span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`"&gt;`ipv4Ranges`&lt;/span&gt; block(s):
         /// </summary>
         public readonly Outputs.EntityGroupV2AllowedConfigEntityIpRanges? IpRanges;
@@ -27,11 +31,19 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<string> KubeEntities;
         /// <summary>
+        /// Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
+        /// </summary>
+        public readonly string? MatchCriteria;
+        /// <summary>
         /// List of reference external identifiers. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `EXT_ID`.
         /// </summary>
         public readonly ImmutableArray<string> ReferenceExtIds;
         /// <summary>
-        /// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`.
+        /// String pattern for matching entities. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `REGEX`.
+        /// </summary>
+        public readonly string? ReferenceString;
+        /// <summary>
+        /// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
         /// </summary>
         public readonly string? SelectedBy;
         /// <summary>
@@ -43,20 +55,29 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         private EntityGroupV2AllowedConfigEntity(
             Outputs.EntityGroupV2AllowedConfigEntityAddresses? addresses,
 
+            ImmutableArray<string> fqdns,
+
             Outputs.EntityGroupV2AllowedConfigEntityIpRanges? ipRanges,
 
             ImmutableArray<string> kubeEntities,
 
+            string? matchCriteria,
+
             ImmutableArray<string> referenceExtIds,
+
+            string? referenceString,
 
             string? selectedBy,
 
             string? type)
         {
             Addresses = addresses;
+            Fqdns = fqdns;
             IpRanges = ipRanges;
             KubeEntities = kubeEntities;
+            MatchCriteria = matchCriteria;
             ReferenceExtIds = referenceExtIds;
+            ReferenceString = referenceString;
             SelectedBy = selectedBy;
             Type = type;
         }

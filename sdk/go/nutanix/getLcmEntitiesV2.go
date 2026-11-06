@@ -70,6 +70,7 @@ type GetLcmEntitiesV2Args struct {
 	// * `entityType`
 	// * `entityVersion`
 	// * `hardwareVendor`
+	// * `hasPreviousInventoryFailed`
 	Filter *string `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit   *int    `pulumi:"limit"`
@@ -83,6 +84,7 @@ type GetLcmEntitiesV2Args struct {
 	// * `entityType`
 	// * `entityVersion`
 	// * `hardwareVendor`
+	// * `hasPreviousInventoryFailed`
 	Select *string `pulumi:"select"`
 }
 
@@ -114,6 +116,7 @@ type GetLcmEntitiesV2OutputArgs struct {
 	// * `entityType`
 	// * `entityVersion`
 	// * `hardwareVendor`
+	// * `hasPreviousInventoryFailed`
 	Filter pulumi.StringPtrInput `pulumi:"filter"`
 	// A URL query parameter that specifies the total number of records returned in the result set. Must be a positive integer between 1 and 100. Any number out of this range will lead to a validation error. If the limit is not provided, a default value of 50 records will be returned in the result set.
 	Limit   pulumi.IntPtrInput    `pulumi:"limit"`
@@ -127,6 +130,7 @@ type GetLcmEntitiesV2OutputArgs struct {
 	// * `entityType`
 	// * `entityVersion`
 	// * `hardwareVendor`
+	// * `hasPreviousInventoryFailed`
 	Select pulumi.StringPtrInput `pulumi:"select"`
 }
 

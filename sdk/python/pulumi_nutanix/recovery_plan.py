@@ -295,7 +295,38 @@ class RecoveryPlan(pulumi.CustomResource):
                 "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
                 "delay_time_secs": 0,
             }],
-            parameters={})
+            parameters={
+                "availability_zone_lists": [{
+                    "availability_zone_url": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "cluster_reference_lists": [{
+                        "kind": "cluster",
+                        "uuid": "00000000-0000-0000-0000-000000000001",
+                    }],
+                }],
+                "primary_location_index": 0,
+                "network_mapping_lists": [{
+                    "are_networks_stretched": False,
+                    "availability_zone_network_mapping_lists": [{
+                        "availability_zone_url": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                        "recovery_network": {
+                            "name": "DEV",
+                            "subnet_uuid": "11111111-2222-3333-4444-555555555555",
+                            "subnet_lists": [{
+                                "gateway_ip": "10.12.63.254",
+                                "prefix_length": 24,
+                            }],
+                        },
+                        "test_network": {
+                            "name": "DEV",
+                            "subnet_uuid": "11111111-2222-3333-4444-555555555555",
+                            "subnet_lists": [{
+                                "gateway_ip": "10.12.63.254",
+                                "prefix_length": 24,
+                            }],
+                        },
+                    }],
+                }],
+            })
         ```
         <!--End PulumiCodeChooser -->
 
@@ -338,7 +369,38 @@ class RecoveryPlan(pulumi.CustomResource):
                 "stage_uuid": "ab788130-0820-4d07-a1b5-b0ba4d3a42asd",
                 "delay_time_secs": 0,
             }],
-            parameters={})
+            parameters={
+                "availability_zone_lists": [{
+                    "availability_zone_url": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                    "cluster_reference_lists": [{
+                        "kind": "cluster",
+                        "uuid": "00000000-0000-0000-0000-000000000001",
+                    }],
+                }],
+                "primary_location_index": 0,
+                "network_mapping_lists": [{
+                    "are_networks_stretched": False,
+                    "availability_zone_network_mapping_lists": [{
+                        "availability_zone_url": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
+                        "recovery_network": {
+                            "name": "DEV",
+                            "subnet_uuid": "11111111-2222-3333-4444-555555555555",
+                            "subnet_lists": [{
+                                "gateway_ip": "10.12.63.254",
+                                "prefix_length": 24,
+                            }],
+                        },
+                        "test_network": {
+                            "name": "DEV",
+                            "subnet_uuid": "11111111-2222-3333-4444-555555555555",
+                            "subnet_lists": [{
+                                "gateway_ip": "10.12.63.254",
+                                "prefix_length": 24,
+                            }],
+                        },
+                    }],
+                }],
+            })
         ```
         <!--End PulumiCodeChooser -->
 

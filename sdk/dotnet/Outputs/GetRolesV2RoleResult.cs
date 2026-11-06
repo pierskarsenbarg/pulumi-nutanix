@@ -71,6 +71,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Operations;
         /// <summary>
+        /// - Project reference for the role.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
+        /// - Flag indicating whether the role is shared with all projects or not.
+        /// </summary>
+        public readonly bool ShareWithAllProjects;
+        /// <summary>
         /// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
         /// </summary>
         public readonly string TenantId;
@@ -105,6 +113,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<string> operations,
 
+            string projectExtId,
+
+            bool shareWithAllProjects,
+
             string tenantId)
         {
             AccessibleClients = accessibleClients;
@@ -121,6 +133,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             LastUpdatedTime = lastUpdatedTime;
             Links = links;
             Operations = operations;
+            ProjectExtId = projectExtId;
+            ShareWithAllProjects = shareWithAllProjects;
             TenantId = tenantId;
         }
     }

@@ -14,9 +14,6 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class VolumeGroupV2DiskDiskStorageFeature
     {
-        /// <summary>
-        /// - this field will avoid down migration of data from the hot tier unless the overrides field is specified for the virtual disks.
-        /// </summary>
         public readonly ImmutableArray<Outputs.VolumeGroupV2DiskDiskStorageFeatureFlashMode> FlashModes;
 
         [OutputConstructor]

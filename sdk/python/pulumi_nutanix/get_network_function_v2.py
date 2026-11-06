@@ -27,7 +27,7 @@ class GetNetworkFunctionV2Result:
     """
     A collection of values returned by getNetworkFunctionV2.
     """
-    def __init__(__self__, data_plane_health_check_configs=None, description=None, ext_id=None, failure_handling=None, high_availability_mode=None, id=None, links=None, metadatas=None, name=None, nic_pairs=None, tenant_id=None, traffic_forwarding_mode=None):
+    def __init__(__self__, data_plane_health_check_configs=None, description=None, ext_id=None, failure_handling=None, high_availability_mode=None, id=None, links=None, metadatas=None, name=None, nic_pairs=None, project_ext_id=None, tenant_id=None, traffic_forwarding_mode=None):
         if data_plane_health_check_configs and not isinstance(data_plane_health_check_configs, list):
             raise TypeError("Expected argument 'data_plane_health_check_configs' to be a list")
         pulumi.set(__self__, "data_plane_health_check_configs", data_plane_health_check_configs)
@@ -58,6 +58,9 @@ class GetNetworkFunctionV2Result:
         if nic_pairs and not isinstance(nic_pairs, list):
             raise TypeError("Expected argument 'nic_pairs' to be a list")
         pulumi.set(__self__, "nic_pairs", nic_pairs)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tenant_id and not isinstance(tenant_id, str):
             raise TypeError("Expected argument 'tenant_id' to be a str")
         pulumi.set(__self__, "tenant_id", tenant_id)
@@ -146,6 +149,14 @@ class GetNetworkFunctionV2Result:
         return pulumi.get(self, "nic_pairs")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        Project external ID associated with the network function.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="tenantId")
     def tenant_id(self) -> _builtins.str:
         """
@@ -178,6 +189,7 @@ class AwaitableGetNetworkFunctionV2Result(GetNetworkFunctionV2Result):
             metadatas=self.metadatas,
             name=self.name,
             nic_pairs=self.nic_pairs,
+            project_ext_id=self.project_ext_id,
             tenant_id=self.tenant_id,
             traffic_forwarding_mode=self.traffic_forwarding_mode)
 
@@ -217,6 +229,7 @@ def get_network_function_v2(ext_id: Optional[_builtins.str] = None,
         metadatas=pulumi.get(__ret__, 'metadatas'),
         name=pulumi.get(__ret__, 'name'),
         nic_pairs=pulumi.get(__ret__, 'nic_pairs'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         traffic_forwarding_mode=pulumi.get(__ret__, 'traffic_forwarding_mode'))
 def get_network_function_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -253,5 +266,6 @@ def get_network_function_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]]
         metadatas=pulumi.get(__response__, 'metadatas'),
         name=pulumi.get(__response__, 'name'),
         nic_pairs=pulumi.get(__response__, 'nic_pairs'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         tenant_id=pulumi.get(__response__, 'tenant_id'),
         traffic_forwarding_mode=pulumi.get(__response__, 'traffic_forwarding_mode')))

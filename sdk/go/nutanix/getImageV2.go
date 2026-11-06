@@ -69,6 +69,7 @@ type GetImageV2Result struct {
 	// The user defined description of an image.
 	Description string `pulumi:"description"`
 	// The external identifier of VM Disk.
+	// > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
 	ExtId string `pulumi:"extId"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
@@ -80,6 +81,10 @@ type GetImageV2Result struct {
 	OwnerExtId string `pulumi:"ownerExtId"`
 	// Status of an image placement policy.
 	PlacementPolicyStatuses []GetImageV2PlacementPolicyStatus `pulumi:"placementPolicyStatuses"`
+	// External identifier of the project associated with the image.
+	ProjectExtId string `pulumi:"projectExtId"`
+	// Indicates whether the image is shared with all projects.
+	ShareWithAllProjects bool `pulumi:"shareWithAllProjects"`
 	// The size in bytes of an image file.
 	SizeBytes int `pulumi:"sizeBytes"`
 	// The source of an image. It can be a VM disk or a URL.
@@ -144,6 +149,7 @@ func (o GetImageV2ResultOutput) Description() pulumi.StringOutput {
 }
 
 // The external identifier of VM Disk.
+// > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
 func (o GetImageV2ResultOutput) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetImageV2Result) string { return v.ExtId }).(pulumi.StringOutput)
 }
@@ -171,6 +177,16 @@ func (o GetImageV2ResultOutput) OwnerExtId() pulumi.StringOutput {
 // Status of an image placement policy.
 func (o GetImageV2ResultOutput) PlacementPolicyStatuses() GetImageV2PlacementPolicyStatusArrayOutput {
 	return o.ApplyT(func(v GetImageV2Result) []GetImageV2PlacementPolicyStatus { return v.PlacementPolicyStatuses }).(GetImageV2PlacementPolicyStatusArrayOutput)
+}
+
+// External identifier of the project associated with the image.
+func (o GetImageV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetImageV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// Indicates whether the image is shared with all projects.
+func (o GetImageV2ResultOutput) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetImageV2Result) bool { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
 }
 
 // The size in bytes of an image file.

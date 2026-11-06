@@ -13,49 +13,6 @@ import (
 )
 
 // Provides a resource to add a Role.
-//
-// ## Example Usage
-//
-// <!--Start PulumiCodeChooser -->
-// ```go
-// package main
-//
-// import (
-//
-//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
-//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
-//
-// )
-//
-//	func main() {
-//		pulumi.Run(func(ctx *pulumi.Context) error {
-//			// filtered list operation
-//			operations_filtered_list, err := nutanix.GetOperationsV2(ctx, &nutanix.GetOperationsV2Args{
-//				Filter: pulumi.StringRef("startswith(displayName, 'Create_')"),
-//			}, nil)
-//			if err != nil {
-//				return err
-//			}
-//			// Create role
-//			_, err = nutanix.NewRolesV2(ctx, "example-role", &nutanix.RolesV2Args{
-//				DisplayName: pulumi.String("example_role"),
-//				Description: pulumi.String("create example role"),
-//				Operations: pulumi.StringArray{
-//					pulumi.String(operations_filtered_list.Operations[0].ExtId),
-//					pulumi.String(operations_filtered_list.Operations[1].ExtId),
-//					pulumi.String(operations_filtered_list.Operations[2].ExtId),
-//					pulumi.String(operations_filtered_list.Operations[3].ExtId),
-//				},
-//			})
-//			if err != nil {
-//				return err
-//			}
-//			return nil
-//		})
-//	}
-//
-// ```
-// <!--End PulumiCodeChooser -->
 type RolesV2 struct {
 	pulumi.CustomResourceState
 
@@ -78,7 +35,8 @@ type RolesV2 struct {
 	// -(Required) The display name for the Role.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// - A globally unique identifier of an instance that is suitable for external consumption.
-	ExtId pulumi.StringOutput `pulumi:"extId"`
+	ExtId    pulumi.StringOutput  `pulumi:"extId"`
+	IsGlobal pulumi.BoolPtrOutput `pulumi:"isGlobal"`
 	// - Flag identifying if the Role is system defined or not.
 	IsSystemDefined pulumi.BoolOutput `pulumi:"isSystemDefined"`
 	// - The time when the Role was last updated.
@@ -87,6 +45,10 @@ type RolesV2 struct {
 	Links RolesV2LinkArrayOutput `pulumi:"links"`
 	// -(Required) List of operations for the role.
 	Operations pulumi.StringArrayOutput `pulumi:"operations"`
+	// -(Optional) Project reference for the role.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
+	// - Flag indicating whether the role is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolOutput `pulumi:"shareWithAllProjects"`
 	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 }
@@ -146,7 +108,8 @@ type rolesV2State struct {
 	// -(Required) The display name for the Role.
 	DisplayName *string `pulumi:"displayName"`
 	// - A globally unique identifier of an instance that is suitable for external consumption.
-	ExtId *string `pulumi:"extId"`
+	ExtId    *string `pulumi:"extId"`
+	IsGlobal *bool   `pulumi:"isGlobal"`
 	// - Flag identifying if the Role is system defined or not.
 	IsSystemDefined *bool `pulumi:"isSystemDefined"`
 	// - The time when the Role was last updated.
@@ -155,6 +118,10 @@ type rolesV2State struct {
 	Links []RolesV2Link `pulumi:"links"`
 	// -(Required) List of operations for the role.
 	Operations []string `pulumi:"operations"`
+	// -(Optional) Project reference for the role.
+	ProjectExtId *string `pulumi:"projectExtId"`
+	// - Flag indicating whether the role is shared with all projects or not.
+	ShareWithAllProjects *bool `pulumi:"shareWithAllProjects"`
 	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
 	TenantId *string `pulumi:"tenantId"`
 }
@@ -179,7 +146,8 @@ type RolesV2State struct {
 	// -(Required) The display name for the Role.
 	DisplayName pulumi.StringPtrInput
 	// - A globally unique identifier of an instance that is suitable for external consumption.
-	ExtId pulumi.StringPtrInput
+	ExtId    pulumi.StringPtrInput
+	IsGlobal pulumi.BoolPtrInput
 	// - Flag identifying if the Role is system defined or not.
 	IsSystemDefined pulumi.BoolPtrInput
 	// - The time when the Role was last updated.
@@ -188,6 +156,10 @@ type RolesV2State struct {
 	Links RolesV2LinkArrayInput
 	// -(Required) List of operations for the role.
 	Operations pulumi.StringArrayInput
+	// -(Optional) Project reference for the role.
+	ProjectExtId pulumi.StringPtrInput
+	// - Flag indicating whether the role is shared with all projects or not.
+	ShareWithAllProjects pulumi.BoolPtrInput
 	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
 	TenantId pulumi.StringPtrInput
 }
@@ -210,9 +182,12 @@ type rolesV2Args struct {
 	// -(Required) The display name for the Role.
 	DisplayName string `pulumi:"displayName"`
 	// - A globally unique identifier of an instance that is suitable for external consumption.
-	ExtId *string `pulumi:"extId"`
+	ExtId    *string `pulumi:"extId"`
+	IsGlobal *bool   `pulumi:"isGlobal"`
 	// -(Required) List of operations for the role.
 	Operations []string `pulumi:"operations"`
+	// -(Optional) Project reference for the role.
+	ProjectExtId *string `pulumi:"projectExtId"`
 }
 
 // The set of arguments for constructing a RolesV2 resource.
@@ -224,9 +199,12 @@ type RolesV2Args struct {
 	// -(Required) The display name for the Role.
 	DisplayName pulumi.StringInput
 	// - A globally unique identifier of an instance that is suitable for external consumption.
-	ExtId pulumi.StringPtrInput
+	ExtId    pulumi.StringPtrInput
+	IsGlobal pulumi.BoolPtrInput
 	// -(Required) List of operations for the role.
 	Operations pulumi.StringArrayInput
+	// -(Optional) Project reference for the role.
+	ProjectExtId pulumi.StringPtrInput
 }
 
 func (RolesV2Args) ElementType() reflect.Type {
@@ -366,6 +344,10 @@ func (o RolesV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *RolesV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
+func (o RolesV2Output) IsGlobal() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *RolesV2) pulumi.BoolPtrOutput { return v.IsGlobal }).(pulumi.BoolPtrOutput)
+}
+
 // - Flag identifying if the Role is system defined or not.
 func (o RolesV2Output) IsSystemDefined() pulumi.BoolOutput {
 	return o.ApplyT(func(v *RolesV2) pulumi.BoolOutput { return v.IsSystemDefined }).(pulumi.BoolOutput)
@@ -384,6 +366,16 @@ func (o RolesV2Output) Links() RolesV2LinkArrayOutput {
 // -(Required) List of operations for the role.
 func (o RolesV2Output) Operations() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *RolesV2) pulumi.StringArrayOutput { return v.Operations }).(pulumi.StringArrayOutput)
+}
+
+// -(Optional) Project reference for the role.
+func (o RolesV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *RolesV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// - Flag indicating whether the role is shared with all projects or not.
+func (o RolesV2Output) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v *RolesV2) pulumi.BoolOutput { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
 }
 
 // - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).

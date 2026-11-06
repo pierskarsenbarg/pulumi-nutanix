@@ -21,6 +21,24 @@ import * as utilities from "./utilities";
  *     value: "category_example_value",
  *     description: "category example description",
  * });
+ * // Category with project association
+ * const withProject = new nutanix.CategoryV2("with_project", {
+ *     key: "environment",
+ *     value: "production",
+ *     description: "Production environment category",
+ *     projectExtId: "project-ext-id-here",
+ * });
+ * // Category shared with multiple projects
+ * const shared = new nutanix.CategoryV2("shared", {
+ *     key: "department",
+ *     value: "engineering",
+ *     description: "Engineering department category",
+ *     sharedWithProjects: [
+ *         "project-ext-id-1",
+ *         "project-ext-id-2",
+ *         "project-ext-id-3",
+ *     ],
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  *
@@ -36,7 +54,7 @@ import * as utilities from "./utilities";
  *
  * Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
  *
- * See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/createCategory).
+ * See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/Categories/operation/createCategory).
  */
 export class CategoryV2 extends pulumi.CustomResource {
     /**
@@ -100,6 +118,7 @@ export class CategoryV2 extends pulumi.CustomResource {
      * This field will not be present by default in listCategories or getCategoryById APIs, unless the parameter $expand=detailedAssociations is present in the URL.
      */
     declare public /*out*/ readonly detailedAssociations: pulumi.Output<outputs.CategoryV2DetailedAssociation[]>;
+    declare public /*out*/ readonly extId: pulumi.Output<string>;
     /**
      * -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
      *
@@ -119,6 +138,15 @@ export class CategoryV2 extends pulumi.CustomResource {
      * It is used for enabling RBAC access to self-owned categories.
      */
     declare public readonly ownerUuid: pulumi.Output<string>;
+    /**
+     * -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    declare public readonly sharedWithAllProjects: pulumi.Output<boolean>;
+    /**
+     * -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+     */
+    declare public readonly sharedWithProjects: pulumi.Output<string[]>;
     /**
      * -(Required) Denotes the type of a category.
      * Valid values are:
@@ -156,8 +184,12 @@ export class CategoryV2 extends pulumi.CustomResource {
             resourceInputs["associations"] = state?.associations;
             resourceInputs["description"] = state?.description;
             resourceInputs["detailedAssociations"] = state?.detailedAssociations;
+            resourceInputs["extId"] = state?.extId;
             resourceInputs["key"] = state?.key;
             resourceInputs["ownerUuid"] = state?.ownerUuid;
+            resourceInputs["projectExtId"] = state?.projectExtId;
+            resourceInputs["sharedWithAllProjects"] = state?.sharedWithAllProjects;
+            resourceInputs["sharedWithProjects"] = state?.sharedWithProjects;
             resourceInputs["type"] = state?.type;
             resourceInputs["value"] = state?.value;
         } else {
@@ -171,10 +203,14 @@ export class CategoryV2 extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["key"] = args?.key;
             resourceInputs["ownerUuid"] = args?.ownerUuid;
+            resourceInputs["projectExtId"] = args?.projectExtId;
+            resourceInputs["sharedWithAllProjects"] = args?.sharedWithAllProjects;
+            resourceInputs["sharedWithProjects"] = args?.sharedWithProjects;
             resourceInputs["type"] = args?.type;
             resourceInputs["value"] = args?.value;
             resourceInputs["associations"] = undefined /*out*/;
             resourceInputs["detailedAssociations"] = undefined /*out*/;
+            resourceInputs["extId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(CategoryV2.__pulumiType, name, resourceInputs, opts);
@@ -208,6 +244,7 @@ export interface CategoryV2State {
      * This field will not be present by default in listCategories or getCategoryById APIs, unless the parameter $expand=detailedAssociations is present in the URL.
      */
     detailedAssociations?: pulumi.Input<pulumi.Input<inputs.CategoryV2DetailedAssociation>[] | undefined>;
+    extId?: pulumi.Input<string | undefined>;
     /**
      * -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
      *
@@ -227,6 +264,15 @@ export interface CategoryV2State {
      * It is used for enabling RBAC access to self-owned categories.
      */
     ownerUuid?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    sharedWithAllProjects?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+     */
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Required) Denotes the type of a category.
      * Valid values are:
@@ -280,6 +326,15 @@ export interface CategoryV2Args {
      * It is used for enabling RBAC access to self-owned categories.
      */
     ownerUuid?: pulumi.Input<string | undefined>;
+    /**
+     * -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    sharedWithAllProjects?: pulumi.Input<boolean | undefined>;
+    /**
+     * -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+     */
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * -(Required) Denotes the type of a category.
      * Valid values are:

@@ -239,6 +239,10 @@ namespace PiersKarsenbarg.Nutanix
         /// | PULSE_CONFIG                | Pulse status for a cluster                 |
         /// | NAME_SERVER_CONFIG          | Name server configuration                  |
         /// | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+        /// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+        /// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+        /// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+        /// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         /// </summary>
         [Output("allowedOverrides")]
         public Output<ImmutableArray<string>> AllowedOverrides { get; private set; } = null!;
@@ -270,6 +274,18 @@ namespace PiersKarsenbarg.Nutanix
         [Output("extId")]
         public Output<string> ExtId { get; private set; } = null!;
 
+        /// <summary>
+        /// - (Optional) Fault tolerant state of cluster.
+        /// </summary>
+        [Output("faultToleranceConfig")]
+        public Output<Outputs.ClusterProfileV2FaultToleranceConfig> FaultToleranceConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// - (Optional) HTTP proxy configuration for the cluster.
+        /// </summary>
+        [Output("httpProxyConfig")]
+        public Output<Outputs.ClusterProfileV2HttpProxyConfig> HttpProxyConfig { get; private set; } = null!;
+
         [Output("lastUpdateTime")]
         public Output<string> LastUpdateTime { get; private set; } = null!;
 
@@ -298,6 +314,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableArray<string>> NfsSubnetWhiteLists { get; private set; } = null!;
 
         /// <summary>
+        /// - (Optional) List of NTP server configurations with encryption authentication.
+        /// </summary>
+        [Output("ntpServerConfigLists")]
+        public Output<ImmutableArray<Outputs.ClusterProfileV2NtpServerConfigList>> NtpServerConfigLists { get; private set; } = null!;
+
+        /// <summary>
         /// - (Optional) List of NTP servers on a cluster. This is a part of payload for both cluster create and update operations. Currently, only IPv4 address and FQDN (fully qualified domain name) values are supported for the create operation.
         /// </summary>
         [Output("ntpServerIpLists")]
@@ -308,6 +330,18 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("pulseStatuses")]
         public Output<ImmutableArray<Outputs.ClusterProfileV2PulseStatus>> PulseStatuses { get; private set; } = null!;
+
+        /// <summary>
+        /// - (Optional) Rebuild capacity reservation configuration.
+        /// </summary>
+        [Output("rebuildReservationConfig")]
+        public Output<Outputs.ClusterProfileV2RebuildReservationConfig> RebuildReservationConfig { get; private set; } = null!;
+
+        /// <summary>
+        /// - (Optional) Resilient capacity warning threshold configuration.
+        /// </summary>
+        [Output("resilientCapacityWarningThresholdConfig")]
+        public Output<Outputs.ClusterProfileV2ResilientCapacityWarningThresholdConfig> ResilientCapacityWarningThresholdConfig { get; private set; } = null!;
 
         /// <summary>
         /// - (Optional) RSYSLOG Server.
@@ -392,6 +426,10 @@ namespace PiersKarsenbarg.Nutanix
         /// | PULSE_CONFIG                | Pulse status for a cluster                 |
         /// | NAME_SERVER_CONFIG          | Name server configuration                  |
         /// | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+        /// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+        /// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+        /// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+        /// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         /// </summary>
         public InputList<string> AllowedOverrides
         {
@@ -407,6 +445,18 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("dryrun")]
         public Input<bool>? Dryrun { get; set; }
+
+        /// <summary>
+        /// - (Optional) Fault tolerant state of cluster.
+        /// </summary>
+        [Input("faultToleranceConfig")]
+        public Input<Inputs.ClusterProfileV2FaultToleranceConfigArgs>? FaultToleranceConfig { get; set; }
+
+        /// <summary>
+        /// - (Optional) HTTP proxy configuration for the cluster.
+        /// </summary>
+        [Input("httpProxyConfig")]
+        public Input<Inputs.ClusterProfileV2HttpProxyConfigArgs>? HttpProxyConfig { get; set; }
 
         /// <summary>
         /// - (Required) Name of the cluster profile.
@@ -438,6 +488,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _nfsSubnetWhiteLists = value;
         }
 
+        [Input("ntpServerConfigLists")]
+        private InputList<Inputs.ClusterProfileV2NtpServerConfigListArgs>? _ntpServerConfigLists;
+
+        /// <summary>
+        /// - (Optional) List of NTP server configurations with encryption authentication.
+        /// </summary>
+        public InputList<Inputs.ClusterProfileV2NtpServerConfigListArgs> NtpServerConfigLists
+        {
+            get => _ntpServerConfigLists ?? (_ntpServerConfigLists = new InputList<Inputs.ClusterProfileV2NtpServerConfigListArgs>());
+            set => _ntpServerConfigLists = value;
+        }
+
         [Input("ntpServerIpLists")]
         private InputList<Inputs.ClusterProfileV2NtpServerIpListArgs>? _ntpServerIpLists;
 
@@ -461,6 +523,18 @@ namespace PiersKarsenbarg.Nutanix
             get => _pulseStatuses ?? (_pulseStatuses = new InputList<Inputs.ClusterProfileV2PulseStatusArgs>());
             set => _pulseStatuses = value;
         }
+
+        /// <summary>
+        /// - (Optional) Rebuild capacity reservation configuration.
+        /// </summary>
+        [Input("rebuildReservationConfig")]
+        public Input<Inputs.ClusterProfileV2RebuildReservationConfigArgs>? RebuildReservationConfig { get; set; }
+
+        /// <summary>
+        /// - (Optional) Resilient capacity warning threshold configuration.
+        /// </summary>
+        [Input("resilientCapacityWarningThresholdConfig")]
+        public Input<Inputs.ClusterProfileV2ResilientCapacityWarningThresholdConfigArgs>? ResilientCapacityWarningThresholdConfig { get; set; }
 
         [Input("rsyslogServerLists")]
         private InputList<Inputs.ClusterProfileV2RsyslogServerListArgs>? _rsyslogServerLists;
@@ -509,6 +583,10 @@ namespace PiersKarsenbarg.Nutanix
         /// | PULSE_CONFIG                | Pulse status for a cluster                 |
         /// | NAME_SERVER_CONFIG          | Name server configuration                  |
         /// | RSYSLOG_SERVER_CONFIG       | RSYSLOG server configuration               |
+        /// | HTTP_PROXY_CONFIG           | HTTP proxy configuration                   |
+        /// | FAULT_TOLERANCE_CONFIG      | Fault tolerance configuration              |
+        /// | REBUILD_RESERVATION_CONFIG  | Rebuild reservation configuration          |
+        /// | RESILIENT_CAPACITY_WARNING_THRESHOLD_CONFIG | Resilient capacity warning threshold |
         /// </summary>
         public InputList<string> AllowedOverrides
         {
@@ -547,6 +625,18 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
+
+        /// <summary>
+        /// - (Optional) Fault tolerant state of cluster.
+        /// </summary>
+        [Input("faultToleranceConfig")]
+        public Input<Inputs.ClusterProfileV2FaultToleranceConfigGetArgs>? FaultToleranceConfig { get; set; }
+
+        /// <summary>
+        /// - (Optional) HTTP proxy configuration for the cluster.
+        /// </summary>
+        [Input("httpProxyConfig")]
+        public Input<Inputs.ClusterProfileV2HttpProxyConfigGetArgs>? HttpProxyConfig { get; set; }
 
         [Input("lastUpdateTime")]
         public Input<string>? LastUpdateTime { get; set; }
@@ -592,6 +682,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _nfsSubnetWhiteLists = value;
         }
 
+        [Input("ntpServerConfigLists")]
+        private InputList<Inputs.ClusterProfileV2NtpServerConfigListGetArgs>? _ntpServerConfigLists;
+
+        /// <summary>
+        /// - (Optional) List of NTP server configurations with encryption authentication.
+        /// </summary>
+        public InputList<Inputs.ClusterProfileV2NtpServerConfigListGetArgs> NtpServerConfigLists
+        {
+            get => _ntpServerConfigLists ?? (_ntpServerConfigLists = new InputList<Inputs.ClusterProfileV2NtpServerConfigListGetArgs>());
+            set => _ntpServerConfigLists = value;
+        }
+
         [Input("ntpServerIpLists")]
         private InputList<Inputs.ClusterProfileV2NtpServerIpListGetArgs>? _ntpServerIpLists;
 
@@ -615,6 +717,18 @@ namespace PiersKarsenbarg.Nutanix
             get => _pulseStatuses ?? (_pulseStatuses = new InputList<Inputs.ClusterProfileV2PulseStatusGetArgs>());
             set => _pulseStatuses = value;
         }
+
+        /// <summary>
+        /// - (Optional) Rebuild capacity reservation configuration.
+        /// </summary>
+        [Input("rebuildReservationConfig")]
+        public Input<Inputs.ClusterProfileV2RebuildReservationConfigGetArgs>? RebuildReservationConfig { get; set; }
+
+        /// <summary>
+        /// - (Optional) Resilient capacity warning threshold configuration.
+        /// </summary>
+        [Input("resilientCapacityWarningThresholdConfig")]
+        public Input<Inputs.ClusterProfileV2ResilientCapacityWarningThresholdConfigGetArgs>? ResilientCapacityWarningThresholdConfig { get; set; }
 
         [Input("rsyslogServerLists")]
         private InputList<Inputs.ClusterProfileV2RsyslogServerListGetArgs>? _rsyslogServerLists;

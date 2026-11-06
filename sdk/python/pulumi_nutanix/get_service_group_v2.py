@@ -27,7 +27,7 @@ class GetServiceGroupV2Result:
     """
     A collection of values returned by getServiceGroupV2.
     """
-    def __init__(__self__, created_by=None, description=None, ext_id=None, icmp_services=None, id=None, is_system_defined=None, links=None, name=None, policy_references=None, tcp_services=None, tenant_id=None, udp_services=None):
+    def __init__(__self__, created_by=None, description=None, ext_id=None, icmp_services=None, id=None, is_system_defined=None, links=None, name=None, policy_references=None, project_ext_id=None, tcp_services=None, tenant_id=None, udp_services=None):
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -55,6 +55,9 @@ class GetServiceGroupV2Result:
         if policy_references and not isinstance(policy_references, list):
             raise TypeError("Expected argument 'policy_references' to be a list")
         pulumi.set(__self__, "policy_references", policy_references)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if tcp_services and not isinstance(tcp_services, list):
             raise TypeError("Expected argument 'tcp_services' to be a list")
         pulumi.set(__self__, "tcp_services", tcp_services)
@@ -135,6 +138,14 @@ class GetServiceGroupV2Result:
         return pulumi.get(self, "policy_references")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        Project external ID associated with the service group.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="tcpServices")
     def tcp_services(self) -> Sequence['outputs.GetServiceGroupV2TcpServiceResult']:
         """
@@ -174,6 +185,7 @@ class AwaitableGetServiceGroupV2Result(GetServiceGroupV2Result):
             links=self.links,
             name=self.name,
             policy_references=self.policy_references,
+            project_ext_id=self.project_ext_id,
             tcp_services=self.tcp_services,
             tenant_id=self.tenant_id,
             udp_services=self.udp_services)
@@ -213,6 +225,7 @@ def get_service_group_v2(ext_id: Optional[_builtins.str] = None,
         links=pulumi.get(__ret__, 'links'),
         name=pulumi.get(__ret__, 'name'),
         policy_references=pulumi.get(__ret__, 'policy_references'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         tcp_services=pulumi.get(__ret__, 'tcp_services'),
         tenant_id=pulumi.get(__ret__, 'tenant_id'),
         udp_services=pulumi.get(__ret__, 'udp_services'))
@@ -249,6 +262,7 @@ def get_service_group_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = 
         links=pulumi.get(__response__, 'links'),
         name=pulumi.get(__response__, 'name'),
         policy_references=pulumi.get(__response__, 'policy_references'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         tcp_services=pulumi.get(__response__, 'tcp_services'),
         tenant_id=pulumi.get(__response__, 'tenant_id'),
         udp_services=pulumi.get(__response__, 'udp_services')))

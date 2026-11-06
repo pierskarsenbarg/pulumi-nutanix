@@ -35,15 +35,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string DestEntityGroupReference;
         /// <summary>
-        /// destination subnet value
+        /// Destination subnet (value, prefix_length).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecDestSubnetResult> DestSubnets;
         /// <summary>
-        /// ICMP type/code for the rule.
+        /// ICMP type/code specs.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecIcmpServiceResult> IcmpServices;
         /// <summary>
-        /// Denotes if rule allows traffic for all protocol.
+        /// Whether traffic is allowed for all protocols.
         /// </summary>
         public readonly bool IsAllProtocolAllowed;
         /// <summary>
@@ -51,7 +51,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string NetworkFunctionChainReference;
         /// <summary>
-        /// A reference to the network function in the rule.
+        /// A reference to the network function.
         /// </summary>
         public readonly string NetworkFunctionReference;
         /// <summary>
@@ -59,11 +59,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string SecuredGroupCategoryAssociatedEntityType;
         /// <summary>
-        /// A specification to whether traffic between intra secured group entities should be allowed or denied.
+        /// List of category references for the secured group. The rule contains either this field or &lt;span pulumi-lang-nodejs="`securedGroupEntityGroupReference`" pulumi-lang-dotnet="`SecuredGroupEntityGroupReference`" pulumi-lang-go="`securedGroupEntityGroupReference`" pulumi-lang-python="`secured_group_entity_group_reference`" pulumi-lang-yaml="`securedGroupEntityGroupReference`" pulumi-lang-java="`securedGroupEntityGroupReference`" pulumi-lang-hcl="`secured_group_entity_group_reference`"&gt;`securedGroupEntityGroupReference`&lt;/span&gt;, not both.
         /// </summary>
         public readonly ImmutableArray<string> SecuredGroupCategoryReferences;
         /// <summary>
-        /// Reference to the secured group entity group.
+        /// Reference to the secured group entity group. The rule contains either this field or &lt;span pulumi-lang-nodejs="`securedGroupCategoryReferences`" pulumi-lang-dotnet="`SecuredGroupCategoryReferences`" pulumi-lang-go="`securedGroupCategoryReferences`" pulumi-lang-python="`secured_group_category_references`" pulumi-lang-yaml="`securedGroupCategoryReferences`" pulumi-lang-java="`securedGroupCategoryReferences`" pulumi-lang-hcl="`secured_group_category_references`"&gt;`securedGroupCategoryReferences`&lt;/span&gt;, not both.
         /// </summary>
         public readonly string SecuredGroupEntityGroupReference;
         /// <summary>
@@ -91,15 +91,15 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string SrcEntityGroupReference;
         /// <summary>
-        /// source subnet value
+        /// Source subnet (value, prefix_length).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecSrcSubnetResult> SrcSubnets;
         /// <summary>
-        /// TCP port ranges for the rule.
+        /// TCP port ranges (start_port, end_port).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecTcpServiceResult> TcpServices;
         /// <summary>
-        /// UDP port ranges for the rule.
+        /// UDP port ranges (start_port, end_port).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetNetworkSecurityPolicyV2RuleSpecApplicationRuleSpecUdpServiceResult> UdpServices;
 

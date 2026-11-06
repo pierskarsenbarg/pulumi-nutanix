@@ -15,11 +15,16 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetImagesV2ImageSourceVmDiskSourceResult
     {
         public readonly string ExtId;
+        public readonly string VmExtId;
 
         [OutputConstructor]
-        private GetImagesV2ImageSourceVmDiskSourceResult(string extId)
+        private GetImagesV2ImageSourceVmDiskSourceResult(
+            string extId,
+
+            string vmExtId)
         {
             ExtId = extId;
+            VmExtId = vmExtId;
         }
     }
 }

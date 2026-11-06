@@ -27,7 +27,7 @@ class GetImageV2Result:
     """
     A collection of values returned by getImageV2.
     """
-    def __init__(__self__, category_ext_ids=None, checksums=None, cluster_location_ext_ids=None, create_time=None, description=None, ext_id=None, id=None, last_update_time=None, name=None, owner_ext_id=None, placement_policy_statuses=None, size_bytes=None, sources=None, type=None):
+    def __init__(__self__, category_ext_ids=None, checksums=None, cluster_location_ext_ids=None, create_time=None, description=None, ext_id=None, id=None, last_update_time=None, name=None, owner_ext_id=None, placement_policy_statuses=None, project_ext_id=None, share_with_all_projects=None, size_bytes=None, sources=None, type=None):
         if category_ext_ids and not isinstance(category_ext_ids, list):
             raise TypeError("Expected argument 'category_ext_ids' to be a list")
         pulumi.set(__self__, "category_ext_ids", category_ext_ids)
@@ -61,6 +61,12 @@ class GetImageV2Result:
         if placement_policy_statuses and not isinstance(placement_policy_statuses, list):
             raise TypeError("Expected argument 'placement_policy_statuses' to be a list")
         pulumi.set(__self__, "placement_policy_statuses", placement_policy_statuses)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
+        if share_with_all_projects and not isinstance(share_with_all_projects, bool):
+            raise TypeError("Expected argument 'share_with_all_projects' to be a bool")
+        pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
         if size_bytes and not isinstance(size_bytes, int):
             raise TypeError("Expected argument 'size_bytes' to be a int")
         pulumi.set(__self__, "size_bytes", size_bytes)
@@ -116,6 +122,7 @@ class GetImageV2Result:
     def ext_id(self) -> _builtins.str:
         """
         The external identifier of VM Disk.
+        > **Deprecation Notice:** Providing <span pulumi-lang-nodejs="`extId`" pulumi-lang-dotnet="`ExtId`" pulumi-lang-go="`extId`" pulumi-lang-python="`ext_id`" pulumi-lang-yaml="`extId`" pulumi-lang-java="`extId`" pulumi-lang-hcl="`ext_id`">`extId`</span> without <span pulumi-lang-nodejs="`vmExtId`" pulumi-lang-dotnet="`VmExtId`" pulumi-lang-go="`vmExtId`" pulumi-lang-python="`vm_ext_id`" pulumi-lang-yaml="`vmExtId`" pulumi-lang-java="`vmExtId`" pulumi-lang-hcl="`vm_ext_id`">`vmExtId`</span> is deprecated and will not be supported in a future release.
         """
         return pulumi.get(self, "ext_id")
 
@@ -160,6 +167,22 @@ class GetImageV2Result:
         return pulumi.get(self, "placement_policy_statuses")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        External identifier of the project associated with the image.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> _builtins.bool:
+        """
+        Indicates whether the image is shared with all projects.
+        """
+        return pulumi.get(self, "share_with_all_projects")
+
+    @_builtins.property
     @pulumi.getter(name="sizeBytes")
     def size_bytes(self) -> _builtins.int:
         """
@@ -201,6 +224,8 @@ class AwaitableGetImageV2Result(GetImageV2Result):
             name=self.name,
             owner_ext_id=self.owner_ext_id,
             placement_policy_statuses=self.placement_policy_statuses,
+            project_ext_id=self.project_ext_id,
+            share_with_all_projects=self.share_with_all_projects,
             size_bytes=self.size_bytes,
             sources=self.sources,
             type=self.type)
@@ -242,6 +267,8 @@ def get_image_v2(ext_id: Optional[_builtins.str] = None,
         name=pulumi.get(__ret__, 'name'),
         owner_ext_id=pulumi.get(__ret__, 'owner_ext_id'),
         placement_policy_statuses=pulumi.get(__ret__, 'placement_policy_statuses'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
+        share_with_all_projects=pulumi.get(__ret__, 'share_with_all_projects'),
         size_bytes=pulumi.get(__ret__, 'size_bytes'),
         sources=pulumi.get(__ret__, 'sources'),
         type=pulumi.get(__ret__, 'type'))
@@ -280,6 +307,8 @@ def get_image_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
         name=pulumi.get(__response__, 'name'),
         owner_ext_id=pulumi.get(__response__, 'owner_ext_id'),
         placement_policy_statuses=pulumi.get(__response__, 'placement_policy_statuses'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
+        share_with_all_projects=pulumi.get(__response__, 'share_with_all_projects'),
         size_bytes=pulumi.get(__response__, 'size_bytes'),
         sources=pulumi.get(__response__, 'sources'),
         type=pulumi.get(__response__, 'type')))

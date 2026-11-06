@@ -37,6 +37,30 @@ import (
 //			if err != nil {
 //				return err
 //			}
+//			// Category with project association
+//			_, err = nutanix.NewCategoryV2(ctx, "with_project", &nutanix.CategoryV2Args{
+//				Key:          pulumi.String("environment"),
+//				Value:        pulumi.String("production"),
+//				Description:  pulumi.String("Production environment category"),
+//				ProjectExtId: pulumi.String("project-ext-id-here"),
+//			})
+//			if err != nil {
+//				return err
+//			}
+//			// Category shared with multiple projects
+//			_, err = nutanix.NewCategoryV2(ctx, "shared", &nutanix.CategoryV2Args{
+//				Key:         pulumi.String("department"),
+//				Value:       pulumi.String("engineering"),
+//				Description: pulumi.String("Engineering department category"),
+//				SharedWithProjects: pulumi.StringArray{
+//					pulumi.String("project-ext-id-1"),
+//					pulumi.String("project-ext-id-2"),
+//					pulumi.String("project-ext-id-3"),
+//				},
+//			})
+//			if err != nil {
+//				return err
+//			}
 //			return nil
 //		})
 //	}
@@ -56,7 +80,7 @@ import (
 //
 // Please use datasources (nutanix_categories_v2) to fetch uuids (ext_id) of all category key valye pairs to import them.
 //
-// See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.3#tag/Categories/operation/createCategory).
+// See detailed information in [Nutanix Create Category v4](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/Categories/operation/createCategory).
 type CategoryV2 struct {
 	pulumi.CustomResourceState
 
@@ -77,6 +101,7 @@ type CategoryV2 struct {
 	// This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
 	// This field will not be present by default in listCategories or getCategoryById APIs, unless the parameter $expand=detailedAssociations is present in the URL.
 	DetailedAssociations CategoryV2DetailedAssociationArrayOutput `pulumi:"detailedAssociations"`
+	ExtId                pulumi.StringOutput                      `pulumi:"extId"`
 	// -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
 	//
 	// - A string of maxlength of 64
@@ -92,6 +117,11 @@ type CategoryV2 struct {
 	// Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
 	// It is used for enabling RBAC access to self-owned categories.
 	OwnerUuid pulumi.StringOutput `pulumi:"ownerUuid"`
+	// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+	ProjectExtId          pulumi.StringOutput `pulumi:"projectExtId"`
+	SharedWithAllProjects pulumi.BoolOutput   `pulumi:"sharedWithAllProjects"`
+	// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+	SharedWithProjects pulumi.StringArrayOutput `pulumi:"sharedWithProjects"`
 	// -(Required) Denotes the type of a category.
 	// Valid values are:
 	// - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -163,6 +193,7 @@ type categoryV2State struct {
 	// This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
 	// This field will not be present by default in listCategories or getCategoryById APIs, unless the parameter $expand=detailedAssociations is present in the URL.
 	DetailedAssociations []CategoryV2DetailedAssociation `pulumi:"detailedAssociations"`
+	ExtId                *string                         `pulumi:"extId"`
 	// -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
 	//
 	// - A string of maxlength of 64
@@ -178,6 +209,11 @@ type categoryV2State struct {
 	// Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
 	// It is used for enabling RBAC access to self-owned categories.
 	OwnerUuid *string `pulumi:"ownerUuid"`
+	// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+	ProjectExtId          *string `pulumi:"projectExtId"`
+	SharedWithAllProjects *bool   `pulumi:"sharedWithAllProjects"`
+	// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// -(Required) Denotes the type of a category.
 	// Valid values are:
 	// - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -214,6 +250,7 @@ type CategoryV2State struct {
 	// This field will be ignored, if given in the payload of updateCategoryById or createCategory APIs.
 	// This field will not be present by default in listCategories or getCategoryById APIs, unless the parameter $expand=detailedAssociations is present in the URL.
 	DetailedAssociations CategoryV2DetailedAssociationArrayInput
+	ExtId                pulumi.StringPtrInput
 	// -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
 	//
 	// - A string of maxlength of 64
@@ -229,6 +266,11 @@ type CategoryV2State struct {
 	// Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
 	// It is used for enabling RBAC access to self-owned categories.
 	OwnerUuid pulumi.StringPtrInput
+	// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+	ProjectExtId          pulumi.StringPtrInput
+	SharedWithAllProjects pulumi.BoolPtrInput
+	// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+	SharedWithProjects pulumi.StringArrayInput
 	// -(Required) Denotes the type of a category.
 	// Valid values are:
 	// - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -279,6 +321,11 @@ type categoryV2Args struct {
 	// Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
 	// It is used for enabling RBAC access to self-owned categories.
 	OwnerUuid *string `pulumi:"ownerUuid"`
+	// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+	ProjectExtId          *string `pulumi:"projectExtId"`
+	SharedWithAllProjects *bool   `pulumi:"sharedWithAllProjects"`
+	// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// -(Required) Denotes the type of a category.
 	// Valid values are:
 	// - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -320,6 +367,11 @@ type CategoryV2Args struct {
 	// Validity of the user UUID can be checked by invoking the API: authn/users/{extId} in the 'Identity and Access Management' or 'IAM' namespace.
 	// It is used for enabling RBAC access to self-owned categories.
 	OwnerUuid pulumi.StringPtrInput
+	// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+	ProjectExtId          pulumi.StringPtrInput
+	SharedWithAllProjects pulumi.BoolPtrInput
+	// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+	SharedWithProjects pulumi.StringArrayInput
 	// -(Required) Denotes the type of a category.
 	// Valid values are:
 	// - `SYSTEM` Predefined categories contained in the system to be used by workflows visible in the UI that involve categories. System-defined categories can't be created through the Categories API. They are predefined in a configuration file and are created at PC boot-up time. System-defined categories can't be updated or deleted.
@@ -451,6 +503,10 @@ func (o CategoryV2Output) DetailedAssociations() CategoryV2DetailedAssociationAr
 	return o.ApplyT(func(v *CategoryV2) CategoryV2DetailedAssociationArrayOutput { return v.DetailedAssociations }).(CategoryV2DetailedAssociationArrayOutput)
 }
 
+func (o CategoryV2Output) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CategoryV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
+}
+
 // -(Required) The key of a category when it is represented in key:value format. Constraints applicable when field is given in the payload during create and update:
 //
 // - A string of maxlength of 64
@@ -470,6 +526,20 @@ func (o CategoryV2Output) Key() pulumi.StringOutput {
 // It is used for enabling RBAC access to self-owned categories.
 func (o CategoryV2Output) OwnerUuid() pulumi.StringOutput {
 	return o.ApplyT(func(v *CategoryV2) pulumi.StringOutput { return v.OwnerUuid }).(pulumi.StringOutput)
+}
+
+// -(Optional) The external identifier of the project to which the category belongs. Once set during creation, this field cannot be updated.
+func (o CategoryV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CategoryV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+func (o CategoryV2Output) SharedWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v *CategoryV2) pulumi.BoolOutput { return v.SharedWithAllProjects }).(pulumi.BoolOutput)
+}
+
+// -(Optional) A set of project external identifiers with which the category should be shared. Projects can be added or removed from this list through updates.
+func (o CategoryV2Output) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *CategoryV2) pulumi.StringArrayOutput { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
 }
 
 // -(Required) Denotes the type of a category.

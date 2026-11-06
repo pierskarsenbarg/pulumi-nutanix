@@ -47,6 +47,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         Name = "test-image",
     ///         Description = "img desc",
     ///         Type = "DISK_IMAGE",
+    ///         ProjectExtId = "&lt;project_uuid&gt;",
     ///         Sources = new[]
     ///         {
     ///             new Nutanix.Inputs.ImagesV2SourceArgs
@@ -152,6 +153,18 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Output("placementPolicyStatuses")]
         public Output<ImmutableArray<Outputs.ImagesV2PlacementPolicyStatus>> PlacementPolicyStatuses { get; private set; } = null!;
+
+        /// <summary>
+        /// External identifier of the project associated with the image.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
+        /// Indicates whether the image is shared with all projects.
+        /// </summary>
+        [Output("shareWithAllProjects")]
+        public Output<bool> ShareWithAllProjects { get; private set; } = null!;
 
         /// <summary>
         /// The size in bytes of an image file.
@@ -269,6 +282,12 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// External identifier of the project associated with the image.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("sources")]
         private InputList<Inputs.ImagesV2SourceArgs>? _sources;
 
@@ -383,6 +402,18 @@ namespace PiersKarsenbarg.Nutanix
             get => _placementPolicyStatuses ?? (_placementPolicyStatuses = new InputList<Inputs.ImagesV2PlacementPolicyStatusGetArgs>());
             set => _placementPolicyStatuses = value;
         }
+
+        /// <summary>
+        /// External identifier of the project associated with the image.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
+        /// <summary>
+        /// Indicates whether the image is shared with all projects.
+        /// </summary>
+        [Input("shareWithAllProjects")]
+        public Input<bool>? ShareWithAllProjects { get; set; }
 
         /// <summary>
         /// The size in bytes of an image file.

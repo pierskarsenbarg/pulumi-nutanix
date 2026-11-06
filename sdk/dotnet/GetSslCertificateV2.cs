@@ -120,7 +120,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## API Reference
         /// 
-        /// See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/SSLCertificate/operation/getSSLCertificate)
+        /// See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/SSLCertificate/operation/getSSLCertificate)
         /// </summary>
         public static Task<GetSslCertificateV2Result> InvokeAsync(GetSslCertificateV2Args args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSslCertificateV2Result>("nutanix:index/getSslCertificateV2:getSslCertificateV2", args ?? new GetSslCertificateV2Args(), options.WithDefaults());
@@ -233,7 +233,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## API Reference
         /// 
-        /// See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/SSLCertificate/operation/getSSLCertificate)
+        /// See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/SSLCertificate/operation/getSSLCertificate)
         /// </summary>
         public static Output<GetSslCertificateV2Result> Invoke(GetSslCertificateV2InvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSslCertificateV2Result>("nutanix:index/getSslCertificateV2:getSslCertificateV2", args ?? new GetSslCertificateV2InvokeArgs(), options.WithDefaults());
@@ -346,7 +346,7 @@ namespace PiersKarsenbarg.Nutanix
         /// 
         /// ## API Reference
         /// 
-        /// See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.2#tag/SSLCertificate/operation/getSSLCertificate)
+        /// See detailed information in [Nutanix SSL Certificates v4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/SSLCertificate/operation/getSSLCertificate)
         /// </summary>
         public static Output<GetSslCertificateV2Result> Invoke(GetSslCertificateV2InvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSslCertificateV2Result>("nutanix:index/getSslCertificateV2:getSslCertificateV2", args ?? new GetSslCertificateV2InvokeArgs(), options.WithDefaults());

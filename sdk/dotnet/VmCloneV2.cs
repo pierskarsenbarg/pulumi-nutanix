@@ -84,6 +84,9 @@ namespace PiersKarsenbarg.Nutanix
         [Output("gpuses")]
         public Output<ImmutableArray<Outputs.VmCloneV2Gpus>> Gpuses { get; private set; } = null!;
 
+        [Output("guestCustomizationProfileConfig")]
+        public Output<Outputs.VmCloneV2GuestCustomizationProfileConfig> GuestCustomizationProfileConfig { get; private set; } = null!;
+
         /// <summary>
         /// - (Optional) Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
         /// </summary>
@@ -263,6 +266,9 @@ namespace PiersKarsenbarg.Nutanix
             set => _bootConfigs = value;
         }
 
+        [Input("guestCustomizationProfileConfig")]
+        public Input<Inputs.VmCloneV2GuestCustomizationProfileConfigArgs>? GuestCustomizationProfileConfig { get; set; }
+
         [Input("guestCustomizations")]
         private InputList<Inputs.VmCloneV2GuestCustomizationArgs>? _guestCustomizations;
 
@@ -410,6 +416,9 @@ namespace PiersKarsenbarg.Nutanix
             get => _gpuses ?? (_gpuses = new InputList<Inputs.VmCloneV2GpusGetArgs>());
             set => _gpuses = value;
         }
+
+        [Input("guestCustomizationProfileConfig")]
+        public Input<Inputs.VmCloneV2GuestCustomizationProfileConfigGetArgs>? GuestCustomizationProfileConfig { get; set; }
 
         [Input("guestCustomizations")]
         private InputList<Inputs.VmCloneV2GuestCustomizationGetArgs>? _guestCustomizations;

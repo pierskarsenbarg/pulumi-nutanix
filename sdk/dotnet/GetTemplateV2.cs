@@ -399,6 +399,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2LinkResult> Links;
         /// <summary>
+        /// The external identifier of the project with which the template is associated.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// The user defined description of a Template.
         /// </summary>
         public readonly string TemplateDescription;
@@ -439,6 +443,8 @@ namespace PiersKarsenbarg.Nutanix
 
             ImmutableArray<Outputs.GetTemplateV2LinkResult> links,
 
+            string projectExtId,
+
             string templateDescription,
 
             string templateName,
@@ -458,6 +464,7 @@ namespace PiersKarsenbarg.Nutanix
             GuestUpdateStatuses = guestUpdateStatuses;
             Id = id;
             Links = links;
+            ProjectExtId = projectExtId;
             TemplateDescription = templateDescription;
             TemplateName = templateName;
             TemplateVersionSpecs = templateVersionSpecs;

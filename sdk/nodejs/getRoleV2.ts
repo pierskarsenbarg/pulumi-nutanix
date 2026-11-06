@@ -104,6 +104,14 @@ export interface GetRoleV2Result {
      */
     readonly operations: string[];
     /**
+     * - Project reference for the role.
+     */
+    readonly projectExtId: string;
+    /**
+     * - Flag indicating whether the role is shared with all projects or not.
+     */
+    readonly shareWithAllProjects: boolean;
+    /**
      * - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
      */
     readonly tenantId: string;

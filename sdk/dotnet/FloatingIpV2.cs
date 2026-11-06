@@ -141,6 +141,12 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> PrivateIp { get; private set; } = null!;
 
         /// <summary>
+        /// External identifier of the project associated with the Floating IP.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
+        /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.
         /// </summary>
         [Output("tenantId")]
@@ -276,6 +282,12 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
+
+        /// <summary>
+        /// External identifier of the project associated with the Floating IP.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// VM NIC reference.
@@ -416,6 +428,12 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }
+
+        /// <summary>
+        /// External identifier of the project associated with the Floating IP.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         /// <summary>
         /// A globally unique identifier that represents the tenant that owns this entity.

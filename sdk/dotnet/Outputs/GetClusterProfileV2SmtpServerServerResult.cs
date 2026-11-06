@@ -15,7 +15,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetClusterProfileV2SmtpServerServerResult
     {
         /// <summary>
-        /// An unique address that identifies a device on the internet or a local network in IPv4, IPv6 or format.
+        /// IP address of the proxy server.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetClusterProfileV2SmtpServerServerIpAddressResult> IpAddresses;
         /// <summary>
@@ -23,11 +23,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string Password;
         /// <summary>
-        /// (Integer) SNMP port.
+        /// HTTP proxy server port.
         /// </summary>
         public readonly int Port;
         /// <summary>
-        /// (String, max 64 chars) SNMP username. Required for SNMP trap v3 version.
+        /// HTTP proxy server username.
         /// </summary>
         public readonly string Username;
 

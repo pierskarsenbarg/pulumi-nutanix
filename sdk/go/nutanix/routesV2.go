@@ -43,9 +43,11 @@ import (
 //						PrefixLength: pulumi.Int(32),
 //					},
 //				},
-//				NextHop: &nutanix.RoutesV2NextHopArgs{
-//					NextHopType:      pulumi.String("EXTERNAL_SUBNET"),
-//					NextHopReference: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//				NextHops: nutanix.RoutesV2NextHopArray{
+//					&nutanix.RoutesV2NextHopArgs{
+//						NextHopType:      pulumi.String("EXTERNAL_SUBNET"),
+//						NextHopReference: pulumi.String("ba250e3e-1db1-4950-917f-a9e2ea35b8e3"),
+//					},
 //				},
 //				Metadata: &nutanix.RoutesV2MetadataArgs{
 //					OwnerReferenceId:   pulumi.String("a8fe48c4-f0d3-49c7-a017-efc30dd8fb2b"),
@@ -81,10 +83,12 @@ type RoutesV2 struct {
 	Metadata RoutesV2MetadataOutput `pulumi:"metadata"`
 	// Route name.
 	Name pulumi.StringOutput `pulumi:"name"`
-	// Route nexthop.
-	NextHop RoutesV2NextHopOutput `pulumi:"nextHop"`
+	// Route nexthop. Supports multiple entries.
+	NextHops RoutesV2NextHopArrayOutput `pulumi:"nextHops"`
 	// Route priority. A higher value implies greater preference is assigned to the route.
 	Priority pulumi.IntOutput `pulumi:"priority"`
+	// External identifier of the project associated with the Route.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// Route table UUID
 	RouteTableExtId pulumi.StringOutput `pulumi:"routeTableExtId"`
 	// Route table reference.
@@ -149,10 +153,12 @@ type routesV2State struct {
 	Metadata *RoutesV2Metadata `pulumi:"metadata"`
 	// Route name.
 	Name *string `pulumi:"name"`
-	// Route nexthop.
-	NextHop *RoutesV2NextHop `pulumi:"nextHop"`
+	// Route nexthop. Supports multiple entries.
+	NextHops []RoutesV2NextHop `pulumi:"nextHops"`
 	// Route priority. A higher value implies greater preference is assigned to the route.
 	Priority *int `pulumi:"priority"`
+	// External identifier of the project associated with the Route.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// Route table UUID
 	RouteTableExtId *string `pulumi:"routeTableExtId"`
 	// Route table reference.
@@ -182,10 +188,12 @@ type RoutesV2State struct {
 	Metadata RoutesV2MetadataPtrInput
 	// Route name.
 	Name pulumi.StringPtrInput
-	// Route nexthop.
-	NextHop RoutesV2NextHopPtrInput
+	// Route nexthop. Supports multiple entries.
+	NextHops RoutesV2NextHopArrayInput
 	// Route priority. A higher value implies greater preference is assigned to the route.
 	Priority pulumi.IntPtrInput
+	// External identifier of the project associated with the Route.
+	ProjectExtId pulumi.StringPtrInput
 	// Route table UUID
 	RouteTableExtId pulumi.StringPtrInput
 	// Route table reference.
@@ -219,8 +227,10 @@ type routesV2Args struct {
 	Metadata *RoutesV2Metadata `pulumi:"metadata"`
 	// Route name.
 	Name *string `pulumi:"name"`
-	// Route nexthop.
-	NextHop *RoutesV2NextHop `pulumi:"nextHop"`
+	// Route nexthop. Supports multiple entries.
+	NextHops []RoutesV2NextHop `pulumi:"nextHops"`
+	// External identifier of the project associated with the Route.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// Route table UUID
 	RouteTableExtId string `pulumi:"routeTableExtId"`
 	// Route table reference.
@@ -243,8 +253,10 @@ type RoutesV2Args struct {
 	Metadata RoutesV2MetadataPtrInput
 	// Route name.
 	Name pulumi.StringPtrInput
-	// Route nexthop.
-	NextHop RoutesV2NextHopPtrInput
+	// Route nexthop. Supports multiple entries.
+	NextHops RoutesV2NextHopArrayInput
+	// External identifier of the project associated with the Route.
+	ProjectExtId pulumi.StringPtrInput
 	// Route table UUID
 	RouteTableExtId pulumi.StringInput
 	// Route table reference.
@@ -382,14 +394,19 @@ func (o RoutesV2Output) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *RoutesV2) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// Route nexthop.
-func (o RoutesV2Output) NextHop() RoutesV2NextHopOutput {
-	return o.ApplyT(func(v *RoutesV2) RoutesV2NextHopOutput { return v.NextHop }).(RoutesV2NextHopOutput)
+// Route nexthop. Supports multiple entries.
+func (o RoutesV2Output) NextHops() RoutesV2NextHopArrayOutput {
+	return o.ApplyT(func(v *RoutesV2) RoutesV2NextHopArrayOutput { return v.NextHops }).(RoutesV2NextHopArrayOutput)
 }
 
 // Route priority. A higher value implies greater preference is assigned to the route.
 func (o RoutesV2Output) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v *RoutesV2) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
+}
+
+// External identifier of the project associated with the Route.
+func (o RoutesV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *RoutesV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // Route table UUID

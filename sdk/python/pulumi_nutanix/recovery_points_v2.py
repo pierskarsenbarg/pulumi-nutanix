@@ -23,6 +23,7 @@ class RecoveryPointsV2Args:
     def __init__(__self__, *,
                  expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2VmRecoveryPointArgs']]]] = None,
@@ -32,6 +33,7 @@ class RecoveryPointsV2Args:
 
         :param pulumi.Input[_builtins.str] expiration_time: -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
         :param pulumi.Input[_builtins.str] name: -(Optional) The name of the Recovery point.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] recovery_point_type: -(Optional) Type of the Recovery point.
                * supported values:
                * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -46,6 +48,8 @@ class RecoveryPointsV2Args:
             pulumi.set(__self__, "expiration_time", expiration_time)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if recovery_point_type is not None:
             pulumi.set(__self__, "recovery_point_type", recovery_point_type)
         if status is not None:
@@ -78,6 +82,18 @@ class RecoveryPointsV2Args:
     @name.setter
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointType")
@@ -144,6 +160,7 @@ class _RecoveryPointsV2State:
                  location_references: pulumi.Input[Optional[Sequence[pulumi.Input['RecoveryPointsV2LocationReferenceArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -160,6 +177,7 @@ class _RecoveryPointsV2State:
         :param pulumi.Input[Sequence[pulumi.Input['RecoveryPointsV2LocationReferenceArgs']]] location_references: List of location references where the VM or volume group recovery point are a part of the specified recovery point.
         :param pulumi.Input[_builtins.str] name: -(Optional) The name of the Recovery point.
         :param pulumi.Input[_builtins.str] owner_ext_id: A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] recovery_point_type: -(Optional) Type of the Recovery point.
                * supported values:
                * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -187,6 +205,8 @@ class _RecoveryPointsV2State:
             pulumi.set(__self__, "name", name)
         if owner_ext_id is not None:
             pulumi.set(__self__, "owner_ext_id", owner_ext_id)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if recovery_point_type is not None:
             pulumi.set(__self__, "recovery_point_type", recovery_point_type)
         if status is not None:
@@ -295,6 +315,18 @@ class _RecoveryPointsV2State:
         pulumi.set(self, "owner_ext_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="recoveryPointType")
     def recovery_point_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -368,6 +400,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VmRecoveryPoint']]]]] = None,
@@ -400,6 +433,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] expiration_time: -(Optional) The UTC date and time in ISO-8601 format when the current Recovery point expires and will be garbage collected.
         :param pulumi.Input[_builtins.str] name: -(Optional) The name of the Recovery point.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] recovery_point_type: -(Optional) Type of the Recovery point.
                * supported values:
                * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -456,6 +490,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
                  status: pulumi.Input[Optional[_builtins.str]] = None,
                  vm_recovery_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2VmRecoveryPointArgs', 'RecoveryPointsV2VmRecoveryPointArgsDict', 'outputs.RecoveryPointsV2VmRecoveryPoint']]]]] = None,
@@ -471,6 +506,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
 
             __props__.__dict__["expiration_time"] = expiration_time
             __props__.__dict__["name"] = name
+            __props__.__dict__["project_ext_id"] = project_ext_id
             __props__.__dict__["recovery_point_type"] = recovery_point_type
             __props__.__dict__["status"] = status
             __props__.__dict__["vm_recovery_points"] = vm_recovery_points
@@ -500,6 +536,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
             location_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict', 'outputs.RecoveryPointsV2LocationReference']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -520,6 +557,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict', 'outputs.RecoveryPointsV2LocationReference']]]] location_references: List of location references where the VM or volume group recovery point are a part of the specified recovery point.
         :param pulumi.Input[_builtins.str] name: -(Optional) The name of the Recovery point.
         :param pulumi.Input[_builtins.str] owner_ext_id: A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
         :param pulumi.Input[_builtins.str] recovery_point_type: -(Optional) Type of the Recovery point.
                * supported values:
                * `CRASH_CONSISTENT`: -  capture all the VM and application level details.
@@ -543,6 +581,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
         __props__.__dict__["location_references"] = location_references
         __props__.__dict__["name"] = name
         __props__.__dict__["owner_ext_id"] = owner_ext_id
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["recovery_point_type"] = recovery_point_type
         __props__.__dict__["status"] = status
         __props__.__dict__["tenant_id"] = tenant_id
@@ -561,6 +600,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
             location_references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecoveryPointsV2LocationReferenceArgs', 'RecoveryPointsV2LocationReferenceArgsDict', 'outputs.RecoveryPointsV2LocationReference']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             owner_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             recovery_point_type: pulumi.Input[Optional[_builtins.str]] = None,
             status: pulumi.Input[Optional[_builtins.str]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -575,6 +615,7 @@ class RecoveryPointsV2(pulumi.CustomResource):
         __props__["locationReferences"] = location_references
         __props__["name"] = name
         __props__["ownerExtId"] = owner_ext_id
+        __props__["projectExtId"] = project_ext_id
         __props__["recoveryPointType"] = recovery_point_type
         __props__["status"] = status
         __props__["tenantId"] = tenant_id
@@ -645,6 +686,14 @@ class RecoveryPointsV2(pulumi.CustomResource):
         A read only field inserted into recovery point at the time of recovery point creation, indicating the external identifier of the user who created this recovery point.
         """
         return pulumi.get(self, "owner_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        -(Optional) Project external ID to associate with the recovery point. Note: This field cannot be updated after creation.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="recoveryPointType")

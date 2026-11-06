@@ -51,6 +51,9 @@ export interface GetVpcV2Result {
      * Description of the VPC.
      */
     readonly description: string;
+    /**
+     * ExtID of the Kubernetes cluster.
+     */
     readonly extId: string;
     /**
      * External routing domain associated with this route table
@@ -69,6 +72,10 @@ export interface GetVpcV2Result {
      */
     readonly id: string;
     /**
+     * List of Kubernetes clusters associated with the VPC.
+     */
+    readonly kubernetesClusters: outputs.GetVpcV2KubernetesCluster[];
+    /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     readonly links: outputs.GetVpcV2Link[];
@@ -81,9 +88,29 @@ export interface GetVpcV2Result {
      */
     readonly name: string;
     /**
+     * External identifier of the project associated with the VPC.
+     */
+    readonly projectExtId: string;
+    /**
+     * VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+     */
+    readonly scope: string;
+    /**
+     * List of project external identifiers with which the VPC is shared.
+     */
+    readonly sharedWithProjects: string[];
+    /**
+     * When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes.
+     */
+    readonly shouldAdvertiseConnectedSubnets: boolean;
+    /**
      * List of IP Addresses used for SNAT.
      */
     readonly snatIps: outputs.GetVpcV2SnatIp[];
+    /**
+     * Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+     */
+    readonly supportedMultipleExternalSubnetType: string;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */

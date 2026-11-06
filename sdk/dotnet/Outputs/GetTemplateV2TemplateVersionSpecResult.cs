@@ -26,6 +26,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// The identifier of a Template.
         /// </summary>
         public readonly string ExtId;
+        public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecGuestCustomizationProfileResult> GuestCustomizationProfiles;
         /// <summary>
         /// Specify whether to mark the Template Version as active or not. The newly created Version during Template Creation, Updating or Guest OS Updating is set to Active by default unless specified otherwise.
         /// </summary>
@@ -50,6 +51,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// The user defined name of a Template Version.
         /// </summary>
         public readonly string VersionName;
+        public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVersionSourceResult> VersionSources;
         /// <summary>
         /// VM configuration.
         /// </summary>
@@ -63,6 +65,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string extId,
 
+            ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecGuestCustomizationProfileResult> guestCustomizationProfiles,
+
             bool isActiveVersion,
 
             bool isGcOverrideEnabled,
@@ -75,17 +79,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string versionName,
 
+            ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVersionSourceResult> versionSources,
+
             ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecResult> vmSpecs)
         {
             CreateTime = createTime;
             CreatedBies = createdBies;
             ExtId = extId;
+            GuestCustomizationProfiles = guestCustomizationProfiles;
             IsActiveVersion = isActiveVersion;
             IsGcOverrideEnabled = isGcOverrideEnabled;
             Links = links;
             TenantId = tenantId;
             VersionDescription = versionDescription;
             VersionName = versionName;
+            VersionSources = versionSources;
             VmSpecs = vmSpecs;
         }
     }

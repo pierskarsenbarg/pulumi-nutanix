@@ -27,7 +27,7 @@ class GetAuthorizationPolicyV2Result:
     """
     A collection of values returned by getAuthorizationPolicyV2.
     """
-    def __init__(__self__, authorization_policy_type=None, client_name=None, created_by=None, created_time=None, description=None, display_name=None, entities=None, ext_id=None, id=None, identities=None, is_system_defined=None, last_updated_time=None, role=None):
+    def __init__(__self__, authorization_policy_type=None, client_name=None, created_by=None, created_time=None, description=None, display_name=None, entities=None, ext_id=None, id=None, identities=None, is_system_defined=None, last_updated_time=None, project_ext_id=None, role=None, share_with_all_projects=None):
         if authorization_policy_type and not isinstance(authorization_policy_type, str):
             raise TypeError("Expected argument 'authorization_policy_type' to be a str")
         pulumi.set(__self__, "authorization_policy_type", authorization_policy_type)
@@ -64,9 +64,15 @@ class GetAuthorizationPolicyV2Result:
         if last_updated_time and not isinstance(last_updated_time, str):
             raise TypeError("Expected argument 'last_updated_time' to be a str")
         pulumi.set(__self__, "last_updated_time", last_updated_time)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if role and not isinstance(role, str):
             raise TypeError("Expected argument 'role' to be a str")
         pulumi.set(__self__, "role", role)
+        if share_with_all_projects and not isinstance(share_with_all_projects, bool):
+            raise TypeError("Expected argument 'share_with_all_projects' to be a bool")
+        pulumi.set(__self__, "share_with_all_projects", share_with_all_projects)
 
     @_builtins.property
     @pulumi.getter(name="authorizationPolicyType")
@@ -170,12 +176,28 @@ class GetAuthorizationPolicyV2Result:
         return pulumi.get(self, "last_updated_time")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        - Project reference for the Authorization Policy.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter
     def role(self) -> _builtins.str:
         """
         The Role associated with the Authorization Policy.
         """
         return pulumi.get(self, "role")
+
+    @_builtins.property
+    @pulumi.getter(name="shareWithAllProjects")
+    def share_with_all_projects(self) -> _builtins.bool:
+        """
+        - Flag indicating whether the Authorization Policy is shared with all projects or not.
+        """
+        return pulumi.get(self, "share_with_all_projects")
 
 
 class AwaitableGetAuthorizationPolicyV2Result(GetAuthorizationPolicyV2Result):
@@ -196,7 +218,9 @@ class AwaitableGetAuthorizationPolicyV2Result(GetAuthorizationPolicyV2Result):
             identities=self.identities,
             is_system_defined=self.is_system_defined,
             last_updated_time=self.last_updated_time,
-            role=self.role)
+            project_ext_id=self.project_ext_id,
+            role=self.role,
+            share_with_all_projects=self.share_with_all_projects)
 
 
 def get_authorization_policy_v2(ext_id: Optional[_builtins.str] = None,
@@ -236,7 +260,9 @@ def get_authorization_policy_v2(ext_id: Optional[_builtins.str] = None,
         identities=pulumi.get(__ret__, 'identities'),
         is_system_defined=pulumi.get(__ret__, 'is_system_defined'),
         last_updated_time=pulumi.get(__ret__, 'last_updated_time'),
-        role=pulumi.get(__ret__, 'role'))
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
+        role=pulumi.get(__ret__, 'role'),
+        share_with_all_projects=pulumi.get(__ret__, 'share_with_all_projects'))
 def get_authorization_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                                        opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetAuthorizationPolicyV2Result]:
     """
@@ -273,4 +299,6 @@ def get_authorization_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.s
         identities=pulumi.get(__response__, 'identities'),
         is_system_defined=pulumi.get(__response__, 'is_system_defined'),
         last_updated_time=pulumi.get(__response__, 'last_updated_time'),
-        role=pulumi.get(__response__, 'role')))
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
+        role=pulumi.get(__response__, 'role'),
+        share_with_all_projects=pulumi.get(__response__, 'share_with_all_projects')))

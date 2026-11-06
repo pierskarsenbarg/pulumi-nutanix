@@ -52,7 +52,50 @@ import (
 //						DelayTimeSecs: pulumi.Int(0),
 //					},
 //				},
-//				Parameters: &nutanix.RecoveryPlanParametersArgs{},
+//				Parameters: &nutanix.RecoveryPlanParametersArgs{
+//					AvailabilityZoneLists: nutanix.RecoveryPlanParametersAvailabilityZoneListArray{
+//						&nutanix.RecoveryPlanParametersAvailabilityZoneListArgs{
+//							AvailabilityZoneUrl: pulumi.String("aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"),
+//							ClusterReferenceLists: nutanix.RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArray{
+//								&nutanix.RecoveryPlanParametersAvailabilityZoneListClusterReferenceListArgs{
+//									Kind: pulumi.String("cluster"),
+//									Uuid: pulumi.String("00000000-0000-0000-0000-000000000001"),
+//								},
+//							},
+//						},
+//					},
+//					PrimaryLocationIndex: pulumi.Int(0),
+//					NetworkMappingLists: nutanix.RecoveryPlanParametersNetworkMappingListArray{
+//						&nutanix.RecoveryPlanParametersNetworkMappingListArgs{
+//							AreNetworksStretched: pulumi.Bool(false),
+//							AvailabilityZoneNetworkMappingLists: nutanix.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArray{
+//								&nutanix.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListArgs{
+//									AvailabilityZoneUrl: pulumi.String("aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"),
+//									RecoveryNetwork: &nutanix.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkArgs{
+//										Name:       pulumi.String("DEV"),
+//										SubnetUuid: pulumi.String("11111111-2222-3333-4444-555555555555"),
+//										SubnetLists: nutanix.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArray{
+//											&nutanix.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListRecoveryNetworkSubnetListArgs{
+//												GatewayIp:    pulumi.String("10.12.63.254"),
+//												PrefixLength: pulumi.Int(24),
+//											},
+//										},
+//									},
+//									TestNetwork: &nutanix.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkArgs{
+//										Name:       pulumi.String("DEV"),
+//										SubnetUuid: pulumi.String("11111111-2222-3333-4444-555555555555"),
+//										SubnetLists: nutanix.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArray{
+//											&nutanix.RecoveryPlanParametersNetworkMappingListAvailabilityZoneNetworkMappingListTestNetworkSubnetListArgs{
+//												GatewayIp:    pulumi.String("10.12.63.254"),
+//												PrefixLength: pulumi.Int(24),
+//											},
+//										},
+//									},
+//								},
+//							},
+//						},
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err

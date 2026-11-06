@@ -37,6 +37,17 @@ import (
 //				SubnetType:       pulumi.String("VLAN"),
 //				NetworkId:        pulumi.Int(122),
 //				IsExternal:       pulumi.Bool(true),
+//				Metadatas: nutanix.SubnetV2MetadataArray{
+//					&nutanix.SubnetV2MetadataArgs{
+//						OwnerReferenceId:   pulumi.String("d0f5c9b0-7b3c-4f5a-9d5b-0a1b2c3d4e5f"),
+//						OwnerUserName:      pulumi.String("admin"),
+//						ProjectReferenceId: pulumi.String("2defe0f5-6e48-4c9b-b07c-bdd2dc004225"),
+//						ProjectName:        pulumi.String("default"),
+//						CategoryIds: pulumi.StringArray{
+//							pulumi.String("4c9b0f5d-6e48-2def-b07c-bdd2dc004225"),
+//						},
+//					},
+//				},
 //				IpConfigs: nutanix.SubnetV2IpConfigArray{
 //					&nutanix.SubnetV2IpConfigArgs{
 //						Ipv4s: nutanix.SubnetV2IpConfigIpv4Array{
@@ -187,11 +198,14 @@ type SubnetV2 struct {
 	IpUsages SubnetV2IpUsageArrayOutput `pulumi:"ipUsages"`
 	// Indicates whether the subnet is used for advanced networking.
 	IsAdvancedNetworking pulumi.BoolOutput `pulumi:"isAdvancedNetworking"`
+	// Indicates whether the subnet is connected.
+	IsConnected pulumi.BoolPtrOutput `pulumi:"isConnected"`
 	// Indicates whether the subnet is used for external connectivity.
 	IsExternal pulumi.BoolOutput `pulumi:"isExternal"`
 	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
-	IsNatEnabled   pulumi.BoolOutput           `pulumi:"isNatEnabled"`
-	Links          SubnetV2LinkArrayOutput     `pulumi:"links"`
+	IsNatEnabled pulumi.BoolOutput       `pulumi:"isNatEnabled"`
+	Links        SubnetV2LinkArrayOutput `pulumi:"links"`
+	// Metadata associated with the subnet.
 	Metadatas      SubnetV2MetadataArrayOutput `pulumi:"metadatas"`
 	MigrationState pulumi.StringOutput         `pulumi:"migrationState"`
 	// Name of the subnet.
@@ -200,8 +214,12 @@ type SubnetV2 struct {
 	NetworkFunctionChainReference pulumi.StringOutput `pulumi:"networkFunctionChainReference"`
 	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
 	NetworkId pulumi.IntPtrOutput `pulumi:"networkId"`
+	// External identifier of the project associated with the Subnet.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
 	ReservedIpAddresses SubnetV2ReservedIpAddressArrayOutput `pulumi:"reservedIpAddresses"`
+	// List of project external identifiers with which the Subnet is shared.
+	SharedWithProjects pulumi.StringArrayOutput `pulumi:"sharedWithProjects"`
 	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
 	SubnetType pulumi.StringOutput `pulumi:"subnetType"`
 	// UUID of the virtual switch this subnet belongs to (type VLAN only).
@@ -269,11 +287,14 @@ type subnetV2State struct {
 	IpUsages []SubnetV2IpUsage `pulumi:"ipUsages"`
 	// Indicates whether the subnet is used for advanced networking.
 	IsAdvancedNetworking *bool `pulumi:"isAdvancedNetworking"`
+	// Indicates whether the subnet is connected.
+	IsConnected *bool `pulumi:"isConnected"`
 	// Indicates whether the subnet is used for external connectivity.
 	IsExternal *bool `pulumi:"isExternal"`
 	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
-	IsNatEnabled   *bool              `pulumi:"isNatEnabled"`
-	Links          []SubnetV2Link     `pulumi:"links"`
+	IsNatEnabled *bool          `pulumi:"isNatEnabled"`
+	Links        []SubnetV2Link `pulumi:"links"`
+	// Metadata associated with the subnet.
 	Metadatas      []SubnetV2Metadata `pulumi:"metadatas"`
 	MigrationState *string            `pulumi:"migrationState"`
 	// Name of the subnet.
@@ -282,8 +303,12 @@ type subnetV2State struct {
 	NetworkFunctionChainReference *string `pulumi:"networkFunctionChainReference"`
 	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
 	NetworkId *int `pulumi:"networkId"`
+	// External identifier of the project associated with the Subnet.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
 	ReservedIpAddresses []SubnetV2ReservedIpAddress `pulumi:"reservedIpAddresses"`
+	// List of project external identifiers with which the Subnet is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
 	SubnetType *string `pulumi:"subnetType"`
 	// UUID of the virtual switch this subnet belongs to (type VLAN only).
@@ -319,11 +344,14 @@ type SubnetV2State struct {
 	IpUsages SubnetV2IpUsageArrayInput
 	// Indicates whether the subnet is used for advanced networking.
 	IsAdvancedNetworking pulumi.BoolPtrInput
+	// Indicates whether the subnet is connected.
+	IsConnected pulumi.BoolPtrInput
 	// Indicates whether the subnet is used for external connectivity.
 	IsExternal pulumi.BoolPtrInput
 	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
-	IsNatEnabled   pulumi.BoolPtrInput
-	Links          SubnetV2LinkArrayInput
+	IsNatEnabled pulumi.BoolPtrInput
+	Links        SubnetV2LinkArrayInput
+	// Metadata associated with the subnet.
 	Metadatas      SubnetV2MetadataArrayInput
 	MigrationState pulumi.StringPtrInput
 	// Name of the subnet.
@@ -332,8 +360,12 @@ type SubnetV2State struct {
 	NetworkFunctionChainReference pulumi.StringPtrInput
 	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
 	NetworkId pulumi.IntPtrInput
+	// External identifier of the project associated with the Subnet.
+	ProjectExtId pulumi.StringPtrInput
 	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
 	ReservedIpAddresses SubnetV2ReservedIpAddressArrayInput
+	// List of project external identifiers with which the Subnet is shared.
+	SharedWithProjects pulumi.StringArrayInput
 	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
 	SubnetType pulumi.StringPtrInput
 	// UUID of the virtual switch this subnet belongs to (type VLAN only).
@@ -379,19 +411,26 @@ type subnetV2Args struct {
 	IpUsages []SubnetV2IpUsage `pulumi:"ipUsages"`
 	// Indicates whether the subnet is used for advanced networking.
 	IsAdvancedNetworking *bool `pulumi:"isAdvancedNetworking"`
+	// Indicates whether the subnet is connected.
+	IsConnected *bool `pulumi:"isConnected"`
 	// Indicates whether the subnet is used for external connectivity.
 	IsExternal *bool `pulumi:"isExternal"`
 	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
-	IsNatEnabled *bool              `pulumi:"isNatEnabled"`
-	Metadatas    []SubnetV2Metadata `pulumi:"metadatas"`
+	IsNatEnabled *bool `pulumi:"isNatEnabled"`
+	// Metadata associated with the subnet.
+	Metadatas []SubnetV2Metadata `pulumi:"metadatas"`
 	// Name of the subnet.
 	Name *string `pulumi:"name"`
 	// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
 	NetworkFunctionChainReference *string `pulumi:"networkFunctionChainReference"`
 	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
 	NetworkId *int `pulumi:"networkId"`
+	// External identifier of the project associated with the Subnet.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
 	ReservedIpAddresses []SubnetV2ReservedIpAddress `pulumi:"reservedIpAddresses"`
+	// List of project external identifiers with which the Subnet is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
 	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
 	SubnetType string `pulumi:"subnetType"`
 	// UUID of the virtual switch this subnet belongs to (type VLAN only).
@@ -428,19 +467,26 @@ type SubnetV2Args struct {
 	IpUsages SubnetV2IpUsageArrayInput
 	// Indicates whether the subnet is used for advanced networking.
 	IsAdvancedNetworking pulumi.BoolPtrInput
+	// Indicates whether the subnet is connected.
+	IsConnected pulumi.BoolPtrInput
 	// Indicates whether the subnet is used for external connectivity.
 	IsExternal pulumi.BoolPtrInput
 	// Indicates whether NAT must be enabled for VPCs attached to the subnet. This is supported only for external subnets. NAT is enabled by default on external subnets.
 	IsNatEnabled pulumi.BoolPtrInput
-	Metadatas    SubnetV2MetadataArrayInput
+	// Metadata associated with the subnet.
+	Metadatas SubnetV2MetadataArrayInput
 	// Name of the subnet.
 	Name pulumi.StringPtrInput
 	// UUID of the Network function chain entity that this subnet belongs to (type VLAN only).
 	NetworkFunctionChainReference pulumi.StringPtrInput
 	// For VLAN subnet, this field represents VLAN Id, valid range is from 0 to 4095; For overlay subnet, this field represents 24-bit VNI, this field is read-only.
 	NetworkId pulumi.IntPtrInput
+	// External identifier of the project associated with the Subnet.
+	ProjectExtId pulumi.StringPtrInput
 	// List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
 	ReservedIpAddresses SubnetV2ReservedIpAddressArrayInput
+	// List of project external identifiers with which the Subnet is shared.
+	SharedWithProjects pulumi.StringArrayInput
 	// Type of subnet. Acceptables values are "OVERLAY", "VLAN".
 	SubnetType pulumi.StringInput
 	// UUID of the virtual switch this subnet belongs to (type VLAN only).
@@ -598,6 +644,11 @@ func (o SubnetV2Output) IsAdvancedNetworking() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.BoolOutput { return v.IsAdvancedNetworking }).(pulumi.BoolOutput)
 }
 
+// Indicates whether the subnet is connected.
+func (o SubnetV2Output) IsConnected() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *SubnetV2) pulumi.BoolPtrOutput { return v.IsConnected }).(pulumi.BoolPtrOutput)
+}
+
 // Indicates whether the subnet is used for external connectivity.
 func (o SubnetV2Output) IsExternal() pulumi.BoolOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.BoolOutput { return v.IsExternal }).(pulumi.BoolOutput)
@@ -612,6 +663,7 @@ func (o SubnetV2Output) Links() SubnetV2LinkArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2LinkArrayOutput { return v.Links }).(SubnetV2LinkArrayOutput)
 }
 
+// Metadata associated with the subnet.
 func (o SubnetV2Output) Metadatas() SubnetV2MetadataArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2MetadataArrayOutput { return v.Metadatas }).(SubnetV2MetadataArrayOutput)
 }
@@ -635,9 +687,19 @@ func (o SubnetV2Output) NetworkId() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *SubnetV2) pulumi.IntPtrOutput { return v.NetworkId }).(pulumi.IntPtrOutput)
 }
 
+// External identifier of the project associated with the Subnet.
+func (o SubnetV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *SubnetV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
 // List of IPs that are excluded while allocating IP addresses to VM ports. Reference to address configuration
 func (o SubnetV2Output) ReservedIpAddresses() SubnetV2ReservedIpAddressArrayOutput {
 	return o.ApplyT(func(v *SubnetV2) SubnetV2ReservedIpAddressArrayOutput { return v.ReservedIpAddresses }).(SubnetV2ReservedIpAddressArrayOutput)
+}
+
+// List of project external identifiers with which the Subnet is shared.
+func (o SubnetV2Output) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *SubnetV2) pulumi.StringArrayOutput { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
 }
 
 // Type of subnet. Acceptables values are "OVERLAY", "VLAN".

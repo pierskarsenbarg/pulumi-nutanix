@@ -25,7 +25,8 @@ class OvaV2Args:
                  checksum: pulumi.Input[Optional['OvaV2ChecksumArgs']] = None,
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  disk_format: pulumi.Input[Optional[_builtins.str]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a OvaV2 resource.
 
@@ -38,6 +39,7 @@ class OvaV2Args:
                | VMDK | The VMDK disk format of an OVA. |
                | QCOW2 | The QCOW2 disk format of an OVA. |
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the OVA.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) External identifier of the project associated with the OVA.
         """
         pulumi.set(__self__, "sources", sources)
         if checksum is not None:
@@ -48,6 +50,8 @@ class OvaV2Args:
             pulumi.set(__self__, "disk_format", disk_format)
         if name is not None:
             pulumi.set(__self__, "name", name)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
 
     @_builtins.property
     @pulumi.getter
@@ -113,6 +117,18 @@ class OvaV2Args:
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
 
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) External identifier of the project associated with the OVA.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
 
 @pulumi.input_type
 class _OvaV2State:
@@ -127,6 +143,7 @@ class _OvaV2State:
                  links: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2LinkArgs']]]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
                  parent_vm: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2SourceArgs']]]] = None,
                  tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -143,6 +160,7 @@ class _OvaV2State:
                | VMDK | The VMDK disk format of an OVA. |
                | QCOW2 | The QCOW2 disk format of an OVA. |
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the OVA.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) External identifier of the project associated with the OVA.
         :param pulumi.Input[Sequence[pulumi.Input['OvaV2SourceArgs']]] sources: -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
         :param pulumi.Input[Sequence[pulumi.Input['OvaV2VmConfigArgs']]] vm_configs: -(Optional) VM configuration.
         """
@@ -166,6 +184,8 @@ class _OvaV2State:
             pulumi.set(__self__, "name", name)
         if parent_vm is not None:
             pulumi.set(__self__, "parent_vm", parent_vm)
+        if project_ext_id is not None:
+            pulumi.set(__self__, "project_ext_id", project_ext_id)
         if size_bytes is not None:
             pulumi.set(__self__, "size_bytes", size_bytes)
         if sources is not None:
@@ -285,6 +305,18 @@ class _OvaV2State:
         pulumi.set(self, "parent_vm", value)
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        -(Optional) External identifier of the project associated with the OVA.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @project_ext_id.setter
+    def project_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_ext_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="sizeBytes")
     def size_bytes(self) -> pulumi.Input[Optional[_builtins.int]]:
         return pulumi.get(self, "size_bytes")
@@ -337,6 +369,7 @@ class OvaV2(pulumi.CustomResource):
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  disk_format: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]]] = None,
                  __props__=None):
         """
@@ -353,6 +386,7 @@ class OvaV2(pulumi.CustomResource):
                | VMDK | The VMDK disk format of an OVA. |
                | QCOW2 | The QCOW2 disk format of an OVA. |
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the OVA.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) External identifier of the project associated with the OVA.
         :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]] sources: -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
         """
         ...
@@ -384,6 +418,7 @@ class OvaV2(pulumi.CustomResource):
                  cluster_location_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  disk_format: pulumi.Input[Optional[_builtins.str]] = None,
                  name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -398,6 +433,7 @@ class OvaV2(pulumi.CustomResource):
             __props__.__dict__["cluster_location_ext_ids"] = cluster_location_ext_ids
             __props__.__dict__["disk_format"] = disk_format
             __props__.__dict__["name"] = name
+            __props__.__dict__["project_ext_id"] = project_ext_id
             if sources is None and not opts.urn:
                 raise TypeError("Missing required property 'sources'")
             __props__.__dict__["sources"] = sources
@@ -430,6 +466,7 @@ class OvaV2(pulumi.CustomResource):
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2LinkArgs', 'OvaV2LinkArgsDict', 'outputs.OvaV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_vm: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -450,6 +487,7 @@ class OvaV2(pulumi.CustomResource):
                | VMDK | The VMDK disk format of an OVA. |
                | QCOW2 | The QCOW2 disk format of an OVA. |
         :param pulumi.Input[_builtins.str] name: -(Required) Name of the OVA.
+        :param pulumi.Input[_builtins.str] project_ext_id: -(Optional) External identifier of the project associated with the OVA.
         :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]] sources: -(Required) Source of the created OVA file. The source can either be a VM, URL, or a local upload.
         :param pulumi.Input[Sequence[pulumi.Input[Union['OvaV2VmConfigArgs', 'OvaV2VmConfigArgsDict', 'outputs.OvaV2VmConfig']]]] vm_configs: -(Optional) VM configuration.
         """
@@ -467,6 +505,7 @@ class OvaV2(pulumi.CustomResource):
         __props__.__dict__["links"] = links
         __props__.__dict__["name"] = name
         __props__.__dict__["parent_vm"] = parent_vm
+        __props__.__dict__["project_ext_id"] = project_ext_id
         __props__.__dict__["size_bytes"] = size_bytes
         __props__.__dict__["sources"] = sources
         __props__.__dict__["tenant_id"] = tenant_id
@@ -486,6 +525,7 @@ class OvaV2(pulumi.CustomResource):
             links: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2LinkArgs', 'OvaV2LinkArgsDict', 'outputs.OvaV2Link']]]]] = None,
             name: pulumi.Input[Optional[_builtins.str]] = None,
             parent_vm: pulumi.Input[Optional[_builtins.str]] = None,
+            project_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
             sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OvaV2SourceArgs', 'OvaV2SourceArgsDict', 'outputs.OvaV2Source']]]]] = None,
             tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -501,6 +541,7 @@ class OvaV2(pulumi.CustomResource):
         __props__["links"] = links
         __props__["name"] = name
         __props__["parentVm"] = parent_vm
+        __props__["projectExtId"] = project_ext_id
         __props__["sizeBytes"] = size_bytes
         __props__["sources"] = sources
         __props__["tenantId"] = tenant_id
@@ -575,6 +616,14 @@ class OvaV2(pulumi.CustomResource):
     @pulumi.getter(name="parentVm")
     def parent_vm(self) -> pulumi.Output[_builtins.str]:
         return pulumi.get(self, "parent_vm")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        -(Optional) External identifier of the project associated with the OVA.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter(name="sizeBytes")

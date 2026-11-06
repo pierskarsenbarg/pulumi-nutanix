@@ -138,6 +138,10 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly bool IsAdvancedNetworking;
         /// <summary>
+        /// Indicates whether the subnet is connected.
+        /// </summary>
+        public readonly bool IsConnected;
+        /// <summary>
         /// Indicates whether the subnet is used for external connectivity.
         /// </summary>
         public readonly bool IsExternal;
@@ -167,9 +171,17 @@ namespace PiersKarsenbarg.Nutanix
         /// </summary>
         public readonly int NetworkId;
         /// <summary>
+        /// External identifier of the project associated with the Subnet.
+        /// </summary>
+        public readonly string ProjectExtId;
+        /// <summary>
         /// List of IPs that are excluded while allocating IP addresses to VM ports.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSubnetV2ReservedIpAddressResult> ReservedIpAddresses;
+        /// <summary>
+        /// List of project external identifiers with which the Subnet is shared.
+        /// </summary>
+        public readonly ImmutableArray<string> SharedWithProjects;
         /// <summary>
         /// Type of subnet.
         /// </summary>
@@ -219,6 +231,8 @@ namespace PiersKarsenbarg.Nutanix
 
             bool isAdvancedNetworking,
 
+            bool isConnected,
+
             bool isExternal,
 
             bool isNatEnabled,
@@ -235,7 +249,11 @@ namespace PiersKarsenbarg.Nutanix
 
             int networkId,
 
+            string projectExtId,
+
             ImmutableArray<Outputs.GetSubnetV2ReservedIpAddressResult> reservedIpAddresses,
+
+            ImmutableArray<string> sharedWithProjects,
 
             string subnetType,
 
@@ -260,6 +278,7 @@ namespace PiersKarsenbarg.Nutanix
             IpPrefix = ipPrefix;
             IpUsages = ipUsages;
             IsAdvancedNetworking = isAdvancedNetworking;
+            IsConnected = isConnected;
             IsExternal = isExternal;
             IsNatEnabled = isNatEnabled;
             Links = links;
@@ -268,7 +287,9 @@ namespace PiersKarsenbarg.Nutanix
             Name = name;
             NetworkFunctionChainReference = networkFunctionChainReference;
             NetworkId = networkId;
+            ProjectExtId = projectExtId;
             ReservedIpAddresses = reservedIpAddresses;
+            SharedWithProjects = sharedWithProjects;
             SubnetType = subnetType;
             VirtualSwitchReference = virtualSwitchReference;
             VirtualSwitches = virtualSwitches;

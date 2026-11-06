@@ -22,6 +22,7 @@ __all__ = ['LcmPrechecksV2Args', 'LcmPrechecksV2']
 class LcmPrechecksV2Args:
     def __init__(__self__, *,
                  entity_update_specs: pulumi.Input[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]],
+                 dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
                  management_server: pulumi.Input[Optional['LcmPrechecksV2ManagementServerArgs']] = None,
                  skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None):
@@ -34,6 +35,8 @@ class LcmPrechecksV2Args:
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
         """
         pulumi.set(__self__, "entity_update_specs", entity_update_specs)
+        if dry_run is not None:
+            pulumi.set(__self__, "dry_run", dry_run)
         if management_server is not None:
             pulumi.set(__self__, "management_server", management_server)
         if skipped_precheck_flags is not None:
@@ -52,6 +55,15 @@ class LcmPrechecksV2Args:
     @entity_update_specs.setter
     def entity_update_specs(self, value: pulumi.Input[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]]):
         pulumi.set(self, "entity_update_specs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dryRun")
+    def dry_run(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "dry_run")
+
+    @dry_run.setter
+    def dry_run(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "dry_run", value)
 
     @_builtins.property
     @pulumi.getter(name="managementServer")
@@ -93,6 +105,7 @@ class LcmPrechecksV2Args:
 @pulumi.input_type
 class _LcmPrechecksV2State:
     def __init__(__self__, *,
+                 dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
                  entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input['LcmPrechecksV2EntityUpdateSpecArgs']]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  management_server: pulumi.Input[Optional['LcmPrechecksV2ManagementServerArgs']] = None,
@@ -106,6 +119,8 @@ class _LcmPrechecksV2State:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] skipped_precheck_flags: List of prechecks to skip. The allowed value is 'powerOffUvms' that skips the pinned VM prechecks. Items Enum: `POWER_OFF_UVMS`
         :param pulumi.Input[_builtins.str] x_cluster_id: Cluster uuid on which the resource is present or operation is being performed.
         """
+        if dry_run is not None:
+            pulumi.set(__self__, "dry_run", dry_run)
         if entity_update_specs is not None:
             pulumi.set(__self__, "entity_update_specs", entity_update_specs)
         if ext_id is not None:
@@ -116,6 +131,15 @@ class _LcmPrechecksV2State:
             pulumi.set(__self__, "skipped_precheck_flags", skipped_precheck_flags)
         if x_cluster_id is not None:
             pulumi.set(__self__, "x_cluster_id", x_cluster_id)
+
+    @_builtins.property
+    @pulumi.getter(name="dryRun")
+    def dry_run(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        return pulumi.get(self, "dry_run")
+
+    @dry_run.setter
+    def dry_run(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "dry_run", value)
 
     @_builtins.property
     @pulumi.getter(name="entityUpdateSpecs")
@@ -181,6 +205,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
                  entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]]] = None,
                  management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']]] = None,
                  skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -254,6 +279,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
                  entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]]] = None,
                  management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']]] = None,
                  skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
@@ -267,6 +293,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = LcmPrechecksV2Args.__new__(LcmPrechecksV2Args)
 
+            __props__.__dict__["dry_run"] = dry_run
             if entity_update_specs is None and not opts.urn:
                 raise TypeError("Missing required property 'entity_update_specs'")
             __props__.__dict__["entity_update_specs"] = entity_update_specs
@@ -284,6 +311,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
             entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']]] = None,
@@ -305,6 +333,7 @@ class LcmPrechecksV2(pulumi.CustomResource):
 
         __props__ = _LcmPrechecksV2State.__new__(_LcmPrechecksV2State)
 
+        __props__.__dict__["dry_run"] = dry_run
         __props__.__dict__["entity_update_specs"] = entity_update_specs
         __props__.__dict__["ext_id"] = ext_id
         __props__.__dict__["management_server"] = management_server
@@ -315,18 +344,25 @@ class LcmPrechecksV2(pulumi.CustomResource):
     @staticmethod
     def exists(id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
             entity_update_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LcmPrechecksV2EntityUpdateSpecArgs', 'LcmPrechecksV2EntityUpdateSpecArgsDict', 'outputs.LcmPrechecksV2EntityUpdateSpec']]]]] = None,
             ext_id: pulumi.Input[Optional[_builtins.str]] = None,
             management_server: pulumi.Input[Optional[Union['LcmPrechecksV2ManagementServerArgs', 'LcmPrechecksV2ManagementServerArgsDict', 'outputs.LcmPrechecksV2ManagementServer']]] = None,
             skipped_precheck_flags: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             x_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
+        __props__["dryRun"] = dry_run
         __props__["entityUpdateSpecs"] = entity_update_specs
         __props__["extId"] = ext_id
         __props__["managementServer"] = management_server
         __props__["skippedPrecheckFlags"] = skipped_precheck_flags
         __props__["xClusterId"] = x_cluster_id
         return pulumi.runtime.exists_resource(None, 'nutanix:index/lcmPrechecksV2:LcmPrechecksV2', id, __props__, opts or pulumi.ResourceOptions())
+
+    @_builtins.property
+    @pulumi.getter(name="dryRun")
+    def dry_run(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        return pulumi.get(self, "dry_run")
 
     @_builtins.property
     @pulumi.getter(name="entityUpdateSpecs")

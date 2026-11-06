@@ -86,8 +86,14 @@ type GetSamlIdentityProviderV2Result struct {
 	// - Last updated time of the SAML Identity Provider.
 	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
 	// - Unique name of the IDP.
-	Name              string `pulumi:"name"`
-	UsernameAttribute string `pulumi:"usernameAttribute"`
+	Name string `pulumi:"name"`
+	// - Project reference for the SAML Identity Provider.
+	ProjectExtId string `pulumi:"projectExtId"`
+	// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+	ShareWithAllProjects bool `pulumi:"shareWithAllProjects"`
+	// - List of projects with which the SAML Identity Provider is shared.
+	SharedWithProjects []string `pulumi:"sharedWithProjects"`
+	UsernameAttribute  string   `pulumi:"usernameAttribute"`
 }
 
 func GetSamlIdentityProviderV2Output(ctx *pulumi.Context, args GetSamlIdentityProviderV2OutputArgs, opts ...pulumi.InvokeOption) GetSamlIdentityProviderV2ResultOutput {
@@ -180,6 +186,21 @@ func (o GetSamlIdentityProviderV2ResultOutput) LastUpdatedTime() pulumi.StringOu
 // - Unique name of the IDP.
 func (o GetSamlIdentityProviderV2ResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// - Project reference for the SAML Identity Provider.
+func (o GetSamlIdentityProviderV2ResultOutput) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) string { return v.ProjectExtId }).(pulumi.StringOutput)
+}
+
+// - Flag indicating whether the SAML Identity Provider is shared with all projects or not.
+func (o GetSamlIdentityProviderV2ResultOutput) ShareWithAllProjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) bool { return v.ShareWithAllProjects }).(pulumi.BoolOutput)
+}
+
+// - List of projects with which the SAML Identity Provider is shared.
+func (o GetSamlIdentityProviderV2ResultOutput) SharedWithProjects() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetSamlIdentityProviderV2Result) []string { return v.SharedWithProjects }).(pulumi.StringArrayOutput)
 }
 
 func (o GetSamlIdentityProviderV2ResultOutput) UsernameAttribute() pulumi.StringOutput {

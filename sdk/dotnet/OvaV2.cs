@@ -65,6 +65,12 @@ namespace PiersKarsenbarg.Nutanix
         [Output("parentVm")]
         public Output<string> ParentVm { get; private set; } = null!;
 
+        /// <summary>
+        /// -(Optional) External identifier of the project associated with the OVA.
+        /// </summary>
+        [Output("projectExtId")]
+        public Output<string> ProjectExtId { get; private set; } = null!;
+
         [Output("sizeBytes")]
         public Output<int> SizeBytes { get; private set; } = null!;
 
@@ -164,6 +170,12 @@ namespace PiersKarsenbarg.Nutanix
         [Input("name")]
         public Input<string>? Name { get; set; }
 
+        /// <summary>
+        /// -(Optional) External identifier of the project associated with the OVA.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
+
         [Input("sources", required: true)]
         private InputList<Inputs.OvaV2SourceArgs>? _sources;
 
@@ -249,6 +261,12 @@ namespace PiersKarsenbarg.Nutanix
 
         [Input("parentVm")]
         public Input<string>? ParentVm { get; set; }
+
+        /// <summary>
+        /// -(Optional) External identifier of the project associated with the OVA.
+        /// </summary>
+        [Input("projectExtId")]
+        public Input<string>? ProjectExtId { get; set; }
 
         [Input("sizeBytes")]
         public Input<int>? SizeBytes { get; set; }

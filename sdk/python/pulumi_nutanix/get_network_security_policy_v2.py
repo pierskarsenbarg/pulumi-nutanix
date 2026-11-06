@@ -27,7 +27,7 @@ class GetNetworkSecurityPolicyV2Result:
     """
     A collection of values returned by getNetworkSecurityPolicyV2.
     """
-    def __init__(__self__, created_by=None, creation_time=None, description=None, ext_id=None, id=None, is_hitlog_enabled=None, is_ipv6_traffic_allowed=None, is_system_defined=None, last_update_time=None, links=None, name=None, rules=None, scope=None, secured_groups=None, state=None, tenant_id=None, type=None, vpc_references=None):
+    def __init__(__self__, created_by=None, creation_time=None, description=None, ext_id=None, id=None, is_hitlog_enabled=None, is_ipv6_traffic_allowed=None, is_shared_with_all_projects=None, is_system_defined=None, last_update_time=None, links=None, name=None, project_ext_id=None, rules=None, scope=None, secured_groups=None, state=None, tenant_id=None, type=None, vpc_references=None):
         if created_by and not isinstance(created_by, str):
             raise TypeError("Expected argument 'created_by' to be a str")
         pulumi.set(__self__, "created_by", created_by)
@@ -49,6 +49,9 @@ class GetNetworkSecurityPolicyV2Result:
         if is_ipv6_traffic_allowed and not isinstance(is_ipv6_traffic_allowed, bool):
             raise TypeError("Expected argument 'is_ipv6_traffic_allowed' to be a bool")
         pulumi.set(__self__, "is_ipv6_traffic_allowed", is_ipv6_traffic_allowed)
+        if is_shared_with_all_projects and not isinstance(is_shared_with_all_projects, bool):
+            raise TypeError("Expected argument 'is_shared_with_all_projects' to be a bool")
+        pulumi.set(__self__, "is_shared_with_all_projects", is_shared_with_all_projects)
         if is_system_defined and not isinstance(is_system_defined, bool):
             raise TypeError("Expected argument 'is_system_defined' to be a bool")
         pulumi.set(__self__, "is_system_defined", is_system_defined)
@@ -61,6 +64,9 @@ class GetNetworkSecurityPolicyV2Result:
         if name and not isinstance(name, str):
             raise TypeError("Expected argument 'name' to be a str")
         pulumi.set(__self__, "name", name)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if rules and not isinstance(rules, list):
             raise TypeError("Expected argument 'rules' to be a list")
         pulumi.set(__self__, "rules", rules)
@@ -140,6 +146,14 @@ class GetNetworkSecurityPolicyV2Result:
         return pulumi.get(self, "is_ipv6_traffic_allowed")
 
     @_builtins.property
+    @pulumi.getter(name="isSharedWithAllProjects")
+    def is_shared_with_all_projects(self) -> _builtins.bool:
+        """
+        Whether the network security policy is shared with all projects.
+        """
+        return pulumi.get(self, "is_shared_with_all_projects")
+
+    @_builtins.property
     @pulumi.getter(name="isSystemDefined")
     def is_system_defined(self) -> _builtins.bool:
         """
@@ -167,9 +181,17 @@ class GetNetworkSecurityPolicyV2Result:
     @pulumi.getter
     def name(self) -> _builtins.str:
         """
-        Name of the Flow Network Security Policy.
+        A user-defined name for the rule.
         """
         return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        Project external ID associated with the network security policy.
+        """
+        return pulumi.get(self, "project_ext_id")
 
     @_builtins.property
     @pulumi.getter
@@ -241,10 +263,12 @@ class AwaitableGetNetworkSecurityPolicyV2Result(GetNetworkSecurityPolicyV2Result
             id=self.id,
             is_hitlog_enabled=self.is_hitlog_enabled,
             is_ipv6_traffic_allowed=self.is_ipv6_traffic_allowed,
+            is_shared_with_all_projects=self.is_shared_with_all_projects,
             is_system_defined=self.is_system_defined,
             last_update_time=self.last_update_time,
             links=self.links,
             name=self.name,
+            project_ext_id=self.project_ext_id,
             rules=self.rules,
             scope=self.scope,
             secured_groups=self.secured_groups,
@@ -275,10 +299,12 @@ def get_network_security_policy_v2(ext_id: Optional[_builtins.str] = None,
         id=pulumi.get(__ret__, 'id'),
         is_hitlog_enabled=pulumi.get(__ret__, 'is_hitlog_enabled'),
         is_ipv6_traffic_allowed=pulumi.get(__ret__, 'is_ipv6_traffic_allowed'),
+        is_shared_with_all_projects=pulumi.get(__ret__, 'is_shared_with_all_projects'),
         is_system_defined=pulumi.get(__ret__, 'is_system_defined'),
         last_update_time=pulumi.get(__ret__, 'last_update_time'),
         links=pulumi.get(__ret__, 'links'),
         name=pulumi.get(__ret__, 'name'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         rules=pulumi.get(__ret__, 'rules'),
         scope=pulumi.get(__ret__, 'scope'),
         secured_groups=pulumi.get(__ret__, 'secured_groups'),
@@ -306,10 +332,12 @@ def get_network_security_policy_v2_output(ext_id: pulumi.Input[Optional[_builtin
         id=pulumi.get(__response__, 'id'),
         is_hitlog_enabled=pulumi.get(__response__, 'is_hitlog_enabled'),
         is_ipv6_traffic_allowed=pulumi.get(__response__, 'is_ipv6_traffic_allowed'),
+        is_shared_with_all_projects=pulumi.get(__response__, 'is_shared_with_all_projects'),
         is_system_defined=pulumi.get(__response__, 'is_system_defined'),
         last_update_time=pulumi.get(__response__, 'last_update_time'),
         links=pulumi.get(__response__, 'links'),
         name=pulumi.get(__response__, 'name'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         rules=pulumi.get(__response__, 'rules'),
         scope=pulumi.get(__response__, 'scope'),
         secured_groups=pulumi.get(__response__, 'secured_groups'),

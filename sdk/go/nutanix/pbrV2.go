@@ -77,7 +77,7 @@ import (
 // `terraform import nutanix_pbr_v2.pbr_import <UUID>
 // `
 //
-// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.3#tag/RoutingPolicies/operation/createRoutingPolicy).
+// See detailed information in [Nutanix Routing Policy v4](https://developers.nutanix.com/api-reference?namespace=networking&version=v4.4#tag/RoutingPolicies/operation/createRoutingPolicy).
 type PbrV2 struct {
 	pulumi.CustomResourceState
 
@@ -95,6 +95,8 @@ type PbrV2 struct {
 	Policies PbrV2PolicyArrayOutput `pulumi:"policies"`
 	// Priority of the routing policy.
 	Priority pulumi.IntOutput `pulumi:"priority"`
+	// External identifier of the project associated with the Routing Policy.
+	ProjectExtId pulumi.StringOutput `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId pulumi.StringOutput `pulumi:"tenantId"`
 	// ExtId of the VPC extId to which the routing policy belongs.
@@ -156,6 +158,8 @@ type pbrV2State struct {
 	Policies []PbrV2Policy `pulumi:"policies"`
 	// Priority of the routing policy.
 	Priority *int `pulumi:"priority"`
+	// External identifier of the project associated with the Routing Policy.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId *string `pulumi:"tenantId"`
 	// ExtId of the VPC extId to which the routing policy belongs.
@@ -179,6 +183,8 @@ type PbrV2State struct {
 	Policies PbrV2PolicyArrayInput
 	// Priority of the routing policy.
 	Priority pulumi.IntPtrInput
+	// External identifier of the project associated with the Routing Policy.
+	ProjectExtId pulumi.StringPtrInput
 	// A globally unique identifier that represents the tenant that owns this entity
 	TenantId pulumi.StringPtrInput
 	// ExtId of the VPC extId to which the routing policy belongs.
@@ -208,6 +214,8 @@ type pbrV2Args struct {
 	Policies []PbrV2Policy `pulumi:"policies"`
 	// Priority of the routing policy.
 	Priority int `pulumi:"priority"`
+	// External identifier of the project associated with the Routing Policy.
+	ProjectExtId *string `pulumi:"projectExtId"`
 	// ExtId of the VPC extId to which the routing policy belongs.
 	VpcExtId string `pulumi:"vpcExtId"`
 }
@@ -224,6 +232,8 @@ type PbrV2Args struct {
 	Policies PbrV2PolicyArrayInput
 	// Priority of the routing policy.
 	Priority pulumi.IntInput
+	// External identifier of the project associated with the Routing Policy.
+	ProjectExtId pulumi.StringPtrInput
 	// ExtId of the VPC extId to which the routing policy belongs.
 	VpcExtId pulumi.StringInput
 }
@@ -348,6 +358,11 @@ func (o PbrV2Output) Policies() PbrV2PolicyArrayOutput {
 // Priority of the routing policy.
 func (o PbrV2Output) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v *PbrV2) pulumi.IntOutput { return v.Priority }).(pulumi.IntOutput)
+}
+
+// External identifier of the project associated with the Routing Policy.
+func (o PbrV2Output) ProjectExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v *PbrV2) pulumi.StringOutput { return v.ProjectExtId }).(pulumi.StringOutput)
 }
 
 // A globally unique identifier that represents the tenant that owns this entity

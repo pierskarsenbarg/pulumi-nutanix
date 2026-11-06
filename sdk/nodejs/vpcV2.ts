@@ -130,6 +130,10 @@ export class VpcV2 extends pulumi.CustomResource {
      */
     declare public readonly externallyRoutablePrefixes: pulumi.Output<outputs.VpcV2ExternallyRoutablePrefix[]>;
     /**
+     * List of Kubernetes clusters associated with the VPC.
+     */
+    declare public readonly kubernetesClusters: pulumi.Output<outputs.VpcV2KubernetesCluster[]>;
+    /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     declare public /*out*/ readonly links: pulumi.Output<outputs.VpcV2Link[]>;
@@ -141,7 +145,27 @@ export class VpcV2 extends pulumi.CustomResource {
      * Name of the VPC.
      */
     declare public readonly name: pulumi.Output<string>;
+    /**
+     * External identifier of the project associated with the VPC.
+     */
+    declare public readonly projectExtId: pulumi.Output<string>;
+    /**
+     * VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+     */
+    declare public readonly scope: pulumi.Output<string>;
+    /**
+     * List of project external identifiers with which the VPC is shared.
+     */
+    declare public readonly sharedWithProjects: pulumi.Output<string[]>;
+    /**
+     * When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+     */
+    declare public readonly shouldAdvertiseConnectedSubnets: pulumi.Output<boolean>;
     declare public /*out*/ readonly snatIps: pulumi.Output<outputs.VpcV2SnatIp[]>;
+    /**
+     * Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+     */
+    declare public readonly supportedMultipleExternalSubnetType: pulumi.Output<string>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
@@ -170,10 +194,16 @@ export class VpcV2 extends pulumi.CustomResource {
             resourceInputs["externalRoutingDomainReference"] = state?.externalRoutingDomainReference;
             resourceInputs["externalSubnets"] = state?.externalSubnets;
             resourceInputs["externallyRoutablePrefixes"] = state?.externallyRoutablePrefixes;
+            resourceInputs["kubernetesClusters"] = state?.kubernetesClusters;
             resourceInputs["links"] = state?.links;
             resourceInputs["metadatas"] = state?.metadatas;
             resourceInputs["name"] = state?.name;
+            resourceInputs["projectExtId"] = state?.projectExtId;
+            resourceInputs["scope"] = state?.scope;
+            resourceInputs["sharedWithProjects"] = state?.sharedWithProjects;
+            resourceInputs["shouldAdvertiseConnectedSubnets"] = state?.shouldAdvertiseConnectedSubnets;
             resourceInputs["snatIps"] = state?.snatIps;
+            resourceInputs["supportedMultipleExternalSubnetType"] = state?.supportedMultipleExternalSubnetType;
             resourceInputs["tenantId"] = state?.tenantId;
             resourceInputs["vpcType"] = state?.vpcType;
         } else {
@@ -183,8 +213,14 @@ export class VpcV2 extends pulumi.CustomResource {
             resourceInputs["externalRoutingDomainReference"] = args?.externalRoutingDomainReference;
             resourceInputs["externalSubnets"] = args?.externalSubnets;
             resourceInputs["externallyRoutablePrefixes"] = args?.externallyRoutablePrefixes;
+            resourceInputs["kubernetesClusters"] = args?.kubernetesClusters;
             resourceInputs["metadatas"] = args?.metadatas;
             resourceInputs["name"] = args?.name;
+            resourceInputs["projectExtId"] = args?.projectExtId;
+            resourceInputs["scope"] = args?.scope;
+            resourceInputs["sharedWithProjects"] = args?.sharedWithProjects;
+            resourceInputs["shouldAdvertiseConnectedSubnets"] = args?.shouldAdvertiseConnectedSubnets;
+            resourceInputs["supportedMultipleExternalSubnetType"] = args?.supportedMultipleExternalSubnetType;
             resourceInputs["vpcType"] = args?.vpcType;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["links"] = undefined /*out*/;
@@ -225,6 +261,10 @@ export interface VpcV2State {
      */
     externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternallyRoutablePrefix>[] | undefined>;
     /**
+     * List of Kubernetes clusters associated with the VPC.
+     */
+    kubernetesClusters?: pulumi.Input<pulumi.Input<inputs.VpcV2KubernetesCluster>[] | undefined>;
+    /**
      * A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
      */
     links?: pulumi.Input<pulumi.Input<inputs.VpcV2Link>[] | undefined>;
@@ -236,7 +276,27 @@ export interface VpcV2State {
      * Name of the VPC.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * External identifier of the project associated with the VPC.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
+     * VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+     */
+    scope?: pulumi.Input<string | undefined>;
+    /**
+     * List of project external identifiers with which the VPC is shared.
+     */
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+     */
+    shouldAdvertiseConnectedSubnets?: pulumi.Input<boolean | undefined>;
     snatIps?: pulumi.Input<pulumi.Input<inputs.VpcV2SnatIp>[] | undefined>;
+    /**
+     * Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+     */
+    supportedMultipleExternalSubnetType?: pulumi.Input<string | undefined>;
     /**
      * A globally unique identifier that represents the tenant that owns this entity.
      */
@@ -272,6 +332,10 @@ export interface VpcV2Args {
      */
     externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<inputs.VpcV2ExternallyRoutablePrefix>[] | undefined>;
     /**
+     * List of Kubernetes clusters associated with the VPC.
+     */
+    kubernetesClusters?: pulumi.Input<pulumi.Input<inputs.VpcV2KubernetesCluster>[] | undefined>;
+    /**
      * The vpc kind metadata.
      */
     metadatas?: pulumi.Input<pulumi.Input<inputs.VpcV2Metadata>[] | undefined>;
@@ -279,6 +343,26 @@ export interface VpcV2Args {
      * Name of the VPC.
      */
     name?: pulumi.Input<string | undefined>;
+    /**
+     * External identifier of the project associated with the VPC.
+     */
+    projectExtId?: pulumi.Input<string | undefined>;
+    /**
+     * VPC scope. Valid values: `VMS`, `CONTAINERS`, `VMS_AND_CONTAINERS`.
+     */
+    scope?: pulumi.Input<string | undefined>;
+    /**
+     * List of project external identifiers with which the VPC is shared.
+     */
+    sharedWithProjects?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * When set to True, the system advertises all connected subnet prefixes that are subsets of the VPC's externally routable prefixes (ERPs), instead of the VPC ERPs themselves.
+     */
+    shouldAdvertiseConnectedSubnets?: pulumi.Input<boolean | undefined>;
+    /**
+     * Type of multiple external subnet support. Valid values: `NONE`, `ONLY_NONAT`, `ONLY_NAT`, `ALL`.
+     */
+    supportedMultipleExternalSubnetType?: pulumi.Input<string | undefined>;
     /**
      * Type of VPC. Acceptable values are "REGULAR" , "TRANSIT".
      */

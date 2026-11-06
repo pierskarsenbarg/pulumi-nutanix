@@ -14,6 +14,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class DeployTemplatesV2OverrideVmConfigMap
     {
+        public readonly Outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfig? GuestCustomizationProfileConfig;
         /// <summary>
         /// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
         /// </summary>
@@ -45,6 +46,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private DeployTemplatesV2OverrideVmConfigMap(
+            Outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomizationProfileConfig? guestCustomizationProfileConfig,
+
             ImmutableArray<Outputs.DeployTemplatesV2OverrideVmConfigMapGuestCustomization> guestCustomizations,
 
             int? memorySizeBytes,
@@ -59,6 +62,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             int? numThreadsPerCore)
         {
+            GuestCustomizationProfileConfig = guestCustomizationProfileConfig;
             GuestCustomizations = guestCustomizations;
             MemorySizeBytes = memorySizeBytes;
             Name = name;

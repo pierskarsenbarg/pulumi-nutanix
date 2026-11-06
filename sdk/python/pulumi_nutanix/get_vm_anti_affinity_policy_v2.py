@@ -26,7 +26,7 @@ class GetVmAntiAffinityPolicyV2Result:
     """
     A collection of values returned by getVmAntiAffinityPolicyV2.
     """
-    def __init__(__self__, categories=None, create_time=None, created_by=None, description=None, ext_id=None, id=None, name=None, num_compliant_vms=None, num_non_compliant_vms=None, num_pending_vms=None, update_time=None, updated_by=None):
+    def __init__(__self__, categories=None, create_time=None, created_by=None, description=None, ext_id=None, id=None, name=None, num_compliant_vms=None, num_non_compliant_vms=None, num_pending_vms=None, project_ext_id=None, update_time=None, updated_by=None):
         if categories and not isinstance(categories, list):
             raise TypeError("Expected argument 'categories' to be a list")
         pulumi.set(__self__, "categories", categories)
@@ -57,6 +57,9 @@ class GetVmAntiAffinityPolicyV2Result:
         if num_pending_vms and not isinstance(num_pending_vms, int):
             raise TypeError("Expected argument 'num_pending_vms' to be a int")
         pulumi.set(__self__, "num_pending_vms", num_pending_vms)
+        if project_ext_id and not isinstance(project_ext_id, str):
+            raise TypeError("Expected argument 'project_ext_id' to be a str")
+        pulumi.set(__self__, "project_ext_id", project_ext_id)
         if update_time and not isinstance(update_time, str):
             raise TypeError("Expected argument 'update_time' to be a str")
         pulumi.set(__self__, "update_time", update_time)
@@ -142,6 +145,14 @@ class GetVmAntiAffinityPolicyV2Result:
         return pulumi.get(self, "num_pending_vms")
 
     @_builtins.property
+    @pulumi.getter(name="projectExtId")
+    def project_ext_id(self) -> _builtins.str:
+        """
+        The external identifier of the project that this policy is associated with.
+        """
+        return pulumi.get(self, "project_ext_id")
+
+    @_builtins.property
     @pulumi.getter(name="updateTime")
     def update_time(self) -> _builtins.str:
         """
@@ -174,6 +185,7 @@ class AwaitableGetVmAntiAffinityPolicyV2Result(GetVmAntiAffinityPolicyV2Result):
             num_compliant_vms=self.num_compliant_vms,
             num_non_compliant_vms=self.num_non_compliant_vms,
             num_pending_vms=self.num_pending_vms,
+            project_ext_id=self.project_ext_id,
             update_time=self.update_time,
             updated_by=self.updated_by)
 
@@ -214,6 +226,7 @@ def get_vm_anti_affinity_policy_v2(ext_id: Optional[_builtins.str] = None,
         num_compliant_vms=pulumi.get(__ret__, 'num_compliant_vms'),
         num_non_compliant_vms=pulumi.get(__ret__, 'num_non_compliant_vms'),
         num_pending_vms=pulumi.get(__ret__, 'num_pending_vms'),
+        project_ext_id=pulumi.get(__ret__, 'project_ext_id'),
         update_time=pulumi.get(__ret__, 'update_time'),
         updated_by=pulumi.get(__ret__, 'updated_by'))
 def get_vm_anti_affinity_policy_v2_output(ext_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -251,5 +264,6 @@ def get_vm_anti_affinity_policy_v2_output(ext_id: pulumi.Input[Optional[_builtin
         num_compliant_vms=pulumi.get(__response__, 'num_compliant_vms'),
         num_non_compliant_vms=pulumi.get(__response__, 'num_non_compliant_vms'),
         num_pending_vms=pulumi.get(__response__, 'num_pending_vms'),
+        project_ext_id=pulumi.get(__response__, 'project_ext_id'),
         update_time=pulumi.get(__response__, 'update_time'),
         updated_by=pulumi.get(__response__, 'updated_by')))
