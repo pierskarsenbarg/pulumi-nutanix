@@ -64,7 +64,7 @@ import (
 //				return err
 //			}
 //			_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
-//				ProtectionRuleId: protectionRuleTest.ID().ToIDOutput().ToStringOutput(),
+//				ProtectionRuleId: protectionRuleTest.ID(),
 //			}, nil)
 //			return nil
 //		})

@@ -76,7 +76,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -84,9 +84,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrecoverypointsv2" "recoveryPoints" {
+        /// data "nutanix_recovery_points_v2" "recoveryPoints" {
         /// }
-        /// data "nutanix_getrecoverypointsv2" "filteredRecoveryPoints" {
+        /// data "nutanix_recovery_points_v2" "filteredRecoveryPoints" {
         ///   filter = "name eq 'recovery_point_001'"
         /// }
         /// ```
@@ -314,7 +314,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -322,9 +322,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrecoverypointsv2" "recoveryPoints" {
+        /// data "nutanix_recovery_points_v2" "recoveryPoints" {
         /// }
-        /// data "nutanix_getrecoverypointsv2" "filteredRecoveryPoints" {
+        /// data "nutanix_recovery_points_v2" "filteredRecoveryPoints" {
         ///   filter = "name eq 'recovery_point_001'"
         /// }
         /// ```
@@ -552,7 +552,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -560,9 +560,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrecoverypointsv2" "recoveryPoints" {
+        /// data "nutanix_recovery_points_v2" "recoveryPoints" {
         /// }
-        /// data "nutanix_getrecoverypointsv2" "filteredRecoveryPoints" {
+        /// data "nutanix_recovery_points_v2" "filteredRecoveryPoints" {
         ///   filter = "name eq 'recovery_point_001'"
         /// }
         /// ```

@@ -28,7 +28,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     ///     var vm1 = new Nutanix.VmCloneV2("vm1", new()
     ///     {
-    ///         VmExtId = vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId)),
+    ///         VmExtId = Output.Create(vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId))).Apply(x =&gt; x.ToString(System.Globalization.CultureInfo.InvariantCulture)),
     ///         Name = "test-dou",
     ///         NumCoresPerSocket = 1,
     ///         NumSockets = 1,

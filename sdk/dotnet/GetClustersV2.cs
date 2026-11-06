@@ -95,7 +95,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -103,12 +103,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclustersv2" "cls" {
+        /// data "nutanix_clusters_v2" "cls" {
         /// }
-        /// data "nutanix_getclustersv2" "filtered-cls" {
+        /// data "nutanix_clusters_v2" "filtered-cls" {
         ///   filter = "name eq 'cluster-1'"
         /// }
-        /// data "nutanix_getclustersv2" "paged-cls" {
+        /// data "nutanix_clusters_v2" "paged-cls" {
         ///   page  = 1
         ///   limit = 10
         /// }
@@ -255,7 +255,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -263,12 +263,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclustersv2" "cls" {
+        /// data "nutanix_clusters_v2" "cls" {
         /// }
-        /// data "nutanix_getclustersv2" "filtered-cls" {
+        /// data "nutanix_clusters_v2" "filtered-cls" {
         ///   filter = "name eq 'cluster-1'"
         /// }
-        /// data "nutanix_getclustersv2" "paged-cls" {
+        /// data "nutanix_clusters_v2" "paged-cls" {
         ///   page  = 1
         ///   limit = 10
         /// }
@@ -415,7 +415,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -423,12 +423,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclustersv2" "cls" {
+        /// data "nutanix_clusters_v2" "cls" {
         /// }
-        /// data "nutanix_getclustersv2" "filtered-cls" {
+        /// data "nutanix_clusters_v2" "filtered-cls" {
         ///   filter = "name eq 'cluster-1'"
         /// }
-        /// data "nutanix_getclustersv2" "paged-cls" {
+        /// data "nutanix_clusters_v2" "paged-cls" {
         ///   page  = 1
         ///   limit = 10
         /// }

@@ -82,14 +82,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetSelfServiceAppOutput(ctx, nutanix.GetSelfServiceAppOutputArgs{
-        /// 			AppUuid: testSelfServiceAppProvision.ID().ToIDOutput().ToStringOutput(),
+        /// 			AppUuid: testSelfServiceAppProvision.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -97,11 +97,14 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfserviceapp" "test" {
-        ///   app_uuid = nutanix_selfserviceappprovision.test.id
+        /// data "nutanix_self_service_app" "test" {
+        ///   app_uuid = nutanix_self_service_app_provision.test.id
         /// }
         /// 
-        /// resource "nutanix_selfserviceappprovision" "test" {
+        /// resource "nutanix_self_service_app_provision" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   bp_name         = "NAME OF BLUEPRINT IN SERVER"
         ///   app_name        = "NAME OF APP YOU WANT TO SET"
         ///   app_description = "DESCRIPTION OF APP"
@@ -234,14 +237,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetSelfServiceAppOutput(ctx, nutanix.GetSelfServiceAppOutputArgs{
-        /// 			AppUuid: testSelfServiceAppProvision.ID().ToIDOutput().ToStringOutput(),
+        /// 			AppUuid: testSelfServiceAppProvision.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -249,11 +252,14 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfserviceapp" "test" {
-        ///   app_uuid = nutanix_selfserviceappprovision.test.id
+        /// data "nutanix_self_service_app" "test" {
+        ///   app_uuid = nutanix_self_service_app_provision.test.id
         /// }
         /// 
-        /// resource "nutanix_selfserviceappprovision" "test" {
+        /// resource "nutanix_self_service_app_provision" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   bp_name         = "NAME OF BLUEPRINT IN SERVER"
         ///   app_name        = "NAME OF APP YOU WANT TO SET"
         ///   app_description = "DESCRIPTION OF APP"
@@ -386,14 +392,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetSelfServiceAppOutput(ctx, nutanix.GetSelfServiceAppOutputArgs{
-        /// 			AppUuid: testSelfServiceAppProvision.ID().ToIDOutput().ToStringOutput(),
+        /// 			AppUuid: testSelfServiceAppProvision.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -401,11 +407,14 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfserviceapp" "test" {
-        ///   app_uuid = nutanix_selfserviceappprovision.test.id
+        /// data "nutanix_self_service_app" "test" {
+        ///   app_uuid = nutanix_self_service_app_provision.test.id
         /// }
         /// 
-        /// resource "nutanix_selfserviceappprovision" "test" {
+        /// resource "nutanix_self_service_app_provision" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   bp_name         = "NAME OF BLUEPRINT IN SERVER"
         ///   app_name        = "NAME OF APP YOU WANT TO SET"
         ///   app_description = "DESCRIPTION OF APP"

@@ -107,7 +107,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -115,13 +115,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvolumegroupsv2" "volumeGroups" {
+        /// data "nutanix_volume_groups_v2" "volumeGroups" {
         /// }
-        /// data "nutanix_getvolumegroupsv2" "vg-pagination" {
+        /// data "nutanix_volume_groups_v2" "vg-pagination" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getvolumegroupsv2" "vg-filter" {
+        /// data "nutanix_volume_groups_v2" "vg-filter" {
         ///   filter = "name eq 'volume_group_test'"
         /// }
         /// 
@@ -358,7 +358,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -366,13 +366,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvolumegroupsv2" "volumeGroups" {
+        /// data "nutanix_volume_groups_v2" "volumeGroups" {
         /// }
-        /// data "nutanix_getvolumegroupsv2" "vg-pagination" {
+        /// data "nutanix_volume_groups_v2" "vg-pagination" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getvolumegroupsv2" "vg-filter" {
+        /// data "nutanix_volume_groups_v2" "vg-filter" {
         ///   filter = "name eq 'volume_group_test'"
         /// }
         /// 
@@ -609,7 +609,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -617,13 +617,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvolumegroupsv2" "volumeGroups" {
+        /// data "nutanix_volume_groups_v2" "volumeGroups" {
         /// }
-        /// data "nutanix_getvolumegroupsv2" "vg-pagination" {
+        /// data "nutanix_volume_groups_v2" "vg-pagination" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getvolumegroupsv2" "vg-filter" {
+        /// data "nutanix_volume_groups_v2" "vg-filter" {
         ///   filter = "name eq 'volume_group_test'"
         /// }
         /// 

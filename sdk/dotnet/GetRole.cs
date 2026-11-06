@@ -100,14 +100,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
-        /// 			RoleId: testRole.ID().ToIDOutput().ToStringOutput(),
+        /// 			RoleId: testRole.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -115,14 +115,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrole" "test" {
+        /// data "nutanix_role" "test" {
         ///   role_id = nutanix_role.test.id
         /// }
         /// 
         /// resource "nutanix_role" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "NAME"
         ///   description = "DESCRIPTION"
-        ///   permission_reference_lists {
+        ///   permission_reference_list {
         ///     kind = "permission"
         ///     uuid = "ID OF PERMISSION"
         ///   }
@@ -279,14 +282,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
-        /// 			RoleId: testRole.ID().ToIDOutput().ToStringOutput(),
+        /// 			RoleId: testRole.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -294,14 +297,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrole" "test" {
+        /// data "nutanix_role" "test" {
         ///   role_id = nutanix_role.test.id
         /// }
         /// 
         /// resource "nutanix_role" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "NAME"
         ///   description = "DESCRIPTION"
-        ///   permission_reference_lists {
+        ///   permission_reference_list {
         ///     kind = "permission"
         ///     uuid = "ID OF PERMISSION"
         ///   }
@@ -458,14 +464,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetRoleOutput(ctx, nutanix.GetRoleOutputArgs{
-        /// 			RoleId: testRole.ID().ToIDOutput().ToStringOutput(),
+        /// 			RoleId: testRole.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -473,14 +479,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getrole" "test" {
+        /// data "nutanix_role" "test" {
         ///   role_id = nutanix_role.test.id
         /// }
         /// 
         /// resource "nutanix_role" "test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "NAME"
         ///   description = "DESCRIPTION"
-        ///   permission_reference_lists {
+        ///   permission_reference_list {
         ///     kind = "permission"
         ///     uuid = "ID OF PERMISSION"
         ///   }

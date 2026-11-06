@@ -28,7 +28,7 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     ///     var vm_gc_update = new Nutanix.VmGcUpdateV2("vm-gc-update", new()
     ///     {
-    ///         ExtId = vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId)),
+    ///         ExtId = Output.Create(vm_list.Apply(vm_list =&gt; vm_list.Apply(getVirtualMachinesV2Result =&gt; getVirtualMachinesV2Result.Vms[0]?.Data?.ExtId))).Apply(x =&gt; x.ToString(System.Globalization.CultureInfo.InvariantCulture)),
     ///         Configs = new[]
     ///         {
     ///             new Nutanix.Inputs.VmGcUpdateV2ConfigArgs

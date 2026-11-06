@@ -34,7 +34,7 @@ namespace PiersKarsenbarg.Nutanix
     ///             new Nutanix.Inputs.DeployTemplatesV2OverrideVmConfigMapArgs
     ///             {
     ///                 Name = "example-tf-temp",
-    ///                 MemorySizeBytes = 4294967296,
+    ///                 MemorySizeBytes = (int)4294967296,
     ///                 NumSockets = 2,
     ///                 NumCoresPerSocket = 1,
     ///                 NumThreadsPerCore = 1,

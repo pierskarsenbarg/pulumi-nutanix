@@ -125,7 +125,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -133,19 +133,19 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclusterprofilev2" "list-cluster-profiles" {
+        /// data "nutanix_cluster_profile_v2" "list-cluster-profiles" {
         /// }
-        /// data "nutanix_getclusterprofilesv2" "filtered-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "filtered-cluster-profiles" {
         ///   filter = "clusterCount eq 62"
         /// }
-        /// data "nutanix_getclusterprofilesv2" "paged-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "paged-cluster-profiles" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getclusterprofilesv2" "ordered-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "ordered-cluster-profiles" {
         ///   order_by = "name"
         /// }
-        /// data "nutanix_getclusterprofilesv2" "selected-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "selected-cluster-profiles" {
         ///   select = "name,description"
         /// }
         /// ```
@@ -340,7 +340,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -348,19 +348,19 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclusterprofilev2" "list-cluster-profiles" {
+        /// data "nutanix_cluster_profile_v2" "list-cluster-profiles" {
         /// }
-        /// data "nutanix_getclusterprofilesv2" "filtered-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "filtered-cluster-profiles" {
         ///   filter = "clusterCount eq 62"
         /// }
-        /// data "nutanix_getclusterprofilesv2" "paged-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "paged-cluster-profiles" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getclusterprofilesv2" "ordered-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "ordered-cluster-profiles" {
         ///   order_by = "name"
         /// }
-        /// data "nutanix_getclusterprofilesv2" "selected-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "selected-cluster-profiles" {
         ///   select = "name,description"
         /// }
         /// ```
@@ -555,7 +555,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -563,19 +563,19 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getclusterprofilev2" "list-cluster-profiles" {
+        /// data "nutanix_cluster_profile_v2" "list-cluster-profiles" {
         /// }
-        /// data "nutanix_getclusterprofilesv2" "filtered-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "filtered-cluster-profiles" {
         ///   filter = "clusterCount eq 62"
         /// }
-        /// data "nutanix_getclusterprofilesv2" "paged-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "paged-cluster-profiles" {
         ///   page  = 1
         ///   limit = 10
         /// }
-        /// data "nutanix_getclusterprofilesv2" "ordered-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "ordered-cluster-profiles" {
         ///   order_by = "name"
         /// }
-        /// data "nutanix_getclusterprofilesv2" "selected-cluster-profiles" {
+        /// data "nutanix_cluster_profiles_v2" "selected-cluster-profiles" {
         ///   select = "name,description"
         /// }
         /// ```

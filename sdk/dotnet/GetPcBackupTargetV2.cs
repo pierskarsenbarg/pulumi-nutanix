@@ -72,7 +72,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -80,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcbackuptargetv2" "example" {
+        /// data "nutanix_pc_backup_target_v2" "example" {
         ///   domain_manager_ext_id = "75dde184-3a0e-4f59-a185-03ca1efead17"
         ///   ext_id                = "00062d3d-5d07-0da6-0000-000000028f57"
         /// }
@@ -188,7 +188,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -196,7 +196,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcbackuptargetv2" "example" {
+        /// data "nutanix_pc_backup_target_v2" "example" {
         ///   domain_manager_ext_id = "75dde184-3a0e-4f59-a185-03ca1efead17"
         ///   ext_id                = "00062d3d-5d07-0da6-0000-000000028f57"
         /// }
@@ -304,7 +304,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -312,7 +312,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getpcbackuptargetv2" "example" {
+        /// data "nutanix_pc_backup_target_v2" "example" {
         ///   domain_manager_ext_id = "75dde184-3a0e-4f59-a185-03ca1efead17"
         ///   ext_id                = "00062d3d-5d07-0da6-0000-000000028f57"
         /// }

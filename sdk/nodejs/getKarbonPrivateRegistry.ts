@@ -10,6 +10,14 @@ import * as utilities from "./utilities";
  * ## Example Usage
  *
  * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const registry = nutanix.getKarbonPrivateRegistry({
+ *     clusterId: "<YOUR-CLUSTER-ID>",
+ * });
+ * ```
  * <!--End PulumiCodeChooser -->
  */
 export function getKarbonPrivateRegistry(args?: GetKarbonPrivateRegistryArgs, opts?: pulumi.InvokeOptions): Promise<GetKarbonPrivateRegistryResult> {
@@ -64,6 +72,14 @@ export interface GetKarbonPrivateRegistryResult {
  * ## Example Usage
  *
  * <!--Start PulumiCodeChooser -->
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as nutanix from "@pierskarsenbarg/nutanix";
+ *
+ * const registry = nutanix.getKarbonPrivateRegistry({
+ *     clusterId: "<YOUR-CLUSTER-ID>",
+ * });
+ * ```
  * <!--End PulumiCodeChooser -->
  */
 export function getKarbonPrivateRegistryOutput(args?: GetKarbonPrivateRegistryOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetKarbonPrivateRegistryResult> {

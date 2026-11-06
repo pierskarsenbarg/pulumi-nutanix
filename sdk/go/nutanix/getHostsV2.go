@@ -16,6 +16,38 @@ import (
 // ## Example Usage
 //
 // <!--Start PulumiCodeChooser -->
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			// list all host entities accosted to cluster
+//			_, err := nutanix.GetHostsV2(ctx, &nutanix.GetHostsV2Args{
+//				ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			// list all host entities accosted to cluster with filter
+//			_, err = nutanix.GetHostsV2(ctx, &nutanix.GetHostsV2Args{
+//				ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+//				Filter:       pulumi.StringRef("hostName eq 'cluster_host_example'"),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 // <!--End PulumiCodeChooser -->
 //
 // ## Host Entities

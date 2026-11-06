@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -83,12 +83,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbcluster" "c1" {
+        /// data "nutanix_ndb_cluster" "c1" {
         ///   cluster_name = "&lt;era-cluster-name&gt;"
         /// }
         /// 
         /// output "cluster" {
-        ///   value = data.nutanix_getndbcluster.c1
+        ///   value = data.nutanix_ndb_cluster.c1
         /// }
         /// ```
         /// ```java
@@ -198,7 +198,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -206,12 +206,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbcluster" "c1" {
+        /// data "nutanix_ndb_cluster" "c1" {
         ///   cluster_name = "&lt;era-cluster-name&gt;"
         /// }
         /// 
         /// output "cluster" {
-        ///   value = data.nutanix_getndbcluster.c1
+        ///   value = data.nutanix_ndb_cluster.c1
         /// }
         /// ```
         /// ```java
@@ -321,7 +321,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -329,12 +329,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbcluster" "c1" {
+        /// data "nutanix_ndb_cluster" "c1" {
         ///   cluster_name = "&lt;era-cluster-name&gt;"
         /// }
         /// 
         /// output "cluster" {
-        ///   value = data.nutanix_getndbcluster.c1
+        ///   value = data.nutanix_ndb_cluster.c1
         /// }
         /// ```
         /// ```java

@@ -109,7 +109,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -117,16 +117,22 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getcategorykey" "testKeyValue" {
-        ///   name = nutanix_categorykey.test_key_value.name
+        /// data "nutanix_category_key" "testKeyValue" {
+        ///   name = nutanix_category_key.test_key_value.name
         /// }
         /// 
-        /// resource "nutanix_categorykey" "test_key_value" {
+        /// resource "nutanix_category_key" "test_key_value" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "data_source_category_key_test_values"
         ///   description = "Data Source CategoryKey Test with Values"
         /// }
-        /// resource "nutanix_categoryvalue" "test_value" {
-        ///   name        = nutanix_categorykey.test_key_value.name
+        /// resource "nutanix_category_value" "test_value" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   name        = nutanix_category_key.test_key_value.name
         ///   value       = "test_category_value_data_source"
         ///   description = "Data Source CategoryValue Test with Values"
         /// }
@@ -298,7 +304,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -306,16 +312,22 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getcategorykey" "testKeyValue" {
-        ///   name = nutanix_categorykey.test_key_value.name
+        /// data "nutanix_category_key" "testKeyValue" {
+        ///   name = nutanix_category_key.test_key_value.name
         /// }
         /// 
-        /// resource "nutanix_categorykey" "test_key_value" {
+        /// resource "nutanix_category_key" "test_key_value" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "data_source_category_key_test_values"
         ///   description = "Data Source CategoryKey Test with Values"
         /// }
-        /// resource "nutanix_categoryvalue" "test_value" {
-        ///   name        = nutanix_categorykey.test_key_value.name
+        /// resource "nutanix_category_value" "test_value" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   name        = nutanix_category_key.test_key_value.name
         ///   value       = "test_category_value_data_source"
         ///   description = "Data Source CategoryValue Test with Values"
         /// }
@@ -487,7 +499,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -495,16 +507,22 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getcategorykey" "testKeyValue" {
-        ///   name = nutanix_categorykey.test_key_value.name
+        /// data "nutanix_category_key" "testKeyValue" {
+        ///   name = nutanix_category_key.test_key_value.name
         /// }
         /// 
-        /// resource "nutanix_categorykey" "test_key_value" {
+        /// resource "nutanix_category_key" "test_key_value" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "data_source_category_key_test_values"
         ///   description = "Data Source CategoryKey Test with Values"
         /// }
-        /// resource "nutanix_categoryvalue" "test_value" {
-        ///   name        = nutanix_categorykey.test_key_value.name
+        /// resource "nutanix_category_value" "test_value" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   name        = nutanix_category_key.test_key_value.name
         ///   value       = "test_category_value_data_source"
         ///   description = "Data Source CategoryValue Test with Values"
         /// }

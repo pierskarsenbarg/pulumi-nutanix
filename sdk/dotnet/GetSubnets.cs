@@ -90,7 +90,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -98,10 +98,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsubnets" "subnets" {
+        /// data "nutanix_subnets" "subnets" {
         /// }
-        /// data "nutanix_getsubnets" "test" {
-        ///   metadatas {
+        /// data "nutanix_subnets" "test" {
+        ///   metadata {
         ///     filter = "name==vlan0_test_2"
         ///   }
         /// }
@@ -236,7 +236,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -244,10 +244,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsubnets" "subnets" {
+        /// data "nutanix_subnets" "subnets" {
         /// }
-        /// data "nutanix_getsubnets" "test" {
-        ///   metadatas {
+        /// data "nutanix_subnets" "test" {
+        ///   metadata {
         ///     filter = "name==vlan0_test_2"
         ///   }
         /// }
@@ -382,7 +382,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -390,10 +390,10 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsubnets" "subnets" {
+        /// data "nutanix_subnets" "subnets" {
         /// }
-        /// data "nutanix_getsubnets" "test" {
-        ///   metadatas {
+        /// data "nutanix_subnets" "test" {
+        ///   metadata {
         ///     filter = "name==vlan0_test_2"
         ///   }
         /// }

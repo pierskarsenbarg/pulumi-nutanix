@@ -18,8 +18,84 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all host entities accosted to cluster
+        /// const hosts = nutanix.getHostsV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// });
+        /// // list all host entities accosted to cluster with filter
+        /// const filtered_hosts = nutanix.getHostsV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     filter: "hostName eq 'cluster_host_example'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all host entities accosted to cluster
+        /// hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c")
+        /// # list all host entities accosted to cluster with filter
+        /// filtered_hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     filter="hostName eq 'cluster_host_example'")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     // list all host entities accosted to cluster
+        ///     var hosts = Nutanix.GetHostsV2.Invoke(new()
+        ///     {
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     });
+        /// 
+        ///     // list all host entities accosted to cluster with filter
+        ///     var filtered_hosts = Nutanix.GetHostsV2.Invoke(new()
+        ///     {
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///         Filter = "hostName eq 'cluster_host_example'",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all host entities accosted to cluster
+        /// 		_, err := nutanix.GetHostsV2(ctx, &amp;nutanix.GetHostsV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list all host entities accosted to cluster with filter
+        /// 		_, err = nutanix.GetHostsV2(ctx, &amp;nutanix.GetHostsV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 			Filter:       pulumi.StringRef("hostName eq 'cluster_host_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -27,16 +103,51 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_gethostsv2" "hosts" {
+        /// data "nutanix_hosts_v2" "hosts" {
         ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
         /// }
-        /// data "nutanix_gethostsv2" "filtered-hosts" {
+        /// data "nutanix_hosts_v2" "filtered-hosts" {
         ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
         ///   filter         = "hostName eq 'cluster_host_example'"
         /// }
         /// 
         /// # list all host entities accosted to cluster
         /// # list all host entities accosted to cluster with filter
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetHostsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all host entities accosted to cluster
+        ///         final var hosts = NutanixFunctions.getHostsV2(GetHostsV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .build());
+        /// 
+        ///         // list all host entities accosted to cluster with filter
+        ///         final var filtered-hosts = NutanixFunctions.getHostsV2(GetHostsV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .filter("hostName eq 'cluster_host_example'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
         /// ```
         /// ```yaml
         /// variables:
@@ -238,8 +349,84 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all host entities accosted to cluster
+        /// const hosts = nutanix.getHostsV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// });
+        /// // list all host entities accosted to cluster with filter
+        /// const filtered_hosts = nutanix.getHostsV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     filter: "hostName eq 'cluster_host_example'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all host entities accosted to cluster
+        /// hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c")
+        /// # list all host entities accosted to cluster with filter
+        /// filtered_hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     filter="hostName eq 'cluster_host_example'")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     // list all host entities accosted to cluster
+        ///     var hosts = Nutanix.GetHostsV2.Invoke(new()
+        ///     {
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     });
+        /// 
+        ///     // list all host entities accosted to cluster with filter
+        ///     var filtered_hosts = Nutanix.GetHostsV2.Invoke(new()
+        ///     {
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///         Filter = "hostName eq 'cluster_host_example'",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all host entities accosted to cluster
+        /// 		_, err := nutanix.GetHostsV2(ctx, &amp;nutanix.GetHostsV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list all host entities accosted to cluster with filter
+        /// 		_, err = nutanix.GetHostsV2(ctx, &amp;nutanix.GetHostsV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 			Filter:       pulumi.StringRef("hostName eq 'cluster_host_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -247,16 +434,51 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_gethostsv2" "hosts" {
+        /// data "nutanix_hosts_v2" "hosts" {
         ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
         /// }
-        /// data "nutanix_gethostsv2" "filtered-hosts" {
+        /// data "nutanix_hosts_v2" "filtered-hosts" {
         ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
         ///   filter         = "hostName eq 'cluster_host_example'"
         /// }
         /// 
         /// # list all host entities accosted to cluster
         /// # list all host entities accosted to cluster with filter
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetHostsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all host entities accosted to cluster
+        ///         final var hosts = NutanixFunctions.getHostsV2(GetHostsV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .build());
+        /// 
+        ///         // list all host entities accosted to cluster with filter
+        ///         final var filtered-hosts = NutanixFunctions.getHostsV2(GetHostsV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .filter("hostName eq 'cluster_host_example'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
         /// ```
         /// ```yaml
         /// variables:
@@ -458,8 +680,84 @@ namespace PiersKarsenbarg.Nutanix
         /// ## Example Usage
         /// 
         /// &lt;!--Start PulumiCodeChooser --&gt;
+        /// ```typescript
+        /// import * as pulumi from "@pulumi/pulumi";
+        /// import * as nutanix from "@pierskarsenbarg/nutanix";
+        /// 
+        /// // list all host entities accosted to cluster
+        /// const hosts = nutanix.getHostsV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// });
+        /// // list all host entities accosted to cluster with filter
+        /// const filtered_hosts = nutanix.getHostsV2({
+        ///     clusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     filter: "hostName eq 'cluster_host_example'",
+        /// });
+        /// ```
+        /// ```python
+        /// import pulumi
+        /// import pulumi_nutanix as nutanix
+        /// 
+        /// # list all host entities accosted to cluster
+        /// hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c")
+        /// # list all host entities accosted to cluster with filter
+        /// filtered_hosts = nutanix.get_hosts_v2(cluster_ext_id="021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     filter="hostName eq 'cluster_host_example'")
+        /// ```
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Nutanix = PiersKarsenbarg.Nutanix;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     // list all host entities accosted to cluster
+        ///     var hosts = Nutanix.GetHostsV2.Invoke(new()
+        ///     {
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///     });
+        /// 
+        ///     // list all host entities accosted to cluster with filter
+        ///     var filtered_hosts = Nutanix.GetHostsV2.Invoke(new()
+        ///     {
+        ///         ClusterExtId = "021151dc-3ed1-4fec-a81d-39606451750c",
+        ///         Filter = "hostName eq 'cluster_host_example'",
+        ///     });
+        /// 
+        /// });
+        /// ```
+        /// ```go
+        /// package main
+        /// 
+        /// import (
+        /// 	"github.com/pierskarsenbarg/pulumi-nutanix/sdk/go/nutanix"
+        /// 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+        /// )
+        /// 
+        /// func main() {
+        /// 	pulumi.Run(func(ctx *pulumi.Context) error {
+        /// 		// list all host entities accosted to cluster
+        /// 		_, err := nutanix.GetHostsV2(ctx, &amp;nutanix.GetHostsV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		// list all host entities accosted to cluster with filter
+        /// 		_, err = nutanix.GetHostsV2(ctx, &amp;nutanix.GetHostsV2Args{
+        /// 			ClusterExtId: "021151dc-3ed1-4fec-a81d-39606451750c",
+        /// 			Filter:       pulumi.StringRef("hostName eq 'cluster_host_example'"),
+        /// 		}, nil)
+        /// 		if err != nil {
+        /// 			return err
+        /// 		}
+        /// 		return nil
+        /// 	})
+        /// }
+        /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -467,16 +765,51 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_gethostsv2" "hosts" {
+        /// data "nutanix_hosts_v2" "hosts" {
         ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
         /// }
-        /// data "nutanix_gethostsv2" "filtered-hosts" {
+        /// data "nutanix_hosts_v2" "filtered-hosts" {
         ///   cluster_ext_id = "021151dc-3ed1-4fec-a81d-39606451750c"
         ///   filter         = "hostName eq 'cluster_host_example'"
         /// }
         /// 
         /// # list all host entities accosted to cluster
         /// # list all host entities accosted to cluster with filter
+        /// ```
+        /// ```java
+        /// package generated_program;
+        /// 
+        /// import com.pulumi.Context;
+        /// import com.pulumi.Pulumi;
+        /// import com.pulumi.core.Output;
+        /// import com.pulumi.nutanix.NutanixFunctions;
+        /// import com.pulumi.nutanix.inputs.GetHostsV2Args;
+        /// import java.util.ArrayList;
+        /// import java.util.Arrays;
+        /// import java.util.Map;
+        /// import java.io.File;
+        /// import java.nio.file.Files;
+        /// import java.nio.file.Paths;
+        /// 
+        /// public class App {
+        ///     public static void main(String[] args) {
+        ///         Pulumi.run(App::stack);
+        ///     }
+        /// 
+        ///     public static void stack(Context ctx) {
+        ///         // list all host entities accosted to cluster
+        ///         final var hosts = NutanixFunctions.getHostsV2(GetHostsV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .build());
+        /// 
+        ///         // list all host entities accosted to cluster with filter
+        ///         final var filtered-hosts = NutanixFunctions.getHostsV2(GetHostsV2Args.builder()
+        ///             .clusterExtId("021151dc-3ed1-4fec-a81d-39606451750c")
+        ///             .filter("hostName eq 'cluster_host_example'")
+        ///             .build());
+        /// 
+        ///     }
+        /// }
         /// ```
         /// ```yaml
         /// variables:

@@ -30,7 +30,7 @@ namespace PiersKarsenbarg.Nutanix
     ///         VolumeGroupExtId = "cf7de8b9-88ed-477d-a602-c34ab7174c01",
     ///         Index = 1,
     ///         Description = "create volume disk example",
-    ///         DiskSizeBytes = 5368709120,
+    ///         DiskSizeBytes = (int)5368709120,
     ///         DiskDataSourceReferences = new[]
     ///         {
     ///             new Nutanix.Inputs.VolumeGroupDiskV2DiskDataSourceReferenceArgs

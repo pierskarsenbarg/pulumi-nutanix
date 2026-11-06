@@ -92,7 +92,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -100,9 +100,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimagesv2" "list-images" {
+        /// data "nutanix_images_v2" "list-images" {
         /// }
-        /// data "nutanix_getimagesv2" "filtered-images" {
+        /// data "nutanix_images_v2" "filtered-images" {
         ///   filter = "startswith(name,'image_name')"
         ///   page   = 0
         ///   limit  = 10
@@ -289,7 +289,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -297,9 +297,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimagesv2" "list-images" {
+        /// data "nutanix_images_v2" "list-images" {
         /// }
-        /// data "nutanix_getimagesv2" "filtered-images" {
+        /// data "nutanix_images_v2" "filtered-images" {
         ///   filter = "startswith(name,'image_name')"
         ///   page   = 0
         ///   limit  = 10
@@ -486,7 +486,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -494,9 +494,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimagesv2" "list-images" {
+        /// data "nutanix_images_v2" "list-images" {
         /// }
-        /// data "nutanix_getimagesv2" "filtered-images" {
+        /// data "nutanix_images_v2" "filtered-images" {
         ///   filter = "startswith(name,'image_name')"
         ///   page   = 0
         ///   limit  = 10

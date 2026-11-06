@@ -107,7 +107,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -115,13 +115,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvirtualmachinesv2" "list-vms" {
+        /// data "nutanix_virtual_machines_v2" "list-vms" {
         /// }
-        /// data "nutanix_getvirtualmachinesv2" "paged-vms" {
+        /// data "nutanix_virtual_machines_v2" "paged-vms" {
         ///   page  = 0
         ///   limit = 2
         /// }
-        /// data "nutanix_getvirtualmachinesv2" "filtered-vms" {
+        /// data "nutanix_virtual_machines_v2" "filtered-vms" {
         ///   filter = "name eq 'example-vm-filter'"
         /// }
         /// 
@@ -615,7 +615,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -623,13 +623,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvirtualmachinesv2" "list-vms" {
+        /// data "nutanix_virtual_machines_v2" "list-vms" {
         /// }
-        /// data "nutanix_getvirtualmachinesv2" "paged-vms" {
+        /// data "nutanix_virtual_machines_v2" "paged-vms" {
         ///   page  = 0
         ///   limit = 2
         /// }
-        /// data "nutanix_getvirtualmachinesv2" "filtered-vms" {
+        /// data "nutanix_virtual_machines_v2" "filtered-vms" {
         ///   filter = "name eq 'example-vm-filter'"
         /// }
         /// 
@@ -1123,7 +1123,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -1131,13 +1131,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvirtualmachinesv2" "list-vms" {
+        /// data "nutanix_virtual_machines_v2" "list-vms" {
         /// }
-        /// data "nutanix_getvirtualmachinesv2" "paged-vms" {
+        /// data "nutanix_virtual_machines_v2" "paged-vms" {
         ///   page  = 0
         ///   limit = 2
         /// }
-        /// data "nutanix_getvirtualmachinesv2" "filtered-vms" {
+        /// data "nutanix_virtual_machines_v2" "filtered-vms" {
         ///   filter = "name eq 'example-vm-filter'"
         /// }
         /// 

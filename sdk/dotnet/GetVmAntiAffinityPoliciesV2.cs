@@ -157,7 +157,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -165,19 +165,19 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "allPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "allPolicies" {
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "paginatedPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "paginatedPolicies" {
         ///   page  = 0
         ///   limit = 10
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "filteredPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "filteredPolicies" {
         ///   filter = "name eq 'my-policy'"
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "sortedPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "sortedPolicies" {
         ///   order_by = "name asc"
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "complexPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "complexPolicies" {
         ///   filter   = "startswith(name, 'ha-')"
         ///   order_by = "create_time desc"
         ///   page     = 0
@@ -428,7 +428,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -436,19 +436,19 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "allPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "allPolicies" {
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "paginatedPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "paginatedPolicies" {
         ///   page  = 0
         ///   limit = 10
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "filteredPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "filteredPolicies" {
         ///   filter = "name eq 'my-policy'"
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "sortedPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "sortedPolicies" {
         ///   order_by = "name asc"
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "complexPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "complexPolicies" {
         ///   filter   = "startswith(name, 'ha-')"
         ///   order_by = "create_time desc"
         ///   page     = 0
@@ -699,7 +699,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -707,19 +707,19 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "allPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "allPolicies" {
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "paginatedPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "paginatedPolicies" {
         ///   page  = 0
         ///   limit = 10
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "filteredPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "filteredPolicies" {
         ///   filter = "name eq 'my-policy'"
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "sortedPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "sortedPolicies" {
         ///   order_by = "name asc"
         /// }
-        /// data "nutanix_getvmantiaffinitypoliciesv2" "complexPolicies" {
+        /// data "nutanix_vm_anti_affinity_policies_v2" "complexPolicies" {
         ///   filter   = "startswith(name, 'ha-')"
         ///   order_by = "create_time desc"
         ///   page     = 0

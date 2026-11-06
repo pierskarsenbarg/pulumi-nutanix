@@ -172,11 +172,11 @@ namespace PiersKarsenbarg.Nutanix
     ///                                         },
     ///                                     },
     ///                                 },
-    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 DiskSizeBytes = Output.Create(Std.Pow.Invoke(new()
     ///                                 {
-    ///                                     Base = 1024,
-    ///                                     Exponent = 3,
-    ///                                 }).Apply(invoke =&gt; 20 * invoke.Result),
+    ///                                     Base = 1024.0,
+    ///                                     Exponent = 3.0,
+    ///                                 }).Apply(invoke =&gt; 20.0 * invoke.Result)).Apply(x =&gt; (int)x),
     ///                             },
     ///                         },
     ///                     },
@@ -200,11 +200,11 @@ namespace PiersKarsenbarg.Nutanix
     ///                         {
     ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
     ///                             {
-    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 DiskSizeBytes = Output.Create(Std.Pow.Invoke(new()
     ///                                 {
-    ///                                     Base = 1024,
-    ///                                     Exponent = 3,
-    ///                                 }).Apply(invoke =&gt; 10 * invoke.Result),
+    ///                                     Base = 1024.0,
+    ///                                     Exponent = 3.0,
+    ///                                 }).Apply(invoke =&gt; 10.0 * invoke.Result)).Apply(x =&gt; (int)x),
     ///                                 StorageContainers = new[]
     ///                                 {
     ///                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs
@@ -235,11 +235,11 @@ namespace PiersKarsenbarg.Nutanix
     ///                         {
     ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
     ///                             {
-    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 DiskSizeBytes = Output.Create(Std.Pow.Invoke(new()
     ///                                 {
-    ///                                     Base = 1024,
-    ///                                     Exponent = 3,
-    ///                                 }).Apply(invoke =&gt; 15 * invoke.Result),
+    ///                                     Base = 1024.0,
+    ///                                     Exponent = 3.0,
+    ///                                 }).Apply(invoke =&gt; 15.0 * invoke.Result)).Apply(x =&gt; (int)x),
     ///                                 StorageContainers = new[]
     ///                                 {
     ///                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs
@@ -270,11 +270,11 @@ namespace PiersKarsenbarg.Nutanix
     ///                         {
     ///                             new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskArgs
     ///                             {
-    ///                                 DiskSizeBytes = Std.Pow.Invoke(new()
+    ///                                 DiskSizeBytes = Output.Create(Std.Pow.Invoke(new()
     ///                                 {
-    ///                                     Base = 1024,
-    ///                                     Exponent = 3,
-    ///                                 }).Apply(invoke =&gt; 20 * invoke.Result),
+    ///                                     Base = 1024.0,
+    ///                                     Exponent = 3.0,
+    ///                                 }).Apply(invoke =&gt; 20.0 * invoke.Result)).Apply(x =&gt; (int)x),
     ///                                 StorageContainers = new[]
     ///                                 {
     ///                                     new Nutanix.Inputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs

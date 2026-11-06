@@ -138,7 +138,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -146,18 +146,18 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getiamentitiesv2" "all" {
+        /// data "nutanix_iam_entities_v2" "all" {
         /// }
-        /// data "nutanix_getiamentitiesv2" "filtered" {
+        /// data "nutanix_iam_entities_v2" "filtered" {
         ///   filter = "name eq 'user'"
         ///   limit  = 20
         ///   page   = 0
         /// }
-        /// data "nutanix_getiamentitiesv2" "ordered" {
+        /// data "nutanix_iam_entities_v2" "ordered" {
         ///   order_by = "name asc"
         ///   limit    = 50
         /// }
-        /// data "nutanix_getiamentitiesv2" "selected" {
+        /// data "nutanix_iam_entities_v2" "selected" {
         ///   select = "name,displayName,extId"
         ///   limit  = 10
         /// }
@@ -375,7 +375,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -383,18 +383,18 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getiamentitiesv2" "all" {
+        /// data "nutanix_iam_entities_v2" "all" {
         /// }
-        /// data "nutanix_getiamentitiesv2" "filtered" {
+        /// data "nutanix_iam_entities_v2" "filtered" {
         ///   filter = "name eq 'user'"
         ///   limit  = 20
         ///   page   = 0
         /// }
-        /// data "nutanix_getiamentitiesv2" "ordered" {
+        /// data "nutanix_iam_entities_v2" "ordered" {
         ///   order_by = "name asc"
         ///   limit    = 50
         /// }
-        /// data "nutanix_getiamentitiesv2" "selected" {
+        /// data "nutanix_iam_entities_v2" "selected" {
         ///   select = "name,displayName,extId"
         ///   limit  = 10
         /// }
@@ -612,7 +612,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -620,18 +620,18 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getiamentitiesv2" "all" {
+        /// data "nutanix_iam_entities_v2" "all" {
         /// }
-        /// data "nutanix_getiamentitiesv2" "filtered" {
+        /// data "nutanix_iam_entities_v2" "filtered" {
         ///   filter = "name eq 'user'"
         ///   limit  = 20
         ///   page   = 0
         /// }
-        /// data "nutanix_getiamentitiesv2" "ordered" {
+        /// data "nutanix_iam_entities_v2" "ordered" {
         ///   order_by = "name asc"
         ///   limit    = 50
         /// }
-        /// data "nutanix_getiamentitiesv2" "selected" {
+        /// data "nutanix_iam_entities_v2" "selected" {
         ///   select = "name,displayName,extId"
         ///   limit  = 10
         /// }

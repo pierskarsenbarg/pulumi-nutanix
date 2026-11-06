@@ -111,7 +111,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -119,12 +119,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvpcsv2" "list-vpcs" {
+        /// data "nutanix_vpcs_v2" "list-vpcs" {
         /// }
-        /// data "nutanix_getvpcsv2" "list-vpcs-with-filter" {
+        /// data "nutanix_vpcs_v2" "list-vpcs-with-filter" {
         ///   filter = "vpcType eq 'VLAN'"
         /// }
-        /// data "nutanix_getvpcsv2" "list-vpcs-with-order-by-limit-filter" {
+        /// data "nutanix_vpcs_v2" "list-vpcs-with-order-by-limit-filter" {
         ///   filter   = "vpcType eq 'VLAN'"
         ///   order_by = "name desc"
         ///   limit    = 10
@@ -381,7 +381,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -389,12 +389,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvpcsv2" "list-vpcs" {
+        /// data "nutanix_vpcs_v2" "list-vpcs" {
         /// }
-        /// data "nutanix_getvpcsv2" "list-vpcs-with-filter" {
+        /// data "nutanix_vpcs_v2" "list-vpcs-with-filter" {
         ///   filter = "vpcType eq 'VLAN'"
         /// }
-        /// data "nutanix_getvpcsv2" "list-vpcs-with-order-by-limit-filter" {
+        /// data "nutanix_vpcs_v2" "list-vpcs-with-order-by-limit-filter" {
         ///   filter   = "vpcType eq 'VLAN'"
         ///   order_by = "name desc"
         ///   limit    = 10
@@ -651,7 +651,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -659,12 +659,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvpcsv2" "list-vpcs" {
+        /// data "nutanix_vpcs_v2" "list-vpcs" {
         /// }
-        /// data "nutanix_getvpcsv2" "list-vpcs-with-filter" {
+        /// data "nutanix_vpcs_v2" "list-vpcs-with-filter" {
         ///   filter = "vpcType eq 'VLAN'"
         /// }
-        /// data "nutanix_getvpcsv2" "list-vpcs-with-order-by-limit-filter" {
+        /// data "nutanix_vpcs_v2" "list-vpcs-with-order-by-limit-filter" {
         ///   filter   = "vpcType eq 'VLAN'"
         ///   order_by = "name desc"
         ///   limit    = 10

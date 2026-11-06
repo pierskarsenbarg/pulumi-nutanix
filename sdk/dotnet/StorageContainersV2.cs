@@ -27,7 +27,7 @@ namespace PiersKarsenbarg.Nutanix
     ///     var storage_container = new Nutanix.StorageContainersV2("storage-container", new()
     ///     {
     ///         Name = "example-storage-container",
-    ///         LogicalAdvertisedCapacityBytes = 1073741824000,
+    ///         LogicalAdvertisedCapacityBytes = (int)1073741824000,
     ///         LogicalExplicitReservedCapacityBytes = 32,
     ///         ReplicationFactor = 1,
     ///         NfsWhitelistAddresses = new[]

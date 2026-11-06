@@ -85,7 +85,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -93,7 +93,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfoundationnodenetworkdetails" "networkDetails" {
+        /// data "nutanix_foundation_node_network_details" "networkDetails" {
         ///   ipv6_addresses = ["&lt;ipv6-address-1&gt;", "&lt;ipv6-address-2&gt;"]
         ///   timeout        = "30"
         /// }
@@ -218,7 +218,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -226,7 +226,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfoundationnodenetworkdetails" "networkDetails" {
+        /// data "nutanix_foundation_node_network_details" "networkDetails" {
         ///   ipv6_addresses = ["&lt;ipv6-address-1&gt;", "&lt;ipv6-address-2&gt;"]
         ///   timeout        = "30"
         /// }
@@ -351,7 +351,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -359,7 +359,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getfoundationnodenetworkdetails" "networkDetails" {
+        /// data "nutanix_foundation_node_network_details" "networkDetails" {
         ///   ipv6_addresses = ["&lt;ipv6-address-1&gt;", "&lt;ipv6-address-2&gt;"]
         ///   timeout        = "30"
         /// }

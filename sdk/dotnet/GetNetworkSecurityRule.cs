@@ -166,14 +166,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
-        /// 			NetworkSecurityRuleId: isolation.ID().ToIDOutput().ToStringOutput(),
+        /// 			NetworkSecurityRuleId: isolation.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -181,22 +181,25 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getnetworksecurityrule" "test" {
-        ///   network_security_rule_id = nutanix_networksecurityrule.isolation.id
+        /// data "nutanix_network_security_rule" "test" {
+        ///   network_security_rule_id = nutanix_network_security_rule.isolation.id
         /// }
         /// 
-        /// resource "nutanix_networksecurityrule" "isolation" {
-        ///   name                                          = "example-isolation-rule"
-        ///   description                                   = "Isolation Rule Example"
-        ///   isolation_rule_action                         = "APPLY"
-        ///   isolation_rule_first_entity_filter_kind_lists = ["vm"]
-        ///   isolation_rule_first_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        /// resource "nutanix_network_security_rule" "isolation" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   name                                         = "example-isolation-rule"
+        ///   description                                  = "Isolation Rule Example"
+        ///   isolation_rule_action                        = "APPLY"
+        ///   isolation_rule_first_entity_filter_kind_list = ["vm"]
+        ///   isolation_rule_first_entity_filter_type      = "CATEGORIES_MATCH_ALL"
         ///   isolation_rule_first_entity_filter_params {
         ///     name   = "Environment"
         ///     values = ["Dev"]
         ///   }
-        ///   isolation_rule_second_entity_filter_kind_lists = ["vm"]
-        ///   isolation_rule_second_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_second_entity_filter_kind_list = ["vm"]
+        ///   isolation_rule_second_entity_filter_type      = "CATEGORIES_MATCH_ALL"
         ///   isolation_rule_second_entity_filter_params {
         ///     name   = "Environment"
         ///     values = ["Production"]
@@ -441,14 +444,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
-        /// 			NetworkSecurityRuleId: isolation.ID().ToIDOutput().ToStringOutput(),
+        /// 			NetworkSecurityRuleId: isolation.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -456,22 +459,25 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getnetworksecurityrule" "test" {
-        ///   network_security_rule_id = nutanix_networksecurityrule.isolation.id
+        /// data "nutanix_network_security_rule" "test" {
+        ///   network_security_rule_id = nutanix_network_security_rule.isolation.id
         /// }
         /// 
-        /// resource "nutanix_networksecurityrule" "isolation" {
-        ///   name                                          = "example-isolation-rule"
-        ///   description                                   = "Isolation Rule Example"
-        ///   isolation_rule_action                         = "APPLY"
-        ///   isolation_rule_first_entity_filter_kind_lists = ["vm"]
-        ///   isolation_rule_first_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        /// resource "nutanix_network_security_rule" "isolation" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   name                                         = "example-isolation-rule"
+        ///   description                                  = "Isolation Rule Example"
+        ///   isolation_rule_action                        = "APPLY"
+        ///   isolation_rule_first_entity_filter_kind_list = ["vm"]
+        ///   isolation_rule_first_entity_filter_type      = "CATEGORIES_MATCH_ALL"
         ///   isolation_rule_first_entity_filter_params {
         ///     name   = "Environment"
         ///     values = ["Dev"]
         ///   }
-        ///   isolation_rule_second_entity_filter_kind_lists = ["vm"]
-        ///   isolation_rule_second_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_second_entity_filter_kind_list = ["vm"]
+        ///   isolation_rule_second_entity_filter_type      = "CATEGORIES_MATCH_ALL"
         ///   isolation_rule_second_entity_filter_params {
         ///     name   = "Environment"
         ///     values = ["Production"]
@@ -716,14 +722,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetNetworkSecurityRuleOutput(ctx, nutanix.GetNetworkSecurityRuleOutputArgs{
-        /// 			NetworkSecurityRuleId: isolation.ID().ToIDOutput().ToStringOutput(),
+        /// 			NetworkSecurityRuleId: isolation.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -731,22 +737,25 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getnetworksecurityrule" "test" {
-        ///   network_security_rule_id = nutanix_networksecurityrule.isolation.id
+        /// data "nutanix_network_security_rule" "test" {
+        ///   network_security_rule_id = nutanix_network_security_rule.isolation.id
         /// }
         /// 
-        /// resource "nutanix_networksecurityrule" "isolation" {
-        ///   name                                          = "example-isolation-rule"
-        ///   description                                   = "Isolation Rule Example"
-        ///   isolation_rule_action                         = "APPLY"
-        ///   isolation_rule_first_entity_filter_kind_lists = ["vm"]
-        ///   isolation_rule_first_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        /// resource "nutanix_network_security_rule" "isolation" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
+        ///   name                                         = "example-isolation-rule"
+        ///   description                                  = "Isolation Rule Example"
+        ///   isolation_rule_action                        = "APPLY"
+        ///   isolation_rule_first_entity_filter_kind_list = ["vm"]
+        ///   isolation_rule_first_entity_filter_type      = "CATEGORIES_MATCH_ALL"
         ///   isolation_rule_first_entity_filter_params {
         ///     name   = "Environment"
         ///     values = ["Dev"]
         ///   }
-        ///   isolation_rule_second_entity_filter_kind_lists = ["vm"]
-        ///   isolation_rule_second_entity_filter_type       = "CATEGORIES_MATCH_ALL"
+        ///   isolation_rule_second_entity_filter_kind_list = ["vm"]
+        ///   isolation_rule_second_entity_filter_type      = "CATEGORIES_MATCH_ALL"
         ///   isolation_rule_second_entity_filter_params {
         ///     name   = "Environment"
         ///     values = ["Production"]

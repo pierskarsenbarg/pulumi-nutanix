@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -76,11 +76,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbclusters" "clusters" {
+        /// data "nutanix_ndb_clusters" "clusters" {
         /// }
         /// 
         /// output "clustersOp" {
-        ///   value = data.nutanix_getndbclusters.clusters
+        ///   value = data.nutanix_ndb_clusters.clusters
         /// }
         /// ```
         /// ```java
@@ -210,7 +210,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -218,11 +218,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbclusters" "clusters" {
+        /// data "nutanix_ndb_clusters" "clusters" {
         /// }
         /// 
         /// output "clustersOp" {
-        ///   value = data.nutanix_getndbclusters.clusters
+        ///   value = data.nutanix_ndb_clusters.clusters
         /// }
         /// ```
         /// ```java
@@ -352,7 +352,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -360,11 +360,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbclusters" "clusters" {
+        /// data "nutanix_ndb_clusters" "clusters" {
         /// }
         /// 
         /// output "clustersOp" {
-        ///   value = data.nutanix_getndbclusters.clusters
+        ///   value = data.nutanix_ndb_clusters.clusters
         /// }
         /// ```
         /// ```java

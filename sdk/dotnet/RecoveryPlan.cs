@@ -56,7 +56,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                 DelayTimeSecs = 0,
     ///             },
     ///         },
-    ///         Parameters = null,
+    ///         Parameters = new() { },
     ///     });
     /// 
     /// });

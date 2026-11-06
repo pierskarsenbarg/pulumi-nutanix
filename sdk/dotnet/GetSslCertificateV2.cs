@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -76,7 +76,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsslcertificatev2" "this" {
+        /// data "nutanix_ssl_certificate_v2" "this" {
         ///   cluster_ext_id = "6a68ecf4-8cac-42b3-9805-3186c2cecbd2"
         /// }
         /// ```
@@ -181,7 +181,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -189,7 +189,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsslcertificatev2" "this" {
+        /// data "nutanix_ssl_certificate_v2" "this" {
         ///   cluster_ext_id = "6a68ecf4-8cac-42b3-9805-3186c2cecbd2"
         /// }
         /// ```
@@ -294,7 +294,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -302,7 +302,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getsslcertificatev2" "this" {
+        /// data "nutanix_ssl_certificate_v2" "this" {
         ///   cluster_ext_id = "6a68ecf4-8cac-42b3-9805-3186c2cecbd2"
         /// }
         /// ```

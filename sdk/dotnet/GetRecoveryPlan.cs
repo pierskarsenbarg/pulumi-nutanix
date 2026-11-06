@@ -105,7 +105,7 @@ namespace PiersKarsenbarg.Nutanix
         ///                 DelayTimeSecs = 0,
         ///             },
         ///         },
-        ///         Parameters = null,
+        ///         Parameters = new() { },
         ///     });
         /// 
         /// });
@@ -153,7 +153,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -161,24 +161,28 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// resource "nutanix_recoveryplan" "recovery_plan_test" {
+        /// resource "nutanix_recovery_plan" "recovery_plan_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "%s"
         ///   description = "%s"
-        ///   stage_lists {
-        ///     stage_work = {
-        ///       recover_entities = {
-        ///         entity_info_lists = [{
-        ///           "categories" = [{
-        ///             "name"  = "Environment"
-        ///             "value" = "Dev"
-        ///           }]
-        ///         }]
+        ///   stage_list {
+        ///     stage_work {
+        ///       recover_entities {
+        ///         entity_info_list {
+        ///           categories {
+        ///             name  = "Environment"
+        ///             value = "Dev"
+        ///           }
+        ///         }
         ///       }
         ///     }
         ///     stage_uuid      = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
         ///     delay_time_secs = 0
         ///   }
-        ///   parameters = {}
+        ///   parameters {
+        ///   }
         /// }
         /// ```
         /// ```java
@@ -349,7 +353,7 @@ namespace PiersKarsenbarg.Nutanix
         ///                 DelayTimeSecs = 0,
         ///             },
         ///         },
-        ///         Parameters = null,
+        ///         Parameters = new() { },
         ///     });
         /// 
         /// });
@@ -397,7 +401,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -405,24 +409,28 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// resource "nutanix_recoveryplan" "recovery_plan_test" {
+        /// resource "nutanix_recovery_plan" "recovery_plan_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "%s"
         ///   description = "%s"
-        ///   stage_lists {
-        ///     stage_work = {
-        ///       recover_entities = {
-        ///         entity_info_lists = [{
-        ///           "categories" = [{
-        ///             "name"  = "Environment"
-        ///             "value" = "Dev"
-        ///           }]
-        ///         }]
+        ///   stage_list {
+        ///     stage_work {
+        ///       recover_entities {
+        ///         entity_info_list {
+        ///           categories {
+        ///             name  = "Environment"
+        ///             value = "Dev"
+        ///           }
+        ///         }
         ///       }
         ///     }
         ///     stage_uuid      = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
         ///     delay_time_secs = 0
         ///   }
-        ///   parameters = {}
+        ///   parameters {
+        ///   }
         /// }
         /// ```
         /// ```java
@@ -593,7 +601,7 @@ namespace PiersKarsenbarg.Nutanix
         ///                 DelayTimeSecs = 0,
         ///             },
         ///         },
-        ///         Parameters = null,
+        ///         Parameters = new() { },
         ///     });
         /// 
         /// });
@@ -641,7 +649,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -649,24 +657,28 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// resource "nutanix_recoveryplan" "recovery_plan_test" {
+        /// resource "nutanix_recovery_plan" "recovery_plan_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "%s"
         ///   description = "%s"
-        ///   stage_lists {
-        ///     stage_work = {
-        ///       recover_entities = {
-        ///         entity_info_lists = [{
-        ///           "categories" = [{
-        ///             "name"  = "Environment"
-        ///             "value" = "Dev"
-        ///           }]
-        ///         }]
+        ///   stage_list {
+        ///     stage_work {
+        ///       recover_entities {
+        ///         entity_info_list {
+        ///           categories {
+        ///             name  = "Environment"
+        ///             value = "Dev"
+        ///           }
+        ///         }
         ///       }
         ///     }
         ///     stage_uuid      = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
         ///     delay_time_secs = 0
         ///   }
-        ///   parameters = {}
+        ///   parameters {
+        ///   }
         /// }
         /// ```
         /// ```java

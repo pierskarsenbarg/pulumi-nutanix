@@ -76,7 +76,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -84,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfserviceappsnapshots" "test" {
+        /// data "nutanix_self_service_app_snapshots" "test" {
         ///   app_name = "NAME OF APPLICATION"
         ///   length   = 250
         ///   offset   = 0
@@ -199,7 +199,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -207,7 +207,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfserviceappsnapshots" "test" {
+        /// data "nutanix_self_service_app_snapshots" "test" {
         ///   app_name = "NAME OF APPLICATION"
         ///   length   = 250
         ///   offset   = 0
@@ -322,7 +322,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -330,7 +330,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfserviceappsnapshots" "test" {
+        /// data "nutanix_self_service_app_snapshots" "test" {
         ///   app_name = "NAME OF APPLICATION"
         ///   length   = 250
         ///   offset   = 0

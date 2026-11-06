@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -76,11 +76,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbdatabases" "dbs" {
+        /// data "nutanix_ndb_databases" "dbs" {
         /// }
         /// 
         /// output "dbsOutput" {
-        ///   value = data.nutanix_getndbdatabases.dbs
+        ///   value = data.nutanix_ndb_databases.dbs
         /// }
         /// ```
         /// ```java
@@ -218,7 +218,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -226,11 +226,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbdatabases" "dbs" {
+        /// data "nutanix_ndb_databases" "dbs" {
         /// }
         /// 
         /// output "dbsOutput" {
-        ///   value = data.nutanix_getndbdatabases.dbs
+        ///   value = data.nutanix_ndb_databases.dbs
         /// }
         /// ```
         /// ```java
@@ -368,7 +368,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -376,11 +376,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getndbdatabases" "dbs" {
+        /// data "nutanix_ndb_databases" "dbs" {
         /// }
         /// 
         /// output "dbsOutput" {
-        ///   value = data.nutanix_getndbdatabases.dbs
+        ///   value = data.nutanix_ndb_databases.dbs
         /// }
         /// ```
         /// ```java

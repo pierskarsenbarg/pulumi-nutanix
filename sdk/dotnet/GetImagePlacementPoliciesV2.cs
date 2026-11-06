@@ -92,7 +92,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -100,9 +100,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimageplacementpoliciesv2" "list-ipp" {
+        /// data "nutanix_image_placement_policies_v2" "list-ipp" {
         /// }
-        /// data "nutanix_getimageplacementpoliciesv2" "filtered-ipp" {
+        /// data "nutanix_image_placement_policies_v2" "filtered-ipp" {
         ///   filter = "startswith(name,'ipp_name')"
         ///   page   = 0
         ///   limit  = 10
@@ -247,7 +247,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -255,9 +255,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimageplacementpoliciesv2" "list-ipp" {
+        /// data "nutanix_image_placement_policies_v2" "list-ipp" {
         /// }
-        /// data "nutanix_getimageplacementpoliciesv2" "filtered-ipp" {
+        /// data "nutanix_image_placement_policies_v2" "filtered-ipp" {
         ///   filter = "startswith(name,'ipp_name')"
         ///   page   = 0
         ///   limit  = 10
@@ -402,7 +402,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -410,9 +410,9 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getimageplacementpoliciesv2" "list-ipp" {
+        /// data "nutanix_image_placement_policies_v2" "list-ipp" {
         /// }
-        /// data "nutanix_getimageplacementpoliciesv2" "filtered-ipp" {
+        /// data "nutanix_image_placement_policies_v2" "filtered-ipp" {
         ///   filter = "startswith(name,'ipp_name')"
         ///   page   = 0
         ///   limit  = 10

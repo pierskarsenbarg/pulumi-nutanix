@@ -100,14 +100,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
-        /// 			Uuid: testAddress.ID().ToIDOutput().ToStringOutput(),
+        /// 			Uuid: testAddress.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -115,14 +115,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaddressgroup" "addrGroup" {
-        ///   uuid = nutanix_addressgroup.test_address.id
+        /// data "nutanix_address_group" "addrGroup" {
+        ///   uuid = nutanix_address_group.test_address.id
         /// }
         /// 
-        /// resource "nutanix_addressgroup" "test_address" {
+        /// resource "nutanix_address_group" "test_address" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "test"
         ///   description = "test address groups resource"
-        ///   ip_address_block_lists {
+        ///   ip_address_block_list {
         ///     ip            = "10.0.0.0"
         ///     prefix_length = 24
         ///   }
@@ -279,14 +282,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
-        /// 			Uuid: testAddress.ID().ToIDOutput().ToStringOutput(),
+        /// 			Uuid: testAddress.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -294,14 +297,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaddressgroup" "addrGroup" {
-        ///   uuid = nutanix_addressgroup.test_address.id
+        /// data "nutanix_address_group" "addrGroup" {
+        ///   uuid = nutanix_address_group.test_address.id
         /// }
         /// 
-        /// resource "nutanix_addressgroup" "test_address" {
+        /// resource "nutanix_address_group" "test_address" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "test"
         ///   description = "test address groups resource"
-        ///   ip_address_block_lists {
+        ///   ip_address_block_list {
         ///     ip            = "10.0.0.0"
         ///     prefix_length = 24
         ///   }
@@ -458,14 +464,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetAddressGroupOutput(ctx, nutanix.GetAddressGroupOutputArgs{
-        /// 			Uuid: testAddress.ID().ToIDOutput().ToStringOutput(),
+        /// 			Uuid: testAddress.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -473,14 +479,17 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getaddressgroup" "addrGroup" {
-        ///   uuid = nutanix_addressgroup.test_address.id
+        /// data "nutanix_address_group" "addrGroup" {
+        ///   uuid = nutanix_address_group.test_address.id
         /// }
         /// 
-        /// resource "nutanix_addressgroup" "test_address" {
+        /// resource "nutanix_address_group" "test_address" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "test"
         ///   description = "test address groups resource"
-        ///   ip_address_block_lists {
+        ///   ip_address_block_list {
         ///     ip            = "10.0.0.0"
         ///     prefix_length = 24
         ///   }

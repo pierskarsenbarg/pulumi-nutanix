@@ -75,7 +75,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -83,12 +83,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvmantiaffinitypolicyv2" "policy" {
+        /// data "nutanix_vm_anti_affinity_policy_v2" "policy" {
         ///   ext_id = "12345678-1234-1234-1234-123456789012"
         /// }
         /// 
         /// output "policyName" {
-        ///   value = data.nutanix_getvmantiaffinitypolicyv2.policy.name
+        ///   value = data.nutanix_vm_anti_affinity_policy_v2.policy.name
         /// }
         /// ```
         /// ```java
@@ -198,7 +198,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -206,12 +206,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvmantiaffinitypolicyv2" "policy" {
+        /// data "nutanix_vm_anti_affinity_policy_v2" "policy" {
         ///   ext_id = "12345678-1234-1234-1234-123456789012"
         /// }
         /// 
         /// output "policyName" {
-        ///   value = data.nutanix_getvmantiaffinitypolicyv2.policy.name
+        ///   value = data.nutanix_vm_anti_affinity_policy_v2.policy.name
         /// }
         /// ```
         /// ```java
@@ -321,7 +321,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -329,12 +329,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getvmantiaffinitypolicyv2" "policy" {
+        /// data "nutanix_vm_anti_affinity_policy_v2" "policy" {
         ///   ext_id = "12345678-1234-1234-1234-123456789012"
         /// }
         /// 
         /// output "policyName" {
-        ///   value = data.nutanix_getvmantiaffinitypolicyv2.policy.name
+        ///   value = data.nutanix_vm_anti_affinity_policy_v2.policy.name
         /// }
         /// ```
         /// ```java

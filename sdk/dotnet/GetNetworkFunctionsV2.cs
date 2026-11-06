@@ -80,7 +80,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -88,7 +88,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getnetworkfunctionsv2" "nfs" {
+        /// data "nutanix_network_functions_v2" "nfs" {
         ///   page     = 0
         ///   limit    = 50
         ///   filter   = "name eq 'my-network-function'"
@@ -210,7 +210,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -218,7 +218,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getnetworkfunctionsv2" "nfs" {
+        /// data "nutanix_network_functions_v2" "nfs" {
         ///   page     = 0
         ///   limit    = 50
         ///   filter   = "name eq 'my-network-function'"
@@ -340,7 +340,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -348,7 +348,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getnetworkfunctionsv2" "nfs" {
+        /// data "nutanix_network_functions_v2" "nfs" {
         ///   page     = 0
         ///   limit    = 50
         ///   filter   = "name eq 'my-network-function'"

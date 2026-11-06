@@ -116,7 +116,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -124,13 +124,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionpoliciesv2" "pps-filter" {
+        /// data "nutanix_protection_policies_v2" "pps-filter" {
         ///   filter = "name eq 'example_protection_policy'"
         /// }
-        /// data "nutanix_getprotectionpoliciesv2" "pp-limit" {
+        /// data "nutanix_protection_policies_v2" "pp-limit" {
         ///   limit = 4
         /// }
-        /// data "nutanix_getprotectionpoliciesv2" "example" {
+        /// data "nutanix_protection_policies_v2" "example" {
         ///   filter = "startswith(name, 'C')"
         ///   limit  = "10"
         /// }
@@ -402,7 +402,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -410,13 +410,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionpoliciesv2" "pps-filter" {
+        /// data "nutanix_protection_policies_v2" "pps-filter" {
         ///   filter = "name eq 'example_protection_policy'"
         /// }
-        /// data "nutanix_getprotectionpoliciesv2" "pp-limit" {
+        /// data "nutanix_protection_policies_v2" "pp-limit" {
         ///   limit = 4
         /// }
-        /// data "nutanix_getprotectionpoliciesv2" "example" {
+        /// data "nutanix_protection_policies_v2" "example" {
         ///   filter = "startswith(name, 'C')"
         ///   limit  = "10"
         /// }
@@ -688,7 +688,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -696,13 +696,13 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionpoliciesv2" "pps-filter" {
+        /// data "nutanix_protection_policies_v2" "pps-filter" {
         ///   filter = "name eq 'example_protection_policy'"
         /// }
-        /// data "nutanix_getprotectionpoliciesv2" "pp-limit" {
+        /// data "nutanix_protection_policies_v2" "pp-limit" {
         ///   limit = 4
         /// }
-        /// data "nutanix_getprotectionpoliciesv2" "example" {
+        /// data "nutanix_protection_policies_v2" "example" {
         ///   filter = "startswith(name, 'C')"
         ///   limit  = "10"
         /// }

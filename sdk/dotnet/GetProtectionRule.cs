@@ -181,14 +181,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
-        /// 			ProtectionRuleId: protectionRuleTest.ID().ToIDOutput().ToStringOutput(),
+        /// 			ProtectionRuleId: protectionRuleTest.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -196,30 +196,33 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionrule" "test" {
-        ///   protection_rule_id = nutanix_protectionrule.protection_rule_test.id
+        /// data "nutanix_protection_rule" "test" {
+        ///   protection_rule_id = nutanix_protection_rule.protection_rule_test.id
         /// }
         /// 
-        /// resource "nutanix_protectionrule" "protection_rule_test" {
+        /// resource "nutanix_protection_rule" "protection_rule_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "test"
         ///   description = "test"
-        ///   ordered_availability_zone_lists {
+        ///   ordered_availability_zone_list {
         ///     availability_zone_url = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
         ///   }
-        ///   availability_zone_connectivity_lists {
-        ///     snapshot_schedule_lists {
+        ///   availability_zone_connectivity_list {
+        ///     snapshot_schedule_list {
         ///       recovery_point_objective_secs = 3600
         ///       snapshot_type                 = "CRASH_CONSISTENT"
-        ///       local_snapshot_retention_policy = {
+        ///       local_snapshot_retention_policy {
         ///         num_snapshots = 1
         ///       }
         ///     }
         ///   }
-        ///   category_filter = {
-        ///     params = [{
-        ///       "name"   = "Environment"
-        ///       "values" = ["Dev"]
-        ///     }]
+        ///   category_filter {
+        ///     params {
+        ///       name   = "Environment"
+        ///       values = ["Dev"]
+        ///     }
         ///   }
         /// }
         /// ```
@@ -484,14 +487,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
-        /// 			ProtectionRuleId: protectionRuleTest.ID().ToIDOutput().ToStringOutput(),
+        /// 			ProtectionRuleId: protectionRuleTest.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -499,30 +502,33 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionrule" "test" {
-        ///   protection_rule_id = nutanix_protectionrule.protection_rule_test.id
+        /// data "nutanix_protection_rule" "test" {
+        ///   protection_rule_id = nutanix_protection_rule.protection_rule_test.id
         /// }
         /// 
-        /// resource "nutanix_protectionrule" "protection_rule_test" {
+        /// resource "nutanix_protection_rule" "protection_rule_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "test"
         ///   description = "test"
-        ///   ordered_availability_zone_lists {
+        ///   ordered_availability_zone_list {
         ///     availability_zone_url = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
         ///   }
-        ///   availability_zone_connectivity_lists {
-        ///     snapshot_schedule_lists {
+        ///   availability_zone_connectivity_list {
+        ///     snapshot_schedule_list {
         ///       recovery_point_objective_secs = 3600
         ///       snapshot_type                 = "CRASH_CONSISTENT"
-        ///       local_snapshot_retention_policy = {
+        ///       local_snapshot_retention_policy {
         ///         num_snapshots = 1
         ///       }
         ///     }
         ///   }
-        ///   category_filter = {
-        ///     params = [{
-        ///       "name"   = "Environment"
-        ///       "values" = ["Dev"]
-        ///     }]
+        ///   category_filter {
+        ///     params {
+        ///       name   = "Environment"
+        ///       values = ["Dev"]
+        ///     }
         ///   }
         /// }
         /// ```
@@ -787,14 +793,14 @@ namespace PiersKarsenbarg.Nutanix
         /// 			return err
         /// 		}
         /// 		_ = nutanix.GetProtectionRuleOutput(ctx, nutanix.GetProtectionRuleOutputArgs{
-        /// 			ProtectionRuleId: protectionRuleTest.ID().ToIDOutput().ToStringOutput(),
+        /// 			ProtectionRuleId: protectionRuleTest.ID(),
         /// 		}, nil)
         /// 		return nil
         /// 	})
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -802,30 +808,33 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getprotectionrule" "test" {
-        ///   protection_rule_id = nutanix_protectionrule.protection_rule_test.id
+        /// data "nutanix_protection_rule" "test" {
+        ///   protection_rule_id = nutanix_protection_rule.protection_rule_test.id
         /// }
         /// 
-        /// resource "nutanix_protectionrule" "protection_rule_test" {
+        /// resource "nutanix_protection_rule" "protection_rule_test" {
+        ///   lifecycle {
+        ///     create_before_destroy = true
+        ///   }
         ///   name        = "test"
         ///   description = "test"
-        ///   ordered_availability_zone_lists {
+        ///   ordered_availability_zone_list {
         ///     availability_zone_url = "ab788130-0820-4d07-a1b5-b0ba4d3a42asd"
         ///   }
-        ///   availability_zone_connectivity_lists {
-        ///     snapshot_schedule_lists {
+        ///   availability_zone_connectivity_list {
+        ///     snapshot_schedule_list {
         ///       recovery_point_objective_secs = 3600
         ///       snapshot_type                 = "CRASH_CONSISTENT"
-        ///       local_snapshot_retention_policy = {
+        ///       local_snapshot_retention_policy {
         ///         num_snapshots = 1
         ///       }
         ///     }
         ///   }
-        ///   category_filter = {
-        ///     params = [{
-        ///       "name"   = "Environment"
-        ///       "values" = ["Dev"]
-        ///     }]
+        ///   category_filter {
+        ///     params {
+        ///       name   = "Environment"
+        ///       values = ["Dev"]
+        ///     }
         ///   }
         /// }
         /// ```

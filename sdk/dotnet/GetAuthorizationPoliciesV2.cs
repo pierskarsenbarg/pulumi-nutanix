@@ -95,7 +95,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -103,11 +103,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getauthorizationpoliciesv2" "filtered-ap" {
+        /// data "nutanix_authorization_policies_v2" "filtered-ap" {
         ///   filter = "displayName eq 'auth_policy_example'"
         ///   limit  = 2
         /// }
-        /// data "nutanix_getauthorizationpoliciesv2" "select-ap" {
+        /// data "nutanix_authorization_policies_v2" "select-ap" {
         ///   select = "extId,displayName,description,authorizationPolicyType"
         /// }
         /// 
@@ -285,7 +285,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -293,11 +293,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getauthorizationpoliciesv2" "filtered-ap" {
+        /// data "nutanix_authorization_policies_v2" "filtered-ap" {
         ///   filter = "displayName eq 'auth_policy_example'"
         ///   limit  = 2
         /// }
-        /// data "nutanix_getauthorizationpoliciesv2" "select-ap" {
+        /// data "nutanix_authorization_policies_v2" "select-ap" {
         ///   select = "extId,displayName,description,authorizationPolicyType"
         /// }
         /// 
@@ -475,7 +475,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -483,11 +483,11 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getauthorizationpoliciesv2" "filtered-ap" {
+        /// data "nutanix_authorization_policies_v2" "filtered-ap" {
         ///   filter = "displayName eq 'auth_policy_example'"
         ///   limit  = 2
         /// }
-        /// data "nutanix_getauthorizationpoliciesv2" "select-ap" {
+        /// data "nutanix_authorization_policies_v2" "select-ap" {
         ///   select = "extId,displayName,description,authorizationPolicyType"
         /// }
         /// 

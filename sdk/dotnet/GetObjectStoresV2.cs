@@ -91,7 +91,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -99,12 +99,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getobjectstoresv2" "list" {
+        /// data "nutanix_object_stores_v2" "list" {
         /// }
-        /// data "nutanix_getobjectstoresv2" "filter" {
+        /// data "nutanix_object_stores_v2" "filter" {
         ///   filter = "name eq 'object_store_example'"
         /// }
-        /// data "nutanix_getobjectstoresv2" "limit" {
+        /// data "nutanix_object_stores_v2" "limit" {
         ///   limit = 10
         /// }
         /// ```
@@ -244,7 +244,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -252,12 +252,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getobjectstoresv2" "list" {
+        /// data "nutanix_object_stores_v2" "list" {
         /// }
-        /// data "nutanix_getobjectstoresv2" "filter" {
+        /// data "nutanix_object_stores_v2" "filter" {
         ///   filter = "name eq 'object_store_example'"
         /// }
-        /// data "nutanix_getobjectstoresv2" "limit" {
+        /// data "nutanix_object_stores_v2" "limit" {
         ///   limit = 10
         /// }
         /// ```
@@ -397,7 +397,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -405,12 +405,12 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getobjectstoresv2" "list" {
+        /// data "nutanix_object_stores_v2" "list" {
         /// }
-        /// data "nutanix_getobjectstoresv2" "filter" {
+        /// data "nutanix_object_stores_v2" "filter" {
         ///   filter = "name eq 'object_store_example'"
         /// }
-        /// data "nutanix_getobjectstoresv2" "limit" {
+        /// data "nutanix_object_stores_v2" "limit" {
         ///   limit = 10
         /// }
         /// ```

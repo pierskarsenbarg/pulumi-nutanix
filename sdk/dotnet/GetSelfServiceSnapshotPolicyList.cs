@@ -76,7 +76,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -84,7 +84,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfservicesnapshotpolicylist" "test" {
+        /// data "nutanix_self_service_snapshot_policy_list" "test" {
         ///   bp_name = "NAME OF BLUEPRINT"
         ///   length  = 250
         ///   offset  = 0
@@ -199,7 +199,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -207,7 +207,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfservicesnapshotpolicylist" "test" {
+        /// data "nutanix_self_service_snapshot_policy_list" "test" {
         ///   bp_name = "NAME OF BLUEPRINT"
         ///   length  = 250
         ///   offset  = 0
@@ -322,7 +322,7 @@ namespace PiersKarsenbarg.Nutanix
         /// }
         /// ```
         /// ```hcl
-        /// pulumi {
+        /// terraform {
         ///   required_providers {
         ///     nutanix = {
         ///       source = "pulumi/nutanix"
@@ -330,7 +330,7 @@ namespace PiersKarsenbarg.Nutanix
         ///   }
         /// }
         /// 
-        /// data "nutanix_getselfservicesnapshotpolicylist" "test" {
+        /// data "nutanix_self_service_snapshot_policy_list" "test" {
         ///   bp_name = "NAME OF BLUEPRINT"
         ///   length  = 250
         ///   offset  = 0
