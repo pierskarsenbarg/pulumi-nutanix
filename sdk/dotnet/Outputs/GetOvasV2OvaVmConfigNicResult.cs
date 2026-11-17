@@ -14,11 +14,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetOvasV2OvaVmConfigNicResult
     {
+        [Obsolete(@"The <span pulumi-lang-nodejs=""`backingInfo`"" pulumi-lang-dotnet=""`BackingInfo`"" pulumi-lang-go=""`backingInfo`"" pulumi-lang-python=""`backing_info`"" pulumi-lang-yaml=""`backingInfo`"" pulumi-lang-java=""`backingInfo`"" pulumi-lang-hcl=""`backing_info`"">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs=""`nicBackingInfo`"" pulumi-lang-dotnet=""`NicBackingInfo`"" pulumi-lang-go=""`nicBackingInfo`"" pulumi-lang-python=""`nic_backing_info`"" pulumi-lang-yaml=""`nicBackingInfo`"" pulumi-lang-java=""`nicBackingInfo`"" pulumi-lang-hcl=""`nic_backing_info`"">`nicBackingInfo`</span> instead. This field will be removed in a future release.")]
         public readonly ImmutableArray<Outputs.GetOvasV2OvaVmConfigNicBackingInfoResult> BackingInfos;
         /// <summary>
         /// - A globally unique identifier of an instance that is suitable for external consumption.
         /// </summary>
         public readonly string ExtId;
+        [Obsolete(@"The <span pulumi-lang-nodejs=""`networkInfo`"" pulumi-lang-dotnet=""`NetworkInfo`"" pulumi-lang-go=""`networkInfo`"" pulumi-lang-python=""`network_info`"" pulumi-lang-yaml=""`networkInfo`"" pulumi-lang-java=""`networkInfo`"" pulumi-lang-hcl=""`network_info`"">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs=""`nicNetworkInfo`"" pulumi-lang-dotnet=""`NicNetworkInfo`"" pulumi-lang-go=""`nicNetworkInfo`"" pulumi-lang-python=""`nic_network_info`"" pulumi-lang-yaml=""`nicNetworkInfo`"" pulumi-lang-java=""`nicNetworkInfo`"" pulumi-lang-hcl=""`nic_network_info`"">`nicNetworkInfo`</span> instead. This field will be removed in a future release.")]
         public readonly ImmutableArray<Outputs.GetOvasV2OvaVmConfigNicNetworkInfoResult> NetworkInfos;
         public readonly Outputs.GetOvasV2OvaVmConfigNicNicBackingInfoResult NicBackingInfo;
         public readonly Outputs.GetOvasV2OvaVmConfigNicNicNetworkInfoResult NicNetworkInfo;
@@ -35,9 +37,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             Outputs.GetOvasV2OvaVmConfigNicNicNetworkInfoResult nicNetworkInfo)
         {
+#pragma warning disable CS0618
             BackingInfos = backingInfos;
+#pragma warning restore CS0618
             ExtId = extId;
+#pragma warning disable CS0618
             NetworkInfos = networkInfos;
+#pragma warning restore CS0618
             NicBackingInfo = nicBackingInfo;
             NicNetworkInfo = nicNetworkInfo;
         }
