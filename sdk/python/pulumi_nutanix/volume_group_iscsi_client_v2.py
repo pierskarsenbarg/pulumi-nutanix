@@ -398,7 +398,7 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
             __props__ = VolumeGroupIscsiClientV2Args.__new__(VolumeGroupIscsiClientV2Args)
 
             __props__.__dict__["attachment_site"] = attachment_site
-            __props__.__dict__["client_secret"] = client_secret
+            __props__.__dict__["client_secret"] = None if client_secret is None else pulumi.Output.secret(client_secret)
             __props__.__dict__["enabled_authentications"] = enabled_authentications
             __props__.__dict__["ext_id"] = ext_id
             __props__.__dict__["iscsi_initiator_name"] = iscsi_initiator_name
@@ -407,6 +407,8 @@ class VolumeGroupIscsiClientV2(pulumi.CustomResource):
             if vg_ext_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vg_ext_id'")
             __props__.__dict__["vg_ext_id"] = vg_ext_id
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["clientSecret"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(VolumeGroupIscsiClientV2, __self__).__init__(
             'nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2',
             resource_name,

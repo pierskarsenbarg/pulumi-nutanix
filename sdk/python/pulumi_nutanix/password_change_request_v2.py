@@ -26,10 +26,12 @@ class PasswordChangeRequestV2Args:
         The set of arguments for constructing a PasswordChangeRequestV2 resource.
 
         :param pulumi.Input[_builtins.str] ext_id: -(Required) External identifier of the system user password.
-        :param pulumi.Input[_builtins.str] new_password: -(Required) New password for a user account.
+        :param pulumi.Input[_builtins.str] new_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) New password for a user account.
                
                See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
-        :param pulumi.Input[_builtins.str] current_password: -(Optional) Existing password of a user account.
+        :param pulumi.Input[_builtins.str] current_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Optional, WriteOnly) Existing password of a user account.
         """
         pulumi.set(__self__, "ext_id", ext_id)
         pulumi.set(__self__, "new_password", new_password)
@@ -52,7 +54,8 @@ class PasswordChangeRequestV2Args:
     @pulumi.getter(name="newPassword")
     def new_password(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required) New password for a user account.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) New password for a user account.
 
         See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
@@ -66,7 +69,8 @@ class PasswordChangeRequestV2Args:
     @pulumi.getter(name="currentPassword")
     def current_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        -(Optional) Existing password of a user account.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Optional, WriteOnly) Existing password of a user account.
         """
         return pulumi.get(self, "current_password")
 
@@ -84,9 +88,11 @@ class _PasswordChangeRequestV2State:
         """
         Input properties used for looking up and filtering PasswordChangeRequestV2 resources.
 
-        :param pulumi.Input[_builtins.str] current_password: -(Optional) Existing password of a user account.
+        :param pulumi.Input[_builtins.str] current_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Optional, WriteOnly) Existing password of a user account.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) External identifier of the system user password.
-        :param pulumi.Input[_builtins.str] new_password: -(Required) New password for a user account.
+        :param pulumi.Input[_builtins.str] new_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) New password for a user account.
                
                See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
@@ -101,7 +107,8 @@ class _PasswordChangeRequestV2State:
     @pulumi.getter(name="currentPassword")
     def current_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        -(Optional) Existing password of a user account.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Optional, WriteOnly) Existing password of a user account.
         """
         return pulumi.get(self, "current_password")
 
@@ -125,7 +132,8 @@ class _PasswordChangeRequestV2State:
     @pulumi.getter(name="newPassword")
     def new_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        -(Required) New password for a user account.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) New password for a user account.
 
         See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
@@ -149,6 +157,8 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
         """
         Initiate change password request for a system user on a supported product.
 
+        > **WriteOnly credentials:** <span pulumi-lang-nodejs="`currentPassword`" pulumi-lang-dotnet="`CurrentPassword`" pulumi-lang-go="`currentPassword`" pulumi-lang-python="`current_password`" pulumi-lang-yaml="`currentPassword`" pulumi-lang-java="`currentPassword`" pulumi-lang-hcl="`current_password`">`currentPassword`</span>, <span pulumi-lang-nodejs="`newPassword`" pulumi-lang-dotnet="`NewPassword`" pulumi-lang-go="`newPassword`" pulumi-lang-python="`new_password`" pulumi-lang-yaml="`newPassword`" pulumi-lang-java="`newPassword`" pulumi-lang-hcl="`new_password`">`newPassword`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+
         ## Example Usage
 
         <!--Start PulumiCodeChooser -->
@@ -166,9 +176,11 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] current_password: -(Optional) Existing password of a user account.
+        :param pulumi.Input[_builtins.str] current_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Optional, WriteOnly) Existing password of a user account.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) External identifier of the system user password.
-        :param pulumi.Input[_builtins.str] new_password: -(Required) New password for a user account.
+        :param pulumi.Input[_builtins.str] new_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) New password for a user account.
                
                See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
@@ -180,6 +192,8 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Initiate change password request for a system user on a supported product.
+
+        > **WriteOnly credentials:** <span pulumi-lang-nodejs="`currentPassword`" pulumi-lang-dotnet="`CurrentPassword`" pulumi-lang-go="`currentPassword`" pulumi-lang-python="`current_password`" pulumi-lang-yaml="`currentPassword`" pulumi-lang-java="`currentPassword`" pulumi-lang-hcl="`current_password`">`currentPassword`</span>, <span pulumi-lang-nodejs="`newPassword`" pulumi-lang-dotnet="`NewPassword`" pulumi-lang-go="`newPassword`" pulumi-lang-python="`new_password`" pulumi-lang-yaml="`newPassword`" pulumi-lang-java="`newPassword`" pulumi-lang-hcl="`new_password`">`newPassword`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
         ## Example Usage
 
@@ -223,13 +237,15 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = PasswordChangeRequestV2Args.__new__(PasswordChangeRequestV2Args)
 
-            __props__.__dict__["current_password"] = current_password
+            __props__.__dict__["current_password"] = None if current_password is None else pulumi.Output.secret(current_password)
             if ext_id is None and not opts.urn:
                 raise TypeError("Missing required property 'ext_id'")
             __props__.__dict__["ext_id"] = ext_id
             if new_password is None and not opts.urn:
                 raise TypeError("Missing required property 'new_password'")
-            __props__.__dict__["new_password"] = new_password
+            __props__.__dict__["new_password"] = None if new_password is None else pulumi.Output.secret(new_password)
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["currentPassword", "newPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(PasswordChangeRequestV2, __self__).__init__(
             'nutanix:index/passwordChangeRequestV2:PasswordChangeRequestV2',
             resource_name,
@@ -250,9 +266,11 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] current_password: -(Optional) Existing password of a user account.
+        :param pulumi.Input[_builtins.str] current_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Optional, WriteOnly) Existing password of a user account.
         :param pulumi.Input[_builtins.str] ext_id: -(Required) External identifier of the system user password.
-        :param pulumi.Input[_builtins.str] new_password: -(Required) New password for a user account.
+        :param pulumi.Input[_builtins.str] new_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) New password for a user account.
                
                See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """
@@ -281,7 +299,8 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
     @pulumi.getter(name="currentPassword")
     def current_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        -(Optional) Existing password of a user account.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Optional, WriteOnly) Existing password of a user account.
         """
         return pulumi.get(self, "current_password")
 
@@ -297,7 +316,8 @@ class PasswordChangeRequestV2(pulumi.CustomResource):
     @pulumi.getter(name="newPassword")
     def new_password(self) -> pulumi.Output[_builtins.str]:
         """
-        -(Required) New password for a user account.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) New password for a user account.
 
         See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         """

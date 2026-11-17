@@ -15,7 +15,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class PcDeployV2ConfigCredential
     {
         /// <summary>
-        /// -(Required) Password required for the basic auth scheme.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) Password required for the basic auth scheme.
         /// </summary>
         public readonly string Password;
         /// <summary>

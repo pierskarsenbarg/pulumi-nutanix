@@ -57,7 +57,7 @@ import * as utilities from "./utilities";
  *     allowedConfig: {
  *         entities: [{
  *             type: "VM",
- *             selectedBy: "CATEGORY_EXT_ID",
+ *             selectBy: "CATEGORY_EXT_ID",
  *             referenceExtIds: [example.id],
  *         }],
  *     },

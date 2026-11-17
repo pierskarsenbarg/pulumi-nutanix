@@ -167,6 +167,61 @@ import * as utilities from "./utilities";
  *     }],
  *     powerState: "ON",
  * });
+ * // Wait for the guest to report a non-link-local IPv4 address before the resource
+ * // completes, skipping the APIPA address (169.254.0.0/16) a guest can assign itself before
+ * // DHCP finishes. The VM boots an image with an OS that obtains an address; a VM without
+ * // one waits out the timeout.
+ * const vm_wait_for_ip = new nutanix.VirtualMachineV2("vm-wait-for-ip", {
+ *     name: "example-vm-wait-for-ip",
+ *     numCoresPerSocket: 1,
+ *     numSockets: 1,
+ *     clusters: [{
+ *         extId: "1cefd0f5-6d38-4c9b-a07c-bdd2db004224",
+ *     }],
+ *     disks: [{
+ *         diskAddresses: [{
+ *             busType: "SCSI",
+ *             index: 0,
+ *         }],
+ *         backingInfos: [{
+ *             vmDisks: [{
+ *                 dataSources: [{
+ *                     references: [{
+ *                         imageReferences: [{
+ *                             imageExtId: "c2a6d4b1-3f8e-4a57-9b0d-6e1f2a3b4c5d",
+ *                         }],
+ *                     }],
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ *     bootConfigs: [{
+ *         legacyBoots: [{
+ *             bootDevices: [{
+ *                 bootDeviceDisks: [{
+ *                     diskAddresses: [{
+ *                         busType: "SCSI",
+ *                         index: 0,
+ *                     }],
+ *                 }],
+ *             }],
+ *         }],
+ *     }],
+ *     nics: [{
+ *         nicNetworkInfo: {
+ *             virtualEthernetNicNetworkInfo: {
+ *                 nicType: "NORMAL_NIC",
+ *                 subnets: [{
+ *                     extId: "7f66e20f-67f4-473f-96bb-c4fcfd487f16",
+ *                 }],
+ *                 vlanMode: "ACCESS",
+ *             },
+ *         },
+ *     }],
+ *     powerState: "ON",
+ *     waitForIpTimeout: 5,
+ *     waitForIpRoutable: true,
+ * });
  * ```
  * <!--End PulumiCodeChooser -->
  *
@@ -398,6 +453,14 @@ export class VirtualMachineV2 extends pulumi.CustomResource {
      * Indicates how the vTPM for the VM should be configured.
      */
     declare public readonly vtpmConfigs: pulumi.Output<outputs.VirtualMachineV2VtpmConfig[]>;
+    /**
+     * When waiting for an IP (see <span pulumi-lang-nodejs="`waitForIpTimeout`" pulumi-lang-dotnet="`WaitForIpTimeout`" pulumi-lang-go="`waitForIpTimeout`" pulumi-lang-python="`wait_for_ip_timeout`" pulumi-lang-yaml="`waitForIpTimeout`" pulumi-lang-java="`waitForIpTimeout`" pulumi-lang-hcl="`wait_for_ip_timeout`">`waitForIpTimeout`</span>), ignore IPv4 link-local (APIPA, `169.254.0.0/16`) addresses, which a guest can assign itself before DHCP completes. This is the only check made: unlike the vSphere provider's <span pulumi-lang-nodejs="`waitForGuestNetRoutable`" pulumi-lang-dotnet="`WaitForGuestNetRoutable`" pulumi-lang-go="`waitForGuestNetRoutable`" pulumi-lang-python="`wait_for_guest_net_routable`" pulumi-lang-yaml="`waitForGuestNetRoutable`" pulumi-lang-java="`waitForGuestNetRoutable`" pulumi-lang-hcl="`wait_for_guest_net_routable`">`waitForGuestNetRoutable`</span>, it does not test the address against a default gateway. A VM that only ever reports an APIPA address therefore waits the full <span pulumi-lang-nodejs="`waitForIpTimeout`" pulumi-lang-dotnet="`WaitForIpTimeout`" pulumi-lang-go="`waitForIpTimeout`" pulumi-lang-python="`wait_for_ip_timeout`" pulumi-lang-yaml="`waitForIpTimeout`" pulumi-lang-java="`waitForIpTimeout`" pulumi-lang-hcl="`wait_for_ip_timeout`">`waitForIpTimeout`</span>. The wait ends once a non-link-local address is reported on any NIC; the learned address lists may still include an APIPA entry at that point, so select the address you need rather than taking the first one, for example `[for a in nutanix_virtual_machine_v2.vm.nics[0].network_info[0].ipv4_info[0].learned_ip_addresses : a.value if !startswith(a.value, "169.254.")][0]`. Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span> to accept an APIPA address too. Only used at create. Defaults to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
+     */
+    declare public readonly waitForIpRoutable: pulumi.Output<boolean | undefined>;
+    /**
+     * Minutes to wait, when the VM is created with <span pulumi-lang-nodejs="`powerState " pulumi-lang-dotnet="`PowerState " pulumi-lang-go="`powerState " pulumi-lang-python="`power_state " pulumi-lang-yaml="`powerState " pulumi-lang-java="`powerState " pulumi-lang-hcl="`power_state ">`powerState </span>= "ON"`, for any of its NICs to report a usable IPv4 address, so the address is in state when create returns. A NIC with a static or IPAM-assigned IPv4 address counts as reporting one, so on such a subnet the wait ends at once. <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> disables the wait; the maximum is <span pulumi-lang-nodejs="`15`" pulumi-lang-dotnet="`15`" pulumi-lang-go="`15`" pulumi-lang-python="`15`" pulumi-lang-yaml="`15`" pulumi-lang-java="`15`" pulumi-lang-hcl="`15`">`15`</span>, so the wait fits within create's 20 minute limit, and the wait is shortened if create has already used enough of that limit that the full wait would not fit. Timing out is not an error. Only used at create; changing it later has no effect on the VM. Defaults to <span pulumi-lang-nodejs="`5`" pulumi-lang-dotnet="`5`" pulumi-lang-go="`5`" pulumi-lang-python="`5`" pulumi-lang-yaml="`5`" pulumi-lang-java="`5`" pulumi-lang-hcl="`5`">`5`</span>.
+     */
+    declare public readonly waitForIpTimeout: pulumi.Output<number | undefined>;
 
     /**
      * Create a VirtualMachineV2 resource with the given unique name, arguments, and options.
@@ -457,6 +520,8 @@ export class VirtualMachineV2 extends pulumi.CustomResource {
             resourceInputs["storageConfigs"] = state?.storageConfigs;
             resourceInputs["updateTime"] = state?.updateTime;
             resourceInputs["vtpmConfigs"] = state?.vtpmConfigs;
+            resourceInputs["waitForIpRoutable"] = state?.waitForIpRoutable;
+            resourceInputs["waitForIpTimeout"] = state?.waitForIpTimeout;
         } else {
             const args = argsOrState as VirtualMachineV2Args | undefined;
             resourceInputs["apcConfigs"] = args?.apcConfigs;
@@ -501,6 +566,8 @@ export class VirtualMachineV2 extends pulumi.CustomResource {
             resourceInputs["sources"] = args?.sources;
             resourceInputs["storageConfigs"] = args?.storageConfigs;
             resourceInputs["vtpmConfigs"] = args?.vtpmConfigs;
+            resourceInputs["waitForIpRoutable"] = args?.waitForIpRoutable;
+            resourceInputs["waitForIpTimeout"] = args?.waitForIpTimeout;
             resourceInputs["createTime"] = undefined /*out*/;
             resourceInputs["extId"] = undefined /*out*/;
             resourceInputs["updateTime"] = undefined /*out*/;
@@ -688,6 +755,14 @@ export interface VirtualMachineV2State {
      * Indicates how the vTPM for the VM should be configured.
      */
     vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2VtpmConfig>[] | undefined>;
+    /**
+     * When waiting for an IP (see <span pulumi-lang-nodejs="`waitForIpTimeout`" pulumi-lang-dotnet="`WaitForIpTimeout`" pulumi-lang-go="`waitForIpTimeout`" pulumi-lang-python="`wait_for_ip_timeout`" pulumi-lang-yaml="`waitForIpTimeout`" pulumi-lang-java="`waitForIpTimeout`" pulumi-lang-hcl="`wait_for_ip_timeout`">`waitForIpTimeout`</span>), ignore IPv4 link-local (APIPA, `169.254.0.0/16`) addresses, which a guest can assign itself before DHCP completes. This is the only check made: unlike the vSphere provider's <span pulumi-lang-nodejs="`waitForGuestNetRoutable`" pulumi-lang-dotnet="`WaitForGuestNetRoutable`" pulumi-lang-go="`waitForGuestNetRoutable`" pulumi-lang-python="`wait_for_guest_net_routable`" pulumi-lang-yaml="`waitForGuestNetRoutable`" pulumi-lang-java="`waitForGuestNetRoutable`" pulumi-lang-hcl="`wait_for_guest_net_routable`">`waitForGuestNetRoutable`</span>, it does not test the address against a default gateway. A VM that only ever reports an APIPA address therefore waits the full <span pulumi-lang-nodejs="`waitForIpTimeout`" pulumi-lang-dotnet="`WaitForIpTimeout`" pulumi-lang-go="`waitForIpTimeout`" pulumi-lang-python="`wait_for_ip_timeout`" pulumi-lang-yaml="`waitForIpTimeout`" pulumi-lang-java="`waitForIpTimeout`" pulumi-lang-hcl="`wait_for_ip_timeout`">`waitForIpTimeout`</span>. The wait ends once a non-link-local address is reported on any NIC; the learned address lists may still include an APIPA entry at that point, so select the address you need rather than taking the first one, for example `[for a in nutanix_virtual_machine_v2.vm.nics[0].network_info[0].ipv4_info[0].learned_ip_addresses : a.value if !startswith(a.value, "169.254.")][0]`. Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span> to accept an APIPA address too. Only used at create. Defaults to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
+     */
+    waitForIpRoutable?: pulumi.Input<boolean | undefined>;
+    /**
+     * Minutes to wait, when the VM is created with <span pulumi-lang-nodejs="`powerState " pulumi-lang-dotnet="`PowerState " pulumi-lang-go="`powerState " pulumi-lang-python="`power_state " pulumi-lang-yaml="`powerState " pulumi-lang-java="`powerState " pulumi-lang-hcl="`power_state ">`powerState </span>= "ON"`, for any of its NICs to report a usable IPv4 address, so the address is in state when create returns. A NIC with a static or IPAM-assigned IPv4 address counts as reporting one, so on such a subnet the wait ends at once. <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> disables the wait; the maximum is <span pulumi-lang-nodejs="`15`" pulumi-lang-dotnet="`15`" pulumi-lang-go="`15`" pulumi-lang-python="`15`" pulumi-lang-yaml="`15`" pulumi-lang-java="`15`" pulumi-lang-hcl="`15`">`15`</span>, so the wait fits within create's 20 minute limit, and the wait is shortened if create has already used enough of that limit that the full wait would not fit. Timing out is not an error. Only used at create; changing it later has no effect on the VM. Defaults to <span pulumi-lang-nodejs="`5`" pulumi-lang-dotnet="`5`" pulumi-lang-go="`5`" pulumi-lang-python="`5`" pulumi-lang-yaml="`5`" pulumi-lang-java="`5`" pulumi-lang-hcl="`5`">`5`</span>.
+     */
+    waitForIpTimeout?: pulumi.Input<number | undefined>;
 }
 
 /**
@@ -856,4 +931,12 @@ export interface VirtualMachineV2Args {
      * Indicates how the vTPM for the VM should be configured.
      */
     vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2VtpmConfig>[] | undefined>;
+    /**
+     * When waiting for an IP (see <span pulumi-lang-nodejs="`waitForIpTimeout`" pulumi-lang-dotnet="`WaitForIpTimeout`" pulumi-lang-go="`waitForIpTimeout`" pulumi-lang-python="`wait_for_ip_timeout`" pulumi-lang-yaml="`waitForIpTimeout`" pulumi-lang-java="`waitForIpTimeout`" pulumi-lang-hcl="`wait_for_ip_timeout`">`waitForIpTimeout`</span>), ignore IPv4 link-local (APIPA, `169.254.0.0/16`) addresses, which a guest can assign itself before DHCP completes. This is the only check made: unlike the vSphere provider's <span pulumi-lang-nodejs="`waitForGuestNetRoutable`" pulumi-lang-dotnet="`WaitForGuestNetRoutable`" pulumi-lang-go="`waitForGuestNetRoutable`" pulumi-lang-python="`wait_for_guest_net_routable`" pulumi-lang-yaml="`waitForGuestNetRoutable`" pulumi-lang-java="`waitForGuestNetRoutable`" pulumi-lang-hcl="`wait_for_guest_net_routable`">`waitForGuestNetRoutable`</span>, it does not test the address against a default gateway. A VM that only ever reports an APIPA address therefore waits the full <span pulumi-lang-nodejs="`waitForIpTimeout`" pulumi-lang-dotnet="`WaitForIpTimeout`" pulumi-lang-go="`waitForIpTimeout`" pulumi-lang-python="`wait_for_ip_timeout`" pulumi-lang-yaml="`waitForIpTimeout`" pulumi-lang-java="`waitForIpTimeout`" pulumi-lang-hcl="`wait_for_ip_timeout`">`waitForIpTimeout`</span>. The wait ends once a non-link-local address is reported on any NIC; the learned address lists may still include an APIPA entry at that point, so select the address you need rather than taking the first one, for example `[for a in nutanix_virtual_machine_v2.vm.nics[0].network_info[0].ipv4_info[0].learned_ip_addresses : a.value if !startswith(a.value, "169.254.")][0]`. Set to <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span> to accept an APIPA address too. Only used at create. Defaults to <span pulumi-lang-nodejs="`true`" pulumi-lang-dotnet="`True`" pulumi-lang-go="`true`" pulumi-lang-python="`true`" pulumi-lang-yaml="`true`" pulumi-lang-java="`true`" pulumi-lang-hcl="`true`">`true`</span>.
+     */
+    waitForIpRoutable?: pulumi.Input<boolean | undefined>;
+    /**
+     * Minutes to wait, when the VM is created with <span pulumi-lang-nodejs="`powerState " pulumi-lang-dotnet="`PowerState " pulumi-lang-go="`powerState " pulumi-lang-python="`power_state " pulumi-lang-yaml="`powerState " pulumi-lang-java="`powerState " pulumi-lang-hcl="`power_state ">`powerState </span>= "ON"`, for any of its NICs to report a usable IPv4 address, so the address is in state when create returns. A NIC with a static or IPAM-assigned IPv4 address counts as reporting one, so on such a subnet the wait ends at once. <span pulumi-lang-nodejs="`0`" pulumi-lang-dotnet="`0`" pulumi-lang-go="`0`" pulumi-lang-python="`0`" pulumi-lang-yaml="`0`" pulumi-lang-java="`0`" pulumi-lang-hcl="`0`">`0`</span> disables the wait; the maximum is <span pulumi-lang-nodejs="`15`" pulumi-lang-dotnet="`15`" pulumi-lang-go="`15`" pulumi-lang-python="`15`" pulumi-lang-yaml="`15`" pulumi-lang-java="`15`" pulumi-lang-hcl="`15`">`15`</span>, so the wait fits within create's 20 minute limit, and the wait is shortened if create has already used enough of that limit that the full wait would not fit. Timing out is not an error. Only used at create; changing it later has no effect on the VM. Defaults to <span pulumi-lang-nodejs="`5`" pulumi-lang-dotnet="`5`" pulumi-lang-go="`5`" pulumi-lang-python="`5`" pulumi-lang-yaml="`5`" pulumi-lang-java="`5`" pulumi-lang-hcl="`5`">`5`</span>.
+     */
+    waitForIpTimeout?: pulumi.Input<number | undefined>;
 }

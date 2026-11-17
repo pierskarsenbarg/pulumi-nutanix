@@ -41,6 +41,15 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('customHeaders')
 
     @_builtins.property
+    def domain_name(self) -> Optional[str]:
+        """
+        Domain name for the Prism Central instance. Used to construct the
+        PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+        Tenant Admin scenarios.
+        """
+        return __config__.get('domainName')
+
+    @_builtins.property
     def endpoint(self) -> Optional[str]:
         """
         URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
@@ -87,6 +96,15 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get('ndbUsername')
 
     @_builtins.property
+    def nutanix_central_endpoint(self) -> Optional[str]:
+        """
+        Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+        Service Provider Admin scenarios. This is the base domain for NC services
+        (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+        """
+        return __config__.get('nutanixCentralEndpoint')
+
+    @_builtins.property
     def password(self) -> Optional[str]:
         """
         Password for provided user name.
@@ -112,6 +130,22 @@ class _ExportableConfig(types.ModuleType):
         return __config__.get_bool('sessionAuth')
 
     @_builtins.property
+    def tenant_name(self) -> Optional[str]:
+        """
+        Tenant name for Tenant Admin scenarios. Required when operating as
+        a Tenant Admin to manage tenant-specific resources.
+        """
+        return __config__.get('tenantName')
+
+    @_builtins.property
+    def use_nc_iam(self) -> Optional[bool]:
+        """
+        When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+        instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+        """
+        return __config__.get_bool('useNcIam')
+
+    @_builtins.property
     def username(self) -> Optional[str]:
         """
         User name for Nutanix Prism. Could be
@@ -122,7 +156,7 @@ class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def wait_timeout(self) -> Optional[int]:
         """
-        Set if you know that the creation o update of a resource may take long time (minutes)
+        Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
         """
         return __config__.get_int('waitTimeout')
 

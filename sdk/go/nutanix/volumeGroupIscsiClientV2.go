@@ -80,6 +80,13 @@ func NewVolumeGroupIscsiClientV2(ctx *pulumi.Context,
 	if args.VgExtId == nil {
 		return nil, errors.New("invalid value for required argument 'VgExtId'")
 	}
+	if args.ClientSecret != nil {
+		args.ClientSecret = pulumi.ToSecret(args.ClientSecret).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"clientSecret",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource VolumeGroupIscsiClientV2
 	err := ctx.RegisterResource("nutanix:index/volumeGroupIscsiClientV2:VolumeGroupIscsiClientV2", name, args, &resource, opts...)

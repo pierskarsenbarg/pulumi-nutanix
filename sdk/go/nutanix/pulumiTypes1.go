@@ -13,6 +13,848 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type NdbCloneInfoBpgConfigVmProperty struct {
+	DirtyBackgroundRatio    *float64 `pulumi:"dirtyBackgroundRatio"`
+	DirtyExpireCentisecs    *float64 `pulumi:"dirtyExpireCentisecs"`
+	DirtyRatio              *float64 `pulumi:"dirtyRatio"`
+	DirtyWritebackCentisecs *float64 `pulumi:"dirtyWritebackCentisecs"`
+	NrHugepages             *float64 `pulumi:"nrHugepages"`
+	OvercommitMemory        *float64 `pulumi:"overcommitMemory"`
+	Swappiness              *float64 `pulumi:"swappiness"`
+}
+
+// NdbCloneInfoBpgConfigVmPropertyInput is an input type that accepts NdbCloneInfoBpgConfigVmPropertyArgs and NdbCloneInfoBpgConfigVmPropertyOutput values.
+// You can construct a concrete instance of `NdbCloneInfoBpgConfigVmPropertyInput` via:
+//
+//	NdbCloneInfoBpgConfigVmPropertyArgs{...}
+type NdbCloneInfoBpgConfigVmPropertyInput interface {
+	pulumi.Input
+
+	ToNdbCloneInfoBpgConfigVmPropertyOutput() NdbCloneInfoBpgConfigVmPropertyOutput
+	ToNdbCloneInfoBpgConfigVmPropertyOutputWithContext(context.Context) NdbCloneInfoBpgConfigVmPropertyOutput
+}
+
+type NdbCloneInfoBpgConfigVmPropertyArgs struct {
+	DirtyBackgroundRatio    pulumi.Float64PtrInput `pulumi:"dirtyBackgroundRatio"`
+	DirtyExpireCentisecs    pulumi.Float64PtrInput `pulumi:"dirtyExpireCentisecs"`
+	DirtyRatio              pulumi.Float64PtrInput `pulumi:"dirtyRatio"`
+	DirtyWritebackCentisecs pulumi.Float64PtrInput `pulumi:"dirtyWritebackCentisecs"`
+	NrHugepages             pulumi.Float64PtrInput `pulumi:"nrHugepages"`
+	OvercommitMemory        pulumi.Float64PtrInput `pulumi:"overcommitMemory"`
+	Swappiness              pulumi.Float64PtrInput `pulumi:"swappiness"`
+}
+
+func (NdbCloneInfoBpgConfigVmPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
+}
+
+func (i NdbCloneInfoBpgConfigVmPropertyArgs) ToNdbCloneInfoBpgConfigVmPropertyOutput() NdbCloneInfoBpgConfigVmPropertyOutput {
+	return i.ToNdbCloneInfoBpgConfigVmPropertyOutputWithContext(context.Background())
+}
+
+func (i NdbCloneInfoBpgConfigVmPropertyArgs) ToNdbCloneInfoBpgConfigVmPropertyOutputWithContext(ctx context.Context) NdbCloneInfoBpgConfigVmPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneInfoBpgConfigVmPropertyOutput)
+}
+
+// NdbCloneInfoBpgConfigVmPropertyArrayInput is an input type that accepts NdbCloneInfoBpgConfigVmPropertyArray and NdbCloneInfoBpgConfigVmPropertyArrayOutput values.
+// You can construct a concrete instance of `NdbCloneInfoBpgConfigVmPropertyArrayInput` via:
+//
+//	NdbCloneInfoBpgConfigVmPropertyArray{ NdbCloneInfoBpgConfigVmPropertyArgs{...} }
+type NdbCloneInfoBpgConfigVmPropertyArrayInput interface {
+	pulumi.Input
+
+	ToNdbCloneInfoBpgConfigVmPropertyArrayOutput() NdbCloneInfoBpgConfigVmPropertyArrayOutput
+	ToNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(context.Context) NdbCloneInfoBpgConfigVmPropertyArrayOutput
+}
+
+type NdbCloneInfoBpgConfigVmPropertyArray []NdbCloneInfoBpgConfigVmPropertyInput
+
+func (NdbCloneInfoBpgConfigVmPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
+}
+
+func (i NdbCloneInfoBpgConfigVmPropertyArray) ToNdbCloneInfoBpgConfigVmPropertyArrayOutput() NdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return i.ToNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i NdbCloneInfoBpgConfigVmPropertyArray) ToNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(ctx context.Context) NdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneInfoBpgConfigVmPropertyArrayOutput)
+}
+
+type NdbCloneInfoBpgConfigVmPropertyOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneInfoBpgConfigVmPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) ToNdbCloneInfoBpgConfigVmPropertyOutput() NdbCloneInfoBpgConfigVmPropertyOutput {
+	return o
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) ToNdbCloneInfoBpgConfigVmPropertyOutputWithContext(ctx context.Context) NdbCloneInfoBpgConfigVmPropertyOutput {
+	return o
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) DirtyBackgroundRatio() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.DirtyBackgroundRatio }).(pulumi.Float64PtrOutput)
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) DirtyExpireCentisecs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.DirtyExpireCentisecs }).(pulumi.Float64PtrOutput)
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) DirtyRatio() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.DirtyRatio }).(pulumi.Float64PtrOutput)
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) DirtyWritebackCentisecs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.DirtyWritebackCentisecs }).(pulumi.Float64PtrOutput)
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) NrHugepages() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.NrHugepages }).(pulumi.Float64PtrOutput)
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) OvercommitMemory() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.OvercommitMemory }).(pulumi.Float64PtrOutput)
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyOutput) Swappiness() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.Swappiness }).(pulumi.Float64PtrOutput)
+}
+
+type NdbCloneInfoBpgConfigVmPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneInfoBpgConfigVmPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyArrayOutput) ToNdbCloneInfoBpgConfigVmPropertyArrayOutput() NdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return o
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyArrayOutput) ToNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(ctx context.Context) NdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return o
+}
+
+func (o NdbCloneInfoBpgConfigVmPropertyArrayOutput) Index(i pulumi.IntInput) NdbCloneInfoBpgConfigVmPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneInfoBpgConfigVmProperty {
+		return vs[0].([]NdbCloneInfoBpgConfigVmProperty)[vs[1].(int)]
+	}).(NdbCloneInfoBpgConfigVmPropertyOutput)
+}
+
+type NdbCloneLcmConfig struct {
+	DatabaseLcmConfigs []NdbCloneLcmConfigDatabaseLcmConfig `pulumi:"databaseLcmConfigs"`
+}
+
+// NdbCloneLcmConfigInput is an input type that accepts NdbCloneLcmConfigArgs and NdbCloneLcmConfigOutput values.
+// You can construct a concrete instance of `NdbCloneLcmConfigInput` via:
+//
+//	NdbCloneLcmConfigArgs{...}
+type NdbCloneLcmConfigInput interface {
+	pulumi.Input
+
+	ToNdbCloneLcmConfigOutput() NdbCloneLcmConfigOutput
+	ToNdbCloneLcmConfigOutputWithContext(context.Context) NdbCloneLcmConfigOutput
+}
+
+type NdbCloneLcmConfigArgs struct {
+	DatabaseLcmConfigs NdbCloneLcmConfigDatabaseLcmConfigArrayInput `pulumi:"databaseLcmConfigs"`
+}
+
+func (NdbCloneLcmConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLcmConfig)(nil)).Elem()
+}
+
+func (i NdbCloneLcmConfigArgs) ToNdbCloneLcmConfigOutput() NdbCloneLcmConfigOutput {
+	return i.ToNdbCloneLcmConfigOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLcmConfigArgs) ToNdbCloneLcmConfigOutputWithContext(ctx context.Context) NdbCloneLcmConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigOutput)
+}
+
+// NdbCloneLcmConfigArrayInput is an input type that accepts NdbCloneLcmConfigArray and NdbCloneLcmConfigArrayOutput values.
+// You can construct a concrete instance of `NdbCloneLcmConfigArrayInput` via:
+//
+//	NdbCloneLcmConfigArray{ NdbCloneLcmConfigArgs{...} }
+type NdbCloneLcmConfigArrayInput interface {
+	pulumi.Input
+
+	ToNdbCloneLcmConfigArrayOutput() NdbCloneLcmConfigArrayOutput
+	ToNdbCloneLcmConfigArrayOutputWithContext(context.Context) NdbCloneLcmConfigArrayOutput
+}
+
+type NdbCloneLcmConfigArray []NdbCloneLcmConfigInput
+
+func (NdbCloneLcmConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLcmConfig)(nil)).Elem()
+}
+
+func (i NdbCloneLcmConfigArray) ToNdbCloneLcmConfigArrayOutput() NdbCloneLcmConfigArrayOutput {
+	return i.ToNdbCloneLcmConfigArrayOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLcmConfigArray) ToNdbCloneLcmConfigArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigArrayOutput)
+}
+
+type NdbCloneLcmConfigOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLcmConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLcmConfig)(nil)).Elem()
+}
+
+func (o NdbCloneLcmConfigOutput) ToNdbCloneLcmConfigOutput() NdbCloneLcmConfigOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigOutput) ToNdbCloneLcmConfigOutputWithContext(ctx context.Context) NdbCloneLcmConfigOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigOutput) DatabaseLcmConfigs() NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfig) []NdbCloneLcmConfigDatabaseLcmConfig { return v.DatabaseLcmConfigs }).(NdbCloneLcmConfigDatabaseLcmConfigArrayOutput)
+}
+
+type NdbCloneLcmConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLcmConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLcmConfig)(nil)).Elem()
+}
+
+func (o NdbCloneLcmConfigArrayOutput) ToNdbCloneLcmConfigArrayOutput() NdbCloneLcmConfigArrayOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigArrayOutput) ToNdbCloneLcmConfigArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigArrayOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigArrayOutput) Index(i pulumi.IntInput) NdbCloneLcmConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLcmConfig {
+		return vs[0].([]NdbCloneLcmConfig)[vs[1].(int)]
+	}).(NdbCloneLcmConfigOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfig struct {
+	ExpiryDetails  []NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail  `pulumi:"expiryDetails"`
+	RefreshDetails []NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail `pulumi:"refreshDetails"`
+}
+
+// NdbCloneLcmConfigDatabaseLcmConfigInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigArgs and NdbCloneLcmConfigDatabaseLcmConfigOutput values.
+// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigInput` via:
+//
+//	NdbCloneLcmConfigDatabaseLcmConfigArgs{...}
+type NdbCloneLcmConfigDatabaseLcmConfigInput interface {
+	pulumi.Input
+
+	ToNdbCloneLcmConfigDatabaseLcmConfigOutput() NdbCloneLcmConfigDatabaseLcmConfigOutput
+	ToNdbCloneLcmConfigDatabaseLcmConfigOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigOutput
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigArgs struct {
+	ExpiryDetails  NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput  `pulumi:"expiryDetails"`
+	RefreshDetails NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput `pulumi:"refreshDetails"`
+}
+
+func (NdbCloneLcmConfigDatabaseLcmConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfig)(nil)).Elem()
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigArgs) ToNdbCloneLcmConfigDatabaseLcmConfigOutput() NdbCloneLcmConfigDatabaseLcmConfigOutput {
+	return i.ToNdbCloneLcmConfigDatabaseLcmConfigOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigArgs) ToNdbCloneLcmConfigDatabaseLcmConfigOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigOutput)
+}
+
+// NdbCloneLcmConfigDatabaseLcmConfigArrayInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigArray and NdbCloneLcmConfigDatabaseLcmConfigArrayOutput values.
+// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigArrayInput` via:
+//
+//	NdbCloneLcmConfigDatabaseLcmConfigArray{ NdbCloneLcmConfigDatabaseLcmConfigArgs{...} }
+type NdbCloneLcmConfigDatabaseLcmConfigArrayInput interface {
+	pulumi.Input
+
+	ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigArrayOutput
+	ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigArrayOutput
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigArray []NdbCloneLcmConfigDatabaseLcmConfigInput
+
+func (NdbCloneLcmConfigDatabaseLcmConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfig)(nil)).Elem()
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigArray) ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
+	return i.ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigArray) ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigArrayOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLcmConfigDatabaseLcmConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfig)(nil)).Elem()
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigOutput) ToNdbCloneLcmConfigDatabaseLcmConfigOutput() NdbCloneLcmConfigDatabaseLcmConfigOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigOutput) ToNdbCloneLcmConfigDatabaseLcmConfigOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigOutput) ExpiryDetails() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfig) []NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail {
+		return v.ExpiryDetails
+	}).(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput)
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigOutput) RefreshDetails() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfig) []NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail {
+		return v.RefreshDetails
+	}).(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLcmConfigDatabaseLcmConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfig)(nil)).Elem()
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigArrayOutput) Index(i pulumi.IntInput) NdbCloneLcmConfigDatabaseLcmConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLcmConfigDatabaseLcmConfig {
+		return vs[0].([]NdbCloneLcmConfigDatabaseLcmConfig)[vs[1].(int)]
+	}).(NdbCloneLcmConfigDatabaseLcmConfigOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail struct {
+	DeleteDatabase     *bool  `pulumi:"deleteDatabase"`
+	ExpireInDays       *int   `pulumi:"expireInDays"`
+	ExpiryDateTimezone string `pulumi:"expiryDateTimezone"`
+}
+
+// NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs and NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput values.
+// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput` via:
+//
+//	NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs{...}
+type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput interface {
+	pulumi.Input
+
+	ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput
+	ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs struct {
+	DeleteDatabase     pulumi.BoolPtrInput `pulumi:"deleteDatabase"`
+	ExpireInDays       pulumi.IntPtrInput  `pulumi:"expireInDays"`
+	ExpiryDateTimezone pulumi.StringInput  `pulumi:"expiryDateTimezone"`
+}
+
+func (NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
+	return i.ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput)
+}
+
+// NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray and NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput values.
+// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput` via:
+//
+//	NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray{ NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs{...} }
+type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput interface {
+	pulumi.Input
+
+	ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput
+	ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray []NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput
+
+func (NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
+	return i.ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) DeleteDatabase() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail) *bool { return v.DeleteDatabase }).(pulumi.BoolPtrOutput)
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ExpireInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail) *int { return v.ExpireInDays }).(pulumi.IntPtrOutput)
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ExpiryDateTimezone() pulumi.StringOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail) string { return v.ExpiryDateTimezone }).(pulumi.StringOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput) Index(i pulumi.IntInput) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail {
+		return vs[0].([]NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)[vs[1].(int)]
+	}).(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail struct {
+	RefreshDateTimezone *string `pulumi:"refreshDateTimezone"`
+	RefreshInDays       *int    `pulumi:"refreshInDays"`
+	RefreshTime         *string `pulumi:"refreshTime"`
+}
+
+// NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs and NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput values.
+// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput` via:
+//
+//	NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs{...}
+type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput interface {
+	pulumi.Input
+
+	ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput
+	ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs struct {
+	RefreshDateTimezone pulumi.StringPtrInput `pulumi:"refreshDateTimezone"`
+	RefreshInDays       pulumi.IntPtrInput    `pulumi:"refreshInDays"`
+	RefreshTime         pulumi.StringPtrInput `pulumi:"refreshTime"`
+}
+
+func (NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)(nil)).Elem()
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
+	return i.ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput)
+}
+
+// NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray and NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput values.
+// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput` via:
+//
+//	NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray{ NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs{...} }
+type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput interface {
+	pulumi.Input
+
+	ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput
+	ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray []NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput
+
+func (NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)(nil)).Elem()
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
+	return i.ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)(nil)).Elem()
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) RefreshDateTimezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail) *string { return v.RefreshDateTimezone }).(pulumi.StringPtrOutput)
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) RefreshInDays() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail) *int { return v.RefreshInDays }).(pulumi.IntPtrOutput)
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) RefreshTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail) *string { return v.RefreshTime }).(pulumi.StringPtrOutput)
+}
+
+type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)(nil)).Elem()
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
+	return o
+}
+
+func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput) Index(i pulumi.IntInput) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail {
+		return vs[0].([]NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)[vs[1].(int)]
+	}).(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput)
+}
+
+type NdbCloneLinkedDatabase struct {
+	// database name
+	DatabaseName   *string `pulumi:"databaseName"`
+	DatabaseStatus *string `pulumi:"databaseStatus"`
+	// date created for clone
+	DateCreated *string `pulumi:"dateCreated"`
+	// last modified date for clone
+	DateModified *string `pulumi:"dateModified"`
+	// database instance description
+	Description *string `pulumi:"description"`
+	Id          *string `pulumi:"id"`
+	// info of clone
+	Infos []NdbCloneLinkedDatabaseInfo `pulumi:"infos"`
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric map[string]string `pulumi:"metric"`
+	// database instance name
+	Name                   *string `pulumi:"name"`
+	ParentDatabaseId       *string `pulumi:"parentDatabaseId"`
+	ParentLinkedDatabaseId *string `pulumi:"parentLinkedDatabaseId"`
+	// snapshot id from where clone is created
+	SnapshotId *string `pulumi:"snapshotId"`
+	// status of clone
+	Status   *string `pulumi:"status"`
+	Timezone *string `pulumi:"timezone"`
+}
+
+// NdbCloneLinkedDatabaseInput is an input type that accepts NdbCloneLinkedDatabaseArgs and NdbCloneLinkedDatabaseOutput values.
+// You can construct a concrete instance of `NdbCloneLinkedDatabaseInput` via:
+//
+//	NdbCloneLinkedDatabaseArgs{...}
+type NdbCloneLinkedDatabaseInput interface {
+	pulumi.Input
+
+	ToNdbCloneLinkedDatabaseOutput() NdbCloneLinkedDatabaseOutput
+	ToNdbCloneLinkedDatabaseOutputWithContext(context.Context) NdbCloneLinkedDatabaseOutput
+}
+
+type NdbCloneLinkedDatabaseArgs struct {
+	// database name
+	DatabaseName   pulumi.StringPtrInput `pulumi:"databaseName"`
+	DatabaseStatus pulumi.StringPtrInput `pulumi:"databaseStatus"`
+	// date created for clone
+	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
+	// last modified date for clone
+	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
+	// database instance description
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	Id          pulumi.StringPtrInput `pulumi:"id"`
+	// info of clone
+	Infos NdbCloneLinkedDatabaseInfoArrayInput `pulumi:"infos"`
+	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+	Metric pulumi.StringMapInput `pulumi:"metric"`
+	// database instance name
+	Name                   pulumi.StringPtrInput `pulumi:"name"`
+	ParentDatabaseId       pulumi.StringPtrInput `pulumi:"parentDatabaseId"`
+	ParentLinkedDatabaseId pulumi.StringPtrInput `pulumi:"parentLinkedDatabaseId"`
+	// snapshot id from where clone is created
+	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// status of clone
+	Status   pulumi.StringPtrInput `pulumi:"status"`
+	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
+}
+
+func (NdbCloneLinkedDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLinkedDatabase)(nil)).Elem()
+}
+
+func (i NdbCloneLinkedDatabaseArgs) ToNdbCloneLinkedDatabaseOutput() NdbCloneLinkedDatabaseOutput {
+	return i.ToNdbCloneLinkedDatabaseOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLinkedDatabaseArgs) ToNdbCloneLinkedDatabaseOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLinkedDatabaseOutput)
+}
+
+// NdbCloneLinkedDatabaseArrayInput is an input type that accepts NdbCloneLinkedDatabaseArray and NdbCloneLinkedDatabaseArrayOutput values.
+// You can construct a concrete instance of `NdbCloneLinkedDatabaseArrayInput` via:
+//
+//	NdbCloneLinkedDatabaseArray{ NdbCloneLinkedDatabaseArgs{...} }
+type NdbCloneLinkedDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToNdbCloneLinkedDatabaseArrayOutput() NdbCloneLinkedDatabaseArrayOutput
+	ToNdbCloneLinkedDatabaseArrayOutputWithContext(context.Context) NdbCloneLinkedDatabaseArrayOutput
+}
+
+type NdbCloneLinkedDatabaseArray []NdbCloneLinkedDatabaseInput
+
+func (NdbCloneLinkedDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLinkedDatabase)(nil)).Elem()
+}
+
+func (i NdbCloneLinkedDatabaseArray) ToNdbCloneLinkedDatabaseArrayOutput() NdbCloneLinkedDatabaseArrayOutput {
+	return i.ToNdbCloneLinkedDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLinkedDatabaseArray) ToNdbCloneLinkedDatabaseArrayOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLinkedDatabaseArrayOutput)
+}
+
+type NdbCloneLinkedDatabaseOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLinkedDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLinkedDatabase)(nil)).Elem()
+}
+
+func (o NdbCloneLinkedDatabaseOutput) ToNdbCloneLinkedDatabaseOutput() NdbCloneLinkedDatabaseOutput {
+	return o
+}
+
+func (o NdbCloneLinkedDatabaseOutput) ToNdbCloneLinkedDatabaseOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseOutput {
+	return o
+}
+
+// database name
+func (o NdbCloneLinkedDatabaseOutput) DatabaseName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
+}
+
+func (o NdbCloneLinkedDatabaseOutput) DatabaseStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.DatabaseStatus }).(pulumi.StringPtrOutput)
+}
+
+// date created for clone
+func (o NdbCloneLinkedDatabaseOutput) DateCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
+}
+
+// last modified date for clone
+func (o NdbCloneLinkedDatabaseOutput) DateModified() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.DateModified }).(pulumi.StringPtrOutput)
+}
+
+// database instance description
+func (o NdbCloneLinkedDatabaseOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+func (o NdbCloneLinkedDatabaseOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// info of clone
+func (o NdbCloneLinkedDatabaseOutput) Infos() NdbCloneLinkedDatabaseInfoArrayOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) []NdbCloneLinkedDatabaseInfo { return v.Infos }).(NdbCloneLinkedDatabaseInfoArrayOutput)
+}
+
+// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
+func (o NdbCloneLinkedDatabaseOutput) Metric() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) map[string]string { return v.Metric }).(pulumi.StringMapOutput)
+}
+
+// database instance name
+func (o NdbCloneLinkedDatabaseOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+func (o NdbCloneLinkedDatabaseOutput) ParentDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.ParentDatabaseId }).(pulumi.StringPtrOutput)
+}
+
+func (o NdbCloneLinkedDatabaseOutput) ParentLinkedDatabaseId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.ParentLinkedDatabaseId }).(pulumi.StringPtrOutput)
+}
+
+// snapshot id from where clone is created
+func (o NdbCloneLinkedDatabaseOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// status of clone
+func (o NdbCloneLinkedDatabaseOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+func (o NdbCloneLinkedDatabaseOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Timezone }).(pulumi.StringPtrOutput)
+}
+
+type NdbCloneLinkedDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLinkedDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLinkedDatabase)(nil)).Elem()
+}
+
+func (o NdbCloneLinkedDatabaseArrayOutput) ToNdbCloneLinkedDatabaseArrayOutput() NdbCloneLinkedDatabaseArrayOutput {
+	return o
+}
+
+func (o NdbCloneLinkedDatabaseArrayOutput) ToNdbCloneLinkedDatabaseArrayOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseArrayOutput {
+	return o
+}
+
+func (o NdbCloneLinkedDatabaseArrayOutput) Index(i pulumi.IntInput) NdbCloneLinkedDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLinkedDatabase {
+		return vs[0].([]NdbCloneLinkedDatabase)[vs[1].(int)]
+	}).(NdbCloneLinkedDatabaseOutput)
+}
+
+type NdbCloneLinkedDatabaseInfo struct {
+	// info of clone
+	Info       map[string]string `pulumi:"info"`
+	SecureInfo map[string]string `pulumi:"secureInfo"`
+}
+
+// NdbCloneLinkedDatabaseInfoInput is an input type that accepts NdbCloneLinkedDatabaseInfoArgs and NdbCloneLinkedDatabaseInfoOutput values.
+// You can construct a concrete instance of `NdbCloneLinkedDatabaseInfoInput` via:
+//
+//	NdbCloneLinkedDatabaseInfoArgs{...}
+type NdbCloneLinkedDatabaseInfoInput interface {
+	pulumi.Input
+
+	ToNdbCloneLinkedDatabaseInfoOutput() NdbCloneLinkedDatabaseInfoOutput
+	ToNdbCloneLinkedDatabaseInfoOutputWithContext(context.Context) NdbCloneLinkedDatabaseInfoOutput
+}
+
+type NdbCloneLinkedDatabaseInfoArgs struct {
+	// info of clone
+	Info       pulumi.StringMapInput `pulumi:"info"`
+	SecureInfo pulumi.StringMapInput `pulumi:"secureInfo"`
+}
+
+func (NdbCloneLinkedDatabaseInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLinkedDatabaseInfo)(nil)).Elem()
+}
+
+func (i NdbCloneLinkedDatabaseInfoArgs) ToNdbCloneLinkedDatabaseInfoOutput() NdbCloneLinkedDatabaseInfoOutput {
+	return i.ToNdbCloneLinkedDatabaseInfoOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLinkedDatabaseInfoArgs) ToNdbCloneLinkedDatabaseInfoOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLinkedDatabaseInfoOutput)
+}
+
+// NdbCloneLinkedDatabaseInfoArrayInput is an input type that accepts NdbCloneLinkedDatabaseInfoArray and NdbCloneLinkedDatabaseInfoArrayOutput values.
+// You can construct a concrete instance of `NdbCloneLinkedDatabaseInfoArrayInput` via:
+//
+//	NdbCloneLinkedDatabaseInfoArray{ NdbCloneLinkedDatabaseInfoArgs{...} }
+type NdbCloneLinkedDatabaseInfoArrayInput interface {
+	pulumi.Input
+
+	ToNdbCloneLinkedDatabaseInfoArrayOutput() NdbCloneLinkedDatabaseInfoArrayOutput
+	ToNdbCloneLinkedDatabaseInfoArrayOutputWithContext(context.Context) NdbCloneLinkedDatabaseInfoArrayOutput
+}
+
+type NdbCloneLinkedDatabaseInfoArray []NdbCloneLinkedDatabaseInfoInput
+
+func (NdbCloneLinkedDatabaseInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLinkedDatabaseInfo)(nil)).Elem()
+}
+
+func (i NdbCloneLinkedDatabaseInfoArray) ToNdbCloneLinkedDatabaseInfoArrayOutput() NdbCloneLinkedDatabaseInfoArrayOutput {
+	return i.ToNdbCloneLinkedDatabaseInfoArrayOutputWithContext(context.Background())
+}
+
+func (i NdbCloneLinkedDatabaseInfoArray) ToNdbCloneLinkedDatabaseInfoArrayOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLinkedDatabaseInfoArrayOutput)
+}
+
+type NdbCloneLinkedDatabaseInfoOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLinkedDatabaseInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NdbCloneLinkedDatabaseInfo)(nil)).Elem()
+}
+
+func (o NdbCloneLinkedDatabaseInfoOutput) ToNdbCloneLinkedDatabaseInfoOutput() NdbCloneLinkedDatabaseInfoOutput {
+	return o
+}
+
+func (o NdbCloneLinkedDatabaseInfoOutput) ToNdbCloneLinkedDatabaseInfoOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseInfoOutput {
+	return o
+}
+
+// info of clone
+func (o NdbCloneLinkedDatabaseInfoOutput) Info() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabaseInfo) map[string]string { return v.Info }).(pulumi.StringMapOutput)
+}
+
+func (o NdbCloneLinkedDatabaseInfoOutput) SecureInfo() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NdbCloneLinkedDatabaseInfo) map[string]string { return v.SecureInfo }).(pulumi.StringMapOutput)
+}
+
+type NdbCloneLinkedDatabaseInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (NdbCloneLinkedDatabaseInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]NdbCloneLinkedDatabaseInfo)(nil)).Elem()
+}
+
+func (o NdbCloneLinkedDatabaseInfoArrayOutput) ToNdbCloneLinkedDatabaseInfoArrayOutput() NdbCloneLinkedDatabaseInfoArrayOutput {
+	return o
+}
+
+func (o NdbCloneLinkedDatabaseInfoArrayOutput) ToNdbCloneLinkedDatabaseInfoArrayOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseInfoArrayOutput {
+	return o
+}
+
+func (o NdbCloneLinkedDatabaseInfoArrayOutput) Index(i pulumi.IntInput) NdbCloneLinkedDatabaseInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLinkedDatabaseInfo {
+		return vs[0].([]NdbCloneLinkedDatabaseInfo)[vs[1].(int)]
+	}).(NdbCloneLinkedDatabaseInfoOutput)
+}
+
 type NdbCloneNode struct {
 	// specify compute profile id
 	ComputeProfileId *string `pulumi:"computeProfileId"`
@@ -53149,6 +53991,10 @@ type OvaV2VmConfig struct {
 	UpdateTime *string `pulumi:"updateTime"`
 	// -(Optional) Indicates how the vTPM for the VM should be configured.
 	VtpmConfigs []OvaV2VmConfigVtpmConfig `pulumi:"vtpmConfigs"`
+	// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+	WaitForIpRoutable *bool `pulumi:"waitForIpRoutable"`
+	// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+	WaitForIpTimeout *int `pulumi:"waitForIpTimeout"`
 }
 
 // OvaV2VmConfigInput is an input type that accepts OvaV2VmConfigArgs and OvaV2VmConfigOutput values.
@@ -53251,6 +54097,10 @@ type OvaV2VmConfigArgs struct {
 	UpdateTime pulumi.StringPtrInput `pulumi:"updateTime"`
 	// -(Optional) Indicates how the vTPM for the VM should be configured.
 	VtpmConfigs OvaV2VmConfigVtpmConfigArrayInput `pulumi:"vtpmConfigs"`
+	// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+	WaitForIpRoutable pulumi.BoolPtrInput `pulumi:"waitForIpRoutable"`
+	// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+	WaitForIpTimeout pulumi.IntPtrInput `pulumi:"waitForIpTimeout"`
 }
 
 func (OvaV2VmConfigArgs) ElementType() reflect.Type {
@@ -53525,6 +54375,16 @@ func (o OvaV2VmConfigOutput) UpdateTime() pulumi.StringPtrOutput {
 // -(Optional) Indicates how the vTPM for the VM should be configured.
 func (o OvaV2VmConfigOutput) VtpmConfigs() OvaV2VmConfigVtpmConfigArrayOutput {
 	return o.ApplyT(func(v OvaV2VmConfig) []OvaV2VmConfigVtpmConfig { return v.VtpmConfigs }).(OvaV2VmConfigVtpmConfigArrayOutput)
+}
+
+// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+func (o OvaV2VmConfigOutput) WaitForIpRoutable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v OvaV2VmConfig) *bool { return v.WaitForIpRoutable }).(pulumi.BoolPtrOutput)
+}
+
+// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+func (o OvaV2VmConfigOutput) WaitForIpTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v OvaV2VmConfig) *int { return v.WaitForIpTimeout }).(pulumi.IntPtrOutput)
 }
 
 type OvaV2VmConfigArrayOutput struct{ *pulumi.OutputState }
@@ -55138,6 +55998,7 @@ type OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo struct {
 	DiskExtId             *string                                                                        `pulumi:"diskExtId"`
 	DiskSizeBytes         *int                                                                           `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress *bool                                                                          `pulumi:"isMigrationInProgress"`
+	SerialId              *string                                                                        `pulumi:"serialId"`
 	StorageConfigs        []OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers     []OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer `pulumi:"storageContainers"`
 }
@@ -55158,6 +56019,7 @@ type OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoArgs struct {
 	DiskExtId             pulumi.StringPtrInput                                                                  `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntPtrInput                                                                     `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolPtrInput                                                                    `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringPtrInput                                                                  `pulumi:"serialId"`
 	StorageConfigs        OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers     OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArrayInput `pulumi:"storageContainers"`
 }
@@ -55231,6 +56093,10 @@ func (o OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) IsMi
 	return o.ApplyT(func(v OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo) *bool {
 		return v.IsMigrationInProgress
 	}).(pulumi.BoolPtrOutput)
+}
+
+func (o OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo) *string { return v.SerialId }).(pulumi.StringPtrOutput)
 }
 
 func (o OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) StorageConfigs() OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayOutput {
@@ -56316,8 +57182,9 @@ type OvaV2VmConfigCdRomBackingInfo struct {
 	DataSources []OvaV2VmConfigCdRomBackingInfoDataSource `pulumi:"dataSources"`
 	DiskExtId   *string                                   `pulumi:"diskExtId"`
 	// Size of the disk in Bytes
-	DiskSizeBytes         *int  `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress *bool `pulumi:"isMigrationInProgress"`
+	DiskSizeBytes         *int    `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress *bool   `pulumi:"isMigrationInProgress"`
+	SerialId              *string `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	// - `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
 	StorageConfigs []OvaV2VmConfigCdRomBackingInfoStorageConfig `pulumi:"storageConfigs"`
@@ -56342,8 +57209,9 @@ type OvaV2VmConfigCdRomBackingInfoArgs struct {
 	DataSources OvaV2VmConfigCdRomBackingInfoDataSourceArrayInput `pulumi:"dataSources"`
 	DiskExtId   pulumi.StringPtrInput                             `pulumi:"diskExtId"`
 	// Size of the disk in Bytes
-	DiskSizeBytes         pulumi.IntPtrInput  `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress pulumi.BoolPtrInput `pulumi:"isMigrationInProgress"`
+	DiskSizeBytes         pulumi.IntPtrInput    `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress pulumi.BoolPtrInput   `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringPtrInput `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	// - `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
 	StorageConfigs OvaV2VmConfigCdRomBackingInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
@@ -56419,6 +57287,10 @@ func (o OvaV2VmConfigCdRomBackingInfoOutput) DiskSizeBytes() pulumi.IntPtrOutput
 
 func (o OvaV2VmConfigCdRomBackingInfoOutput) IsMigrationInProgress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OvaV2VmConfigCdRomBackingInfo) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
+}
+
+func (o OvaV2VmConfigCdRomBackingInfoOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OvaV2VmConfigCdRomBackingInfo) *string { return v.SerialId }).(pulumi.StringPtrOutput)
 }
 
 // Storage configuration for VM disks
@@ -57803,6 +58675,7 @@ type OvaV2VmConfigDiskBackingInfoVmDisk struct {
 	DiskExtId             *string                                              `pulumi:"diskExtId"`
 	DiskSizeBytes         *int                                                 `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress *bool                                                `pulumi:"isMigrationInProgress"`
+	SerialId              *string                                              `pulumi:"serialId"`
 	StorageConfigs        []OvaV2VmConfigDiskBackingInfoVmDiskStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers     []OvaV2VmConfigDiskBackingInfoVmDiskStorageContainer `pulumi:"storageContainers"`
 }
@@ -57823,6 +58696,7 @@ type OvaV2VmConfigDiskBackingInfoVmDiskArgs struct {
 	DiskExtId             pulumi.StringPtrInput                                        `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntPtrInput                                           `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolPtrInput                                          `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringPtrInput                                        `pulumi:"serialId"`
 	StorageConfigs        OvaV2VmConfigDiskBackingInfoVmDiskStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers     OvaV2VmConfigDiskBackingInfoVmDiskStorageContainerArrayInput `pulumi:"storageContainers"`
 }
@@ -57894,6 +58768,10 @@ func (o OvaV2VmConfigDiskBackingInfoVmDiskOutput) DiskSizeBytes() pulumi.IntPtrO
 
 func (o OvaV2VmConfigDiskBackingInfoVmDiskOutput) IsMigrationInProgress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v OvaV2VmConfigDiskBackingInfoVmDisk) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
+}
+
+func (o OvaV2VmConfigDiskBackingInfoVmDiskOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OvaV2VmConfigDiskBackingInfoVmDisk) *string { return v.SerialId }).(pulumi.StringPtrOutput)
 }
 
 func (o OvaV2VmConfigDiskBackingInfoVmDiskOutput) StorageConfigs() OvaV2VmConfigDiskBackingInfoVmDiskStorageConfigArrayOutput {
@@ -62989,1192 +63867,21 @@ func (o OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReferencePtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-type OvaV2VmConfigNicNicBackingInfoSriovNic struct {
-	HostPcieDeviceReference *OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference `pulumi:"hostPcieDeviceReference"`
-	IsConnected             *bool                                                          `pulumi:"isConnected"`
-	// MAC address of the emulated NIC.
-	MacAddress            *string                                                     `pulumi:"macAddress"`
-	SriovProfileReference OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference `pulumi:"sriovProfileReference"`
-}
-
-// OvaV2VmConfigNicNicBackingInfoSriovNicInput is an input type that accepts OvaV2VmConfigNicNicBackingInfoSriovNicArgs and OvaV2VmConfigNicNicBackingInfoSriovNicOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicBackingInfoSriovNicInput` via:
-//
-//	OvaV2VmConfigNicNicBackingInfoSriovNicArgs{...}
-type OvaV2VmConfigNicNicBackingInfoSriovNicInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicOutput() OvaV2VmConfigNicNicBackingInfoSriovNicOutput
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicOutputWithContext(context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicOutput
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicArgs struct {
-	HostPcieDeviceReference OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrInput `pulumi:"hostPcieDeviceReference"`
-	IsConnected             pulumi.BoolPtrInput                                                   `pulumi:"isConnected"`
-	// MAC address of the emulated NIC.
-	MacAddress            pulumi.StringPtrInput                                            `pulumi:"macAddress"`
-	SriovProfileReference OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceInput `pulumi:"sriovProfileReference"`
-}
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNic)(nil)).Elem()
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicOutput() OvaV2VmConfigNicNicBackingInfoSriovNicOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicOutput)
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicOutput).ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(ctx)
-}
-
-// OvaV2VmConfigNicNicBackingInfoSriovNicPtrInput is an input type that accepts OvaV2VmConfigNicNicBackingInfoSriovNicArgs, OvaV2VmConfigNicNicBackingInfoSriovNicPtr and OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicBackingInfoSriovNicPtrInput` via:
-//
-//	        OvaV2VmConfigNicNicBackingInfoSriovNicArgs{...}
-//
-//	or:
-//
-//	        nil
-type OvaV2VmConfigNicNicBackingInfoSriovNicPtrInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput
-}
-
-type ovaV2VmConfigNicNicBackingInfoSriovNicPtrType OvaV2VmConfigNicNicBackingInfoSriovNicArgs
-
-func OvaV2VmConfigNicNicBackingInfoSriovNicPtr(v *OvaV2VmConfigNicNicBackingInfoSriovNicArgs) OvaV2VmConfigNicNicBackingInfoSriovNicPtrInput {
-	return (*ovaV2VmConfigNicNicBackingInfoSriovNicPtrType)(v)
-}
-
-func (*ovaV2VmConfigNicNicBackingInfoSriovNicPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicBackingInfoSriovNic)(nil)).Elem()
-}
-
-func (i *ovaV2VmConfigNicNicBackingInfoSriovNicPtrType) ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(context.Background())
-}
-
-func (i *ovaV2VmConfigNicNicBackingInfoSriovNicPtrType) ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNic)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicOutput() OvaV2VmConfigNicNicBackingInfoSriovNicOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput {
-	return o.ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(context.Background())
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OvaV2VmConfigNicNicBackingInfoSriovNic) *OvaV2VmConfigNicNicBackingInfoSriovNic {
-		return &v
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicOutput) HostPcieDeviceReference() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoSriovNic) *OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
-		return v.HostPcieDeviceReference
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicOutput) IsConnected() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoSriovNic) *bool { return v.IsConnected }).(pulumi.BoolPtrOutput)
-}
-
-// MAC address of the emulated NIC.
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicOutput) MacAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoSriovNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicOutput) SriovProfileReference() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoSriovNic) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference {
-		return v.SriovProfileReference
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicBackingInfoSriovNic)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput) Elem() OvaV2VmConfigNicNicBackingInfoSriovNicOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNic) OvaV2VmConfigNicNicBackingInfoSriovNic {
-		if v != nil {
-			return *v
-		}
-		var ret OvaV2VmConfigNicNicBackingInfoSriovNic
-		return ret
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput) HostPcieDeviceReference() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNic) *OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
-		if v == nil {
-			return nil
-		}
-		return v.HostPcieDeviceReference
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput) IsConnected() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNic) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.IsConnected
-	}).(pulumi.BoolPtrOutput)
-}
-
-// MAC address of the emulated NIC.
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput) MacAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNic) *string {
-		if v == nil {
-			return nil
-		}
-		return v.MacAddress
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput) SriovProfileReference() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNic) *OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference {
-		if v == nil {
-			return nil
-		}
-		return &v.SriovProfileReference
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference struct {
-	ExtId *string `pulumi:"extId"`
-}
-
-// OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceInput is an input type that accepts OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs and OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceInput` via:
-//
-//	OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs{...}
-type OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutputWithContext(context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs struct {
-	ExtId pulumi.StringPtrInput `pulumi:"extId"`
-}
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference)(nil)).Elem()
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput)
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput).ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(ctx)
-}
-
-// OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrInput is an input type that accepts OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs, OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtr and OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrInput` via:
-//
-//	        OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs{...}
-//
-//	or:
-//
-//	        nil
-type OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput
-}
-
-type ovaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrType OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs
-
-func OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtr(v *OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrInput {
-	return (*ovaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrType)(v)
-}
-
-func (*ovaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference)(nil)).Elem()
-}
-
-func (i *ovaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrType) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(context.Background())
-}
-
-func (i *ovaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrType) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return o.ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(context.Background())
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference) *OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
-		return &v
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput) ExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference) *string { return v.ExtId }).(pulumi.StringPtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput) Elem() OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference) OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference {
-		if v != nil {
-			return *v
-		}
-		var ret OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference
-		return ret
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput) ExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReference) *string {
-		if v == nil {
-			return nil
-		}
-		return v.ExtId
-	}).(pulumi.StringPtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference struct {
-	ExtId string `pulumi:"extId"`
-}
-
-// OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceInput is an input type that accepts OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs and OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceInput` via:
-//
-//	OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs{...}
-type OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutputWithContext(context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs struct {
-	ExtId pulumi.StringInput `pulumi:"extId"`
-}
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference)(nil)).Elem()
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput)
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput).ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(ctx)
-}
-
-// OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrInput is an input type that accepts OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs, OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtr and OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrInput` via:
-//
-//	        OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs{...}
-//
-//	or:
-//
-//	        nil
-type OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput
-	ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput
-}
-
-type ovaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrType OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs
-
-func OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtr(v *OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrInput {
-	return (*ovaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrType)(v)
-}
-
-func (*ovaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference)(nil)).Elem()
-}
-
-func (i *ovaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrType) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(context.Background())
-}
-
-func (i *ovaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrType) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return o.ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(context.Background())
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference) *OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference {
-		return &v
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput) ToOvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput) Elem() OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference) OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference {
-		if v != nil {
-			return *v
-		}
-		var ret OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference
-		return ret
-	}).(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput) ExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReference) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.ExtId
-	}).(pulumi.StringPtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic struct {
-	IsConnected *bool `pulumi:"isConnected"`
-	// MAC address of the emulated NIC.
-	MacAddress *string `pulumi:"macAddress"`
-	// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
-	Model *string `pulumi:"model"`
-	// The number of Tx/Rx queue pairs for this NIC. Default is 1.
-	NumQueues *int `pulumi:"numQueues"`
-}
-
-// OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicInput is an input type that accepts OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs and OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicInput` via:
-//
-//	OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs{...}
-type OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput
-	ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutputWithContext(context.Context) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput
-}
-
-type OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs struct {
-	IsConnected pulumi.BoolPtrInput `pulumi:"isConnected"`
-	// MAC address of the emulated NIC.
-	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
-	// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
-	Model pulumi.StringPtrInput `pulumi:"model"`
-	// The number of Tx/Rx queue pairs for this NIC. Default is 1.
-	NumQueues pulumi.IntPtrInput `pulumi:"numQueues"`
-}
-
-func (OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic)(nil)).Elem()
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput)
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput).ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(ctx)
-}
-
-// OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrInput is an input type that accepts OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs, OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtr and OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrInput` via:
-//
-//	        OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs{...}
-//
-//	or:
-//
-//	        nil
-type OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput
-	ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(context.Context) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput
-}
-
-type ovaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrType OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs
-
-func OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtr(v *OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrInput {
-	return (*ovaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrType)(v)
-}
-
-func (*ovaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic)(nil)).Elem()
-}
-
-func (i *ovaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrType) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput {
-	return i.ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(context.Background())
-}
-
-func (i *ovaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrType) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput {
-	return o.ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(context.Background())
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic {
-		return &v
-	}).(OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) IsConnected() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *bool { return v.IsConnected }).(pulumi.BoolPtrOutput)
-}
-
-// MAC address of the emulated NIC.
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) MacAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
-}
-
-// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) Model() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *string { return v.Model }).(pulumi.StringPtrOutput)
-}
-
-// The number of Tx/Rx queue pairs for this NIC. Default is 1.
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput) NumQueues() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *int { return v.NumQueues }).(pulumi.IntPtrOutput)
-}
-
-type OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput) ToOvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput) Elem() OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic {
-		if v != nil {
-			return *v
-		}
-		var ret OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic
-		return ret
-	}).(OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput)
-}
-
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput) IsConnected() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.IsConnected
-	}).(pulumi.BoolPtrOutput)
-}
-
-// MAC address of the emulated NIC.
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput) MacAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *string {
-		if v == nil {
-			return nil
-		}
-		return v.MacAddress
-	}).(pulumi.StringPtrOutput)
-}
-
-// Options for the NIC emulation. Valid values "VIRTIO" , "E1000".
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput) Model() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Model
-	}).(pulumi.StringPtrOutput)
-}
-
-// The number of Tx/Rx queue pairs for this NIC. Default is 1.
-func (o OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput) NumQueues() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicBackingInfoVirtualEthernetNic) *int {
-		if v == nil {
-			return nil
-		}
-		return v.NumQueues
-	}).(pulumi.IntPtrOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfo struct {
-	DpOffloadNicNetworkInfo       *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo       `pulumi:"dpOffloadNicNetworkInfo"`
-	SriovNicNetworkInfo           *OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfo           `pulumi:"sriovNicNetworkInfo"`
-	VirtualEthernetNicNetworkInfo *OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo `pulumi:"virtualEthernetNicNetworkInfo"`
-}
-
-// OvaV2VmConfigNicNicNetworkInfoInput is an input type that accepts OvaV2VmConfigNicNicNetworkInfoArgs and OvaV2VmConfigNicNicNetworkInfoOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicNetworkInfoInput` via:
-//
-//	OvaV2VmConfigNicNicNetworkInfoArgs{...}
-type OvaV2VmConfigNicNicNetworkInfoInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicNetworkInfoOutput() OvaV2VmConfigNicNicNetworkInfoOutput
-	ToOvaV2VmConfigNicNicNetworkInfoOutputWithContext(context.Context) OvaV2VmConfigNicNicNetworkInfoOutput
-}
-
-type OvaV2VmConfigNicNicNetworkInfoArgs struct {
-	DpOffloadNicNetworkInfo       OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrInput       `pulumi:"dpOffloadNicNetworkInfo"`
-	SriovNicNetworkInfo           OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfoPtrInput           `pulumi:"sriovNicNetworkInfo"`
-	VirtualEthernetNicNetworkInfo OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrInput `pulumi:"virtualEthernetNicNetworkInfo"`
-}
-
-func (OvaV2VmConfigNicNicNetworkInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfo)(nil)).Elem()
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoArgs) ToOvaV2VmConfigNicNicNetworkInfoOutput() OvaV2VmConfigNicNicNetworkInfoOutput {
-	return i.ToOvaV2VmConfigNicNicNetworkInfoOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoArgs) ToOvaV2VmConfigNicNicNetworkInfoOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicNetworkInfoOutput)
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoArgs) ToOvaV2VmConfigNicNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoPtrOutput {
-	return i.ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoArgs) ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicNetworkInfoOutput).ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(ctx)
-}
-
-// OvaV2VmConfigNicNicNetworkInfoPtrInput is an input type that accepts OvaV2VmConfigNicNicNetworkInfoArgs, OvaV2VmConfigNicNicNetworkInfoPtr and OvaV2VmConfigNicNicNetworkInfoPtrOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicNetworkInfoPtrInput` via:
-//
-//	        OvaV2VmConfigNicNicNetworkInfoArgs{...}
-//
-//	or:
-//
-//	        nil
-type OvaV2VmConfigNicNicNetworkInfoPtrInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoPtrOutput
-	ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(context.Context) OvaV2VmConfigNicNicNetworkInfoPtrOutput
-}
-
-type ovaV2VmConfigNicNicNetworkInfoPtrType OvaV2VmConfigNicNicNetworkInfoArgs
-
-func OvaV2VmConfigNicNicNetworkInfoPtr(v *OvaV2VmConfigNicNicNetworkInfoArgs) OvaV2VmConfigNicNicNetworkInfoPtrInput {
-	return (*ovaV2VmConfigNicNicNetworkInfoPtrType)(v)
-}
-
-func (*ovaV2VmConfigNicNicNetworkInfoPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicNetworkInfo)(nil)).Elem()
-}
-
-func (i *ovaV2VmConfigNicNicNetworkInfoPtrType) ToOvaV2VmConfigNicNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoPtrOutput {
-	return i.ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(context.Background())
-}
-
-func (i *ovaV2VmConfigNicNicNetworkInfoPtrType) ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicNetworkInfoPtrOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfoOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicNetworkInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfo)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoOutput) ToOvaV2VmConfigNicNicNetworkInfoOutput() OvaV2VmConfigNicNicNetworkInfoOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoOutput) ToOvaV2VmConfigNicNicNetworkInfoOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoOutput) ToOvaV2VmConfigNicNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoPtrOutput {
-	return o.ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(context.Background())
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoOutput) ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OvaV2VmConfigNicNicNetworkInfo) *OvaV2VmConfigNicNicNetworkInfo {
-		return &v
-	}).(OvaV2VmConfigNicNicNetworkInfoPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoOutput) DpOffloadNicNetworkInfo() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfo) *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
-		return v.DpOffloadNicNetworkInfo
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoOutput) SriovNicNetworkInfo() OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfoPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfo) *OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfo {
-		return v.SriovNicNetworkInfo
-	}).(OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfoPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoOutput) VirtualEthernetNicNetworkInfo() OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfo) *OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
-		return v.VirtualEthernetNicNetworkInfo
-	}).(OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfoPtrOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicNetworkInfoPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicNetworkInfo)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoPtrOutput) ToOvaV2VmConfigNicNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoPtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoPtrOutput) ToOvaV2VmConfigNicNicNetworkInfoPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoPtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoPtrOutput) Elem() OvaV2VmConfigNicNicNetworkInfoOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfo) OvaV2VmConfigNicNicNetworkInfo {
-		if v != nil {
-			return *v
-		}
-		var ret OvaV2VmConfigNicNicNetworkInfo
-		return ret
-	}).(OvaV2VmConfigNicNicNetworkInfoOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoPtrOutput) DpOffloadNicNetworkInfo() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfo) *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
-		if v == nil {
-			return nil
-		}
-		return v.DpOffloadNicNetworkInfo
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoPtrOutput) SriovNicNetworkInfo() OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfoPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfo) *OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfo {
-		if v == nil {
-			return nil
-		}
-		return v.SriovNicNetworkInfo
-	}).(OvaV2VmConfigNicNicNetworkInfoSriovNicNetworkInfoPtrOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoPtrOutput) VirtualEthernetNicNetworkInfo() OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfo) *OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfo {
-		if v == nil {
-			return nil
-		}
-		return v.VirtualEthernetNicNetworkInfo
-	}).(OvaV2VmConfigNicNicNetworkInfoVirtualEthernetNicNetworkInfoPtrOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo struct {
-	// The IP address configurations.
-	Ipv4Configs []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config `pulumi:"ipv4Configs"`
-	Ipv4Infos   []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info   `pulumi:"ipv4Infos"`
-	Ipv6Infos   []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info   `pulumi:"ipv6Infos"`
-	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
-	ShouldAllowUnknownMacs *bool `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
-	// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
-	Subnets []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet `pulumi:"subnets"`
-	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
-	TrunkedVlans []int `pulumi:"trunkedVlans"`
-	// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-	VlanMode *string `pulumi:"vlanMode"`
-}
-
-// OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoInput is an input type that accepts OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs and OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoInput` via:
-//
-//	OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs{...}
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput
-	ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutputWithContext(context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs struct {
-	// The IP address configurations.
-	Ipv4Configs OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayInput `pulumi:"ipv4Configs"`
-	Ipv4Infos   OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoArrayInput   `pulumi:"ipv4Infos"`
-	Ipv6Infos   OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayInput   `pulumi:"ipv6Infos"`
-	// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
-	ShouldAllowUnknownMacs pulumi.BoolPtrInput `pulumi:"shouldAllowUnknownMacs"`
-	// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
-	// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
-	Subnets OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayInput `pulumi:"subnets"`
-	// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
-	TrunkedVlans pulumi.IntArrayInput `pulumi:"trunkedVlans"`
-	// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-	VlanMode pulumi.StringPtrInput `pulumi:"vlanMode"`
-}
-
-func (OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo)(nil)).Elem()
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput {
-	return i.ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput)
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return i.ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput).ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(ctx)
-}
-
-// OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrInput is an input type that accepts OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs, OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtr and OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrInput` via:
-//
-//	        OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs{...}
-//
-//	or:
-//
-//	        nil
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput
-	ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput
-}
-
-type ovaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrType OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs
-
-func OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtr(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrInput {
-	return (*ovaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrType)(v)
-}
-
-func (*ovaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo)(nil)).Elem()
-}
-
-func (i *ovaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrType) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return i.ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(context.Background())
-}
-
-func (i *ovaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrType) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return o.ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(context.Background())
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
-		return &v
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput)
-}
-
-// The IP address configurations.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) Ipv4Configs() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
-		return v.Ipv4Configs
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) Ipv4Infos() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoArrayOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
-		return v.Ipv4Infos
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoArrayOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) Ipv6Infos() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
-		return v.Ipv6Infos
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayOutput)
-}
-
-// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) ShouldAllowUnknownMacs() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) *bool { return v.ShouldAllowUnknownMacs }).(pulumi.BoolPtrOutput)
-}
-
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
-// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) Subnets() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
-		return v.Subnets
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput)
-}
-
-// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) TrunkedVlans() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []int { return v.TrunkedVlans }).(pulumi.IntArrayOutput)
-}
-
-// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput) VlanMode() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) *string { return v.VlanMode }).(pulumi.StringPtrOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) Elem() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo {
-		if v != nil {
-			return *v
-		}
-		var ret OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo
-		return ret
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput)
-}
-
-// The IP address configurations.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) Ipv4Configs() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
-		if v == nil {
-			return nil
-		}
-		return v.Ipv4Configs
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) Ipv4Infos() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoArrayOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Info {
-		if v == nil {
-			return nil
-		}
-		return v.Ipv4Infos
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4InfoArrayOutput)
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) Ipv6Infos() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6Info {
-		if v == nil {
-			return nil
-		}
-		return v.Ipv6Infos
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv6InfoArrayOutput)
-}
-
-// Indicates whether an unknown unicast traffic is forwarded to this NIC or not. This is applicable only for the NICs on the overlay subnets.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) ShouldAllowUnknownMacs() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.ShouldAllowUnknownMacs
-	}).(pulumi.BoolPtrOutput)
-}
-
-// Network identifier for this adapter. Only valid if<span pulumi-lang-nodejs=" nicType " pulumi-lang-dotnet=" NicType " pulumi-lang-go=" nicType " pulumi-lang-python=" nic_type " pulumi-lang-yaml=" nicType " pulumi-lang-java=" nicType " pulumi-lang-hcl=" nic_type "> nicType </span>is NORMAL_NIC or DIRECT_NIC
-// - `subnet.ext_id`: (Optional) The globally unique identifier of a subnet of type UUID.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) Subnets() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnet {
-		if v == nil {
-			return nil
-		}
-		return v.Subnets
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoSubnetArrayOutput)
-}
-
-// List of networks to trunk if VLAN mode is marked as TRUNKED. If empty and VLAN mode is set to TRUNKED, all the VLANs are trunked.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) TrunkedVlans() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) []int {
-		if v == nil {
-			return nil
-		}
-		return v.TrunkedVlans
-	}).(pulumi.IntArrayOutput)
-}
-
-// all the virtual NICs are created in ACCESS mode, which permits only one VLAN per virtual network. TRUNKED mode allows multiple VLANs on a single VM NIC for network-aware user VMs.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput) VlanMode() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfo) *string {
-		if v == nil {
-			return nil
-		}
-		return v.VlanMode
-	}).(pulumi.StringPtrOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config struct {
-	// The IP address of the NIC.
-	IpAddresses []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress `pulumi:"ipAddresses"`
-	// Secondary IP addresses for the NIC.
-	SecondaryIpAddressLists []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList `pulumi:"secondaryIpAddressLists"`
-	// If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-	ShouldAssignIp *bool `pulumi:"shouldAssignIp"`
-}
-
-// OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigInput is an input type that accepts OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs and OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigInput` via:
-//
-//	OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs{...}
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput
-	ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutputWithContext(context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs struct {
-	// The IP address of the NIC.
-	IpAddresses OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddressArrayInput `pulumi:"ipAddresses"`
-	// Secondary IP addresses for the NIC.
-	SecondaryIpAddressLists OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressListArrayInput `pulumi:"secondaryIpAddressLists"`
-	// If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-	ShouldAssignIp pulumi.BoolPtrInput `pulumi:"shouldAssignIp"`
-}
-
-func (OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config)(nil)).Elem()
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput {
-	return i.ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput)
-}
-
-// OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayInput is an input type that accepts OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArray and OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput values.
-// You can construct a concrete instance of `OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayInput` via:
-//
-//	OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArray{ OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs{...} }
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayInput interface {
-	pulumi.Input
-
-	ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput
-	ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutputWithContext(context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArray []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigInput
-
-func (OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config)(nil)).Elem()
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArray) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput {
-	return i.ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutputWithContext(context.Background())
-}
-
-func (i OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArray) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput {
-	return o
-}
-
-// The IP address of the NIC.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput) IpAddresses() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddressArrayOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddress {
-		return v.IpAddresses
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigIpAddressArrayOutput)
-}
-
-// Secondary IP addresses for the NIC.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput) SecondaryIpAddressLists() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressListArrayOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config) []OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressList {
-		return v.SecondaryIpAddressLists
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigSecondaryIpAddressListArrayOutput)
-}
-
-// If set to true (default value), an IP address must be assigned to the VM NIC - either the one explicitly specified by the user or allocated automatically by the IPAM service by not specifying the IP address. If false, then no IP assignment is required for this VM NIC.
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput) ShouldAssignIp() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config) *bool { return v.ShouldAssignIp }).(pulumi.BoolPtrOutput)
-}
-
-type OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config)(nil)).Elem()
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput() OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput) ToOvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutputWithContext(ctx context.Context) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput {
-	return o
-}
-
-func (o OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput) Index(i pulumi.IntInput) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config {
-		return vs[0].([]OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4Config)[vs[1].(int)]
-	}).(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneInfoBpgConfigVmPropertyInput)(nil)).Elem(), NdbCloneInfoBpgConfigVmPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneInfoBpgConfigVmPropertyArrayInput)(nil)).Elem(), NdbCloneInfoBpgConfigVmPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigInput)(nil)).Elem(), NdbCloneLcmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigArrayInput)(nil)).Elem(), NdbCloneLcmConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigArrayInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLinkedDatabaseInput)(nil)).Elem(), NdbCloneLinkedDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLinkedDatabaseArrayInput)(nil)).Elem(), NdbCloneLinkedDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLinkedDatabaseInfoInput)(nil)).Elem(), NdbCloneLinkedDatabaseInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLinkedDatabaseInfoArrayInput)(nil)).Elem(), NdbCloneLinkedDatabaseInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneNodeInput)(nil)).Elem(), NdbCloneNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneNodeArrayInput)(nil)).Elem(), NdbCloneNodeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneNodePropertyInput)(nil)).Elem(), NdbCloneNodePropertyArgs{})
@@ -65161,20 +64868,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReferencePtrInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReferenceInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReferenceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReferencePtrInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoSriovNicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicPtrInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoSriovNicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrInput)(nil)).Elem(), OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoInput)(nil)).Elem(), OvaV2VmConfigNicNicNetworkInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoPtrInput)(nil)).Elem(), OvaV2VmConfigNicNicNetworkInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoInput)(nil)).Elem(), OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrInput)(nil)).Elem(), OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigInput)(nil)).Elem(), OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayInput)(nil)).Elem(), OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArray{})
+	pulumi.RegisterOutputType(NdbCloneInfoBpgConfigVmPropertyOutput{})
+	pulumi.RegisterOutputType(NdbCloneInfoBpgConfigVmPropertyArrayOutput{})
+	pulumi.RegisterOutputType(NdbCloneLcmConfigOutput{})
+	pulumi.RegisterOutputType(NdbCloneLcmConfigArrayOutput{})
+	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigOutput{})
+	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigArrayOutput{})
+	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput{})
+	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput{})
+	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput{})
+	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput{})
+	pulumi.RegisterOutputType(NdbCloneLinkedDatabaseOutput{})
+	pulumi.RegisterOutputType(NdbCloneLinkedDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(NdbCloneLinkedDatabaseInfoOutput{})
+	pulumi.RegisterOutputType(NdbCloneLinkedDatabaseInfoArrayOutput{})
 	pulumi.RegisterOutputType(NdbCloneNodeOutput{})
 	pulumi.RegisterOutputType(NdbCloneNodeArrayOutput{})
 	pulumi.RegisterOutputType(NdbCloneNodePropertyOutput{})
@@ -66161,18 +65868,4 @@ func init() {
 	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoDpOffloadNicDpOffloadProfileReferencePtrOutput{})
 	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReferenceOutput{})
 	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoDpOffloadNicHostPcieDeviceReferencePtrOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoSriovNicOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoSriovNicPtrOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferenceOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoSriovNicHostPcieDeviceReferencePtrOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferenceOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoSriovNicSriovProfileReferencePtrOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicBackingInfoVirtualEthernetNicPtrOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicNetworkInfoOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicNetworkInfoPtrOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoPtrOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigOutput{})
-	pulumi.RegisterOutputType(OvaV2VmConfigNicNicNetworkInfoDpOffloadNicNetworkInfoIpv4ConfigArrayOutput{})
 }

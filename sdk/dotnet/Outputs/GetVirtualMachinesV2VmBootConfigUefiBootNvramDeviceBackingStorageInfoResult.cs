@@ -18,6 +18,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string DiskExtId;
         public readonly int DiskSizeBytes;
         public readonly bool IsMigrationInProgress;
+        public readonly string SerialId;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult> StorageConfigs;
         public readonly ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult> StorageContainers;
 
@@ -31,6 +32,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool isMigrationInProgress,
 
+            string serialId,
+
             ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult> storageConfigs,
 
             ImmutableArray<Outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult> storageContainers)
@@ -39,6 +42,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
             IsMigrationInProgress = isMigrationInProgress;
+            SerialId = serialId;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

@@ -1756,7 +1756,7 @@ class VirtualMachine(pulumi.CustomResource):
             __props__.__dict__["machine_type"] = machine_type
             __props__.__dict__["memory_size_mib"] = memory_size_mib
             __props__.__dict__["name"] = name
-            __props__.__dict__["ngt_credentials"] = ngt_credentials
+            __props__.__dict__["ngt_credentials"] = None if ngt_credentials is None else pulumi.Output.secret(ngt_credentials)
             __props__.__dict__["ngt_enabled_capability_lists"] = ngt_enabled_capability_lists
             __props__.__dict__["nic_lists"] = nic_lists
             __props__.__dict__["num_sockets"] = num_sockets
@@ -1779,6 +1779,8 @@ class VirtualMachine(pulumi.CustomResource):
             __props__.__dict__["metadata"] = None
             __props__.__dict__["nic_list_statuses"] = None
             __props__.__dict__["state"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["ngtCredentials"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(VirtualMachine, __self__).__init__(
             'nutanix:index/virtualMachine:VirtualMachine',
             resource_name,

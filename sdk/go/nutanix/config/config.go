@@ -27,6 +27,13 @@ func GetCustomHeaders(ctx *pulumi.Context) string {
 	return config.Get(ctx, "nutanix:customHeaders")
 }
 
+// Domain name for the Prism Central instance. Used to construct the
+// PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+// Tenant Admin scenarios.
+func GetDomainName(ctx *pulumi.Context) string {
+	return config.Get(ctx, "nutanix:domainName")
+}
+
 // URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 // note, this is never the data services VIP, and should not be an
 // individual CVM address, as this would cause calls to fail during
@@ -61,6 +68,13 @@ func GetNdbUsername(ctx *pulumi.Context) string {
 	return config.Get(ctx, "nutanix:ndbUsername")
 }
 
+// Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+// Service Provider Admin scenarios. This is the base domain for NC services
+// (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+func GetNutanixCentralEndpoint(ctx *pulumi.Context) string {
+	return config.Get(ctx, "nutanix:nutanixCentralEndpoint")
+}
+
 // Password for provided user name.
 func GetPassword(ctx *pulumi.Context) string {
 	return config.Get(ctx, "nutanix:password")
@@ -79,13 +93,25 @@ func GetSessionAuth(ctx *pulumi.Context) bool {
 	return config.GetBool(ctx, "nutanix:sessionAuth")
 }
 
+// Tenant name for Tenant Admin scenarios. Required when operating as
+// a Tenant Admin to manage tenant-specific resources.
+func GetTenantName(ctx *pulumi.Context) string {
+	return config.Get(ctx, "nutanix:tenantName")
+}
+
+// When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+// instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+func GetUseNcIam(ctx *pulumi.Context) bool {
+	return config.GetBool(ctx, "nutanix:useNcIam")
+}
+
 // User name for Nutanix Prism. Could be
 // local cluster auth (e.g. 'admin') or directory auth.
 func GetUsername(ctx *pulumi.Context) string {
 	return config.Get(ctx, "nutanix:username")
 }
 
-// Set if you know that the creation o update of a resource may take long time (minutes)
+// Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
 func GetWaitTimeout(ctx *pulumi.Context) int {
 	return config.GetInt(ctx, "nutanix:waitTimeout")
 }

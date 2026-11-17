@@ -385,7 +385,7 @@ export class VirtualMachine extends pulumi.CustomResource {
             resourceInputs["machineType"] = args?.machineType;
             resourceInputs["memorySizeMib"] = args?.memorySizeMib;
             resourceInputs["name"] = args?.name;
-            resourceInputs["ngtCredentials"] = args?.ngtCredentials;
+            resourceInputs["ngtCredentials"] = args?.ngtCredentials ? pulumi.secret(args.ngtCredentials) : undefined;
             resourceInputs["ngtEnabledCapabilityLists"] = args?.ngtEnabledCapabilityLists;
             resourceInputs["nicLists"] = args?.nicLists;
             resourceInputs["numSockets"] = args?.numSockets;
@@ -410,6 +410,8 @@ export class VirtualMachine extends pulumi.CustomResource {
             resourceInputs["state"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["ngtCredentials"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(VirtualMachine.__pulumiType, name, resourceInputs, opts);
     }
 }

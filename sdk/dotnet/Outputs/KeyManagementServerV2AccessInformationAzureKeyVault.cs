@@ -19,7 +19,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string ClientId;
         /// <summary>
-        /// - (Required) Client secret for the Azure Key Vault.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) Client secret for the Azure Key Vault.
         /// </summary>
         public readonly string ClientSecret;
         /// <summary>

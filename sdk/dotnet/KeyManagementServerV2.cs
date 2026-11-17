@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Creates a new key management server with the specified access credentials.
     /// 
+    /// &gt; **WriteOnly credentials:** &lt;span pulumi-lang-nodejs="`clientSecret`" pulumi-lang-dotnet="`ClientSecret`" pulumi-lang-go="`clientSecret`" pulumi-lang-python="`client_secret`" pulumi-lang-yaml="`clientSecret`" pulumi-lang-java="`clientSecret`" pulumi-lang-hcl="`client_secret`"&gt;`clientSecret`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`certPem`" pulumi-lang-dotnet="`CertPem`" pulumi-lang-go="`certPem`" pulumi-lang-python="`cert_pem`" pulumi-lang-yaml="`certPem`" pulumi-lang-java="`certPem`" pulumi-lang-hcl="`cert_pem`"&gt;`certPem`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`privateKey`" pulumi-lang-dotnet="`PrivateKey`" pulumi-lang-go="`privateKey`" pulumi-lang-python="`private_key`" pulumi-lang-yaml="`privateKey`" pulumi-lang-java="`privateKey`" pulumi-lang-hcl="`private_key`"&gt;`privateKey`&lt;/span&gt;, and &lt;span pulumi-lang-nodejs="`caPem`" pulumi-lang-dotnet="`CaPem`" pulumi-lang-go="`caPem`" pulumi-lang-python="`ca_pem`" pulumi-lang-yaml="`caPem`" pulumi-lang-java="`caPem`" pulumi-lang-hcl="`ca_pem`"&gt;`caPem`&lt;/span&gt; are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+    /// 
     /// ## Example
     /// 
     /// &lt;!--Start PulumiCodeChooser --&gt;

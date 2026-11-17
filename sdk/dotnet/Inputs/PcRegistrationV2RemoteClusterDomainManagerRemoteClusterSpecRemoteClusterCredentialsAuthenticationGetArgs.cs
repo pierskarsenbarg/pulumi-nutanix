@@ -13,13 +13,24 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCredentialsAuthenticationGetArgs : global::Pulumi.ResourceArgs
     {
+        [Input("password", required: true)]
+        private Input<string>? _password;
+
         /// <summary>
-        /// -(Required)  Password required for the basic auth scheme.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly)  Password required for the basic auth scheme.
         /// 
         /// See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.4#tag/DomainManager/operation/register).
         /// </summary>
-        [Input("password", required: true)]
-        public Input<string> Password { get; set; } = null!;
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.

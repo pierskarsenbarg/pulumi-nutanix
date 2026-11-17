@@ -146,6 +146,8 @@ class PcDeployV2(pulumi.CustomResource):
 
         Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
 
+        > **WriteOnly credentials:** `config.credentials.password` is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+
         ## Example Usage
 
         <!--Start PulumiCodeChooser -->
@@ -233,6 +235,8 @@ class PcDeployV2(pulumi.CustomResource):
         > - We need to increase the timeout for deploying the PC resource because the deployment takes longer than the default timeout allows for the operation to complete.
 
         Deploys a Prism Central using the provided details. Prism Central Size, Network Config are mandatory fields to deploy Prism Central. The response from this endpoint contains the URL in the task object location header that can be used to track the request status.
+
+        > **WriteOnly credentials:** `config.credentials.password` is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
         ## Example Usage
 

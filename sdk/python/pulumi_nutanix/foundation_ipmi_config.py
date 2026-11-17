@@ -32,7 +32,8 @@ class FoundationIpmiConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]] blocks: - (Required) List of blocks.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required) IPMI gateway.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required) IPMI netmask.
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required) IPMI password.
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) IPMI password.
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required) IPMI username.
         """
         pulumi.set(__self__, "blocks", blocks)
@@ -81,7 +82,8 @@ class FoundationIpmiConfigArgs:
     @pulumi.getter(name="ipmiPassword")
     def ipmi_password(self) -> pulumi.Input[_builtins.str]:
         """
-        - (Required) IPMI password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 
@@ -116,7 +118,8 @@ class _FoundationIpmiConfigState:
         :param pulumi.Input[Sequence[pulumi.Input['FoundationIpmiConfigBlockArgs']]] blocks: - (Required) List of blocks.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required) IPMI gateway.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required) IPMI netmask.
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required) IPMI password.
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) IPMI password.
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required) IPMI username.
         """
         if blocks is not None:
@@ -170,7 +173,8 @@ class _FoundationIpmiConfigState:
     @pulumi.getter(name="ipmiPassword")
     def ipmi_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required) IPMI password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 
@@ -205,6 +209,8 @@ class FoundationIpmiConfig(pulumi.CustomResource):
                  __props__=None):
         """
         Configures IPMI IP address on BMC of nodes.
+
+        > **WriteOnly credentials:** <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
         ## Example Usage
 
@@ -253,7 +259,8 @@ class FoundationIpmiConfig(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict', 'outputs.FoundationIpmiConfigBlock']]]] blocks: - (Required) List of blocks.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required) IPMI gateway.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required) IPMI netmask.
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required) IPMI password.
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) IPMI password.
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required) IPMI username.
         """
         ...
@@ -264,6 +271,8 @@ class FoundationIpmiConfig(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Configures IPMI IP address on BMC of nodes.
+
+        > **WriteOnly credentials:** <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
         ## Example Usage
 
@@ -347,10 +356,12 @@ class FoundationIpmiConfig(pulumi.CustomResource):
             __props__.__dict__["ipmi_netmask"] = ipmi_netmask
             if ipmi_password is None and not opts.urn:
                 raise TypeError("Missing required property 'ipmi_password'")
-            __props__.__dict__["ipmi_password"] = ipmi_password
+            __props__.__dict__["ipmi_password"] = None if ipmi_password is None else pulumi.Output.secret(ipmi_password)
             if ipmi_user is None and not opts.urn:
                 raise TypeError("Missing required property 'ipmi_user'")
             __props__.__dict__["ipmi_user"] = ipmi_user
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["ipmiPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(FoundationIpmiConfig, __self__).__init__(
             'nutanix:index/foundationIpmiConfig:FoundationIpmiConfig',
             resource_name,
@@ -376,7 +387,8 @@ class FoundationIpmiConfig(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['FoundationIpmiConfigBlockArgs', 'FoundationIpmiConfigBlockArgsDict', 'outputs.FoundationIpmiConfigBlock']]]] blocks: - (Required) List of blocks.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required) IPMI gateway.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required) IPMI netmask.
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required) IPMI password.
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) IPMI password.
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required) IPMI username.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -434,7 +446,8 @@ class FoundationIpmiConfig(pulumi.CustomResource):
     @pulumi.getter(name="ipmiPassword")
     def ipmi_password(self) -> pulumi.Output[_builtins.str]:
         """
-        - (Required) IPMI password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 

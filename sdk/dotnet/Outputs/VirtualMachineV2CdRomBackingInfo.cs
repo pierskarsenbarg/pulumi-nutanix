@@ -25,6 +25,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly int? DiskSizeBytes;
         public readonly bool? IsMigrationInProgress;
         /// <summary>
+        /// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_&lt;serial_id&gt;` on Linux, so it can be used to map a Terraform disk to a guest device.
+        /// </summary>
+        public readonly string? SerialId;
+        /// <summary>
         /// Storage configuration for VM disks
         /// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
         /// </summary>
@@ -44,6 +48,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool? isMigrationInProgress,
 
+            string? serialId,
+
             ImmutableArray<Outputs.VirtualMachineV2CdRomBackingInfoStorageConfig> storageConfigs,
 
             ImmutableArray<Outputs.VirtualMachineV2CdRomBackingInfoStorageContainer> storageContainers)
@@ -52,6 +58,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
             IsMigrationInProgress = isMigrationInProgress;
+            SerialId = serialId;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

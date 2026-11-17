@@ -25,6 +25,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &AccessControlPolicy{}
 	case "nutanix:index/adGroupCategoryMappingV2:AdGroupCategoryMappingV2":
 		r = &AdGroupCategoryMappingV2{}
+	case "nutanix:index/addDomainV2:AddDomainV2":
+		r = &AddDomainV2{}
 	case "nutanix:index/addressGroup:AddressGroup":
 		r = &AddressGroup{}
 	case "nutanix:index/addressGroupsV2:AddressGroupsV2":
@@ -99,6 +101,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &LcmPrechecksV2{}
 	case "nutanix:index/lcmUpgradeV2:LcmUpgradeV2":
 		r = &LcmUpgradeV2{}
+	case "nutanix:index/localDomainV2:LocalDomainV2":
+		r = &LocalDomainV2{}
 	case "nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver":
 		r = &NdbAuthorizeDbserver{}
 	case "nutanix:index/ndbClone:NdbClone":
@@ -207,6 +211,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &RecoveryPointRestoreV2{}
 	case "nutanix:index/recoveryPointsV2:RecoveryPointsV2":
 		r = &RecoveryPointsV2{}
+	case "nutanix:index/registeredDomainV2:RegisteredDomainV2":
+		r = &RegisteredDomainV2{}
 	case "nutanix:index/resourceGroupV2:ResourceGroupV2":
 		r = &ResourceGroupV2{}
 	case "nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2":
@@ -259,6 +265,12 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TemplatePlacementPolicyV2{}
 	case "nutanix:index/templateV2:TemplateV2":
 		r = &TemplateV2{}
+	case "nutanix:index/tenantDomainAllocationV2:TenantDomainAllocationV2":
+		r = &TenantDomainAllocationV2{}
+	case "nutanix:index/tenantMembershipV2:TenantMembershipV2":
+		r = &TenantMembershipV2{}
+	case "nutanix:index/tenantV2:TenantV2":
+		r = &TenantV2{}
 	case "nutanix:index/user:User":
 		r = &User{}
 	case "nutanix:index/userGroups:UserGroups":
@@ -352,6 +364,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/adGroupCategoryMappingV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/addDomainV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -537,6 +554,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/lcmUpgradeV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/localDomainV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -811,6 +833,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"nutanix",
+		"index/registeredDomainV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
 		"index/resourceGroupV2",
 		&module{version},
 	)
@@ -937,6 +964,21 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"nutanix",
 		"index/templateV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/tenantDomainAllocationV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/tenantMembershipV2",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"nutanix",
+		"index/tenantV2",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

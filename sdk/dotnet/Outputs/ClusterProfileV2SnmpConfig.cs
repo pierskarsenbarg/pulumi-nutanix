@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ClusterProfileV2SnmpConfig
     {
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         public readonly string? ExtId;
         /// <summary>
         /// SNMP status. Whether SNMP is enabled.

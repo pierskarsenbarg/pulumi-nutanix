@@ -58,6 +58,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _customHeaders.Set(value);
         }
 
+        private static readonly __Value<string?> _domainName = new __Value<string?>(() => __config.Get("domainName"));
+        /// <summary>
+        /// Domain name for the Prism Central instance. Used to construct the
+        /// PC endpoint URL as &lt;domain_name&gt;.domains.&lt;nutanix_central_endpoint&gt; for NC Admin and
+        /// Tenant Admin scenarios.
+        /// </summary>
+        public static string? DomainName
+        {
+            get => _domainName.Get();
+            set => _domainName.Set(value);
+        }
+
         private static readonly __Value<string?> _endpoint = new __Value<string?>(() => __config.Get("endpoint"));
         /// <summary>
         /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
@@ -125,6 +137,18 @@ namespace PiersKarsenbarg.Nutanix
             set => _ndbUsername.Set(value);
         }
 
+        private static readonly __Value<string?> _nutanixCentralEndpoint = new __Value<string?>(() => __config.Get("nutanixCentralEndpoint"));
+        /// <summary>
+        /// Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+        /// Service Provider Admin scenarios. This is the base domain for NC services
+        /// (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+        /// </summary>
+        public static string? NutanixCentralEndpoint
+        {
+            get => _nutanixCentralEndpoint.Get();
+            set => _nutanixCentralEndpoint.Set(value);
+        }
+
         private static readonly __Value<string?> _password = new __Value<string?>(() => __config.Get("password"));
         /// <summary>
         /// Password for provided user name.
@@ -162,6 +186,28 @@ namespace PiersKarsenbarg.Nutanix
             set => _sessionAuth.Set(value);
         }
 
+        private static readonly __Value<string?> _tenantName = new __Value<string?>(() => __config.Get("tenantName"));
+        /// <summary>
+        /// Tenant name for Tenant Admin scenarios. Required when operating as
+        /// a Tenant Admin to manage tenant-specific resources.
+        /// </summary>
+        public static string? TenantName
+        {
+            get => _tenantName.Get();
+            set => _tenantName.Set(value);
+        }
+
+        private static readonly __Value<bool?> _useNcIam = new __Value<bool?>(() => __config.GetBoolean("useNcIam"));
+        /// <summary>
+        /// When true, IAM-related calls use the NC IAM endpoint (iam.services.&lt;nutanix_central_endpoint&gt;)
+        /// instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+        /// </summary>
+        public static bool? UseNcIam
+        {
+            get => _useNcIam.Get();
+            set => _useNcIam.Set(value);
+        }
+
         private static readonly __Value<string?> _username = new __Value<string?>(() => __config.Get("username"));
         /// <summary>
         /// User name for Nutanix Prism. Could be
@@ -175,7 +221,7 @@ namespace PiersKarsenbarg.Nutanix
 
         private static readonly __Value<int?> _waitTimeout = new __Value<int?>(() => __config.GetInt32("waitTimeout"));
         /// <summary>
-        /// Set if you know that the creation o update of a resource may take long time (minutes)
+        /// Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
         /// </summary>
         public static int? WaitTimeout
         {

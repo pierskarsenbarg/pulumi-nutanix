@@ -7,6 +7,8 @@ import * as utilities from "./utilities";
 /**
  * Update the SSL certificate for a specific cluster. To update the SSL certificate for a specific cluster, you must provide a valid certificate payload in `Base64` format. You can either import a new SSL certificate or replace an existing one by supplying all necessary fields, including the Base64-encoded certificate and private key. Alternatively, you can regenerate a self-signed certificate by specifying the privateKeyAlgorithm, noting that only the RSA_2048 algorithm is supported for SSL certificate regeneration. This process helps maintain the security and integrity of your cluster's communications by allowing you to update or regenerate the SSL certificate as needed.
  *
+ * > **WriteOnly credentials:** <span pulumi-lang-nodejs="`passphrase`" pulumi-lang-dotnet="`Passphrase`" pulumi-lang-go="`passphrase`" pulumi-lang-python="`passphrase`" pulumi-lang-yaml="`passphrase`" pulumi-lang-java="`passphrase`" pulumi-lang-hcl="`passphrase`">`passphrase`</span>, <span pulumi-lang-nodejs="`privateKey`" pulumi-lang-dotnet="`PrivateKey`" pulumi-lang-go="`privateKey`" pulumi-lang-python="`private_key`" pulumi-lang-yaml="`privateKey`" pulumi-lang-java="`privateKey`" pulumi-lang-hcl="`private_key`">`privateKey`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+ *
  * ## Example Usage
  *
  * <!--Start PulumiCodeChooser -->
@@ -84,10 +86,12 @@ export class SslCertificateV2 extends pulumi.CustomResource {
      */
     declare public readonly clusterExtId: pulumi.Output<string>;
     /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
      * — Passphrase used for SSL certificate.
      */
     declare public readonly passphrase: pulumi.Output<string | undefined>;
     /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
      * — Private Key used for SSL certificate.
      */
     declare public readonly privateKey: pulumi.Output<string | undefined>;
@@ -163,10 +167,12 @@ export interface SslCertificateV2State {
      */
     clusterExtId?: pulumi.Input<string | undefined>;
     /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
      * — Passphrase used for SSL certificate.
      */
     passphrase?: pulumi.Input<string | undefined>;
     /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
      * — Private Key used for SSL certificate.
      */
     privateKey?: pulumi.Input<string | undefined>;
@@ -205,10 +211,12 @@ export interface SslCertificateV2Args {
      */
     clusterExtId: pulumi.Input<string>;
     /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
      * — Passphrase used for SSL certificate.
      */
     passphrase?: pulumi.Input<string | undefined>;
     /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
      * — Private Key used for SSL certificate.
      */
     privateKey?: pulumi.Input<string | undefined>;

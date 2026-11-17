@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ClusterProfileV2RsyslogServerList
     {
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         public readonly string? ExtId;
         /// <summary>
         /// IP address of the RSYSLOG server.

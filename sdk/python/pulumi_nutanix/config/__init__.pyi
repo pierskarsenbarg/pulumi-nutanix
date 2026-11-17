@@ -30,6 +30,13 @@ the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
 becomes Cf-Access-Client-Id). Config values take precedence over env vars.
 """
 
+domainName: Optional[str]
+"""
+Domain name for the Prism Central instance. Used to construct the
+PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+Tenant Admin scenarios.
+"""
+
 endpoint: Optional[str]
 """
 URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
@@ -62,6 +69,13 @@ ndbPassword: Optional[str]
 
 ndbUsername: Optional[str]
 
+nutanixCentralEndpoint: Optional[str]
+"""
+Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+Service Provider Admin scenarios. This is the base domain for NC services
+(e.g., 'nconprem-10-102-176-12.ccpnx.com').
+"""
+
 password: Optional[str]
 """
 Password for provided user name.
@@ -79,6 +93,18 @@ sessionAuth: Optional[bool]
 Use session authentification instead of basic auth for each request
 """
 
+tenantName: Optional[str]
+"""
+Tenant name for Tenant Admin scenarios. Required when operating as
+a Tenant Admin to manage tenant-specific resources.
+"""
+
+useNcIam: Optional[bool]
+"""
+When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+"""
+
 username: Optional[str]
 """
 User name for Nutanix Prism. Could be
@@ -87,6 +113,6 @@ local cluster auth (e.g. 'admin') or directory auth.
 
 waitTimeout: Optional[int]
 """
-Set if you know that the creation o update of a resource may take long time (minutes)
+Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
 """
 

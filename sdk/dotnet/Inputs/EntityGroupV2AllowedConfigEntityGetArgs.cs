@@ -23,7 +23,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<string>? _fqdns;
 
         /// <summary>
-        /// List of FQDNs. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `FQDN_VALUES`.
+        /// List of FQDNs. Required when &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt; is `FQDN_VALUES`.
         /// </summary>
         public InputList<string> Fqdns
         {
@@ -59,7 +59,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private InputList<string>? _referenceExtIds;
 
         /// <summary>
-        /// List of reference external identifiers. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `EXT_ID`.
+        /// List of reference external identifiers. Required when &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt; is `EXT_ID`.
         /// </summary>
         public InputList<string> ReferenceExtIds
         {
@@ -68,7 +68,7 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         }
 
         /// <summary>
-        /// String pattern for matching entities. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `REGEX`.
+        /// String pattern for matching entities. Required when &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt; is `REGEX`.
         /// </summary>
         [Input("referenceString")]
         public Input<string>? ReferenceString { get; set; }
@@ -76,7 +76,14 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         /// <summary>
         /// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
         /// </summary>
+        [Input("selectBy")]
+        public Input<string>? SelectBy { get; set; }
+
+        /// <summary>
+        /// Deprecated alias for &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt;. Prefer &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt;; &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; will be removed in a future release.
+        /// </summary>
         [Input("selectedBy")]
+        [Obsolete(@"Use <span pulumi-lang-nodejs=""`selectBy`"" pulumi-lang-dotnet=""`SelectBy`"" pulumi-lang-go=""`selectBy`"" pulumi-lang-python=""`select_by`"" pulumi-lang-yaml=""`selectBy`"" pulumi-lang-java=""`selectBy`"" pulumi-lang-hcl=""`select_by`"">`selectBy`</span> instead. <span pulumi-lang-nodejs=""`selectedBy`"" pulumi-lang-dotnet=""`SelectedBy`"" pulumi-lang-go=""`selectedBy`"" pulumi-lang-python=""`selected_by`"" pulumi-lang-yaml=""`selectedBy`"" pulumi-lang-java=""`selectedBy`"" pulumi-lang-hcl=""`selected_by`"">`selectedBy`</span> will be removed in a future release.")]
         public Input<string>? SelectedBy { get; set; }
 
         /// <summary>

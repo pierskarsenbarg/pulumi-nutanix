@@ -58,7 +58,16 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string>? MiddleInitial { get; set; }
 
         [Input("password")]
-        public Input<string>? Password { get; set; }
+        private Input<string>? _password;
+        public Input<string>? Password
+        {
+            get => _password;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _password = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("region")]
         public Input<string>? Region { get; set; }

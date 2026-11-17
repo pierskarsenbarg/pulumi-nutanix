@@ -193,6 +193,11 @@ export interface AdGroupCategoryMappingV2Link {
     rel?: pulumi.Input<string | undefined>;
 }
 
+export interface AddDomainV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
 export interface AddressGroupIpAddressBlockList {
     /**
      * - (Required) IP of the address block
@@ -792,9 +797,21 @@ export interface ClusterAddNodeV2RemoveNodeParamExtraParam {
 }
 
 export interface ClusterProfileV2Cluster {
-    configDrifts?: pulumi.Input<string | undefined>;
+    /**
+     * - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+     */
+    configDrifts?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * - Cluster UUID.
+     */
     extId?: pulumi.Input<string | undefined>;
+    /**
+     * - Whether the cluster complies with the profile.
+     */
     isCompliant?: pulumi.Input<boolean | undefined>;
+    /**
+     * - Last synchronization time.
+     */
     lastSyncedTime?: pulumi.Input<string | undefined>;
 }
 
@@ -1049,6 +1066,9 @@ export interface ClusterProfileV2ResilientCapacityWarningThresholdConfig {
 }
 
 export interface ClusterProfileV2RsyslogServerList {
+    /**
+     * - Cluster UUID.
+     */
     extId?: pulumi.Input<string | undefined>;
     /**
      * IP address of the RSYSLOG server.
@@ -1253,6 +1273,9 @@ export interface ClusterProfileV2SmtpServerServerIpAddressIpv6 {
 }
 
 export interface ClusterProfileV2SnmpConfig {
+    /**
+     * - Cluster UUID.
+     */
     extId?: pulumi.Input<string | undefined>;
     /**
      * SNMP status. Whether SNMP is enabled.
@@ -1310,6 +1333,9 @@ export interface ClusterProfileV2SnmpConfigTrap {
      * SNMP engine ID (hexadecimal string, e.g. 0x12345678).
      */
     engineId?: pulumi.Input<string | undefined>;
+    /**
+     * - Cluster UUID.
+     */
     extId?: pulumi.Input<string | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigTrapLink>[] | undefined>;
     /**
@@ -1407,6 +1433,9 @@ export interface ClusterProfileV2SnmpConfigUser {
      * | SHA512    | SHA-512 SNMP authentication  |
      */
     authType: pulumi.Input<string>;
+    /**
+     * - Cluster UUID.
+     */
     extId?: pulumi.Input<string | undefined>;
     links?: pulumi.Input<pulumi.Input<inputs.ClusterProfileV2SnmpConfigUserLink>[] | undefined>;
     /**
@@ -3500,7 +3529,8 @@ export interface DirectoryServicesV2OpenLdapConfigurationUserGroupConfiguration 
 
 export interface DirectoryServicesV2ServiceAccount {
     /**
-     * -(Required) Password to connect to the Directory Service.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Password to connect to the Directory Service.
      */
     password: pulumi.Input<string>;
     /**
@@ -3522,7 +3552,7 @@ export interface EntityGroupV2AllowedConfigEntity {
      */
     addresses?: pulumi.Input<inputs.EntityGroupV2AllowedConfigEntityAddresses | undefined>;
     /**
-     * List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+     * List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
      */
     fqdns?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
@@ -3538,15 +3568,21 @@ export interface EntityGroupV2AllowedConfigEntity {
      */
     matchCriteria?: pulumi.Input<string | undefined>;
     /**
-     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
      */
     referenceExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+     * String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
      */
     referenceString?: pulumi.Input<string | undefined>;
     /**
      * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+     */
+    selectBy?: pulumi.Input<string | undefined>;
+    /**
+     * Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+     *
+     * @deprecated Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
      */
     selectedBy?: pulumi.Input<string | undefined>;
     /**
@@ -3602,11 +3638,17 @@ export interface EntityGroupV2ExceptConfigEntity {
      */
     ipRanges?: pulumi.Input<inputs.EntityGroupV2ExceptConfigEntityIpRanges | undefined>;
     /**
-     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
      */
     referenceExtIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+     */
+    selectBy?: pulumi.Input<string | undefined>;
+    /**
+     * Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+     *
+     * @deprecated Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
      */
     selectedBy?: pulumi.Input<string | undefined>;
     /**
@@ -5125,11 +5167,12 @@ export interface FoundationImageNodesBlockNode {
      */
     ipmiNetmask?: pulumi.Input<string | undefined>;
     /**
-     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
      */
     ipmiPassword?: pulumi.Input<string | undefined>;
     /**
-     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
      */
     ipmiUser?: pulumi.Input<string | undefined>;
     /**
@@ -5297,7 +5340,7 @@ export interface FoundationImageNodesFcSettings {
     /**
      * - Foundation Central metadata which will be transferred to the newly imaged node.
      * * `fc_metadata.fc_ip` :- IP address of foundation central.
-     * * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+     * * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
      */
     fcMetadata: pulumi.Input<inputs.FoundationImageNodesFcSettingsFcMetadata>;
     /**
@@ -5307,6 +5350,9 @@ export interface FoundationImageNodesFcSettings {
 }
 
 export interface FoundationImageNodesFcSettingsFcMetadata {
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     */
     apiKey: pulumi.Input<string>;
     fcIp: pulumi.Input<string>;
 }
@@ -7228,7 +7274,8 @@ export interface KeyManagementServerV2AccessInformationAzureKeyVault {
      */
     clientId: pulumi.Input<string>;
     /**
-     * - (Required) Client secret for the Azure Key Vault.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) Client secret for the Azure Key Vault.
      */
     clientSecret: pulumi.Input<string>;
     /**
@@ -7256,11 +7303,13 @@ export interface KeyManagementServerV2AccessInformationKmipKeyVault {
      */
     caName: pulumi.Input<string>;
     /**
-     * - (Required) CA PEM.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) CA PEM.
      */
     caPem: pulumi.Input<string>;
     /**
-     * - (Required) Cert PEM.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) Cert PEM.
      */
     certPem: pulumi.Input<string>;
     /**
@@ -7268,7 +7317,8 @@ export interface KeyManagementServerV2AccessInformationKmipKeyVault {
      */
     endpointUrls: pulumi.Input<pulumi.Input<inputs.KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrl>[]>;
     /**
-     * - (Required) Private key.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) Private key.
      */
     privateKey: pulumi.Input<string>;
 }
@@ -7386,6 +7436,94 @@ export interface LcmUpgradeV2ManagementServer {
      * Username to login to the management server.
      */
     username: pulumi.Input<string>;
+}
+
+export interface LocalDomainV2ConnectionStatus {
+    /**
+     * - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+     */
+    serviceStatuses?: pulumi.Input<pulumi.Input<inputs.LocalDomainV2ConnectionStatusServiceStatus>[] | undefined>;
+    /**
+     * - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+     */
+    status?: pulumi.Input<string | undefined>;
+}
+
+export interface LocalDomainV2ConnectionStatusServiceStatus {
+    /**
+     * - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+     */
+    serviceName?: pulumi.Input<string | undefined>;
+    /**
+     * - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+     */
+    status?: pulumi.Input<string | undefined>;
+}
+
+export interface LocalDomainV2Credentials {
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+     */
+    apiKey: pulumi.Input<string>;
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+     */
+    keyId: pulumi.Input<string>;
+}
+
+export interface LocalDomainV2Location {
+    /**
+     * - The location coordinates, that is latitude and longitude. See Coordinates below.
+     */
+    coordinates?: pulumi.Input<pulumi.Input<inputs.LocalDomainV2LocationCoordinate>[] | undefined>;
+    /**
+     * - Location Country.
+     */
+    country?: pulumi.Input<string | undefined>;
+    /**
+     * - A globally unique identifier of the location.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * - Location name.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * - Location state.
+     */
+    state?: pulumi.Input<string | undefined>;
+}
+
+export interface LocalDomainV2LocationCoordinate {
+    /**
+     * - The latitude part of the location.
+     */
+    latitude?: pulumi.Input<number | undefined>;
+    /**
+     * - The longitude part of the location.
+     */
+    longitude?: pulumi.Input<number | undefined>;
+}
+
+export interface LocalDomainV2RegistrationStatus {
+    /**
+     * - Indicates remaining days to domain credential expiry, 0 means expired.
+     */
+    daysToExpiry?: pulumi.Input<number | undefined>;
+    /**
+     * - The stage for the local domain's register/unregister operation.
+     */
+    errorStage?: pulumi.Input<string | undefined>;
+    /**
+     * - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+     */
+    identityProviderExtId?: pulumi.Input<string | undefined>;
+    /**
+     * - Location state.
+     */
+    state?: pulumi.Input<string | undefined>;
 }
 
 export interface NdbCloneActionargument {
@@ -13304,6 +13442,14 @@ export interface OvaV2VmConfig {
      * -(Optional) Indicates how the vTPM for the VM should be configured.
      */
     vtpmConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigVtpmConfig>[] | undefined>;
+    /**
+     * When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+     */
+    waitForIpRoutable?: pulumi.Input<boolean | undefined>;
+    /**
+     * Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+     */
+    waitForIpTimeout?: pulumi.Input<number | undefined>;
 }
 
 export interface OvaV2VmConfigApcConfig {
@@ -13444,6 +13590,7 @@ export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo {
     diskExtId?: pulumi.Input<string | undefined>;
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig>[] | undefined>;
     storageContainers?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer>[] | undefined>;
 }
@@ -13538,6 +13685,7 @@ export interface OvaV2VmConfigCdRomBackingInfo {
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * Storage configuration for VM disks
      * - `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -13650,6 +13798,7 @@ export interface OvaV2VmConfigDiskBackingInfoVmDisk {
     diskExtId?: pulumi.Input<string | undefined>;
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskStorageConfig>[] | undefined>;
     storageContainers?: pulumi.Input<pulumi.Input<inputs.OvaV2VmConfigDiskBackingInfoVmDiskStorageContainer>[] | undefined>;
 }
@@ -14546,6 +14695,7 @@ export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDisk {
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * Storage configuration options.
      */
@@ -15580,11 +15730,13 @@ export interface PcBackupTargetV2LocationObjectStoreLocationProviderConfig {
 
 export interface PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentials {
     /**
-     * -(Required) Access key ID for the object store provided for backup target.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Access key ID for the object store provided for backup target.
      */
     accessKeyId: pulumi.Input<string>;
     /**
-     * -(Required) Secret access key for the object store provided for backup target.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Secret access key for the object store provided for backup target.
      */
     secretAccessKey: pulumi.Input<string>;
 }
@@ -15722,7 +15874,8 @@ export interface PcDeployV2ConfigBuildInfo {
 
 export interface PcDeployV2ConfigCredential {
     /**
-     * -(Required) Password required for the basic auth scheme.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Password required for the basic auth scheme.
      */
     password: pulumi.Input<string>;
     /**
@@ -16330,7 +16483,7 @@ export interface PcRegistrationV2ConfigBuildInfo {
 
 export interface PcRegistrationV2ConfigCredential {
     /**
-     * -(Required)  Password required for the basic auth scheme.
+     * -(Required, WriteOnly)  Password required for the basic auth scheme.
      *
      * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
@@ -16867,7 +17020,8 @@ export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterC
 
 export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsAuthentication {
     /**
-     * -(Required)  Password required for the basic auth scheme.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly)  Password required for the basic auth scheme.
      *
      * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
@@ -16959,7 +17113,8 @@ export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemo
 
 export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCredentialsAuthentication {
     /**
-     * -(Required)  Password required for the basic auth scheme.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly)  Password required for the basic auth scheme.
      *
      * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
@@ -17036,11 +17191,13 @@ export interface PcRestoreSourceV2LocationObjectStoreLocationProviderConfig {
 
 export interface PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentials {
     /**
-     * -(Required) Access key ID for the object store provided for backup target.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Access key ID for the object store provided for backup target.
      */
     accessKeyId: pulumi.Input<string>;
     /**
-     * -(Required) Secret access key for the object store provided for backup target.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Secret access key for the object store provided for backup target.
      */
     secretAccessKey: pulumi.Input<string>;
 }
@@ -18967,6 +19124,83 @@ export interface RecoveryPointsV2VolumeGroupRecoveryPointLink {
      * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
      */
     rel?: pulumi.Input<string | undefined>;
+}
+
+export interface RegisteredDomainV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * - A name that identifies the relationship of the link to the object.
+     */
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface RegisteredDomainV2PlatformData {
+    /**
+     * - (Optional) Number of clusters in the domain.
+     */
+    clusterCount?: pulumi.Input<number | undefined>;
+    /**
+     * - (Optional) Domain connectivity status.
+     */
+    connectivityStatus?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) PC Environment Type of the domain.
+     */
+    pcEnvType?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) PC Provider Type of the domain.
+     */
+    pcProviderType?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) PC Version of the domain.
+     */
+    pcVersion?: pulumi.Input<string | undefined>;
+}
+
+export interface RegisteredDomainV2RegistrationConfig {
+    /**
+     * - (Optional) Registration credentials. See Credentials.
+     */
+    credentials?: pulumi.Input<inputs.RegisteredDomainV2RegistrationConfigCredentials | undefined>;
+    /**
+     * - (Optional) Unique identifier for the Prism Central.
+     */
+    domainExtId?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) Prism Central should use this URL to communicate with Nutanix Central.
+     */
+    targetUrl?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) Unique identifier of the tenant.
+     */
+    tenantExtId?: pulumi.Input<string | undefined>;
+}
+
+export interface RegisteredDomainV2RegistrationConfigCredentials {
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Optional, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+     */
+    apiKey?: pulumi.Input<string | undefined>;
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Optional, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+     */
+    keyId?: pulumi.Input<string | undefined>;
+}
+
+export interface RegisteredDomainV2Tunnel {
+    /**
+     * - (Optional) Tunnel endpoint for connectivity. Prism Central make use of this endpoint to reach tunnel.
+     */
+    endpoint?: pulumi.Input<string | undefined>;
+    /**
+     * - (Optional) Tunnel provider. One of `IKAT`.
+     */
+    provider?: pulumi.Input<string | undefined>;
 }
 
 export interface ResourceGroupV2Link {
@@ -21866,6 +22100,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevic
     diskExtId?: pulumi.Input<string | undefined>;
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig>[] | undefined>;
     storageContainers?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer>[] | undefined>;
 }
@@ -21958,6 +22193,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo {
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * Storage configuration for VM disks
      * * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -22074,6 +22310,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
     diskExtId?: pulumi.Input<string | undefined>;
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig>[] | undefined>;
     storageContainers?: pulumi.Input<pulumi.Input<inputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer>[] | undefined>;
 }
@@ -22801,6 +23038,233 @@ export interface TemplateV2UpdatedByAdditionalAttributeValueMapOfString {
     map?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }
 
+export interface TenantDomainAllocationV2ExternalNetworkConfig {
+    /**
+     * The NAT or no-NAT external network connection configuration.
+     */
+    config?: pulumi.Input<inputs.TenantDomainAllocationV2ExternalNetworkConfigConfig | undefined>;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * The state details of the domain allocation.
+     */
+    stateInfos?: pulumi.Input<pulumi.Input<inputs.TenantDomainAllocationV2ExternalNetworkConfigStateInfo>[] | undefined>;
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantDomainAllocationV2ExternalNetworkConfigConfig {
+    /**
+     * NAT configuration.
+     */
+    nat?: pulumi.Input<inputs.TenantDomainAllocationV2ExternalNetworkConfigConfigNat | undefined>;
+    /**
+     * No-NAT configuration.
+     */
+    noNat?: pulumi.Input<inputs.TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat | undefined>;
+}
+
+export interface TenantDomainAllocationV2ExternalNetworkConfigConfigNat {
+    /**
+     * Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+     */
+    floatingIpCount?: pulumi.Input<number | undefined>;
+    /**
+     * The external identifier of the overlay subnet for NAT configuration.
+     */
+    overlaySubnetExtId: pulumi.Input<string>;
+    /**
+     * The external identifier of the transit VPC for NAT configuration.
+     */
+    transitVpcExtId: pulumi.Input<string>;
+}
+
+export interface TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat {
+    /**
+     * Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+     */
+    externallyRoutablePrefixes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * The external identifier of the overlay subnet for no-NAT configuration.
+     */
+    overlaySubnetExtId: pulumi.Input<string>;
+    /**
+     * The external identifier of the transit VPC for no-NAT configuration.
+     */
+    transitVpcExtId: pulumi.Input<string>;
+}
+
+export interface TenantDomainAllocationV2ExternalNetworkConfigStateInfo {
+    /**
+     * The state of the domain allocation.
+     */
+    state?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantDomainAllocationV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantDomainAllocationV2Project {
+    /**
+     * External identifier of the project.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * The name of the project.
+     */
+    name?: pulumi.Input<string | undefined>;
+    /**
+     * The resource quota of the project.
+     */
+    quota?: pulumi.Input<inputs.TenantDomainAllocationV2ProjectQuota | undefined>;
+    /**
+     * The resource group of the project.
+     */
+    resourceGroup?: pulumi.Input<inputs.TenantDomainAllocationV2ProjectResourceGroup | undefined>;
+    /**
+     * The state of the domain allocation.
+     */
+    state?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantDomainAllocationV2ProjectQuota {
+    /**
+     * The external identifier of the quota for the placement target.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * The amount of memory allocated as quota, in Giga bytes.
+     */
+    memory?: pulumi.Input<number | undefined>;
+    /**
+     * The amount of storage allocated as quota, in Giga bytes.
+     */
+    storage?: pulumi.Input<number | undefined>;
+    /**
+     * The number of vCPUs allocated as quota.
+     */
+    vcpu?: pulumi.Input<number | undefined>;
+}
+
+export interface TenantDomainAllocationV2ProjectResourceGroup {
+    /**
+     * The placement targets of the resource group.
+     * - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+     * - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+     */
+    placementTargets?: pulumi.Input<pulumi.Input<inputs.TenantDomainAllocationV2ProjectResourceGroupPlacementTarget>[] | undefined>;
+    /**
+     * The UUID of the resource group for the placement target.
+     */
+    uuid?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantDomainAllocationV2ProjectResourceGroupPlacementTarget {
+    clusterUuid?: pulumi.Input<string | undefined>;
+    storageContainerUuids?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+}
+
+export interface TenantDomainAllocationV2StateInfo {
+    /**
+     * The state of the domain allocation.
+     */
+    state?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantMembershipV2IdentityDetails {
+    /**
+     * - (Required) The external identifier of the identity provider.
+     */
+    identityProviderExtId: pulumi.Input<string>;
+    /**
+     * - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+     */
+    principalValue: pulumi.Input<string>;
+    /**
+     * - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+     */
+    type: pulumi.Input<string>;
+}
+
+export interface TenantMembershipV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href?: pulumi.Input<string | undefined>;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantMembershipV2StateInfo {
+    /**
+     * - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+     */
+    state?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantV2AdminInfo {
+    /**
+     * The email address of the user.
+     */
+    email?: pulumi.Input<string | undefined>;
+    /**
+     * The first name of the user.
+     */
+    firstName: pulumi.Input<string>;
+    /**
+     * The last name of the user.
+     */
+    lastName: pulumi.Input<string>;
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * The password of the user.
+     */
+    password: pulumi.Input<string>;
+    /**
+     * The username of the user.
+     */
+    username: pulumi.Input<string>;
+}
+
+export interface TenantV2AggregatedQuota {
+    /**
+     * The external identifier of the quota for the placement target.
+     */
+    extId?: pulumi.Input<string | undefined>;
+    /**
+     * The amount of memory allocated as quota, in bytes.
+     */
+    memory?: pulumi.Input<number | undefined>;
+    /**
+     * The amount of storage allocated as quota, in bytes.
+     */
+    storage?: pulumi.Input<number | undefined>;
+    /**
+     * The number of vCPUs allocated as quota.
+     */
+    vcpu?: pulumi.Input<number | undefined>;
+}
+
+export interface TenantV2Link {
+    href?: pulumi.Input<string | undefined>;
+    rel?: pulumi.Input<string | undefined>;
+}
+
+export interface TenantV2StateInfo {
+    /**
+     * The state of the tenant.
+     */
+    state?: pulumi.Input<string | undefined>;
+}
+
 export interface UserAccessControlPolicyReferenceList {
     /**
      * - The kind name. (Default depends on the resource you are referencing)
@@ -23407,6 +23871,10 @@ export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
     /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+     */
+    serialId?: pulumi.Input<string | undefined>;
+    /**
      * Storage configuration for VM.
      */
     storageConfigs?: pulumi.Input<pulumi.Input<inputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig>[] | undefined>;
@@ -23511,6 +23979,10 @@ export interface VirtualMachineV2CdRomBackingInfo {
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+     */
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * Storage configuration for VM disks
      * * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -23634,6 +24106,10 @@ export interface VirtualMachineV2DiskBackingInfoVmDisk {
     diskExtId?: pulumi.Input<string | undefined>;
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+     */
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * Storage configuration for VM.
      */
@@ -24547,6 +25023,7 @@ export interface VmCdromInsertEjectV2BackingInfo {
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * Storage configuration for VM disks
      * * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -24770,6 +25247,7 @@ export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Storage configuration for VM disks.
      */
@@ -24886,6 +25364,7 @@ export interface VmCloneV2CdRomBackingInfo {
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Storage configuration for VM disks.
      */
@@ -25027,6 +25506,7 @@ export interface VmCloneV2DiskBackingInfoVmDisk {
      */
     diskSizeBytes?: pulumi.Input<number | undefined>;
     isMigrationInProgress?: pulumi.Input<boolean | undefined>;
+    serialId?: pulumi.Input<string | undefined>;
     /**
      * - (Optional) Storage configuration for VM disks.
      */

@@ -29,6 +29,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
         /// </summary>
+        public readonly string SelectBy;
+        /// <summary>
+        /// Deprecated alias for &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt;.
+        /// </summary>
+        [Obsolete(@"Use <span pulumi-lang-nodejs=""`selectBy`"" pulumi-lang-dotnet=""`SelectBy`"" pulumi-lang-go=""`selectBy`"" pulumi-lang-python=""`select_by`"" pulumi-lang-yaml=""`selectBy`"" pulumi-lang-java=""`selectBy`"" pulumi-lang-hcl=""`select_by`"">`selectBy`</span> instead. <span pulumi-lang-nodejs=""`selectedBy`"" pulumi-lang-dotnet=""`SelectedBy`"" pulumi-lang-go=""`selectedBy`"" pulumi-lang-python=""`selected_by`"" pulumi-lang-yaml=""`selectedBy`"" pulumi-lang-java=""`selectedBy`"" pulumi-lang-hcl=""`selected_by`"">`selectedBy`</span> will be removed in a future release.")]
         public readonly string SelectedBy;
         /// <summary>
         /// The type of entity (e.g. VM, ADDRESS_GROUP).
@@ -43,6 +48,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             ImmutableArray<string> referenceExtIds,
 
+            string selectBy,
+
             string selectedBy,
 
             string type)
@@ -50,7 +57,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             Addresses = addresses;
             IpRanges = ipRanges;
             ReferenceExtIds = referenceExtIds;
+            SelectBy = selectBy;
+#pragma warning disable CS0618
             SelectedBy = selectedBy;
+#pragma warning restore CS0618
             Type = type;
         }
     }

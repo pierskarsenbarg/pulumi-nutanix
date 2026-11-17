@@ -14,6 +14,8 @@ import (
 
 // Update the SSL certificate for a specific cluster. To update the SSL certificate for a specific cluster, you must provide a valid certificate payload in `Base64` format. You can either import a new SSL certificate or replace an existing one by supplying all necessary fields, including the Base64-encoded certificate and private key. Alternatively, you can regenerate a self-signed certificate by specifying the privateKeyAlgorithm, noting that only the RSA_2048 algorithm is supported for SSL certificate regeneration. This process helps maintain the security and integrity of your cluster's communications by allowing you to update or regenerate the SSL certificate as needed.
 //
+// > **WriteOnly credentials:** <span pulumi-lang-nodejs="`passphrase`" pulumi-lang-dotnet="`Passphrase`" pulumi-lang-go="`passphrase`" pulumi-lang-python="`passphrase`" pulumi-lang-yaml="`passphrase`" pulumi-lang-java="`passphrase`" pulumi-lang-hcl="`passphrase`">`passphrase`</span>, <span pulumi-lang-nodejs="`privateKey`" pulumi-lang-dotnet="`PrivateKey`" pulumi-lang-go="`privateKey`" pulumi-lang-python="`private_key`" pulumi-lang-yaml="`privateKey`" pulumi-lang-java="`privateKey`" pulumi-lang-hcl="`private_key`">`privateKey`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+//
 // ## Example Usage
 //
 // <!--Start PulumiCodeChooser -->
@@ -76,8 +78,10 @@ type SslCertificateV2 struct {
 	CaChain pulumi.StringOutput `pulumi:"caChain"`
 	// — UUID of the cluster to which the host NIC belongs.
 	ClusterExtId pulumi.StringOutput `pulumi:"clusterExtId"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Passphrase used for SSL certificate.
 	Passphrase pulumi.StringPtrOutput `pulumi:"passphrase"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Private Key used for SSL certificate.
 	PrivateKey pulumi.StringPtrOutput `pulumi:"privateKey"`
 	// — Private Key Algorithm used for SSL certificate.
@@ -146,8 +150,10 @@ type sslCertificateV2State struct {
 	CaChain *string `pulumi:"caChain"`
 	// — UUID of the cluster to which the host NIC belongs.
 	ClusterExtId *string `pulumi:"clusterExtId"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Passphrase used for SSL certificate.
 	Passphrase *string `pulumi:"passphrase"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Private Key used for SSL certificate.
 	PrivateKey *string `pulumi:"privateKey"`
 	// — Private Key Algorithm used for SSL certificate.
@@ -173,8 +179,10 @@ type SslCertificateV2State struct {
 	CaChain pulumi.StringPtrInput
 	// — UUID of the cluster to which the host NIC belongs.
 	ClusterExtId pulumi.StringPtrInput
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Passphrase used for SSL certificate.
 	Passphrase pulumi.StringPtrInput
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Private Key used for SSL certificate.
 	PrivateKey pulumi.StringPtrInput
 	// — Private Key Algorithm used for SSL certificate.
@@ -210,8 +218,10 @@ type sslCertificateV2Args struct {
 	CaChain *string `pulumi:"caChain"`
 	// — UUID of the cluster to which the host NIC belongs.
 	ClusterExtId string `pulumi:"clusterExtId"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Passphrase used for SSL certificate.
 	Passphrase *string `pulumi:"passphrase"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Private Key used for SSL certificate.
 	PrivateKey *string `pulumi:"privateKey"`
 	// — Private Key Algorithm used for SSL certificate.
@@ -238,8 +248,10 @@ type SslCertificateV2Args struct {
 	CaChain pulumi.StringPtrInput
 	// — UUID of the cluster to which the host NIC belongs.
 	ClusterExtId pulumi.StringInput
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Passphrase used for SSL certificate.
 	Passphrase pulumi.StringPtrInput
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	// — Private Key used for SSL certificate.
 	PrivateKey pulumi.StringPtrInput
 	// — Private Key Algorithm used for SSL certificate.
@@ -357,11 +369,13 @@ func (o SslCertificateV2Output) ClusterExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SslCertificateV2) pulumi.StringOutput { return v.ClusterExtId }).(pulumi.StringOutput)
 }
 
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 // — Passphrase used for SSL certificate.
 func (o SslCertificateV2Output) Passphrase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SslCertificateV2) pulumi.StringPtrOutput { return v.Passphrase }).(pulumi.StringPtrOutput)
 }
 
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 // — Private Key used for SSL certificate.
 func (o SslCertificateV2Output) PrivateKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *SslCertificateV2) pulumi.StringPtrOutput { return v.PrivateKey }).(pulumi.StringPtrOutput)

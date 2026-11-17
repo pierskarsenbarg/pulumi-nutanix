@@ -521,6 +521,8 @@ class DirectoryServicesV2(pulumi.CustomResource):
 
         Provides a resource to Create a Directory Service.
 
+        > **WriteOnly credentials:** `service_account.password` is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -548,6 +550,8 @@ class DirectoryServicesV2(pulumi.CustomResource):
         > **Note:** This resource is in Beta because the underlying Nutanix SDK API is currently in Beta. The resource and its behavior may change in future releases as the SDK API evolves.
 
         Provides a resource to Create a Directory Service.
+
+        > **WriteOnly credentials:** `service_account.password` is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
 
         :param str resource_name: The name of the resource.

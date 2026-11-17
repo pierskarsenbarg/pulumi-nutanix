@@ -209,6 +209,8 @@ class FoundationCentralApiKeys(pulumi.CustomResource):
             __props__.__dict__["created_timestamp"] = None
             __props__.__dict__["current_time"] = None
             __props__.__dict__["key_uuid"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["apiKey"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(FoundationCentralApiKeys, __self__).__init__(
             'nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys',
             resource_name,

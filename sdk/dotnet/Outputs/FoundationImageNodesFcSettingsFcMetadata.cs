@@ -14,6 +14,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class FoundationImageNodesFcSettingsFcMetadata
     {
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// </summary>
         public readonly string ApiKey;
         public readonly string FcIp;
 

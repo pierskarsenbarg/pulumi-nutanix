@@ -221,6 +221,13 @@ func NewVirtualMachine(ctx *pulumi.Context,
 	if args.ClusterUuid == nil {
 		return nil, errors.New("invalid value for required argument 'ClusterUuid'")
 	}
+	if args.NgtCredentials != nil {
+		args.NgtCredentials = pulumi.ToSecret(args.NgtCredentials).(pulumi.StringMapInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"ngtCredentials",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource VirtualMachine
 	err := ctx.RegisterResource("nutanix:index/virtualMachine:VirtualMachine", name, args, &resource, opts...)

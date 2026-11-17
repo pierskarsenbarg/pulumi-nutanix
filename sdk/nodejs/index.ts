@@ -15,6 +15,11 @@ export type AdGroupCategoryMappingV2 = import("./adGroupCategoryMappingV2").AdGr
 export const AdGroupCategoryMappingV2: typeof import("./adGroupCategoryMappingV2").AdGroupCategoryMappingV2 = null as any;
 utilities.lazyLoad(exports, ["AdGroupCategoryMappingV2"], () => require("./adGroupCategoryMappingV2"));
 
+export { AddDomainV2Args, AddDomainV2State } from "./addDomainV2";
+export type AddDomainV2 = import("./addDomainV2").AddDomainV2;
+export const AddDomainV2: typeof import("./addDomainV2").AddDomainV2 = null as any;
+utilities.lazyLoad(exports, ["AddDomainV2"], () => require("./addDomainV2"));
+
 export { AddressGroupArgs, AddressGroupState } from "./addressGroup";
 export type AddressGroup = import("./addressGroup").AddressGroup;
 export const AddressGroup: typeof import("./addressGroup").AddressGroup = null as any;
@@ -280,6 +285,11 @@ export const getDirectoryServicesV2: typeof import("./getDirectoryServicesV2").g
 export const getDirectoryServicesV2Output: typeof import("./getDirectoryServicesV2").getDirectoryServicesV2Output = null as any;
 utilities.lazyLoad(exports, ["getDirectoryServicesV2","getDirectoryServicesV2Output"], () => require("./getDirectoryServicesV2"));
 
+export { GetDomainsV2Result } from "./getDomainsV2";
+export const getDomainsV2: typeof import("./getDomainsV2").getDomainsV2 = null as any;
+export const getDomainsV2Output: typeof import("./getDomainsV2").getDomainsV2Output = null as any;
+utilities.lazyLoad(exports, ["getDomainsV2","getDomainsV2Output"], () => require("./getDomainsV2"));
+
 export { GetEffectiveImageRateLimitPoliciesV2Args, GetEffectiveImageRateLimitPoliciesV2Result, GetEffectiveImageRateLimitPoliciesV2OutputArgs } from "./getEffectiveImageRateLimitPoliciesV2";
 export const getEffectiveImageRateLimitPoliciesV2: typeof import("./getEffectiveImageRateLimitPoliciesV2").getEffectiveImageRateLimitPoliciesV2 = null as any;
 export const getEffectiveImageRateLimitPoliciesV2Output: typeof import("./getEffectiveImageRateLimitPoliciesV2").getEffectiveImageRateLimitPoliciesV2Output = null as any;
@@ -489,6 +499,16 @@ export { GetLcmStatusV2Args, GetLcmStatusV2Result, GetLcmStatusV2OutputArgs } fr
 export const getLcmStatusV2: typeof import("./getLcmStatusV2").getLcmStatusV2 = null as any;
 export const getLcmStatusV2Output: typeof import("./getLcmStatusV2").getLcmStatusV2Output = null as any;
 utilities.lazyLoad(exports, ["getLcmStatusV2","getLcmStatusV2Output"], () => require("./getLcmStatusV2"));
+
+export { GetLocalDomainV2Result } from "./getLocalDomainV2";
+export const getLocalDomainV2: typeof import("./getLocalDomainV2").getLocalDomainV2 = null as any;
+export const getLocalDomainV2Output: typeof import("./getLocalDomainV2").getLocalDomainV2Output = null as any;
+utilities.lazyLoad(exports, ["getLocalDomainV2","getLocalDomainV2Output"], () => require("./getLocalDomainV2"));
+
+export { GetLocationsV2Args, GetLocationsV2Result, GetLocationsV2OutputArgs } from "./getLocationsV2";
+export const getLocationsV2: typeof import("./getLocationsV2").getLocationsV2 = null as any;
+export const getLocationsV2Output: typeof import("./getLocationsV2").getLocationsV2Output = null as any;
+utilities.lazyLoad(exports, ["getLocationsV2","getLocationsV2Output"], () => require("./getLocationsV2"));
 
 export { GetNdbCloneArgs, GetNdbCloneResult, GetNdbCloneOutputArgs } from "./getNdbClone";
 export const getNdbClone: typeof import("./getNdbClone").getNdbClone = null as any;
@@ -810,6 +830,16 @@ export const getRecoveryPointsV2: typeof import("./getRecoveryPointsV2").getReco
 export const getRecoveryPointsV2Output: typeof import("./getRecoveryPointsV2").getRecoveryPointsV2Output = null as any;
 utilities.lazyLoad(exports, ["getRecoveryPointsV2","getRecoveryPointsV2Output"], () => require("./getRecoveryPointsV2"));
 
+export { GetRegisteredDomainV2Args, GetRegisteredDomainV2Result, GetRegisteredDomainV2OutputArgs } from "./getRegisteredDomainV2";
+export const getRegisteredDomainV2: typeof import("./getRegisteredDomainV2").getRegisteredDomainV2 = null as any;
+export const getRegisteredDomainV2Output: typeof import("./getRegisteredDomainV2").getRegisteredDomainV2Output = null as any;
+utilities.lazyLoad(exports, ["getRegisteredDomainV2","getRegisteredDomainV2Output"], () => require("./getRegisteredDomainV2"));
+
+export { GetRegisteredDomainsV2Args, GetRegisteredDomainsV2Result, GetRegisteredDomainsV2OutputArgs } from "./getRegisteredDomainsV2";
+export const getRegisteredDomainsV2: typeof import("./getRegisteredDomainsV2").getRegisteredDomainsV2 = null as any;
+export const getRegisteredDomainsV2Output: typeof import("./getRegisteredDomainsV2").getRegisteredDomainsV2Output = null as any;
+utilities.lazyLoad(exports, ["getRegisteredDomainsV2","getRegisteredDomainsV2Output"], () => require("./getRegisteredDomainsV2"));
+
 export { GetResourceGroupV2Args, GetResourceGroupV2Result, GetResourceGroupV2OutputArgs } from "./getResourceGroupV2";
 export const getResourceGroupV2: typeof import("./getResourceGroupV2").getResourceGroupV2 = null as any;
 export const getResourceGroupV2Output: typeof import("./getResourceGroupV2").getResourceGroupV2Output = null as any;
@@ -1024,6 +1054,36 @@ export { GetTemplatesV2Args, GetTemplatesV2Result, GetTemplatesV2OutputArgs } fr
 export const getTemplatesV2: typeof import("./getTemplatesV2").getTemplatesV2 = null as any;
 export const getTemplatesV2Output: typeof import("./getTemplatesV2").getTemplatesV2Output = null as any;
 utilities.lazyLoad(exports, ["getTemplatesV2","getTemplatesV2Output"], () => require("./getTemplatesV2"));
+
+export { GetTenantDomainAllocationV2Args, GetTenantDomainAllocationV2Result, GetTenantDomainAllocationV2OutputArgs } from "./getTenantDomainAllocationV2";
+export const getTenantDomainAllocationV2: typeof import("./getTenantDomainAllocationV2").getTenantDomainAllocationV2 = null as any;
+export const getTenantDomainAllocationV2Output: typeof import("./getTenantDomainAllocationV2").getTenantDomainAllocationV2Output = null as any;
+utilities.lazyLoad(exports, ["getTenantDomainAllocationV2","getTenantDomainAllocationV2Output"], () => require("./getTenantDomainAllocationV2"));
+
+export { GetTenantDomainAllocationsV2Args, GetTenantDomainAllocationsV2Result, GetTenantDomainAllocationsV2OutputArgs } from "./getTenantDomainAllocationsV2";
+export const getTenantDomainAllocationsV2: typeof import("./getTenantDomainAllocationsV2").getTenantDomainAllocationsV2 = null as any;
+export const getTenantDomainAllocationsV2Output: typeof import("./getTenantDomainAllocationsV2").getTenantDomainAllocationsV2Output = null as any;
+utilities.lazyLoad(exports, ["getTenantDomainAllocationsV2","getTenantDomainAllocationsV2Output"], () => require("./getTenantDomainAllocationsV2"));
+
+export { GetTenantMembershipV2Args, GetTenantMembershipV2Result, GetTenantMembershipV2OutputArgs } from "./getTenantMembershipV2";
+export const getTenantMembershipV2: typeof import("./getTenantMembershipV2").getTenantMembershipV2 = null as any;
+export const getTenantMembershipV2Output: typeof import("./getTenantMembershipV2").getTenantMembershipV2Output = null as any;
+utilities.lazyLoad(exports, ["getTenantMembershipV2","getTenantMembershipV2Output"], () => require("./getTenantMembershipV2"));
+
+export { GetTenantMembershipsV2Args, GetTenantMembershipsV2Result, GetTenantMembershipsV2OutputArgs } from "./getTenantMembershipsV2";
+export const getTenantMembershipsV2: typeof import("./getTenantMembershipsV2").getTenantMembershipsV2 = null as any;
+export const getTenantMembershipsV2Output: typeof import("./getTenantMembershipsV2").getTenantMembershipsV2Output = null as any;
+utilities.lazyLoad(exports, ["getTenantMembershipsV2","getTenantMembershipsV2Output"], () => require("./getTenantMembershipsV2"));
+
+export { GetTenantV2Args, GetTenantV2Result, GetTenantV2OutputArgs } from "./getTenantV2";
+export const getTenantV2: typeof import("./getTenantV2").getTenantV2 = null as any;
+export const getTenantV2Output: typeof import("./getTenantV2").getTenantV2Output = null as any;
+utilities.lazyLoad(exports, ["getTenantV2","getTenantV2Output"], () => require("./getTenantV2"));
+
+export { GetTenantsV2Args, GetTenantsV2Result, GetTenantsV2OutputArgs } from "./getTenantsV2";
+export const getTenantsV2: typeof import("./getTenantsV2").getTenantsV2 = null as any;
+export const getTenantsV2Output: typeof import("./getTenantsV2").getTenantsV2Output = null as any;
+utilities.lazyLoad(exports, ["getTenantsV2","getTenantsV2Output"], () => require("./getTenantsV2"));
 
 export { GetUserArgs, GetUserResult, GetUserOutputArgs } from "./getUser";
 export const getUser: typeof import("./getUser").getUser = null as any;
@@ -1305,6 +1365,11 @@ export type LcmUpgradeV2 = import("./lcmUpgradeV2").LcmUpgradeV2;
 export const LcmUpgradeV2: typeof import("./lcmUpgradeV2").LcmUpgradeV2 = null as any;
 utilities.lazyLoad(exports, ["LcmUpgradeV2"], () => require("./lcmUpgradeV2"));
 
+export { LocalDomainV2Args, LocalDomainV2State } from "./localDomainV2";
+export type LocalDomainV2 = import("./localDomainV2").LocalDomainV2;
+export const LocalDomainV2: typeof import("./localDomainV2").LocalDomainV2 = null as any;
+utilities.lazyLoad(exports, ["LocalDomainV2"], () => require("./localDomainV2"));
+
 export { NdbAuthorizeDbserverArgs, NdbAuthorizeDbserverState } from "./ndbAuthorizeDbserver";
 export type NdbAuthorizeDbserver = import("./ndbAuthorizeDbserver").NdbAuthorizeDbserver;
 export const NdbAuthorizeDbserver: typeof import("./ndbAuthorizeDbserver").NdbAuthorizeDbserver = null as any;
@@ -1578,6 +1643,11 @@ export type RecoveryPointsV2 = import("./recoveryPointsV2").RecoveryPointsV2;
 export const RecoveryPointsV2: typeof import("./recoveryPointsV2").RecoveryPointsV2 = null as any;
 utilities.lazyLoad(exports, ["RecoveryPointsV2"], () => require("./recoveryPointsV2"));
 
+export { RegisteredDomainV2Args, RegisteredDomainV2State } from "./registeredDomainV2";
+export type RegisteredDomainV2 = import("./registeredDomainV2").RegisteredDomainV2;
+export const RegisteredDomainV2: typeof import("./registeredDomainV2").RegisteredDomainV2 = null as any;
+utilities.lazyLoad(exports, ["RegisteredDomainV2"], () => require("./registeredDomainV2"));
+
 export { ResourceGroupV2Args, ResourceGroupV2State } from "./resourceGroupV2";
 export type ResourceGroupV2 = import("./resourceGroupV2").ResourceGroupV2;
 export const ResourceGroupV2: typeof import("./resourceGroupV2").ResourceGroupV2 = null as any;
@@ -1707,6 +1777,21 @@ export { TemplateV2Args, TemplateV2State } from "./templateV2";
 export type TemplateV2 = import("./templateV2").TemplateV2;
 export const TemplateV2: typeof import("./templateV2").TemplateV2 = null as any;
 utilities.lazyLoad(exports, ["TemplateV2"], () => require("./templateV2"));
+
+export { TenantDomainAllocationV2Args, TenantDomainAllocationV2State } from "./tenantDomainAllocationV2";
+export type TenantDomainAllocationV2 = import("./tenantDomainAllocationV2").TenantDomainAllocationV2;
+export const TenantDomainAllocationV2: typeof import("./tenantDomainAllocationV2").TenantDomainAllocationV2 = null as any;
+utilities.lazyLoad(exports, ["TenantDomainAllocationV2"], () => require("./tenantDomainAllocationV2"));
+
+export { TenantMembershipV2Args, TenantMembershipV2State } from "./tenantMembershipV2";
+export type TenantMembershipV2 = import("./tenantMembershipV2").TenantMembershipV2;
+export const TenantMembershipV2: typeof import("./tenantMembershipV2").TenantMembershipV2 = null as any;
+utilities.lazyLoad(exports, ["TenantMembershipV2"], () => require("./tenantMembershipV2"));
+
+export { TenantV2Args, TenantV2State } from "./tenantV2";
+export type TenantV2 = import("./tenantV2").TenantV2;
+export const TenantV2: typeof import("./tenantV2").TenantV2 = null as any;
+utilities.lazyLoad(exports, ["TenantV2"], () => require("./tenantV2"));
 
 export { UserArgs, UserState } from "./user";
 export type User = import("./user").User;
@@ -1861,6 +1946,8 @@ const _module = {
                 return new AccessControlPolicy(name, <any>undefined, { urn })
             case "nutanix:index/adGroupCategoryMappingV2:AdGroupCategoryMappingV2":
                 return new AdGroupCategoryMappingV2(name, <any>undefined, { urn })
+            case "nutanix:index/addDomainV2:AddDomainV2":
+                return new AddDomainV2(name, <any>undefined, { urn })
             case "nutanix:index/addressGroup:AddressGroup":
                 return new AddressGroup(name, <any>undefined, { urn })
             case "nutanix:index/addressGroupsV2:AddressGroupsV2":
@@ -1935,6 +2022,8 @@ const _module = {
                 return new LcmPrechecksV2(name, <any>undefined, { urn })
             case "nutanix:index/lcmUpgradeV2:LcmUpgradeV2":
                 return new LcmUpgradeV2(name, <any>undefined, { urn })
+            case "nutanix:index/localDomainV2:LocalDomainV2":
+                return new LocalDomainV2(name, <any>undefined, { urn })
             case "nutanix:index/ndbAuthorizeDbserver:NdbAuthorizeDbserver":
                 return new NdbAuthorizeDbserver(name, <any>undefined, { urn })
             case "nutanix:index/ndbClone:NdbClone":
@@ -2043,6 +2132,8 @@ const _module = {
                 return new RecoveryPointRestoreV2(name, <any>undefined, { urn })
             case "nutanix:index/recoveryPointsV2:RecoveryPointsV2":
                 return new RecoveryPointsV2(name, <any>undefined, { urn })
+            case "nutanix:index/registeredDomainV2:RegisteredDomainV2":
+                return new RegisteredDomainV2(name, <any>undefined, { urn })
             case "nutanix:index/resourceGroupV2:ResourceGroupV2":
                 return new ResourceGroupV2(name, <any>undefined, { urn })
             case "nutanix:index/restoreProtectedResourceV2:RestoreProtectedResourceV2":
@@ -2095,6 +2186,12 @@ const _module = {
                 return new TemplatePlacementPolicyV2(name, <any>undefined, { urn })
             case "nutanix:index/templateV2:TemplateV2":
                 return new TemplateV2(name, <any>undefined, { urn })
+            case "nutanix:index/tenantDomainAllocationV2:TenantDomainAllocationV2":
+                return new TenantDomainAllocationV2(name, <any>undefined, { urn })
+            case "nutanix:index/tenantMembershipV2:TenantMembershipV2":
+                return new TenantMembershipV2(name, <any>undefined, { urn })
+            case "nutanix:index/tenantV2:TenantV2":
+                return new TenantV2(name, <any>undefined, { urn })
             case "nutanix:index/user:User":
                 return new User(name, <any>undefined, { urn })
             case "nutanix:index/userGroups:UserGroups":
@@ -2156,6 +2253,7 @@ const _module = {
 };
 pulumi.runtime.registerResourceModule("nutanix", "index/accessControlPolicy", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/adGroupCategoryMappingV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/addDomainV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/addressGroup", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/addressGroupsV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/associateCategoryToVolumeGroupV2", _module)
@@ -2193,6 +2291,7 @@ pulumi.runtime.registerResourceModule("nutanix", "index/lcmConfigV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/lcmPerformInventoryV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/lcmPrechecksV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/lcmUpgradeV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/localDomainV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/ndbAuthorizeDbserver", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/ndbClone", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/ndbCloneRefresh", _module)
@@ -2247,6 +2346,7 @@ pulumi.runtime.registerResourceModule("nutanix", "index/recoveryPlan", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/recoveryPointReplicateV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/recoveryPointRestoreV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/recoveryPointsV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/registeredDomainV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/resourceGroupV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/restoreProtectedResourceV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/role", _module)
@@ -2273,6 +2373,9 @@ pulumi.runtime.registerResourceModule("nutanix", "index/subnetV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/templateGuestOsActionsV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/templatePlacementPolicyV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/templateV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/tenantDomainAllocationV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/tenantMembershipV2", _module)
+pulumi.runtime.registerResourceModule("nutanix", "index/tenantV2", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/user", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/userGroups", _module)
 pulumi.runtime.registerResourceModule("nutanix", "index/userGroupsV2", _module)

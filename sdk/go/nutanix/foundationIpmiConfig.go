@@ -14,6 +14,8 @@ import (
 
 // Configures IPMI IP address on BMC of nodes.
 //
+// > **WriteOnly credentials:** <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+//
 // ## Example Usage
 //
 // <!--Start PulumiCodeChooser -->
@@ -81,7 +83,8 @@ type FoundationIpmiConfig struct {
 	IpmiGateway pulumi.StringOutput `pulumi:"ipmiGateway"`
 	// - (Required) IPMI netmask.
 	IpmiNetmask pulumi.StringOutput `pulumi:"ipmiNetmask"`
-	// - (Required) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) IPMI password.
 	IpmiPassword pulumi.StringOutput `pulumi:"ipmiPassword"`
 	// - (Required) IPMI username.
 	IpmiUser pulumi.StringOutput `pulumi:"ipmiUser"`
@@ -109,6 +112,13 @@ func NewFoundationIpmiConfig(ctx *pulumi.Context,
 	if args.IpmiUser == nil {
 		return nil, errors.New("invalid value for required argument 'IpmiUser'")
 	}
+	if args.IpmiPassword != nil {
+		args.IpmiPassword = pulumi.ToSecret(args.IpmiPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"ipmiPassword",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FoundationIpmiConfig
 	err := ctx.RegisterResource("nutanix:index/foundationIpmiConfig:FoundationIpmiConfig", name, args, &resource, opts...)
@@ -138,7 +148,8 @@ type foundationIpmiConfigState struct {
 	IpmiGateway *string `pulumi:"ipmiGateway"`
 	// - (Required) IPMI netmask.
 	IpmiNetmask *string `pulumi:"ipmiNetmask"`
-	// - (Required) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) IPMI password.
 	IpmiPassword *string `pulumi:"ipmiPassword"`
 	// - (Required) IPMI username.
 	IpmiUser *string `pulumi:"ipmiUser"`
@@ -151,7 +162,8 @@ type FoundationIpmiConfigState struct {
 	IpmiGateway pulumi.StringPtrInput
 	// - (Required) IPMI netmask.
 	IpmiNetmask pulumi.StringPtrInput
-	// - (Required) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) IPMI password.
 	IpmiPassword pulumi.StringPtrInput
 	// - (Required) IPMI username.
 	IpmiUser pulumi.StringPtrInput
@@ -174,7 +186,8 @@ type foundationIpmiConfigArgs struct {
 	IpmiGateway string `pulumi:"ipmiGateway"`
 	// - (Required) IPMI netmask.
 	IpmiNetmask string `pulumi:"ipmiNetmask"`
-	// - (Required) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) IPMI password.
 	IpmiPassword string `pulumi:"ipmiPassword"`
 	// - (Required) IPMI username.
 	IpmiUser string `pulumi:"ipmiUser"`
@@ -188,7 +201,8 @@ type FoundationIpmiConfigArgs struct {
 	IpmiGateway pulumi.StringInput
 	// - (Required) IPMI netmask.
 	IpmiNetmask pulumi.StringInput
-	// - (Required) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) IPMI password.
 	IpmiPassword pulumi.StringInput
 	// - (Required) IPMI username.
 	IpmiUser pulumi.StringInput
@@ -296,7 +310,8 @@ func (o FoundationIpmiConfigOutput) IpmiNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationIpmiConfig) pulumi.StringOutput { return v.IpmiNetmask }).(pulumi.StringOutput)
 }
 
-// - (Required) IPMI password.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) IPMI password.
 func (o FoundationIpmiConfigOutput) IpmiPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationIpmiConfig) pulumi.StringOutput { return v.IpmiPassword }).(pulumi.StringOutput)
 }

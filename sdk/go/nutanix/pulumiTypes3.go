@@ -13,6 +13,1500 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type SelfServiceAppProvisionRuntimeEditableSnapshotConfigList struct {
+	// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+	Context *string `pulumi:"context"`
+	// description of the action
+	Description *string `pulumi:"description"`
+	// name of action.
+	Name *string `pulumi:"name"`
+	// -   The type of network interface.
+	Type *string `pulumi:"type"`
+	// UUID of the action.
+	Uuid *string `pulumi:"uuid"`
+	// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+	Value *string `pulumi:"value"`
+}
+
+// SelfServiceAppProvisionRuntimeEditableSnapshotConfigListInput is an input type that accepts SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArgs and SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionRuntimeEditableSnapshotConfigListInput` via:
+//
+//	SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArgs{...}
+type SelfServiceAppProvisionRuntimeEditableSnapshotConfigListInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput() SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput
+	ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutputWithContext(context.Context) SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput
+}
+
+type SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArgs struct {
+	// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+	Context pulumi.StringPtrInput `pulumi:"context"`
+	// description of the action
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// name of action.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// -   The type of network interface.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// UUID of the action.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+	// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableSnapshotConfigList)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArgs) ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput() SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput {
+	return i.ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArgs) ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput)
+}
+
+// SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayInput is an input type that accepts SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArray and SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayInput` via:
+//
+//	SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArray{ SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArgs{...} }
+type SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput() SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput
+	ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutputWithContext(context.Context) SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput
+}
+
+type SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArray []SelfServiceAppProvisionRuntimeEditableSnapshotConfigListInput
+
+func (SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionRuntimeEditableSnapshotConfigList)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArray) ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput() SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput {
+	return i.ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArray) ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableSnapshotConfigList)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput() SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput {
+	return o
+}
+
+// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) Context() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSnapshotConfigList) *string { return v.Context }).(pulumi.StringPtrOutput)
+}
+
+// description of the action
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSnapshotConfigList) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// name of action.
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSnapshotConfigList) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// -   The type of network interface.
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSnapshotConfigList) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// UUID of the action.
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSnapshotConfigList) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSnapshotConfigList) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionRuntimeEditableSnapshotConfigList)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput) ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput() SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput) ToSelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput) Index(i pulumi.IntInput) SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SelfServiceAppProvisionRuntimeEditableSnapshotConfigList {
+		return vs[0].([]SelfServiceAppProvisionRuntimeEditableSnapshotConfigList)[vs[1].(int)]
+	}).(SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableSubstrateList struct {
+	// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+	Context *string `pulumi:"context"`
+	// description of the action
+	Description *string `pulumi:"description"`
+	// name of action.
+	Name *string `pulumi:"name"`
+	// -   The type of network interface.
+	Type *string `pulumi:"type"`
+	// UUID of the action.
+	Uuid *string `pulumi:"uuid"`
+	// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+	Value *string `pulumi:"value"`
+}
+
+// SelfServiceAppProvisionRuntimeEditableSubstrateListInput is an input type that accepts SelfServiceAppProvisionRuntimeEditableSubstrateListArgs and SelfServiceAppProvisionRuntimeEditableSubstrateListOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionRuntimeEditableSubstrateListInput` via:
+//
+//	SelfServiceAppProvisionRuntimeEditableSubstrateListArgs{...}
+type SelfServiceAppProvisionRuntimeEditableSubstrateListInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionRuntimeEditableSubstrateListOutput() SelfServiceAppProvisionRuntimeEditableSubstrateListOutput
+	ToSelfServiceAppProvisionRuntimeEditableSubstrateListOutputWithContext(context.Context) SelfServiceAppProvisionRuntimeEditableSubstrateListOutput
+}
+
+type SelfServiceAppProvisionRuntimeEditableSubstrateListArgs struct {
+	// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+	Context pulumi.StringPtrInput `pulumi:"context"`
+	// description of the action
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// name of action.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// -   The type of network interface.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// UUID of the action.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+	// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SelfServiceAppProvisionRuntimeEditableSubstrateListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableSubstrateList)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableSubstrateListArgs) ToSelfServiceAppProvisionRuntimeEditableSubstrateListOutput() SelfServiceAppProvisionRuntimeEditableSubstrateListOutput {
+	return i.ToSelfServiceAppProvisionRuntimeEditableSubstrateListOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableSubstrateListArgs) ToSelfServiceAppProvisionRuntimeEditableSubstrateListOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableSubstrateListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionRuntimeEditableSubstrateListOutput)
+}
+
+// SelfServiceAppProvisionRuntimeEditableSubstrateListArrayInput is an input type that accepts SelfServiceAppProvisionRuntimeEditableSubstrateListArray and SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionRuntimeEditableSubstrateListArrayInput` via:
+//
+//	SelfServiceAppProvisionRuntimeEditableSubstrateListArray{ SelfServiceAppProvisionRuntimeEditableSubstrateListArgs{...} }
+type SelfServiceAppProvisionRuntimeEditableSubstrateListArrayInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput() SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput
+	ToSelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutputWithContext(context.Context) SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput
+}
+
+type SelfServiceAppProvisionRuntimeEditableSubstrateListArray []SelfServiceAppProvisionRuntimeEditableSubstrateListInput
+
+func (SelfServiceAppProvisionRuntimeEditableSubstrateListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionRuntimeEditableSubstrateList)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableSubstrateListArray) ToSelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput() SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput {
+	return i.ToSelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableSubstrateListArray) ToSelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableSubstrateListOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableSubstrateList)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) ToSelfServiceAppProvisionRuntimeEditableSubstrateListOutput() SelfServiceAppProvisionRuntimeEditableSubstrateListOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) ToSelfServiceAppProvisionRuntimeEditableSubstrateListOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableSubstrateListOutput {
+	return o
+}
+
+// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) Context() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSubstrateList) *string { return v.Context }).(pulumi.StringPtrOutput)
+}
+
+// description of the action
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSubstrateList) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// name of action.
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSubstrateList) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// -   The type of network interface.
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSubstrateList) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// UUID of the action.
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSubstrateList) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableSubstrateList) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionRuntimeEditableSubstrateList)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput) ToSelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput() SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput) ToSelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput) Index(i pulumi.IntInput) SelfServiceAppProvisionRuntimeEditableSubstrateListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SelfServiceAppProvisionRuntimeEditableSubstrateList {
+		return vs[0].([]SelfServiceAppProvisionRuntimeEditableSubstrateList)[vs[1].(int)]
+	}).(SelfServiceAppProvisionRuntimeEditableSubstrateListOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableTaskList struct {
+	// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+	Context *string `pulumi:"context"`
+	// description of the action
+	Description *string `pulumi:"description"`
+	// name of action.
+	Name *string `pulumi:"name"`
+	// -   The type of network interface.
+	Type *string `pulumi:"type"`
+	// UUID of the action.
+	Uuid *string `pulumi:"uuid"`
+	// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+	Value *string `pulumi:"value"`
+}
+
+// SelfServiceAppProvisionRuntimeEditableTaskListInput is an input type that accepts SelfServiceAppProvisionRuntimeEditableTaskListArgs and SelfServiceAppProvisionRuntimeEditableTaskListOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionRuntimeEditableTaskListInput` via:
+//
+//	SelfServiceAppProvisionRuntimeEditableTaskListArgs{...}
+type SelfServiceAppProvisionRuntimeEditableTaskListInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionRuntimeEditableTaskListOutput() SelfServiceAppProvisionRuntimeEditableTaskListOutput
+	ToSelfServiceAppProvisionRuntimeEditableTaskListOutputWithContext(context.Context) SelfServiceAppProvisionRuntimeEditableTaskListOutput
+}
+
+type SelfServiceAppProvisionRuntimeEditableTaskListArgs struct {
+	// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+	Context pulumi.StringPtrInput `pulumi:"context"`
+	// description of the action
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// name of action.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// -   The type of network interface.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// UUID of the action.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+	// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SelfServiceAppProvisionRuntimeEditableTaskListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableTaskList)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableTaskListArgs) ToSelfServiceAppProvisionRuntimeEditableTaskListOutput() SelfServiceAppProvisionRuntimeEditableTaskListOutput {
+	return i.ToSelfServiceAppProvisionRuntimeEditableTaskListOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableTaskListArgs) ToSelfServiceAppProvisionRuntimeEditableTaskListOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableTaskListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionRuntimeEditableTaskListOutput)
+}
+
+// SelfServiceAppProvisionRuntimeEditableTaskListArrayInput is an input type that accepts SelfServiceAppProvisionRuntimeEditableTaskListArray and SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionRuntimeEditableTaskListArrayInput` via:
+//
+//	SelfServiceAppProvisionRuntimeEditableTaskListArray{ SelfServiceAppProvisionRuntimeEditableTaskListArgs{...} }
+type SelfServiceAppProvisionRuntimeEditableTaskListArrayInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionRuntimeEditableTaskListArrayOutput() SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput
+	ToSelfServiceAppProvisionRuntimeEditableTaskListArrayOutputWithContext(context.Context) SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput
+}
+
+type SelfServiceAppProvisionRuntimeEditableTaskListArray []SelfServiceAppProvisionRuntimeEditableTaskListInput
+
+func (SelfServiceAppProvisionRuntimeEditableTaskListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionRuntimeEditableTaskList)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableTaskListArray) ToSelfServiceAppProvisionRuntimeEditableTaskListArrayOutput() SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput {
+	return i.ToSelfServiceAppProvisionRuntimeEditableTaskListArrayOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableTaskListArray) ToSelfServiceAppProvisionRuntimeEditableTaskListArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableTaskListOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionRuntimeEditableTaskListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableTaskList)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableTaskListOutput) ToSelfServiceAppProvisionRuntimeEditableTaskListOutput() SelfServiceAppProvisionRuntimeEditableTaskListOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableTaskListOutput) ToSelfServiceAppProvisionRuntimeEditableTaskListOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableTaskListOutput {
+	return o
+}
+
+// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+func (o SelfServiceAppProvisionRuntimeEditableTaskListOutput) Context() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableTaskList) *string { return v.Context }).(pulumi.StringPtrOutput)
+}
+
+// description of the action
+func (o SelfServiceAppProvisionRuntimeEditableTaskListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableTaskList) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// name of action.
+func (o SelfServiceAppProvisionRuntimeEditableTaskListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableTaskList) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// -   The type of network interface.
+func (o SelfServiceAppProvisionRuntimeEditableTaskListOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableTaskList) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// UUID of the action.
+func (o SelfServiceAppProvisionRuntimeEditableTaskListOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableTaskList) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+func (o SelfServiceAppProvisionRuntimeEditableTaskListOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableTaskList) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionRuntimeEditableTaskList)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput) ToSelfServiceAppProvisionRuntimeEditableTaskListArrayOutput() SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput) ToSelfServiceAppProvisionRuntimeEditableTaskListArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput) Index(i pulumi.IntInput) SelfServiceAppProvisionRuntimeEditableTaskListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SelfServiceAppProvisionRuntimeEditableTaskList {
+		return vs[0].([]SelfServiceAppProvisionRuntimeEditableTaskList)[vs[1].(int)]
+	}).(SelfServiceAppProvisionRuntimeEditableTaskListOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableVariableList struct {
+	// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+	Context *string `pulumi:"context"`
+	// description of the action
+	Description *string `pulumi:"description"`
+	// name of action.
+	Name *string `pulumi:"name"`
+	// -   The type of network interface.
+	Type *string `pulumi:"type"`
+	// UUID of the action.
+	Uuid *string `pulumi:"uuid"`
+	// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+	Value *string `pulumi:"value"`
+}
+
+// SelfServiceAppProvisionRuntimeEditableVariableListInput is an input type that accepts SelfServiceAppProvisionRuntimeEditableVariableListArgs and SelfServiceAppProvisionRuntimeEditableVariableListOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionRuntimeEditableVariableListInput` via:
+//
+//	SelfServiceAppProvisionRuntimeEditableVariableListArgs{...}
+type SelfServiceAppProvisionRuntimeEditableVariableListInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionRuntimeEditableVariableListOutput() SelfServiceAppProvisionRuntimeEditableVariableListOutput
+	ToSelfServiceAppProvisionRuntimeEditableVariableListOutputWithContext(context.Context) SelfServiceAppProvisionRuntimeEditableVariableListOutput
+}
+
+type SelfServiceAppProvisionRuntimeEditableVariableListArgs struct {
+	// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+	Context pulumi.StringPtrInput `pulumi:"context"`
+	// description of the action
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// name of action.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// -   The type of network interface.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+	// UUID of the action.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+	// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (SelfServiceAppProvisionRuntimeEditableVariableListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableVariableList)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableVariableListArgs) ToSelfServiceAppProvisionRuntimeEditableVariableListOutput() SelfServiceAppProvisionRuntimeEditableVariableListOutput {
+	return i.ToSelfServiceAppProvisionRuntimeEditableVariableListOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableVariableListArgs) ToSelfServiceAppProvisionRuntimeEditableVariableListOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableVariableListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionRuntimeEditableVariableListOutput)
+}
+
+// SelfServiceAppProvisionRuntimeEditableVariableListArrayInput is an input type that accepts SelfServiceAppProvisionRuntimeEditableVariableListArray and SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionRuntimeEditableVariableListArrayInput` via:
+//
+//	SelfServiceAppProvisionRuntimeEditableVariableListArray{ SelfServiceAppProvisionRuntimeEditableVariableListArgs{...} }
+type SelfServiceAppProvisionRuntimeEditableVariableListArrayInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionRuntimeEditableVariableListArrayOutput() SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput
+	ToSelfServiceAppProvisionRuntimeEditableVariableListArrayOutputWithContext(context.Context) SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput
+}
+
+type SelfServiceAppProvisionRuntimeEditableVariableListArray []SelfServiceAppProvisionRuntimeEditableVariableListInput
+
+func (SelfServiceAppProvisionRuntimeEditableVariableListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionRuntimeEditableVariableList)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableVariableListArray) ToSelfServiceAppProvisionRuntimeEditableVariableListArrayOutput() SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput {
+	return i.ToSelfServiceAppProvisionRuntimeEditableVariableListArrayOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionRuntimeEditableVariableListArray) ToSelfServiceAppProvisionRuntimeEditableVariableListArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableVariableListOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionRuntimeEditableVariableListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableVariableList)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableVariableListOutput) ToSelfServiceAppProvisionRuntimeEditableVariableListOutput() SelfServiceAppProvisionRuntimeEditableVariableListOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableVariableListOutput) ToSelfServiceAppProvisionRuntimeEditableVariableListOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableVariableListOutput {
+	return o
+}
+
+// (Optional, Computed) The context in which the runtime specification is applied. It is full address of where the entity in target is present.
+func (o SelfServiceAppProvisionRuntimeEditableVariableListOutput) Context() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableVariableList) *string { return v.Context }).(pulumi.StringPtrOutput)
+}
+
+// description of the action
+func (o SelfServiceAppProvisionRuntimeEditableVariableListOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableVariableList) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// name of action.
+func (o SelfServiceAppProvisionRuntimeEditableVariableListOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableVariableList) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// -   The type of network interface.
+func (o SelfServiceAppProvisionRuntimeEditableVariableListOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableVariableList) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+// UUID of the action.
+func (o SelfServiceAppProvisionRuntimeEditableVariableListOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableVariableList) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+// (Optional, Computed) The value associated with the runtime specification. This can be a string value representing a configuration or setting.
+func (o SelfServiceAppProvisionRuntimeEditableVariableListOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionRuntimeEditableVariableList) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionRuntimeEditableVariableList)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput) ToSelfServiceAppProvisionRuntimeEditableVariableListArrayOutput() SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput) ToSelfServiceAppProvisionRuntimeEditableVariableListArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput) Index(i pulumi.IntInput) SelfServiceAppProvisionRuntimeEditableVariableListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SelfServiceAppProvisionRuntimeEditableVariableList {
+		return vs[0].([]SelfServiceAppProvisionRuntimeEditableVariableList)[vs[1].(int)]
+	}).(SelfServiceAppProvisionRuntimeEditableVariableListOutput)
+}
+
+type SelfServiceAppProvisionVm struct {
+	// -  A map of categories applied to the VM. Each key is a category name, and the value is the category value.
+	Categories map[string]string `pulumi:"categories"`
+	// -  Cluster-related information for the VM.
+	ClusterInfos []SelfServiceAppProvisionVmClusterInfo `pulumi:"clusterInfos"`
+	// -  Configuration details for the VM.
+	Configurations []SelfServiceAppProvisionVmConfiguration `pulumi:"configurations"`
+	// -  A list of network interfaces attached to the VM.
+	Nics []SelfServiceAppProvisionVmNic `pulumi:"nics"`
+}
+
+// SelfServiceAppProvisionVmInput is an input type that accepts SelfServiceAppProvisionVmArgs and SelfServiceAppProvisionVmOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionVmInput` via:
+//
+//	SelfServiceAppProvisionVmArgs{...}
+type SelfServiceAppProvisionVmInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionVmOutput() SelfServiceAppProvisionVmOutput
+	ToSelfServiceAppProvisionVmOutputWithContext(context.Context) SelfServiceAppProvisionVmOutput
+}
+
+type SelfServiceAppProvisionVmArgs struct {
+	// -  A map of categories applied to the VM. Each key is a category name, and the value is the category value.
+	Categories pulumi.StringMapInput `pulumi:"categories"`
+	// -  Cluster-related information for the VM.
+	ClusterInfos SelfServiceAppProvisionVmClusterInfoArrayInput `pulumi:"clusterInfos"`
+	// -  Configuration details for the VM.
+	Configurations SelfServiceAppProvisionVmConfigurationArrayInput `pulumi:"configurations"`
+	// -  A list of network interfaces attached to the VM.
+	Nics SelfServiceAppProvisionVmNicArrayInput `pulumi:"nics"`
+}
+
+func (SelfServiceAppProvisionVmArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionVm)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionVmArgs) ToSelfServiceAppProvisionVmOutput() SelfServiceAppProvisionVmOutput {
+	return i.ToSelfServiceAppProvisionVmOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionVmArgs) ToSelfServiceAppProvisionVmOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionVmOutput)
+}
+
+// SelfServiceAppProvisionVmArrayInput is an input type that accepts SelfServiceAppProvisionVmArray and SelfServiceAppProvisionVmArrayOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionVmArrayInput` via:
+//
+//	SelfServiceAppProvisionVmArray{ SelfServiceAppProvisionVmArgs{...} }
+type SelfServiceAppProvisionVmArrayInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionVmArrayOutput() SelfServiceAppProvisionVmArrayOutput
+	ToSelfServiceAppProvisionVmArrayOutputWithContext(context.Context) SelfServiceAppProvisionVmArrayOutput
+}
+
+type SelfServiceAppProvisionVmArray []SelfServiceAppProvisionVmInput
+
+func (SelfServiceAppProvisionVmArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionVm)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionVmArray) ToSelfServiceAppProvisionVmArrayOutput() SelfServiceAppProvisionVmArrayOutput {
+	return i.ToSelfServiceAppProvisionVmArrayOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionVmArray) ToSelfServiceAppProvisionVmArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionVmArrayOutput)
+}
+
+type SelfServiceAppProvisionVmOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionVmOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionVm)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionVmOutput) ToSelfServiceAppProvisionVmOutput() SelfServiceAppProvisionVmOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmOutput) ToSelfServiceAppProvisionVmOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmOutput {
+	return o
+}
+
+// -  A map of categories applied to the VM. Each key is a category name, and the value is the category value.
+func (o SelfServiceAppProvisionVmOutput) Categories() pulumi.StringMapOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVm) map[string]string { return v.Categories }).(pulumi.StringMapOutput)
+}
+
+// -  Cluster-related information for the VM.
+func (o SelfServiceAppProvisionVmOutput) ClusterInfos() SelfServiceAppProvisionVmClusterInfoArrayOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVm) []SelfServiceAppProvisionVmClusterInfo { return v.ClusterInfos }).(SelfServiceAppProvisionVmClusterInfoArrayOutput)
+}
+
+// -  Configuration details for the VM.
+func (o SelfServiceAppProvisionVmOutput) Configurations() SelfServiceAppProvisionVmConfigurationArrayOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVm) []SelfServiceAppProvisionVmConfiguration { return v.Configurations }).(SelfServiceAppProvisionVmConfigurationArrayOutput)
+}
+
+// -  A list of network interfaces attached to the VM.
+func (o SelfServiceAppProvisionVmOutput) Nics() SelfServiceAppProvisionVmNicArrayOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVm) []SelfServiceAppProvisionVmNic { return v.Nics }).(SelfServiceAppProvisionVmNicArrayOutput)
+}
+
+type SelfServiceAppProvisionVmArrayOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionVmArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionVm)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionVmArrayOutput) ToSelfServiceAppProvisionVmArrayOutput() SelfServiceAppProvisionVmArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmArrayOutput) ToSelfServiceAppProvisionVmArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmArrayOutput) Index(i pulumi.IntInput) SelfServiceAppProvisionVmOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SelfServiceAppProvisionVm {
+		return vs[0].([]SelfServiceAppProvisionVm)[vs[1].(int)]
+	}).(SelfServiceAppProvisionVmOutput)
+}
+
+type SelfServiceAppProvisionVmClusterInfo struct {
+	// -   The name of the cluster.
+	ClusterName *string `pulumi:"clusterName"`
+	// -   The UUID of the cluster.
+	ClusterUuid *string `pulumi:"clusterUuid"`
+}
+
+// SelfServiceAppProvisionVmClusterInfoInput is an input type that accepts SelfServiceAppProvisionVmClusterInfoArgs and SelfServiceAppProvisionVmClusterInfoOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionVmClusterInfoInput` via:
+//
+//	SelfServiceAppProvisionVmClusterInfoArgs{...}
+type SelfServiceAppProvisionVmClusterInfoInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionVmClusterInfoOutput() SelfServiceAppProvisionVmClusterInfoOutput
+	ToSelfServiceAppProvisionVmClusterInfoOutputWithContext(context.Context) SelfServiceAppProvisionVmClusterInfoOutput
+}
+
+type SelfServiceAppProvisionVmClusterInfoArgs struct {
+	// -   The name of the cluster.
+	ClusterName pulumi.StringPtrInput `pulumi:"clusterName"`
+	// -   The UUID of the cluster.
+	ClusterUuid pulumi.StringPtrInput `pulumi:"clusterUuid"`
+}
+
+func (SelfServiceAppProvisionVmClusterInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionVmClusterInfo)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionVmClusterInfoArgs) ToSelfServiceAppProvisionVmClusterInfoOutput() SelfServiceAppProvisionVmClusterInfoOutput {
+	return i.ToSelfServiceAppProvisionVmClusterInfoOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionVmClusterInfoArgs) ToSelfServiceAppProvisionVmClusterInfoOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmClusterInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionVmClusterInfoOutput)
+}
+
+// SelfServiceAppProvisionVmClusterInfoArrayInput is an input type that accepts SelfServiceAppProvisionVmClusterInfoArray and SelfServiceAppProvisionVmClusterInfoArrayOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionVmClusterInfoArrayInput` via:
+//
+//	SelfServiceAppProvisionVmClusterInfoArray{ SelfServiceAppProvisionVmClusterInfoArgs{...} }
+type SelfServiceAppProvisionVmClusterInfoArrayInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionVmClusterInfoArrayOutput() SelfServiceAppProvisionVmClusterInfoArrayOutput
+	ToSelfServiceAppProvisionVmClusterInfoArrayOutputWithContext(context.Context) SelfServiceAppProvisionVmClusterInfoArrayOutput
+}
+
+type SelfServiceAppProvisionVmClusterInfoArray []SelfServiceAppProvisionVmClusterInfoInput
+
+func (SelfServiceAppProvisionVmClusterInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionVmClusterInfo)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionVmClusterInfoArray) ToSelfServiceAppProvisionVmClusterInfoArrayOutput() SelfServiceAppProvisionVmClusterInfoArrayOutput {
+	return i.ToSelfServiceAppProvisionVmClusterInfoArrayOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionVmClusterInfoArray) ToSelfServiceAppProvisionVmClusterInfoArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmClusterInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionVmClusterInfoArrayOutput)
+}
+
+type SelfServiceAppProvisionVmClusterInfoOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionVmClusterInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionVmClusterInfo)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionVmClusterInfoOutput) ToSelfServiceAppProvisionVmClusterInfoOutput() SelfServiceAppProvisionVmClusterInfoOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmClusterInfoOutput) ToSelfServiceAppProvisionVmClusterInfoOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmClusterInfoOutput {
+	return o
+}
+
+// -   The name of the cluster.
+func (o SelfServiceAppProvisionVmClusterInfoOutput) ClusterName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmClusterInfo) *string { return v.ClusterName }).(pulumi.StringPtrOutput)
+}
+
+// -   The UUID of the cluster.
+func (o SelfServiceAppProvisionVmClusterInfoOutput) ClusterUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmClusterInfo) *string { return v.ClusterUuid }).(pulumi.StringPtrOutput)
+}
+
+type SelfServiceAppProvisionVmClusterInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionVmClusterInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionVmClusterInfo)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionVmClusterInfoArrayOutput) ToSelfServiceAppProvisionVmClusterInfoArrayOutput() SelfServiceAppProvisionVmClusterInfoArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmClusterInfoArrayOutput) ToSelfServiceAppProvisionVmClusterInfoArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmClusterInfoArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmClusterInfoArrayOutput) Index(i pulumi.IntInput) SelfServiceAppProvisionVmClusterInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SelfServiceAppProvisionVmClusterInfo {
+		return vs[0].([]SelfServiceAppProvisionVmClusterInfo)[vs[1].(int)]
+	}).(SelfServiceAppProvisionVmClusterInfoOutput)
+}
+
+type SelfServiceAppProvisionVmConfiguration struct {
+	// -   Number of CPU cores.
+	Cores *float64 `pulumi:"cores"`
+	// -   The VM image used.
+	Image *string `pulumi:"image"`
+	// -   IP address of the VM.
+	IpAddress *string `pulumi:"ipAddress"`
+	// -  Memory allocated to the VM.
+	Memory *float64 `pulumi:"memory"`
+	// name of action.
+	Name *string `pulumi:"name"`
+	// -   Number of virtual CPUs assigned to the VM.
+	Vcpus *float64 `pulumi:"vcpus"`
+	// -   The UUID of the VM.
+	VmUuid *string `pulumi:"vmUuid"`
+}
+
+// SelfServiceAppProvisionVmConfigurationInput is an input type that accepts SelfServiceAppProvisionVmConfigurationArgs and SelfServiceAppProvisionVmConfigurationOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionVmConfigurationInput` via:
+//
+//	SelfServiceAppProvisionVmConfigurationArgs{...}
+type SelfServiceAppProvisionVmConfigurationInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionVmConfigurationOutput() SelfServiceAppProvisionVmConfigurationOutput
+	ToSelfServiceAppProvisionVmConfigurationOutputWithContext(context.Context) SelfServiceAppProvisionVmConfigurationOutput
+}
+
+type SelfServiceAppProvisionVmConfigurationArgs struct {
+	// -   Number of CPU cores.
+	Cores pulumi.Float64PtrInput `pulumi:"cores"`
+	// -   The VM image used.
+	Image pulumi.StringPtrInput `pulumi:"image"`
+	// -   IP address of the VM.
+	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// -  Memory allocated to the VM.
+	Memory pulumi.Float64PtrInput `pulumi:"memory"`
+	// name of action.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// -   Number of virtual CPUs assigned to the VM.
+	Vcpus pulumi.Float64PtrInput `pulumi:"vcpus"`
+	// -   The UUID of the VM.
+	VmUuid pulumi.StringPtrInput `pulumi:"vmUuid"`
+}
+
+func (SelfServiceAppProvisionVmConfigurationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionVmConfiguration)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionVmConfigurationArgs) ToSelfServiceAppProvisionVmConfigurationOutput() SelfServiceAppProvisionVmConfigurationOutput {
+	return i.ToSelfServiceAppProvisionVmConfigurationOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionVmConfigurationArgs) ToSelfServiceAppProvisionVmConfigurationOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmConfigurationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionVmConfigurationOutput)
+}
+
+// SelfServiceAppProvisionVmConfigurationArrayInput is an input type that accepts SelfServiceAppProvisionVmConfigurationArray and SelfServiceAppProvisionVmConfigurationArrayOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionVmConfigurationArrayInput` via:
+//
+//	SelfServiceAppProvisionVmConfigurationArray{ SelfServiceAppProvisionVmConfigurationArgs{...} }
+type SelfServiceAppProvisionVmConfigurationArrayInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionVmConfigurationArrayOutput() SelfServiceAppProvisionVmConfigurationArrayOutput
+	ToSelfServiceAppProvisionVmConfigurationArrayOutputWithContext(context.Context) SelfServiceAppProvisionVmConfigurationArrayOutput
+}
+
+type SelfServiceAppProvisionVmConfigurationArray []SelfServiceAppProvisionVmConfigurationInput
+
+func (SelfServiceAppProvisionVmConfigurationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionVmConfiguration)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionVmConfigurationArray) ToSelfServiceAppProvisionVmConfigurationArrayOutput() SelfServiceAppProvisionVmConfigurationArrayOutput {
+	return i.ToSelfServiceAppProvisionVmConfigurationArrayOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionVmConfigurationArray) ToSelfServiceAppProvisionVmConfigurationArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmConfigurationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionVmConfigurationArrayOutput)
+}
+
+type SelfServiceAppProvisionVmConfigurationOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionVmConfigurationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionVmConfiguration)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionVmConfigurationOutput) ToSelfServiceAppProvisionVmConfigurationOutput() SelfServiceAppProvisionVmConfigurationOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmConfigurationOutput) ToSelfServiceAppProvisionVmConfigurationOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmConfigurationOutput {
+	return o
+}
+
+// -   Number of CPU cores.
+func (o SelfServiceAppProvisionVmConfigurationOutput) Cores() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmConfiguration) *float64 { return v.Cores }).(pulumi.Float64PtrOutput)
+}
+
+// -   The VM image used.
+func (o SelfServiceAppProvisionVmConfigurationOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmConfiguration) *string { return v.Image }).(pulumi.StringPtrOutput)
+}
+
+// -   IP address of the VM.
+func (o SelfServiceAppProvisionVmConfigurationOutput) IpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmConfiguration) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
+}
+
+// -  Memory allocated to the VM.
+func (o SelfServiceAppProvisionVmConfigurationOutput) Memory() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmConfiguration) *float64 { return v.Memory }).(pulumi.Float64PtrOutput)
+}
+
+// name of action.
+func (o SelfServiceAppProvisionVmConfigurationOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmConfiguration) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// -   Number of virtual CPUs assigned to the VM.
+func (o SelfServiceAppProvisionVmConfigurationOutput) Vcpus() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmConfiguration) *float64 { return v.Vcpus }).(pulumi.Float64PtrOutput)
+}
+
+// -   The UUID of the VM.
+func (o SelfServiceAppProvisionVmConfigurationOutput) VmUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmConfiguration) *string { return v.VmUuid }).(pulumi.StringPtrOutput)
+}
+
+type SelfServiceAppProvisionVmConfigurationArrayOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionVmConfigurationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionVmConfiguration)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionVmConfigurationArrayOutput) ToSelfServiceAppProvisionVmConfigurationArrayOutput() SelfServiceAppProvisionVmConfigurationArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmConfigurationArrayOutput) ToSelfServiceAppProvisionVmConfigurationArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmConfigurationArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmConfigurationArrayOutput) Index(i pulumi.IntInput) SelfServiceAppProvisionVmConfigurationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SelfServiceAppProvisionVmConfiguration {
+		return vs[0].([]SelfServiceAppProvisionVmConfiguration)[vs[1].(int)]
+	}).(SelfServiceAppProvisionVmConfigurationOutput)
+}
+
+type SelfServiceAppProvisionVmNic struct {
+	// -   The MAC address of the VM's network interface.
+	MacAddress *string `pulumi:"macAddress"`
+	// -   The subnet the VM's network interface is attached to.
+	Subnet *string `pulumi:"subnet"`
+	// -   The type of network interface.
+	Type *string `pulumi:"type"`
+}
+
+// SelfServiceAppProvisionVmNicInput is an input type that accepts SelfServiceAppProvisionVmNicArgs and SelfServiceAppProvisionVmNicOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionVmNicInput` via:
+//
+//	SelfServiceAppProvisionVmNicArgs{...}
+type SelfServiceAppProvisionVmNicInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionVmNicOutput() SelfServiceAppProvisionVmNicOutput
+	ToSelfServiceAppProvisionVmNicOutputWithContext(context.Context) SelfServiceAppProvisionVmNicOutput
+}
+
+type SelfServiceAppProvisionVmNicArgs struct {
+	// -   The MAC address of the VM's network interface.
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+	// -   The subnet the VM's network interface is attached to.
+	Subnet pulumi.StringPtrInput `pulumi:"subnet"`
+	// -   The type of network interface.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (SelfServiceAppProvisionVmNicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionVmNic)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionVmNicArgs) ToSelfServiceAppProvisionVmNicOutput() SelfServiceAppProvisionVmNicOutput {
+	return i.ToSelfServiceAppProvisionVmNicOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionVmNicArgs) ToSelfServiceAppProvisionVmNicOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmNicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionVmNicOutput)
+}
+
+// SelfServiceAppProvisionVmNicArrayInput is an input type that accepts SelfServiceAppProvisionVmNicArray and SelfServiceAppProvisionVmNicArrayOutput values.
+// You can construct a concrete instance of `SelfServiceAppProvisionVmNicArrayInput` via:
+//
+//	SelfServiceAppProvisionVmNicArray{ SelfServiceAppProvisionVmNicArgs{...} }
+type SelfServiceAppProvisionVmNicArrayInput interface {
+	pulumi.Input
+
+	ToSelfServiceAppProvisionVmNicArrayOutput() SelfServiceAppProvisionVmNicArrayOutput
+	ToSelfServiceAppProvisionVmNicArrayOutputWithContext(context.Context) SelfServiceAppProvisionVmNicArrayOutput
+}
+
+type SelfServiceAppProvisionVmNicArray []SelfServiceAppProvisionVmNicInput
+
+func (SelfServiceAppProvisionVmNicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionVmNic)(nil)).Elem()
+}
+
+func (i SelfServiceAppProvisionVmNicArray) ToSelfServiceAppProvisionVmNicArrayOutput() SelfServiceAppProvisionVmNicArrayOutput {
+	return i.ToSelfServiceAppProvisionVmNicArrayOutputWithContext(context.Background())
+}
+
+func (i SelfServiceAppProvisionVmNicArray) ToSelfServiceAppProvisionVmNicArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmNicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SelfServiceAppProvisionVmNicArrayOutput)
+}
+
+type SelfServiceAppProvisionVmNicOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionVmNicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SelfServiceAppProvisionVmNic)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionVmNicOutput) ToSelfServiceAppProvisionVmNicOutput() SelfServiceAppProvisionVmNicOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmNicOutput) ToSelfServiceAppProvisionVmNicOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmNicOutput {
+	return o
+}
+
+// -   The MAC address of the VM's network interface.
+func (o SelfServiceAppProvisionVmNicOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+// -   The subnet the VM's network interface is attached to.
+func (o SelfServiceAppProvisionVmNicOutput) Subnet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmNic) *string { return v.Subnet }).(pulumi.StringPtrOutput)
+}
+
+// -   The type of network interface.
+func (o SelfServiceAppProvisionVmNicOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SelfServiceAppProvisionVmNic) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type SelfServiceAppProvisionVmNicArrayOutput struct{ *pulumi.OutputState }
+
+func (SelfServiceAppProvisionVmNicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SelfServiceAppProvisionVmNic)(nil)).Elem()
+}
+
+func (o SelfServiceAppProvisionVmNicArrayOutput) ToSelfServiceAppProvisionVmNicArrayOutput() SelfServiceAppProvisionVmNicArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmNicArrayOutput) ToSelfServiceAppProvisionVmNicArrayOutputWithContext(ctx context.Context) SelfServiceAppProvisionVmNicArrayOutput {
+	return o
+}
+
+func (o SelfServiceAppProvisionVmNicArrayOutput) Index(i pulumi.IntInput) SelfServiceAppProvisionVmNicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SelfServiceAppProvisionVmNic {
+		return vs[0].([]SelfServiceAppProvisionVmNic)[vs[1].(int)]
+	}).(SelfServiceAppProvisionVmNicOutput)
+}
+
+type ServiceGroupServiceList struct {
+	// - (Optional) ICMP type code list
+	IcmpTypeCodeLists []ServiceGroupServiceListIcmpTypeCodeList `pulumi:"icmpTypeCodeLists"`
+	// - (Optional) The UserPrincipalName of the user from the directory service.
+	Protocol *string `pulumi:"protocol"`
+	// - (Optional) TCP Port range list
+	TcpPortRangeLists []ServiceGroupServiceListTcpPortRangeList `pulumi:"tcpPortRangeLists"`
+	// - (Optional) UDP port range list
+	UdpPortRangeLists []ServiceGroupServiceListUdpPortRangeList `pulumi:"udpPortRangeLists"`
+}
+
+// ServiceGroupServiceListInput is an input type that accepts ServiceGroupServiceListArgs and ServiceGroupServiceListOutput values.
+// You can construct a concrete instance of `ServiceGroupServiceListInput` via:
+//
+//	ServiceGroupServiceListArgs{...}
+type ServiceGroupServiceListInput interface {
+	pulumi.Input
+
+	ToServiceGroupServiceListOutput() ServiceGroupServiceListOutput
+	ToServiceGroupServiceListOutputWithContext(context.Context) ServiceGroupServiceListOutput
+}
+
+type ServiceGroupServiceListArgs struct {
+	// - (Optional) ICMP type code list
+	IcmpTypeCodeLists ServiceGroupServiceListIcmpTypeCodeListArrayInput `pulumi:"icmpTypeCodeLists"`
+	// - (Optional) The UserPrincipalName of the user from the directory service.
+	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// - (Optional) TCP Port range list
+	TcpPortRangeLists ServiceGroupServiceListTcpPortRangeListArrayInput `pulumi:"tcpPortRangeLists"`
+	// - (Optional) UDP port range list
+	UdpPortRangeLists ServiceGroupServiceListUdpPortRangeListArrayInput `pulumi:"udpPortRangeLists"`
+}
+
+func (ServiceGroupServiceListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceGroupServiceList)(nil)).Elem()
+}
+
+func (i ServiceGroupServiceListArgs) ToServiceGroupServiceListOutput() ServiceGroupServiceListOutput {
+	return i.ToServiceGroupServiceListOutputWithContext(context.Background())
+}
+
+func (i ServiceGroupServiceListArgs) ToServiceGroupServiceListOutputWithContext(ctx context.Context) ServiceGroupServiceListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupServiceListOutput)
+}
+
+// ServiceGroupServiceListArrayInput is an input type that accepts ServiceGroupServiceListArray and ServiceGroupServiceListArrayOutput values.
+// You can construct a concrete instance of `ServiceGroupServiceListArrayInput` via:
+//
+//	ServiceGroupServiceListArray{ ServiceGroupServiceListArgs{...} }
+type ServiceGroupServiceListArrayInput interface {
+	pulumi.Input
+
+	ToServiceGroupServiceListArrayOutput() ServiceGroupServiceListArrayOutput
+	ToServiceGroupServiceListArrayOutputWithContext(context.Context) ServiceGroupServiceListArrayOutput
+}
+
+type ServiceGroupServiceListArray []ServiceGroupServiceListInput
+
+func (ServiceGroupServiceListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceGroupServiceList)(nil)).Elem()
+}
+
+func (i ServiceGroupServiceListArray) ToServiceGroupServiceListArrayOutput() ServiceGroupServiceListArrayOutput {
+	return i.ToServiceGroupServiceListArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceGroupServiceListArray) ToServiceGroupServiceListArrayOutputWithContext(ctx context.Context) ServiceGroupServiceListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupServiceListArrayOutput)
+}
+
+type ServiceGroupServiceListOutput struct{ *pulumi.OutputState }
+
+func (ServiceGroupServiceListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceGroupServiceList)(nil)).Elem()
+}
+
+func (o ServiceGroupServiceListOutput) ToServiceGroupServiceListOutput() ServiceGroupServiceListOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListOutput) ToServiceGroupServiceListOutputWithContext(ctx context.Context) ServiceGroupServiceListOutput {
+	return o
+}
+
+// - (Optional) ICMP type code list
+func (o ServiceGroupServiceListOutput) IcmpTypeCodeLists() ServiceGroupServiceListIcmpTypeCodeListArrayOutput {
+	return o.ApplyT(func(v ServiceGroupServiceList) []ServiceGroupServiceListIcmpTypeCodeList { return v.IcmpTypeCodeLists }).(ServiceGroupServiceListIcmpTypeCodeListArrayOutput)
+}
+
+// - (Optional) The UserPrincipalName of the user from the directory service.
+func (o ServiceGroupServiceListOutput) Protocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceGroupServiceList) *string { return v.Protocol }).(pulumi.StringPtrOutput)
+}
+
+// - (Optional) TCP Port range list
+func (o ServiceGroupServiceListOutput) TcpPortRangeLists() ServiceGroupServiceListTcpPortRangeListArrayOutput {
+	return o.ApplyT(func(v ServiceGroupServiceList) []ServiceGroupServiceListTcpPortRangeList { return v.TcpPortRangeLists }).(ServiceGroupServiceListTcpPortRangeListArrayOutput)
+}
+
+// - (Optional) UDP port range list
+func (o ServiceGroupServiceListOutput) UdpPortRangeLists() ServiceGroupServiceListUdpPortRangeListArrayOutput {
+	return o.ApplyT(func(v ServiceGroupServiceList) []ServiceGroupServiceListUdpPortRangeList { return v.UdpPortRangeLists }).(ServiceGroupServiceListUdpPortRangeListArrayOutput)
+}
+
+type ServiceGroupServiceListArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceGroupServiceListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceGroupServiceList)(nil)).Elem()
+}
+
+func (o ServiceGroupServiceListArrayOutput) ToServiceGroupServiceListArrayOutput() ServiceGroupServiceListArrayOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListArrayOutput) ToServiceGroupServiceListArrayOutputWithContext(ctx context.Context) ServiceGroupServiceListArrayOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListArrayOutput) Index(i pulumi.IntInput) ServiceGroupServiceListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceGroupServiceList {
+		return vs[0].([]ServiceGroupServiceList)[vs[1].(int)]
+	}).(ServiceGroupServiceListOutput)
+}
+
+type ServiceGroupServiceListIcmpTypeCodeList struct {
+	// - (Optional) Code as text
+	Code *string `pulumi:"code"`
+	// - (Optional) Type as text
+	Type *string `pulumi:"type"`
+}
+
+// ServiceGroupServiceListIcmpTypeCodeListInput is an input type that accepts ServiceGroupServiceListIcmpTypeCodeListArgs and ServiceGroupServiceListIcmpTypeCodeListOutput values.
+// You can construct a concrete instance of `ServiceGroupServiceListIcmpTypeCodeListInput` via:
+//
+//	ServiceGroupServiceListIcmpTypeCodeListArgs{...}
+type ServiceGroupServiceListIcmpTypeCodeListInput interface {
+	pulumi.Input
+
+	ToServiceGroupServiceListIcmpTypeCodeListOutput() ServiceGroupServiceListIcmpTypeCodeListOutput
+	ToServiceGroupServiceListIcmpTypeCodeListOutputWithContext(context.Context) ServiceGroupServiceListIcmpTypeCodeListOutput
+}
+
+type ServiceGroupServiceListIcmpTypeCodeListArgs struct {
+	// - (Optional) Code as text
+	Code pulumi.StringPtrInput `pulumi:"code"`
+	// - (Optional) Type as text
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (ServiceGroupServiceListIcmpTypeCodeListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceGroupServiceListIcmpTypeCodeList)(nil)).Elem()
+}
+
+func (i ServiceGroupServiceListIcmpTypeCodeListArgs) ToServiceGroupServiceListIcmpTypeCodeListOutput() ServiceGroupServiceListIcmpTypeCodeListOutput {
+	return i.ToServiceGroupServiceListIcmpTypeCodeListOutputWithContext(context.Background())
+}
+
+func (i ServiceGroupServiceListIcmpTypeCodeListArgs) ToServiceGroupServiceListIcmpTypeCodeListOutputWithContext(ctx context.Context) ServiceGroupServiceListIcmpTypeCodeListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupServiceListIcmpTypeCodeListOutput)
+}
+
+// ServiceGroupServiceListIcmpTypeCodeListArrayInput is an input type that accepts ServiceGroupServiceListIcmpTypeCodeListArray and ServiceGroupServiceListIcmpTypeCodeListArrayOutput values.
+// You can construct a concrete instance of `ServiceGroupServiceListIcmpTypeCodeListArrayInput` via:
+//
+//	ServiceGroupServiceListIcmpTypeCodeListArray{ ServiceGroupServiceListIcmpTypeCodeListArgs{...} }
+type ServiceGroupServiceListIcmpTypeCodeListArrayInput interface {
+	pulumi.Input
+
+	ToServiceGroupServiceListIcmpTypeCodeListArrayOutput() ServiceGroupServiceListIcmpTypeCodeListArrayOutput
+	ToServiceGroupServiceListIcmpTypeCodeListArrayOutputWithContext(context.Context) ServiceGroupServiceListIcmpTypeCodeListArrayOutput
+}
+
+type ServiceGroupServiceListIcmpTypeCodeListArray []ServiceGroupServiceListIcmpTypeCodeListInput
+
+func (ServiceGroupServiceListIcmpTypeCodeListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceGroupServiceListIcmpTypeCodeList)(nil)).Elem()
+}
+
+func (i ServiceGroupServiceListIcmpTypeCodeListArray) ToServiceGroupServiceListIcmpTypeCodeListArrayOutput() ServiceGroupServiceListIcmpTypeCodeListArrayOutput {
+	return i.ToServiceGroupServiceListIcmpTypeCodeListArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceGroupServiceListIcmpTypeCodeListArray) ToServiceGroupServiceListIcmpTypeCodeListArrayOutputWithContext(ctx context.Context) ServiceGroupServiceListIcmpTypeCodeListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupServiceListIcmpTypeCodeListArrayOutput)
+}
+
+type ServiceGroupServiceListIcmpTypeCodeListOutput struct{ *pulumi.OutputState }
+
+func (ServiceGroupServiceListIcmpTypeCodeListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceGroupServiceListIcmpTypeCodeList)(nil)).Elem()
+}
+
+func (o ServiceGroupServiceListIcmpTypeCodeListOutput) ToServiceGroupServiceListIcmpTypeCodeListOutput() ServiceGroupServiceListIcmpTypeCodeListOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListIcmpTypeCodeListOutput) ToServiceGroupServiceListIcmpTypeCodeListOutputWithContext(ctx context.Context) ServiceGroupServiceListIcmpTypeCodeListOutput {
+	return o
+}
+
+// - (Optional) Code as text
+func (o ServiceGroupServiceListIcmpTypeCodeListOutput) Code() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceGroupServiceListIcmpTypeCodeList) *string { return v.Code }).(pulumi.StringPtrOutput)
+}
+
+// - (Optional) Type as text
+func (o ServiceGroupServiceListIcmpTypeCodeListOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ServiceGroupServiceListIcmpTypeCodeList) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type ServiceGroupServiceListIcmpTypeCodeListArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceGroupServiceListIcmpTypeCodeListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceGroupServiceListIcmpTypeCodeList)(nil)).Elem()
+}
+
+func (o ServiceGroupServiceListIcmpTypeCodeListArrayOutput) ToServiceGroupServiceListIcmpTypeCodeListArrayOutput() ServiceGroupServiceListIcmpTypeCodeListArrayOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListIcmpTypeCodeListArrayOutput) ToServiceGroupServiceListIcmpTypeCodeListArrayOutputWithContext(ctx context.Context) ServiceGroupServiceListIcmpTypeCodeListArrayOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListIcmpTypeCodeListArrayOutput) Index(i pulumi.IntInput) ServiceGroupServiceListIcmpTypeCodeListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceGroupServiceListIcmpTypeCodeList {
+		return vs[0].([]ServiceGroupServiceListIcmpTypeCodeList)[vs[1].(int)]
+	}).(ServiceGroupServiceListIcmpTypeCodeListOutput)
+}
+
+type ServiceGroupServiceListTcpPortRangeList struct {
+	EndPort   *int `pulumi:"endPort"`
+	StartPort *int `pulumi:"startPort"`
+}
+
+// ServiceGroupServiceListTcpPortRangeListInput is an input type that accepts ServiceGroupServiceListTcpPortRangeListArgs and ServiceGroupServiceListTcpPortRangeListOutput values.
+// You can construct a concrete instance of `ServiceGroupServiceListTcpPortRangeListInput` via:
+//
+//	ServiceGroupServiceListTcpPortRangeListArgs{...}
+type ServiceGroupServiceListTcpPortRangeListInput interface {
+	pulumi.Input
+
+	ToServiceGroupServiceListTcpPortRangeListOutput() ServiceGroupServiceListTcpPortRangeListOutput
+	ToServiceGroupServiceListTcpPortRangeListOutputWithContext(context.Context) ServiceGroupServiceListTcpPortRangeListOutput
+}
+
+type ServiceGroupServiceListTcpPortRangeListArgs struct {
+	EndPort   pulumi.IntPtrInput `pulumi:"endPort"`
+	StartPort pulumi.IntPtrInput `pulumi:"startPort"`
+}
+
+func (ServiceGroupServiceListTcpPortRangeListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceGroupServiceListTcpPortRangeList)(nil)).Elem()
+}
+
+func (i ServiceGroupServiceListTcpPortRangeListArgs) ToServiceGroupServiceListTcpPortRangeListOutput() ServiceGroupServiceListTcpPortRangeListOutput {
+	return i.ToServiceGroupServiceListTcpPortRangeListOutputWithContext(context.Background())
+}
+
+func (i ServiceGroupServiceListTcpPortRangeListArgs) ToServiceGroupServiceListTcpPortRangeListOutputWithContext(ctx context.Context) ServiceGroupServiceListTcpPortRangeListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupServiceListTcpPortRangeListOutput)
+}
+
+// ServiceGroupServiceListTcpPortRangeListArrayInput is an input type that accepts ServiceGroupServiceListTcpPortRangeListArray and ServiceGroupServiceListTcpPortRangeListArrayOutput values.
+// You can construct a concrete instance of `ServiceGroupServiceListTcpPortRangeListArrayInput` via:
+//
+//	ServiceGroupServiceListTcpPortRangeListArray{ ServiceGroupServiceListTcpPortRangeListArgs{...} }
+type ServiceGroupServiceListTcpPortRangeListArrayInput interface {
+	pulumi.Input
+
+	ToServiceGroupServiceListTcpPortRangeListArrayOutput() ServiceGroupServiceListTcpPortRangeListArrayOutput
+	ToServiceGroupServiceListTcpPortRangeListArrayOutputWithContext(context.Context) ServiceGroupServiceListTcpPortRangeListArrayOutput
+}
+
+type ServiceGroupServiceListTcpPortRangeListArray []ServiceGroupServiceListTcpPortRangeListInput
+
+func (ServiceGroupServiceListTcpPortRangeListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceGroupServiceListTcpPortRangeList)(nil)).Elem()
+}
+
+func (i ServiceGroupServiceListTcpPortRangeListArray) ToServiceGroupServiceListTcpPortRangeListArrayOutput() ServiceGroupServiceListTcpPortRangeListArrayOutput {
+	return i.ToServiceGroupServiceListTcpPortRangeListArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceGroupServiceListTcpPortRangeListArray) ToServiceGroupServiceListTcpPortRangeListArrayOutputWithContext(ctx context.Context) ServiceGroupServiceListTcpPortRangeListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupServiceListTcpPortRangeListArrayOutput)
+}
+
+type ServiceGroupServiceListTcpPortRangeListOutput struct{ *pulumi.OutputState }
+
+func (ServiceGroupServiceListTcpPortRangeListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceGroupServiceListTcpPortRangeList)(nil)).Elem()
+}
+
+func (o ServiceGroupServiceListTcpPortRangeListOutput) ToServiceGroupServiceListTcpPortRangeListOutput() ServiceGroupServiceListTcpPortRangeListOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListTcpPortRangeListOutput) ToServiceGroupServiceListTcpPortRangeListOutputWithContext(ctx context.Context) ServiceGroupServiceListTcpPortRangeListOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListTcpPortRangeListOutput) EndPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceGroupServiceListTcpPortRangeList) *int { return v.EndPort }).(pulumi.IntPtrOutput)
+}
+
+func (o ServiceGroupServiceListTcpPortRangeListOutput) StartPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceGroupServiceListTcpPortRangeList) *int { return v.StartPort }).(pulumi.IntPtrOutput)
+}
+
+type ServiceGroupServiceListTcpPortRangeListArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceGroupServiceListTcpPortRangeListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceGroupServiceListTcpPortRangeList)(nil)).Elem()
+}
+
+func (o ServiceGroupServiceListTcpPortRangeListArrayOutput) ToServiceGroupServiceListTcpPortRangeListArrayOutput() ServiceGroupServiceListTcpPortRangeListArrayOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListTcpPortRangeListArrayOutput) ToServiceGroupServiceListTcpPortRangeListArrayOutputWithContext(ctx context.Context) ServiceGroupServiceListTcpPortRangeListArrayOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListTcpPortRangeListArrayOutput) Index(i pulumi.IntInput) ServiceGroupServiceListTcpPortRangeListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceGroupServiceListTcpPortRangeList {
+		return vs[0].([]ServiceGroupServiceListTcpPortRangeList)[vs[1].(int)]
+	}).(ServiceGroupServiceListTcpPortRangeListOutput)
+}
+
+type ServiceGroupServiceListUdpPortRangeList struct {
+	EndPort   *int `pulumi:"endPort"`
+	StartPort *int `pulumi:"startPort"`
+}
+
+// ServiceGroupServiceListUdpPortRangeListInput is an input type that accepts ServiceGroupServiceListUdpPortRangeListArgs and ServiceGroupServiceListUdpPortRangeListOutput values.
+// You can construct a concrete instance of `ServiceGroupServiceListUdpPortRangeListInput` via:
+//
+//	ServiceGroupServiceListUdpPortRangeListArgs{...}
+type ServiceGroupServiceListUdpPortRangeListInput interface {
+	pulumi.Input
+
+	ToServiceGroupServiceListUdpPortRangeListOutput() ServiceGroupServiceListUdpPortRangeListOutput
+	ToServiceGroupServiceListUdpPortRangeListOutputWithContext(context.Context) ServiceGroupServiceListUdpPortRangeListOutput
+}
+
+type ServiceGroupServiceListUdpPortRangeListArgs struct {
+	EndPort   pulumi.IntPtrInput `pulumi:"endPort"`
+	StartPort pulumi.IntPtrInput `pulumi:"startPort"`
+}
+
+func (ServiceGroupServiceListUdpPortRangeListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceGroupServiceListUdpPortRangeList)(nil)).Elem()
+}
+
+func (i ServiceGroupServiceListUdpPortRangeListArgs) ToServiceGroupServiceListUdpPortRangeListOutput() ServiceGroupServiceListUdpPortRangeListOutput {
+	return i.ToServiceGroupServiceListUdpPortRangeListOutputWithContext(context.Background())
+}
+
+func (i ServiceGroupServiceListUdpPortRangeListArgs) ToServiceGroupServiceListUdpPortRangeListOutputWithContext(ctx context.Context) ServiceGroupServiceListUdpPortRangeListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupServiceListUdpPortRangeListOutput)
+}
+
+// ServiceGroupServiceListUdpPortRangeListArrayInput is an input type that accepts ServiceGroupServiceListUdpPortRangeListArray and ServiceGroupServiceListUdpPortRangeListArrayOutput values.
+// You can construct a concrete instance of `ServiceGroupServiceListUdpPortRangeListArrayInput` via:
+//
+//	ServiceGroupServiceListUdpPortRangeListArray{ ServiceGroupServiceListUdpPortRangeListArgs{...} }
+type ServiceGroupServiceListUdpPortRangeListArrayInput interface {
+	pulumi.Input
+
+	ToServiceGroupServiceListUdpPortRangeListArrayOutput() ServiceGroupServiceListUdpPortRangeListArrayOutput
+	ToServiceGroupServiceListUdpPortRangeListArrayOutputWithContext(context.Context) ServiceGroupServiceListUdpPortRangeListArrayOutput
+}
+
+type ServiceGroupServiceListUdpPortRangeListArray []ServiceGroupServiceListUdpPortRangeListInput
+
+func (ServiceGroupServiceListUdpPortRangeListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceGroupServiceListUdpPortRangeList)(nil)).Elem()
+}
+
+func (i ServiceGroupServiceListUdpPortRangeListArray) ToServiceGroupServiceListUdpPortRangeListArrayOutput() ServiceGroupServiceListUdpPortRangeListArrayOutput {
+	return i.ToServiceGroupServiceListUdpPortRangeListArrayOutputWithContext(context.Background())
+}
+
+func (i ServiceGroupServiceListUdpPortRangeListArray) ToServiceGroupServiceListUdpPortRangeListArrayOutputWithContext(ctx context.Context) ServiceGroupServiceListUdpPortRangeListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ServiceGroupServiceListUdpPortRangeListArrayOutput)
+}
+
+type ServiceGroupServiceListUdpPortRangeListOutput struct{ *pulumi.OutputState }
+
+func (ServiceGroupServiceListUdpPortRangeListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ServiceGroupServiceListUdpPortRangeList)(nil)).Elem()
+}
+
+func (o ServiceGroupServiceListUdpPortRangeListOutput) ToServiceGroupServiceListUdpPortRangeListOutput() ServiceGroupServiceListUdpPortRangeListOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListUdpPortRangeListOutput) ToServiceGroupServiceListUdpPortRangeListOutputWithContext(ctx context.Context) ServiceGroupServiceListUdpPortRangeListOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListUdpPortRangeListOutput) EndPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceGroupServiceListUdpPortRangeList) *int { return v.EndPort }).(pulumi.IntPtrOutput)
+}
+
+func (o ServiceGroupServiceListUdpPortRangeListOutput) StartPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ServiceGroupServiceListUdpPortRangeList) *int { return v.StartPort }).(pulumi.IntPtrOutput)
+}
+
+type ServiceGroupServiceListUdpPortRangeListArrayOutput struct{ *pulumi.OutputState }
+
+func (ServiceGroupServiceListUdpPortRangeListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ServiceGroupServiceListUdpPortRangeList)(nil)).Elem()
+}
+
+func (o ServiceGroupServiceListUdpPortRangeListArrayOutput) ToServiceGroupServiceListUdpPortRangeListArrayOutput() ServiceGroupServiceListUdpPortRangeListArrayOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListUdpPortRangeListArrayOutput) ToServiceGroupServiceListUdpPortRangeListArrayOutputWithContext(ctx context.Context) ServiceGroupServiceListUdpPortRangeListArrayOutput {
+	return o
+}
+
+func (o ServiceGroupServiceListUdpPortRangeListArrayOutput) Index(i pulumi.IntInput) ServiceGroupServiceListUdpPortRangeListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ServiceGroupServiceListUdpPortRangeList {
+		return vs[0].([]ServiceGroupServiceListUdpPortRangeList)[vs[1].(int)]
+	}).(ServiceGroupServiceListUdpPortRangeListOutput)
+}
+
 type ServiceGroupsV2IcmpService struct {
 	// Icmp service Code. Ignore this field if Code has to be ANY
 	Code *int `pulumi:"code"`
@@ -23626,6 +25120,7 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStor
 	DiskExtId             *string                                                                                              `pulumi:"diskExtId"`
 	DiskSizeBytes         *int                                                                                                 `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress *bool                                                                                                `pulumi:"isMigrationInProgress"`
+	SerialId              *string                                                                                              `pulumi:"serialId"`
 	StorageConfigs        []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers     []TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer `pulumi:"storageContainers"`
 }
@@ -23646,6 +25141,7 @@ type TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStor
 	DiskExtId             pulumi.StringPtrInput                                                                                        `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntPtrInput                                                                                           `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolPtrInput                                                                                          `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringPtrInput                                                                                        `pulumi:"serialId"`
 	StorageConfigs        TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers     TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArrayInput `pulumi:"storageContainers"`
 }
@@ -23723,6 +25219,12 @@ func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingS
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfo) *bool {
 		return v.IsMigrationInProgress
 	}).(pulumi.BoolPtrOutput)
+}
+
+func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfo) *string {
+		return v.SerialId
+	}).(pulumi.StringPtrOutput)
 }
 
 func (o TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) StorageConfigs() TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayOutput {
@@ -24822,8 +26324,9 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo struct {
 	DataSources []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSource `pulumi:"dataSources"`
 	DiskExtId   *string                                                         `pulumi:"diskExtId"`
 	// Size of the disk in Bytes
-	DiskSizeBytes         *int  `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress *bool `pulumi:"isMigrationInProgress"`
+	DiskSizeBytes         *int    `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress *bool   `pulumi:"isMigrationInProgress"`
+	SerialId              *string `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
 	StorageConfigs []TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig `pulumi:"storageConfigs"`
@@ -24847,8 +26350,9 @@ type TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArgs struct {
 	DataSources TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoDataSourceArrayInput `pulumi:"dataSources"`
 	DiskExtId   pulumi.StringPtrInput                                                   `pulumi:"diskExtId"`
 	// Size of the disk in Bytes
-	DiskSizeBytes         pulumi.IntPtrInput  `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress pulumi.BoolPtrInput `pulumi:"isMigrationInProgress"`
+	DiskSizeBytes         pulumi.IntPtrInput    `pulumi:"diskSizeBytes"`
+	IsMigrationInProgress pulumi.BoolPtrInput   `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringPtrInput `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
 	StorageConfigs TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
@@ -24925,6 +26429,10 @@ func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) DiskSizeBytes
 
 func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) IsMigrationInProgress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
+}
+
+func (o TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo) *string { return v.SerialId }).(pulumi.StringPtrOutput)
 }
 
 // Storage configuration for VM disks
@@ -26434,6 +27942,7 @@ type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk struct {
 	DiskExtId             *string                                                                    `pulumi:"diskExtId"`
 	DiskSizeBytes         *int                                                                       `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress *bool                                                                      `pulumi:"isMigrationInProgress"`
+	SerialId              *string                                                                    `pulumi:"serialId"`
 	StorageConfigs        []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers     []TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer `pulumi:"storageContainers"`
 }
@@ -26454,6 +27963,7 @@ type TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs struct {
 	DiskExtId             pulumi.StringPtrInput                                                              `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntPtrInput                                                                 `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolPtrInput                                                                `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringPtrInput                                                              `pulumi:"serialId"`
 	StorageConfigs        TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers     TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArrayInput `pulumi:"storageContainers"`
 }
@@ -26525,6 +28035,10 @@ func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) DiskSize
 
 func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) IsMigrationInProgress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
+}
+
+func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk) *string { return v.SerialId }).(pulumi.StringPtrOutput)
 }
 
 func (o TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskOutput) StorageConfigs() TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArrayOutput {
@@ -37368,6 +38882,2523 @@ func (o TemplateV2UpdatedByAdditionalAttributeValueMapOfStringArrayOutput) Index
 	}).(TemplateV2UpdatedByAdditionalAttributeValueMapOfStringOutput)
 }
 
+type TenantDomainAllocationV2ExternalNetworkConfig struct {
+	// The NAT or no-NAT external network connection configuration.
+	Config *TenantDomainAllocationV2ExternalNetworkConfigConfig `pulumi:"config"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId *string `pulumi:"extId"`
+	// The state details of the domain allocation.
+	StateInfos []TenantDomainAllocationV2ExternalNetworkConfigStateInfo `pulumi:"stateInfos"`
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId *string `pulumi:"tenantId"`
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigArgs and TenantDomainAllocationV2ExternalNetworkConfigOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigInput` via:
+//
+//	TenantDomainAllocationV2ExternalNetworkConfigArgs{...}
+type TenantDomainAllocationV2ExternalNetworkConfigInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigOutput() TenantDomainAllocationV2ExternalNetworkConfigOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigOutput
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigArgs struct {
+	// The NAT or no-NAT external network connection configuration.
+	Config TenantDomainAllocationV2ExternalNetworkConfigConfigPtrInput `pulumi:"config"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// The state details of the domain allocation.
+	StateInfos TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayInput `pulumi:"stateInfos"`
+	// A globally unique identifier that represents the tenant that owns this entity.
+	TenantId pulumi.StringPtrInput `pulumi:"tenantId"`
+}
+
+func (TenantDomainAllocationV2ExternalNetworkConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfig)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigArgs) ToTenantDomainAllocationV2ExternalNetworkConfigOutput() TenantDomainAllocationV2ExternalNetworkConfigOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigArgs) ToTenantDomainAllocationV2ExternalNetworkConfigOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigOutput)
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigArrayInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigArray and TenantDomainAllocationV2ExternalNetworkConfigArrayOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigArrayInput` via:
+//
+//	TenantDomainAllocationV2ExternalNetworkConfigArray{ TenantDomainAllocationV2ExternalNetworkConfigArgs{...} }
+type TenantDomainAllocationV2ExternalNetworkConfigArrayInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigArrayOutput() TenantDomainAllocationV2ExternalNetworkConfigArrayOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigArrayOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigArrayOutput
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigArray []TenantDomainAllocationV2ExternalNetworkConfigInput
+
+func (TenantDomainAllocationV2ExternalNetworkConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2ExternalNetworkConfig)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigArray) ToTenantDomainAllocationV2ExternalNetworkConfigArrayOutput() TenantDomainAllocationV2ExternalNetworkConfigArrayOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigArrayOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigArray) ToTenantDomainAllocationV2ExternalNetworkConfigArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigArrayOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfig)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigOutput) ToTenantDomainAllocationV2ExternalNetworkConfigOutput() TenantDomainAllocationV2ExternalNetworkConfigOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigOutput) ToTenantDomainAllocationV2ExternalNetworkConfigOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigOutput {
+	return o
+}
+
+// The NAT or no-NAT external network connection configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigOutput) Config() TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfig) *TenantDomainAllocationV2ExternalNetworkConfigConfig {
+		return v.Config
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput)
+}
+
+// A globally unique identifier of an instance that is suitable for external consumption.
+func (o TenantDomainAllocationV2ExternalNetworkConfigOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfig) *string { return v.ExtId }).(pulumi.StringPtrOutput)
+}
+
+// The state details of the domain allocation.
+func (o TenantDomainAllocationV2ExternalNetworkConfigOutput) StateInfos() TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfig) []TenantDomainAllocationV2ExternalNetworkConfigStateInfo {
+		return v.StateInfos
+	}).(TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput)
+}
+
+// A globally unique identifier that represents the tenant that owns this entity.
+func (o TenantDomainAllocationV2ExternalNetworkConfigOutput) TenantId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfig) *string { return v.TenantId }).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2ExternalNetworkConfig)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigArrayOutput) ToTenantDomainAllocationV2ExternalNetworkConfigArrayOutput() TenantDomainAllocationV2ExternalNetworkConfigArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigArrayOutput) ToTenantDomainAllocationV2ExternalNetworkConfigArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigArrayOutput) Index(i pulumi.IntInput) TenantDomainAllocationV2ExternalNetworkConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantDomainAllocationV2ExternalNetworkConfig {
+		return vs[0].([]TenantDomainAllocationV2ExternalNetworkConfig)[vs[1].(int)]
+	}).(TenantDomainAllocationV2ExternalNetworkConfigOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfig struct {
+	// NAT configuration.
+	Nat *TenantDomainAllocationV2ExternalNetworkConfigConfigNat `pulumi:"nat"`
+	// No-NAT configuration.
+	NoNat *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat `pulumi:"noNat"`
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigConfigInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigConfigArgs and TenantDomainAllocationV2ExternalNetworkConfigConfigOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigConfigInput` via:
+//
+//	TenantDomainAllocationV2ExternalNetworkConfigConfigArgs{...}
+type TenantDomainAllocationV2ExternalNetworkConfigConfigInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigOutput
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigArgs struct {
+	// NAT configuration.
+	Nat TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrInput `pulumi:"nat"`
+	// No-NAT configuration.
+	NoNat TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrInput `pulumi:"noNat"`
+}
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfig)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigOutput)
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigOutput).ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(ctx)
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigConfigPtrInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigConfigArgs, TenantDomainAllocationV2ExternalNetworkConfigConfigPtr and TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigConfigPtrInput` via:
+//
+//	        TenantDomainAllocationV2ExternalNetworkConfigConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type TenantDomainAllocationV2ExternalNetworkConfigConfigPtrInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput
+}
+
+type tenantDomainAllocationV2ExternalNetworkConfigConfigPtrType TenantDomainAllocationV2ExternalNetworkConfigConfigArgs
+
+func TenantDomainAllocationV2ExternalNetworkConfigConfigPtr(v *TenantDomainAllocationV2ExternalNetworkConfigConfigArgs) TenantDomainAllocationV2ExternalNetworkConfigConfigPtrInput {
+	return (*tenantDomainAllocationV2ExternalNetworkConfigConfigPtrType)(v)
+}
+
+func (*tenantDomainAllocationV2ExternalNetworkConfigConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ExternalNetworkConfigConfig)(nil)).Elem()
+}
+
+func (i *tenantDomainAllocationV2ExternalNetworkConfigConfigPtrType) ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *tenantDomainAllocationV2ExternalNetworkConfigConfigPtrType) ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfig)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return o.ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(context.Background())
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TenantDomainAllocationV2ExternalNetworkConfigConfig) *TenantDomainAllocationV2ExternalNetworkConfigConfig {
+		return &v
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput)
+}
+
+// NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigOutput) Nat() TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigConfig) *TenantDomainAllocationV2ExternalNetworkConfigConfigNat {
+		return v.Nat
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput)
+}
+
+// No-NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigOutput) NoNat() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigConfig) *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat {
+		return v.NoNat
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ExternalNetworkConfigConfig)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput) Elem() TenantDomainAllocationV2ExternalNetworkConfigConfigOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfig) TenantDomainAllocationV2ExternalNetworkConfigConfig {
+		if v != nil {
+			return *v
+		}
+		var ret TenantDomainAllocationV2ExternalNetworkConfigConfig
+		return ret
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigOutput)
+}
+
+// NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput) Nat() TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfig) *TenantDomainAllocationV2ExternalNetworkConfigConfigNat {
+		if v == nil {
+			return nil
+		}
+		return v.Nat
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput)
+}
+
+// No-NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput) NoNat() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfig) *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat {
+		if v == nil {
+			return nil
+		}
+		return v.NoNat
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNat struct {
+	// Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+	FloatingIpCount *int `pulumi:"floatingIpCount"`
+	// The external identifier of the overlay subnet for NAT configuration.
+	OverlaySubnetExtId string `pulumi:"overlaySubnetExtId"`
+	// The external identifier of the transit VPC for NAT configuration.
+	TransitVpcExtId string `pulumi:"transitVpcExtId"`
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigConfigNatInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs and TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigConfigNatInput` via:
+//
+//	TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs{...}
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNatInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs struct {
+	// Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+	FloatingIpCount pulumi.IntPtrInput `pulumi:"floatingIpCount"`
+	// The external identifier of the overlay subnet for NAT configuration.
+	OverlaySubnetExtId pulumi.StringInput `pulumi:"overlaySubnetExtId"`
+	// The external identifier of the transit VPC for NAT configuration.
+	TransitVpcExtId pulumi.StringInput `pulumi:"transitVpcExtId"`
+}
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigNat)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput)
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput).ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(ctx)
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs, TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtr and TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrInput` via:
+//
+//	        TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs{...}
+//
+//	or:
+//
+//	        nil
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput
+}
+
+type tenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrType TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs
+
+func TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtr(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs) TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrInput {
+	return (*tenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrType)(v)
+}
+
+func (*tenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ExternalNetworkConfigConfigNat)(nil)).Elem()
+}
+
+func (i *tenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrType) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(context.Background())
+}
+
+func (i *tenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrType) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigNat)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return o.ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(context.Background())
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TenantDomainAllocationV2ExternalNetworkConfigConfigNat) *TenantDomainAllocationV2ExternalNetworkConfigConfigNat {
+		return &v
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput)
+}
+
+// Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput) FloatingIpCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigConfigNat) *int { return v.FloatingIpCount }).(pulumi.IntPtrOutput)
+}
+
+// The external identifier of the overlay subnet for NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput) OverlaySubnetExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigConfigNat) string { return v.OverlaySubnetExtId }).(pulumi.StringOutput)
+}
+
+// The external identifier of the transit VPC for NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput) TransitVpcExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigConfigNat) string { return v.TransitVpcExtId }).(pulumi.StringOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ExternalNetworkConfigConfigNat)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput) Elem() TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNat) TenantDomainAllocationV2ExternalNetworkConfigConfigNat {
+		if v != nil {
+			return *v
+		}
+		var ret TenantDomainAllocationV2ExternalNetworkConfigConfigNat
+		return ret
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput)
+}
+
+// Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput) FloatingIpCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNat) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FloatingIpCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// The external identifier of the overlay subnet for NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput) OverlaySubnetExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNat) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.OverlaySubnetExtId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The external identifier of the transit VPC for NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput) TransitVpcExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNat) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TransitVpcExtId
+	}).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat struct {
+	// Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+	ExternallyRoutablePrefixes []string `pulumi:"externallyRoutablePrefixes"`
+	// The external identifier of the overlay subnet for no-NAT configuration.
+	OverlaySubnetExtId string `pulumi:"overlaySubnetExtId"`
+	// The external identifier of the transit VPC for no-NAT configuration.
+	TransitVpcExtId string `pulumi:"transitVpcExtId"`
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs and TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatInput` via:
+//
+//	TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs{...}
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs struct {
+	// Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+	ExternallyRoutablePrefixes pulumi.StringArrayInput `pulumi:"externallyRoutablePrefixes"`
+	// The external identifier of the overlay subnet for no-NAT configuration.
+	OverlaySubnetExtId pulumi.StringInput `pulumi:"overlaySubnetExtId"`
+	// The external identifier of the transit VPC for no-NAT configuration.
+	TransitVpcExtId pulumi.StringInput `pulumi:"transitVpcExtId"`
+}
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput)
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput).ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(ctx)
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs, TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtr and TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrInput` via:
+//
+//	        TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs{...}
+//
+//	or:
+//
+//	        nil
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput
+}
+
+type tenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrType TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs
+
+func TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtr(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrInput {
+	return (*tenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrType)(v)
+}
+
+func (*tenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat)(nil)).Elem()
+}
+
+func (i *tenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrType) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(context.Background())
+}
+
+func (i *tenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrType) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return o.ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(context.Background())
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat) *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat {
+		return &v
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput)
+}
+
+// Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput) ExternallyRoutablePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat) []string {
+		return v.ExternallyRoutablePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The external identifier of the overlay subnet for no-NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput) OverlaySubnetExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat) string { return v.OverlaySubnetExtId }).(pulumi.StringOutput)
+}
+
+// The external identifier of the transit VPC for no-NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput) TransitVpcExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat) string { return v.TransitVpcExtId }).(pulumi.StringOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput) ToTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput) Elem() TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat) TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat {
+		if v != nil {
+			return *v
+		}
+		var ret TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat
+		return ret
+	}).(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput)
+}
+
+// Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput) ExternallyRoutablePrefixes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExternallyRoutablePrefixes
+	}).(pulumi.StringArrayOutput)
+}
+
+// The external identifier of the overlay subnet for no-NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput) OverlaySubnetExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.OverlaySubnetExtId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The external identifier of the transit VPC for no-NAT configuration.
+func (o TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput) TransitVpcExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TransitVpcExtId
+	}).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigStateInfo struct {
+	// The state of the domain allocation.
+	State *string `pulumi:"state"`
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigStateInfoInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs and TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigStateInfoInput` via:
+//
+//	TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs{...}
+type TenantDomainAllocationV2ExternalNetworkConfigStateInfoInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput() TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs struct {
+	// The state of the domain allocation.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigStateInfo)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs) ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput() TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs) ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput)
+}
+
+// TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayInput is an input type that accepts TenantDomainAllocationV2ExternalNetworkConfigStateInfoArray and TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayInput` via:
+//
+//	TenantDomainAllocationV2ExternalNetworkConfigStateInfoArray{ TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs{...} }
+type TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput() TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput
+	ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutputWithContext(context.Context) TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigStateInfoArray []TenantDomainAllocationV2ExternalNetworkConfigStateInfoInput
+
+func (TenantDomainAllocationV2ExternalNetworkConfigStateInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2ExternalNetworkConfigStateInfo)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigStateInfoArray) ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput() TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput {
+	return i.ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ExternalNetworkConfigStateInfoArray) ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigStateInfo)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput) ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput() TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput) ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput {
+	return o
+}
+
+// The state of the domain allocation.
+func (o TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ExternalNetworkConfigStateInfo) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2ExternalNetworkConfigStateInfo)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput) ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput() TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput) ToTenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput) Index(i pulumi.IntInput) TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantDomainAllocationV2ExternalNetworkConfigStateInfo {
+		return vs[0].([]TenantDomainAllocationV2ExternalNetworkConfigStateInfo)[vs[1].(int)]
+	}).(TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput)
+}
+
+type TenantDomainAllocationV2Link struct {
+	Href *string `pulumi:"href"`
+	Rel  *string `pulumi:"rel"`
+}
+
+// TenantDomainAllocationV2LinkInput is an input type that accepts TenantDomainAllocationV2LinkArgs and TenantDomainAllocationV2LinkOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2LinkInput` via:
+//
+//	TenantDomainAllocationV2LinkArgs{...}
+type TenantDomainAllocationV2LinkInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2LinkOutput() TenantDomainAllocationV2LinkOutput
+	ToTenantDomainAllocationV2LinkOutputWithContext(context.Context) TenantDomainAllocationV2LinkOutput
+}
+
+type TenantDomainAllocationV2LinkArgs struct {
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	Rel  pulumi.StringPtrInput `pulumi:"rel"`
+}
+
+func (TenantDomainAllocationV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2Link)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2LinkArgs) ToTenantDomainAllocationV2LinkOutput() TenantDomainAllocationV2LinkOutput {
+	return i.ToTenantDomainAllocationV2LinkOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2LinkArgs) ToTenantDomainAllocationV2LinkOutputWithContext(ctx context.Context) TenantDomainAllocationV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2LinkOutput)
+}
+
+// TenantDomainAllocationV2LinkArrayInput is an input type that accepts TenantDomainAllocationV2LinkArray and TenantDomainAllocationV2LinkArrayOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2LinkArrayInput` via:
+//
+//	TenantDomainAllocationV2LinkArray{ TenantDomainAllocationV2LinkArgs{...} }
+type TenantDomainAllocationV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2LinkArrayOutput() TenantDomainAllocationV2LinkArrayOutput
+	ToTenantDomainAllocationV2LinkArrayOutputWithContext(context.Context) TenantDomainAllocationV2LinkArrayOutput
+}
+
+type TenantDomainAllocationV2LinkArray []TenantDomainAllocationV2LinkInput
+
+func (TenantDomainAllocationV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2Link)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2LinkArray) ToTenantDomainAllocationV2LinkArrayOutput() TenantDomainAllocationV2LinkArrayOutput {
+	return i.ToTenantDomainAllocationV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2LinkArray) ToTenantDomainAllocationV2LinkArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2LinkArrayOutput)
+}
+
+type TenantDomainAllocationV2LinkOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2Link)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2LinkOutput) ToTenantDomainAllocationV2LinkOutput() TenantDomainAllocationV2LinkOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2LinkOutput) ToTenantDomainAllocationV2LinkOutputWithContext(ctx context.Context) TenantDomainAllocationV2LinkOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2LinkOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2Link) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+func (o TenantDomainAllocationV2LinkOutput) Rel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2Link) *string { return v.Rel }).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2Link)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2LinkArrayOutput) ToTenantDomainAllocationV2LinkArrayOutput() TenantDomainAllocationV2LinkArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2LinkArrayOutput) ToTenantDomainAllocationV2LinkArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2LinkArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2LinkArrayOutput) Index(i pulumi.IntInput) TenantDomainAllocationV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantDomainAllocationV2Link {
+		return vs[0].([]TenantDomainAllocationV2Link)[vs[1].(int)]
+	}).(TenantDomainAllocationV2LinkOutput)
+}
+
+type TenantDomainAllocationV2Project struct {
+	// External identifier of the project.
+	ExtId *string `pulumi:"extId"`
+	// The name of the project.
+	Name *string `pulumi:"name"`
+	// The resource quota of the project.
+	Quota *TenantDomainAllocationV2ProjectQuota `pulumi:"quota"`
+	// The resource group of the project.
+	ResourceGroup *TenantDomainAllocationV2ProjectResourceGroup `pulumi:"resourceGroup"`
+	// The state of the domain allocation.
+	State *string `pulumi:"state"`
+}
+
+// TenantDomainAllocationV2ProjectInput is an input type that accepts TenantDomainAllocationV2ProjectArgs and TenantDomainAllocationV2ProjectOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ProjectInput` via:
+//
+//	TenantDomainAllocationV2ProjectArgs{...}
+type TenantDomainAllocationV2ProjectInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ProjectOutput() TenantDomainAllocationV2ProjectOutput
+	ToTenantDomainAllocationV2ProjectOutputWithContext(context.Context) TenantDomainAllocationV2ProjectOutput
+}
+
+type TenantDomainAllocationV2ProjectArgs struct {
+	// External identifier of the project.
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// The name of the project.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// The resource quota of the project.
+	Quota TenantDomainAllocationV2ProjectQuotaPtrInput `pulumi:"quota"`
+	// The resource group of the project.
+	ResourceGroup TenantDomainAllocationV2ProjectResourceGroupPtrInput `pulumi:"resourceGroup"`
+	// The state of the domain allocation.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (TenantDomainAllocationV2ProjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2Project)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ProjectArgs) ToTenantDomainAllocationV2ProjectOutput() TenantDomainAllocationV2ProjectOutput {
+	return i.ToTenantDomainAllocationV2ProjectOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ProjectArgs) ToTenantDomainAllocationV2ProjectOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectOutput)
+}
+
+// TenantDomainAllocationV2ProjectArrayInput is an input type that accepts TenantDomainAllocationV2ProjectArray and TenantDomainAllocationV2ProjectArrayOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ProjectArrayInput` via:
+//
+//	TenantDomainAllocationV2ProjectArray{ TenantDomainAllocationV2ProjectArgs{...} }
+type TenantDomainAllocationV2ProjectArrayInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ProjectArrayOutput() TenantDomainAllocationV2ProjectArrayOutput
+	ToTenantDomainAllocationV2ProjectArrayOutputWithContext(context.Context) TenantDomainAllocationV2ProjectArrayOutput
+}
+
+type TenantDomainAllocationV2ProjectArray []TenantDomainAllocationV2ProjectInput
+
+func (TenantDomainAllocationV2ProjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2Project)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ProjectArray) ToTenantDomainAllocationV2ProjectArrayOutput() TenantDomainAllocationV2ProjectArrayOutput {
+	return i.ToTenantDomainAllocationV2ProjectArrayOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ProjectArray) ToTenantDomainAllocationV2ProjectArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectArrayOutput)
+}
+
+type TenantDomainAllocationV2ProjectOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ProjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2Project)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ProjectOutput) ToTenantDomainAllocationV2ProjectOutput() TenantDomainAllocationV2ProjectOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectOutput) ToTenantDomainAllocationV2ProjectOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectOutput {
+	return o
+}
+
+// External identifier of the project.
+func (o TenantDomainAllocationV2ProjectOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2Project) *string { return v.ExtId }).(pulumi.StringPtrOutput)
+}
+
+// The name of the project.
+func (o TenantDomainAllocationV2ProjectOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2Project) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// The resource quota of the project.
+func (o TenantDomainAllocationV2ProjectOutput) Quota() TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2Project) *TenantDomainAllocationV2ProjectQuota { return v.Quota }).(TenantDomainAllocationV2ProjectQuotaPtrOutput)
+}
+
+// The resource group of the project.
+func (o TenantDomainAllocationV2ProjectOutput) ResourceGroup() TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2Project) *TenantDomainAllocationV2ProjectResourceGroup {
+		return v.ResourceGroup
+	}).(TenantDomainAllocationV2ProjectResourceGroupPtrOutput)
+}
+
+// The state of the domain allocation.
+func (o TenantDomainAllocationV2ProjectOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2Project) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2ProjectArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ProjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2Project)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ProjectArrayOutput) ToTenantDomainAllocationV2ProjectArrayOutput() TenantDomainAllocationV2ProjectArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectArrayOutput) ToTenantDomainAllocationV2ProjectArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectArrayOutput) Index(i pulumi.IntInput) TenantDomainAllocationV2ProjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantDomainAllocationV2Project {
+		return vs[0].([]TenantDomainAllocationV2Project)[vs[1].(int)]
+	}).(TenantDomainAllocationV2ProjectOutput)
+}
+
+type TenantDomainAllocationV2ProjectQuota struct {
+	// The external identifier of the quota for the placement target.
+	ExtId *string `pulumi:"extId"`
+	// The amount of memory allocated as quota, in Giga bytes.
+	Memory *int `pulumi:"memory"`
+	// The amount of storage allocated as quota, in Giga bytes.
+	Storage *int `pulumi:"storage"`
+	// The number of vCPUs allocated as quota.
+	Vcpu *int `pulumi:"vcpu"`
+}
+
+// TenantDomainAllocationV2ProjectQuotaInput is an input type that accepts TenantDomainAllocationV2ProjectQuotaArgs and TenantDomainAllocationV2ProjectQuotaOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ProjectQuotaInput` via:
+//
+//	TenantDomainAllocationV2ProjectQuotaArgs{...}
+type TenantDomainAllocationV2ProjectQuotaInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ProjectQuotaOutput() TenantDomainAllocationV2ProjectQuotaOutput
+	ToTenantDomainAllocationV2ProjectQuotaOutputWithContext(context.Context) TenantDomainAllocationV2ProjectQuotaOutput
+}
+
+type TenantDomainAllocationV2ProjectQuotaArgs struct {
+	// The external identifier of the quota for the placement target.
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// The amount of memory allocated as quota, in Giga bytes.
+	Memory pulumi.IntPtrInput `pulumi:"memory"`
+	// The amount of storage allocated as quota, in Giga bytes.
+	Storage pulumi.IntPtrInput `pulumi:"storage"`
+	// The number of vCPUs allocated as quota.
+	Vcpu pulumi.IntPtrInput `pulumi:"vcpu"`
+}
+
+func (TenantDomainAllocationV2ProjectQuotaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ProjectQuota)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ProjectQuotaArgs) ToTenantDomainAllocationV2ProjectQuotaOutput() TenantDomainAllocationV2ProjectQuotaOutput {
+	return i.ToTenantDomainAllocationV2ProjectQuotaOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ProjectQuotaArgs) ToTenantDomainAllocationV2ProjectQuotaOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectQuotaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectQuotaOutput)
+}
+
+func (i TenantDomainAllocationV2ProjectQuotaArgs) ToTenantDomainAllocationV2ProjectQuotaPtrOutput() TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return i.ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ProjectQuotaArgs) ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectQuotaOutput).ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(ctx)
+}
+
+// TenantDomainAllocationV2ProjectQuotaPtrInput is an input type that accepts TenantDomainAllocationV2ProjectQuotaArgs, TenantDomainAllocationV2ProjectQuotaPtr and TenantDomainAllocationV2ProjectQuotaPtrOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ProjectQuotaPtrInput` via:
+//
+//	        TenantDomainAllocationV2ProjectQuotaArgs{...}
+//
+//	or:
+//
+//	        nil
+type TenantDomainAllocationV2ProjectQuotaPtrInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ProjectQuotaPtrOutput() TenantDomainAllocationV2ProjectQuotaPtrOutput
+	ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(context.Context) TenantDomainAllocationV2ProjectQuotaPtrOutput
+}
+
+type tenantDomainAllocationV2ProjectQuotaPtrType TenantDomainAllocationV2ProjectQuotaArgs
+
+func TenantDomainAllocationV2ProjectQuotaPtr(v *TenantDomainAllocationV2ProjectQuotaArgs) TenantDomainAllocationV2ProjectQuotaPtrInput {
+	return (*tenantDomainAllocationV2ProjectQuotaPtrType)(v)
+}
+
+func (*tenantDomainAllocationV2ProjectQuotaPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ProjectQuota)(nil)).Elem()
+}
+
+func (i *tenantDomainAllocationV2ProjectQuotaPtrType) ToTenantDomainAllocationV2ProjectQuotaPtrOutput() TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return i.ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(context.Background())
+}
+
+func (i *tenantDomainAllocationV2ProjectQuotaPtrType) ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectQuotaPtrOutput)
+}
+
+type TenantDomainAllocationV2ProjectQuotaOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ProjectQuotaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ProjectQuota)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ProjectQuotaOutput) ToTenantDomainAllocationV2ProjectQuotaOutput() TenantDomainAllocationV2ProjectQuotaOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectQuotaOutput) ToTenantDomainAllocationV2ProjectQuotaOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectQuotaOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectQuotaOutput) ToTenantDomainAllocationV2ProjectQuotaPtrOutput() TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return o.ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(context.Background())
+}
+
+func (o TenantDomainAllocationV2ProjectQuotaOutput) ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TenantDomainAllocationV2ProjectQuota) *TenantDomainAllocationV2ProjectQuota {
+		return &v
+	}).(TenantDomainAllocationV2ProjectQuotaPtrOutput)
+}
+
+// The external identifier of the quota for the placement target.
+func (o TenantDomainAllocationV2ProjectQuotaOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ProjectQuota) *string { return v.ExtId }).(pulumi.StringPtrOutput)
+}
+
+// The amount of memory allocated as quota, in Giga bytes.
+func (o TenantDomainAllocationV2ProjectQuotaOutput) Memory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ProjectQuota) *int { return v.Memory }).(pulumi.IntPtrOutput)
+}
+
+// The amount of storage allocated as quota, in Giga bytes.
+func (o TenantDomainAllocationV2ProjectQuotaOutput) Storage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ProjectQuota) *int { return v.Storage }).(pulumi.IntPtrOutput)
+}
+
+// The number of vCPUs allocated as quota.
+func (o TenantDomainAllocationV2ProjectQuotaOutput) Vcpu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ProjectQuota) *int { return v.Vcpu }).(pulumi.IntPtrOutput)
+}
+
+type TenantDomainAllocationV2ProjectQuotaPtrOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ProjectQuotaPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ProjectQuota)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ProjectQuotaPtrOutput) ToTenantDomainAllocationV2ProjectQuotaPtrOutput() TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectQuotaPtrOutput) ToTenantDomainAllocationV2ProjectQuotaPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectQuotaPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectQuotaPtrOutput) Elem() TenantDomainAllocationV2ProjectQuotaOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ProjectQuota) TenantDomainAllocationV2ProjectQuota {
+		if v != nil {
+			return *v
+		}
+		var ret TenantDomainAllocationV2ProjectQuota
+		return ret
+	}).(TenantDomainAllocationV2ProjectQuotaOutput)
+}
+
+// The external identifier of the quota for the placement target.
+func (o TenantDomainAllocationV2ProjectQuotaPtrOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ProjectQuota) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExtId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The amount of memory allocated as quota, in Giga bytes.
+func (o TenantDomainAllocationV2ProjectQuotaPtrOutput) Memory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ProjectQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Memory
+	}).(pulumi.IntPtrOutput)
+}
+
+// The amount of storage allocated as quota, in Giga bytes.
+func (o TenantDomainAllocationV2ProjectQuotaPtrOutput) Storage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ProjectQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Storage
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of vCPUs allocated as quota.
+func (o TenantDomainAllocationV2ProjectQuotaPtrOutput) Vcpu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ProjectQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Vcpu
+	}).(pulumi.IntPtrOutput)
+}
+
+type TenantDomainAllocationV2ProjectResourceGroup struct {
+	// The placement targets of the resource group.
+	// - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+	// - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+	PlacementTargets []TenantDomainAllocationV2ProjectResourceGroupPlacementTarget `pulumi:"placementTargets"`
+	// The UUID of the resource group for the placement target.
+	Uuid *string `pulumi:"uuid"`
+}
+
+// TenantDomainAllocationV2ProjectResourceGroupInput is an input type that accepts TenantDomainAllocationV2ProjectResourceGroupArgs and TenantDomainAllocationV2ProjectResourceGroupOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ProjectResourceGroupInput` via:
+//
+//	TenantDomainAllocationV2ProjectResourceGroupArgs{...}
+type TenantDomainAllocationV2ProjectResourceGroupInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ProjectResourceGroupOutput() TenantDomainAllocationV2ProjectResourceGroupOutput
+	ToTenantDomainAllocationV2ProjectResourceGroupOutputWithContext(context.Context) TenantDomainAllocationV2ProjectResourceGroupOutput
+}
+
+type TenantDomainAllocationV2ProjectResourceGroupArgs struct {
+	// The placement targets of the resource group.
+	// - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+	// - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+	PlacementTargets TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayInput `pulumi:"placementTargets"`
+	// The UUID of the resource group for the placement target.
+	Uuid pulumi.StringPtrInput `pulumi:"uuid"`
+}
+
+func (TenantDomainAllocationV2ProjectResourceGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ProjectResourceGroup)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ProjectResourceGroupArgs) ToTenantDomainAllocationV2ProjectResourceGroupOutput() TenantDomainAllocationV2ProjectResourceGroupOutput {
+	return i.ToTenantDomainAllocationV2ProjectResourceGroupOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ProjectResourceGroupArgs) ToTenantDomainAllocationV2ProjectResourceGroupOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectResourceGroupOutput)
+}
+
+func (i TenantDomainAllocationV2ProjectResourceGroupArgs) ToTenantDomainAllocationV2ProjectResourceGroupPtrOutput() TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return i.ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ProjectResourceGroupArgs) ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectResourceGroupOutput).ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(ctx)
+}
+
+// TenantDomainAllocationV2ProjectResourceGroupPtrInput is an input type that accepts TenantDomainAllocationV2ProjectResourceGroupArgs, TenantDomainAllocationV2ProjectResourceGroupPtr and TenantDomainAllocationV2ProjectResourceGroupPtrOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ProjectResourceGroupPtrInput` via:
+//
+//	        TenantDomainAllocationV2ProjectResourceGroupArgs{...}
+//
+//	or:
+//
+//	        nil
+type TenantDomainAllocationV2ProjectResourceGroupPtrInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ProjectResourceGroupPtrOutput() TenantDomainAllocationV2ProjectResourceGroupPtrOutput
+	ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(context.Context) TenantDomainAllocationV2ProjectResourceGroupPtrOutput
+}
+
+type tenantDomainAllocationV2ProjectResourceGroupPtrType TenantDomainAllocationV2ProjectResourceGroupArgs
+
+func TenantDomainAllocationV2ProjectResourceGroupPtr(v *TenantDomainAllocationV2ProjectResourceGroupArgs) TenantDomainAllocationV2ProjectResourceGroupPtrInput {
+	return (*tenantDomainAllocationV2ProjectResourceGroupPtrType)(v)
+}
+
+func (*tenantDomainAllocationV2ProjectResourceGroupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ProjectResourceGroup)(nil)).Elem()
+}
+
+func (i *tenantDomainAllocationV2ProjectResourceGroupPtrType) ToTenantDomainAllocationV2ProjectResourceGroupPtrOutput() TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return i.ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(context.Background())
+}
+
+func (i *tenantDomainAllocationV2ProjectResourceGroupPtrType) ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectResourceGroupPtrOutput)
+}
+
+type TenantDomainAllocationV2ProjectResourceGroupOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ProjectResourceGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ProjectResourceGroup)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupOutput) ToTenantDomainAllocationV2ProjectResourceGroupOutput() TenantDomainAllocationV2ProjectResourceGroupOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupOutput) ToTenantDomainAllocationV2ProjectResourceGroupOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupOutput) ToTenantDomainAllocationV2ProjectResourceGroupPtrOutput() TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return o.ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(context.Background())
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupOutput) ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TenantDomainAllocationV2ProjectResourceGroup) *TenantDomainAllocationV2ProjectResourceGroup {
+		return &v
+	}).(TenantDomainAllocationV2ProjectResourceGroupPtrOutput)
+}
+
+// The placement targets of the resource group.
+// - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+// - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+func (o TenantDomainAllocationV2ProjectResourceGroupOutput) PlacementTargets() TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ProjectResourceGroup) []TenantDomainAllocationV2ProjectResourceGroupPlacementTarget {
+		return v.PlacementTargets
+	}).(TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput)
+}
+
+// The UUID of the resource group for the placement target.
+func (o TenantDomainAllocationV2ProjectResourceGroupOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ProjectResourceGroup) *string { return v.Uuid }).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2ProjectResourceGroupPtrOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ProjectResourceGroupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantDomainAllocationV2ProjectResourceGroup)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPtrOutput) ToTenantDomainAllocationV2ProjectResourceGroupPtrOutput() TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPtrOutput) ToTenantDomainAllocationV2ProjectResourceGroupPtrOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupPtrOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPtrOutput) Elem() TenantDomainAllocationV2ProjectResourceGroupOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ProjectResourceGroup) TenantDomainAllocationV2ProjectResourceGroup {
+		if v != nil {
+			return *v
+		}
+		var ret TenantDomainAllocationV2ProjectResourceGroup
+		return ret
+	}).(TenantDomainAllocationV2ProjectResourceGroupOutput)
+}
+
+// The placement targets of the resource group.
+// - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+// - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+func (o TenantDomainAllocationV2ProjectResourceGroupPtrOutput) PlacementTargets() TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ProjectResourceGroup) []TenantDomainAllocationV2ProjectResourceGroupPlacementTarget {
+		if v == nil {
+			return nil
+		}
+		return v.PlacementTargets
+	}).(TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput)
+}
+
+// The UUID of the resource group for the placement target.
+func (o TenantDomainAllocationV2ProjectResourceGroupPtrOutput) Uuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantDomainAllocationV2ProjectResourceGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Uuid
+	}).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2ProjectResourceGroupPlacementTarget struct {
+	ClusterUuid           *string  `pulumi:"clusterUuid"`
+	StorageContainerUuids []string `pulumi:"storageContainerUuids"`
+}
+
+// TenantDomainAllocationV2ProjectResourceGroupPlacementTargetInput is an input type that accepts TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs and TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ProjectResourceGroupPlacementTargetInput` via:
+//
+//	TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs{...}
+type TenantDomainAllocationV2ProjectResourceGroupPlacementTargetInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput() TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput
+	ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutputWithContext(context.Context) TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput
+}
+
+type TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs struct {
+	ClusterUuid           pulumi.StringPtrInput   `pulumi:"clusterUuid"`
+	StorageContainerUuids pulumi.StringArrayInput `pulumi:"storageContainerUuids"`
+}
+
+func (TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ProjectResourceGroupPlacementTarget)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs) ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput() TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput {
+	return i.ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs) ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput)
+}
+
+// TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayInput is an input type that accepts TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArray and TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayInput` via:
+//
+//	TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArray{ TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs{...} }
+type TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput() TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput
+	ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutputWithContext(context.Context) TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput
+}
+
+type TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArray []TenantDomainAllocationV2ProjectResourceGroupPlacementTargetInput
+
+func (TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2ProjectResourceGroupPlacementTarget)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArray) ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput() TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput {
+	return i.ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArray) ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput)
+}
+
+type TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2ProjectResourceGroupPlacementTarget)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput) ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput() TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput) ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput) ClusterUuid() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ProjectResourceGroupPlacementTarget) *string { return v.ClusterUuid }).(pulumi.StringPtrOutput)
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput) StorageContainerUuids() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2ProjectResourceGroupPlacementTarget) []string {
+		return v.StorageContainerUuids
+	}).(pulumi.StringArrayOutput)
+}
+
+type TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2ProjectResourceGroupPlacementTarget)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput) ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput() TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput) ToTenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput) Index(i pulumi.IntInput) TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantDomainAllocationV2ProjectResourceGroupPlacementTarget {
+		return vs[0].([]TenantDomainAllocationV2ProjectResourceGroupPlacementTarget)[vs[1].(int)]
+	}).(TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput)
+}
+
+type TenantDomainAllocationV2StateInfo struct {
+	// The state of the domain allocation.
+	State *string `pulumi:"state"`
+}
+
+// TenantDomainAllocationV2StateInfoInput is an input type that accepts TenantDomainAllocationV2StateInfoArgs and TenantDomainAllocationV2StateInfoOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2StateInfoInput` via:
+//
+//	TenantDomainAllocationV2StateInfoArgs{...}
+type TenantDomainAllocationV2StateInfoInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2StateInfoOutput() TenantDomainAllocationV2StateInfoOutput
+	ToTenantDomainAllocationV2StateInfoOutputWithContext(context.Context) TenantDomainAllocationV2StateInfoOutput
+}
+
+type TenantDomainAllocationV2StateInfoArgs struct {
+	// The state of the domain allocation.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (TenantDomainAllocationV2StateInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2StateInfo)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2StateInfoArgs) ToTenantDomainAllocationV2StateInfoOutput() TenantDomainAllocationV2StateInfoOutput {
+	return i.ToTenantDomainAllocationV2StateInfoOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2StateInfoArgs) ToTenantDomainAllocationV2StateInfoOutputWithContext(ctx context.Context) TenantDomainAllocationV2StateInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2StateInfoOutput)
+}
+
+// TenantDomainAllocationV2StateInfoArrayInput is an input type that accepts TenantDomainAllocationV2StateInfoArray and TenantDomainAllocationV2StateInfoArrayOutput values.
+// You can construct a concrete instance of `TenantDomainAllocationV2StateInfoArrayInput` via:
+//
+//	TenantDomainAllocationV2StateInfoArray{ TenantDomainAllocationV2StateInfoArgs{...} }
+type TenantDomainAllocationV2StateInfoArrayInput interface {
+	pulumi.Input
+
+	ToTenantDomainAllocationV2StateInfoArrayOutput() TenantDomainAllocationV2StateInfoArrayOutput
+	ToTenantDomainAllocationV2StateInfoArrayOutputWithContext(context.Context) TenantDomainAllocationV2StateInfoArrayOutput
+}
+
+type TenantDomainAllocationV2StateInfoArray []TenantDomainAllocationV2StateInfoInput
+
+func (TenantDomainAllocationV2StateInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2StateInfo)(nil)).Elem()
+}
+
+func (i TenantDomainAllocationV2StateInfoArray) ToTenantDomainAllocationV2StateInfoArrayOutput() TenantDomainAllocationV2StateInfoArrayOutput {
+	return i.ToTenantDomainAllocationV2StateInfoArrayOutputWithContext(context.Background())
+}
+
+func (i TenantDomainAllocationV2StateInfoArray) ToTenantDomainAllocationV2StateInfoArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2StateInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantDomainAllocationV2StateInfoArrayOutput)
+}
+
+type TenantDomainAllocationV2StateInfoOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2StateInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantDomainAllocationV2StateInfo)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2StateInfoOutput) ToTenantDomainAllocationV2StateInfoOutput() TenantDomainAllocationV2StateInfoOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2StateInfoOutput) ToTenantDomainAllocationV2StateInfoOutputWithContext(ctx context.Context) TenantDomainAllocationV2StateInfoOutput {
+	return o
+}
+
+// The state of the domain allocation.
+func (o TenantDomainAllocationV2StateInfoOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantDomainAllocationV2StateInfo) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type TenantDomainAllocationV2StateInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantDomainAllocationV2StateInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantDomainAllocationV2StateInfo)(nil)).Elem()
+}
+
+func (o TenantDomainAllocationV2StateInfoArrayOutput) ToTenantDomainAllocationV2StateInfoArrayOutput() TenantDomainAllocationV2StateInfoArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2StateInfoArrayOutput) ToTenantDomainAllocationV2StateInfoArrayOutputWithContext(ctx context.Context) TenantDomainAllocationV2StateInfoArrayOutput {
+	return o
+}
+
+func (o TenantDomainAllocationV2StateInfoArrayOutput) Index(i pulumi.IntInput) TenantDomainAllocationV2StateInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantDomainAllocationV2StateInfo {
+		return vs[0].([]TenantDomainAllocationV2StateInfo)[vs[1].(int)]
+	}).(TenantDomainAllocationV2StateInfoOutput)
+}
+
+type TenantMembershipV2IdentityDetails struct {
+	// - (Required) The external identifier of the identity provider.
+	IdentityProviderExtId string `pulumi:"identityProviderExtId"`
+	// - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+	PrincipalValue string `pulumi:"principalValue"`
+	// - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+	Type string `pulumi:"type"`
+}
+
+// TenantMembershipV2IdentityDetailsInput is an input type that accepts TenantMembershipV2IdentityDetailsArgs and TenantMembershipV2IdentityDetailsOutput values.
+// You can construct a concrete instance of `TenantMembershipV2IdentityDetailsInput` via:
+//
+//	TenantMembershipV2IdentityDetailsArgs{...}
+type TenantMembershipV2IdentityDetailsInput interface {
+	pulumi.Input
+
+	ToTenantMembershipV2IdentityDetailsOutput() TenantMembershipV2IdentityDetailsOutput
+	ToTenantMembershipV2IdentityDetailsOutputWithContext(context.Context) TenantMembershipV2IdentityDetailsOutput
+}
+
+type TenantMembershipV2IdentityDetailsArgs struct {
+	// - (Required) The external identifier of the identity provider.
+	IdentityProviderExtId pulumi.StringInput `pulumi:"identityProviderExtId"`
+	// - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+	PrincipalValue pulumi.StringInput `pulumi:"principalValue"`
+	// - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (TenantMembershipV2IdentityDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantMembershipV2IdentityDetails)(nil)).Elem()
+}
+
+func (i TenantMembershipV2IdentityDetailsArgs) ToTenantMembershipV2IdentityDetailsOutput() TenantMembershipV2IdentityDetailsOutput {
+	return i.ToTenantMembershipV2IdentityDetailsOutputWithContext(context.Background())
+}
+
+func (i TenantMembershipV2IdentityDetailsArgs) ToTenantMembershipV2IdentityDetailsOutputWithContext(ctx context.Context) TenantMembershipV2IdentityDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantMembershipV2IdentityDetailsOutput)
+}
+
+func (i TenantMembershipV2IdentityDetailsArgs) ToTenantMembershipV2IdentityDetailsPtrOutput() TenantMembershipV2IdentityDetailsPtrOutput {
+	return i.ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i TenantMembershipV2IdentityDetailsArgs) ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(ctx context.Context) TenantMembershipV2IdentityDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantMembershipV2IdentityDetailsOutput).ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(ctx)
+}
+
+// TenantMembershipV2IdentityDetailsPtrInput is an input type that accepts TenantMembershipV2IdentityDetailsArgs, TenantMembershipV2IdentityDetailsPtr and TenantMembershipV2IdentityDetailsPtrOutput values.
+// You can construct a concrete instance of `TenantMembershipV2IdentityDetailsPtrInput` via:
+//
+//	        TenantMembershipV2IdentityDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type TenantMembershipV2IdentityDetailsPtrInput interface {
+	pulumi.Input
+
+	ToTenantMembershipV2IdentityDetailsPtrOutput() TenantMembershipV2IdentityDetailsPtrOutput
+	ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(context.Context) TenantMembershipV2IdentityDetailsPtrOutput
+}
+
+type tenantMembershipV2IdentityDetailsPtrType TenantMembershipV2IdentityDetailsArgs
+
+func TenantMembershipV2IdentityDetailsPtr(v *TenantMembershipV2IdentityDetailsArgs) TenantMembershipV2IdentityDetailsPtrInput {
+	return (*tenantMembershipV2IdentityDetailsPtrType)(v)
+}
+
+func (*tenantMembershipV2IdentityDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantMembershipV2IdentityDetails)(nil)).Elem()
+}
+
+func (i *tenantMembershipV2IdentityDetailsPtrType) ToTenantMembershipV2IdentityDetailsPtrOutput() TenantMembershipV2IdentityDetailsPtrOutput {
+	return i.ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *tenantMembershipV2IdentityDetailsPtrType) ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(ctx context.Context) TenantMembershipV2IdentityDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantMembershipV2IdentityDetailsPtrOutput)
+}
+
+type TenantMembershipV2IdentityDetailsOutput struct{ *pulumi.OutputState }
+
+func (TenantMembershipV2IdentityDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantMembershipV2IdentityDetails)(nil)).Elem()
+}
+
+func (o TenantMembershipV2IdentityDetailsOutput) ToTenantMembershipV2IdentityDetailsOutput() TenantMembershipV2IdentityDetailsOutput {
+	return o
+}
+
+func (o TenantMembershipV2IdentityDetailsOutput) ToTenantMembershipV2IdentityDetailsOutputWithContext(ctx context.Context) TenantMembershipV2IdentityDetailsOutput {
+	return o
+}
+
+func (o TenantMembershipV2IdentityDetailsOutput) ToTenantMembershipV2IdentityDetailsPtrOutput() TenantMembershipV2IdentityDetailsPtrOutput {
+	return o.ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o TenantMembershipV2IdentityDetailsOutput) ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(ctx context.Context) TenantMembershipV2IdentityDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TenantMembershipV2IdentityDetails) *TenantMembershipV2IdentityDetails {
+		return &v
+	}).(TenantMembershipV2IdentityDetailsPtrOutput)
+}
+
+// - (Required) The external identifier of the identity provider.
+func (o TenantMembershipV2IdentityDetailsOutput) IdentityProviderExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantMembershipV2IdentityDetails) string { return v.IdentityProviderExtId }).(pulumi.StringOutput)
+}
+
+// - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+func (o TenantMembershipV2IdentityDetailsOutput) PrincipalValue() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantMembershipV2IdentityDetails) string { return v.PrincipalValue }).(pulumi.StringOutput)
+}
+
+// - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+func (o TenantMembershipV2IdentityDetailsOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantMembershipV2IdentityDetails) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type TenantMembershipV2IdentityDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (TenantMembershipV2IdentityDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantMembershipV2IdentityDetails)(nil)).Elem()
+}
+
+func (o TenantMembershipV2IdentityDetailsPtrOutput) ToTenantMembershipV2IdentityDetailsPtrOutput() TenantMembershipV2IdentityDetailsPtrOutput {
+	return o
+}
+
+func (o TenantMembershipV2IdentityDetailsPtrOutput) ToTenantMembershipV2IdentityDetailsPtrOutputWithContext(ctx context.Context) TenantMembershipV2IdentityDetailsPtrOutput {
+	return o
+}
+
+func (o TenantMembershipV2IdentityDetailsPtrOutput) Elem() TenantMembershipV2IdentityDetailsOutput {
+	return o.ApplyT(func(v *TenantMembershipV2IdentityDetails) TenantMembershipV2IdentityDetails {
+		if v != nil {
+			return *v
+		}
+		var ret TenantMembershipV2IdentityDetails
+		return ret
+	}).(TenantMembershipV2IdentityDetailsOutput)
+}
+
+// - (Required) The external identifier of the identity provider.
+func (o TenantMembershipV2IdentityDetailsPtrOutput) IdentityProviderExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantMembershipV2IdentityDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.IdentityProviderExtId
+	}).(pulumi.StringPtrOutput)
+}
+
+// - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+func (o TenantMembershipV2IdentityDetailsPtrOutput) PrincipalValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantMembershipV2IdentityDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.PrincipalValue
+	}).(pulumi.StringPtrOutput)
+}
+
+// - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+func (o TenantMembershipV2IdentityDetailsPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantMembershipV2IdentityDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type TenantMembershipV2Link struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href *string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL.
+	Rel *string `pulumi:"rel"`
+}
+
+// TenantMembershipV2LinkInput is an input type that accepts TenantMembershipV2LinkArgs and TenantMembershipV2LinkOutput values.
+// You can construct a concrete instance of `TenantMembershipV2LinkInput` via:
+//
+//	TenantMembershipV2LinkArgs{...}
+type TenantMembershipV2LinkInput interface {
+	pulumi.Input
+
+	ToTenantMembershipV2LinkOutput() TenantMembershipV2LinkOutput
+	ToTenantMembershipV2LinkOutputWithContext(context.Context) TenantMembershipV2LinkOutput
+}
+
+type TenantMembershipV2LinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL.
+	Rel pulumi.StringPtrInput `pulumi:"rel"`
+}
+
+func (TenantMembershipV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantMembershipV2Link)(nil)).Elem()
+}
+
+func (i TenantMembershipV2LinkArgs) ToTenantMembershipV2LinkOutput() TenantMembershipV2LinkOutput {
+	return i.ToTenantMembershipV2LinkOutputWithContext(context.Background())
+}
+
+func (i TenantMembershipV2LinkArgs) ToTenantMembershipV2LinkOutputWithContext(ctx context.Context) TenantMembershipV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantMembershipV2LinkOutput)
+}
+
+// TenantMembershipV2LinkArrayInput is an input type that accepts TenantMembershipV2LinkArray and TenantMembershipV2LinkArrayOutput values.
+// You can construct a concrete instance of `TenantMembershipV2LinkArrayInput` via:
+//
+//	TenantMembershipV2LinkArray{ TenantMembershipV2LinkArgs{...} }
+type TenantMembershipV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToTenantMembershipV2LinkArrayOutput() TenantMembershipV2LinkArrayOutput
+	ToTenantMembershipV2LinkArrayOutputWithContext(context.Context) TenantMembershipV2LinkArrayOutput
+}
+
+type TenantMembershipV2LinkArray []TenantMembershipV2LinkInput
+
+func (TenantMembershipV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantMembershipV2Link)(nil)).Elem()
+}
+
+func (i TenantMembershipV2LinkArray) ToTenantMembershipV2LinkArrayOutput() TenantMembershipV2LinkArrayOutput {
+	return i.ToTenantMembershipV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i TenantMembershipV2LinkArray) ToTenantMembershipV2LinkArrayOutputWithContext(ctx context.Context) TenantMembershipV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantMembershipV2LinkArrayOutput)
+}
+
+type TenantMembershipV2LinkOutput struct{ *pulumi.OutputState }
+
+func (TenantMembershipV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantMembershipV2Link)(nil)).Elem()
+}
+
+func (o TenantMembershipV2LinkOutput) ToTenantMembershipV2LinkOutput() TenantMembershipV2LinkOutput {
+	return o
+}
+
+func (o TenantMembershipV2LinkOutput) ToTenantMembershipV2LinkOutputWithContext(ctx context.Context) TenantMembershipV2LinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o TenantMembershipV2LinkOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantMembershipV2Link) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL.
+func (o TenantMembershipV2LinkOutput) Rel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantMembershipV2Link) *string { return v.Rel }).(pulumi.StringPtrOutput)
+}
+
+type TenantMembershipV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantMembershipV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantMembershipV2Link)(nil)).Elem()
+}
+
+func (o TenantMembershipV2LinkArrayOutput) ToTenantMembershipV2LinkArrayOutput() TenantMembershipV2LinkArrayOutput {
+	return o
+}
+
+func (o TenantMembershipV2LinkArrayOutput) ToTenantMembershipV2LinkArrayOutputWithContext(ctx context.Context) TenantMembershipV2LinkArrayOutput {
+	return o
+}
+
+func (o TenantMembershipV2LinkArrayOutput) Index(i pulumi.IntInput) TenantMembershipV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantMembershipV2Link {
+		return vs[0].([]TenantMembershipV2Link)[vs[1].(int)]
+	}).(TenantMembershipV2LinkOutput)
+}
+
+type TenantMembershipV2StateInfo struct {
+	// - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+	State *string `pulumi:"state"`
+}
+
+// TenantMembershipV2StateInfoInput is an input type that accepts TenantMembershipV2StateInfoArgs and TenantMembershipV2StateInfoOutput values.
+// You can construct a concrete instance of `TenantMembershipV2StateInfoInput` via:
+//
+//	TenantMembershipV2StateInfoArgs{...}
+type TenantMembershipV2StateInfoInput interface {
+	pulumi.Input
+
+	ToTenantMembershipV2StateInfoOutput() TenantMembershipV2StateInfoOutput
+	ToTenantMembershipV2StateInfoOutputWithContext(context.Context) TenantMembershipV2StateInfoOutput
+}
+
+type TenantMembershipV2StateInfoArgs struct {
+	// - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (TenantMembershipV2StateInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantMembershipV2StateInfo)(nil)).Elem()
+}
+
+func (i TenantMembershipV2StateInfoArgs) ToTenantMembershipV2StateInfoOutput() TenantMembershipV2StateInfoOutput {
+	return i.ToTenantMembershipV2StateInfoOutputWithContext(context.Background())
+}
+
+func (i TenantMembershipV2StateInfoArgs) ToTenantMembershipV2StateInfoOutputWithContext(ctx context.Context) TenantMembershipV2StateInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantMembershipV2StateInfoOutput)
+}
+
+// TenantMembershipV2StateInfoArrayInput is an input type that accepts TenantMembershipV2StateInfoArray and TenantMembershipV2StateInfoArrayOutput values.
+// You can construct a concrete instance of `TenantMembershipV2StateInfoArrayInput` via:
+//
+//	TenantMembershipV2StateInfoArray{ TenantMembershipV2StateInfoArgs{...} }
+type TenantMembershipV2StateInfoArrayInput interface {
+	pulumi.Input
+
+	ToTenantMembershipV2StateInfoArrayOutput() TenantMembershipV2StateInfoArrayOutput
+	ToTenantMembershipV2StateInfoArrayOutputWithContext(context.Context) TenantMembershipV2StateInfoArrayOutput
+}
+
+type TenantMembershipV2StateInfoArray []TenantMembershipV2StateInfoInput
+
+func (TenantMembershipV2StateInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantMembershipV2StateInfo)(nil)).Elem()
+}
+
+func (i TenantMembershipV2StateInfoArray) ToTenantMembershipV2StateInfoArrayOutput() TenantMembershipV2StateInfoArrayOutput {
+	return i.ToTenantMembershipV2StateInfoArrayOutputWithContext(context.Background())
+}
+
+func (i TenantMembershipV2StateInfoArray) ToTenantMembershipV2StateInfoArrayOutputWithContext(ctx context.Context) TenantMembershipV2StateInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantMembershipV2StateInfoArrayOutput)
+}
+
+type TenantMembershipV2StateInfoOutput struct{ *pulumi.OutputState }
+
+func (TenantMembershipV2StateInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantMembershipV2StateInfo)(nil)).Elem()
+}
+
+func (o TenantMembershipV2StateInfoOutput) ToTenantMembershipV2StateInfoOutput() TenantMembershipV2StateInfoOutput {
+	return o
+}
+
+func (o TenantMembershipV2StateInfoOutput) ToTenantMembershipV2StateInfoOutputWithContext(ctx context.Context) TenantMembershipV2StateInfoOutput {
+	return o
+}
+
+// - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+func (o TenantMembershipV2StateInfoOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantMembershipV2StateInfo) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type TenantMembershipV2StateInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantMembershipV2StateInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantMembershipV2StateInfo)(nil)).Elem()
+}
+
+func (o TenantMembershipV2StateInfoArrayOutput) ToTenantMembershipV2StateInfoArrayOutput() TenantMembershipV2StateInfoArrayOutput {
+	return o
+}
+
+func (o TenantMembershipV2StateInfoArrayOutput) ToTenantMembershipV2StateInfoArrayOutputWithContext(ctx context.Context) TenantMembershipV2StateInfoArrayOutput {
+	return o
+}
+
+func (o TenantMembershipV2StateInfoArrayOutput) Index(i pulumi.IntInput) TenantMembershipV2StateInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantMembershipV2StateInfo {
+		return vs[0].([]TenantMembershipV2StateInfo)[vs[1].(int)]
+	}).(TenantMembershipV2StateInfoOutput)
+}
+
+type TenantV2AdminInfo struct {
+	// The email address of the user.
+	Email *string `pulumi:"email"`
+	// The first name of the user.
+	FirstName string `pulumi:"firstName"`
+	// The last name of the user.
+	LastName string `pulumi:"lastName"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// The password of the user.
+	Password string `pulumi:"password"`
+	// The username of the user.
+	Username string `pulumi:"username"`
+}
+
+// TenantV2AdminInfoInput is an input type that accepts TenantV2AdminInfoArgs and TenantV2AdminInfoOutput values.
+// You can construct a concrete instance of `TenantV2AdminInfoInput` via:
+//
+//	TenantV2AdminInfoArgs{...}
+type TenantV2AdminInfoInput interface {
+	pulumi.Input
+
+	ToTenantV2AdminInfoOutput() TenantV2AdminInfoOutput
+	ToTenantV2AdminInfoOutputWithContext(context.Context) TenantV2AdminInfoOutput
+}
+
+type TenantV2AdminInfoArgs struct {
+	// The email address of the user.
+	Email pulumi.StringPtrInput `pulumi:"email"`
+	// The first name of the user.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// The last name of the user.
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// The password of the user.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The username of the user.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (TenantV2AdminInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantV2AdminInfo)(nil)).Elem()
+}
+
+func (i TenantV2AdminInfoArgs) ToTenantV2AdminInfoOutput() TenantV2AdminInfoOutput {
+	return i.ToTenantV2AdminInfoOutputWithContext(context.Background())
+}
+
+func (i TenantV2AdminInfoArgs) ToTenantV2AdminInfoOutputWithContext(ctx context.Context) TenantV2AdminInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2AdminInfoOutput)
+}
+
+func (i TenantV2AdminInfoArgs) ToTenantV2AdminInfoPtrOutput() TenantV2AdminInfoPtrOutput {
+	return i.ToTenantV2AdminInfoPtrOutputWithContext(context.Background())
+}
+
+func (i TenantV2AdminInfoArgs) ToTenantV2AdminInfoPtrOutputWithContext(ctx context.Context) TenantV2AdminInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2AdminInfoOutput).ToTenantV2AdminInfoPtrOutputWithContext(ctx)
+}
+
+// TenantV2AdminInfoPtrInput is an input type that accepts TenantV2AdminInfoArgs, TenantV2AdminInfoPtr and TenantV2AdminInfoPtrOutput values.
+// You can construct a concrete instance of `TenantV2AdminInfoPtrInput` via:
+//
+//	        TenantV2AdminInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type TenantV2AdminInfoPtrInput interface {
+	pulumi.Input
+
+	ToTenantV2AdminInfoPtrOutput() TenantV2AdminInfoPtrOutput
+	ToTenantV2AdminInfoPtrOutputWithContext(context.Context) TenantV2AdminInfoPtrOutput
+}
+
+type tenantV2AdminInfoPtrType TenantV2AdminInfoArgs
+
+func TenantV2AdminInfoPtr(v *TenantV2AdminInfoArgs) TenantV2AdminInfoPtrInput {
+	return (*tenantV2AdminInfoPtrType)(v)
+}
+
+func (*tenantV2AdminInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantV2AdminInfo)(nil)).Elem()
+}
+
+func (i *tenantV2AdminInfoPtrType) ToTenantV2AdminInfoPtrOutput() TenantV2AdminInfoPtrOutput {
+	return i.ToTenantV2AdminInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *tenantV2AdminInfoPtrType) ToTenantV2AdminInfoPtrOutputWithContext(ctx context.Context) TenantV2AdminInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2AdminInfoPtrOutput)
+}
+
+type TenantV2AdminInfoOutput struct{ *pulumi.OutputState }
+
+func (TenantV2AdminInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantV2AdminInfo)(nil)).Elem()
+}
+
+func (o TenantV2AdminInfoOutput) ToTenantV2AdminInfoOutput() TenantV2AdminInfoOutput {
+	return o
+}
+
+func (o TenantV2AdminInfoOutput) ToTenantV2AdminInfoOutputWithContext(ctx context.Context) TenantV2AdminInfoOutput {
+	return o
+}
+
+func (o TenantV2AdminInfoOutput) ToTenantV2AdminInfoPtrOutput() TenantV2AdminInfoPtrOutput {
+	return o.ToTenantV2AdminInfoPtrOutputWithContext(context.Background())
+}
+
+func (o TenantV2AdminInfoOutput) ToTenantV2AdminInfoPtrOutputWithContext(ctx context.Context) TenantV2AdminInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TenantV2AdminInfo) *TenantV2AdminInfo {
+		return &v
+	}).(TenantV2AdminInfoPtrOutput)
+}
+
+// The email address of the user.
+func (o TenantV2AdminInfoOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantV2AdminInfo) *string { return v.Email }).(pulumi.StringPtrOutput)
+}
+
+// The first name of the user.
+func (o TenantV2AdminInfoOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantV2AdminInfo) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// The last name of the user.
+func (o TenantV2AdminInfoOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantV2AdminInfo) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// The password of the user.
+func (o TenantV2AdminInfoOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantV2AdminInfo) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The username of the user.
+func (o TenantV2AdminInfoOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v TenantV2AdminInfo) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type TenantV2AdminInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (TenantV2AdminInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantV2AdminInfo)(nil)).Elem()
+}
+
+func (o TenantV2AdminInfoPtrOutput) ToTenantV2AdminInfoPtrOutput() TenantV2AdminInfoPtrOutput {
+	return o
+}
+
+func (o TenantV2AdminInfoPtrOutput) ToTenantV2AdminInfoPtrOutputWithContext(ctx context.Context) TenantV2AdminInfoPtrOutput {
+	return o
+}
+
+func (o TenantV2AdminInfoPtrOutput) Elem() TenantV2AdminInfoOutput {
+	return o.ApplyT(func(v *TenantV2AdminInfo) TenantV2AdminInfo {
+		if v != nil {
+			return *v
+		}
+		var ret TenantV2AdminInfo
+		return ret
+	}).(TenantV2AdminInfoOutput)
+}
+
+// The email address of the user.
+func (o TenantV2AdminInfoPtrOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantV2AdminInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Email
+	}).(pulumi.StringPtrOutput)
+}
+
+// The first name of the user.
+func (o TenantV2AdminInfoPtrOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantV2AdminInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.FirstName
+	}).(pulumi.StringPtrOutput)
+}
+
+// The last name of the user.
+func (o TenantV2AdminInfoPtrOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantV2AdminInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LastName
+	}).(pulumi.StringPtrOutput)
+}
+
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// The password of the user.
+func (o TenantV2AdminInfoPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantV2AdminInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// The username of the user.
+func (o TenantV2AdminInfoPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantV2AdminInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type TenantV2AggregatedQuota struct {
+	// The external identifier of the quota for the placement target.
+	ExtId *string `pulumi:"extId"`
+	// The amount of memory allocated as quota, in bytes.
+	Memory *int `pulumi:"memory"`
+	// The amount of storage allocated as quota, in bytes.
+	Storage *int `pulumi:"storage"`
+	// The number of vCPUs allocated as quota.
+	Vcpu *int `pulumi:"vcpu"`
+}
+
+// TenantV2AggregatedQuotaInput is an input type that accepts TenantV2AggregatedQuotaArgs and TenantV2AggregatedQuotaOutput values.
+// You can construct a concrete instance of `TenantV2AggregatedQuotaInput` via:
+//
+//	TenantV2AggregatedQuotaArgs{...}
+type TenantV2AggregatedQuotaInput interface {
+	pulumi.Input
+
+	ToTenantV2AggregatedQuotaOutput() TenantV2AggregatedQuotaOutput
+	ToTenantV2AggregatedQuotaOutputWithContext(context.Context) TenantV2AggregatedQuotaOutput
+}
+
+type TenantV2AggregatedQuotaArgs struct {
+	// The external identifier of the quota for the placement target.
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// The amount of memory allocated as quota, in bytes.
+	Memory pulumi.IntPtrInput `pulumi:"memory"`
+	// The amount of storage allocated as quota, in bytes.
+	Storage pulumi.IntPtrInput `pulumi:"storage"`
+	// The number of vCPUs allocated as quota.
+	Vcpu pulumi.IntPtrInput `pulumi:"vcpu"`
+}
+
+func (TenantV2AggregatedQuotaArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantV2AggregatedQuota)(nil)).Elem()
+}
+
+func (i TenantV2AggregatedQuotaArgs) ToTenantV2AggregatedQuotaOutput() TenantV2AggregatedQuotaOutput {
+	return i.ToTenantV2AggregatedQuotaOutputWithContext(context.Background())
+}
+
+func (i TenantV2AggregatedQuotaArgs) ToTenantV2AggregatedQuotaOutputWithContext(ctx context.Context) TenantV2AggregatedQuotaOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2AggregatedQuotaOutput)
+}
+
+func (i TenantV2AggregatedQuotaArgs) ToTenantV2AggregatedQuotaPtrOutput() TenantV2AggregatedQuotaPtrOutput {
+	return i.ToTenantV2AggregatedQuotaPtrOutputWithContext(context.Background())
+}
+
+func (i TenantV2AggregatedQuotaArgs) ToTenantV2AggregatedQuotaPtrOutputWithContext(ctx context.Context) TenantV2AggregatedQuotaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2AggregatedQuotaOutput).ToTenantV2AggregatedQuotaPtrOutputWithContext(ctx)
+}
+
+// TenantV2AggregatedQuotaPtrInput is an input type that accepts TenantV2AggregatedQuotaArgs, TenantV2AggregatedQuotaPtr and TenantV2AggregatedQuotaPtrOutput values.
+// You can construct a concrete instance of `TenantV2AggregatedQuotaPtrInput` via:
+//
+//	        TenantV2AggregatedQuotaArgs{...}
+//
+//	or:
+//
+//	        nil
+type TenantV2AggregatedQuotaPtrInput interface {
+	pulumi.Input
+
+	ToTenantV2AggregatedQuotaPtrOutput() TenantV2AggregatedQuotaPtrOutput
+	ToTenantV2AggregatedQuotaPtrOutputWithContext(context.Context) TenantV2AggregatedQuotaPtrOutput
+}
+
+type tenantV2AggregatedQuotaPtrType TenantV2AggregatedQuotaArgs
+
+func TenantV2AggregatedQuotaPtr(v *TenantV2AggregatedQuotaArgs) TenantV2AggregatedQuotaPtrInput {
+	return (*tenantV2AggregatedQuotaPtrType)(v)
+}
+
+func (*tenantV2AggregatedQuotaPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantV2AggregatedQuota)(nil)).Elem()
+}
+
+func (i *tenantV2AggregatedQuotaPtrType) ToTenantV2AggregatedQuotaPtrOutput() TenantV2AggregatedQuotaPtrOutput {
+	return i.ToTenantV2AggregatedQuotaPtrOutputWithContext(context.Background())
+}
+
+func (i *tenantV2AggregatedQuotaPtrType) ToTenantV2AggregatedQuotaPtrOutputWithContext(ctx context.Context) TenantV2AggregatedQuotaPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2AggregatedQuotaPtrOutput)
+}
+
+type TenantV2AggregatedQuotaOutput struct{ *pulumi.OutputState }
+
+func (TenantV2AggregatedQuotaOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantV2AggregatedQuota)(nil)).Elem()
+}
+
+func (o TenantV2AggregatedQuotaOutput) ToTenantV2AggregatedQuotaOutput() TenantV2AggregatedQuotaOutput {
+	return o
+}
+
+func (o TenantV2AggregatedQuotaOutput) ToTenantV2AggregatedQuotaOutputWithContext(ctx context.Context) TenantV2AggregatedQuotaOutput {
+	return o
+}
+
+func (o TenantV2AggregatedQuotaOutput) ToTenantV2AggregatedQuotaPtrOutput() TenantV2AggregatedQuotaPtrOutput {
+	return o.ToTenantV2AggregatedQuotaPtrOutputWithContext(context.Background())
+}
+
+func (o TenantV2AggregatedQuotaOutput) ToTenantV2AggregatedQuotaPtrOutputWithContext(ctx context.Context) TenantV2AggregatedQuotaPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v TenantV2AggregatedQuota) *TenantV2AggregatedQuota {
+		return &v
+	}).(TenantV2AggregatedQuotaPtrOutput)
+}
+
+// The external identifier of the quota for the placement target.
+func (o TenantV2AggregatedQuotaOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantV2AggregatedQuota) *string { return v.ExtId }).(pulumi.StringPtrOutput)
+}
+
+// The amount of memory allocated as quota, in bytes.
+func (o TenantV2AggregatedQuotaOutput) Memory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TenantV2AggregatedQuota) *int { return v.Memory }).(pulumi.IntPtrOutput)
+}
+
+// The amount of storage allocated as quota, in bytes.
+func (o TenantV2AggregatedQuotaOutput) Storage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TenantV2AggregatedQuota) *int { return v.Storage }).(pulumi.IntPtrOutput)
+}
+
+// The number of vCPUs allocated as quota.
+func (o TenantV2AggregatedQuotaOutput) Vcpu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TenantV2AggregatedQuota) *int { return v.Vcpu }).(pulumi.IntPtrOutput)
+}
+
+type TenantV2AggregatedQuotaPtrOutput struct{ *pulumi.OutputState }
+
+func (TenantV2AggregatedQuotaPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**TenantV2AggregatedQuota)(nil)).Elem()
+}
+
+func (o TenantV2AggregatedQuotaPtrOutput) ToTenantV2AggregatedQuotaPtrOutput() TenantV2AggregatedQuotaPtrOutput {
+	return o
+}
+
+func (o TenantV2AggregatedQuotaPtrOutput) ToTenantV2AggregatedQuotaPtrOutputWithContext(ctx context.Context) TenantV2AggregatedQuotaPtrOutput {
+	return o
+}
+
+func (o TenantV2AggregatedQuotaPtrOutput) Elem() TenantV2AggregatedQuotaOutput {
+	return o.ApplyT(func(v *TenantV2AggregatedQuota) TenantV2AggregatedQuota {
+		if v != nil {
+			return *v
+		}
+		var ret TenantV2AggregatedQuota
+		return ret
+	}).(TenantV2AggregatedQuotaOutput)
+}
+
+// The external identifier of the quota for the placement target.
+func (o TenantV2AggregatedQuotaPtrOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *TenantV2AggregatedQuota) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ExtId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The amount of memory allocated as quota, in bytes.
+func (o TenantV2AggregatedQuotaPtrOutput) Memory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TenantV2AggregatedQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Memory
+	}).(pulumi.IntPtrOutput)
+}
+
+// The amount of storage allocated as quota, in bytes.
+func (o TenantV2AggregatedQuotaPtrOutput) Storage() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TenantV2AggregatedQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Storage
+	}).(pulumi.IntPtrOutput)
+}
+
+// The number of vCPUs allocated as quota.
+func (o TenantV2AggregatedQuotaPtrOutput) Vcpu() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *TenantV2AggregatedQuota) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Vcpu
+	}).(pulumi.IntPtrOutput)
+}
+
+type TenantV2Link struct {
+	Href *string `pulumi:"href"`
+	Rel  *string `pulumi:"rel"`
+}
+
+// TenantV2LinkInput is an input type that accepts TenantV2LinkArgs and TenantV2LinkOutput values.
+// You can construct a concrete instance of `TenantV2LinkInput` via:
+//
+//	TenantV2LinkArgs{...}
+type TenantV2LinkInput interface {
+	pulumi.Input
+
+	ToTenantV2LinkOutput() TenantV2LinkOutput
+	ToTenantV2LinkOutputWithContext(context.Context) TenantV2LinkOutput
+}
+
+type TenantV2LinkArgs struct {
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	Rel  pulumi.StringPtrInput `pulumi:"rel"`
+}
+
+func (TenantV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantV2Link)(nil)).Elem()
+}
+
+func (i TenantV2LinkArgs) ToTenantV2LinkOutput() TenantV2LinkOutput {
+	return i.ToTenantV2LinkOutputWithContext(context.Background())
+}
+
+func (i TenantV2LinkArgs) ToTenantV2LinkOutputWithContext(ctx context.Context) TenantV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2LinkOutput)
+}
+
+// TenantV2LinkArrayInput is an input type that accepts TenantV2LinkArray and TenantV2LinkArrayOutput values.
+// You can construct a concrete instance of `TenantV2LinkArrayInput` via:
+//
+//	TenantV2LinkArray{ TenantV2LinkArgs{...} }
+type TenantV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToTenantV2LinkArrayOutput() TenantV2LinkArrayOutput
+	ToTenantV2LinkArrayOutputWithContext(context.Context) TenantV2LinkArrayOutput
+}
+
+type TenantV2LinkArray []TenantV2LinkInput
+
+func (TenantV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantV2Link)(nil)).Elem()
+}
+
+func (i TenantV2LinkArray) ToTenantV2LinkArrayOutput() TenantV2LinkArrayOutput {
+	return i.ToTenantV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i TenantV2LinkArray) ToTenantV2LinkArrayOutputWithContext(ctx context.Context) TenantV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2LinkArrayOutput)
+}
+
+type TenantV2LinkOutput struct{ *pulumi.OutputState }
+
+func (TenantV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantV2Link)(nil)).Elem()
+}
+
+func (o TenantV2LinkOutput) ToTenantV2LinkOutput() TenantV2LinkOutput {
+	return o
+}
+
+func (o TenantV2LinkOutput) ToTenantV2LinkOutputWithContext(ctx context.Context) TenantV2LinkOutput {
+	return o
+}
+
+func (o TenantV2LinkOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantV2Link) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+func (o TenantV2LinkOutput) Rel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantV2Link) *string { return v.Rel }).(pulumi.StringPtrOutput)
+}
+
+type TenantV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantV2Link)(nil)).Elem()
+}
+
+func (o TenantV2LinkArrayOutput) ToTenantV2LinkArrayOutput() TenantV2LinkArrayOutput {
+	return o
+}
+
+func (o TenantV2LinkArrayOutput) ToTenantV2LinkArrayOutputWithContext(ctx context.Context) TenantV2LinkArrayOutput {
+	return o
+}
+
+func (o TenantV2LinkArrayOutput) Index(i pulumi.IntInput) TenantV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantV2Link {
+		return vs[0].([]TenantV2Link)[vs[1].(int)]
+	}).(TenantV2LinkOutput)
+}
+
+type TenantV2StateInfo struct {
+	// The state of the tenant.
+	State *string `pulumi:"state"`
+}
+
+// TenantV2StateInfoInput is an input type that accepts TenantV2StateInfoArgs and TenantV2StateInfoOutput values.
+// You can construct a concrete instance of `TenantV2StateInfoInput` via:
+//
+//	TenantV2StateInfoArgs{...}
+type TenantV2StateInfoInput interface {
+	pulumi.Input
+
+	ToTenantV2StateInfoOutput() TenantV2StateInfoOutput
+	ToTenantV2StateInfoOutputWithContext(context.Context) TenantV2StateInfoOutput
+}
+
+type TenantV2StateInfoArgs struct {
+	// The state of the tenant.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (TenantV2StateInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantV2StateInfo)(nil)).Elem()
+}
+
+func (i TenantV2StateInfoArgs) ToTenantV2StateInfoOutput() TenantV2StateInfoOutput {
+	return i.ToTenantV2StateInfoOutputWithContext(context.Background())
+}
+
+func (i TenantV2StateInfoArgs) ToTenantV2StateInfoOutputWithContext(ctx context.Context) TenantV2StateInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2StateInfoOutput)
+}
+
+// TenantV2StateInfoArrayInput is an input type that accepts TenantV2StateInfoArray and TenantV2StateInfoArrayOutput values.
+// You can construct a concrete instance of `TenantV2StateInfoArrayInput` via:
+//
+//	TenantV2StateInfoArray{ TenantV2StateInfoArgs{...} }
+type TenantV2StateInfoArrayInput interface {
+	pulumi.Input
+
+	ToTenantV2StateInfoArrayOutput() TenantV2StateInfoArrayOutput
+	ToTenantV2StateInfoArrayOutputWithContext(context.Context) TenantV2StateInfoArrayOutput
+}
+
+type TenantV2StateInfoArray []TenantV2StateInfoInput
+
+func (TenantV2StateInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantV2StateInfo)(nil)).Elem()
+}
+
+func (i TenantV2StateInfoArray) ToTenantV2StateInfoArrayOutput() TenantV2StateInfoArrayOutput {
+	return i.ToTenantV2StateInfoArrayOutputWithContext(context.Background())
+}
+
+func (i TenantV2StateInfoArray) ToTenantV2StateInfoArrayOutputWithContext(ctx context.Context) TenantV2StateInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TenantV2StateInfoArrayOutput)
+}
+
+type TenantV2StateInfoOutput struct{ *pulumi.OutputState }
+
+func (TenantV2StateInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TenantV2StateInfo)(nil)).Elem()
+}
+
+func (o TenantV2StateInfoOutput) ToTenantV2StateInfoOutput() TenantV2StateInfoOutput {
+	return o
+}
+
+func (o TenantV2StateInfoOutput) ToTenantV2StateInfoOutputWithContext(ctx context.Context) TenantV2StateInfoOutput {
+	return o
+}
+
+// The state of the tenant.
+func (o TenantV2StateInfoOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TenantV2StateInfo) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type TenantV2StateInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (TenantV2StateInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TenantV2StateInfo)(nil)).Elem()
+}
+
+func (o TenantV2StateInfoArrayOutput) ToTenantV2StateInfoArrayOutput() TenantV2StateInfoArrayOutput {
+	return o
+}
+
+func (o TenantV2StateInfoArrayOutput) ToTenantV2StateInfoArrayOutputWithContext(ctx context.Context) TenantV2StateInfoArrayOutput {
+	return o
+}
+
+func (o TenantV2StateInfoArrayOutput) Index(i pulumi.IntInput) TenantV2StateInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TenantV2StateInfo {
+		return vs[0].([]TenantV2StateInfo)[vs[1].(int)]
+	}).(TenantV2StateInfoOutput)
+}
+
 type UserAccessControlPolicyReferenceList struct {
 	// - The kind name. (Default depends on the resource you are referencing)
 	Kind *string `pulumi:"kind"`
@@ -42923,6 +46954,8 @@ type VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo struct {
 	DiskExtId             *string                                                                     `pulumi:"diskExtId"`
 	DiskSizeBytes         *int                                                                        `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress *bool                                                                       `pulumi:"isMigrationInProgress"`
+	// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+	SerialId *string `pulumi:"serialId"`
 	// Storage configuration for VM.
 	StorageConfigs    []VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers []VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer `pulumi:"storageContainers"`
@@ -42944,6 +46977,8 @@ type VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs struct 
 	DiskExtId             pulumi.StringPtrInput                                                               `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntPtrInput                                                                  `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolPtrInput                                                                 `pulumi:"isMigrationInProgress"`
+	// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+	SerialId pulumi.StringPtrInput `pulumi:"serialId"`
 	// Storage configuration for VM.
 	StorageConfigs    VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArrayInput `pulumi:"storageContainers"`
@@ -43018,6 +47053,11 @@ func (o VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) I
 	return o.ApplyT(func(v VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo) *bool {
 		return v.IsMigrationInProgress
 	}).(pulumi.BoolPtrOutput)
+}
+
+// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+func (o VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo) *string { return v.SerialId }).(pulumi.StringPtrOutput)
 }
 
 // Storage configuration for VM.
@@ -44114,6 +48154,8 @@ type VirtualMachineV2CdRomBackingInfo struct {
 	// Size of the disk in Bytes
 	DiskSizeBytes         *int  `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress *bool `pulumi:"isMigrationInProgress"`
+	// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+	SerialId *string `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
 	StorageConfigs []VirtualMachineV2CdRomBackingInfoStorageConfig `pulumi:"storageConfigs"`
@@ -44139,6 +48181,8 @@ type VirtualMachineV2CdRomBackingInfoArgs struct {
 	// Size of the disk in Bytes
 	DiskSizeBytes         pulumi.IntPtrInput  `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolPtrInput `pulumi:"isMigrationInProgress"`
+	// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+	SerialId pulumi.StringPtrInput `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	// * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
 	StorageConfigs VirtualMachineV2CdRomBackingInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
@@ -44215,6 +48259,11 @@ func (o VirtualMachineV2CdRomBackingInfoOutput) DiskSizeBytes() pulumi.IntPtrOut
 
 func (o VirtualMachineV2CdRomBackingInfoOutput) IsMigrationInProgress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VirtualMachineV2CdRomBackingInfo) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
+}
+
+// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+func (o VirtualMachineV2CdRomBackingInfoOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualMachineV2CdRomBackingInfo) *string { return v.SerialId }).(pulumi.StringPtrOutput)
 }
 
 // Storage configuration for VM disks
@@ -45614,6 +49663,8 @@ type VirtualMachineV2DiskBackingInfoVmDisk struct {
 	DiskExtId             *string                                           `pulumi:"diskExtId"`
 	DiskSizeBytes         *int                                              `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress *bool                                             `pulumi:"isMigrationInProgress"`
+	// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+	SerialId *string `pulumi:"serialId"`
 	// Storage configuration for VM.
 	StorageConfigs    []VirtualMachineV2DiskBackingInfoVmDiskStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers []VirtualMachineV2DiskBackingInfoVmDiskStorageContainer `pulumi:"storageContainers"`
@@ -45635,6 +49686,8 @@ type VirtualMachineV2DiskBackingInfoVmDiskArgs struct {
 	DiskExtId             pulumi.StringPtrInput                                     `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntPtrInput                                        `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolPtrInput                                       `pulumi:"isMigrationInProgress"`
+	// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+	SerialId pulumi.StringPtrInput `pulumi:"serialId"`
 	// Storage configuration for VM.
 	StorageConfigs    VirtualMachineV2DiskBackingInfoVmDiskStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArrayInput `pulumi:"storageContainers"`
@@ -45707,6 +49760,11 @@ func (o VirtualMachineV2DiskBackingInfoVmDiskOutput) DiskSizeBytes() pulumi.IntP
 
 func (o VirtualMachineV2DiskBackingInfoVmDiskOutput) IsMigrationInProgress() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v VirtualMachineV2DiskBackingInfoVmDisk) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
+}
+
+// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+func (o VirtualMachineV2DiskBackingInfoVmDiskOutput) SerialId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v VirtualMachineV2DiskBackingInfoVmDisk) *string { return v.SerialId }).(pulumi.StringPtrOutput)
 }
 
 // Storage configuration for VM.
@@ -55628,3409 +59686,31 @@ func (o VirtualSwitchV2ClusterHostArrayOutput) Index(i pulumi.IntInput) VirtualS
 	}).(VirtualSwitchV2ClusterHostOutput)
 }
 
-type VirtualSwitchV2ClusterHostIpAddress struct {
-	Ip *VirtualSwitchV2ClusterHostIpAddressIp `pulumi:"ip"`
-	// Prefix length of the IPv4 subnet.
-	PrefixLength *int `pulumi:"prefixLength"`
-}
-
-// VirtualSwitchV2ClusterHostIpAddressInput is an input type that accepts VirtualSwitchV2ClusterHostIpAddressArgs and VirtualSwitchV2ClusterHostIpAddressOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2ClusterHostIpAddressInput` via:
-//
-//	VirtualSwitchV2ClusterHostIpAddressArgs{...}
-type VirtualSwitchV2ClusterHostIpAddressInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2ClusterHostIpAddressOutput() VirtualSwitchV2ClusterHostIpAddressOutput
-	ToVirtualSwitchV2ClusterHostIpAddressOutputWithContext(context.Context) VirtualSwitchV2ClusterHostIpAddressOutput
-}
-
-type VirtualSwitchV2ClusterHostIpAddressArgs struct {
-	Ip VirtualSwitchV2ClusterHostIpAddressIpPtrInput `pulumi:"ip"`
-	// Prefix length of the IPv4 subnet.
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-}
-
-func (VirtualSwitchV2ClusterHostIpAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2ClusterHostIpAddress)(nil)).Elem()
-}
-
-func (i VirtualSwitchV2ClusterHostIpAddressArgs) ToVirtualSwitchV2ClusterHostIpAddressOutput() VirtualSwitchV2ClusterHostIpAddressOutput {
-	return i.ToVirtualSwitchV2ClusterHostIpAddressOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2ClusterHostIpAddressArgs) ToVirtualSwitchV2ClusterHostIpAddressOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2ClusterHostIpAddressOutput)
-}
-
-func (i VirtualSwitchV2ClusterHostIpAddressArgs) ToVirtualSwitchV2ClusterHostIpAddressPtrOutput() VirtualSwitchV2ClusterHostIpAddressPtrOutput {
-	return i.ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2ClusterHostIpAddressArgs) ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2ClusterHostIpAddressOutput).ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(ctx)
-}
-
-// VirtualSwitchV2ClusterHostIpAddressPtrInput is an input type that accepts VirtualSwitchV2ClusterHostIpAddressArgs, VirtualSwitchV2ClusterHostIpAddressPtr and VirtualSwitchV2ClusterHostIpAddressPtrOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2ClusterHostIpAddressPtrInput` via:
-//
-//	        VirtualSwitchV2ClusterHostIpAddressArgs{...}
-//
-//	or:
-//
-//	        nil
-type VirtualSwitchV2ClusterHostIpAddressPtrInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2ClusterHostIpAddressPtrOutput() VirtualSwitchV2ClusterHostIpAddressPtrOutput
-	ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(context.Context) VirtualSwitchV2ClusterHostIpAddressPtrOutput
-}
-
-type virtualSwitchV2ClusterHostIpAddressPtrType VirtualSwitchV2ClusterHostIpAddressArgs
-
-func VirtualSwitchV2ClusterHostIpAddressPtr(v *VirtualSwitchV2ClusterHostIpAddressArgs) VirtualSwitchV2ClusterHostIpAddressPtrInput {
-	return (*virtualSwitchV2ClusterHostIpAddressPtrType)(v)
-}
-
-func (*virtualSwitchV2ClusterHostIpAddressPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**VirtualSwitchV2ClusterHostIpAddress)(nil)).Elem()
-}
-
-func (i *virtualSwitchV2ClusterHostIpAddressPtrType) ToVirtualSwitchV2ClusterHostIpAddressPtrOutput() VirtualSwitchV2ClusterHostIpAddressPtrOutput {
-	return i.ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(context.Background())
-}
-
-func (i *virtualSwitchV2ClusterHostIpAddressPtrType) ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2ClusterHostIpAddressPtrOutput)
-}
-
-type VirtualSwitchV2ClusterHostIpAddressOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2ClusterHostIpAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2ClusterHostIpAddress)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressOutput) ToVirtualSwitchV2ClusterHostIpAddressOutput() VirtualSwitchV2ClusterHostIpAddressOutput {
-	return o
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressOutput) ToVirtualSwitchV2ClusterHostIpAddressOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressOutput {
-	return o
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressOutput) ToVirtualSwitchV2ClusterHostIpAddressPtrOutput() VirtualSwitchV2ClusterHostIpAddressPtrOutput {
-	return o.ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(context.Background())
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressOutput) ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualSwitchV2ClusterHostIpAddress) *VirtualSwitchV2ClusterHostIpAddress {
-		return &v
-	}).(VirtualSwitchV2ClusterHostIpAddressPtrOutput)
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressOutput) Ip() VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2ClusterHostIpAddress) *VirtualSwitchV2ClusterHostIpAddressIp { return v.Ip }).(VirtualSwitchV2ClusterHostIpAddressIpPtrOutput)
-}
-
-// Prefix length of the IPv4 subnet.
-func (o VirtualSwitchV2ClusterHostIpAddressOutput) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2ClusterHostIpAddress) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-type VirtualSwitchV2ClusterHostIpAddressPtrOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2ClusterHostIpAddressPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**VirtualSwitchV2ClusterHostIpAddress)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressPtrOutput) ToVirtualSwitchV2ClusterHostIpAddressPtrOutput() VirtualSwitchV2ClusterHostIpAddressPtrOutput {
-	return o
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressPtrOutput) ToVirtualSwitchV2ClusterHostIpAddressPtrOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressPtrOutput {
-	return o
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressPtrOutput) Elem() VirtualSwitchV2ClusterHostIpAddressOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2ClusterHostIpAddress) VirtualSwitchV2ClusterHostIpAddress {
-		if v != nil {
-			return *v
-		}
-		var ret VirtualSwitchV2ClusterHostIpAddress
-		return ret
-	}).(VirtualSwitchV2ClusterHostIpAddressOutput)
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressPtrOutput) Ip() VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2ClusterHostIpAddress) *VirtualSwitchV2ClusterHostIpAddressIp {
-		if v == nil {
-			return nil
-		}
-		return v.Ip
-	}).(VirtualSwitchV2ClusterHostIpAddressIpPtrOutput)
-}
-
-// Prefix length of the IPv4 subnet.
-func (o VirtualSwitchV2ClusterHostIpAddressPtrOutput) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2ClusterHostIpAddress) *int {
-		if v == nil {
-			return nil
-		}
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-type VirtualSwitchV2ClusterHostIpAddressIp struct {
-	PrefixLength *int    `pulumi:"prefixLength"`
-	Value        *string `pulumi:"value"`
-}
-
-// VirtualSwitchV2ClusterHostIpAddressIpInput is an input type that accepts VirtualSwitchV2ClusterHostIpAddressIpArgs and VirtualSwitchV2ClusterHostIpAddressIpOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2ClusterHostIpAddressIpInput` via:
-//
-//	VirtualSwitchV2ClusterHostIpAddressIpArgs{...}
-type VirtualSwitchV2ClusterHostIpAddressIpInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2ClusterHostIpAddressIpOutput() VirtualSwitchV2ClusterHostIpAddressIpOutput
-	ToVirtualSwitchV2ClusterHostIpAddressIpOutputWithContext(context.Context) VirtualSwitchV2ClusterHostIpAddressIpOutput
-}
-
-type VirtualSwitchV2ClusterHostIpAddressIpArgs struct {
-	PrefixLength pulumi.IntPtrInput    `pulumi:"prefixLength"`
-	Value        pulumi.StringPtrInput `pulumi:"value"`
-}
-
-func (VirtualSwitchV2ClusterHostIpAddressIpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2ClusterHostIpAddressIp)(nil)).Elem()
-}
-
-func (i VirtualSwitchV2ClusterHostIpAddressIpArgs) ToVirtualSwitchV2ClusterHostIpAddressIpOutput() VirtualSwitchV2ClusterHostIpAddressIpOutput {
-	return i.ToVirtualSwitchV2ClusterHostIpAddressIpOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2ClusterHostIpAddressIpArgs) ToVirtualSwitchV2ClusterHostIpAddressIpOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressIpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2ClusterHostIpAddressIpOutput)
-}
-
-func (i VirtualSwitchV2ClusterHostIpAddressIpArgs) ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutput() VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return i.ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2ClusterHostIpAddressIpArgs) ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2ClusterHostIpAddressIpOutput).ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(ctx)
-}
-
-// VirtualSwitchV2ClusterHostIpAddressIpPtrInput is an input type that accepts VirtualSwitchV2ClusterHostIpAddressIpArgs, VirtualSwitchV2ClusterHostIpAddressIpPtr and VirtualSwitchV2ClusterHostIpAddressIpPtrOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2ClusterHostIpAddressIpPtrInput` via:
-//
-//	        VirtualSwitchV2ClusterHostIpAddressIpArgs{...}
-//
-//	or:
-//
-//	        nil
-type VirtualSwitchV2ClusterHostIpAddressIpPtrInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutput() VirtualSwitchV2ClusterHostIpAddressIpPtrOutput
-	ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(context.Context) VirtualSwitchV2ClusterHostIpAddressIpPtrOutput
-}
-
-type virtualSwitchV2ClusterHostIpAddressIpPtrType VirtualSwitchV2ClusterHostIpAddressIpArgs
-
-func VirtualSwitchV2ClusterHostIpAddressIpPtr(v *VirtualSwitchV2ClusterHostIpAddressIpArgs) VirtualSwitchV2ClusterHostIpAddressIpPtrInput {
-	return (*virtualSwitchV2ClusterHostIpAddressIpPtrType)(v)
-}
-
-func (*virtualSwitchV2ClusterHostIpAddressIpPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**VirtualSwitchV2ClusterHostIpAddressIp)(nil)).Elem()
-}
-
-func (i *virtualSwitchV2ClusterHostIpAddressIpPtrType) ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutput() VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return i.ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(context.Background())
-}
-
-func (i *virtualSwitchV2ClusterHostIpAddressIpPtrType) ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2ClusterHostIpAddressIpPtrOutput)
-}
-
-type VirtualSwitchV2ClusterHostIpAddressIpOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2ClusterHostIpAddressIpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2ClusterHostIpAddressIp)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpOutput) ToVirtualSwitchV2ClusterHostIpAddressIpOutput() VirtualSwitchV2ClusterHostIpAddressIpOutput {
-	return o
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpOutput) ToVirtualSwitchV2ClusterHostIpAddressIpOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressIpOutput {
-	return o
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpOutput) ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutput() VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return o.ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(context.Background())
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpOutput) ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualSwitchV2ClusterHostIpAddressIp) *VirtualSwitchV2ClusterHostIpAddressIp {
-		return &v
-	}).(VirtualSwitchV2ClusterHostIpAddressIpPtrOutput)
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpOutput) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2ClusterHostIpAddressIp) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2ClusterHostIpAddressIp) *string { return v.Value }).(pulumi.StringPtrOutput)
-}
-
-type VirtualSwitchV2ClusterHostIpAddressIpPtrOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2ClusterHostIpAddressIpPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**VirtualSwitchV2ClusterHostIpAddressIp)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpPtrOutput) ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutput() VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return o
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpPtrOutput) ToVirtualSwitchV2ClusterHostIpAddressIpPtrOutputWithContext(ctx context.Context) VirtualSwitchV2ClusterHostIpAddressIpPtrOutput {
-	return o
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpPtrOutput) Elem() VirtualSwitchV2ClusterHostIpAddressIpOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2ClusterHostIpAddressIp) VirtualSwitchV2ClusterHostIpAddressIp {
-		if v != nil {
-			return *v
-		}
-		var ret VirtualSwitchV2ClusterHostIpAddressIp
-		return ret
-	}).(VirtualSwitchV2ClusterHostIpAddressIpOutput)
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpPtrOutput) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2ClusterHostIpAddressIp) *int {
-		if v == nil {
-			return nil
-		}
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o VirtualSwitchV2ClusterHostIpAddressIpPtrOutput) Value() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2ClusterHostIpAddressIp) *string {
-		if v == nil {
-			return nil
-		}
-		return v.Value
-	}).(pulumi.StringPtrOutput)
-}
-
-type VirtualSwitchV2IgmpSpec struct {
-	// Enables IGMP snooping to optimize multicast traffic delivery.
-	IsSnoopingEnabled *bool `pulumi:"isSnoopingEnabled"`
-	// A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
-	QuerierSpec *VirtualSwitchV2IgmpSpecQuerierSpec `pulumi:"querierSpec"`
-	// The timeout value in seconds before an inactive multicast group membership expires.
-	SnoopingTimeout *int `pulumi:"snoopingTimeout"`
-}
-
-// VirtualSwitchV2IgmpSpecInput is an input type that accepts VirtualSwitchV2IgmpSpecArgs and VirtualSwitchV2IgmpSpecOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2IgmpSpecInput` via:
-//
-//	VirtualSwitchV2IgmpSpecArgs{...}
-type VirtualSwitchV2IgmpSpecInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2IgmpSpecOutput() VirtualSwitchV2IgmpSpecOutput
-	ToVirtualSwitchV2IgmpSpecOutputWithContext(context.Context) VirtualSwitchV2IgmpSpecOutput
-}
-
-type VirtualSwitchV2IgmpSpecArgs struct {
-	// Enables IGMP snooping to optimize multicast traffic delivery.
-	IsSnoopingEnabled pulumi.BoolPtrInput `pulumi:"isSnoopingEnabled"`
-	// A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
-	QuerierSpec VirtualSwitchV2IgmpSpecQuerierSpecPtrInput `pulumi:"querierSpec"`
-	// The timeout value in seconds before an inactive multicast group membership expires.
-	SnoopingTimeout pulumi.IntPtrInput `pulumi:"snoopingTimeout"`
-}
-
-func (VirtualSwitchV2IgmpSpecArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2IgmpSpec)(nil)).Elem()
-}
-
-func (i VirtualSwitchV2IgmpSpecArgs) ToVirtualSwitchV2IgmpSpecOutput() VirtualSwitchV2IgmpSpecOutput {
-	return i.ToVirtualSwitchV2IgmpSpecOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2IgmpSpecArgs) ToVirtualSwitchV2IgmpSpecOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2IgmpSpecOutput)
-}
-
-func (i VirtualSwitchV2IgmpSpecArgs) ToVirtualSwitchV2IgmpSpecPtrOutput() VirtualSwitchV2IgmpSpecPtrOutput {
-	return i.ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2IgmpSpecArgs) ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2IgmpSpecOutput).ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(ctx)
-}
-
-// VirtualSwitchV2IgmpSpecPtrInput is an input type that accepts VirtualSwitchV2IgmpSpecArgs, VirtualSwitchV2IgmpSpecPtr and VirtualSwitchV2IgmpSpecPtrOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2IgmpSpecPtrInput` via:
-//
-//	        VirtualSwitchV2IgmpSpecArgs{...}
-//
-//	or:
-//
-//	        nil
-type VirtualSwitchV2IgmpSpecPtrInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2IgmpSpecPtrOutput() VirtualSwitchV2IgmpSpecPtrOutput
-	ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(context.Context) VirtualSwitchV2IgmpSpecPtrOutput
-}
-
-type virtualSwitchV2IgmpSpecPtrType VirtualSwitchV2IgmpSpecArgs
-
-func VirtualSwitchV2IgmpSpecPtr(v *VirtualSwitchV2IgmpSpecArgs) VirtualSwitchV2IgmpSpecPtrInput {
-	return (*virtualSwitchV2IgmpSpecPtrType)(v)
-}
-
-func (*virtualSwitchV2IgmpSpecPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**VirtualSwitchV2IgmpSpec)(nil)).Elem()
-}
-
-func (i *virtualSwitchV2IgmpSpecPtrType) ToVirtualSwitchV2IgmpSpecPtrOutput() VirtualSwitchV2IgmpSpecPtrOutput {
-	return i.ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(context.Background())
-}
-
-func (i *virtualSwitchV2IgmpSpecPtrType) ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2IgmpSpecPtrOutput)
-}
-
-type VirtualSwitchV2IgmpSpecOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2IgmpSpecOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2IgmpSpec)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2IgmpSpecOutput) ToVirtualSwitchV2IgmpSpecOutput() VirtualSwitchV2IgmpSpecOutput {
-	return o
-}
-
-func (o VirtualSwitchV2IgmpSpecOutput) ToVirtualSwitchV2IgmpSpecOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecOutput {
-	return o
-}
-
-func (o VirtualSwitchV2IgmpSpecOutput) ToVirtualSwitchV2IgmpSpecPtrOutput() VirtualSwitchV2IgmpSpecPtrOutput {
-	return o.ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(context.Background())
-}
-
-func (o VirtualSwitchV2IgmpSpecOutput) ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualSwitchV2IgmpSpec) *VirtualSwitchV2IgmpSpec {
-		return &v
-	}).(VirtualSwitchV2IgmpSpecPtrOutput)
-}
-
-// Enables IGMP snooping to optimize multicast traffic delivery.
-func (o VirtualSwitchV2IgmpSpecOutput) IsSnoopingEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2IgmpSpec) *bool { return v.IsSnoopingEnabled }).(pulumi.BoolPtrOutput)
-}
-
-// A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
-func (o VirtualSwitchV2IgmpSpecOutput) QuerierSpec() VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2IgmpSpec) *VirtualSwitchV2IgmpSpecQuerierSpec { return v.QuerierSpec }).(VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput)
-}
-
-// The timeout value in seconds before an inactive multicast group membership expires.
-func (o VirtualSwitchV2IgmpSpecOutput) SnoopingTimeout() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2IgmpSpec) *int { return v.SnoopingTimeout }).(pulumi.IntPtrOutput)
-}
-
-type VirtualSwitchV2IgmpSpecPtrOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2IgmpSpecPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**VirtualSwitchV2IgmpSpec)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2IgmpSpecPtrOutput) ToVirtualSwitchV2IgmpSpecPtrOutput() VirtualSwitchV2IgmpSpecPtrOutput {
-	return o
-}
-
-func (o VirtualSwitchV2IgmpSpecPtrOutput) ToVirtualSwitchV2IgmpSpecPtrOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecPtrOutput {
-	return o
-}
-
-func (o VirtualSwitchV2IgmpSpecPtrOutput) Elem() VirtualSwitchV2IgmpSpecOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2IgmpSpec) VirtualSwitchV2IgmpSpec {
-		if v != nil {
-			return *v
-		}
-		var ret VirtualSwitchV2IgmpSpec
-		return ret
-	}).(VirtualSwitchV2IgmpSpecOutput)
-}
-
-// Enables IGMP snooping to optimize multicast traffic delivery.
-func (o VirtualSwitchV2IgmpSpecPtrOutput) IsSnoopingEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2IgmpSpec) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.IsSnoopingEnabled
-	}).(pulumi.BoolPtrOutput)
-}
-
-// A block defining IGMP querier settings. See <span pulumi-lang-nodejs="`querierSpec`" pulumi-lang-dotnet="`QuerierSpec`" pulumi-lang-go="`querierSpec`" pulumi-lang-python="`querier_spec`" pulumi-lang-yaml="`querierSpec`" pulumi-lang-java="`querierSpec`" pulumi-lang-hcl="`querier_spec`">`querierSpec`</span> below.
-func (o VirtualSwitchV2IgmpSpecPtrOutput) QuerierSpec() VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2IgmpSpec) *VirtualSwitchV2IgmpSpecQuerierSpec {
-		if v == nil {
-			return nil
-		}
-		return v.QuerierSpec
-	}).(VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput)
-}
-
-// The timeout value in seconds before an inactive multicast group membership expires.
-func (o VirtualSwitchV2IgmpSpecPtrOutput) SnoopingTimeout() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2IgmpSpec) *int {
-		if v == nil {
-			return nil
-		}
-		return v.SnoopingTimeout
-	}).(pulumi.IntPtrOutput)
-}
-
-type VirtualSwitchV2IgmpSpecQuerierSpec struct {
-	// Enables the Virtual Switch to act as an IGMP querier.
-	IsQuerierEnabled *bool `pulumi:"isQuerierEnabled"`
-	// A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
-	VlanIdLists []int `pulumi:"vlanIdLists"`
-}
-
-// VirtualSwitchV2IgmpSpecQuerierSpecInput is an input type that accepts VirtualSwitchV2IgmpSpecQuerierSpecArgs and VirtualSwitchV2IgmpSpecQuerierSpecOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2IgmpSpecQuerierSpecInput` via:
-//
-//	VirtualSwitchV2IgmpSpecQuerierSpecArgs{...}
-type VirtualSwitchV2IgmpSpecQuerierSpecInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2IgmpSpecQuerierSpecOutput() VirtualSwitchV2IgmpSpecQuerierSpecOutput
-	ToVirtualSwitchV2IgmpSpecQuerierSpecOutputWithContext(context.Context) VirtualSwitchV2IgmpSpecQuerierSpecOutput
-}
-
-type VirtualSwitchV2IgmpSpecQuerierSpecArgs struct {
-	// Enables the Virtual Switch to act as an IGMP querier.
-	IsQuerierEnabled pulumi.BoolPtrInput `pulumi:"isQuerierEnabled"`
-	// A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
-	VlanIdLists pulumi.IntArrayInput `pulumi:"vlanIdLists"`
-}
-
-func (VirtualSwitchV2IgmpSpecQuerierSpecArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2IgmpSpecQuerierSpec)(nil)).Elem()
-}
-
-func (i VirtualSwitchV2IgmpSpecQuerierSpecArgs) ToVirtualSwitchV2IgmpSpecQuerierSpecOutput() VirtualSwitchV2IgmpSpecQuerierSpecOutput {
-	return i.ToVirtualSwitchV2IgmpSpecQuerierSpecOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2IgmpSpecQuerierSpecArgs) ToVirtualSwitchV2IgmpSpecQuerierSpecOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecQuerierSpecOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2IgmpSpecQuerierSpecOutput)
-}
-
-func (i VirtualSwitchV2IgmpSpecQuerierSpecArgs) ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutput() VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return i.ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2IgmpSpecQuerierSpecArgs) ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2IgmpSpecQuerierSpecOutput).ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(ctx)
-}
-
-// VirtualSwitchV2IgmpSpecQuerierSpecPtrInput is an input type that accepts VirtualSwitchV2IgmpSpecQuerierSpecArgs, VirtualSwitchV2IgmpSpecQuerierSpecPtr and VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2IgmpSpecQuerierSpecPtrInput` via:
-//
-//	        VirtualSwitchV2IgmpSpecQuerierSpecArgs{...}
-//
-//	or:
-//
-//	        nil
-type VirtualSwitchV2IgmpSpecQuerierSpecPtrInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutput() VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput
-	ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(context.Context) VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput
-}
-
-type virtualSwitchV2IgmpSpecQuerierSpecPtrType VirtualSwitchV2IgmpSpecQuerierSpecArgs
-
-func VirtualSwitchV2IgmpSpecQuerierSpecPtr(v *VirtualSwitchV2IgmpSpecQuerierSpecArgs) VirtualSwitchV2IgmpSpecQuerierSpecPtrInput {
-	return (*virtualSwitchV2IgmpSpecQuerierSpecPtrType)(v)
-}
-
-func (*virtualSwitchV2IgmpSpecQuerierSpecPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**VirtualSwitchV2IgmpSpecQuerierSpec)(nil)).Elem()
-}
-
-func (i *virtualSwitchV2IgmpSpecQuerierSpecPtrType) ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutput() VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return i.ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(context.Background())
-}
-
-func (i *virtualSwitchV2IgmpSpecQuerierSpecPtrType) ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput)
-}
-
-type VirtualSwitchV2IgmpSpecQuerierSpecOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2IgmpSpecQuerierSpecOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2IgmpSpecQuerierSpec)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2IgmpSpecQuerierSpecOutput) ToVirtualSwitchV2IgmpSpecQuerierSpecOutput() VirtualSwitchV2IgmpSpecQuerierSpecOutput {
-	return o
-}
-
-func (o VirtualSwitchV2IgmpSpecQuerierSpecOutput) ToVirtualSwitchV2IgmpSpecQuerierSpecOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecQuerierSpecOutput {
-	return o
-}
-
-func (o VirtualSwitchV2IgmpSpecQuerierSpecOutput) ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutput() VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return o.ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(context.Background())
-}
-
-func (o VirtualSwitchV2IgmpSpecQuerierSpecOutput) ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v VirtualSwitchV2IgmpSpecQuerierSpec) *VirtualSwitchV2IgmpSpecQuerierSpec {
-		return &v
-	}).(VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput)
-}
-
-// Enables the Virtual Switch to act as an IGMP querier.
-func (o VirtualSwitchV2IgmpSpecQuerierSpecOutput) IsQuerierEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2IgmpSpecQuerierSpec) *bool { return v.IsQuerierEnabled }).(pulumi.BoolPtrOutput)
-}
-
-// A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
-func (o VirtualSwitchV2IgmpSpecQuerierSpecOutput) VlanIdLists() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v VirtualSwitchV2IgmpSpecQuerierSpec) []int { return v.VlanIdLists }).(pulumi.IntArrayOutput)
-}
-
-type VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**VirtualSwitchV2IgmpSpecQuerierSpec)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput) ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutput() VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return o
-}
-
-func (o VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput) ToVirtualSwitchV2IgmpSpecQuerierSpecPtrOutputWithContext(ctx context.Context) VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput {
-	return o
-}
-
-func (o VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput) Elem() VirtualSwitchV2IgmpSpecQuerierSpecOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2IgmpSpecQuerierSpec) VirtualSwitchV2IgmpSpecQuerierSpec {
-		if v != nil {
-			return *v
-		}
-		var ret VirtualSwitchV2IgmpSpecQuerierSpec
-		return ret
-	}).(VirtualSwitchV2IgmpSpecQuerierSpecOutput)
-}
-
-// Enables the Virtual Switch to act as an IGMP querier.
-func (o VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput) IsQuerierEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2IgmpSpecQuerierSpec) *bool {
-		if v == nil {
-			return nil
-		}
-		return v.IsQuerierEnabled
-	}).(pulumi.BoolPtrOutput)
-}
-
-// A list of VLAN IDs on which the Virtual Switch will actively send IGMP queries.
-func (o VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput) VlanIdLists() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v *VirtualSwitchV2IgmpSpecQuerierSpec) []int {
-		if v == nil {
-			return nil
-		}
-		return v.VlanIdLists
-	}).(pulumi.IntArrayOutput)
-}
-
-type VirtualSwitchV2Link struct {
-	Href *string `pulumi:"href"`
-	Rel  *string `pulumi:"rel"`
-}
-
-// VirtualSwitchV2LinkInput is an input type that accepts VirtualSwitchV2LinkArgs and VirtualSwitchV2LinkOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2LinkInput` via:
-//
-//	VirtualSwitchV2LinkArgs{...}
-type VirtualSwitchV2LinkInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2LinkOutput() VirtualSwitchV2LinkOutput
-	ToVirtualSwitchV2LinkOutputWithContext(context.Context) VirtualSwitchV2LinkOutput
-}
-
-type VirtualSwitchV2LinkArgs struct {
-	Href pulumi.StringPtrInput `pulumi:"href"`
-	Rel  pulumi.StringPtrInput `pulumi:"rel"`
-}
-
-func (VirtualSwitchV2LinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2Link)(nil)).Elem()
-}
-
-func (i VirtualSwitchV2LinkArgs) ToVirtualSwitchV2LinkOutput() VirtualSwitchV2LinkOutput {
-	return i.ToVirtualSwitchV2LinkOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2LinkArgs) ToVirtualSwitchV2LinkOutputWithContext(ctx context.Context) VirtualSwitchV2LinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2LinkOutput)
-}
-
-// VirtualSwitchV2LinkArrayInput is an input type that accepts VirtualSwitchV2LinkArray and VirtualSwitchV2LinkArrayOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2LinkArrayInput` via:
-//
-//	VirtualSwitchV2LinkArray{ VirtualSwitchV2LinkArgs{...} }
-type VirtualSwitchV2LinkArrayInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2LinkArrayOutput() VirtualSwitchV2LinkArrayOutput
-	ToVirtualSwitchV2LinkArrayOutputWithContext(context.Context) VirtualSwitchV2LinkArrayOutput
-}
-
-type VirtualSwitchV2LinkArray []VirtualSwitchV2LinkInput
-
-func (VirtualSwitchV2LinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VirtualSwitchV2Link)(nil)).Elem()
-}
-
-func (i VirtualSwitchV2LinkArray) ToVirtualSwitchV2LinkArrayOutput() VirtualSwitchV2LinkArrayOutput {
-	return i.ToVirtualSwitchV2LinkArrayOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2LinkArray) ToVirtualSwitchV2LinkArrayOutputWithContext(ctx context.Context) VirtualSwitchV2LinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2LinkArrayOutput)
-}
-
-type VirtualSwitchV2LinkOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2LinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2Link)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2LinkOutput) ToVirtualSwitchV2LinkOutput() VirtualSwitchV2LinkOutput {
-	return o
-}
-
-func (o VirtualSwitchV2LinkOutput) ToVirtualSwitchV2LinkOutputWithContext(ctx context.Context) VirtualSwitchV2LinkOutput {
-	return o
-}
-
-func (o VirtualSwitchV2LinkOutput) Href() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2Link) *string { return v.Href }).(pulumi.StringPtrOutput)
-}
-
-func (o VirtualSwitchV2LinkOutput) Rel() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2Link) *string { return v.Rel }).(pulumi.StringPtrOutput)
-}
-
-type VirtualSwitchV2LinkArrayOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2LinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VirtualSwitchV2Link)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2LinkArrayOutput) ToVirtualSwitchV2LinkArrayOutput() VirtualSwitchV2LinkArrayOutput {
-	return o
-}
-
-func (o VirtualSwitchV2LinkArrayOutput) ToVirtualSwitchV2LinkArrayOutputWithContext(ctx context.Context) VirtualSwitchV2LinkArrayOutput {
-	return o
-}
-
-func (o VirtualSwitchV2LinkArrayOutput) Index(i pulumi.IntInput) VirtualSwitchV2LinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VirtualSwitchV2Link {
-		return vs[0].([]VirtualSwitchV2Link)[vs[1].(int)]
-	}).(VirtualSwitchV2LinkOutput)
-}
-
-type VirtualSwitchV2Metadata struct {
-	CategoryIds        []string `pulumi:"categoryIds"`
-	OwnerReferenceId   *string  `pulumi:"ownerReferenceId"`
-	OwnerUserName      *string  `pulumi:"ownerUserName"`
-	ProjectName        *string  `pulumi:"projectName"`
-	ProjectReferenceId *string  `pulumi:"projectReferenceId"`
-}
-
-// VirtualSwitchV2MetadataInput is an input type that accepts VirtualSwitchV2MetadataArgs and VirtualSwitchV2MetadataOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2MetadataInput` via:
-//
-//	VirtualSwitchV2MetadataArgs{...}
-type VirtualSwitchV2MetadataInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2MetadataOutput() VirtualSwitchV2MetadataOutput
-	ToVirtualSwitchV2MetadataOutputWithContext(context.Context) VirtualSwitchV2MetadataOutput
-}
-
-type VirtualSwitchV2MetadataArgs struct {
-	CategoryIds        pulumi.StringArrayInput `pulumi:"categoryIds"`
-	OwnerReferenceId   pulumi.StringPtrInput   `pulumi:"ownerReferenceId"`
-	OwnerUserName      pulumi.StringPtrInput   `pulumi:"ownerUserName"`
-	ProjectName        pulumi.StringPtrInput   `pulumi:"projectName"`
-	ProjectReferenceId pulumi.StringPtrInput   `pulumi:"projectReferenceId"`
-}
-
-func (VirtualSwitchV2MetadataArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2Metadata)(nil)).Elem()
-}
-
-func (i VirtualSwitchV2MetadataArgs) ToVirtualSwitchV2MetadataOutput() VirtualSwitchV2MetadataOutput {
-	return i.ToVirtualSwitchV2MetadataOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2MetadataArgs) ToVirtualSwitchV2MetadataOutputWithContext(ctx context.Context) VirtualSwitchV2MetadataOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2MetadataOutput)
-}
-
-// VirtualSwitchV2MetadataArrayInput is an input type that accepts VirtualSwitchV2MetadataArray and VirtualSwitchV2MetadataArrayOutput values.
-// You can construct a concrete instance of `VirtualSwitchV2MetadataArrayInput` via:
-//
-//	VirtualSwitchV2MetadataArray{ VirtualSwitchV2MetadataArgs{...} }
-type VirtualSwitchV2MetadataArrayInput interface {
-	pulumi.Input
-
-	ToVirtualSwitchV2MetadataArrayOutput() VirtualSwitchV2MetadataArrayOutput
-	ToVirtualSwitchV2MetadataArrayOutputWithContext(context.Context) VirtualSwitchV2MetadataArrayOutput
-}
-
-type VirtualSwitchV2MetadataArray []VirtualSwitchV2MetadataInput
-
-func (VirtualSwitchV2MetadataArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VirtualSwitchV2Metadata)(nil)).Elem()
-}
-
-func (i VirtualSwitchV2MetadataArray) ToVirtualSwitchV2MetadataArrayOutput() VirtualSwitchV2MetadataArrayOutput {
-	return i.ToVirtualSwitchV2MetadataArrayOutputWithContext(context.Background())
-}
-
-func (i VirtualSwitchV2MetadataArray) ToVirtualSwitchV2MetadataArrayOutputWithContext(ctx context.Context) VirtualSwitchV2MetadataArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VirtualSwitchV2MetadataArrayOutput)
-}
-
-type VirtualSwitchV2MetadataOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2MetadataOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VirtualSwitchV2Metadata)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2MetadataOutput) ToVirtualSwitchV2MetadataOutput() VirtualSwitchV2MetadataOutput {
-	return o
-}
-
-func (o VirtualSwitchV2MetadataOutput) ToVirtualSwitchV2MetadataOutputWithContext(ctx context.Context) VirtualSwitchV2MetadataOutput {
-	return o
-}
-
-func (o VirtualSwitchV2MetadataOutput) CategoryIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v VirtualSwitchV2Metadata) []string { return v.CategoryIds }).(pulumi.StringArrayOutput)
-}
-
-func (o VirtualSwitchV2MetadataOutput) OwnerReferenceId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2Metadata) *string { return v.OwnerReferenceId }).(pulumi.StringPtrOutput)
-}
-
-func (o VirtualSwitchV2MetadataOutput) OwnerUserName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2Metadata) *string { return v.OwnerUserName }).(pulumi.StringPtrOutput)
-}
-
-func (o VirtualSwitchV2MetadataOutput) ProjectName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2Metadata) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
-}
-
-func (o VirtualSwitchV2MetadataOutput) ProjectReferenceId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VirtualSwitchV2Metadata) *string { return v.ProjectReferenceId }).(pulumi.StringPtrOutput)
-}
-
-type VirtualSwitchV2MetadataArrayOutput struct{ *pulumi.OutputState }
-
-func (VirtualSwitchV2MetadataArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VirtualSwitchV2Metadata)(nil)).Elem()
-}
-
-func (o VirtualSwitchV2MetadataArrayOutput) ToVirtualSwitchV2MetadataArrayOutput() VirtualSwitchV2MetadataArrayOutput {
-	return o
-}
-
-func (o VirtualSwitchV2MetadataArrayOutput) ToVirtualSwitchV2MetadataArrayOutputWithContext(ctx context.Context) VirtualSwitchV2MetadataArrayOutput {
-	return o
-}
-
-func (o VirtualSwitchV2MetadataArrayOutput) Index(i pulumi.IntInput) VirtualSwitchV2MetadataOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VirtualSwitchV2Metadata {
-		return vs[0].([]VirtualSwitchV2Metadata)[vs[1].(int)]
-	}).(VirtualSwitchV2MetadataOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfo struct {
-	// A reference to a disk or image that contains the contents of a disk.
-	DataSources []VmCdromInsertEjectV2BackingInfoDataSource `pulumi:"dataSources"`
-	DiskExtId   *string                                     `pulumi:"diskExtId"`
-	// Size of the disk in Bytes
-	DiskSizeBytes         *int  `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress *bool `pulumi:"isMigrationInProgress"`
-	// Storage configuration for VM disks
-	// * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
-	StorageConfigs []VmCdromInsertEjectV2BackingInfoStorageConfig `pulumi:"storageConfigs"`
-	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
-	StorageContainers []VmCdromInsertEjectV2BackingInfoStorageContainer `pulumi:"storageContainers"`
-}
-
-// VmCdromInsertEjectV2BackingInfoInput is an input type that accepts VmCdromInsertEjectV2BackingInfoArgs and VmCdromInsertEjectV2BackingInfoOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoArgs{...}
-type VmCdromInsertEjectV2BackingInfoInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoOutput() VmCdromInsertEjectV2BackingInfoOutput
-	ToVmCdromInsertEjectV2BackingInfoOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoArgs struct {
-	// A reference to a disk or image that contains the contents of a disk.
-	DataSources VmCdromInsertEjectV2BackingInfoDataSourceArrayInput `pulumi:"dataSources"`
-	DiskExtId   pulumi.StringPtrInput                               `pulumi:"diskExtId"`
-	// Size of the disk in Bytes
-	DiskSizeBytes         pulumi.IntPtrInput  `pulumi:"diskSizeBytes"`
-	IsMigrationInProgress pulumi.BoolPtrInput `pulumi:"isMigrationInProgress"`
-	// Storage configuration for VM disks
-	// * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
-	StorageConfigs VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
-	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
-	StorageContainers VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput `pulumi:"storageContainers"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfo)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoArgs) ToVmCdromInsertEjectV2BackingInfoOutput() VmCdromInsertEjectV2BackingInfoOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoArgs) ToVmCdromInsertEjectV2BackingInfoOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoArray and VmCdromInsertEjectV2BackingInfoArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoArray{ VmCdromInsertEjectV2BackingInfoArgs{...} }
-type VmCdromInsertEjectV2BackingInfoArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoArrayOutput() VmCdromInsertEjectV2BackingInfoArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoArray []VmCdromInsertEjectV2BackingInfoInput
-
-func (VmCdromInsertEjectV2BackingInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfo)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoArray) ToVmCdromInsertEjectV2BackingInfoArrayOutput() VmCdromInsertEjectV2BackingInfoArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoArray) ToVmCdromInsertEjectV2BackingInfoArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfo)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoOutput) ToVmCdromInsertEjectV2BackingInfoOutput() VmCdromInsertEjectV2BackingInfoOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoOutput) ToVmCdromInsertEjectV2BackingInfoOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoOutput {
-	return o
-}
-
-// A reference to a disk or image that contains the contents of a disk.
-func (o VmCdromInsertEjectV2BackingInfoOutput) DataSources() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoDataSource {
-		return v.DataSources
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput)
-}
-
-func (o VmCdromInsertEjectV2BackingInfoOutput) DiskExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
-}
-
-// Size of the disk in Bytes
-func (o VmCdromInsertEjectV2BackingInfoOutput) DiskSizeBytes() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) *int { return v.DiskSizeBytes }).(pulumi.IntPtrOutput)
-}
-
-func (o VmCdromInsertEjectV2BackingInfoOutput) IsMigrationInProgress() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) *bool { return v.IsMigrationInProgress }).(pulumi.BoolPtrOutput)
-}
-
-// Storage configuration for VM disks
-// * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
-func (o VmCdromInsertEjectV2BackingInfoOutput) StorageConfigs() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoStorageConfig {
-		return v.StorageConfigs
-	}).(VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput)
-}
-
-// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
-func (o VmCdromInsertEjectV2BackingInfoOutput) StorageContainers() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfo) []VmCdromInsertEjectV2BackingInfoStorageContainer {
-		return v.StorageContainers
-	}).(VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfo)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoArrayOutput) ToVmCdromInsertEjectV2BackingInfoArrayOutput() VmCdromInsertEjectV2BackingInfoArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoArrayOutput) ToVmCdromInsertEjectV2BackingInfoArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfo {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfo)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSource struct {
-	// Reference to image or vm disk. Either <span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`" pulumi-lang-hcl="`image_reference`">`imageReference`</span> or <span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`" pulumi-lang-hcl="`vm_disk_reference`">`vmDiskReference`</span>.
-	References []VmCdromInsertEjectV2BackingInfoDataSourceReference `pulumi:"references"`
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceArgs and VmCdromInsertEjectV2BackingInfoDataSourceOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceArgs{...}
-type VmCdromInsertEjectV2BackingInfoDataSourceInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceOutput() VmCdromInsertEjectV2BackingInfoDataSourceOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceArgs struct {
-	// Reference to image or vm disk. Either <span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`" pulumi-lang-hcl="`image_reference`">`imageReference`</span> or <span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`" pulumi-lang-hcl="`vm_disk_reference`">`vmDiskReference`</span>.
-	References VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput `pulumi:"references"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSource)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceOutput() VmCdromInsertEjectV2BackingInfoDataSourceOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceArray and VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceArray{ VmCdromInsertEjectV2BackingInfoDataSourceArgs{...} }
-type VmCdromInsertEjectV2BackingInfoDataSourceArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceArray []VmCdromInsertEjectV2BackingInfoDataSourceInput
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSource)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSource)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceOutput() VmCdromInsertEjectV2BackingInfoDataSourceOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceOutput {
-	return o
-}
-
-// Reference to image or vm disk. Either <span pulumi-lang-nodejs="`imageReference`" pulumi-lang-dotnet="`ImageReference`" pulumi-lang-go="`imageReference`" pulumi-lang-python="`image_reference`" pulumi-lang-yaml="`imageReference`" pulumi-lang-java="`imageReference`" pulumi-lang-hcl="`image_reference`">`imageReference`</span> or <span pulumi-lang-nodejs="`vmDiskReference`" pulumi-lang-dotnet="`VmDiskReference`" pulumi-lang-go="`vmDiskReference`" pulumi-lang-python="`vm_disk_reference`" pulumi-lang-yaml="`vmDiskReference`" pulumi-lang-java="`vmDiskReference`" pulumi-lang-hcl="`vm_disk_reference`">`vmDiskReference`</span>.
-func (o VmCdromInsertEjectV2BackingInfoDataSourceOutput) References() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSource) []VmCdromInsertEjectV2BackingInfoDataSourceReference {
-		return v.References
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSource)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSource {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSource)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReference struct {
-	// Image Reference
-	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
-	ImageReferences []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference `pulumi:"imageReferences"`
-	// Vm Disk Reference
-	// * `vm_disk_reference.disk_address`: (Required) Disk address.
-	// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
-	VmDiskReferences []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference `pulumi:"vmDiskReferences"`
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs{...}
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs struct {
-	// Image Reference
-	// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
-	ImageReferences VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput `pulumi:"imageReferences"`
-	// Vm Disk Reference
-	// * `vm_disk_reference.disk_address`: (Required) Disk address.
-	// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
-	VmDiskReferences VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput `pulumi:"vmDiskReferences"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReference)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs{...} }
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReference)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReference)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
-	return o
-}
-
-// Image Reference
-// * `image_reference.image_ext_id`: (Required) The globally unique identifier of an image. It should be of type UUID.
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) ImageReferences() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference {
-		return v.ImageReferences
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput)
-}
-
-// Vm Disk Reference
-// * `vm_disk_reference.disk_address`: (Required) Disk address.
-// * `vm_disk_reference.vm_reference`: (Required) This is a reference to a VM.
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput) VmDiskReferences() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference {
-		return v.VmDiskReferences
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReference)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReference {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReference)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference struct {
-	ImageExtId *string `pulumi:"imageExtId"`
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs{...}
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs struct {
-	ImageExtId pulumi.StringPtrInput `pulumi:"imageExtId"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs{...} }
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput) ImageExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference) *string { return v.ImageExtId }).(pulumi.StringPtrOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReference)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference struct {
-	DiskAddresses []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress `pulumi:"diskAddresses"`
-	DiskExtId     *string                                                                        `pulumi:"diskExtId"`
-	VmReferences  []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference `pulumi:"vmReferences"`
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs{...}
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs struct {
-	DiskAddresses VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput `pulumi:"diskAddresses"`
-	DiskExtId     pulumi.StringPtrInput                                                                  `pulumi:"diskExtId"`
-	VmReferences  VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput `pulumi:"vmReferences"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs{...} }
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) DiskAddresses() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
-		return v.DiskAddresses
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput)
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) DiskExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference) *string { return v.DiskExtId }).(pulumi.StringPtrOutput)
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput) VmReferences() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference) []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference {
-		return v.VmReferences
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReference)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress struct {
-	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs{...}
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs struct {
-	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs{...} }
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) BusType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress) *string {
-		return v.BusType
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput) Index() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress) *int {
-		return v.Index
-	}).(pulumi.IntPtrOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddress)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference struct {
-	// The globally unique identifier of a CD-ROM. It should be of type UUID.
-	ExtId *string `pulumi:"extId"`
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs{...}
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs struct {
-	// The globally unique identifier of a CD-ROM. It should be of type UUID.
-	ExtId pulumi.StringPtrInput `pulumi:"extId"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray and VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray{ VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs{...} }
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray []VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
-	return o
-}
-
-// The globally unique identifier of a CD-ROM. It should be of type UUID.
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput) ExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference) *string {
-		return v.ExtId
-	}).(pulumi.StringPtrOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput() VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput) ToVmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReference)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageConfig struct {
-	IsFlashModeEnabled *bool `pulumi:"isFlashModeEnabled"`
-}
-
-// VmCdromInsertEjectV2BackingInfoStorageConfigInput is an input type that accepts VmCdromInsertEjectV2BackingInfoStorageConfigArgs and VmCdromInsertEjectV2BackingInfoStorageConfigOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoStorageConfigInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoStorageConfigArgs{...}
-type VmCdromInsertEjectV2BackingInfoStorageConfigInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoStorageConfigOutput() VmCdromInsertEjectV2BackingInfoStorageConfigOutput
-	ToVmCdromInsertEjectV2BackingInfoStorageConfigOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageConfigArgs struct {
-	IsFlashModeEnabled pulumi.BoolPtrInput `pulumi:"isFlashModeEnabled"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoStorageConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageConfig)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoStorageConfigArgs) ToVmCdromInsertEjectV2BackingInfoStorageConfigOutput() VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoStorageConfigOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoStorageConfigArgs) ToVmCdromInsertEjectV2BackingInfoStorageConfigOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoStorageConfigOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoStorageConfigArray and VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoStorageConfigArray{ VmCdromInsertEjectV2BackingInfoStorageConfigArgs{...} }
-type VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageConfigArray []VmCdromInsertEjectV2BackingInfoStorageConfigInput
-
-func (VmCdromInsertEjectV2BackingInfoStorageConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoStorageConfig)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoStorageConfigArray) ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoStorageConfigArray) ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageConfigOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoStorageConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageConfig)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageConfigOutput) ToVmCdromInsertEjectV2BackingInfoStorageConfigOutput() VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageConfigOutput) ToVmCdromInsertEjectV2BackingInfoStorageConfigOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageConfigOutput) IsFlashModeEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoStorageConfig) *bool { return v.IsFlashModeEnabled }).(pulumi.BoolPtrOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoStorageConfig)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput() VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) ToVmCdromInsertEjectV2BackingInfoStorageConfigArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoStorageConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoStorageConfig {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfoStorageConfig)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoStorageConfigOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageContainer struct {
-	// The globally unique identifier of a CD-ROM. It should be of type UUID.
-	ExtId *string `pulumi:"extId"`
-}
-
-// VmCdromInsertEjectV2BackingInfoStorageContainerInput is an input type that accepts VmCdromInsertEjectV2BackingInfoStorageContainerArgs and VmCdromInsertEjectV2BackingInfoStorageContainerOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoStorageContainerInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoStorageContainerArgs{...}
-type VmCdromInsertEjectV2BackingInfoStorageContainerInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoStorageContainerOutput() VmCdromInsertEjectV2BackingInfoStorageContainerOutput
-	ToVmCdromInsertEjectV2BackingInfoStorageContainerOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageContainerArgs struct {
-	// The globally unique identifier of a CD-ROM. It should be of type UUID.
-	ExtId pulumi.StringPtrInput `pulumi:"extId"`
-}
-
-func (VmCdromInsertEjectV2BackingInfoStorageContainerArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageContainer)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoStorageContainerArgs) ToVmCdromInsertEjectV2BackingInfoStorageContainerOutput() VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoStorageContainerOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoStorageContainerArgs) ToVmCdromInsertEjectV2BackingInfoStorageContainerOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoStorageContainerOutput)
-}
-
-// VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput is an input type that accepts VmCdromInsertEjectV2BackingInfoStorageContainerArray and VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput` via:
-//
-//	VmCdromInsertEjectV2BackingInfoStorageContainerArray{ VmCdromInsertEjectV2BackingInfoStorageContainerArgs{...} }
-type VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput
-	ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutputWithContext(context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageContainerArray []VmCdromInsertEjectV2BackingInfoStorageContainerInput
-
-func (VmCdromInsertEjectV2BackingInfoStorageContainerArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoStorageContainer)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2BackingInfoStorageContainerArray) ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
-	return i.ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2BackingInfoStorageContainerArray) ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageContainerOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageContainer)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ToVmCdromInsertEjectV2BackingInfoStorageContainerOutput() VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ToVmCdromInsertEjectV2BackingInfoStorageContainerOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
-	return o
-}
-
-// The globally unique identifier of a CD-ROM. It should be of type UUID.
-func (o VmCdromInsertEjectV2BackingInfoStorageContainerOutput) ExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2BackingInfoStorageContainer) *string { return v.ExtId }).(pulumi.StringPtrOutput)
-}
-
-type VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2BackingInfoStorageContainer)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput) ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput() VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput) ToVmCdromInsertEjectV2BackingInfoStorageContainerArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2BackingInfoStorageContainerOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2BackingInfoStorageContainer {
-		return vs[0].([]VmCdromInsertEjectV2BackingInfoStorageContainer)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2BackingInfoStorageContainerOutput)
-}
-
-type VmCdromInsertEjectV2DiskAddress struct {
-	BusType *string `pulumi:"busType"`
-	Index   *int    `pulumi:"index"`
-}
-
-// VmCdromInsertEjectV2DiskAddressInput is an input type that accepts VmCdromInsertEjectV2DiskAddressArgs and VmCdromInsertEjectV2DiskAddressOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2DiskAddressInput` via:
-//
-//	VmCdromInsertEjectV2DiskAddressArgs{...}
-type VmCdromInsertEjectV2DiskAddressInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2DiskAddressOutput() VmCdromInsertEjectV2DiskAddressOutput
-	ToVmCdromInsertEjectV2DiskAddressOutputWithContext(context.Context) VmCdromInsertEjectV2DiskAddressOutput
-}
-
-type VmCdromInsertEjectV2DiskAddressArgs struct {
-	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	Index   pulumi.IntPtrInput    `pulumi:"index"`
-}
-
-func (VmCdromInsertEjectV2DiskAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2DiskAddress)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2DiskAddressArgs) ToVmCdromInsertEjectV2DiskAddressOutput() VmCdromInsertEjectV2DiskAddressOutput {
-	return i.ToVmCdromInsertEjectV2DiskAddressOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2DiskAddressArgs) ToVmCdromInsertEjectV2DiskAddressOutputWithContext(ctx context.Context) VmCdromInsertEjectV2DiskAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2DiskAddressOutput)
-}
-
-// VmCdromInsertEjectV2DiskAddressArrayInput is an input type that accepts VmCdromInsertEjectV2DiskAddressArray and VmCdromInsertEjectV2DiskAddressArrayOutput values.
-// You can construct a concrete instance of `VmCdromInsertEjectV2DiskAddressArrayInput` via:
-//
-//	VmCdromInsertEjectV2DiskAddressArray{ VmCdromInsertEjectV2DiskAddressArgs{...} }
-type VmCdromInsertEjectV2DiskAddressArrayInput interface {
-	pulumi.Input
-
-	ToVmCdromInsertEjectV2DiskAddressArrayOutput() VmCdromInsertEjectV2DiskAddressArrayOutput
-	ToVmCdromInsertEjectV2DiskAddressArrayOutputWithContext(context.Context) VmCdromInsertEjectV2DiskAddressArrayOutput
-}
-
-type VmCdromInsertEjectV2DiskAddressArray []VmCdromInsertEjectV2DiskAddressInput
-
-func (VmCdromInsertEjectV2DiskAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2DiskAddress)(nil)).Elem()
-}
-
-func (i VmCdromInsertEjectV2DiskAddressArray) ToVmCdromInsertEjectV2DiskAddressArrayOutput() VmCdromInsertEjectV2DiskAddressArrayOutput {
-	return i.ToVmCdromInsertEjectV2DiskAddressArrayOutputWithContext(context.Background())
-}
-
-func (i VmCdromInsertEjectV2DiskAddressArray) ToVmCdromInsertEjectV2DiskAddressArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2DiskAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCdromInsertEjectV2DiskAddressArrayOutput)
-}
-
-type VmCdromInsertEjectV2DiskAddressOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2DiskAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCdromInsertEjectV2DiskAddress)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2DiskAddressOutput) ToVmCdromInsertEjectV2DiskAddressOutput() VmCdromInsertEjectV2DiskAddressOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2DiskAddressOutput) ToVmCdromInsertEjectV2DiskAddressOutputWithContext(ctx context.Context) VmCdromInsertEjectV2DiskAddressOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2DiskAddressOutput) BusType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2DiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
-}
-
-func (o VmCdromInsertEjectV2DiskAddressOutput) Index() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v VmCdromInsertEjectV2DiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
-}
-
-type VmCdromInsertEjectV2DiskAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCdromInsertEjectV2DiskAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCdromInsertEjectV2DiskAddress)(nil)).Elem()
-}
-
-func (o VmCdromInsertEjectV2DiskAddressArrayOutput) ToVmCdromInsertEjectV2DiskAddressArrayOutput() VmCdromInsertEjectV2DiskAddressArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2DiskAddressArrayOutput) ToVmCdromInsertEjectV2DiskAddressArrayOutputWithContext(ctx context.Context) VmCdromInsertEjectV2DiskAddressArrayOutput {
-	return o
-}
-
-func (o VmCdromInsertEjectV2DiskAddressArrayOutput) Index(i pulumi.IntInput) VmCdromInsertEjectV2DiskAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCdromInsertEjectV2DiskAddress {
-		return vs[0].([]VmCdromInsertEjectV2DiskAddress)[vs[1].(int)]
-	}).(VmCdromInsertEjectV2DiskAddressOutput)
-}
-
-type VmCloneV2ApcConfig struct {
-	CpuModels    []VmCloneV2ApcConfigCpuModel `pulumi:"cpuModels"`
-	IsApcEnabled *bool                        `pulumi:"isApcEnabled"`
-}
-
-// VmCloneV2ApcConfigInput is an input type that accepts VmCloneV2ApcConfigArgs and VmCloneV2ApcConfigOutput values.
-// You can construct a concrete instance of `VmCloneV2ApcConfigInput` via:
-//
-//	VmCloneV2ApcConfigArgs{...}
-type VmCloneV2ApcConfigInput interface {
-	pulumi.Input
-
-	ToVmCloneV2ApcConfigOutput() VmCloneV2ApcConfigOutput
-	ToVmCloneV2ApcConfigOutputWithContext(context.Context) VmCloneV2ApcConfigOutput
-}
-
-type VmCloneV2ApcConfigArgs struct {
-	CpuModels    VmCloneV2ApcConfigCpuModelArrayInput `pulumi:"cpuModels"`
-	IsApcEnabled pulumi.BoolPtrInput                  `pulumi:"isApcEnabled"`
-}
-
-func (VmCloneV2ApcConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2ApcConfig)(nil)).Elem()
-}
-
-func (i VmCloneV2ApcConfigArgs) ToVmCloneV2ApcConfigOutput() VmCloneV2ApcConfigOutput {
-	return i.ToVmCloneV2ApcConfigOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2ApcConfigArgs) ToVmCloneV2ApcConfigOutputWithContext(ctx context.Context) VmCloneV2ApcConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2ApcConfigOutput)
-}
-
-// VmCloneV2ApcConfigArrayInput is an input type that accepts VmCloneV2ApcConfigArray and VmCloneV2ApcConfigArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2ApcConfigArrayInput` via:
-//
-//	VmCloneV2ApcConfigArray{ VmCloneV2ApcConfigArgs{...} }
-type VmCloneV2ApcConfigArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2ApcConfigArrayOutput() VmCloneV2ApcConfigArrayOutput
-	ToVmCloneV2ApcConfigArrayOutputWithContext(context.Context) VmCloneV2ApcConfigArrayOutput
-}
-
-type VmCloneV2ApcConfigArray []VmCloneV2ApcConfigInput
-
-func (VmCloneV2ApcConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2ApcConfig)(nil)).Elem()
-}
-
-func (i VmCloneV2ApcConfigArray) ToVmCloneV2ApcConfigArrayOutput() VmCloneV2ApcConfigArrayOutput {
-	return i.ToVmCloneV2ApcConfigArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2ApcConfigArray) ToVmCloneV2ApcConfigArrayOutputWithContext(ctx context.Context) VmCloneV2ApcConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2ApcConfigArrayOutput)
-}
-
-type VmCloneV2ApcConfigOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2ApcConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2ApcConfig)(nil)).Elem()
-}
-
-func (o VmCloneV2ApcConfigOutput) ToVmCloneV2ApcConfigOutput() VmCloneV2ApcConfigOutput {
-	return o
-}
-
-func (o VmCloneV2ApcConfigOutput) ToVmCloneV2ApcConfigOutputWithContext(ctx context.Context) VmCloneV2ApcConfigOutput {
-	return o
-}
-
-func (o VmCloneV2ApcConfigOutput) CpuModels() VmCloneV2ApcConfigCpuModelArrayOutput {
-	return o.ApplyT(func(v VmCloneV2ApcConfig) []VmCloneV2ApcConfigCpuModel { return v.CpuModels }).(VmCloneV2ApcConfigCpuModelArrayOutput)
-}
-
-func (o VmCloneV2ApcConfigOutput) IsApcEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v VmCloneV2ApcConfig) *bool { return v.IsApcEnabled }).(pulumi.BoolPtrOutput)
-}
-
-type VmCloneV2ApcConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2ApcConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2ApcConfig)(nil)).Elem()
-}
-
-func (o VmCloneV2ApcConfigArrayOutput) ToVmCloneV2ApcConfigArrayOutput() VmCloneV2ApcConfigArrayOutput {
-	return o
-}
-
-func (o VmCloneV2ApcConfigArrayOutput) ToVmCloneV2ApcConfigArrayOutputWithContext(ctx context.Context) VmCloneV2ApcConfigArrayOutput {
-	return o
-}
-
-func (o VmCloneV2ApcConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2ApcConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2ApcConfig {
-		return vs[0].([]VmCloneV2ApcConfig)[vs[1].(int)]
-	}).(VmCloneV2ApcConfigOutput)
-}
-
-type VmCloneV2ApcConfigCpuModel struct {
-	ExtId *string `pulumi:"extId"`
-	// - (Optional) The name for the vm.
-	Name *string `pulumi:"name"`
-}
-
-// VmCloneV2ApcConfigCpuModelInput is an input type that accepts VmCloneV2ApcConfigCpuModelArgs and VmCloneV2ApcConfigCpuModelOutput values.
-// You can construct a concrete instance of `VmCloneV2ApcConfigCpuModelInput` via:
-//
-//	VmCloneV2ApcConfigCpuModelArgs{...}
-type VmCloneV2ApcConfigCpuModelInput interface {
-	pulumi.Input
-
-	ToVmCloneV2ApcConfigCpuModelOutput() VmCloneV2ApcConfigCpuModelOutput
-	ToVmCloneV2ApcConfigCpuModelOutputWithContext(context.Context) VmCloneV2ApcConfigCpuModelOutput
-}
-
-type VmCloneV2ApcConfigCpuModelArgs struct {
-	ExtId pulumi.StringPtrInput `pulumi:"extId"`
-	// - (Optional) The name for the vm.
-	Name pulumi.StringPtrInput `pulumi:"name"`
-}
-
-func (VmCloneV2ApcConfigCpuModelArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2ApcConfigCpuModel)(nil)).Elem()
-}
-
-func (i VmCloneV2ApcConfigCpuModelArgs) ToVmCloneV2ApcConfigCpuModelOutput() VmCloneV2ApcConfigCpuModelOutput {
-	return i.ToVmCloneV2ApcConfigCpuModelOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2ApcConfigCpuModelArgs) ToVmCloneV2ApcConfigCpuModelOutputWithContext(ctx context.Context) VmCloneV2ApcConfigCpuModelOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2ApcConfigCpuModelOutput)
-}
-
-// VmCloneV2ApcConfigCpuModelArrayInput is an input type that accepts VmCloneV2ApcConfigCpuModelArray and VmCloneV2ApcConfigCpuModelArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2ApcConfigCpuModelArrayInput` via:
-//
-//	VmCloneV2ApcConfigCpuModelArray{ VmCloneV2ApcConfigCpuModelArgs{...} }
-type VmCloneV2ApcConfigCpuModelArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2ApcConfigCpuModelArrayOutput() VmCloneV2ApcConfigCpuModelArrayOutput
-	ToVmCloneV2ApcConfigCpuModelArrayOutputWithContext(context.Context) VmCloneV2ApcConfigCpuModelArrayOutput
-}
-
-type VmCloneV2ApcConfigCpuModelArray []VmCloneV2ApcConfigCpuModelInput
-
-func (VmCloneV2ApcConfigCpuModelArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2ApcConfigCpuModel)(nil)).Elem()
-}
-
-func (i VmCloneV2ApcConfigCpuModelArray) ToVmCloneV2ApcConfigCpuModelArrayOutput() VmCloneV2ApcConfigCpuModelArrayOutput {
-	return i.ToVmCloneV2ApcConfigCpuModelArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2ApcConfigCpuModelArray) ToVmCloneV2ApcConfigCpuModelArrayOutputWithContext(ctx context.Context) VmCloneV2ApcConfigCpuModelArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2ApcConfigCpuModelArrayOutput)
-}
-
-type VmCloneV2ApcConfigCpuModelOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2ApcConfigCpuModelOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2ApcConfigCpuModel)(nil)).Elem()
-}
-
-func (o VmCloneV2ApcConfigCpuModelOutput) ToVmCloneV2ApcConfigCpuModelOutput() VmCloneV2ApcConfigCpuModelOutput {
-	return o
-}
-
-func (o VmCloneV2ApcConfigCpuModelOutput) ToVmCloneV2ApcConfigCpuModelOutputWithContext(ctx context.Context) VmCloneV2ApcConfigCpuModelOutput {
-	return o
-}
-
-func (o VmCloneV2ApcConfigCpuModelOutput) ExtId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCloneV2ApcConfigCpuModel) *string { return v.ExtId }).(pulumi.StringPtrOutput)
-}
-
-// - (Optional) The name for the vm.
-func (o VmCloneV2ApcConfigCpuModelOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCloneV2ApcConfigCpuModel) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-type VmCloneV2ApcConfigCpuModelArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2ApcConfigCpuModelArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2ApcConfigCpuModel)(nil)).Elem()
-}
-
-func (o VmCloneV2ApcConfigCpuModelArrayOutput) ToVmCloneV2ApcConfigCpuModelArrayOutput() VmCloneV2ApcConfigCpuModelArrayOutput {
-	return o
-}
-
-func (o VmCloneV2ApcConfigCpuModelArrayOutput) ToVmCloneV2ApcConfigCpuModelArrayOutputWithContext(ctx context.Context) VmCloneV2ApcConfigCpuModelArrayOutput {
-	return o
-}
-
-func (o VmCloneV2ApcConfigCpuModelArrayOutput) Index(i pulumi.IntInput) VmCloneV2ApcConfigCpuModelOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2ApcConfigCpuModel {
-		return vs[0].([]VmCloneV2ApcConfigCpuModel)[vs[1].(int)]
-	}).(VmCloneV2ApcConfigCpuModelOutput)
-}
-
-type VmCloneV2BootConfig struct {
-	LegacyBoots []VmCloneV2BootConfigLegacyBoot `pulumi:"legacyBoots"`
-	UefiBoots   []VmCloneV2BootConfigUefiBoot   `pulumi:"uefiBoots"`
-}
-
-// VmCloneV2BootConfigInput is an input type that accepts VmCloneV2BootConfigArgs and VmCloneV2BootConfigOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigInput` via:
-//
-//	VmCloneV2BootConfigArgs{...}
-type VmCloneV2BootConfigInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigOutput() VmCloneV2BootConfigOutput
-	ToVmCloneV2BootConfigOutputWithContext(context.Context) VmCloneV2BootConfigOutput
-}
-
-type VmCloneV2BootConfigArgs struct {
-	LegacyBoots VmCloneV2BootConfigLegacyBootArrayInput `pulumi:"legacyBoots"`
-	UefiBoots   VmCloneV2BootConfigUefiBootArrayInput   `pulumi:"uefiBoots"`
-}
-
-func (VmCloneV2BootConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfig)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigArgs) ToVmCloneV2BootConfigOutput() VmCloneV2BootConfigOutput {
-	return i.ToVmCloneV2BootConfigOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigArgs) ToVmCloneV2BootConfigOutputWithContext(ctx context.Context) VmCloneV2BootConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigOutput)
-}
-
-// VmCloneV2BootConfigArrayInput is an input type that accepts VmCloneV2BootConfigArray and VmCloneV2BootConfigArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigArrayInput` via:
-//
-//	VmCloneV2BootConfigArray{ VmCloneV2BootConfigArgs{...} }
-type VmCloneV2BootConfigArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigArrayOutput() VmCloneV2BootConfigArrayOutput
-	ToVmCloneV2BootConfigArrayOutputWithContext(context.Context) VmCloneV2BootConfigArrayOutput
-}
-
-type VmCloneV2BootConfigArray []VmCloneV2BootConfigInput
-
-func (VmCloneV2BootConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfig)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigArray) ToVmCloneV2BootConfigArrayOutput() VmCloneV2BootConfigArrayOutput {
-	return i.ToVmCloneV2BootConfigArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigArray) ToVmCloneV2BootConfigArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigArrayOutput)
-}
-
-type VmCloneV2BootConfigOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfig)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigOutput) ToVmCloneV2BootConfigOutput() VmCloneV2BootConfigOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigOutput) ToVmCloneV2BootConfigOutputWithContext(ctx context.Context) VmCloneV2BootConfigOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigOutput) LegacyBoots() VmCloneV2BootConfigLegacyBootArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfig) []VmCloneV2BootConfigLegacyBoot { return v.LegacyBoots }).(VmCloneV2BootConfigLegacyBootArrayOutput)
-}
-
-func (o VmCloneV2BootConfigOutput) UefiBoots() VmCloneV2BootConfigUefiBootArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfig) []VmCloneV2BootConfigUefiBoot { return v.UefiBoots }).(VmCloneV2BootConfigUefiBootArrayOutput)
-}
-
-type VmCloneV2BootConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfig)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigArrayOutput) ToVmCloneV2BootConfigArrayOutput() VmCloneV2BootConfigArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigArrayOutput) ToVmCloneV2BootConfigArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfig {
-		return vs[0].([]VmCloneV2BootConfig)[vs[1].(int)]
-	}).(VmCloneV2BootConfigOutput)
-}
-
-type VmCloneV2BootConfigLegacyBoot struct {
-	// - (Optional) The Boot Device settings.
-	BootDevices []VmCloneV2BootConfigLegacyBootBootDevice `pulumi:"bootDevices"`
-	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootOrders []string `pulumi:"bootOrders"`
-}
-
-// VmCloneV2BootConfigLegacyBootInput is an input type that accepts VmCloneV2BootConfigLegacyBootArgs and VmCloneV2BootConfigLegacyBootOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootArgs{...}
-type VmCloneV2BootConfigLegacyBootInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootOutput() VmCloneV2BootConfigLegacyBootOutput
-	ToVmCloneV2BootConfigLegacyBootOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootOutput
-}
-
-type VmCloneV2BootConfigLegacyBootArgs struct {
-	// - (Optional) The Boot Device settings.
-	BootDevices VmCloneV2BootConfigLegacyBootBootDeviceArrayInput `pulumi:"bootDevices"`
-	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
-}
-
-func (VmCloneV2BootConfigLegacyBootArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBoot)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootArgs) ToVmCloneV2BootConfigLegacyBootOutput() VmCloneV2BootConfigLegacyBootOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootArgs) ToVmCloneV2BootConfigLegacyBootOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootOutput)
-}
-
-// VmCloneV2BootConfigLegacyBootArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootArray and VmCloneV2BootConfigLegacyBootArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootArrayInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootArray{ VmCloneV2BootConfigLegacyBootArgs{...} }
-type VmCloneV2BootConfigLegacyBootArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootArrayOutput() VmCloneV2BootConfigLegacyBootArrayOutput
-	ToVmCloneV2BootConfigLegacyBootArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootArrayOutput
-}
-
-type VmCloneV2BootConfigLegacyBootArray []VmCloneV2BootConfigLegacyBootInput
-
-func (VmCloneV2BootConfigLegacyBootArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBoot)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootArray) ToVmCloneV2BootConfigLegacyBootArrayOutput() VmCloneV2BootConfigLegacyBootArrayOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootArray) ToVmCloneV2BootConfigLegacyBootArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootArrayOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBoot)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootOutput) ToVmCloneV2BootConfigLegacyBootOutput() VmCloneV2BootConfigLegacyBootOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootOutput) ToVmCloneV2BootConfigLegacyBootOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootOutput {
-	return o
-}
-
-// - (Optional) The Boot Device settings.
-func (o VmCloneV2BootConfigLegacyBootOutput) BootDevices() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBoot) []VmCloneV2BootConfigLegacyBootBootDevice { return v.BootDevices }).(VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput)
-}
-
-// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-func (o VmCloneV2BootConfigLegacyBootOutput) BootOrders() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBoot)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootArrayOutput) ToVmCloneV2BootConfigLegacyBootArrayOutput() VmCloneV2BootConfigLegacyBootArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootArrayOutput) ToVmCloneV2BootConfigLegacyBootArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBoot {
-		return vs[0].([]VmCloneV2BootConfigLegacyBoot)[vs[1].(int)]
-	}).(VmCloneV2BootConfigLegacyBootOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDevice struct {
-	// - (Optional) The Boot Device Disk settings.
-	BootDeviceDisks []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
-	// - (Optional) The Boot Device Nic settings.
-	BootDeviceNics []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic `pulumi:"bootDeviceNics"`
-}
-
-// VmCloneV2BootConfigLegacyBootBootDeviceInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceArgs and VmCloneV2BootConfigLegacyBootBootDeviceOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootBootDeviceArgs{...}
-type VmCloneV2BootConfigLegacyBootBootDeviceInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootBootDeviceOutput() VmCloneV2BootConfigLegacyBootBootDeviceOutput
-	ToVmCloneV2BootConfigLegacyBootBootDeviceOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceOutput
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceArgs struct {
-	// - (Optional) The Boot Device Disk settings.
-	BootDeviceDisks VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
-	// - (Optional) The Boot Device Nic settings.
-	BootDeviceNics VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput `pulumi:"bootDeviceNics"`
-}
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDevice)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceOutput() VmCloneV2BootConfigLegacyBootBootDeviceOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceOutput)
-}
-
-// VmCloneV2BootConfigLegacyBootBootDeviceArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceArray and VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceArrayInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootBootDeviceArray{ VmCloneV2BootConfigLegacyBootBootDeviceArgs{...} }
-type VmCloneV2BootConfigLegacyBootBootDeviceArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput
-	ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceArray []VmCloneV2BootConfigLegacyBootBootDeviceInput
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDevice)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceArray) ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceArray) ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDevice)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceOutput() VmCloneV2BootConfigLegacyBootBootDeviceOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceOutput {
-	return o
-}
-
-// - (Optional) The Boot Device Disk settings.
-func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) BootDeviceDisks() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDevice) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
-		return v.BootDeviceDisks
-	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
-}
-
-// - (Optional) The Boot Device Nic settings.
-func (o VmCloneV2BootConfigLegacyBootBootDeviceOutput) BootDeviceNics() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDevice) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
-		return v.BootDeviceNics
-	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDevice)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootBootDeviceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBootBootDevice {
-		return vs[0].([]VmCloneV2BootConfigLegacyBootBootDevice)[vs[1].(int)]
-	}).(VmCloneV2BootConfigLegacyBootBootDeviceOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk struct {
-	// - (Optional) Address of disk to boot from.
-	DiskAddresses []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
-}
-
-// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs{...}
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs struct {
-	// - (Optional) Address of disk to boot from.
-	DiskAddresses VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
-}
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput)
-}
-
-// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray{ VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs{...} }
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return o
-}
-
-// - (Optional) Address of disk to boot from.
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput) DiskAddresses() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk) []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
-		return v.DiskAddresses
-	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk {
-		return vs[0].([]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDisk)[vs[1].(int)]
-	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress struct {
-	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-	//   Valid values are:
-	// - `SCSI` The type of disk bus is SCSI.
-	// - `SPAPR` The type of disk bus is SPAPR.
-	// - `PCI` The type of disk bus is PCI.
-	// - `PCI` The type of disk bus is PCI.
-	// - `SATA` The type of disk bus is SATA.
-	BusType *string `pulumi:"busType"`
-	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
-	Index *int `pulumi:"index"`
-}
-
-// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{...}
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
-	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-	//   Valid values are:
-	// - `SCSI` The type of disk bus is SCSI.
-	// - `SPAPR` The type of disk bus is SPAPR.
-	// - `PCI` The type of disk bus is PCI.
-	// - `PCI` The type of disk bus is PCI.
-	// - `SATA` The type of disk bus is SATA.
-	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
-	Index pulumi.IntPtrInput `pulumi:"index"`
-}
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput)
-}
-
-// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray{ VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{...} }
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return o
-}
-
-//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-//     Valid values are:
-//   - `SCSI` The type of disk bus is SCSI.
-//   - `SPAPR` The type of disk bus is SPAPR.
-//   - `PCI` The type of disk bus is PCI.
-//   - `PCI` The type of disk bus is PCI.
-//   - `SATA` The type of disk bus is SATA.
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
-}
-
-// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
-		return vs[0].([]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)[vs[1].(int)]
-	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic struct {
-	// - (Optional) MAC address of nic to boot from.
-	MacAddress *string `pulumi:"macAddress"`
-}
-
-// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs{...}
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs struct {
-	// - (Optional) MAC address of nic to boot from.
-	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
-}
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput)
-}
-
-// VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput is an input type that accepts VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray and VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput` via:
-//
-//	VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray{ VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs{...} }
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput
-	ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray []VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return i.ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return o
-}
-
-// - (Optional) MAC address of nic to boot from.
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
-}
-
-type VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic {
-		return vs[0].([]VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNic)[vs[1].(int)]
-	}).(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput)
-}
-
-type VmCloneV2BootConfigUefiBoot struct {
-	// - (Optional) The Boot Device settings.
-	BootDevices []VmCloneV2BootConfigUefiBootBootDevice `pulumi:"bootDevices"`
-	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootOrders []string `pulumi:"bootOrders"`
-	// - (Optional) Indicate whether to enable secure boot or not.
-	IsSecureBootEnabled *bool `pulumi:"isSecureBootEnabled"`
-	// - (Optional) Configuration for NVRAM to be presented to the VM.
-	NvramDevices []VmCloneV2BootConfigUefiBootNvramDevice `pulumi:"nvramDevices"`
-}
-
-// VmCloneV2BootConfigUefiBootInput is an input type that accepts VmCloneV2BootConfigUefiBootArgs and VmCloneV2BootConfigUefiBootOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootInput` via:
-//
-//	VmCloneV2BootConfigUefiBootArgs{...}
-type VmCloneV2BootConfigUefiBootInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootOutput() VmCloneV2BootConfigUefiBootOutput
-	ToVmCloneV2BootConfigUefiBootOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootOutput
-}
-
-type VmCloneV2BootConfigUefiBootArgs struct {
-	// - (Optional) The Boot Device settings.
-	BootDevices VmCloneV2BootConfigUefiBootBootDeviceArrayInput `pulumi:"bootDevices"`
-	// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
-	// - (Optional) Indicate whether to enable secure boot or not.
-	IsSecureBootEnabled pulumi.BoolPtrInput `pulumi:"isSecureBootEnabled"`
-	// - (Optional) Configuration for NVRAM to be presented to the VM.
-	NvramDevices VmCloneV2BootConfigUefiBootNvramDeviceArrayInput `pulumi:"nvramDevices"`
-}
-
-func (VmCloneV2BootConfigUefiBootArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBoot)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootArgs) ToVmCloneV2BootConfigUefiBootOutput() VmCloneV2BootConfigUefiBootOutput {
-	return i.ToVmCloneV2BootConfigUefiBootOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootArgs) ToVmCloneV2BootConfigUefiBootOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootOutput)
-}
-
-// VmCloneV2BootConfigUefiBootArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootArray and VmCloneV2BootConfigUefiBootArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootArrayInput` via:
-//
-//	VmCloneV2BootConfigUefiBootArray{ VmCloneV2BootConfigUefiBootArgs{...} }
-type VmCloneV2BootConfigUefiBootArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootArrayOutput() VmCloneV2BootConfigUefiBootArrayOutput
-	ToVmCloneV2BootConfigUefiBootArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootArrayOutput
-}
-
-type VmCloneV2BootConfigUefiBootArray []VmCloneV2BootConfigUefiBootInput
-
-func (VmCloneV2BootConfigUefiBootArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBoot)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootArray) ToVmCloneV2BootConfigUefiBootArrayOutput() VmCloneV2BootConfigUefiBootArrayOutput {
-	return i.ToVmCloneV2BootConfigUefiBootArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootArray) ToVmCloneV2BootConfigUefiBootArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBoot)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootOutput) ToVmCloneV2BootConfigUefiBootOutput() VmCloneV2BootConfigUefiBootOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootOutput) ToVmCloneV2BootConfigUefiBootOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootOutput {
-	return o
-}
-
-// - (Optional) The Boot Device settings.
-func (o VmCloneV2BootConfigUefiBootOutput) BootDevices() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []VmCloneV2BootConfigUefiBootBootDevice { return v.BootDevices }).(VmCloneV2BootConfigUefiBootBootDeviceArrayOutput)
-}
-
-// - (Optional) Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-func (o VmCloneV2BootConfigUefiBootOutput) BootOrders() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
-}
-
-// - (Optional) Indicate whether to enable secure boot or not.
-func (o VmCloneV2BootConfigUefiBootOutput) IsSecureBootEnabled() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) *bool { return v.IsSecureBootEnabled }).(pulumi.BoolPtrOutput)
-}
-
-// - (Optional) Configuration for NVRAM to be presented to the VM.
-func (o VmCloneV2BootConfigUefiBootOutput) NvramDevices() VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBoot) []VmCloneV2BootConfigUefiBootNvramDevice { return v.NvramDevices }).(VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBoot)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootArrayOutput) ToVmCloneV2BootConfigUefiBootArrayOutput() VmCloneV2BootConfigUefiBootArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootArrayOutput) ToVmCloneV2BootConfigUefiBootArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBoot {
-		return vs[0].([]VmCloneV2BootConfigUefiBoot)[vs[1].(int)]
-	}).(VmCloneV2BootConfigUefiBootOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDevice struct {
-	// - (Optional) The Boot Device Disk settings.
-	BootDeviceDisks []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
-	// - (Optional) The Boot Device Nic settings.
-	BootDeviceNics []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic `pulumi:"bootDeviceNics"`
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceArgs and VmCloneV2BootConfigUefiBootBootDeviceOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceArgs{...}
-type VmCloneV2BootConfigUefiBootBootDeviceInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceOutput() VmCloneV2BootConfigUefiBootBootDeviceOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceArgs struct {
-	// - (Optional) The Boot Device Disk settings.
-	BootDeviceDisks VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
-	// - (Optional) The Boot Device Nic settings.
-	BootDeviceNics VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput `pulumi:"bootDeviceNics"`
-}
-
-func (VmCloneV2BootConfigUefiBootBootDeviceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDevice)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceArgs) ToVmCloneV2BootConfigUefiBootBootDeviceOutput() VmCloneV2BootConfigUefiBootBootDeviceOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceArgs) ToVmCloneV2BootConfigUefiBootBootDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceOutput)
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceArray and VmCloneV2BootConfigUefiBootBootDeviceArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceArrayInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceArray{ VmCloneV2BootConfigUefiBootBootDeviceArgs{...} }
-type VmCloneV2BootConfigUefiBootBootDeviceArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceArrayOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceArray []VmCloneV2BootConfigUefiBootBootDeviceInput
-
-func (VmCloneV2BootConfigUefiBootBootDeviceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDevice)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceArray) ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceArray) ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDevice)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) ToVmCloneV2BootConfigUefiBootBootDeviceOutput() VmCloneV2BootConfigUefiBootBootDeviceOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) ToVmCloneV2BootConfigUefiBootBootDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceOutput {
-	return o
-}
-
-// - (Optional) The Boot Device Disk settings.
-func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) BootDeviceDisks() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDevice) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
-		return v.BootDeviceDisks
-	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
-}
-
-// - (Optional) The Boot Device Nic settings.
-func (o VmCloneV2BootConfigUefiBootBootDeviceOutput) BootDeviceNics() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDevice) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
-		return v.BootDeviceNics
-	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDevice)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDevice {
-		return vs[0].([]VmCloneV2BootConfigUefiBootBootDevice)[vs[1].(int)]
-	}).(VmCloneV2BootConfigUefiBootBootDeviceOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk struct {
-	// - (Optional) Address of disk to boot from.
-	DiskAddresses []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs{...}
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs struct {
-	// - (Optional) Address of disk to boot from.
-	DiskAddresses VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
-}
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput)
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray{ VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs{...} }
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return o
-}
-
-// - (Optional) Address of disk to boot from.
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput) DiskAddresses() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk) []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
-		return v.DiskAddresses
-	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk {
-		return vs[0].([]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDisk)[vs[1].(int)]
-	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress struct {
-	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-	//   Valid values are:
-	// - `SCSI` The type of disk bus is SCSI.
-	// - `SPAPR` The type of disk bus is SPAPR.
-	// - `PCI` The type of disk bus is PCI.
-	// - `PCI` The type of disk bus is PCI.
-	// - `SATA` The type of disk bus is SATA.
-	BusType *string `pulumi:"busType"`
-	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
-	Index *int `pulumi:"index"`
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs{...}
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
-	// - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-	//   Valid values are:
-	// - `SCSI` The type of disk bus is SCSI.
-	// - `SPAPR` The type of disk bus is SPAPR.
-	// - `PCI` The type of disk bus is PCI.
-	// - `PCI` The type of disk bus is PCI.
-	// - `SATA` The type of disk bus is SATA.
-	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
-	Index pulumi.IntPtrInput `pulumi:"index"`
-}
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput)
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray{ VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs{...} }
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return o
-}
-
-//   - (Optional) Bus type for the device. The acceptable values are: SCSI, IDE, PCI, SATA, SPAPR (only PPC).
-//     Valid values are:
-//   - `SCSI` The type of disk bus is SCSI.
-//   - `SPAPR` The type of disk bus is SPAPR.
-//   - `PCI` The type of disk bus is PCI.
-//   - `PCI` The type of disk bus is PCI.
-//   - `SATA` The type of disk bus is SATA.
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress) *string { return v.BusType }).(pulumi.StringPtrOutput)
-}
-
-// - (Optional) Device index on the bus. This field is ignored unless the bus details are specified.
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
-		return vs[0].([]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress)[vs[1].(int)]
-	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic struct {
-	// - (Optional) MAC address of nic to boot from.
-	MacAddress *string `pulumi:"macAddress"`
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{...}
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs struct {
-	// - (Optional) MAC address of nic to boot from.
-	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
-}
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput)
-}
-
-// VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray and VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput` via:
-//
-//	VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray{ VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{...} }
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput
-	ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray []VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return i.ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return o
-}
-
-// - (Optional) MAC address of nic to boot from.
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
-}
-
-type VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput() VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) ToVmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic {
-		return vs[0].([]VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNic)[vs[1].(int)]
-	}).(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput)
-}
-
-type VmCloneV2BootConfigUefiBootNvramDevice struct {
-	// - (Optional) Storage provided by Nutanix ADSF.
-	BackingStorageInfos []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo `pulumi:"backingStorageInfos"`
-}
-
-// VmCloneV2BootConfigUefiBootNvramDeviceInput is an input type that accepts VmCloneV2BootConfigUefiBootNvramDeviceArgs and VmCloneV2BootConfigUefiBootNvramDeviceOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootNvramDeviceInput` via:
-//
-//	VmCloneV2BootConfigUefiBootNvramDeviceArgs{...}
-type VmCloneV2BootConfigUefiBootNvramDeviceInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootNvramDeviceOutput() VmCloneV2BootConfigUefiBootNvramDeviceOutput
-	ToVmCloneV2BootConfigUefiBootNvramDeviceOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootNvramDeviceOutput
-}
-
-type VmCloneV2BootConfigUefiBootNvramDeviceArgs struct {
-	// - (Optional) Storage provided by Nutanix ADSF.
-	BackingStorageInfos VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArrayInput `pulumi:"backingStorageInfos"`
-}
-
-func (VmCloneV2BootConfigUefiBootNvramDeviceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootNvramDevice)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootNvramDeviceArgs) ToVmCloneV2BootConfigUefiBootNvramDeviceOutput() VmCloneV2BootConfigUefiBootNvramDeviceOutput {
-	return i.ToVmCloneV2BootConfigUefiBootNvramDeviceOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootNvramDeviceArgs) ToVmCloneV2BootConfigUefiBootNvramDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootNvramDeviceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootNvramDeviceOutput)
-}
-
-// VmCloneV2BootConfigUefiBootNvramDeviceArrayInput is an input type that accepts VmCloneV2BootConfigUefiBootNvramDeviceArray and VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput values.
-// You can construct a concrete instance of `VmCloneV2BootConfigUefiBootNvramDeviceArrayInput` via:
-//
-//	VmCloneV2BootConfigUefiBootNvramDeviceArray{ VmCloneV2BootConfigUefiBootNvramDeviceArgs{...} }
-type VmCloneV2BootConfigUefiBootNvramDeviceArrayInput interface {
-	pulumi.Input
-
-	ToVmCloneV2BootConfigUefiBootNvramDeviceArrayOutput() VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput
-	ToVmCloneV2BootConfigUefiBootNvramDeviceArrayOutputWithContext(context.Context) VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput
-}
-
-type VmCloneV2BootConfigUefiBootNvramDeviceArray []VmCloneV2BootConfigUefiBootNvramDeviceInput
-
-func (VmCloneV2BootConfigUefiBootNvramDeviceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootNvramDevice)(nil)).Elem()
-}
-
-func (i VmCloneV2BootConfigUefiBootNvramDeviceArray) ToVmCloneV2BootConfigUefiBootNvramDeviceArrayOutput() VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput {
-	return i.ToVmCloneV2BootConfigUefiBootNvramDeviceArrayOutputWithContext(context.Background())
-}
-
-func (i VmCloneV2BootConfigUefiBootNvramDeviceArray) ToVmCloneV2BootConfigUefiBootNvramDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootNvramDeviceOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootNvramDeviceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*VmCloneV2BootConfigUefiBootNvramDevice)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootNvramDeviceOutput) ToVmCloneV2BootConfigUefiBootNvramDeviceOutput() VmCloneV2BootConfigUefiBootNvramDeviceOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootNvramDeviceOutput) ToVmCloneV2BootConfigUefiBootNvramDeviceOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootNvramDeviceOutput {
-	return o
-}
-
-// - (Optional) Storage provided by Nutanix ADSF.
-func (o VmCloneV2BootConfigUefiBootNvramDeviceOutput) BackingStorageInfos() VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArrayOutput {
-	return o.ApplyT(func(v VmCloneV2BootConfigUefiBootNvramDevice) []VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
-		return v.BackingStorageInfos
-	}).(VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArrayOutput)
-}
-
-type VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput struct{ *pulumi.OutputState }
-
-func (VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]VmCloneV2BootConfigUefiBootNvramDevice)(nil)).Elem()
-}
-
-func (o VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput) ToVmCloneV2BootConfigUefiBootNvramDeviceArrayOutput() VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput) ToVmCloneV2BootConfigUefiBootNvramDeviceArrayOutputWithContext(ctx context.Context) VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput {
-	return o
-}
-
-func (o VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput) Index(i pulumi.IntInput) VmCloneV2BootConfigUefiBootNvramDeviceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) VmCloneV2BootConfigUefiBootNvramDevice {
-		return vs[0].([]VmCloneV2BootConfigUefiBootNvramDevice)[vs[1].(int)]
-	}).(VmCloneV2BootConfigUefiBootNvramDeviceOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableSnapshotConfigListInput)(nil)).Elem(), SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayInput)(nil)).Elem(), SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableSubstrateListInput)(nil)).Elem(), SelfServiceAppProvisionRuntimeEditableSubstrateListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableSubstrateListArrayInput)(nil)).Elem(), SelfServiceAppProvisionRuntimeEditableSubstrateListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableTaskListInput)(nil)).Elem(), SelfServiceAppProvisionRuntimeEditableTaskListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableTaskListArrayInput)(nil)).Elem(), SelfServiceAppProvisionRuntimeEditableTaskListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableVariableListInput)(nil)).Elem(), SelfServiceAppProvisionRuntimeEditableVariableListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionRuntimeEditableVariableListArrayInput)(nil)).Elem(), SelfServiceAppProvisionRuntimeEditableVariableListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionVmInput)(nil)).Elem(), SelfServiceAppProvisionVmArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionVmArrayInput)(nil)).Elem(), SelfServiceAppProvisionVmArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionVmClusterInfoInput)(nil)).Elem(), SelfServiceAppProvisionVmClusterInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionVmClusterInfoArrayInput)(nil)).Elem(), SelfServiceAppProvisionVmClusterInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionVmConfigurationInput)(nil)).Elem(), SelfServiceAppProvisionVmConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionVmConfigurationArrayInput)(nil)).Elem(), SelfServiceAppProvisionVmConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionVmNicInput)(nil)).Elem(), SelfServiceAppProvisionVmNicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SelfServiceAppProvisionVmNicArrayInput)(nil)).Elem(), SelfServiceAppProvisionVmNicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupServiceListInput)(nil)).Elem(), ServiceGroupServiceListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupServiceListArrayInput)(nil)).Elem(), ServiceGroupServiceListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupServiceListIcmpTypeCodeListInput)(nil)).Elem(), ServiceGroupServiceListIcmpTypeCodeListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupServiceListIcmpTypeCodeListArrayInput)(nil)).Elem(), ServiceGroupServiceListIcmpTypeCodeListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupServiceListTcpPortRangeListInput)(nil)).Elem(), ServiceGroupServiceListTcpPortRangeListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupServiceListTcpPortRangeListArrayInput)(nil)).Elem(), ServiceGroupServiceListTcpPortRangeListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupServiceListUdpPortRangeListInput)(nil)).Elem(), ServiceGroupServiceListUdpPortRangeListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupServiceListUdpPortRangeListArrayInput)(nil)).Elem(), ServiceGroupServiceListUdpPortRangeListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupsV2IcmpServiceInput)(nil)).Elem(), ServiceGroupsV2IcmpServiceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupsV2IcmpServiceArrayInput)(nil)).Elem(), ServiceGroupsV2IcmpServiceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ServiceGroupsV2LinkInput)(nil)).Elem(), ServiceGroupsV2LinkArgs{})
@@ -59663,6 +60343,42 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TemplateV2UpdatedByAdditionalAttributeValueArrayInput)(nil)).Elem(), TemplateV2UpdatedByAdditionalAttributeValueArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TemplateV2UpdatedByAdditionalAttributeValueMapOfStringInput)(nil)).Elem(), TemplateV2UpdatedByAdditionalAttributeValueMapOfStringArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TemplateV2UpdatedByAdditionalAttributeValueMapOfStringArrayInput)(nil)).Elem(), TemplateV2UpdatedByAdditionalAttributeValueMapOfStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigArrayInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigPtrInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigNatInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigStateInfoInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayInput)(nil)).Elem(), TenantDomainAllocationV2ExternalNetworkConfigStateInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2LinkInput)(nil)).Elem(), TenantDomainAllocationV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2LinkArrayInput)(nil)).Elem(), TenantDomainAllocationV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ProjectInput)(nil)).Elem(), TenantDomainAllocationV2ProjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ProjectArrayInput)(nil)).Elem(), TenantDomainAllocationV2ProjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ProjectQuotaInput)(nil)).Elem(), TenantDomainAllocationV2ProjectQuotaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ProjectQuotaPtrInput)(nil)).Elem(), TenantDomainAllocationV2ProjectQuotaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ProjectResourceGroupInput)(nil)).Elem(), TenantDomainAllocationV2ProjectResourceGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ProjectResourceGroupPtrInput)(nil)).Elem(), TenantDomainAllocationV2ProjectResourceGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ProjectResourceGroupPlacementTargetInput)(nil)).Elem(), TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayInput)(nil)).Elem(), TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2StateInfoInput)(nil)).Elem(), TenantDomainAllocationV2StateInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantDomainAllocationV2StateInfoArrayInput)(nil)).Elem(), TenantDomainAllocationV2StateInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantMembershipV2IdentityDetailsInput)(nil)).Elem(), TenantMembershipV2IdentityDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantMembershipV2IdentityDetailsPtrInput)(nil)).Elem(), TenantMembershipV2IdentityDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantMembershipV2LinkInput)(nil)).Elem(), TenantMembershipV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantMembershipV2LinkArrayInput)(nil)).Elem(), TenantMembershipV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantMembershipV2StateInfoInput)(nil)).Elem(), TenantMembershipV2StateInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantMembershipV2StateInfoArrayInput)(nil)).Elem(), TenantMembershipV2StateInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantV2AdminInfoInput)(nil)).Elem(), TenantV2AdminInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantV2AdminInfoPtrInput)(nil)).Elem(), TenantV2AdminInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantV2AggregatedQuotaInput)(nil)).Elem(), TenantV2AggregatedQuotaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantV2AggregatedQuotaPtrInput)(nil)).Elem(), TenantV2AggregatedQuotaArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantV2LinkInput)(nil)).Elem(), TenantV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantV2LinkArrayInput)(nil)).Elem(), TenantV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantV2StateInfoInput)(nil)).Elem(), TenantV2StateInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TenantV2StateInfoArrayInput)(nil)).Elem(), TenantV2StateInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserAccessControlPolicyReferenceListInput)(nil)).Elem(), UserAccessControlPolicyReferenceListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserAccessControlPolicyReferenceListArrayInput)(nil)).Elem(), UserAccessControlPolicyReferenceListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*UserCategoryInput)(nil)).Elem(), UserCategoryArgs{})
@@ -59971,66 +60687,30 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2ClusterGatewayIpAddressPtrInput)(nil)).Elem(), VirtualSwitchV2ClusterGatewayIpAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2ClusterHostInput)(nil)).Elem(), VirtualSwitchV2ClusterHostArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2ClusterHostArrayInput)(nil)).Elem(), VirtualSwitchV2ClusterHostArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2ClusterHostIpAddressInput)(nil)).Elem(), VirtualSwitchV2ClusterHostIpAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2ClusterHostIpAddressPtrInput)(nil)).Elem(), VirtualSwitchV2ClusterHostIpAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2ClusterHostIpAddressIpInput)(nil)).Elem(), VirtualSwitchV2ClusterHostIpAddressIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2ClusterHostIpAddressIpPtrInput)(nil)).Elem(), VirtualSwitchV2ClusterHostIpAddressIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2IgmpSpecInput)(nil)).Elem(), VirtualSwitchV2IgmpSpecArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2IgmpSpecPtrInput)(nil)).Elem(), VirtualSwitchV2IgmpSpecArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2IgmpSpecQuerierSpecInput)(nil)).Elem(), VirtualSwitchV2IgmpSpecQuerierSpecArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2IgmpSpecQuerierSpecPtrInput)(nil)).Elem(), VirtualSwitchV2IgmpSpecQuerierSpecArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2LinkInput)(nil)).Elem(), VirtualSwitchV2LinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2LinkArrayInput)(nil)).Elem(), VirtualSwitchV2LinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2MetadataInput)(nil)).Elem(), VirtualSwitchV2MetadataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VirtualSwitchV2MetadataArrayInput)(nil)).Elem(), VirtualSwitchV2MetadataArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageConfigInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoStorageConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageConfigArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoStorageConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageContainerInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoStorageContainerArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2BackingInfoStorageContainerArrayInput)(nil)).Elem(), VmCdromInsertEjectV2BackingInfoStorageContainerArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2DiskAddressInput)(nil)).Elem(), VmCdromInsertEjectV2DiskAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCdromInsertEjectV2DiskAddressArrayInput)(nil)).Elem(), VmCdromInsertEjectV2DiskAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2ApcConfigInput)(nil)).Elem(), VmCloneV2ApcConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2ApcConfigArrayInput)(nil)).Elem(), VmCloneV2ApcConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2ApcConfigCpuModelInput)(nil)).Elem(), VmCloneV2ApcConfigCpuModelArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2ApcConfigCpuModelArrayInput)(nil)).Elem(), VmCloneV2ApcConfigCpuModelArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigInput)(nil)).Elem(), VmCloneV2BootConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigArrayInput)(nil)).Elem(), VmCloneV2BootConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayInput)(nil)).Elem(), VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootNvramDeviceInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootNvramDeviceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*VmCloneV2BootConfigUefiBootNvramDeviceArrayInput)(nil)).Elem(), VmCloneV2BootConfigUefiBootNvramDeviceArray{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionRuntimeEditableSnapshotConfigListOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionRuntimeEditableSnapshotConfigListArrayOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionRuntimeEditableSubstrateListOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionRuntimeEditableSubstrateListArrayOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionRuntimeEditableTaskListOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionRuntimeEditableTaskListArrayOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionRuntimeEditableVariableListOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionRuntimeEditableVariableListArrayOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionVmOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionVmArrayOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionVmClusterInfoOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionVmClusterInfoArrayOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionVmConfigurationOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionVmConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionVmNicOutput{})
+	pulumi.RegisterOutputType(SelfServiceAppProvisionVmNicArrayOutput{})
+	pulumi.RegisterOutputType(ServiceGroupServiceListOutput{})
+	pulumi.RegisterOutputType(ServiceGroupServiceListArrayOutput{})
+	pulumi.RegisterOutputType(ServiceGroupServiceListIcmpTypeCodeListOutput{})
+	pulumi.RegisterOutputType(ServiceGroupServiceListIcmpTypeCodeListArrayOutput{})
+	pulumi.RegisterOutputType(ServiceGroupServiceListTcpPortRangeListOutput{})
+	pulumi.RegisterOutputType(ServiceGroupServiceListTcpPortRangeListArrayOutput{})
+	pulumi.RegisterOutputType(ServiceGroupServiceListUdpPortRangeListOutput{})
+	pulumi.RegisterOutputType(ServiceGroupServiceListUdpPortRangeListArrayOutput{})
 	pulumi.RegisterOutputType(ServiceGroupsV2IcmpServiceOutput{})
 	pulumi.RegisterOutputType(ServiceGroupsV2IcmpServiceArrayOutput{})
 	pulumi.RegisterOutputType(ServiceGroupsV2LinkOutput{})
@@ -60663,6 +61343,42 @@ func init() {
 	pulumi.RegisterOutputType(TemplateV2UpdatedByAdditionalAttributeValueArrayOutput{})
 	pulumi.RegisterOutputType(TemplateV2UpdatedByAdditionalAttributeValueMapOfStringOutput{})
 	pulumi.RegisterOutputType(TemplateV2UpdatedByAdditionalAttributeValueMapOfStringArrayOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigArrayOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigConfigOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigConfigPtrOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigConfigNatOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigConfigNatPtrOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatPtrOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigStateInfoOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ExternalNetworkConfigStateInfoArrayOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2LinkOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ProjectOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ProjectArrayOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ProjectQuotaOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ProjectQuotaPtrOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ProjectResourceGroupOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ProjectResourceGroupPtrOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ProjectResourceGroupPlacementTargetOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArrayOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2StateInfoOutput{})
+	pulumi.RegisterOutputType(TenantDomainAllocationV2StateInfoArrayOutput{})
+	pulumi.RegisterOutputType(TenantMembershipV2IdentityDetailsOutput{})
+	pulumi.RegisterOutputType(TenantMembershipV2IdentityDetailsPtrOutput{})
+	pulumi.RegisterOutputType(TenantMembershipV2LinkOutput{})
+	pulumi.RegisterOutputType(TenantMembershipV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(TenantMembershipV2StateInfoOutput{})
+	pulumi.RegisterOutputType(TenantMembershipV2StateInfoArrayOutput{})
+	pulumi.RegisterOutputType(TenantV2AdminInfoOutput{})
+	pulumi.RegisterOutputType(TenantV2AdminInfoPtrOutput{})
+	pulumi.RegisterOutputType(TenantV2AggregatedQuotaOutput{})
+	pulumi.RegisterOutputType(TenantV2AggregatedQuotaPtrOutput{})
+	pulumi.RegisterOutputType(TenantV2LinkOutput{})
+	pulumi.RegisterOutputType(TenantV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(TenantV2StateInfoOutput{})
+	pulumi.RegisterOutputType(TenantV2StateInfoArrayOutput{})
 	pulumi.RegisterOutputType(UserAccessControlPolicyReferenceListOutput{})
 	pulumi.RegisterOutputType(UserAccessControlPolicyReferenceListArrayOutput{})
 	pulumi.RegisterOutputType(UserCategoryOutput{})
@@ -60971,64 +61687,4 @@ func init() {
 	pulumi.RegisterOutputType(VirtualSwitchV2ClusterGatewayIpAddressPtrOutput{})
 	pulumi.RegisterOutputType(VirtualSwitchV2ClusterHostOutput{})
 	pulumi.RegisterOutputType(VirtualSwitchV2ClusterHostArrayOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2ClusterHostIpAddressOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2ClusterHostIpAddressPtrOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2ClusterHostIpAddressIpOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2ClusterHostIpAddressIpPtrOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2IgmpSpecOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2IgmpSpecPtrOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2IgmpSpecQuerierSpecOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2IgmpSpecQuerierSpecPtrOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2LinkOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2LinkArrayOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2MetadataOutput{})
-	pulumi.RegisterOutputType(VirtualSwitchV2MetadataArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceImageReferenceArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceDiskAddressArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoDataSourceReferenceVmDiskReferenceVmReferenceArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoStorageConfigOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoStorageConfigArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoStorageContainerOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2BackingInfoStorageContainerArrayOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2DiskAddressOutput{})
-	pulumi.RegisterOutputType(VmCdromInsertEjectV2DiskAddressArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2ApcConfigOutput{})
-	pulumi.RegisterOutputType(VmCloneV2ApcConfigArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2ApcConfigCpuModelOutput{})
-	pulumi.RegisterOutputType(VmCloneV2ApcConfigCpuModelArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootBootDeviceBootDeviceNicArrayOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootNvramDeviceOutput{})
-	pulumi.RegisterOutputType(VmCloneV2BootConfigUefiBootNvramDeviceArrayOutput{})
 }

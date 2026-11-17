@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Images node(s) and optionally creates clusters.
     /// 
+    /// &gt; **WriteOnly credentials:** &lt;span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`"&gt;`ipmiPassword`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`ucsmPassword`" pulumi-lang-dotnet="`UcsmPassword`" pulumi-lang-go="`ucsmPassword`" pulumi-lang-python="`ucsm_password`" pulumi-lang-yaml="`ucsmPassword`" pulumi-lang-java="`ucsmPassword`" pulumi-lang-hcl="`ucsm_password`"&gt;`ucsmPassword`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`xsMasterPassword`" pulumi-lang-dotnet="`XsMasterPassword`" pulumi-lang-go="`xsMasterPassword`" pulumi-lang-python="`xs_master_password`" pulumi-lang-yaml="`xsMasterPassword`" pulumi-lang-java="`xsMasterPassword`" pulumi-lang-hcl="`xs_master_password`"&gt;`xsMasterPassword`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`hypervisorPassword`" pulumi-lang-dotnet="`HypervisorPassword`" pulumi-lang-go="`hypervisorPassword`" pulumi-lang-python="`hypervisor_password`" pulumi-lang-yaml="`hypervisorPassword`" pulumi-lang-java="`hypervisorPassword`" pulumi-lang-hcl="`hypervisor_password`"&gt;`hypervisorPassword`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`uncPassword`" pulumi-lang-dotnet="`UncPassword`" pulumi-lang-go="`uncPassword`" pulumi-lang-python="`unc_password`" pulumi-lang-yaml="`uncPassword`" pulumi-lang-java="`uncPassword`" pulumi-lang-hcl="`unc_password`"&gt;`uncPassword`&lt;/span&gt;, `fc_settings.fc_metadata.api_key`, and node-level &lt;span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`"&gt;`ipmiPassword`&lt;/span&gt; are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+    /// 
     /// ## Example Usage
     /// 
     /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -270,7 +272,8 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> HypervisorNetmask { get; private set; } = null!;
 
         /// <summary>
-        /// - Hypervisor password.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) Hypervisor password.
         /// </summary>
         [Output("hypervisorPassword")]
         public Output<string?> HypervisorPassword { get; private set; } = null!;
@@ -294,7 +297,8 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> IpmiNetmask { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
         /// </summary>
         [Output("ipmiPassword")]
         public Output<string?> IpmiPassword { get; private set; } = null!;
@@ -348,7 +352,8 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> UcsmIp { get; private set; } = null!;
 
         /// <summary>
-        /// - UCSM password.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) UCSM password.
         /// </summary>
         [Output("ucsmPassword")]
         public Output<string?> UcsmPassword { get; private set; } = null!;
@@ -360,7 +365,8 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> UcsmUser { get; private set; } = null!;
 
         /// <summary>
-        /// - UNC password.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) UNC password.
         /// </summary>
         [Output("uncPassword")]
         public Output<string?> UncPassword { get; private set; } = null!;
@@ -396,7 +402,8 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> XsMasterLabel { get; private set; } = null!;
 
         /// <summary>
-        /// - xen server master password.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) xen server master password.
         /// </summary>
         [Output("xsMasterPassword")]
         public Output<string?> XsMasterPassword { get; private set; } = null!;
@@ -431,6 +438,14 @@ namespace PiersKarsenbarg.Nutanix
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-nutanix",
+                AdditionalSecretOutputs =
+                {
+                    "hypervisorPassword",
+                    "ipmiPassword",
+                    "ucsmPassword",
+                    "uncPassword",
+                    "xsMasterPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -547,11 +562,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("hypervisorNetmask", required: true)]
         public Input<string> HypervisorNetmask { get; set; } = null!;
 
-        /// <summary>
-        /// - Hypervisor password.
-        /// </summary>
         [Input("hypervisorPassword")]
-        public Input<string>? HypervisorPassword { get; set; }
+        private Input<string>? _hypervisorPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) Hypervisor password.
+        /// </summary>
+        public Input<string>? HypervisorPassword
+        {
+            get => _hypervisorPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _hypervisorPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - install script.
@@ -571,11 +597,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
-        /// <summary>
-        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
-        /// </summary>
         [Input("ipmiPassword")]
-        public Input<string>? IpmiPassword { get; set; }
+        private Input<string>? _ipmiPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
+        /// </summary>
+        public Input<string>? IpmiPassword
+        {
+            get => _ipmiPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _ipmiPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
@@ -625,11 +662,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("ucsmIp")]
         public Input<string>? UcsmIp { get; set; }
 
-        /// <summary>
-        /// - UCSM password.
-        /// </summary>
         [Input("ucsmPassword")]
-        public Input<string>? UcsmPassword { get; set; }
+        private Input<string>? _ucsmPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) UCSM password.
+        /// </summary>
+        public Input<string>? UcsmPassword
+        {
+            get => _ucsmPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _ucsmPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - UCSM username.
@@ -637,11 +685,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("ucsmUser")]
         public Input<string>? UcsmUser { get; set; }
 
-        /// <summary>
-        /// - UNC password.
-        /// </summary>
         [Input("uncPassword")]
-        public Input<string>? UncPassword { get; set; }
+        private Input<string>? _uncPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) UNC password.
+        /// </summary>
+        public Input<string>? UncPassword
+        {
+            get => _uncPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _uncPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - UNC Path.
@@ -673,11 +732,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("xsMasterLabel")]
         public Input<string>? XsMasterLabel { get; set; }
 
-        /// <summary>
-        /// - xen server master password.
-        /// </summary>
         [Input("xsMasterPassword")]
-        public Input<string>? XsMasterPassword { get; set; }
+        private Input<string>? _xsMasterPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) xen server master password.
+        /// </summary>
+        public Input<string>? XsMasterPassword
+        {
+            get => _xsMasterPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _xsMasterPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - xen server master username.
@@ -807,11 +877,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("hypervisorNetmask")]
         public Input<string>? HypervisorNetmask { get; set; }
 
-        /// <summary>
-        /// - Hypervisor password.
-        /// </summary>
         [Input("hypervisorPassword")]
-        public Input<string>? HypervisorPassword { get; set; }
+        private Input<string>? _hypervisorPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) Hypervisor password.
+        /// </summary>
+        public Input<string>? HypervisorPassword
+        {
+            get => _hypervisorPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _hypervisorPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - install script.
@@ -831,11 +912,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
-        /// <summary>
-        /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
-        /// </summary>
         [Input("ipmiPassword")]
-        public Input<string>? IpmiPassword { get; set; }
+        private Input<string>? _ipmiPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
+        /// </summary>
+        public Input<string>? IpmiPassword
+        {
+            get => _ipmiPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _ipmiPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
@@ -891,11 +983,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("ucsmIp")]
         public Input<string>? UcsmIp { get; set; }
 
-        /// <summary>
-        /// - UCSM password.
-        /// </summary>
         [Input("ucsmPassword")]
-        public Input<string>? UcsmPassword { get; set; }
+        private Input<string>? _ucsmPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) UCSM password.
+        /// </summary>
+        public Input<string>? UcsmPassword
+        {
+            get => _ucsmPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _ucsmPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - UCSM username.
@@ -903,11 +1006,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("ucsmUser")]
         public Input<string>? UcsmUser { get; set; }
 
-        /// <summary>
-        /// - UNC password.
-        /// </summary>
         [Input("uncPassword")]
-        public Input<string>? UncPassword { get; set; }
+        private Input<string>? _uncPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) UNC password.
+        /// </summary>
+        public Input<string>? UncPassword
+        {
+            get => _uncPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _uncPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - UNC Path.
@@ -939,11 +1053,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("xsMasterLabel")]
         public Input<string>? XsMasterLabel { get; set; }
 
-        /// <summary>
-        /// - xen server master password.
-        /// </summary>
         [Input("xsMasterPassword")]
-        public Input<string>? XsMasterPassword { get; set; }
+        private Input<string>? _xsMasterPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (WriteOnly) xen server master password.
+        /// </summary>
+        public Input<string>? XsMasterPassword
+        {
+            get => _xsMasterPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _xsMasterPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - xen server master username.

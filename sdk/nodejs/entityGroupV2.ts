@@ -29,7 +29,7 @@ import * as utilities from "./utilities";
  *         entities: [
  *             {
  *                 type: "VM",
- *                 selectedBy: "CATEGORY_EXT_ID",
+ *                 selectBy: "CATEGORY_EXT_ID",
  *                 referenceExtIds: [
  *                     "category-uuid-1",
  *                     "category-uuid-2",
@@ -37,7 +37,7 @@ import * as utilities from "./utilities";
  *             },
  *             {
  *                 type: "ADDRESS_GROUP",
- *                 selectedBy: "IP_VALUES",
+ *                 selectBy: "IP_VALUES",
  *                 addresses: {
  *                     ipv4Addresses: [{
  *                         value: "10.0.0.0",
@@ -68,11 +68,11 @@ import * as utilities from "./utilities";
  * ### Conditional Requirements
  *
  * * <span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`" pulumi-lang-hcl="`kube_entities`">`kubeEntities`</span> - Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
- * * <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span> - Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`. Must not be empty.
+ * * <span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`">`referenceExtIds`</span> - Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`. Must not be empty.
  *
  * ### Valid Combinations
  *
- * The combination of <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
+ * The combination of <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> and <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> must be one of the following valid pairs:
  *
  * * `(CATEGORY_EXT_ID, VM)`
  * * `(EXT_ID, VM)`
@@ -90,9 +90,9 @@ import * as utilities from "./utilities";
  *
  * Any other combination will result in a validation error.
  *
- * ### Duplicate (selected_by, type) Not Allowed
+ * ### Duplicate (select_by, type) Not Allowed
  *
- * Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and<span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges " pulumi-lang-hcl=" ip_ranges "> ipRanges </span>into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
+ * Within one entity group, you cannot have two entities with the same `(select_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and<span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges " pulumi-lang-hcl=" ip_ranges "> ipRanges </span>into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
  *
  * ## Import
  *

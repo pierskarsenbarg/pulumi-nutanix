@@ -43,11 +43,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _links = value;
         }
 
+        [Input("secretAccessKey")]
+        private Input<string>? _secretAccessKey;
+
         /// <summary>
         /// - Secret Access Key, it will be returned only during Bucket Access Key creation.
         /// </summary>
-        [Input("secretAccessKey")]
-        public Input<string>? SecretAccessKey { get; set; }
+        public Input<string>? SecretAccessKey
+        {
+            get => _secretAccessKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretAccessKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - User Identifier who owns the Bucket Access Key.

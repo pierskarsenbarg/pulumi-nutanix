@@ -15,7 +15,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsAuthentication
     {
         /// <summary>
-        /// -(Required)  Password required for the basic auth scheme.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly)  Password required for the basic auth scheme.
         /// 
         /// See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&amp;version=v4.4#tag/DomainManager/operation/register).
         /// </summary>

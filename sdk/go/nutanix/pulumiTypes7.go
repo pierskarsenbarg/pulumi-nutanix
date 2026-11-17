@@ -13,6 +13,4700 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input is an input type that accepts GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args and GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input` via:
+//
+//	GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args{...}
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return i.ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input is an input type that accepts GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args and GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input` via:
+//
+//	GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args{...}
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output
+	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return i.ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIp struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 `pulumi:"ipv6"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput)
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray{ GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{...} }
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray []GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) Ipv4() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIp) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 {
+		return v.Ipv4
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) Ipv6() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIp) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 {
+		return v.Ipv6
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStoreStorageNetworkDnsIp {
+		return vs[0].([]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)[vs[1].(int)]
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output
+	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVip struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 `pulumi:"ipv6"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkVipInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipArgs and GetObjectStoresV2ObjectStoreStorageNetworkVipOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipInput` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkVipInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipArgs struct {
+	// An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input `pulumi:"ipv4"`
+	// An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input `pulumi:"ipv6"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput)
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipArray and GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkVipArray{ GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{...} }
+type GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipArray []GetObjectStoresV2ObjectStoreStorageNetworkVipInput
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return o
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) Ipv4() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVip) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 {
+		return v.Ipv4
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output)
+}
+
+// An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) Ipv6() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVip) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 {
+		return v.Ipv6
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStoreStorageNetworkVip {
+		return vs[0].([]GetObjectStoresV2ObjectStoreStorageNetworkVip)[vs[1].(int)]
+	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args and GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args and GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output values.
+// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input` via:
+//
+//	GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args{...}
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input interface {
+	pulumi.Input
+
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output
+	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The IPv4/IPv6 address of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(context.Background())
+}
+
+func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output)
+}
+
+type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output struct{ *pulumi.OutputState }
+
+func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6)(nil)).Elem()
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return o
+}
+
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The IPv4/IPv6 address of the host.
+func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetOperationV2AssociatedEndpointList struct {
+	// Version of the API for the provided associated endpoint.
+	ApiVersion string `pulumi:"apiVersion"`
+	// Endpoint URL.
+	EndpointUrl string `pulumi:"endpointUrl"`
+	// HTTP method for the provided associated endpoint.
+	HttpMethod string `pulumi:"httpMethod"`
+}
+
+// GetOperationV2AssociatedEndpointListInput is an input type that accepts GetOperationV2AssociatedEndpointListArgs and GetOperationV2AssociatedEndpointListOutput values.
+// You can construct a concrete instance of `GetOperationV2AssociatedEndpointListInput` via:
+//
+//	GetOperationV2AssociatedEndpointListArgs{...}
+type GetOperationV2AssociatedEndpointListInput interface {
+	pulumi.Input
+
+	ToGetOperationV2AssociatedEndpointListOutput() GetOperationV2AssociatedEndpointListOutput
+	ToGetOperationV2AssociatedEndpointListOutputWithContext(context.Context) GetOperationV2AssociatedEndpointListOutput
+}
+
+type GetOperationV2AssociatedEndpointListArgs struct {
+	// Version of the API for the provided associated endpoint.
+	ApiVersion pulumi.StringInput `pulumi:"apiVersion"`
+	// Endpoint URL.
+	EndpointUrl pulumi.StringInput `pulumi:"endpointUrl"`
+	// HTTP method for the provided associated endpoint.
+	HttpMethod pulumi.StringInput `pulumi:"httpMethod"`
+}
+
+func (GetOperationV2AssociatedEndpointListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOperationV2AssociatedEndpointList)(nil)).Elem()
+}
+
+func (i GetOperationV2AssociatedEndpointListArgs) ToGetOperationV2AssociatedEndpointListOutput() GetOperationV2AssociatedEndpointListOutput {
+	return i.ToGetOperationV2AssociatedEndpointListOutputWithContext(context.Background())
+}
+
+func (i GetOperationV2AssociatedEndpointListArgs) ToGetOperationV2AssociatedEndpointListOutputWithContext(ctx context.Context) GetOperationV2AssociatedEndpointListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOperationV2AssociatedEndpointListOutput)
+}
+
+// GetOperationV2AssociatedEndpointListArrayInput is an input type that accepts GetOperationV2AssociatedEndpointListArray and GetOperationV2AssociatedEndpointListArrayOutput values.
+// You can construct a concrete instance of `GetOperationV2AssociatedEndpointListArrayInput` via:
+//
+//	GetOperationV2AssociatedEndpointListArray{ GetOperationV2AssociatedEndpointListArgs{...} }
+type GetOperationV2AssociatedEndpointListArrayInput interface {
+	pulumi.Input
+
+	ToGetOperationV2AssociatedEndpointListArrayOutput() GetOperationV2AssociatedEndpointListArrayOutput
+	ToGetOperationV2AssociatedEndpointListArrayOutputWithContext(context.Context) GetOperationV2AssociatedEndpointListArrayOutput
+}
+
+type GetOperationV2AssociatedEndpointListArray []GetOperationV2AssociatedEndpointListInput
+
+func (GetOperationV2AssociatedEndpointListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOperationV2AssociatedEndpointList)(nil)).Elem()
+}
+
+func (i GetOperationV2AssociatedEndpointListArray) ToGetOperationV2AssociatedEndpointListArrayOutput() GetOperationV2AssociatedEndpointListArrayOutput {
+	return i.ToGetOperationV2AssociatedEndpointListArrayOutputWithContext(context.Background())
+}
+
+func (i GetOperationV2AssociatedEndpointListArray) ToGetOperationV2AssociatedEndpointListArrayOutputWithContext(ctx context.Context) GetOperationV2AssociatedEndpointListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOperationV2AssociatedEndpointListArrayOutput)
+}
+
+type GetOperationV2AssociatedEndpointListOutput struct{ *pulumi.OutputState }
+
+func (GetOperationV2AssociatedEndpointListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOperationV2AssociatedEndpointList)(nil)).Elem()
+}
+
+func (o GetOperationV2AssociatedEndpointListOutput) ToGetOperationV2AssociatedEndpointListOutput() GetOperationV2AssociatedEndpointListOutput {
+	return o
+}
+
+func (o GetOperationV2AssociatedEndpointListOutput) ToGetOperationV2AssociatedEndpointListOutputWithContext(ctx context.Context) GetOperationV2AssociatedEndpointListOutput {
+	return o
+}
+
+// Version of the API for the provided associated endpoint.
+func (o GetOperationV2AssociatedEndpointListOutput) ApiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationV2AssociatedEndpointList) string { return v.ApiVersion }).(pulumi.StringOutput)
+}
+
+// Endpoint URL.
+func (o GetOperationV2AssociatedEndpointListOutput) EndpointUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationV2AssociatedEndpointList) string { return v.EndpointUrl }).(pulumi.StringOutput)
+}
+
+// HTTP method for the provided associated endpoint.
+func (o GetOperationV2AssociatedEndpointListOutput) HttpMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationV2AssociatedEndpointList) string { return v.HttpMethod }).(pulumi.StringOutput)
+}
+
+type GetOperationV2AssociatedEndpointListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOperationV2AssociatedEndpointListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOperationV2AssociatedEndpointList)(nil)).Elem()
+}
+
+func (o GetOperationV2AssociatedEndpointListArrayOutput) ToGetOperationV2AssociatedEndpointListArrayOutput() GetOperationV2AssociatedEndpointListArrayOutput {
+	return o
+}
+
+func (o GetOperationV2AssociatedEndpointListArrayOutput) ToGetOperationV2AssociatedEndpointListArrayOutputWithContext(ctx context.Context) GetOperationV2AssociatedEndpointListArrayOutput {
+	return o
+}
+
+func (o GetOperationV2AssociatedEndpointListArrayOutput) Index(i pulumi.IntInput) GetOperationV2AssociatedEndpointListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationV2AssociatedEndpointList {
+		return vs[0].([]GetOperationV2AssociatedEndpointList)[vs[1].(int)]
+	}).(GetOperationV2AssociatedEndpointListOutput)
+}
+
+type GetOperationsV2Operation struct {
+	// List of associated endpoint objects for the Operation.
+	AssociatedEndpointLists []GetOperationsV2OperationAssociatedEndpointList `pulumi:"associatedEndpointLists"`
+	// Client that created the entity.
+	ClientName string `pulumi:"clientName"`
+	// Permission creation time
+	CreatedTime string `pulumi:"createdTime"`
+	// Permission description
+	Description string `pulumi:"description"`
+	// Permission name.
+	DisplayName string `pulumi:"displayName"`
+	// Type of entity associated with this Operation.
+	EntityType string `pulumi:"entityType"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId string `pulumi:"extId"`
+	// Permission last updated time.
+	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
+	// The Operation type. Currently we support INTERNAL, EXTERNAL and SYSTEM_DEFINED_ONLY.
+	OperationType string `pulumi:"operationType"`
+	// List of related Operations. These are the Operations which might need to be given access to, along with the current Operation, for certain workflows to succeed.
+	RelatedOperationLists []string `pulumi:"relatedOperationLists"`
+}
+
+// GetOperationsV2OperationInput is an input type that accepts GetOperationsV2OperationArgs and GetOperationsV2OperationOutput values.
+// You can construct a concrete instance of `GetOperationsV2OperationInput` via:
+//
+//	GetOperationsV2OperationArgs{...}
+type GetOperationsV2OperationInput interface {
+	pulumi.Input
+
+	ToGetOperationsV2OperationOutput() GetOperationsV2OperationOutput
+	ToGetOperationsV2OperationOutputWithContext(context.Context) GetOperationsV2OperationOutput
+}
+
+type GetOperationsV2OperationArgs struct {
+	// List of associated endpoint objects for the Operation.
+	AssociatedEndpointLists GetOperationsV2OperationAssociatedEndpointListArrayInput `pulumi:"associatedEndpointLists"`
+	// Client that created the entity.
+	ClientName pulumi.StringInput `pulumi:"clientName"`
+	// Permission creation time
+	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
+	// Permission description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Permission name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Type of entity associated with this Operation.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// A globally unique identifier of an instance that is suitable for external consumption.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// Permission last updated time.
+	LastUpdatedTime pulumi.StringInput `pulumi:"lastUpdatedTime"`
+	// The Operation type. Currently we support INTERNAL, EXTERNAL and SYSTEM_DEFINED_ONLY.
+	OperationType pulumi.StringInput `pulumi:"operationType"`
+	// List of related Operations. These are the Operations which might need to be given access to, along with the current Operation, for certain workflows to succeed.
+	RelatedOperationLists pulumi.StringArrayInput `pulumi:"relatedOperationLists"`
+}
+
+func (GetOperationsV2OperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOperationsV2Operation)(nil)).Elem()
+}
+
+func (i GetOperationsV2OperationArgs) ToGetOperationsV2OperationOutput() GetOperationsV2OperationOutput {
+	return i.ToGetOperationsV2OperationOutputWithContext(context.Background())
+}
+
+func (i GetOperationsV2OperationArgs) ToGetOperationsV2OperationOutputWithContext(ctx context.Context) GetOperationsV2OperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsV2OperationOutput)
+}
+
+// GetOperationsV2OperationArrayInput is an input type that accepts GetOperationsV2OperationArray and GetOperationsV2OperationArrayOutput values.
+// You can construct a concrete instance of `GetOperationsV2OperationArrayInput` via:
+//
+//	GetOperationsV2OperationArray{ GetOperationsV2OperationArgs{...} }
+type GetOperationsV2OperationArrayInput interface {
+	pulumi.Input
+
+	ToGetOperationsV2OperationArrayOutput() GetOperationsV2OperationArrayOutput
+	ToGetOperationsV2OperationArrayOutputWithContext(context.Context) GetOperationsV2OperationArrayOutput
+}
+
+type GetOperationsV2OperationArray []GetOperationsV2OperationInput
+
+func (GetOperationsV2OperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOperationsV2Operation)(nil)).Elem()
+}
+
+func (i GetOperationsV2OperationArray) ToGetOperationsV2OperationArrayOutput() GetOperationsV2OperationArrayOutput {
+	return i.ToGetOperationsV2OperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetOperationsV2OperationArray) ToGetOperationsV2OperationArrayOutputWithContext(ctx context.Context) GetOperationsV2OperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsV2OperationArrayOutput)
+}
+
+type GetOperationsV2OperationOutput struct{ *pulumi.OutputState }
+
+func (GetOperationsV2OperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOperationsV2Operation)(nil)).Elem()
+}
+
+func (o GetOperationsV2OperationOutput) ToGetOperationsV2OperationOutput() GetOperationsV2OperationOutput {
+	return o
+}
+
+func (o GetOperationsV2OperationOutput) ToGetOperationsV2OperationOutputWithContext(ctx context.Context) GetOperationsV2OperationOutput {
+	return o
+}
+
+// List of associated endpoint objects for the Operation.
+func (o GetOperationsV2OperationOutput) AssociatedEndpointLists() GetOperationsV2OperationAssociatedEndpointListArrayOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) []GetOperationsV2OperationAssociatedEndpointList {
+		return v.AssociatedEndpointLists
+	}).(GetOperationsV2OperationAssociatedEndpointListArrayOutput)
+}
+
+// Client that created the entity.
+func (o GetOperationsV2OperationOutput) ClientName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.ClientName }).(pulumi.StringOutput)
+}
+
+// Permission creation time
+func (o GetOperationsV2OperationOutput) CreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// Permission description
+func (o GetOperationsV2OperationOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Permission name.
+func (o GetOperationsV2OperationOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Type of entity associated with this Operation.
+func (o GetOperationsV2OperationOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// A globally unique identifier of an instance that is suitable for external consumption.
+func (o GetOperationsV2OperationOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// Permission last updated time.
+func (o GetOperationsV2OperationOutput) LastUpdatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
+}
+
+// The Operation type. Currently we support INTERNAL, EXTERNAL and SYSTEM_DEFINED_ONLY.
+func (o GetOperationsV2OperationOutput) OperationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.OperationType }).(pulumi.StringOutput)
+}
+
+// List of related Operations. These are the Operations which might need to be given access to, along with the current Operation, for certain workflows to succeed.
+func (o GetOperationsV2OperationOutput) RelatedOperationLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOperationsV2Operation) []string { return v.RelatedOperationLists }).(pulumi.StringArrayOutput)
+}
+
+type GetOperationsV2OperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOperationsV2OperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOperationsV2Operation)(nil)).Elem()
+}
+
+func (o GetOperationsV2OperationArrayOutput) ToGetOperationsV2OperationArrayOutput() GetOperationsV2OperationArrayOutput {
+	return o
+}
+
+func (o GetOperationsV2OperationArrayOutput) ToGetOperationsV2OperationArrayOutputWithContext(ctx context.Context) GetOperationsV2OperationArrayOutput {
+	return o
+}
+
+func (o GetOperationsV2OperationArrayOutput) Index(i pulumi.IntInput) GetOperationsV2OperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationsV2Operation {
+		return vs[0].([]GetOperationsV2Operation)[vs[1].(int)]
+	}).(GetOperationsV2OperationOutput)
+}
+
+type GetOperationsV2OperationAssociatedEndpointList struct {
+	// Version of the API for the provided associated endpoint.
+	ApiVersion string `pulumi:"apiVersion"`
+	// Endpoint URL.
+	EndpointUrl string `pulumi:"endpointUrl"`
+	// HTTP method for the provided associated endpoint.
+	HttpMethod string `pulumi:"httpMethod"`
+}
+
+// GetOperationsV2OperationAssociatedEndpointListInput is an input type that accepts GetOperationsV2OperationAssociatedEndpointListArgs and GetOperationsV2OperationAssociatedEndpointListOutput values.
+// You can construct a concrete instance of `GetOperationsV2OperationAssociatedEndpointListInput` via:
+//
+//	GetOperationsV2OperationAssociatedEndpointListArgs{...}
+type GetOperationsV2OperationAssociatedEndpointListInput interface {
+	pulumi.Input
+
+	ToGetOperationsV2OperationAssociatedEndpointListOutput() GetOperationsV2OperationAssociatedEndpointListOutput
+	ToGetOperationsV2OperationAssociatedEndpointListOutputWithContext(context.Context) GetOperationsV2OperationAssociatedEndpointListOutput
+}
+
+type GetOperationsV2OperationAssociatedEndpointListArgs struct {
+	// Version of the API for the provided associated endpoint.
+	ApiVersion pulumi.StringInput `pulumi:"apiVersion"`
+	// Endpoint URL.
+	EndpointUrl pulumi.StringInput `pulumi:"endpointUrl"`
+	// HTTP method for the provided associated endpoint.
+	HttpMethod pulumi.StringInput `pulumi:"httpMethod"`
+}
+
+func (GetOperationsV2OperationAssociatedEndpointListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOperationsV2OperationAssociatedEndpointList)(nil)).Elem()
+}
+
+func (i GetOperationsV2OperationAssociatedEndpointListArgs) ToGetOperationsV2OperationAssociatedEndpointListOutput() GetOperationsV2OperationAssociatedEndpointListOutput {
+	return i.ToGetOperationsV2OperationAssociatedEndpointListOutputWithContext(context.Background())
+}
+
+func (i GetOperationsV2OperationAssociatedEndpointListArgs) ToGetOperationsV2OperationAssociatedEndpointListOutputWithContext(ctx context.Context) GetOperationsV2OperationAssociatedEndpointListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsV2OperationAssociatedEndpointListOutput)
+}
+
+// GetOperationsV2OperationAssociatedEndpointListArrayInput is an input type that accepts GetOperationsV2OperationAssociatedEndpointListArray and GetOperationsV2OperationAssociatedEndpointListArrayOutput values.
+// You can construct a concrete instance of `GetOperationsV2OperationAssociatedEndpointListArrayInput` via:
+//
+//	GetOperationsV2OperationAssociatedEndpointListArray{ GetOperationsV2OperationAssociatedEndpointListArgs{...} }
+type GetOperationsV2OperationAssociatedEndpointListArrayInput interface {
+	pulumi.Input
+
+	ToGetOperationsV2OperationAssociatedEndpointListArrayOutput() GetOperationsV2OperationAssociatedEndpointListArrayOutput
+	ToGetOperationsV2OperationAssociatedEndpointListArrayOutputWithContext(context.Context) GetOperationsV2OperationAssociatedEndpointListArrayOutput
+}
+
+type GetOperationsV2OperationAssociatedEndpointListArray []GetOperationsV2OperationAssociatedEndpointListInput
+
+func (GetOperationsV2OperationAssociatedEndpointListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOperationsV2OperationAssociatedEndpointList)(nil)).Elem()
+}
+
+func (i GetOperationsV2OperationAssociatedEndpointListArray) ToGetOperationsV2OperationAssociatedEndpointListArrayOutput() GetOperationsV2OperationAssociatedEndpointListArrayOutput {
+	return i.ToGetOperationsV2OperationAssociatedEndpointListArrayOutputWithContext(context.Background())
+}
+
+func (i GetOperationsV2OperationAssociatedEndpointListArray) ToGetOperationsV2OperationAssociatedEndpointListArrayOutputWithContext(ctx context.Context) GetOperationsV2OperationAssociatedEndpointListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsV2OperationAssociatedEndpointListArrayOutput)
+}
+
+type GetOperationsV2OperationAssociatedEndpointListOutput struct{ *pulumi.OutputState }
+
+func (GetOperationsV2OperationAssociatedEndpointListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOperationsV2OperationAssociatedEndpointList)(nil)).Elem()
+}
+
+func (o GetOperationsV2OperationAssociatedEndpointListOutput) ToGetOperationsV2OperationAssociatedEndpointListOutput() GetOperationsV2OperationAssociatedEndpointListOutput {
+	return o
+}
+
+func (o GetOperationsV2OperationAssociatedEndpointListOutput) ToGetOperationsV2OperationAssociatedEndpointListOutputWithContext(ctx context.Context) GetOperationsV2OperationAssociatedEndpointListOutput {
+	return o
+}
+
+// Version of the API for the provided associated endpoint.
+func (o GetOperationsV2OperationAssociatedEndpointListOutput) ApiVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2OperationAssociatedEndpointList) string { return v.ApiVersion }).(pulumi.StringOutput)
+}
+
+// Endpoint URL.
+func (o GetOperationsV2OperationAssociatedEndpointListOutput) EndpointUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2OperationAssociatedEndpointList) string { return v.EndpointUrl }).(pulumi.StringOutput)
+}
+
+// HTTP method for the provided associated endpoint.
+func (o GetOperationsV2OperationAssociatedEndpointListOutput) HttpMethod() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOperationsV2OperationAssociatedEndpointList) string { return v.HttpMethod }).(pulumi.StringOutput)
+}
+
+type GetOperationsV2OperationAssociatedEndpointListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOperationsV2OperationAssociatedEndpointListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOperationsV2OperationAssociatedEndpointList)(nil)).Elem()
+}
+
+func (o GetOperationsV2OperationAssociatedEndpointListArrayOutput) ToGetOperationsV2OperationAssociatedEndpointListArrayOutput() GetOperationsV2OperationAssociatedEndpointListArrayOutput {
+	return o
+}
+
+func (o GetOperationsV2OperationAssociatedEndpointListArrayOutput) ToGetOperationsV2OperationAssociatedEndpointListArrayOutputWithContext(ctx context.Context) GetOperationsV2OperationAssociatedEndpointListArrayOutput {
+	return o
+}
+
+func (o GetOperationsV2OperationAssociatedEndpointListArrayOutput) Index(i pulumi.IntInput) GetOperationsV2OperationAssociatedEndpointListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationsV2OperationAssociatedEndpointList {
+		return vs[0].([]GetOperationsV2OperationAssociatedEndpointList)[vs[1].(int)]
+	}).(GetOperationsV2OperationAssociatedEndpointListOutput)
+}
+
+type GetOvaV2Checksum struct {
+	// - The SHA1 checksum of the OVA file.
+	OvaSha1Checksums []GetOvaV2ChecksumOvaSha1Checksum `pulumi:"ovaSha1Checksums"`
+	// - The SHA256 checksum of the OVA file.
+	OvaSha256Checksums []GetOvaV2ChecksumOvaSha256Checksum `pulumi:"ovaSha256Checksums"`
+}
+
+// GetOvaV2ChecksumInput is an input type that accepts GetOvaV2ChecksumArgs and GetOvaV2ChecksumOutput values.
+// You can construct a concrete instance of `GetOvaV2ChecksumInput` via:
+//
+//	GetOvaV2ChecksumArgs{...}
+type GetOvaV2ChecksumInput interface {
+	pulumi.Input
+
+	ToGetOvaV2ChecksumOutput() GetOvaV2ChecksumOutput
+	ToGetOvaV2ChecksumOutputWithContext(context.Context) GetOvaV2ChecksumOutput
+}
+
+type GetOvaV2ChecksumArgs struct {
+	// - The SHA1 checksum of the OVA file.
+	OvaSha1Checksums GetOvaV2ChecksumOvaSha1ChecksumArrayInput `pulumi:"ovaSha1Checksums"`
+	// - The SHA256 checksum of the OVA file.
+	OvaSha256Checksums GetOvaV2ChecksumOvaSha256ChecksumArrayInput `pulumi:"ovaSha256Checksums"`
+}
+
+func (GetOvaV2ChecksumArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2Checksum)(nil)).Elem()
+}
+
+func (i GetOvaV2ChecksumArgs) ToGetOvaV2ChecksumOutput() GetOvaV2ChecksumOutput {
+	return i.ToGetOvaV2ChecksumOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2ChecksumArgs) ToGetOvaV2ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOutput)
+}
+
+// GetOvaV2ChecksumArrayInput is an input type that accepts GetOvaV2ChecksumArray and GetOvaV2ChecksumArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2ChecksumArrayInput` via:
+//
+//	GetOvaV2ChecksumArray{ GetOvaV2ChecksumArgs{...} }
+type GetOvaV2ChecksumArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2ChecksumArrayOutput() GetOvaV2ChecksumArrayOutput
+	ToGetOvaV2ChecksumArrayOutputWithContext(context.Context) GetOvaV2ChecksumArrayOutput
+}
+
+type GetOvaV2ChecksumArray []GetOvaV2ChecksumInput
+
+func (GetOvaV2ChecksumArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2Checksum)(nil)).Elem()
+}
+
+func (i GetOvaV2ChecksumArray) ToGetOvaV2ChecksumArrayOutput() GetOvaV2ChecksumArrayOutput {
+	return i.ToGetOvaV2ChecksumArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2ChecksumArray) ToGetOvaV2ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumArrayOutput)
+}
+
+type GetOvaV2ChecksumOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2ChecksumOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2Checksum)(nil)).Elem()
+}
+
+func (o GetOvaV2ChecksumOutput) ToGetOvaV2ChecksumOutput() GetOvaV2ChecksumOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumOutput) ToGetOvaV2ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOutput {
+	return o
+}
+
+// - The SHA1 checksum of the OVA file.
+func (o GetOvaV2ChecksumOutput) OvaSha1Checksums() GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
+	return o.ApplyT(func(v GetOvaV2Checksum) []GetOvaV2ChecksumOvaSha1Checksum { return v.OvaSha1Checksums }).(GetOvaV2ChecksumOvaSha1ChecksumArrayOutput)
+}
+
+// - The SHA256 checksum of the OVA file.
+func (o GetOvaV2ChecksumOutput) OvaSha256Checksums() GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
+	return o.ApplyT(func(v GetOvaV2Checksum) []GetOvaV2ChecksumOvaSha256Checksum { return v.OvaSha256Checksums }).(GetOvaV2ChecksumOvaSha256ChecksumArrayOutput)
+}
+
+type GetOvaV2ChecksumArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2ChecksumArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2Checksum)(nil)).Elem()
+}
+
+func (o GetOvaV2ChecksumArrayOutput) ToGetOvaV2ChecksumArrayOutput() GetOvaV2ChecksumArrayOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumArrayOutput) ToGetOvaV2ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumArrayOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumArrayOutput) Index(i pulumi.IntInput) GetOvaV2ChecksumOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2Checksum {
+		return vs[0].([]GetOvaV2Checksum)[vs[1].(int)]
+	}).(GetOvaV2ChecksumOutput)
+}
+
+type GetOvaV2ChecksumOvaSha1Checksum struct {
+	// - The hexadecimal representation of the checksum.
+	HexDigest string `pulumi:"hexDigest"`
+}
+
+// GetOvaV2ChecksumOvaSha1ChecksumInput is an input type that accepts GetOvaV2ChecksumOvaSha1ChecksumArgs and GetOvaV2ChecksumOvaSha1ChecksumOutput values.
+// You can construct a concrete instance of `GetOvaV2ChecksumOvaSha1ChecksumInput` via:
+//
+//	GetOvaV2ChecksumOvaSha1ChecksumArgs{...}
+type GetOvaV2ChecksumOvaSha1ChecksumInput interface {
+	pulumi.Input
+
+	ToGetOvaV2ChecksumOvaSha1ChecksumOutput() GetOvaV2ChecksumOvaSha1ChecksumOutput
+	ToGetOvaV2ChecksumOvaSha1ChecksumOutputWithContext(context.Context) GetOvaV2ChecksumOvaSha1ChecksumOutput
+}
+
+type GetOvaV2ChecksumOvaSha1ChecksumArgs struct {
+	// - The hexadecimal representation of the checksum.
+	HexDigest pulumi.StringInput `pulumi:"hexDigest"`
+}
+
+func (GetOvaV2ChecksumOvaSha1ChecksumArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2ChecksumOvaSha1Checksum)(nil)).Elem()
+}
+
+func (i GetOvaV2ChecksumOvaSha1ChecksumArgs) ToGetOvaV2ChecksumOvaSha1ChecksumOutput() GetOvaV2ChecksumOvaSha1ChecksumOutput {
+	return i.ToGetOvaV2ChecksumOvaSha1ChecksumOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2ChecksumOvaSha1ChecksumArgs) ToGetOvaV2ChecksumOvaSha1ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha1ChecksumOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOvaSha1ChecksumOutput)
+}
+
+// GetOvaV2ChecksumOvaSha1ChecksumArrayInput is an input type that accepts GetOvaV2ChecksumOvaSha1ChecksumArray and GetOvaV2ChecksumOvaSha1ChecksumArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2ChecksumOvaSha1ChecksumArrayInput` via:
+//
+//	GetOvaV2ChecksumOvaSha1ChecksumArray{ GetOvaV2ChecksumOvaSha1ChecksumArgs{...} }
+type GetOvaV2ChecksumOvaSha1ChecksumArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutput() GetOvaV2ChecksumOvaSha1ChecksumArrayOutput
+	ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutputWithContext(context.Context) GetOvaV2ChecksumOvaSha1ChecksumArrayOutput
+}
+
+type GetOvaV2ChecksumOvaSha1ChecksumArray []GetOvaV2ChecksumOvaSha1ChecksumInput
+
+func (GetOvaV2ChecksumOvaSha1ChecksumArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2ChecksumOvaSha1Checksum)(nil)).Elem()
+}
+
+func (i GetOvaV2ChecksumOvaSha1ChecksumArray) ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutput() GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
+	return i.ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2ChecksumOvaSha1ChecksumArray) ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOvaSha1ChecksumArrayOutput)
+}
+
+type GetOvaV2ChecksumOvaSha1ChecksumOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2ChecksumOvaSha1ChecksumOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2ChecksumOvaSha1Checksum)(nil)).Elem()
+}
+
+func (o GetOvaV2ChecksumOvaSha1ChecksumOutput) ToGetOvaV2ChecksumOvaSha1ChecksumOutput() GetOvaV2ChecksumOvaSha1ChecksumOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumOvaSha1ChecksumOutput) ToGetOvaV2ChecksumOvaSha1ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha1ChecksumOutput {
+	return o
+}
+
+// - The hexadecimal representation of the checksum.
+func (o GetOvaV2ChecksumOvaSha1ChecksumOutput) HexDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2ChecksumOvaSha1Checksum) string { return v.HexDigest }).(pulumi.StringOutput)
+}
+
+type GetOvaV2ChecksumOvaSha1ChecksumArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2ChecksumOvaSha1ChecksumArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2ChecksumOvaSha1Checksum)(nil)).Elem()
+}
+
+func (o GetOvaV2ChecksumOvaSha1ChecksumArrayOutput) ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutput() GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumOvaSha1ChecksumArrayOutput) ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumOvaSha1ChecksumArrayOutput) Index(i pulumi.IntInput) GetOvaV2ChecksumOvaSha1ChecksumOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2ChecksumOvaSha1Checksum {
+		return vs[0].([]GetOvaV2ChecksumOvaSha1Checksum)[vs[1].(int)]
+	}).(GetOvaV2ChecksumOvaSha1ChecksumOutput)
+}
+
+type GetOvaV2ChecksumOvaSha256Checksum struct {
+	// - The hexadecimal representation of the checksum.
+	HexDigest string `pulumi:"hexDigest"`
+}
+
+// GetOvaV2ChecksumOvaSha256ChecksumInput is an input type that accepts GetOvaV2ChecksumOvaSha256ChecksumArgs and GetOvaV2ChecksumOvaSha256ChecksumOutput values.
+// You can construct a concrete instance of `GetOvaV2ChecksumOvaSha256ChecksumInput` via:
+//
+//	GetOvaV2ChecksumOvaSha256ChecksumArgs{...}
+type GetOvaV2ChecksumOvaSha256ChecksumInput interface {
+	pulumi.Input
+
+	ToGetOvaV2ChecksumOvaSha256ChecksumOutput() GetOvaV2ChecksumOvaSha256ChecksumOutput
+	ToGetOvaV2ChecksumOvaSha256ChecksumOutputWithContext(context.Context) GetOvaV2ChecksumOvaSha256ChecksumOutput
+}
+
+type GetOvaV2ChecksumOvaSha256ChecksumArgs struct {
+	// - The hexadecimal representation of the checksum.
+	HexDigest pulumi.StringInput `pulumi:"hexDigest"`
+}
+
+func (GetOvaV2ChecksumOvaSha256ChecksumArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2ChecksumOvaSha256Checksum)(nil)).Elem()
+}
+
+func (i GetOvaV2ChecksumOvaSha256ChecksumArgs) ToGetOvaV2ChecksumOvaSha256ChecksumOutput() GetOvaV2ChecksumOvaSha256ChecksumOutput {
+	return i.ToGetOvaV2ChecksumOvaSha256ChecksumOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2ChecksumOvaSha256ChecksumArgs) ToGetOvaV2ChecksumOvaSha256ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha256ChecksumOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOvaSha256ChecksumOutput)
+}
+
+// GetOvaV2ChecksumOvaSha256ChecksumArrayInput is an input type that accepts GetOvaV2ChecksumOvaSha256ChecksumArray and GetOvaV2ChecksumOvaSha256ChecksumArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2ChecksumOvaSha256ChecksumArrayInput` via:
+//
+//	GetOvaV2ChecksumOvaSha256ChecksumArray{ GetOvaV2ChecksumOvaSha256ChecksumArgs{...} }
+type GetOvaV2ChecksumOvaSha256ChecksumArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutput() GetOvaV2ChecksumOvaSha256ChecksumArrayOutput
+	ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutputWithContext(context.Context) GetOvaV2ChecksumOvaSha256ChecksumArrayOutput
+}
+
+type GetOvaV2ChecksumOvaSha256ChecksumArray []GetOvaV2ChecksumOvaSha256ChecksumInput
+
+func (GetOvaV2ChecksumOvaSha256ChecksumArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2ChecksumOvaSha256Checksum)(nil)).Elem()
+}
+
+func (i GetOvaV2ChecksumOvaSha256ChecksumArray) ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutput() GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
+	return i.ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2ChecksumOvaSha256ChecksumArray) ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOvaSha256ChecksumArrayOutput)
+}
+
+type GetOvaV2ChecksumOvaSha256ChecksumOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2ChecksumOvaSha256ChecksumOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2ChecksumOvaSha256Checksum)(nil)).Elem()
+}
+
+func (o GetOvaV2ChecksumOvaSha256ChecksumOutput) ToGetOvaV2ChecksumOvaSha256ChecksumOutput() GetOvaV2ChecksumOvaSha256ChecksumOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumOvaSha256ChecksumOutput) ToGetOvaV2ChecksumOvaSha256ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha256ChecksumOutput {
+	return o
+}
+
+// - The hexadecimal representation of the checksum.
+func (o GetOvaV2ChecksumOvaSha256ChecksumOutput) HexDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2ChecksumOvaSha256Checksum) string { return v.HexDigest }).(pulumi.StringOutput)
+}
+
+type GetOvaV2ChecksumOvaSha256ChecksumArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2ChecksumOvaSha256ChecksumArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2ChecksumOvaSha256Checksum)(nil)).Elem()
+}
+
+func (o GetOvaV2ChecksumOvaSha256ChecksumArrayOutput) ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutput() GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumOvaSha256ChecksumArrayOutput) ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
+	return o
+}
+
+func (o GetOvaV2ChecksumOvaSha256ChecksumArrayOutput) Index(i pulumi.IntInput) GetOvaV2ChecksumOvaSha256ChecksumOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2ChecksumOvaSha256Checksum {
+		return vs[0].([]GetOvaV2ChecksumOvaSha256Checksum)[vs[1].(int)]
+	}).(GetOvaV2ChecksumOvaSha256ChecksumOutput)
+}
+
+type GetOvaV2CreatedBy struct {
+	// Any additional attribute for the User.
+	AdditionalAttributes []GetOvaV2CreatedByAdditionalAttribute `pulumi:"additionalAttributes"`
+	BucketsAccessKeys    []GetOvaV2CreatedByBucketsAccessKey    `pulumi:"bucketsAccessKeys"`
+	// - Information of the user.
+	CreatedBy   string `pulumi:"createdBy"`
+	CreatedTime string `pulumi:"createdTime"`
+	// Creation type of the User.
+	// |ENUM |Description |
+	// |---|---|
+	// | PREDEFINED | Predefined creator workflow type is for entity created by the system. |
+	// | SERVICEDEFINED | Service defined creator workflow type is for entity created by the service. |
+	// | USERDEFINED | User defined creator workflow type is for entity created by the users. |
+	CreationType string `pulumi:"creationType"`
+	// VM description
+	Description string `pulumi:"description"`
+	// Display name for the User.
+	DisplayName string `pulumi:"displayName"`
+	// Email Id for the User.
+	EmailId string `pulumi:"emailId"`
+	// -(Required) The external identifier for an OVA.
+	ExtId string `pulumi:"extId"`
+	// First name for the User.
+	FirstName string `pulumi:"firstName"`
+	// Identifier of the IDP for the User.
+	IdpId string `pulumi:"idpId"`
+	// Flag to force the User to reset password.
+	IsForceResetPasswordEnabled bool   `pulumi:"isForceResetPasswordEnabled"`
+	LastLoginTime               string `pulumi:"lastLoginTime"`
+	// Last name for the User.
+	LastName        string `pulumi:"lastName"`
+	LastUpdatedBy   string `pulumi:"lastUpdatedBy"`
+	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetOvaV2CreatedByLink `pulumi:"links"`
+	// Default locale for the User.
+	Locale string `pulumi:"locale"`
+	// Middle name for the User.
+	MiddleInitial string `pulumi:"middleInitial"`
+	// Default Region for the User.
+	Region string `pulumi:"region"`
+	// Status of the User.
+	Status string `pulumi:"status"`
+	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId string `pulumi:"tenantId"`
+	// Type of the User.
+	UserType string `pulumi:"userType"`
+	// Identifier for the User in the form an email address.
+	Username string `pulumi:"username"`
+}
+
+// GetOvaV2CreatedByInput is an input type that accepts GetOvaV2CreatedByArgs and GetOvaV2CreatedByOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByInput` via:
+//
+//	GetOvaV2CreatedByArgs{...}
+type GetOvaV2CreatedByInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByOutput() GetOvaV2CreatedByOutput
+	ToGetOvaV2CreatedByOutputWithContext(context.Context) GetOvaV2CreatedByOutput
+}
+
+type GetOvaV2CreatedByArgs struct {
+	// Any additional attribute for the User.
+	AdditionalAttributes GetOvaV2CreatedByAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
+	BucketsAccessKeys    GetOvaV2CreatedByBucketsAccessKeyArrayInput    `pulumi:"bucketsAccessKeys"`
+	// - Information of the user.
+	CreatedBy   pulumi.StringInput `pulumi:"createdBy"`
+	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
+	// Creation type of the User.
+	// |ENUM |Description |
+	// |---|---|
+	// | PREDEFINED | Predefined creator workflow type is for entity created by the system. |
+	// | SERVICEDEFINED | Service defined creator workflow type is for entity created by the service. |
+	// | USERDEFINED | User defined creator workflow type is for entity created by the users. |
+	CreationType pulumi.StringInput `pulumi:"creationType"`
+	// VM description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Display name for the User.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Email Id for the User.
+	EmailId pulumi.StringInput `pulumi:"emailId"`
+	// -(Required) The external identifier for an OVA.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// First name for the User.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// Identifier of the IDP for the User.
+	IdpId pulumi.StringInput `pulumi:"idpId"`
+	// Flag to force the User to reset password.
+	IsForceResetPasswordEnabled pulumi.BoolInput   `pulumi:"isForceResetPasswordEnabled"`
+	LastLoginTime               pulumi.StringInput `pulumi:"lastLoginTime"`
+	// Last name for the User.
+	LastName        pulumi.StringInput `pulumi:"lastName"`
+	LastUpdatedBy   pulumi.StringInput `pulumi:"lastUpdatedBy"`
+	LastUpdatedTime pulumi.StringInput `pulumi:"lastUpdatedTime"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links GetOvaV2CreatedByLinkArrayInput `pulumi:"links"`
+	// Default locale for the User.
+	Locale pulumi.StringInput `pulumi:"locale"`
+	// Middle name for the User.
+	MiddleInitial pulumi.StringInput `pulumi:"middleInitial"`
+	// Default Region for the User.
+	Region pulumi.StringInput `pulumi:"region"`
+	// Status of the User.
+	Status pulumi.StringInput `pulumi:"status"`
+	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+	// Type of the User.
+	UserType pulumi.StringInput `pulumi:"userType"`
+	// Identifier for the User in the form an email address.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetOvaV2CreatedByArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedBy)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByArgs) ToGetOvaV2CreatedByOutput() GetOvaV2CreatedByOutput {
+	return i.ToGetOvaV2CreatedByOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByArgs) ToGetOvaV2CreatedByOutputWithContext(ctx context.Context) GetOvaV2CreatedByOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByOutput)
+}
+
+// GetOvaV2CreatedByArrayInput is an input type that accepts GetOvaV2CreatedByArray and GetOvaV2CreatedByArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByArrayInput` via:
+//
+//	GetOvaV2CreatedByArray{ GetOvaV2CreatedByArgs{...} }
+type GetOvaV2CreatedByArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByArrayOutput() GetOvaV2CreatedByArrayOutput
+	ToGetOvaV2CreatedByArrayOutputWithContext(context.Context) GetOvaV2CreatedByArrayOutput
+}
+
+type GetOvaV2CreatedByArray []GetOvaV2CreatedByInput
+
+func (GetOvaV2CreatedByArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedBy)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByArray) ToGetOvaV2CreatedByArrayOutput() GetOvaV2CreatedByArrayOutput {
+	return i.ToGetOvaV2CreatedByArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByArray) ToGetOvaV2CreatedByArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByArrayOutput)
+}
+
+type GetOvaV2CreatedByOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedBy)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByOutput) ToGetOvaV2CreatedByOutput() GetOvaV2CreatedByOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByOutput) ToGetOvaV2CreatedByOutputWithContext(ctx context.Context) GetOvaV2CreatedByOutput {
+	return o
+}
+
+// Any additional attribute for the User.
+func (o GetOvaV2CreatedByOutput) AdditionalAttributes() GetOvaV2CreatedByAdditionalAttributeArrayOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) []GetOvaV2CreatedByAdditionalAttribute { return v.AdditionalAttributes }).(GetOvaV2CreatedByAdditionalAttributeArrayOutput)
+}
+
+func (o GetOvaV2CreatedByOutput) BucketsAccessKeys() GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) []GetOvaV2CreatedByBucketsAccessKey { return v.BucketsAccessKeys }).(GetOvaV2CreatedByBucketsAccessKeyArrayOutput)
+}
+
+// - Information of the user.
+func (o GetOvaV2CreatedByOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+func (o GetOvaV2CreatedByOutput) CreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// Creation type of the User.
+// |ENUM |Description |
+// |---|---|
+// | PREDEFINED | Predefined creator workflow type is for entity created by the system. |
+// | SERVICEDEFINED | Service defined creator workflow type is for entity created by the service. |
+// | USERDEFINED | User defined creator workflow type is for entity created by the users. |
+func (o GetOvaV2CreatedByOutput) CreationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.CreationType }).(pulumi.StringOutput)
+}
+
+// VM description
+func (o GetOvaV2CreatedByOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Display name for the User.
+func (o GetOvaV2CreatedByOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Email Id for the User.
+func (o GetOvaV2CreatedByOutput) EmailId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.EmailId }).(pulumi.StringOutput)
+}
+
+// -(Required) The external identifier for an OVA.
+func (o GetOvaV2CreatedByOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// First name for the User.
+func (o GetOvaV2CreatedByOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// Identifier of the IDP for the User.
+func (o GetOvaV2CreatedByOutput) IdpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.IdpId }).(pulumi.StringOutput)
+}
+
+// Flag to force the User to reset password.
+func (o GetOvaV2CreatedByOutput) IsForceResetPasswordEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) bool { return v.IsForceResetPasswordEnabled }).(pulumi.BoolOutput)
+}
+
+func (o GetOvaV2CreatedByOutput) LastLoginTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.LastLoginTime }).(pulumi.StringOutput)
+}
+
+// Last name for the User.
+func (o GetOvaV2CreatedByOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+func (o GetOvaV2CreatedByOutput) LastUpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.LastUpdatedBy }).(pulumi.StringOutput)
+}
+
+func (o GetOvaV2CreatedByOutput) LastUpdatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
+}
+
+// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+func (o GetOvaV2CreatedByOutput) Links() GetOvaV2CreatedByLinkArrayOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) []GetOvaV2CreatedByLink { return v.Links }).(GetOvaV2CreatedByLinkArrayOutput)
+}
+
+// Default locale for the User.
+func (o GetOvaV2CreatedByOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+// Middle name for the User.
+func (o GetOvaV2CreatedByOutput) MiddleInitial() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.MiddleInitial }).(pulumi.StringOutput)
+}
+
+// Default Region for the User.
+func (o GetOvaV2CreatedByOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// Status of the User.
+func (o GetOvaV2CreatedByOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+func (o GetOvaV2CreatedByOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+// Type of the User.
+func (o GetOvaV2CreatedByOutput) UserType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.UserType }).(pulumi.StringOutput)
+}
+
+// Identifier for the User in the form an email address.
+func (o GetOvaV2CreatedByOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetOvaV2CreatedByArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedBy)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByArrayOutput) ToGetOvaV2CreatedByArrayOutput() GetOvaV2CreatedByArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByArrayOutput) ToGetOvaV2CreatedByArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedBy {
+		return vs[0].([]GetOvaV2CreatedBy)[vs[1].(int)]
+	}).(GetOvaV2CreatedByOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttribute struct {
+	// Name of the GPU resource.
+	Name string `pulumi:"name"`
+	// The IPv4 address of the host.
+	Values []GetOvaV2CreatedByAdditionalAttributeValue `pulumi:"values"`
+}
+
+// GetOvaV2CreatedByAdditionalAttributeInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeArgs and GetOvaV2CreatedByAdditionalAttributeOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeInput` via:
+//
+//	GetOvaV2CreatedByAdditionalAttributeArgs{...}
+type GetOvaV2CreatedByAdditionalAttributeInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByAdditionalAttributeOutput() GetOvaV2CreatedByAdditionalAttributeOutput
+	ToGetOvaV2CreatedByAdditionalAttributeOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeOutput
+}
+
+type GetOvaV2CreatedByAdditionalAttributeArgs struct {
+	// Name of the GPU resource.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The IPv4 address of the host.
+	Values GetOvaV2CreatedByAdditionalAttributeValueArrayInput `pulumi:"values"`
+}
+
+func (GetOvaV2CreatedByAdditionalAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeArgs) ToGetOvaV2CreatedByAdditionalAttributeOutput() GetOvaV2CreatedByAdditionalAttributeOutput {
+	return i.ToGetOvaV2CreatedByAdditionalAttributeOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeArgs) ToGetOvaV2CreatedByAdditionalAttributeOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeOutput)
+}
+
+// GetOvaV2CreatedByAdditionalAttributeArrayInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeArray and GetOvaV2CreatedByAdditionalAttributeArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeArrayInput` via:
+//
+//	GetOvaV2CreatedByAdditionalAttributeArray{ GetOvaV2CreatedByAdditionalAttributeArgs{...} }
+type GetOvaV2CreatedByAdditionalAttributeArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByAdditionalAttributeArrayOutput() GetOvaV2CreatedByAdditionalAttributeArrayOutput
+	ToGetOvaV2CreatedByAdditionalAttributeArrayOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeArrayOutput
+}
+
+type GetOvaV2CreatedByAdditionalAttributeArray []GetOvaV2CreatedByAdditionalAttributeInput
+
+func (GetOvaV2CreatedByAdditionalAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeArray) ToGetOvaV2CreatedByAdditionalAttributeArrayOutput() GetOvaV2CreatedByAdditionalAttributeArrayOutput {
+	return i.ToGetOvaV2CreatedByAdditionalAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeArray) ToGetOvaV2CreatedByAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeArrayOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttributeOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByAdditionalAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeOutput) ToGetOvaV2CreatedByAdditionalAttributeOutput() GetOvaV2CreatedByAdditionalAttributeOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeOutput) ToGetOvaV2CreatedByAdditionalAttributeOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeOutput {
+	return o
+}
+
+// Name of the GPU resource.
+func (o GetOvaV2CreatedByAdditionalAttributeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttribute) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The IPv4 address of the host.
+func (o GetOvaV2CreatedByAdditionalAttributeOutput) Values() GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttribute) []GetOvaV2CreatedByAdditionalAttributeValue {
+		return v.Values
+	}).(GetOvaV2CreatedByAdditionalAttributeValueArrayOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByAdditionalAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeArrayOutput() GetOvaV2CreatedByAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByAdditionalAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByAdditionalAttribute {
+		return vs[0].([]GetOvaV2CreatedByAdditionalAttribute)[vs[1].(int)]
+	}).(GetOvaV2CreatedByAdditionalAttributeOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValue struct {
+	Boolean      bool                                                   `pulumi:"boolean"`
+	Integer      int                                                    `pulumi:"integer"`
+	IntegerLists []int                                                  `pulumi:"integerLists"`
+	MapOfStrings []GetOvaV2CreatedByAdditionalAttributeValueMapOfString `pulumi:"mapOfStrings"`
+	Object       map[string]string                                      `pulumi:"object"`
+	String       string                                                 `pulumi:"string"`
+	StringLists  []string                                               `pulumi:"stringLists"`
+}
+
+// GetOvaV2CreatedByAdditionalAttributeValueInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeValueArgs and GetOvaV2CreatedByAdditionalAttributeValueOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeValueInput` via:
+//
+//	GetOvaV2CreatedByAdditionalAttributeValueArgs{...}
+type GetOvaV2CreatedByAdditionalAttributeValueInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByAdditionalAttributeValueOutput() GetOvaV2CreatedByAdditionalAttributeValueOutput
+	ToGetOvaV2CreatedByAdditionalAttributeValueOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeValueOutput
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueArgs struct {
+	Boolean      pulumi.BoolInput                                               `pulumi:"boolean"`
+	Integer      pulumi.IntInput                                                `pulumi:"integer"`
+	IntegerLists pulumi.IntArrayInput                                           `pulumi:"integerLists"`
+	MapOfStrings GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput `pulumi:"mapOfStrings"`
+	Object       pulumi.StringMapInput                                          `pulumi:"object"`
+	String       pulumi.StringInput                                             `pulumi:"string"`
+	StringLists  pulumi.StringArrayInput                                        `pulumi:"stringLists"`
+}
+
+func (GetOvaV2CreatedByAdditionalAttributeValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValue)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeValueArgs) ToGetOvaV2CreatedByAdditionalAttributeValueOutput() GetOvaV2CreatedByAdditionalAttributeValueOutput {
+	return i.ToGetOvaV2CreatedByAdditionalAttributeValueOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeValueArgs) ToGetOvaV2CreatedByAdditionalAttributeValueOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeValueOutput)
+}
+
+// GetOvaV2CreatedByAdditionalAttributeValueArrayInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeValueArray and GetOvaV2CreatedByAdditionalAttributeValueArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeValueArrayInput` via:
+//
+//	GetOvaV2CreatedByAdditionalAttributeValueArray{ GetOvaV2CreatedByAdditionalAttributeValueArgs{...} }
+type GetOvaV2CreatedByAdditionalAttributeValueArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueArrayOutput
+	ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeValueArrayOutput
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueArray []GetOvaV2CreatedByAdditionalAttributeValueInput
+
+func (GetOvaV2CreatedByAdditionalAttributeValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttributeValue)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeValueArray) ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
+	return i.ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeValueArray) ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeValueArrayOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByAdditionalAttributeValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValue)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) ToGetOvaV2CreatedByAdditionalAttributeValueOutput() GetOvaV2CreatedByAdditionalAttributeValueOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) ToGetOvaV2CreatedByAdditionalAttributeValueOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) Boolean() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) bool { return v.Boolean }).(pulumi.BoolOutput)
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) Integer() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) int { return v.Integer }).(pulumi.IntOutput)
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) IntegerLists() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) []int { return v.IntegerLists }).(pulumi.IntArrayOutput)
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) MapOfStrings() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) []GetOvaV2CreatedByAdditionalAttributeValueMapOfString {
+		return v.MapOfStrings
+	}).(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput)
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) Object() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) map[string]string { return v.Object }).(pulumi.StringMapOutput)
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) String() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) string { return v.String }).(pulumi.StringOutput)
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) StringLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) []string { return v.StringLists }).(pulumi.StringArrayOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByAdditionalAttributeValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttributeValue)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByAdditionalAttributeValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByAdditionalAttributeValue {
+		return vs[0].([]GetOvaV2CreatedByAdditionalAttributeValue)[vs[1].(int)]
+	}).(GetOvaV2CreatedByAdditionalAttributeValueOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueMapOfString struct {
+	Map map[string]string `pulumi:"map"`
+}
+
+// GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs and GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput` via:
+//
+//	GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs{...}
+type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput
+	ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs struct {
+	Map pulumi.StringMapInput `pulumi:"map"`
+}
+
+func (GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueMapOfString)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
+	return i.ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput)
+}
+
+// GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray and GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput` via:
+//
+//	GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray{ GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs{...} }
+type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput
+	ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray []GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput
+
+func (GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttributeValueMapOfString)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
+	return i.ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueMapOfString)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput) Map() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValueMapOfString) map[string]string { return v.Map }).(pulumi.StringMapOutput)
+}
+
+type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttributeValueMapOfString)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByAdditionalAttributeValueMapOfString {
+		return vs[0].([]GetOvaV2CreatedByAdditionalAttributeValueMapOfString)[vs[1].(int)]
+	}).(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput)
+}
+
+type GetOvaV2CreatedByBucketsAccessKey struct {
+	AccessKeyName string `pulumi:"accessKeyName"`
+	CreatedTime   string `pulumi:"createdTime"`
+	// -(Required) The external identifier for an OVA.
+	ExtId string `pulumi:"extId"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links           []GetOvaV2CreatedByBucketsAccessKeyLink `pulumi:"links"`
+	SecretAccessKey string                                  `pulumi:"secretAccessKey"`
+	UserId          string                                  `pulumi:"userId"`
+}
+
+// GetOvaV2CreatedByBucketsAccessKeyInput is an input type that accepts GetOvaV2CreatedByBucketsAccessKeyArgs and GetOvaV2CreatedByBucketsAccessKeyOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByBucketsAccessKeyInput` via:
+//
+//	GetOvaV2CreatedByBucketsAccessKeyArgs{...}
+type GetOvaV2CreatedByBucketsAccessKeyInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByBucketsAccessKeyOutput() GetOvaV2CreatedByBucketsAccessKeyOutput
+	ToGetOvaV2CreatedByBucketsAccessKeyOutputWithContext(context.Context) GetOvaV2CreatedByBucketsAccessKeyOutput
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyArgs struct {
+	AccessKeyName pulumi.StringInput `pulumi:"accessKeyName"`
+	CreatedTime   pulumi.StringInput `pulumi:"createdTime"`
+	// -(Required) The external identifier for an OVA.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links           GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput `pulumi:"links"`
+	SecretAccessKey pulumi.StringInput                              `pulumi:"secretAccessKey"`
+	UserId          pulumi.StringInput                              `pulumi:"userId"`
+}
+
+func (GetOvaV2CreatedByBucketsAccessKeyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKey)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByBucketsAccessKeyArgs) ToGetOvaV2CreatedByBucketsAccessKeyOutput() GetOvaV2CreatedByBucketsAccessKeyOutput {
+	return i.ToGetOvaV2CreatedByBucketsAccessKeyOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByBucketsAccessKeyArgs) ToGetOvaV2CreatedByBucketsAccessKeyOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByBucketsAccessKeyOutput)
+}
+
+// GetOvaV2CreatedByBucketsAccessKeyArrayInput is an input type that accepts GetOvaV2CreatedByBucketsAccessKeyArray and GetOvaV2CreatedByBucketsAccessKeyArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByBucketsAccessKeyArrayInput` via:
+//
+//	GetOvaV2CreatedByBucketsAccessKeyArray{ GetOvaV2CreatedByBucketsAccessKeyArgs{...} }
+type GetOvaV2CreatedByBucketsAccessKeyArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByBucketsAccessKeyArrayOutput() GetOvaV2CreatedByBucketsAccessKeyArrayOutput
+	ToGetOvaV2CreatedByBucketsAccessKeyArrayOutputWithContext(context.Context) GetOvaV2CreatedByBucketsAccessKeyArrayOutput
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyArray []GetOvaV2CreatedByBucketsAccessKeyInput
+
+func (GetOvaV2CreatedByBucketsAccessKeyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByBucketsAccessKey)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByBucketsAccessKeyArray) ToGetOvaV2CreatedByBucketsAccessKeyArrayOutput() GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
+	return i.ToGetOvaV2CreatedByBucketsAccessKeyArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByBucketsAccessKeyArray) ToGetOvaV2CreatedByBucketsAccessKeyArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByBucketsAccessKeyArrayOutput)
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByBucketsAccessKeyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKey)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyOutput) ToGetOvaV2CreatedByBucketsAccessKeyOutput() GetOvaV2CreatedByBucketsAccessKeyOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyOutput) ToGetOvaV2CreatedByBucketsAccessKeyOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyOutput) AccessKeyName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.AccessKeyName }).(pulumi.StringOutput)
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyOutput) CreatedTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// -(Required) The external identifier for an OVA.
+func (o GetOvaV2CreatedByBucketsAccessKeyOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+func (o GetOvaV2CreatedByBucketsAccessKeyOutput) Links() GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) []GetOvaV2CreatedByBucketsAccessKeyLink { return v.Links }).(GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput)
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyOutput) SecretAccessKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.SecretAccessKey }).(pulumi.StringOutput)
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyOutput) UserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.UserId }).(pulumi.StringOutput)
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByBucketsAccessKeyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByBucketsAccessKey)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyArrayOutput) ToGetOvaV2CreatedByBucketsAccessKeyArrayOutput() GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyArrayOutput) ToGetOvaV2CreatedByBucketsAccessKeyArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByBucketsAccessKeyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByBucketsAccessKey {
+		return vs[0].([]GetOvaV2CreatedByBucketsAccessKey)[vs[1].(int)]
+	}).(GetOvaV2CreatedByBucketsAccessKeyOutput)
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyLink struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetOvaV2CreatedByBucketsAccessKeyLinkInput is an input type that accepts GetOvaV2CreatedByBucketsAccessKeyLinkArgs and GetOvaV2CreatedByBucketsAccessKeyLinkOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByBucketsAccessKeyLinkInput` via:
+//
+//	GetOvaV2CreatedByBucketsAccessKeyLinkArgs{...}
+type GetOvaV2CreatedByBucketsAccessKeyLinkInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByBucketsAccessKeyLinkOutput() GetOvaV2CreatedByBucketsAccessKeyLinkOutput
+	ToGetOvaV2CreatedByBucketsAccessKeyLinkOutputWithContext(context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkOutput
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyLinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetOvaV2CreatedByBucketsAccessKeyLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyLink)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByBucketsAccessKeyLinkArgs) ToGetOvaV2CreatedByBucketsAccessKeyLinkOutput() GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
+	return i.ToGetOvaV2CreatedByBucketsAccessKeyLinkOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByBucketsAccessKeyLinkArgs) ToGetOvaV2CreatedByBucketsAccessKeyLinkOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByBucketsAccessKeyLinkOutput)
+}
+
+// GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput is an input type that accepts GetOvaV2CreatedByBucketsAccessKeyLinkArray and GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput` via:
+//
+//	GetOvaV2CreatedByBucketsAccessKeyLinkArray{ GetOvaV2CreatedByBucketsAccessKeyLinkArgs{...} }
+type GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput() GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput
+	ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutputWithContext(context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyLinkArray []GetOvaV2CreatedByBucketsAccessKeyLinkInput
+
+func (GetOvaV2CreatedByBucketsAccessKeyLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByBucketsAccessKeyLink)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByBucketsAccessKeyLinkArray) ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput() GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
+	return i.ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByBucketsAccessKeyLinkArray) ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput)
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyLinkOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByBucketsAccessKeyLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyLink)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyLinkOutput) ToGetOvaV2CreatedByBucketsAccessKeyLinkOutput() GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyLinkOutput) ToGetOvaV2CreatedByBucketsAccessKeyLinkOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o GetOvaV2CreatedByBucketsAccessKeyLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKeyLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetOvaV2CreatedByBucketsAccessKeyLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKeyLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByBucketsAccessKeyLink)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput) ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput() GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput) ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByBucketsAccessKeyLink {
+		return vs[0].([]GetOvaV2CreatedByBucketsAccessKeyLink)[vs[1].(int)]
+	}).(GetOvaV2CreatedByBucketsAccessKeyLinkOutput)
+}
+
+type GetOvaV2CreatedByLink struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetOvaV2CreatedByLinkInput is an input type that accepts GetOvaV2CreatedByLinkArgs and GetOvaV2CreatedByLinkOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByLinkInput` via:
+//
+//	GetOvaV2CreatedByLinkArgs{...}
+type GetOvaV2CreatedByLinkInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByLinkOutput() GetOvaV2CreatedByLinkOutput
+	ToGetOvaV2CreatedByLinkOutputWithContext(context.Context) GetOvaV2CreatedByLinkOutput
+}
+
+type GetOvaV2CreatedByLinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetOvaV2CreatedByLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByLink)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByLinkArgs) ToGetOvaV2CreatedByLinkOutput() GetOvaV2CreatedByLinkOutput {
+	return i.ToGetOvaV2CreatedByLinkOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByLinkArgs) ToGetOvaV2CreatedByLinkOutputWithContext(ctx context.Context) GetOvaV2CreatedByLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByLinkOutput)
+}
+
+// GetOvaV2CreatedByLinkArrayInput is an input type that accepts GetOvaV2CreatedByLinkArray and GetOvaV2CreatedByLinkArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2CreatedByLinkArrayInput` via:
+//
+//	GetOvaV2CreatedByLinkArray{ GetOvaV2CreatedByLinkArgs{...} }
+type GetOvaV2CreatedByLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2CreatedByLinkArrayOutput() GetOvaV2CreatedByLinkArrayOutput
+	ToGetOvaV2CreatedByLinkArrayOutputWithContext(context.Context) GetOvaV2CreatedByLinkArrayOutput
+}
+
+type GetOvaV2CreatedByLinkArray []GetOvaV2CreatedByLinkInput
+
+func (GetOvaV2CreatedByLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByLink)(nil)).Elem()
+}
+
+func (i GetOvaV2CreatedByLinkArray) ToGetOvaV2CreatedByLinkArrayOutput() GetOvaV2CreatedByLinkArrayOutput {
+	return i.ToGetOvaV2CreatedByLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2CreatedByLinkArray) ToGetOvaV2CreatedByLinkArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByLinkArrayOutput)
+}
+
+type GetOvaV2CreatedByLinkOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2CreatedByLink)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByLinkOutput) ToGetOvaV2CreatedByLinkOutput() GetOvaV2CreatedByLinkOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByLinkOutput) ToGetOvaV2CreatedByLinkOutputWithContext(ctx context.Context) GetOvaV2CreatedByLinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o GetOvaV2CreatedByLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetOvaV2CreatedByLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2CreatedByLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetOvaV2CreatedByLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2CreatedByLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2CreatedByLink)(nil)).Elem()
+}
+
+func (o GetOvaV2CreatedByLinkArrayOutput) ToGetOvaV2CreatedByLinkArrayOutput() GetOvaV2CreatedByLinkArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByLinkArrayOutput) ToGetOvaV2CreatedByLinkArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByLinkArrayOutput {
+	return o
+}
+
+func (o GetOvaV2CreatedByLinkArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByLink {
+		return vs[0].([]GetOvaV2CreatedByLink)[vs[1].(int)]
+	}).(GetOvaV2CreatedByLinkOutput)
+}
+
+type GetOvaV2Link struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href string `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel string `pulumi:"rel"`
+}
+
+// GetOvaV2LinkInput is an input type that accepts GetOvaV2LinkArgs and GetOvaV2LinkOutput values.
+// You can construct a concrete instance of `GetOvaV2LinkInput` via:
+//
+//	GetOvaV2LinkArgs{...}
+type GetOvaV2LinkInput interface {
+	pulumi.Input
+
+	ToGetOvaV2LinkOutput() GetOvaV2LinkOutput
+	ToGetOvaV2LinkOutputWithContext(context.Context) GetOvaV2LinkOutput
+}
+
+type GetOvaV2LinkArgs struct {
+	// - The URL at which the entity described by the link can be accessed.
+	Href pulumi.StringInput `pulumi:"href"`
+	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+	Rel pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetOvaV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2Link)(nil)).Elem()
+}
+
+func (i GetOvaV2LinkArgs) ToGetOvaV2LinkOutput() GetOvaV2LinkOutput {
+	return i.ToGetOvaV2LinkOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2LinkArgs) ToGetOvaV2LinkOutputWithContext(ctx context.Context) GetOvaV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2LinkOutput)
+}
+
+// GetOvaV2LinkArrayInput is an input type that accepts GetOvaV2LinkArray and GetOvaV2LinkArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2LinkArrayInput` via:
+//
+//	GetOvaV2LinkArray{ GetOvaV2LinkArgs{...} }
+type GetOvaV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2LinkArrayOutput() GetOvaV2LinkArrayOutput
+	ToGetOvaV2LinkArrayOutputWithContext(context.Context) GetOvaV2LinkArrayOutput
+}
+
+type GetOvaV2LinkArray []GetOvaV2LinkInput
+
+func (GetOvaV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2Link)(nil)).Elem()
+}
+
+func (i GetOvaV2LinkArray) ToGetOvaV2LinkArrayOutput() GetOvaV2LinkArrayOutput {
+	return i.ToGetOvaV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2LinkArray) ToGetOvaV2LinkArrayOutputWithContext(ctx context.Context) GetOvaV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2LinkArrayOutput)
+}
+
+type GetOvaV2LinkOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2Link)(nil)).Elem()
+}
+
+func (o GetOvaV2LinkOutput) ToGetOvaV2LinkOutput() GetOvaV2LinkOutput {
+	return o
+}
+
+func (o GetOvaV2LinkOutput) ToGetOvaV2LinkOutputWithContext(ctx context.Context) GetOvaV2LinkOutput {
+	return o
+}
+
+// - The URL at which the entity described by the link can be accessed.
+func (o GetOvaV2LinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2Link) string { return v.Href }).(pulumi.StringOutput)
+}
+
+// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
+func (o GetOvaV2LinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2Link) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetOvaV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2Link)(nil)).Elem()
+}
+
+func (o GetOvaV2LinkArrayOutput) ToGetOvaV2LinkArrayOutput() GetOvaV2LinkArrayOutput {
+	return o
+}
+
+func (o GetOvaV2LinkArrayOutput) ToGetOvaV2LinkArrayOutputWithContext(ctx context.Context) GetOvaV2LinkArrayOutput {
+	return o
+}
+
+func (o GetOvaV2LinkArrayOutput) Index(i pulumi.IntInput) GetOvaV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2Link {
+		return vs[0].([]GetOvaV2Link)[vs[1].(int)]
+	}).(GetOvaV2LinkOutput)
+}
+
+type GetOvaV2Source struct {
+	// - The source of the OVA file when it is being created from an object lite upload.
+	ObjectLiteSources []GetOvaV2SourceObjectLiteSource `pulumi:"objectLiteSources"`
+	// - The source of the OVA file when it is being created from a URL.
+	OvaUrlSources []GetOvaV2SourceOvaUrlSource `pulumi:"ovaUrlSources"`
+	// - The source of the OVA file when it is being created from a VM.
+	OvaVmSources []GetOvaV2SourceOvaVmSource `pulumi:"ovaVmSources"`
+}
+
+// GetOvaV2SourceInput is an input type that accepts GetOvaV2SourceArgs and GetOvaV2SourceOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceInput` via:
+//
+//	GetOvaV2SourceArgs{...}
+type GetOvaV2SourceInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceOutput() GetOvaV2SourceOutput
+	ToGetOvaV2SourceOutputWithContext(context.Context) GetOvaV2SourceOutput
+}
+
+type GetOvaV2SourceArgs struct {
+	// - The source of the OVA file when it is being created from an object lite upload.
+	ObjectLiteSources GetOvaV2SourceObjectLiteSourceArrayInput `pulumi:"objectLiteSources"`
+	// - The source of the OVA file when it is being created from a URL.
+	OvaUrlSources GetOvaV2SourceOvaUrlSourceArrayInput `pulumi:"ovaUrlSources"`
+	// - The source of the OVA file when it is being created from a VM.
+	OvaVmSources GetOvaV2SourceOvaVmSourceArrayInput `pulumi:"ovaVmSources"`
+}
+
+func (GetOvaV2SourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2Source)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceArgs) ToGetOvaV2SourceOutput() GetOvaV2SourceOutput {
+	return i.ToGetOvaV2SourceOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceArgs) ToGetOvaV2SourceOutputWithContext(ctx context.Context) GetOvaV2SourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOutput)
+}
+
+// GetOvaV2SourceArrayInput is an input type that accepts GetOvaV2SourceArray and GetOvaV2SourceArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceArrayInput` via:
+//
+//	GetOvaV2SourceArray{ GetOvaV2SourceArgs{...} }
+type GetOvaV2SourceArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceArrayOutput() GetOvaV2SourceArrayOutput
+	ToGetOvaV2SourceArrayOutputWithContext(context.Context) GetOvaV2SourceArrayOutput
+}
+
+type GetOvaV2SourceArray []GetOvaV2SourceInput
+
+func (GetOvaV2SourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2Source)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceArray) ToGetOvaV2SourceArrayOutput() GetOvaV2SourceArrayOutput {
+	return i.ToGetOvaV2SourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceArray) ToGetOvaV2SourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceArrayOutput)
+}
+
+type GetOvaV2SourceOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2Source)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceOutput) ToGetOvaV2SourceOutput() GetOvaV2SourceOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOutput) ToGetOvaV2SourceOutputWithContext(ctx context.Context) GetOvaV2SourceOutput {
+	return o
+}
+
+// - The source of the OVA file when it is being created from an object lite upload.
+func (o GetOvaV2SourceOutput) ObjectLiteSources() GetOvaV2SourceObjectLiteSourceArrayOutput {
+	return o.ApplyT(func(v GetOvaV2Source) []GetOvaV2SourceObjectLiteSource { return v.ObjectLiteSources }).(GetOvaV2SourceObjectLiteSourceArrayOutput)
+}
+
+// - The source of the OVA file when it is being created from a URL.
+func (o GetOvaV2SourceOutput) OvaUrlSources() GetOvaV2SourceOvaUrlSourceArrayOutput {
+	return o.ApplyT(func(v GetOvaV2Source) []GetOvaV2SourceOvaUrlSource { return v.OvaUrlSources }).(GetOvaV2SourceOvaUrlSourceArrayOutput)
+}
+
+// - The source of the OVA file when it is being created from a VM.
+func (o GetOvaV2SourceOutput) OvaVmSources() GetOvaV2SourceOvaVmSourceArrayOutput {
+	return o.ApplyT(func(v GetOvaV2Source) []GetOvaV2SourceOvaVmSource { return v.OvaVmSources }).(GetOvaV2SourceOvaVmSourceArrayOutput)
+}
+
+type GetOvaV2SourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2Source)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceArrayOutput) ToGetOvaV2SourceArrayOutput() GetOvaV2SourceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceArrayOutput) ToGetOvaV2SourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2Source {
+		return vs[0].([]GetOvaV2Source)[vs[1].(int)]
+	}).(GetOvaV2SourceOutput)
+}
+
+type GetOvaV2SourceObjectLiteSource struct {
+	// - The identifier of the object from which the OVA file is being created.
+	Key string `pulumi:"key"`
+}
+
+// GetOvaV2SourceObjectLiteSourceInput is an input type that accepts GetOvaV2SourceObjectLiteSourceArgs and GetOvaV2SourceObjectLiteSourceOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceObjectLiteSourceInput` via:
+//
+//	GetOvaV2SourceObjectLiteSourceArgs{...}
+type GetOvaV2SourceObjectLiteSourceInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceObjectLiteSourceOutput() GetOvaV2SourceObjectLiteSourceOutput
+	ToGetOvaV2SourceObjectLiteSourceOutputWithContext(context.Context) GetOvaV2SourceObjectLiteSourceOutput
+}
+
+type GetOvaV2SourceObjectLiteSourceArgs struct {
+	// - The identifier of the object from which the OVA file is being created.
+	Key pulumi.StringInput `pulumi:"key"`
+}
+
+func (GetOvaV2SourceObjectLiteSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2SourceObjectLiteSource)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceObjectLiteSourceArgs) ToGetOvaV2SourceObjectLiteSourceOutput() GetOvaV2SourceObjectLiteSourceOutput {
+	return i.ToGetOvaV2SourceObjectLiteSourceOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceObjectLiteSourceArgs) ToGetOvaV2SourceObjectLiteSourceOutputWithContext(ctx context.Context) GetOvaV2SourceObjectLiteSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceObjectLiteSourceOutput)
+}
+
+// GetOvaV2SourceObjectLiteSourceArrayInput is an input type that accepts GetOvaV2SourceObjectLiteSourceArray and GetOvaV2SourceObjectLiteSourceArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceObjectLiteSourceArrayInput` via:
+//
+//	GetOvaV2SourceObjectLiteSourceArray{ GetOvaV2SourceObjectLiteSourceArgs{...} }
+type GetOvaV2SourceObjectLiteSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceObjectLiteSourceArrayOutput() GetOvaV2SourceObjectLiteSourceArrayOutput
+	ToGetOvaV2SourceObjectLiteSourceArrayOutputWithContext(context.Context) GetOvaV2SourceObjectLiteSourceArrayOutput
+}
+
+type GetOvaV2SourceObjectLiteSourceArray []GetOvaV2SourceObjectLiteSourceInput
+
+func (GetOvaV2SourceObjectLiteSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2SourceObjectLiteSource)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceObjectLiteSourceArray) ToGetOvaV2SourceObjectLiteSourceArrayOutput() GetOvaV2SourceObjectLiteSourceArrayOutput {
+	return i.ToGetOvaV2SourceObjectLiteSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceObjectLiteSourceArray) ToGetOvaV2SourceObjectLiteSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceObjectLiteSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceObjectLiteSourceArrayOutput)
+}
+
+type GetOvaV2SourceObjectLiteSourceOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceObjectLiteSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2SourceObjectLiteSource)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceObjectLiteSourceOutput) ToGetOvaV2SourceObjectLiteSourceOutput() GetOvaV2SourceObjectLiteSourceOutput {
+	return o
+}
+
+func (o GetOvaV2SourceObjectLiteSourceOutput) ToGetOvaV2SourceObjectLiteSourceOutputWithContext(ctx context.Context) GetOvaV2SourceObjectLiteSourceOutput {
+	return o
+}
+
+// - The identifier of the object from which the OVA file is being created.
+func (o GetOvaV2SourceObjectLiteSourceOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2SourceObjectLiteSource) string { return v.Key }).(pulumi.StringOutput)
+}
+
+type GetOvaV2SourceObjectLiteSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceObjectLiteSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2SourceObjectLiteSource)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceObjectLiteSourceArrayOutput) ToGetOvaV2SourceObjectLiteSourceArrayOutput() GetOvaV2SourceObjectLiteSourceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceObjectLiteSourceArrayOutput) ToGetOvaV2SourceObjectLiteSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceObjectLiteSourceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceObjectLiteSourceArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceObjectLiteSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2SourceObjectLiteSource {
+		return vs[0].([]GetOvaV2SourceObjectLiteSource)[vs[1].(int)]
+	}).(GetOvaV2SourceObjectLiteSourceOutput)
+}
+
+type GetOvaV2SourceOvaUrlSource struct {
+	// - Basic authentication credentials for accessing the OVA file.
+	BasicAuths []GetOvaV2SourceOvaUrlSourceBasicAuth `pulumi:"basicAuths"`
+	// - The URL from which the OVA file can be downloaded.
+	Url string `pulumi:"url"`
+}
+
+// GetOvaV2SourceOvaUrlSourceInput is an input type that accepts GetOvaV2SourceOvaUrlSourceArgs and GetOvaV2SourceOvaUrlSourceOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceOvaUrlSourceInput` via:
+//
+//	GetOvaV2SourceOvaUrlSourceArgs{...}
+type GetOvaV2SourceOvaUrlSourceInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceOvaUrlSourceOutput() GetOvaV2SourceOvaUrlSourceOutput
+	ToGetOvaV2SourceOvaUrlSourceOutputWithContext(context.Context) GetOvaV2SourceOvaUrlSourceOutput
+}
+
+type GetOvaV2SourceOvaUrlSourceArgs struct {
+	// - Basic authentication credentials for accessing the OVA file.
+	BasicAuths GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput `pulumi:"basicAuths"`
+	// - The URL from which the OVA file can be downloaded.
+	Url pulumi.StringInput `pulumi:"url"`
+}
+
+func (GetOvaV2SourceOvaUrlSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2SourceOvaUrlSource)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceOvaUrlSourceArgs) ToGetOvaV2SourceOvaUrlSourceOutput() GetOvaV2SourceOvaUrlSourceOutput {
+	return i.ToGetOvaV2SourceOvaUrlSourceOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceOvaUrlSourceArgs) ToGetOvaV2SourceOvaUrlSourceOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaUrlSourceOutput)
+}
+
+// GetOvaV2SourceOvaUrlSourceArrayInput is an input type that accepts GetOvaV2SourceOvaUrlSourceArray and GetOvaV2SourceOvaUrlSourceArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceOvaUrlSourceArrayInput` via:
+//
+//	GetOvaV2SourceOvaUrlSourceArray{ GetOvaV2SourceOvaUrlSourceArgs{...} }
+type GetOvaV2SourceOvaUrlSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceOvaUrlSourceArrayOutput() GetOvaV2SourceOvaUrlSourceArrayOutput
+	ToGetOvaV2SourceOvaUrlSourceArrayOutputWithContext(context.Context) GetOvaV2SourceOvaUrlSourceArrayOutput
+}
+
+type GetOvaV2SourceOvaUrlSourceArray []GetOvaV2SourceOvaUrlSourceInput
+
+func (GetOvaV2SourceOvaUrlSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2SourceOvaUrlSource)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceOvaUrlSourceArray) ToGetOvaV2SourceOvaUrlSourceArrayOutput() GetOvaV2SourceOvaUrlSourceArrayOutput {
+	return i.ToGetOvaV2SourceOvaUrlSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceOvaUrlSourceArray) ToGetOvaV2SourceOvaUrlSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaUrlSourceArrayOutput)
+}
+
+type GetOvaV2SourceOvaUrlSourceOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceOvaUrlSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2SourceOvaUrlSource)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceOvaUrlSourceOutput) ToGetOvaV2SourceOvaUrlSourceOutput() GetOvaV2SourceOvaUrlSourceOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaUrlSourceOutput) ToGetOvaV2SourceOvaUrlSourceOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceOutput {
+	return o
+}
+
+// - Basic authentication credentials for accessing the OVA file.
+func (o GetOvaV2SourceOvaUrlSourceOutput) BasicAuths() GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
+	return o.ApplyT(func(v GetOvaV2SourceOvaUrlSource) []GetOvaV2SourceOvaUrlSourceBasicAuth { return v.BasicAuths }).(GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput)
+}
+
+// - The URL from which the OVA file can be downloaded.
+func (o GetOvaV2SourceOvaUrlSourceOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2SourceOvaUrlSource) string { return v.Url }).(pulumi.StringOutput)
+}
+
+type GetOvaV2SourceOvaUrlSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceOvaUrlSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2SourceOvaUrlSource)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceOvaUrlSourceArrayOutput) ToGetOvaV2SourceOvaUrlSourceArrayOutput() GetOvaV2SourceOvaUrlSourceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaUrlSourceArrayOutput) ToGetOvaV2SourceOvaUrlSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaUrlSourceArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceOvaUrlSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2SourceOvaUrlSource {
+		return vs[0].([]GetOvaV2SourceOvaUrlSource)[vs[1].(int)]
+	}).(GetOvaV2SourceOvaUrlSourceOutput)
+}
+
+type GetOvaV2SourceOvaUrlSourceBasicAuth struct {
+	// - The password for basic authentication.
+	Password string `pulumi:"password"`
+	// Identifier for the User in the form an email address.
+	Username string `pulumi:"username"`
+}
+
+// GetOvaV2SourceOvaUrlSourceBasicAuthInput is an input type that accepts GetOvaV2SourceOvaUrlSourceBasicAuthArgs and GetOvaV2SourceOvaUrlSourceBasicAuthOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceOvaUrlSourceBasicAuthInput` via:
+//
+//	GetOvaV2SourceOvaUrlSourceBasicAuthArgs{...}
+type GetOvaV2SourceOvaUrlSourceBasicAuthInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceOvaUrlSourceBasicAuthOutput() GetOvaV2SourceOvaUrlSourceBasicAuthOutput
+	ToGetOvaV2SourceOvaUrlSourceBasicAuthOutputWithContext(context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthOutput
+}
+
+type GetOvaV2SourceOvaUrlSourceBasicAuthArgs struct {
+	// - The password for basic authentication.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Identifier for the User in the form an email address.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetOvaV2SourceOvaUrlSourceBasicAuthArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceBasicAuth)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceOvaUrlSourceBasicAuthArgs) ToGetOvaV2SourceOvaUrlSourceBasicAuthOutput() GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
+	return i.ToGetOvaV2SourceOvaUrlSourceBasicAuthOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceOvaUrlSourceBasicAuthArgs) ToGetOvaV2SourceOvaUrlSourceBasicAuthOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaUrlSourceBasicAuthOutput)
+}
+
+// GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput is an input type that accepts GetOvaV2SourceOvaUrlSourceBasicAuthArray and GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput` via:
+//
+//	GetOvaV2SourceOvaUrlSourceBasicAuthArray{ GetOvaV2SourceOvaUrlSourceBasicAuthArgs{...} }
+type GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput() GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput
+	ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutputWithContext(context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput
+}
+
+type GetOvaV2SourceOvaUrlSourceBasicAuthArray []GetOvaV2SourceOvaUrlSourceBasicAuthInput
+
+func (GetOvaV2SourceOvaUrlSourceBasicAuthArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2SourceOvaUrlSourceBasicAuth)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceOvaUrlSourceBasicAuthArray) ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput() GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
+	return i.ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceOvaUrlSourceBasicAuthArray) ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput)
+}
+
+type GetOvaV2SourceOvaUrlSourceBasicAuthOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceOvaUrlSourceBasicAuthOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceBasicAuth)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceOvaUrlSourceBasicAuthOutput) ToGetOvaV2SourceOvaUrlSourceBasicAuthOutput() GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaUrlSourceBasicAuthOutput) ToGetOvaV2SourceOvaUrlSourceBasicAuthOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
+	return o
+}
+
+// - The password for basic authentication.
+func (o GetOvaV2SourceOvaUrlSourceBasicAuthOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2SourceOvaUrlSourceBasicAuth) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Identifier for the User in the form an email address.
+func (o GetOvaV2SourceOvaUrlSourceBasicAuthOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2SourceOvaUrlSourceBasicAuth) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2SourceOvaUrlSourceBasicAuth)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput) ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput() GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput) ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2SourceOvaUrlSourceBasicAuth {
+		return vs[0].([]GetOvaV2SourceOvaUrlSourceBasicAuth)[vs[1].(int)]
+	}).(GetOvaV2SourceOvaUrlSourceBasicAuthOutput)
+}
+
+type GetOvaV2SourceOvaVmSource struct {
+	// - The disk file format of the VM.
+	DiskFileFormat string `pulumi:"diskFileFormat"`
+	// - The external identifier of the VM from which the OVA file is being created.
+	VmExtId string `pulumi:"vmExtId"`
+}
+
+// GetOvaV2SourceOvaVmSourceInput is an input type that accepts GetOvaV2SourceOvaVmSourceArgs and GetOvaV2SourceOvaVmSourceOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceOvaVmSourceInput` via:
+//
+//	GetOvaV2SourceOvaVmSourceArgs{...}
+type GetOvaV2SourceOvaVmSourceInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceOvaVmSourceOutput() GetOvaV2SourceOvaVmSourceOutput
+	ToGetOvaV2SourceOvaVmSourceOutputWithContext(context.Context) GetOvaV2SourceOvaVmSourceOutput
+}
+
+type GetOvaV2SourceOvaVmSourceArgs struct {
+	// - The disk file format of the VM.
+	DiskFileFormat pulumi.StringInput `pulumi:"diskFileFormat"`
+	// - The external identifier of the VM from which the OVA file is being created.
+	VmExtId pulumi.StringInput `pulumi:"vmExtId"`
+}
+
+func (GetOvaV2SourceOvaVmSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2SourceOvaVmSource)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceOvaVmSourceArgs) ToGetOvaV2SourceOvaVmSourceOutput() GetOvaV2SourceOvaVmSourceOutput {
+	return i.ToGetOvaV2SourceOvaVmSourceOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceOvaVmSourceArgs) ToGetOvaV2SourceOvaVmSourceOutputWithContext(ctx context.Context) GetOvaV2SourceOvaVmSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaVmSourceOutput)
+}
+
+// GetOvaV2SourceOvaVmSourceArrayInput is an input type that accepts GetOvaV2SourceOvaVmSourceArray and GetOvaV2SourceOvaVmSourceArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2SourceOvaVmSourceArrayInput` via:
+//
+//	GetOvaV2SourceOvaVmSourceArray{ GetOvaV2SourceOvaVmSourceArgs{...} }
+type GetOvaV2SourceOvaVmSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2SourceOvaVmSourceArrayOutput() GetOvaV2SourceOvaVmSourceArrayOutput
+	ToGetOvaV2SourceOvaVmSourceArrayOutputWithContext(context.Context) GetOvaV2SourceOvaVmSourceArrayOutput
+}
+
+type GetOvaV2SourceOvaVmSourceArray []GetOvaV2SourceOvaVmSourceInput
+
+func (GetOvaV2SourceOvaVmSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2SourceOvaVmSource)(nil)).Elem()
+}
+
+func (i GetOvaV2SourceOvaVmSourceArray) ToGetOvaV2SourceOvaVmSourceArrayOutput() GetOvaV2SourceOvaVmSourceArrayOutput {
+	return i.ToGetOvaV2SourceOvaVmSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2SourceOvaVmSourceArray) ToGetOvaV2SourceOvaVmSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaVmSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaVmSourceArrayOutput)
+}
+
+type GetOvaV2SourceOvaVmSourceOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceOvaVmSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2SourceOvaVmSource)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceOvaVmSourceOutput) ToGetOvaV2SourceOvaVmSourceOutput() GetOvaV2SourceOvaVmSourceOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaVmSourceOutput) ToGetOvaV2SourceOvaVmSourceOutputWithContext(ctx context.Context) GetOvaV2SourceOvaVmSourceOutput {
+	return o
+}
+
+// - The disk file format of the VM.
+func (o GetOvaV2SourceOvaVmSourceOutput) DiskFileFormat() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2SourceOvaVmSource) string { return v.DiskFileFormat }).(pulumi.StringOutput)
+}
+
+// - The external identifier of the VM from which the OVA file is being created.
+func (o GetOvaV2SourceOvaVmSourceOutput) VmExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2SourceOvaVmSource) string { return v.VmExtId }).(pulumi.StringOutput)
+}
+
+type GetOvaV2SourceOvaVmSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2SourceOvaVmSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2SourceOvaVmSource)(nil)).Elem()
+}
+
+func (o GetOvaV2SourceOvaVmSourceArrayOutput) ToGetOvaV2SourceOvaVmSourceArrayOutput() GetOvaV2SourceOvaVmSourceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaVmSourceArrayOutput) ToGetOvaV2SourceOvaVmSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaVmSourceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2SourceOvaVmSourceArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceOvaVmSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2SourceOvaVmSource {
+		return vs[0].([]GetOvaV2SourceOvaVmSource)[vs[1].(int)]
+	}).(GetOvaV2SourceOvaVmSourceOutput)
+}
+
+type GetOvaV2VmConfig struct {
+	// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+	ApcConfigs []GetOvaV2VmConfigApcConfig `pulumi:"apcConfigs"`
+	// Reference to an availability zone.
+	AvailabilityZones []GetOvaV2VmConfigAvailabilityZone `pulumi:"availabilityZones"`
+	// BIOS UUID of the VM. It should be of type UUID.
+	BiosUuid string `pulumi:"biosUuid"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs []GetOvaV2VmConfigBootConfig `pulumi:"bootConfigs"`
+	// Categories for the VM.
+	Categories []GetOvaV2VmConfigCategory `pulumi:"categories"`
+	// CD-ROMs attached to the VM.
+	CdRoms []GetOvaV2VmConfigCdRom `pulumi:"cdRoms"`
+	// Reference to a cluster.
+	Clusters []GetOvaV2VmConfigCluster `pulumi:"clusters"`
+	// VM creation time
+	CreateTime string `pulumi:"createTime"`
+	// VM description
+	Description string `pulumi:"description"`
+	// Disks attached to the VM.
+	Disks []GetOvaV2VmConfigDisk `pulumi:"disks"`
+	// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+	EnabledCpuFeatures []string `pulumi:"enabledCpuFeatures"`
+	// -(Required) The external identifier for an OVA.
+	ExtId string `pulumi:"extId"`
+	// Generation UUID of the VM. It should be of type UUID.
+	GenerationUuid string `pulumi:"generationUuid"`
+	// GPUs attached to the VM.
+	Gpuses []GetOvaV2VmConfigGpus `pulumi:"gpuses"`
+	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+	GuestCustomizations []GetOvaV2VmConfigGuestCustomization `pulumi:"guestCustomizations"`
+	// The details about Nutanix Guest Tools for a VM.
+	GuestTools []GetOvaV2VmConfigGuestTool `pulumi:"guestTools"`
+	// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+	HardwareClockTimezone string `pulumi:"hardwareClockTimezone"`
+	// Reference to the host, the VM is running on.
+	Hosts []GetOvaV2VmConfigHost `pulumi:"hosts"`
+	// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+	IsAgentVm bool `pulumi:"isAgentVm"`
+	// Indicates whether to remove AHV branding from VM firmware tables or not.
+	IsBrandingEnabled bool `pulumi:"isBrandingEnabled"`
+	// Indicates whether the VM CPU hotplug is enabled.
+	IsCpuHotplugEnabled bool `pulumi:"isCpuHotplugEnabled"`
+	// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+	IsCpuPassthroughEnabled bool `pulumi:"isCpuPassthroughEnabled"`
+	// Indicates whether the vGPU console is enabled or not.
+	IsGpuConsoleEnabled bool `pulumi:"isGpuConsoleEnabled"`
+	// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+	IsMemoryOvercommitEnabled bool `pulumi:"isMemoryOvercommitEnabled"`
+	// Indicates whether the VM SCSI controller is enabled.
+	IsScsiControllerEnabled bool `pulumi:"isScsiControllerEnabled"`
+	// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+	IsVcpuHardPinningEnabled bool `pulumi:"isVcpuHardPinningEnabled"`
+	// Indicates whether the VGA console should be disabled or not.
+	IsVgaConsoleEnabled bool `pulumi:"isVgaConsoleEnabled"`
+	// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+	MachineType string `pulumi:"machineType"`
+	// Memory size in bytes.
+	MemorySizeBytes int `pulumi:"memorySizeBytes"`
+	// Name of the GPU resource.
+	Name string `pulumi:"name"`
+	// NICs attached to the VM.
+	Nics []GetOvaV2VmConfigNic `pulumi:"nics"`
+	// Number of cores per socket.
+	NumCoresPerSocket int `pulumi:"numCoresPerSocket"`
+	// Number of NUMA nodes. 0 means NUMA is disabled.
+	NumNumaNodes int `pulumi:"numNumaNodes"`
+	// Number of vCPU sockets.
+	NumSockets int `pulumi:"numSockets"`
+	// Number of threads per core
+	NumThreadsPerCore int `pulumi:"numThreadsPerCore"`
+	// Ownership information for the VM.
+	OwnershipInfos []GetOvaV2VmConfigOwnershipInfo `pulumi:"ownershipInfos"`
+	PowerState     *string                         `pulumi:"powerState"`
+	// Reference to a project.
+	Projects []GetOvaV2VmConfigProject `pulumi:"projects"`
+	// Status of protection policy applied to this VM.
+	ProtectionPolicyStates []GetOvaV2VmConfigProtectionPolicyState `pulumi:"protectionPolicyStates"`
+	// The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+	ProtectionType string `pulumi:"protectionType"`
+	// Serial ports configured on the VM.
+	SerialPorts []GetOvaV2VmConfigSerialPort `pulumi:"serialPorts"`
+	// Reference to an entity that the VM should be cloned or created from
+	Sources []GetOvaV2VmConfigSource `pulumi:"sources"`
+	// Storage configuration for VM disks
+	StorageConfigs []GetOvaV2VmConfigStorageConfig `pulumi:"storageConfigs"`
+	// VM last updated time.
+	UpdateTime string `pulumi:"updateTime"`
+	// Indicates how the vTPM for the VM should be configured.
+	VtpmConfigs []GetOvaV2VmConfigVtpmConfig `pulumi:"vtpmConfigs"`
+	// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+	WaitForIpRoutable *bool `pulumi:"waitForIpRoutable"`
+	// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+	WaitForIpTimeout *int `pulumi:"waitForIpTimeout"`
+}
+
+// GetOvaV2VmConfigInput is an input type that accepts GetOvaV2VmConfigArgs and GetOvaV2VmConfigOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigInput` via:
+//
+//	GetOvaV2VmConfigArgs{...}
+type GetOvaV2VmConfigInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigOutput() GetOvaV2VmConfigOutput
+	ToGetOvaV2VmConfigOutputWithContext(context.Context) GetOvaV2VmConfigOutput
+}
+
+type GetOvaV2VmConfigArgs struct {
+	// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+	ApcConfigs GetOvaV2VmConfigApcConfigArrayInput `pulumi:"apcConfigs"`
+	// Reference to an availability zone.
+	AvailabilityZones GetOvaV2VmConfigAvailabilityZoneArrayInput `pulumi:"availabilityZones"`
+	// BIOS UUID of the VM. It should be of type UUID.
+	BiosUuid pulumi.StringInput `pulumi:"biosUuid"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootConfigs GetOvaV2VmConfigBootConfigArrayInput `pulumi:"bootConfigs"`
+	// Categories for the VM.
+	Categories GetOvaV2VmConfigCategoryArrayInput `pulumi:"categories"`
+	// CD-ROMs attached to the VM.
+	CdRoms GetOvaV2VmConfigCdRomArrayInput `pulumi:"cdRoms"`
+	// Reference to a cluster.
+	Clusters GetOvaV2VmConfigClusterArrayInput `pulumi:"clusters"`
+	// VM creation time
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// VM description
+	Description pulumi.StringInput `pulumi:"description"`
+	// Disks attached to the VM.
+	Disks GetOvaV2VmConfigDiskArrayInput `pulumi:"disks"`
+	// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+	EnabledCpuFeatures pulumi.StringArrayInput `pulumi:"enabledCpuFeatures"`
+	// -(Required) The external identifier for an OVA.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// Generation UUID of the VM. It should be of type UUID.
+	GenerationUuid pulumi.StringInput `pulumi:"generationUuid"`
+	// GPUs attached to the VM.
+	Gpuses GetOvaV2VmConfigGpusArrayInput `pulumi:"gpuses"`
+	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+	GuestCustomizations GetOvaV2VmConfigGuestCustomizationArrayInput `pulumi:"guestCustomizations"`
+	// The details about Nutanix Guest Tools for a VM.
+	GuestTools GetOvaV2VmConfigGuestToolArrayInput `pulumi:"guestTools"`
+	// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+	HardwareClockTimezone pulumi.StringInput `pulumi:"hardwareClockTimezone"`
+	// Reference to the host, the VM is running on.
+	Hosts GetOvaV2VmConfigHostArrayInput `pulumi:"hosts"`
+	// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+	IsAgentVm pulumi.BoolInput `pulumi:"isAgentVm"`
+	// Indicates whether to remove AHV branding from VM firmware tables or not.
+	IsBrandingEnabled pulumi.BoolInput `pulumi:"isBrandingEnabled"`
+	// Indicates whether the VM CPU hotplug is enabled.
+	IsCpuHotplugEnabled pulumi.BoolInput `pulumi:"isCpuHotplugEnabled"`
+	// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+	IsCpuPassthroughEnabled pulumi.BoolInput `pulumi:"isCpuPassthroughEnabled"`
+	// Indicates whether the vGPU console is enabled or not.
+	IsGpuConsoleEnabled pulumi.BoolInput `pulumi:"isGpuConsoleEnabled"`
+	// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+	IsMemoryOvercommitEnabled pulumi.BoolInput `pulumi:"isMemoryOvercommitEnabled"`
+	// Indicates whether the VM SCSI controller is enabled.
+	IsScsiControllerEnabled pulumi.BoolInput `pulumi:"isScsiControllerEnabled"`
+	// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+	IsVcpuHardPinningEnabled pulumi.BoolInput `pulumi:"isVcpuHardPinningEnabled"`
+	// Indicates whether the VGA console should be disabled or not.
+	IsVgaConsoleEnabled pulumi.BoolInput `pulumi:"isVgaConsoleEnabled"`
+	// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+	MachineType pulumi.StringInput `pulumi:"machineType"`
+	// Memory size in bytes.
+	MemorySizeBytes pulumi.IntInput `pulumi:"memorySizeBytes"`
+	// Name of the GPU resource.
+	Name pulumi.StringInput `pulumi:"name"`
+	// NICs attached to the VM.
+	Nics GetOvaV2VmConfigNicArrayInput `pulumi:"nics"`
+	// Number of cores per socket.
+	NumCoresPerSocket pulumi.IntInput `pulumi:"numCoresPerSocket"`
+	// Number of NUMA nodes. 0 means NUMA is disabled.
+	NumNumaNodes pulumi.IntInput `pulumi:"numNumaNodes"`
+	// Number of vCPU sockets.
+	NumSockets pulumi.IntInput `pulumi:"numSockets"`
+	// Number of threads per core
+	NumThreadsPerCore pulumi.IntInput `pulumi:"numThreadsPerCore"`
+	// Ownership information for the VM.
+	OwnershipInfos GetOvaV2VmConfigOwnershipInfoArrayInput `pulumi:"ownershipInfos"`
+	PowerState     pulumi.StringPtrInput                   `pulumi:"powerState"`
+	// Reference to a project.
+	Projects GetOvaV2VmConfigProjectArrayInput `pulumi:"projects"`
+	// Status of protection policy applied to this VM.
+	ProtectionPolicyStates GetOvaV2VmConfigProtectionPolicyStateArrayInput `pulumi:"protectionPolicyStates"`
+	// The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+	ProtectionType pulumi.StringInput `pulumi:"protectionType"`
+	// Serial ports configured on the VM.
+	SerialPorts GetOvaV2VmConfigSerialPortArrayInput `pulumi:"serialPorts"`
+	// Reference to an entity that the VM should be cloned or created from
+	Sources GetOvaV2VmConfigSourceArrayInput `pulumi:"sources"`
+	// Storage configuration for VM disks
+	StorageConfigs GetOvaV2VmConfigStorageConfigArrayInput `pulumi:"storageConfigs"`
+	// VM last updated time.
+	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
+	// Indicates how the vTPM for the VM should be configured.
+	VtpmConfigs GetOvaV2VmConfigVtpmConfigArrayInput `pulumi:"vtpmConfigs"`
+	// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+	WaitForIpRoutable pulumi.BoolPtrInput `pulumi:"waitForIpRoutable"`
+	// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+	WaitForIpTimeout pulumi.IntPtrInput `pulumi:"waitForIpTimeout"`
+}
+
+func (GetOvaV2VmConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfig)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigArgs) ToGetOvaV2VmConfigOutput() GetOvaV2VmConfigOutput {
+	return i.ToGetOvaV2VmConfigOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigArgs) ToGetOvaV2VmConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigOutput)
+}
+
+// GetOvaV2VmConfigArrayInput is an input type that accepts GetOvaV2VmConfigArray and GetOvaV2VmConfigArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigArrayInput` via:
+//
+//	GetOvaV2VmConfigArray{ GetOvaV2VmConfigArgs{...} }
+type GetOvaV2VmConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigArrayOutput() GetOvaV2VmConfigArrayOutput
+	ToGetOvaV2VmConfigArrayOutputWithContext(context.Context) GetOvaV2VmConfigArrayOutput
+}
+
+type GetOvaV2VmConfigArray []GetOvaV2VmConfigInput
+
+func (GetOvaV2VmConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfig)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigArray) ToGetOvaV2VmConfigArrayOutput() GetOvaV2VmConfigArrayOutput {
+	return i.ToGetOvaV2VmConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigArray) ToGetOvaV2VmConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigArrayOutput)
+}
+
+type GetOvaV2VmConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfig)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigOutput) ToGetOvaV2VmConfigOutput() GetOvaV2VmConfigOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigOutput) ToGetOvaV2VmConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigOutput {
+	return o
+}
+
+// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
+func (o GetOvaV2VmConfigOutput) ApcConfigs() GetOvaV2VmConfigApcConfigArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigApcConfig { return v.ApcConfigs }).(GetOvaV2VmConfigApcConfigArrayOutput)
+}
+
+// Reference to an availability zone.
+func (o GetOvaV2VmConfigOutput) AvailabilityZones() GetOvaV2VmConfigAvailabilityZoneArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigAvailabilityZone { return v.AvailabilityZones }).(GetOvaV2VmConfigAvailabilityZoneArrayOutput)
+}
+
+// BIOS UUID of the VM. It should be of type UUID.
+func (o GetOvaV2VmConfigOutput) BiosUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.BiosUuid }).(pulumi.StringOutput)
+}
+
+// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+func (o GetOvaV2VmConfigOutput) BootConfigs() GetOvaV2VmConfigBootConfigArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigBootConfig { return v.BootConfigs }).(GetOvaV2VmConfigBootConfigArrayOutput)
+}
+
+// Categories for the VM.
+func (o GetOvaV2VmConfigOutput) Categories() GetOvaV2VmConfigCategoryArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigCategory { return v.Categories }).(GetOvaV2VmConfigCategoryArrayOutput)
+}
+
+// CD-ROMs attached to the VM.
+func (o GetOvaV2VmConfigOutput) CdRoms() GetOvaV2VmConfigCdRomArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigCdRom { return v.CdRoms }).(GetOvaV2VmConfigCdRomArrayOutput)
+}
+
+// Reference to a cluster.
+func (o GetOvaV2VmConfigOutput) Clusters() GetOvaV2VmConfigClusterArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigCluster { return v.Clusters }).(GetOvaV2VmConfigClusterArrayOutput)
+}
+
+// VM creation time
+func (o GetOvaV2VmConfigOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// VM description
+func (o GetOvaV2VmConfigOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Disks attached to the VM.
+func (o GetOvaV2VmConfigOutput) Disks() GetOvaV2VmConfigDiskArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigDisk { return v.Disks }).(GetOvaV2VmConfigDiskArrayOutput)
+}
+
+// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
+func (o GetOvaV2VmConfigOutput) EnabledCpuFeatures() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []string { return v.EnabledCpuFeatures }).(pulumi.StringArrayOutput)
+}
+
+// -(Required) The external identifier for an OVA.
+func (o GetOvaV2VmConfigOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// Generation UUID of the VM. It should be of type UUID.
+func (o GetOvaV2VmConfigOutput) GenerationUuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.GenerationUuid }).(pulumi.StringOutput)
+}
+
+// GPUs attached to the VM.
+func (o GetOvaV2VmConfigOutput) Gpuses() GetOvaV2VmConfigGpusArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigGpus { return v.Gpuses }).(GetOvaV2VmConfigGpusArrayOutput)
+}
+
+// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
+func (o GetOvaV2VmConfigOutput) GuestCustomizations() GetOvaV2VmConfigGuestCustomizationArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigGuestCustomization { return v.GuestCustomizations }).(GetOvaV2VmConfigGuestCustomizationArrayOutput)
+}
+
+// The details about Nutanix Guest Tools for a VM.
+func (o GetOvaV2VmConfigOutput) GuestTools() GetOvaV2VmConfigGuestToolArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigGuestTool { return v.GuestTools }).(GetOvaV2VmConfigGuestToolArrayOutput)
+}
+
+// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
+func (o GetOvaV2VmConfigOutput) HardwareClockTimezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.HardwareClockTimezone }).(pulumi.StringOutput)
+}
+
+// Reference to the host, the VM is running on.
+func (o GetOvaV2VmConfigOutput) Hosts() GetOvaV2VmConfigHostArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigHost { return v.Hosts }).(GetOvaV2VmConfigHostArrayOutput)
+}
+
+// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
+func (o GetOvaV2VmConfigOutput) IsAgentVm() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsAgentVm }).(pulumi.BoolOutput)
+}
+
+// Indicates whether to remove AHV branding from VM firmware tables or not.
+func (o GetOvaV2VmConfigOutput) IsBrandingEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsBrandingEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the VM CPU hotplug is enabled.
+func (o GetOvaV2VmConfigOutput) IsCpuHotplugEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsCpuHotplugEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
+func (o GetOvaV2VmConfigOutput) IsCpuPassthroughEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsCpuPassthroughEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the vGPU console is enabled or not.
+func (o GetOvaV2VmConfigOutput) IsGpuConsoleEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsGpuConsoleEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
+func (o GetOvaV2VmConfigOutput) IsMemoryOvercommitEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsMemoryOvercommitEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the VM SCSI controller is enabled.
+func (o GetOvaV2VmConfigOutput) IsScsiControllerEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsScsiControllerEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
+func (o GetOvaV2VmConfigOutput) IsVcpuHardPinningEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsVcpuHardPinningEnabled }).(pulumi.BoolOutput)
+}
+
+// Indicates whether the VGA console should be disabled or not.
+func (o GetOvaV2VmConfigOutput) IsVgaConsoleEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsVgaConsoleEnabled }).(pulumi.BoolOutput)
+}
+
+// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
+func (o GetOvaV2VmConfigOutput) MachineType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.MachineType }).(pulumi.StringOutput)
+}
+
+// Memory size in bytes.
+func (o GetOvaV2VmConfigOutput) MemorySizeBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.MemorySizeBytes }).(pulumi.IntOutput)
+}
+
+// Name of the GPU resource.
+func (o GetOvaV2VmConfigOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// NICs attached to the VM.
+func (o GetOvaV2VmConfigOutput) Nics() GetOvaV2VmConfigNicArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigNic { return v.Nics }).(GetOvaV2VmConfigNicArrayOutput)
+}
+
+// Number of cores per socket.
+func (o GetOvaV2VmConfigOutput) NumCoresPerSocket() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.NumCoresPerSocket }).(pulumi.IntOutput)
+}
+
+// Number of NUMA nodes. 0 means NUMA is disabled.
+func (o GetOvaV2VmConfigOutput) NumNumaNodes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.NumNumaNodes }).(pulumi.IntOutput)
+}
+
+// Number of vCPU sockets.
+func (o GetOvaV2VmConfigOutput) NumSockets() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.NumSockets }).(pulumi.IntOutput)
+}
+
+// Number of threads per core
+func (o GetOvaV2VmConfigOutput) NumThreadsPerCore() pulumi.IntOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.NumThreadsPerCore }).(pulumi.IntOutput)
+}
+
+// Ownership information for the VM.
+func (o GetOvaV2VmConfigOutput) OwnershipInfos() GetOvaV2VmConfigOwnershipInfoArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigOwnershipInfo { return v.OwnershipInfos }).(GetOvaV2VmConfigOwnershipInfoArrayOutput)
+}
+
+func (o GetOvaV2VmConfigOutput) PowerState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) *string { return v.PowerState }).(pulumi.StringPtrOutput)
+}
+
+// Reference to a project.
+func (o GetOvaV2VmConfigOutput) Projects() GetOvaV2VmConfigProjectArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigProject { return v.Projects }).(GetOvaV2VmConfigProjectArrayOutput)
+}
+
+// Status of protection policy applied to this VM.
+func (o GetOvaV2VmConfigOutput) ProtectionPolicyStates() GetOvaV2VmConfigProtectionPolicyStateArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigProtectionPolicyState { return v.ProtectionPolicyStates }).(GetOvaV2VmConfigProtectionPolicyStateArrayOutput)
+}
+
+// The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
+func (o GetOvaV2VmConfigOutput) ProtectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.ProtectionType }).(pulumi.StringOutput)
+}
+
+// Serial ports configured on the VM.
+func (o GetOvaV2VmConfigOutput) SerialPorts() GetOvaV2VmConfigSerialPortArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigSerialPort { return v.SerialPorts }).(GetOvaV2VmConfigSerialPortArrayOutput)
+}
+
+// Reference to an entity that the VM should be cloned or created from
+func (o GetOvaV2VmConfigOutput) Sources() GetOvaV2VmConfigSourceArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigSource { return v.Sources }).(GetOvaV2VmConfigSourceArrayOutput)
+}
+
+// Storage configuration for VM disks
+func (o GetOvaV2VmConfigOutput) StorageConfigs() GetOvaV2VmConfigStorageConfigArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigStorageConfig { return v.StorageConfigs }).(GetOvaV2VmConfigStorageConfigArrayOutput)
+}
+
+// VM last updated time.
+func (o GetOvaV2VmConfigOutput) UpdateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.UpdateTime }).(pulumi.StringOutput)
+}
+
+// Indicates how the vTPM for the VM should be configured.
+func (o GetOvaV2VmConfigOutput) VtpmConfigs() GetOvaV2VmConfigVtpmConfigArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigVtpmConfig { return v.VtpmConfigs }).(GetOvaV2VmConfigVtpmConfigArrayOutput)
+}
+
+// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+func (o GetOvaV2VmConfigOutput) WaitForIpRoutable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) *bool { return v.WaitForIpRoutable }).(pulumi.BoolPtrOutput)
+}
+
+// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+func (o GetOvaV2VmConfigOutput) WaitForIpTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfig) *int { return v.WaitForIpTimeout }).(pulumi.IntPtrOutput)
+}
+
+type GetOvaV2VmConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfig)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigArrayOutput) ToGetOvaV2VmConfigArrayOutput() GetOvaV2VmConfigArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigArrayOutput) ToGetOvaV2VmConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfig {
+		return vs[0].([]GetOvaV2VmConfig)[vs[1].(int)]
+	}).(GetOvaV2VmConfigOutput)
+}
+
+type GetOvaV2VmConfigApcConfig struct {
+	// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+	CpuModels []GetOvaV2VmConfigApcConfigCpuModel `pulumi:"cpuModels"`
+	// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+	IsApcEnabled bool `pulumi:"isApcEnabled"`
+}
+
+// GetOvaV2VmConfigApcConfigInput is an input type that accepts GetOvaV2VmConfigApcConfigArgs and GetOvaV2VmConfigApcConfigOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigApcConfigInput` via:
+//
+//	GetOvaV2VmConfigApcConfigArgs{...}
+type GetOvaV2VmConfigApcConfigInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigApcConfigOutput() GetOvaV2VmConfigApcConfigOutput
+	ToGetOvaV2VmConfigApcConfigOutputWithContext(context.Context) GetOvaV2VmConfigApcConfigOutput
+}
+
+type GetOvaV2VmConfigApcConfigArgs struct {
+	// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+	CpuModels GetOvaV2VmConfigApcConfigCpuModelArrayInput `pulumi:"cpuModels"`
+	// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+	IsApcEnabled pulumi.BoolInput `pulumi:"isApcEnabled"`
+}
+
+func (GetOvaV2VmConfigApcConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigApcConfig)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigApcConfigArgs) ToGetOvaV2VmConfigApcConfigOutput() GetOvaV2VmConfigApcConfigOutput {
+	return i.ToGetOvaV2VmConfigApcConfigOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigApcConfigArgs) ToGetOvaV2VmConfigApcConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigApcConfigOutput)
+}
+
+// GetOvaV2VmConfigApcConfigArrayInput is an input type that accepts GetOvaV2VmConfigApcConfigArray and GetOvaV2VmConfigApcConfigArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigApcConfigArrayInput` via:
+//
+//	GetOvaV2VmConfigApcConfigArray{ GetOvaV2VmConfigApcConfigArgs{...} }
+type GetOvaV2VmConfigApcConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigApcConfigArrayOutput() GetOvaV2VmConfigApcConfigArrayOutput
+	ToGetOvaV2VmConfigApcConfigArrayOutputWithContext(context.Context) GetOvaV2VmConfigApcConfigArrayOutput
+}
+
+type GetOvaV2VmConfigApcConfigArray []GetOvaV2VmConfigApcConfigInput
+
+func (GetOvaV2VmConfigApcConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigApcConfig)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigApcConfigArray) ToGetOvaV2VmConfigApcConfigArrayOutput() GetOvaV2VmConfigApcConfigArrayOutput {
+	return i.ToGetOvaV2VmConfigApcConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigApcConfigArray) ToGetOvaV2VmConfigApcConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigApcConfigArrayOutput)
+}
+
+type GetOvaV2VmConfigApcConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigApcConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigApcConfig)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigApcConfigOutput) ToGetOvaV2VmConfigApcConfigOutput() GetOvaV2VmConfigApcConfigOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigApcConfigOutput) ToGetOvaV2VmConfigApcConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigOutput {
+	return o
+}
+
+// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
+func (o GetOvaV2VmConfigApcConfigOutput) CpuModels() GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigApcConfig) []GetOvaV2VmConfigApcConfigCpuModel { return v.CpuModels }).(GetOvaV2VmConfigApcConfigCpuModelArrayOutput)
+}
+
+// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
+func (o GetOvaV2VmConfigApcConfigOutput) IsApcEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigApcConfig) bool { return v.IsApcEnabled }).(pulumi.BoolOutput)
+}
+
+type GetOvaV2VmConfigApcConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigApcConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigApcConfig)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigApcConfigArrayOutput) ToGetOvaV2VmConfigApcConfigArrayOutput() GetOvaV2VmConfigApcConfigArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigApcConfigArrayOutput) ToGetOvaV2VmConfigApcConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigApcConfigArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigApcConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigApcConfig {
+		return vs[0].([]GetOvaV2VmConfigApcConfig)[vs[1].(int)]
+	}).(GetOvaV2VmConfigApcConfigOutput)
+}
+
+type GetOvaV2VmConfigApcConfigCpuModel struct {
+	// -(Required) The external identifier for an OVA.
+	ExtId string `pulumi:"extId"`
+	// Name of the CPU model associated with the VM.
+	Name string `pulumi:"name"`
+}
+
+// GetOvaV2VmConfigApcConfigCpuModelInput is an input type that accepts GetOvaV2VmConfigApcConfigCpuModelArgs and GetOvaV2VmConfigApcConfigCpuModelOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigApcConfigCpuModelInput` via:
+//
+//	GetOvaV2VmConfigApcConfigCpuModelArgs{...}
+type GetOvaV2VmConfigApcConfigCpuModelInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigApcConfigCpuModelOutput() GetOvaV2VmConfigApcConfigCpuModelOutput
+	ToGetOvaV2VmConfigApcConfigCpuModelOutputWithContext(context.Context) GetOvaV2VmConfigApcConfigCpuModelOutput
+}
+
+type GetOvaV2VmConfigApcConfigCpuModelArgs struct {
+	// -(Required) The external identifier for an OVA.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// Name of the CPU model associated with the VM.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetOvaV2VmConfigApcConfigCpuModelArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigApcConfigCpuModel)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigApcConfigCpuModelArgs) ToGetOvaV2VmConfigApcConfigCpuModelOutput() GetOvaV2VmConfigApcConfigCpuModelOutput {
+	return i.ToGetOvaV2VmConfigApcConfigCpuModelOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigApcConfigCpuModelArgs) ToGetOvaV2VmConfigApcConfigCpuModelOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigCpuModelOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigApcConfigCpuModelOutput)
+}
+
+// GetOvaV2VmConfigApcConfigCpuModelArrayInput is an input type that accepts GetOvaV2VmConfigApcConfigCpuModelArray and GetOvaV2VmConfigApcConfigCpuModelArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigApcConfigCpuModelArrayInput` via:
+//
+//	GetOvaV2VmConfigApcConfigCpuModelArray{ GetOvaV2VmConfigApcConfigCpuModelArgs{...} }
+type GetOvaV2VmConfigApcConfigCpuModelArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigApcConfigCpuModelArrayOutput() GetOvaV2VmConfigApcConfigCpuModelArrayOutput
+	ToGetOvaV2VmConfigApcConfigCpuModelArrayOutputWithContext(context.Context) GetOvaV2VmConfigApcConfigCpuModelArrayOutput
+}
+
+type GetOvaV2VmConfigApcConfigCpuModelArray []GetOvaV2VmConfigApcConfigCpuModelInput
+
+func (GetOvaV2VmConfigApcConfigCpuModelArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigApcConfigCpuModel)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigApcConfigCpuModelArray) ToGetOvaV2VmConfigApcConfigCpuModelArrayOutput() GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
+	return i.ToGetOvaV2VmConfigApcConfigCpuModelArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigApcConfigCpuModelArray) ToGetOvaV2VmConfigApcConfigCpuModelArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigApcConfigCpuModelArrayOutput)
+}
+
+type GetOvaV2VmConfigApcConfigCpuModelOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigApcConfigCpuModelOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigApcConfigCpuModel)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigApcConfigCpuModelOutput) ToGetOvaV2VmConfigApcConfigCpuModelOutput() GetOvaV2VmConfigApcConfigCpuModelOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigApcConfigCpuModelOutput) ToGetOvaV2VmConfigApcConfigCpuModelOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigCpuModelOutput {
+	return o
+}
+
+// -(Required) The external identifier for an OVA.
+func (o GetOvaV2VmConfigApcConfigCpuModelOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigApcConfigCpuModel) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// Name of the CPU model associated with the VM.
+func (o GetOvaV2VmConfigApcConfigCpuModelOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigApcConfigCpuModel) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetOvaV2VmConfigApcConfigCpuModelArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigApcConfigCpuModelArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigApcConfigCpuModel)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigApcConfigCpuModelArrayOutput) ToGetOvaV2VmConfigApcConfigCpuModelArrayOutput() GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigApcConfigCpuModelArrayOutput) ToGetOvaV2VmConfigApcConfigCpuModelArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigApcConfigCpuModelArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigApcConfigCpuModelOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigApcConfigCpuModel {
+		return vs[0].([]GetOvaV2VmConfigApcConfigCpuModel)[vs[1].(int)]
+	}).(GetOvaV2VmConfigApcConfigCpuModelOutput)
+}
+
+type GetOvaV2VmConfigAvailabilityZone struct {
+	// -(Required) The external identifier for an OVA.
+	ExtId string `pulumi:"extId"`
+}
+
+// GetOvaV2VmConfigAvailabilityZoneInput is an input type that accepts GetOvaV2VmConfigAvailabilityZoneArgs and GetOvaV2VmConfigAvailabilityZoneOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigAvailabilityZoneInput` via:
+//
+//	GetOvaV2VmConfigAvailabilityZoneArgs{...}
+type GetOvaV2VmConfigAvailabilityZoneInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigAvailabilityZoneOutput() GetOvaV2VmConfigAvailabilityZoneOutput
+	ToGetOvaV2VmConfigAvailabilityZoneOutputWithContext(context.Context) GetOvaV2VmConfigAvailabilityZoneOutput
+}
+
+type GetOvaV2VmConfigAvailabilityZoneArgs struct {
+	// -(Required) The external identifier for an OVA.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+}
+
+func (GetOvaV2VmConfigAvailabilityZoneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigAvailabilityZone)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigAvailabilityZoneArgs) ToGetOvaV2VmConfigAvailabilityZoneOutput() GetOvaV2VmConfigAvailabilityZoneOutput {
+	return i.ToGetOvaV2VmConfigAvailabilityZoneOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigAvailabilityZoneArgs) ToGetOvaV2VmConfigAvailabilityZoneOutputWithContext(ctx context.Context) GetOvaV2VmConfigAvailabilityZoneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigAvailabilityZoneOutput)
+}
+
+// GetOvaV2VmConfigAvailabilityZoneArrayInput is an input type that accepts GetOvaV2VmConfigAvailabilityZoneArray and GetOvaV2VmConfigAvailabilityZoneArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigAvailabilityZoneArrayInput` via:
+//
+//	GetOvaV2VmConfigAvailabilityZoneArray{ GetOvaV2VmConfigAvailabilityZoneArgs{...} }
+type GetOvaV2VmConfigAvailabilityZoneArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigAvailabilityZoneArrayOutput() GetOvaV2VmConfigAvailabilityZoneArrayOutput
+	ToGetOvaV2VmConfigAvailabilityZoneArrayOutputWithContext(context.Context) GetOvaV2VmConfigAvailabilityZoneArrayOutput
+}
+
+type GetOvaV2VmConfigAvailabilityZoneArray []GetOvaV2VmConfigAvailabilityZoneInput
+
+func (GetOvaV2VmConfigAvailabilityZoneArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigAvailabilityZone)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigAvailabilityZoneArray) ToGetOvaV2VmConfigAvailabilityZoneArrayOutput() GetOvaV2VmConfigAvailabilityZoneArrayOutput {
+	return i.ToGetOvaV2VmConfigAvailabilityZoneArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigAvailabilityZoneArray) ToGetOvaV2VmConfigAvailabilityZoneArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigAvailabilityZoneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigAvailabilityZoneArrayOutput)
+}
+
+type GetOvaV2VmConfigAvailabilityZoneOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigAvailabilityZoneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigAvailabilityZone)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigAvailabilityZoneOutput) ToGetOvaV2VmConfigAvailabilityZoneOutput() GetOvaV2VmConfigAvailabilityZoneOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigAvailabilityZoneOutput) ToGetOvaV2VmConfigAvailabilityZoneOutputWithContext(ctx context.Context) GetOvaV2VmConfigAvailabilityZoneOutput {
+	return o
+}
+
+// -(Required) The external identifier for an OVA.
+func (o GetOvaV2VmConfigAvailabilityZoneOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigAvailabilityZone) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+type GetOvaV2VmConfigAvailabilityZoneArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigAvailabilityZoneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigAvailabilityZone)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigAvailabilityZoneArrayOutput) ToGetOvaV2VmConfigAvailabilityZoneArrayOutput() GetOvaV2VmConfigAvailabilityZoneArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigAvailabilityZoneArrayOutput) ToGetOvaV2VmConfigAvailabilityZoneArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigAvailabilityZoneArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigAvailabilityZoneArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigAvailabilityZoneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigAvailabilityZone {
+		return vs[0].([]GetOvaV2VmConfigAvailabilityZone)[vs[1].(int)]
+	}).(GetOvaV2VmConfigAvailabilityZoneOutput)
+}
+
+type GetOvaV2VmConfigBootConfig struct {
+	// LegacyBoot config Object
+	LegacyBoots []GetOvaV2VmConfigBootConfigLegacyBoot `pulumi:"legacyBoots"`
+	// UefiBoot config Object
+	UefiBoots []GetOvaV2VmConfigBootConfigUefiBoot `pulumi:"uefiBoots"`
+}
+
+// GetOvaV2VmConfigBootConfigInput is an input type that accepts GetOvaV2VmConfigBootConfigArgs and GetOvaV2VmConfigBootConfigOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigInput` via:
+//
+//	GetOvaV2VmConfigBootConfigArgs{...}
+type GetOvaV2VmConfigBootConfigInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigOutput() GetOvaV2VmConfigBootConfigOutput
+	ToGetOvaV2VmConfigBootConfigOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigOutput
+}
+
+type GetOvaV2VmConfigBootConfigArgs struct {
+	// LegacyBoot config Object
+	LegacyBoots GetOvaV2VmConfigBootConfigLegacyBootArrayInput `pulumi:"legacyBoots"`
+	// UefiBoot config Object
+	UefiBoots GetOvaV2VmConfigBootConfigUefiBootArrayInput `pulumi:"uefiBoots"`
+}
+
+func (GetOvaV2VmConfigBootConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfig)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigArgs) ToGetOvaV2VmConfigBootConfigOutput() GetOvaV2VmConfigBootConfigOutput {
+	return i.ToGetOvaV2VmConfigBootConfigOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigArgs) ToGetOvaV2VmConfigBootConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigOutput)
+}
+
+// GetOvaV2VmConfigBootConfigArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigArray and GetOvaV2VmConfigBootConfigArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigArray{ GetOvaV2VmConfigBootConfigArgs{...} }
+type GetOvaV2VmConfigBootConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigArrayOutput() GetOvaV2VmConfigBootConfigArrayOutput
+	ToGetOvaV2VmConfigBootConfigArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigArray []GetOvaV2VmConfigBootConfigInput
+
+func (GetOvaV2VmConfigBootConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfig)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigArray) ToGetOvaV2VmConfigBootConfigArrayOutput() GetOvaV2VmConfigBootConfigArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigArray) ToGetOvaV2VmConfigBootConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfig)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigOutput) ToGetOvaV2VmConfigBootConfigOutput() GetOvaV2VmConfigBootConfigOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigOutput) ToGetOvaV2VmConfigBootConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigOutput {
+	return o
+}
+
+// LegacyBoot config Object
+func (o GetOvaV2VmConfigBootConfigOutput) LegacyBoots() GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfig) []GetOvaV2VmConfigBootConfigLegacyBoot { return v.LegacyBoots }).(GetOvaV2VmConfigBootConfigLegacyBootArrayOutput)
+}
+
+// UefiBoot config Object
+func (o GetOvaV2VmConfigBootConfigOutput) UefiBoots() GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfig) []GetOvaV2VmConfigBootConfigUefiBoot { return v.UefiBoots }).(GetOvaV2VmConfigBootConfigUefiBootArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfig)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigArrayOutput) ToGetOvaV2VmConfigBootConfigArrayOutput() GetOvaV2VmConfigBootConfigArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigArrayOutput) ToGetOvaV2VmConfigBootConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfig {
+		return vs[0].([]GetOvaV2VmConfigBootConfig)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBoot struct {
+	// Boot Device object
+	BootDevices []GetOvaV2VmConfigBootConfigLegacyBootBootDevice `pulumi:"bootDevices"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootOrders []string `pulumi:"bootOrders"`
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootArgs and GetOvaV2VmConfigBootConfigLegacyBootOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootArgs{...}
+type GetOvaV2VmConfigBootConfigLegacyBootInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootOutput() GetOvaV2VmConfigBootConfigLegacyBootOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootArgs struct {
+	// Boot Device object
+	BootDevices GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput `pulumi:"bootDevices"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
+}
+
+func (GetOvaV2VmConfigBootConfigLegacyBootArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBoot)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootArgs) ToGetOvaV2VmConfigBootConfigLegacyBootOutput() GetOvaV2VmConfigBootConfigLegacyBootOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootArgs) ToGetOvaV2VmConfigBootConfigLegacyBootOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootOutput)
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootArray and GetOvaV2VmConfigBootConfigLegacyBootArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootArray{ GetOvaV2VmConfigBootConfigLegacyBootArgs{...} }
+type GetOvaV2VmConfigBootConfigLegacyBootArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootArrayOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootArray []GetOvaV2VmConfigBootConfigLegacyBootInput
+
+func (GetOvaV2VmConfigBootConfigLegacyBootArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBoot)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootArray) ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootArray) ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBoot)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootOutput) ToGetOvaV2VmConfigBootConfigLegacyBootOutput() GetOvaV2VmConfigBootConfigLegacyBootOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootOutput) ToGetOvaV2VmConfigBootConfigLegacyBootOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootOutput {
+	return o
+}
+
+// Boot Device object
+func (o GetOvaV2VmConfigBootConfigLegacyBootOutput) BootDevices() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBoot) []GetOvaV2VmConfigBootConfigLegacyBootBootDevice {
+		return v.BootDevices
+	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput)
+}
+
+// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+func (o GetOvaV2VmConfigBootConfigLegacyBootOutput) BootOrders() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBoot)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBoot {
+		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBoot)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigLegacyBootOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDevice struct {
+	// Disk address.
+	BootDeviceDisks []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
+	// Disk Nic address.
+	BootDeviceNics []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic `pulumi:"bootDeviceNics"`
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs{...}
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs struct {
+	// Disk address.
+	BootDeviceDisks GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
+	// Disk Nic address.
+	BootDeviceNics GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput `pulumi:"bootDeviceNics"`
+}
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDevice)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput)
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray{ GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs{...} }
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDevice)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDevice)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
+	return o
+}
+
+// Disk address.
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) BootDeviceDisks() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDevice) []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk {
+		return v.BootDeviceDisks
+	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
+}
+
+// Disk Nic address.
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) BootDeviceNics() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDevice) []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic {
+		return v.BootDeviceNics
+	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDevice)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBootBootDevice {
+		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBootBootDevice)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk struct {
+	// Virtual Machine disk (VM disk).
+	DiskAddresses []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs{...}
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs struct {
+	// Virtual Machine disk (VM disk).
+	DiskAddresses GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
+}
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput)
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray{ GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs{...} }
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return o
+}
+
+// Virtual Machine disk (VM disk).
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput) DiskAddresses() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk) []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+		return v.DiskAddresses
+	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk {
+		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress struct {
+	// Bus type for the device
+	BusType *string `pulumi:"busType"`
+	// Device index on the bus. This field is ignored unless the bus details are specified.
+	Index *int `pulumi:"index"`
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{...}
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
+	// Bus type for the device
+	BusType pulumi.StringPtrInput `pulumi:"busType"`
+	// Device index on the bus. This field is ignored unless the bus details are specified.
+	Index pulumi.IntPtrInput `pulumi:"index"`
+}
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput)
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray{ GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{...} }
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return o
+}
+
+// Bus type for the device
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *string {
+		return v.BusType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Device index on the bus. This field is ignored unless the bus details are specified.
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
+		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic struct {
+	// mac address
+	MacAddress *string `pulumi:"macAddress"`
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs{...}
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs struct {
+	// mac address
+	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
+}
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput)
+}
+
+// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray{ GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs{...} }
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput
+	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return o
+}
+
+// mac address
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
+}
+
+type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic {
+		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBoot struct {
+	// Boot Device object
+	BootDevices []GetOvaV2VmConfigBootConfigUefiBootBootDevice `pulumi:"bootDevices"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootOrders []string `pulumi:"bootOrders"`
+	// Indicate whether to enable secure boot or not
+	IsSecureBootEnabled bool `pulumi:"isSecureBootEnabled"`
+	// Configuration for NVRAM to be presented to the VM.
+	NvramDevices []GetOvaV2VmConfigBootConfigUefiBootNvramDevice `pulumi:"nvramDevices"`
+}
+
+// GetOvaV2VmConfigBootConfigUefiBootInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootArgs and GetOvaV2VmConfigBootConfigUefiBootOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootInput` via:
+//
+//	GetOvaV2VmConfigBootConfigUefiBootArgs{...}
+type GetOvaV2VmConfigBootConfigUefiBootInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigUefiBootOutput() GetOvaV2VmConfigBootConfigUefiBootOutput
+	ToGetOvaV2VmConfigBootConfigUefiBootOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootOutput
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootArgs struct {
+	// Boot Device object
+	BootDevices GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput `pulumi:"bootDevices"`
+	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
+	// Indicate whether to enable secure boot or not
+	IsSecureBootEnabled pulumi.BoolInput `pulumi:"isSecureBootEnabled"`
+	// Configuration for NVRAM to be presented to the VM.
+	NvramDevices GetOvaV2VmConfigBootConfigUefiBootNvramDeviceArrayInput `pulumi:"nvramDevices"`
+}
+
+func (GetOvaV2VmConfigBootConfigUefiBootArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBoot)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootArgs) ToGetOvaV2VmConfigBootConfigUefiBootOutput() GetOvaV2VmConfigBootConfigUefiBootOutput {
+	return i.ToGetOvaV2VmConfigBootConfigUefiBootOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootArgs) ToGetOvaV2VmConfigBootConfigUefiBootOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootOutput)
+}
+
+// GetOvaV2VmConfigBootConfigUefiBootArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootArray and GetOvaV2VmConfigBootConfigUefiBootArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigUefiBootArray{ GetOvaV2VmConfigBootConfigUefiBootArgs{...} }
+type GetOvaV2VmConfigBootConfigUefiBootArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigUefiBootArrayOutput() GetOvaV2VmConfigBootConfigUefiBootArrayOutput
+	ToGetOvaV2VmConfigBootConfigUefiBootArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootArray []GetOvaV2VmConfigBootConfigUefiBootInput
+
+func (GetOvaV2VmConfigBootConfigUefiBootArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBoot)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootArray) ToGetOvaV2VmConfigBootConfigUefiBootArrayOutput() GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigUefiBootArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootArray) ToGetOvaV2VmConfigBootConfigUefiBootArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigUefiBootOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBoot)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootOutput) ToGetOvaV2VmConfigBootConfigUefiBootOutput() GetOvaV2VmConfigBootConfigUefiBootOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootOutput) ToGetOvaV2VmConfigBootConfigUefiBootOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootOutput {
+	return o
+}
+
+// Boot Device object
+func (o GetOvaV2VmConfigBootConfigUefiBootOutput) BootDevices() GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBoot) []GetOvaV2VmConfigBootConfigUefiBootBootDevice {
+		return v.BootDevices
+	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput)
+}
+
+// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
+func (o GetOvaV2VmConfigBootConfigUefiBootOutput) BootOrders() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
+}
+
+// Indicate whether to enable secure boot or not
+func (o GetOvaV2VmConfigBootConfigUefiBootOutput) IsSecureBootEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBoot) bool { return v.IsSecureBootEnabled }).(pulumi.BoolOutput)
+}
+
+// Configuration for NVRAM to be presented to the VM.
+func (o GetOvaV2VmConfigBootConfigUefiBootOutput) NvramDevices() GetOvaV2VmConfigBootConfigUefiBootNvramDeviceArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBoot) []GetOvaV2VmConfigBootConfigUefiBootNvramDevice {
+		return v.NvramDevices
+	}).(GetOvaV2VmConfigBootConfigUefiBootNvramDeviceArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigUefiBootArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBoot)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootArrayOutput() GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigUefiBootOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigUefiBoot {
+		return vs[0].([]GetOvaV2VmConfigBootConfigUefiBoot)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigUefiBootOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDevice struct {
+	// Disk address.
+	BootDeviceDisks []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
+	// Disk Nic address.
+	BootDeviceNics []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic `pulumi:"bootDeviceNics"`
+}
+
+// GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs and GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput` via:
+//
+//	GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs{...}
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput
+	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs struct {
+	// Disk address.
+	BootDeviceDisks GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
+	// Disk Nic address.
+	BootDeviceNics GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicArrayInput `pulumi:"bootDeviceNics"`
+}
+
+func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDevice)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
+	return i.ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput)
+}
+
+// GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray and GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray{ GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs{...} }
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput
+	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray []GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput
+
+func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBootBootDevice)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDevice)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
+	return o
+}
+
+// Disk address.
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) BootDeviceDisks() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBootBootDevice) []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk {
+		return v.BootDeviceDisks
+	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
+}
+
+// Disk Nic address.
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) BootDeviceNics() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBootBootDevice) []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic {
+		return v.BootDeviceNics
+	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBootBootDevice)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigUefiBootBootDevice {
+		return vs[0].([]GetOvaV2VmConfigBootConfigUefiBootBootDevice)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk struct {
+	// Virtual Machine disk (VM disk).
+	DiskAddresses []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
+}
+
+// GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs and GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput` via:
+//
+//	GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs{...}
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput
+	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs struct {
+	// Virtual Machine disk (VM disk).
+	DiskAddresses GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
+}
+
+func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return i.ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput)
+}
+
+// GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray and GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput values.
+// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput` via:
+//
+//	GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray{ GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs{...} }
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput
+	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput
+
+func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return i.ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return o
+}
+
+// Virtual Machine disk (VM disk).
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput) DiskAddresses() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk) []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
+		return v.DiskAddresses
+	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
+}
+
+type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
+	return o
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk {
+		return vs[0].([]GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)[vs[1].(int)]
+	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput)
+}
+
 type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress struct {
 	// Bus type for the device
 	BusType *string `pulumi:"busType"`
@@ -325,7 +5019,8 @@ type GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo struct {
 	// Size of the disk in Bytes
 	DiskSizeBytes int `pulumi:"diskSizeBytes"`
 	// Indicates if the disk is undergoing migration to another container.
-	IsMigrationInProgress bool `pulumi:"isMigrationInProgress"`
+	IsMigrationInProgress bool   `pulumi:"isMigrationInProgress"`
+	SerialId              string `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	StorageConfigs []GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig `pulumi:"storageConfigs"`
 	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
@@ -351,7 +5046,8 @@ type GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoArgs struct 
 	// Size of the disk in Bytes
 	DiskSizeBytes pulumi.IntInput `pulumi:"diskSizeBytes"`
 	// Indicates if the disk is undergoing migration to another container.
-	IsMigrationInProgress pulumi.BoolInput `pulumi:"isMigrationInProgress"`
+	IsMigrationInProgress pulumi.BoolInput   `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringInput `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	StorageConfigs GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
 	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
@@ -431,6 +5127,10 @@ func (o GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) I
 	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo) bool {
 		return v.IsMigrationInProgress
 	}).(pulumi.BoolOutput)
+}
+
+func (o GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) SerialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo) string { return v.SerialId }).(pulumi.StringOutput)
 }
 
 // Storage configuration for VM disks
@@ -1532,7 +6232,8 @@ type GetOvaV2VmConfigCdRomBackingInfo struct {
 	// Size of the disk in Bytes
 	DiskSizeBytes int `pulumi:"diskSizeBytes"`
 	// Indicates if the disk is undergoing migration to another container.
-	IsMigrationInProgress bool `pulumi:"isMigrationInProgress"`
+	IsMigrationInProgress bool   `pulumi:"isMigrationInProgress"`
+	SerialId              string `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	StorageConfigs []GetOvaV2VmConfigCdRomBackingInfoStorageConfig `pulumi:"storageConfigs"`
 	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
@@ -1558,7 +6259,8 @@ type GetOvaV2VmConfigCdRomBackingInfoArgs struct {
 	// Size of the disk in Bytes
 	DiskSizeBytes pulumi.IntInput `pulumi:"diskSizeBytes"`
 	// Indicates if the disk is undergoing migration to another container.
-	IsMigrationInProgress pulumi.BoolInput `pulumi:"isMigrationInProgress"`
+	IsMigrationInProgress pulumi.BoolInput   `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringInput `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	StorageConfigs GetOvaV2VmConfigCdRomBackingInfoStorageConfigArrayInput `pulumi:"storageConfigs"`
 	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
@@ -1636,6 +6338,10 @@ func (o GetOvaV2VmConfigCdRomBackingInfoOutput) DiskSizeBytes() pulumi.IntOutput
 // Indicates if the disk is undergoing migration to another container.
 func (o GetOvaV2VmConfigCdRomBackingInfoOutput) IsMigrationInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigCdRomBackingInfo) bool { return v.IsMigrationInProgress }).(pulumi.BoolOutput)
+}
+
+func (o GetOvaV2VmConfigCdRomBackingInfoOutput) SerialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigCdRomBackingInfo) string { return v.SerialId }).(pulumi.StringOutput)
 }
 
 // Storage configuration for VM disks
@@ -3031,7 +7737,8 @@ type GetOvaV2VmConfigDiskBackingInfoVmDisk struct {
 	// Size of the disk in Bytes
 	DiskSizeBytes int `pulumi:"diskSizeBytes"`
 	// Indicates if the disk is undergoing migration to another container.
-	IsMigrationInProgress bool `pulumi:"isMigrationInProgress"`
+	IsMigrationInProgress bool   `pulumi:"isMigrationInProgress"`
+	SerialId              string `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	StorageConfigs []GetOvaV2VmConfigDiskBackingInfoVmDiskStorageConfig `pulumi:"storageConfigs"`
 	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
@@ -3057,7 +7764,8 @@ type GetOvaV2VmConfigDiskBackingInfoVmDiskArgs struct {
 	// Size of the disk in Bytes
 	DiskSizeBytes pulumi.IntInput `pulumi:"diskSizeBytes"`
 	// Indicates if the disk is undergoing migration to another container.
-	IsMigrationInProgress pulumi.BoolInput `pulumi:"isMigrationInProgress"`
+	IsMigrationInProgress pulumi.BoolInput   `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringInput `pulumi:"serialId"`
 	// Storage configuration for VM disks
 	StorageConfigs GetOvaV2VmConfigDiskBackingInfoVmDiskStorageConfigArrayInput `pulumi:"storageConfigs"`
 	// This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
@@ -3135,6 +7843,10 @@ func (o GetOvaV2VmConfigDiskBackingInfoVmDiskOutput) DiskSizeBytes() pulumi.IntO
 // Indicates if the disk is undergoing migration to another container.
 func (o GetOvaV2VmConfigDiskBackingInfoVmDiskOutput) IsMigrationInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetOvaV2VmConfigDiskBackingInfoVmDisk) bool { return v.IsMigrationInProgress }).(pulumi.BoolOutput)
+}
+
+func (o GetOvaV2VmConfigDiskBackingInfoVmDiskOutput) SerialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvaV2VmConfigDiskBackingInfoVmDisk) string { return v.SerialId }).(pulumi.StringOutput)
 }
 
 // Storage configuration for VM disks
@@ -13510,6 +18222,10 @@ type GetOvasV2OvaVmConfig struct {
 	StorageConfigs         []GetOvasV2OvaVmConfigStorageConfig         `pulumi:"storageConfigs"`
 	UpdateTime             string                                      `pulumi:"updateTime"`
 	VtpmConfigs            []GetOvasV2OvaVmConfigVtpmConfig            `pulumi:"vtpmConfigs"`
+	// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+	WaitForIpRoutable *bool `pulumi:"waitForIpRoutable"`
+	// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+	WaitForIpTimeout *int `pulumi:"waitForIpTimeout"`
 }
 
 // GetOvasV2OvaVmConfigInput is an input type that accepts GetOvasV2OvaVmConfigArgs and GetOvasV2OvaVmConfigOutput values.
@@ -13572,6 +18288,10 @@ type GetOvasV2OvaVmConfigArgs struct {
 	StorageConfigs         GetOvasV2OvaVmConfigStorageConfigArrayInput         `pulumi:"storageConfigs"`
 	UpdateTime             pulumi.StringInput                                  `pulumi:"updateTime"`
 	VtpmConfigs            GetOvasV2OvaVmConfigVtpmConfigArrayInput            `pulumi:"vtpmConfigs"`
+	// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+	WaitForIpRoutable pulumi.BoolPtrInput `pulumi:"waitForIpRoutable"`
+	// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+	WaitForIpTimeout pulumi.IntPtrInput `pulumi:"waitForIpTimeout"`
 }
 
 func (GetOvasV2OvaVmConfigArgs) ElementType() reflect.Type {
@@ -13808,6 +18528,16 @@ func (o GetOvasV2OvaVmConfigOutput) UpdateTime() pulumi.StringOutput {
 
 func (o GetOvasV2OvaVmConfigOutput) VtpmConfigs() GetOvasV2OvaVmConfigVtpmConfigArrayOutput {
 	return o.ApplyT(func(v GetOvasV2OvaVmConfig) []GetOvasV2OvaVmConfigVtpmConfig { return v.VtpmConfigs }).(GetOvasV2OvaVmConfigVtpmConfigArrayOutput)
+}
+
+// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+func (o GetOvasV2OvaVmConfigOutput) WaitForIpRoutable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetOvasV2OvaVmConfig) *bool { return v.WaitForIpRoutable }).(pulumi.BoolPtrOutput)
+}
+
+// Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+func (o GetOvasV2OvaVmConfigOutput) WaitForIpTimeout() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetOvasV2OvaVmConfig) *int { return v.WaitForIpTimeout }).(pulumi.IntPtrOutput)
 }
 
 type GetOvasV2OvaVmConfigArrayOutput struct{ *pulumi.OutputState }
@@ -15348,6 +20078,7 @@ type GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo struct 
 	DiskExtId             string                                                                                `pulumi:"diskExtId"`
 	DiskSizeBytes         int                                                                                   `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress bool                                                                                  `pulumi:"isMigrationInProgress"`
+	SerialId              string                                                                                `pulumi:"serialId"`
 	StorageConfigs        []GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers     []GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer `pulumi:"storageContainers"`
 }
@@ -15368,6 +20099,7 @@ type GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoArgs str
 	DiskExtId             pulumi.StringInput                                                                            `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntInput                                                                               `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolInput                                                                              `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringInput                                                                            `pulumi:"serialId"`
 	StorageConfigs        GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers     GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArrayInput `pulumi:"storageContainers"`
 }
@@ -15443,6 +20175,10 @@ func (o GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoOutpu
 	return o.ApplyT(func(v GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo) bool {
 		return v.IsMigrationInProgress
 	}).(pulumi.BoolOutput)
+}
+
+func (o GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) SerialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo) string { return v.SerialId }).(pulumi.StringOutput)
 }
 
 func (o GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoOutput) StorageConfigs() GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArrayOutput {
@@ -16500,6 +21236,7 @@ type GetOvasV2OvaVmConfigCdRomBackingInfo struct {
 	DiskExtId             string                                                 `pulumi:"diskExtId"`
 	DiskSizeBytes         int                                                    `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress bool                                                   `pulumi:"isMigrationInProgress"`
+	SerialId              string                                                 `pulumi:"serialId"`
 	StorageConfigs        []GetOvasV2OvaVmConfigCdRomBackingInfoStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers     []GetOvasV2OvaVmConfigCdRomBackingInfoStorageContainer `pulumi:"storageContainers"`
 }
@@ -16520,6 +21257,7 @@ type GetOvasV2OvaVmConfigCdRomBackingInfoArgs struct {
 	DiskExtId             pulumi.StringInput                                             `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntInput                                                `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolInput                                               `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringInput                                             `pulumi:"serialId"`
 	StorageConfigs        GetOvasV2OvaVmConfigCdRomBackingInfoStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers     GetOvasV2OvaVmConfigCdRomBackingInfoStorageContainerArrayInput `pulumi:"storageContainers"`
 }
@@ -16591,6 +21329,10 @@ func (o GetOvasV2OvaVmConfigCdRomBackingInfoOutput) DiskSizeBytes() pulumi.IntOu
 
 func (o GetOvasV2OvaVmConfigCdRomBackingInfoOutput) IsMigrationInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetOvasV2OvaVmConfigCdRomBackingInfo) bool { return v.IsMigrationInProgress }).(pulumi.BoolOutput)
+}
+
+func (o GetOvasV2OvaVmConfigCdRomBackingInfoOutput) SerialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvasV2OvaVmConfigCdRomBackingInfo) string { return v.SerialId }).(pulumi.StringOutput)
 }
 
 func (o GetOvasV2OvaVmConfigCdRomBackingInfoOutput) StorageConfigs() GetOvasV2OvaVmConfigCdRomBackingInfoStorageConfigArrayOutput {
@@ -17936,6 +22678,7 @@ type GetOvasV2OvaVmConfigDiskBackingInfoVmDisk struct {
 	DiskExtId             string                                                      `pulumi:"diskExtId"`
 	DiskSizeBytes         int                                                         `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress bool                                                        `pulumi:"isMigrationInProgress"`
+	SerialId              string                                                      `pulumi:"serialId"`
 	StorageConfigs        []GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageConfig    `pulumi:"storageConfigs"`
 	StorageContainers     []GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageContainer `pulumi:"storageContainers"`
 }
@@ -17956,6 +22699,7 @@ type GetOvasV2OvaVmConfigDiskBackingInfoVmDiskArgs struct {
 	DiskExtId             pulumi.StringInput                                                  `pulumi:"diskExtId"`
 	DiskSizeBytes         pulumi.IntInput                                                     `pulumi:"diskSizeBytes"`
 	IsMigrationInProgress pulumi.BoolInput                                                    `pulumi:"isMigrationInProgress"`
+	SerialId              pulumi.StringInput                                                  `pulumi:"serialId"`
 	StorageConfigs        GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageConfigArrayInput    `pulumi:"storageConfigs"`
 	StorageContainers     GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageContainerArrayInput `pulumi:"storageContainers"`
 }
@@ -18027,6 +22771,10 @@ func (o GetOvasV2OvaVmConfigDiskBackingInfoVmDiskOutput) DiskSizeBytes() pulumi.
 
 func (o GetOvasV2OvaVmConfigDiskBackingInfoVmDiskOutput) IsMigrationInProgress() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetOvasV2OvaVmConfigDiskBackingInfoVmDisk) bool { return v.IsMigrationInProgress }).(pulumi.BoolOutput)
+}
+
+func (o GetOvasV2OvaVmConfigDiskBackingInfoVmDiskOutput) SerialId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOvasV2OvaVmConfigDiskBackingInfoVmDisk) string { return v.SerialId }).(pulumi.StringOutput)
 }
 
 func (o GetOvasV2OvaVmConfigDiskBackingInfoVmDiskOutput) StorageConfigs() GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageConfigArrayOutput {
@@ -49096,3839 +53844,81 @@ func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudI
 	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigOutput)
 }
 
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript struct {
-	CustomKeyValues []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue `pulumi:"customKeyValues"`
-	UserDatas       []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData       `pulumi:"userDatas"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArgs struct {
-	CustomKeyValues GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayInput `pulumi:"customKeyValues"`
-	UserDatas       GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayInput       `pulumi:"userDatas"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArray and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArray{ GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArray []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput) CustomKeyValues() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript) []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue {
-		return v.CustomKeyValues
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput) UserDatas() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript) []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData {
-		return v.UserDatas
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScript)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue struct {
-	KeyValuePairs []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair `pulumi:"keyValuePairs"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArgs struct {
-	KeyValuePairs GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayInput `pulumi:"keyValuePairs"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArray and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArray{ GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArray []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput) KeyValuePairs() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue) []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair {
-		return v.KeyValuePairs
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValue)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair struct {
-	Name   string                                                                                                                            `pulumi:"name"`
-	Values []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue `pulumi:"values"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArgs struct {
-	Name   pulumi.StringInput                                                                                                                        `pulumi:"name"`
-	Values GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayInput `pulumi:"values"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArray and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArray{ GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArray []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair) string {
-		return v.Name
-	}).(pulumi.StringOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput) Values() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair) []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue {
-		return v.Values
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePair)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue struct {
-	Boolean      bool                                                                                                                                         `pulumi:"boolean"`
-	Integer      int                                                                                                                                          `pulumi:"integer"`
-	IntegerLists []int                                                                                                                                        `pulumi:"integerLists"`
-	MapOfStrings []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString `pulumi:"mapOfStrings"`
-	Object       map[string]string                                                                                                                            `pulumi:"object"`
-	String       string                                                                                                                                       `pulumi:"string"`
-	StringLists  []string                                                                                                                                     `pulumi:"stringLists"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArgs struct {
-	Boolean      pulumi.BoolInput                                                                                                                                     `pulumi:"boolean"`
-	Integer      pulumi.IntInput                                                                                                                                      `pulumi:"integer"`
-	IntegerLists pulumi.IntArrayInput                                                                                                                                 `pulumi:"integerLists"`
-	MapOfStrings GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayInput `pulumi:"mapOfStrings"`
-	Object       pulumi.StringMapInput                                                                                                                                `pulumi:"object"`
-	String       pulumi.StringInput                                                                                                                                   `pulumi:"string"`
-	StringLists  pulumi.StringArrayInput                                                                                                                              `pulumi:"stringLists"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArray and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArray{ GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArray []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) Boolean() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue) bool {
-		return v.Boolean
-	}).(pulumi.BoolOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) Integer() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue) int {
-		return v.Integer
-	}).(pulumi.IntOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) IntegerLists() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue) []int {
-		return v.IntegerLists
-	}).(pulumi.IntArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) MapOfStrings() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue) []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
-		return v.MapOfStrings
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) Object() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue) map[string]string {
-		return v.Object
-	}).(pulumi.StringMapOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) String() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue) string {
-		return v.String
-	}).(pulumi.StringOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput) StringLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue) []string {
-		return v.StringLists
-	}).(pulumi.StringArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValue)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString struct {
-	Map map[string]string `pulumi:"map"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArgs struct {
-	Map pulumi.StringMapInput `pulumi:"map"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArray and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArray{ GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArray []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput) Map() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString) map[string]string {
-		return v.Map
-	}).(pulumi.StringMapOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfString)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData struct {
-	Value string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArray and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArray{ GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArray []GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserData)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfo struct {
-	ProviderType     string `pulumi:"providerType"`
-	ProvisioningType string `pulumi:"provisioningType"`
-	Type             string `pulumi:"type"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoArgs struct {
-	ProviderType     pulumi.StringInput `pulumi:"providerType"`
-	ProvisioningType pulumi.StringInput `pulumi:"provisioningType"`
-	Type             pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfo)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfo)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput) ProviderType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfo) string {
-		return v.ProviderType
-	}).(pulumi.StringOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput) ProvisioningType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfo) string {
-		return v.ProvisioningType
-	}).(pulumi.StringOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfo) string {
-		return v.Type
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfo struct {
-	Version string `pulumi:"version"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoArgs struct {
-	Version pulumi.StringInput `pulumi:"version"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfo)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfo)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput) Version() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfo) string { return v.Version }).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigCredential struct {
-	Password string `pulumi:"password"`
-	Username string `pulumi:"username"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArgs struct {
-	Password pulumi.StringInput `pulumi:"password"`
-	Username pulumi.StringInput `pulumi:"username"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigCredential)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArray and GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArray{ GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArray []GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigCredential)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigCredential)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigCredential) string { return v.Password }).(pulumi.StringOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigCredential) string { return v.Username }).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigCredential)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerConfigCredential {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerConfigCredential)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig struct {
-	ContainerExtIds   []string `pulumi:"containerExtIds"`
-	DataDiskSizeBytes int      `pulumi:"dataDiskSizeBytes"`
-	MemorySizeBytes   int      `pulumi:"memorySizeBytes"`
-	NumVcpus          int      `pulumi:"numVcpus"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArgs and GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArgs struct {
-	ContainerExtIds   pulumi.StringArrayInput `pulumi:"containerExtIds"`
-	DataDiskSizeBytes pulumi.IntInput         `pulumi:"dataDiskSizeBytes"`
-	MemorySizeBytes   pulumi.IntInput         `pulumi:"memorySizeBytes"`
-	NumVcpus          pulumi.IntInput         `pulumi:"numVcpus"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArgs) ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArray and GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArray{ GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArray []GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArray) ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput) ContainerExtIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig) []string {
-		return v.ContainerExtIds
-	}).(pulumi.StringArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput) DataDiskSizeBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig) int {
-		return v.DataDiskSizeBytes
-	}).(pulumi.IntOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput) MemorySizeBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig) int {
-		return v.MemorySizeBytes
-	}).(pulumi.IntOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput) NumVcpus() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig) int { return v.NumVcpus }).(pulumi.IntOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfig)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetwork struct {
-	ExternalAddress  *GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress  `pulumi:"externalAddress"`
-	ExternalNetworks []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork `pulumi:"externalNetworks"`
-	Fqdn             string                                                                `pulumi:"fqdn"`
-	InternalNetworks GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworks  `pulumi:"internalNetworks"`
-	NameServers      []GetPcRestorePointsV2RestorePointDomainManagerNetworkNameServer      `pulumi:"nameServers"`
-	NtpServers       []GetPcRestorePointsV2RestorePointDomainManagerNetworkNtpServer       `pulumi:"ntpServers"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkArgs struct {
-	ExternalAddress  GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrInput   `pulumi:"externalAddress"`
-	ExternalNetworks GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayInput `pulumi:"externalNetworks"`
-	Fqdn             pulumi.StringInput                                                            `pulumi:"fqdn"`
-	InternalNetworks GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksInput     `pulumi:"internalNetworks"`
-	NameServers      GetPcRestorePointsV2RestorePointDomainManagerNetworkNameServerArrayInput      `pulumi:"nameServers"`
-	NtpServers       GetPcRestorePointsV2RestorePointDomainManagerNetworkNtpServerArrayInput       `pulumi:"ntpServers"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetwork)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkArray and GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkArray{ GetPcRestorePointsV2RestorePointDomainManagerNetworkArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkArray []GetPcRestorePointsV2RestorePointDomainManagerNetworkInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetwork)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetwork)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) ExternalAddress() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetwork) *GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress {
-		return v.ExternalAddress
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) ExternalNetworks() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetwork) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork {
-		return v.ExternalNetworks
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) Fqdn() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetwork) string { return v.Fqdn }).(pulumi.StringOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) InternalNetworks() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetwork) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworks {
-		return v.InternalNetworks
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) NameServers() GetPcRestorePointsV2RestorePointDomainManagerNetworkNameServerArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetwork) []GetPcRestorePointsV2RestorePointDomainManagerNetworkNameServer {
-		return v.NameServers
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkNameServerArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput) NtpServers() GetPcRestorePointsV2RestorePointDomainManagerNetworkNtpServerArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetwork) []GetPcRestorePointsV2RestorePointDomainManagerNetworkNtpServer {
-		return v.NtpServers
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkNtpServerArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetwork)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetwork {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetwork)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress struct {
-	Ipv4s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs struct {
-	Ipv4s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput)
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput).ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(ctx)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs, GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtr and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrInput` via:
-//
-//	        GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs{...}
-//
-//	or:
-//
-//	        nil
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput
-}
-
-type getPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrType GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs
-
-func GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtr(v *GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrInput {
-	return (*getPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrType)(v)
-}
-
-func (*getPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress)(nil)).Elem()
-}
-
-func (i *getPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrType) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(context.Background())
-}
-
-func (i *getPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrType) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return o.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(context.Background())
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress) *GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress {
-		return &v
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4 {
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6 {
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput) Elem() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput {
-	return o.ApplyT(func(v *GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress {
-		if v != nil {
-			return *v
-		}
-		var ret GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress
-		return ret
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput {
-	return o.ApplyT(func(v *GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4 {
-		if v == nil {
-			return nil
-		}
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput {
-	return o.ApplyT(func(v *GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddress) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6 {
-		if v == nil {
-			return nil
-		}
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork struct {
-	DefaultGateway GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGateway `pulumi:"defaultGateway"`
-	IpRanges       []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange      `pulumi:"ipRanges"`
-	NetworkExtId   string                                                                            `pulumi:"networkExtId"`
-	SubnetMask     GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMask     `pulumi:"subnetMask"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArgs struct {
-	DefaultGateway GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayInput `pulumi:"defaultGateway"`
-	IpRanges       GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayInput   `pulumi:"ipRanges"`
-	NetworkExtId   pulumi.StringInput                                                                     `pulumi:"networkExtId"`
-	SubnetMask     GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskInput     `pulumi:"subnetMask"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArray and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArray{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArray []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput) DefaultGateway() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGateway {
-		return v.DefaultGateway
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput) IpRanges() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange {
-		return v.IpRanges
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput) NetworkExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork) string {
-		return v.NetworkExtId
-	}).(pulumi.StringOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput) SubnetMask() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMask {
-		return v.SubnetMask
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetwork)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGateway struct {
-	Fqdns []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn `pulumi:"fqdns"`
-	Ipv4s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayArgs struct {
-	Fqdns GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayInput `pulumi:"fqdns"`
-	Ipv4s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGateway)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGateway)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput) Fqdns() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGateway) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn {
-		return v.Fqdns
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGateway) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4 {
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGateway) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6 {
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn struct {
-	Value string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArray and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArray{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArray []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdn)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange struct {
-	Begin GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBegin `pulumi:"begin"`
-	End   GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEnd   `pulumi:"end"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArgs struct {
-	Begin GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginInput `pulumi:"begin"`
-	End   GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndInput   `pulumi:"end"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArray and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArray{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArray []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput) Begin() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBegin {
-		return v.Begin
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput) End() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEnd {
-		return v.End
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRange)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBegin struct {
-	Ipv4s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginArgs struct {
-	Ipv4s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBegin)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBegin)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBegin) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4 {
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBegin) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6 {
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEnd struct {
-	Ipv4s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndArgs struct {
-	Ipv4s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEnd)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEnd)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEnd) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4 {
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEnd) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6 {
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMask struct {
-	Fqdns []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn `pulumi:"fqdns"`
-	Ipv4s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskArgs struct {
-	Fqdns GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayInput `pulumi:"fqdns"`
-	Ipv4s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMask)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMask)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput) Fqdns() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMask) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn {
-		return v.Fqdns
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMask) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4 {
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMask) []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6 {
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn struct {
-	Value string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArray and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArray{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArray []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdn)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworks struct {
-	DefaultGateway GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGateway `pulumi:"defaultGateway"`
-	IpRanges       []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange      `pulumi:"ipRanges"`
-	SubnetMask     GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksSubnetMask     `pulumi:"subnetMask"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksArgs struct {
-	DefaultGateway GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayInput `pulumi:"defaultGateway"`
-	IpRanges       GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayInput   `pulumi:"ipRanges"`
-	SubnetMask     GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksSubnetMaskInput     `pulumi:"subnetMask"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworks)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworks)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput) DefaultGateway() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworks) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGateway {
-		return v.DefaultGateway
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput) IpRanges() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworks) []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange {
-		return v.IpRanges
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput) SubnetMask() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksSubnetMaskOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworks) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksSubnetMask {
-		return v.SubnetMask
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksSubnetMaskOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGateway struct {
-	Fqdns []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn `pulumi:"fqdns"`
-	Ipv4s []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayArgs struct {
-	Fqdns GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayInput `pulumi:"fqdns"`
-	Ipv4s GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGateway)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGateway)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput) Fqdns() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGateway) []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn {
-		return v.Fqdns
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGateway) []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4 {
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGateway) []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6 {
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn struct {
-	Value string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs struct {
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArray and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArray{ GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArray []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdn)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange struct {
-	Begin GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBegin `pulumi:"begin"`
-	End   GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEnd   `pulumi:"end"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArgs struct {
-	Begin GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginInput `pulumi:"begin"`
-	End   GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndInput   `pulumi:"end"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArray and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArray{ GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArgs{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArray []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeInput
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArray) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput) Begin() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBegin {
-		return v.Begin
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput) End() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEnd {
-		return v.End
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRange)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBegin struct {
-	Ipv4s []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginArgs struct {
-	Ipv4s GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBegin)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBegin)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBegin) []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4 {
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBegin) []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6 {
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6 struct {
-	PrefixLength *int   `pulumi:"prefixLength"`
-	Value        string `pulumi:"value"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Input is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Args and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Input` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Args{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Input interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6OutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Args struct {
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	Value        pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6OutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Args) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output)
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Array and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Array{ GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Args{...} }
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Array []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Input
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Array) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Array) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6OutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6) *int {
-		return v.PrefixLength
-	}).(pulumi.IntPtrOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6) string {
-		return v.Value
-	}).(pulumi.StringOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput) Index(i pulumi.IntInput) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6 {
-		return vs[0].([]GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6)[vs[1].(int)]
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEnd struct {
-	Ipv4s []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv4 `pulumi:"ipv4s"`
-	Ipv6s []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv6 `pulumi:"ipv6s"`
-}
-
-// GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndInput is an input type that accepts GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndArgs and GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput values.
-// You can construct a concrete instance of `GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndInput` via:
-//
-//	GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndArgs{...}
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndInput interface {
-	pulumi.Input
-
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput
-	ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutputWithContext(context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndArgs struct {
-	Ipv4s GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv4ArrayInput `pulumi:"ipv4s"`
-	Ipv6s GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv6ArrayInput `pulumi:"ipv6s"`
-}
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEnd)(nil)).Elem()
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput {
-	return i.ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutputWithContext(context.Background())
-}
-
-func (i GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndArgs) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput)
-}
-
-type GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput struct{ *pulumi.OutputState }
-
-func (GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEnd)(nil)).Elem()
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput) ToGetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutputWithContext(ctx context.Context) GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput {
-	return o
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput) Ipv4s() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv4ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEnd) []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv4 {
-		return v.Ipv4s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv4ArrayOutput)
-}
-
-func (o GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput) Ipv6s() GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv6ArrayOutput {
-	return o.ApplyT(func(v GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEnd) []GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv6 {
-		return v.Ipv6s
-	}).(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndIpv6ArrayOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationV2AssociatedEndpointListInput)(nil)).Elem(), GetOperationV2AssociatedEndpointListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationV2AssociatedEndpointListArrayInput)(nil)).Elem(), GetOperationV2AssociatedEndpointListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationInput)(nil)).Elem(), GetOperationsV2OperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationArrayInput)(nil)).Elem(), GetOperationsV2OperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationAssociatedEndpointListInput)(nil)).Elem(), GetOperationsV2OperationAssociatedEndpointListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationAssociatedEndpointListArrayInput)(nil)).Elem(), GetOperationsV2OperationAssociatedEndpointListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumInput)(nil)).Elem(), GetOvaV2ChecksumArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumArrayInput)(nil)).Elem(), GetOvaV2ChecksumArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumOvaSha1ChecksumInput)(nil)).Elem(), GetOvaV2ChecksumOvaSha1ChecksumArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumOvaSha1ChecksumArrayInput)(nil)).Elem(), GetOvaV2ChecksumOvaSha1ChecksumArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumOvaSha256ChecksumInput)(nil)).Elem(), GetOvaV2ChecksumOvaSha256ChecksumArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumOvaSha256ChecksumArrayInput)(nil)).Elem(), GetOvaV2ChecksumOvaSha256ChecksumArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByInput)(nil)).Elem(), GetOvaV2CreatedByArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByArrayInput)(nil)).Elem(), GetOvaV2CreatedByArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeArrayInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueArrayInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyInput)(nil)).Elem(), GetOvaV2CreatedByBucketsAccessKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyArrayInput)(nil)).Elem(), GetOvaV2CreatedByBucketsAccessKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyLinkInput)(nil)).Elem(), GetOvaV2CreatedByBucketsAccessKeyLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput)(nil)).Elem(), GetOvaV2CreatedByBucketsAccessKeyLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByLinkInput)(nil)).Elem(), GetOvaV2CreatedByLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByLinkArrayInput)(nil)).Elem(), GetOvaV2CreatedByLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2LinkInput)(nil)).Elem(), GetOvaV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2LinkArrayInput)(nil)).Elem(), GetOvaV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceInput)(nil)).Elem(), GetOvaV2SourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceArrayInput)(nil)).Elem(), GetOvaV2SourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceObjectLiteSourceInput)(nil)).Elem(), GetOvaV2SourceObjectLiteSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceObjectLiteSourceArrayInput)(nil)).Elem(), GetOvaV2SourceObjectLiteSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceInput)(nil)).Elem(), GetOvaV2SourceOvaUrlSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceArrayInput)(nil)).Elem(), GetOvaV2SourceOvaUrlSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceBasicAuthInput)(nil)).Elem(), GetOvaV2SourceOvaUrlSourceBasicAuthArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput)(nil)).Elem(), GetOvaV2SourceOvaUrlSourceBasicAuthArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaVmSourceInput)(nil)).Elem(), GetOvaV2SourceOvaVmSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaVmSourceArrayInput)(nil)).Elem(), GetOvaV2SourceOvaVmSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigInput)(nil)).Elem(), GetOvaV2VmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigArrayInput)(nil)).Elem(), GetOvaV2VmConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigApcConfigInput)(nil)).Elem(), GetOvaV2VmConfigApcConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigApcConfigArrayInput)(nil)).Elem(), GetOvaV2VmConfigApcConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigApcConfigCpuModelInput)(nil)).Elem(), GetOvaV2VmConfigApcConfigCpuModelArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigApcConfigCpuModelArrayInput)(nil)).Elem(), GetOvaV2VmConfigApcConfigCpuModelArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigAvailabilityZoneInput)(nil)).Elem(), GetOvaV2VmConfigAvailabilityZoneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigAvailabilityZoneArrayInput)(nil)).Elem(), GetOvaV2VmConfigAvailabilityZoneArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicArgs{})
@@ -53812,76 +54802,80 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Input)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Array{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndInput)(nil)).Elem(), GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndArgs{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output{})
+	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output{})
+	pulumi.RegisterOutputType(GetOperationV2AssociatedEndpointListOutput{})
+	pulumi.RegisterOutputType(GetOperationV2AssociatedEndpointListArrayOutput{})
+	pulumi.RegisterOutputType(GetOperationsV2OperationOutput{})
+	pulumi.RegisterOutputType(GetOperationsV2OperationArrayOutput{})
+	pulumi.RegisterOutputType(GetOperationsV2OperationAssociatedEndpointListOutput{})
+	pulumi.RegisterOutputType(GetOperationsV2OperationAssociatedEndpointListArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2ChecksumOutput{})
+	pulumi.RegisterOutputType(GetOvaV2ChecksumArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2ChecksumOvaSha1ChecksumOutput{})
+	pulumi.RegisterOutputType(GetOvaV2ChecksumOvaSha1ChecksumArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2ChecksumOvaSha256ChecksumOutput{})
+	pulumi.RegisterOutputType(GetOvaV2ChecksumOvaSha256ChecksumArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeValueOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeValueArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByBucketsAccessKeyOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByBucketsAccessKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByBucketsAccessKeyLinkOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByLinkOutput{})
+	pulumi.RegisterOutputType(GetOvaV2CreatedByLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2LinkOutput{})
+	pulumi.RegisterOutputType(GetOvaV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceObjectLiteSourceOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceObjectLiteSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceOvaUrlSourceOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceOvaUrlSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceOvaUrlSourceBasicAuthOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceOvaVmSourceOutput{})
+	pulumi.RegisterOutputType(GetOvaV2SourceOvaVmSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigApcConfigOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigApcConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigApcConfigCpuModelOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigApcConfigCpuModelArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigAvailabilityZoneOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigAvailabilityZoneArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput{})
+	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput{})
 	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressOutput{})
 	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput{})
 	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicOutput{})
@@ -54765,74 +55759,4 @@ func init() {
 	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigOutput{})
 	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigOutput{})
 	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptCustomKeyValueKeyValuePairValueMapOfStringArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigCloudInitConfigCloudInitScriptUserDataArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBootstrapConfigEnvironmentInfoOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigBuildInfoOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigCredentialArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerConfigResourceConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressPtrOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalAddressIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayFqdnArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkDefaultGatewayIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeBeginIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkIpRangeEndIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskFqdnArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkExternalNetworkSubnetMaskIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayFqdnArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksDefaultGatewayIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv4ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6Output{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeBeginIpv6ArrayOutput{})
-	pulumi.RegisterOutputType(GetPcRestorePointsV2RestorePointDomainManagerNetworkInternalNetworksIpRangeEndOutput{})
 }

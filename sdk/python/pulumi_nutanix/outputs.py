@@ -30,6 +30,7 @@ __all__ = [
     'AccessControlPolicyUserReferenceList',
     'AdGroupCategoryMappingV2AdInfo',
     'AdGroupCategoryMappingV2Link',
+    'AddDomainV2Link',
     'AddressGroupIpAddressBlockList',
     'AddressGroupsV2IpRange',
     'AddressGroupsV2Ipv4Address',
@@ -495,6 +496,12 @@ __all__ = [
     'LcmPrechecksV2ManagementServer',
     'LcmUpgradeV2EntityUpdateSpec',
     'LcmUpgradeV2ManagementServer',
+    'LocalDomainV2ConnectionStatus',
+    'LocalDomainV2ConnectionStatusServiceStatus',
+    'LocalDomainV2Credentials',
+    'LocalDomainV2Location',
+    'LocalDomainV2LocationCoordinate',
+    'LocalDomainV2RegistrationStatus',
     'NdbCloneActionargument',
     'NdbCloneDatabaseNode',
     'NdbCloneDatabaseNodeInfo',
@@ -1468,6 +1475,11 @@ __all__ = [
     'RecoveryPointsV2VolumeGroupRecoveryPoint',
     'RecoveryPointsV2VolumeGroupRecoveryPointDiskRecoveryPoint',
     'RecoveryPointsV2VolumeGroupRecoveryPointLink',
+    'RegisteredDomainV2Link',
+    'RegisteredDomainV2PlatformData',
+    'RegisteredDomainV2RegistrationConfig',
+    'RegisteredDomainV2RegistrationConfigCredentials',
+    'RegisteredDomainV2Tunnel',
     'ResourceGroupV2Link',
     'ResourceGroupV2PlacementTarget',
     'ResourceGroupV2PlacementTargetStorageContainer',
@@ -1832,6 +1844,24 @@ __all__ = [
     'TemplateV2UpdatedByAdditionalAttribute',
     'TemplateV2UpdatedByAdditionalAttributeValue',
     'TemplateV2UpdatedByAdditionalAttributeValueMapOfString',
+    'TenantDomainAllocationV2ExternalNetworkConfig',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfig',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfigNat',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat',
+    'TenantDomainAllocationV2ExternalNetworkConfigStateInfo',
+    'TenantDomainAllocationV2Link',
+    'TenantDomainAllocationV2Project',
+    'TenantDomainAllocationV2ProjectQuota',
+    'TenantDomainAllocationV2ProjectResourceGroup',
+    'TenantDomainAllocationV2ProjectResourceGroupPlacementTarget',
+    'TenantDomainAllocationV2StateInfo',
+    'TenantMembershipV2IdentityDetails',
+    'TenantMembershipV2Link',
+    'TenantMembershipV2StateInfo',
+    'TenantV2AdminInfo',
+    'TenantV2AggregatedQuota',
+    'TenantV2Link',
+    'TenantV2StateInfo',
     'UserAccessControlPolicyReferenceList',
     'UserCategory',
     'UserDirectoryServiceUser',
@@ -2556,6 +2586,8 @@ __all__ = [
     'GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserConfigurationResult',
     'GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserGroupConfigurationResult',
     'GetDirectoryServicesV2DirectoryServiceServiceAccountResult',
+    'GetDomainsV2DomainResult',
+    'GetDomainsV2DomainLinkResult',
     'GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicyResult',
     'GetEntityGroupV2AllowedConfigResult',
     'GetEntityGroupV2AllowedConfigEntityResult',
@@ -2999,6 +3031,14 @@ __all__ = [
     'GetLcmStatusV2FrameworkVersionResult',
     'GetLcmStatusV2InProgressOperationResult',
     'GetLcmStatusV2LinkResult',
+    'GetLocalDomainV2ConnectionStatusResult',
+    'GetLocalDomainV2ConnectionStatusServiceStatusResult',
+    'GetLocalDomainV2LocationResult',
+    'GetLocalDomainV2LocationCoordinateResult',
+    'GetLocalDomainV2RegistrationStatusResult',
+    'GetLocationsV2LocationResult',
+    'GetLocationsV2LocationCoordinateResult',
+    'GetLocationsV2LocationLinkResult',
     'GetNdbCloneDatabaseNodeResult',
     'GetNdbCloneDatabaseNodeInfoResult',
     'GetNdbCloneDatabaseNodePropertyResult',
@@ -4297,6 +4337,17 @@ __all__ = [
     'GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointResult',
     'GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointDiskRecoveryPointResult',
     'GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointLinkResult',
+    'GetRegisteredDomainV2LinkResult',
+    'GetRegisteredDomainV2PlatformDataResult',
+    'GetRegisteredDomainV2RegistrationConfigResult',
+    'GetRegisteredDomainV2RegistrationConfigCredentialResult',
+    'GetRegisteredDomainV2TunnelResult',
+    'GetRegisteredDomainsV2RegisteredDomainResult',
+    'GetRegisteredDomainsV2RegisteredDomainLinkResult',
+    'GetRegisteredDomainsV2RegisteredDomainPlatformDataResult',
+    'GetRegisteredDomainsV2RegisteredDomainRegistrationConfigResult',
+    'GetRegisteredDomainsV2RegisteredDomainRegistrationConfigCredentialResult',
+    'GetRegisteredDomainsV2RegisteredDomainTunnelResult',
     'GetResourceGroupV2CapabilityResult',
     'GetResourceGroupV2LinkResult',
     'GetResourceGroupV2PlacementTargetResult',
@@ -5108,6 +5159,45 @@ __all__ = [
     'GetTemplatesV2TemplateUpdatedByAdditionalAttributeResult',
     'GetTemplatesV2TemplateUpdatedByAdditionalAttributeValueResult',
     'GetTemplatesV2TemplateUpdatedByAdditionalAttributeValueMapOfStringResult',
+    'GetTenantDomainAllocationV2ExternalNetworkConfigResult',
+    'GetTenantDomainAllocationV2ExternalNetworkConfigConfigResult',
+    'GetTenantDomainAllocationV2ExternalNetworkConfigConfigNatResult',
+    'GetTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatResult',
+    'GetTenantDomainAllocationV2ExternalNetworkConfigStateInfoResult',
+    'GetTenantDomainAllocationV2LinkResult',
+    'GetTenantDomainAllocationV2ProjectResult',
+    'GetTenantDomainAllocationV2ProjectQuotaResult',
+    'GetTenantDomainAllocationV2ProjectResourceGroupResult',
+    'GetTenantDomainAllocationV2ProjectResourceGroupPlacementTargetResult',
+    'GetTenantDomainAllocationV2StateInfoResult',
+    'GetTenantDomainAllocationsV2DomainAllocationResult',
+    'GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigResult',
+    'GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigResult',
+    'GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNatResult',
+    'GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNoNatResult',
+    'GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigStateInfoResult',
+    'GetTenantDomainAllocationsV2DomainAllocationLinkResult',
+    'GetTenantDomainAllocationsV2DomainAllocationProjectResult',
+    'GetTenantDomainAllocationsV2DomainAllocationProjectQuotaResult',
+    'GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupResult',
+    'GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupPlacementTargetResult',
+    'GetTenantDomainAllocationsV2DomainAllocationStateInfoResult',
+    'GetTenantMembershipV2IdentityDetailResult',
+    'GetTenantMembershipV2LinkResult',
+    'GetTenantMembershipV2StateInfoResult',
+    'GetTenantMembershipsV2MembershipResult',
+    'GetTenantMembershipsV2MembershipIdentityDetailResult',
+    'GetTenantMembershipsV2MembershipLinkResult',
+    'GetTenantMembershipsV2MembershipStateInfoResult',
+    'GetTenantV2AdminInfoResult',
+    'GetTenantV2AggregatedQuotaResult',
+    'GetTenantV2LinkResult',
+    'GetTenantV2StateInfoResult',
+    'GetTenantsV2TenantResult',
+    'GetTenantsV2TenantAdminInfoResult',
+    'GetTenantsV2TenantAggregatedQuotaResult',
+    'GetTenantsV2TenantLinkResult',
+    'GetTenantsV2TenantStateInfoResult',
     'GetUserAccessControlPolicyReferenceListResult',
     'GetUserCategoryResult',
     'GetUserDirectoryServiceUserResult',
@@ -6300,6 +6390,27 @@ class AdGroupCategoryMappingV2AdInfo(dict):
 
 @pulumi.output_type
 class AdGroupCategoryMappingV2Link(dict):
+    def __init__(__self__, *,
+                 href: Optional[_builtins.str] = None,
+                 rel: Optional[_builtins.str] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class AddDomainV2Link(dict):
     def __init__(__self__, *,
                  href: Optional[_builtins.str] = None,
                  rel: Optional[_builtins.str] = None):
@@ -8662,10 +8773,16 @@ class ClusterProfileV2Cluster(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 config_drifts: Optional[_builtins.str] = None,
+                 config_drifts: Optional[Sequence[_builtins.str]] = None,
                  ext_id: Optional[_builtins.str] = None,
                  is_compliant: Optional[_builtins.bool] = None,
                  last_synced_time: Optional[_builtins.str] = None):
+        """
+        :param Sequence[_builtins.str] config_drifts: - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+        :param _builtins.str ext_id: - Cluster UUID.
+        :param _builtins.bool is_compliant: - Whether the cluster complies with the profile.
+        :param _builtins.str last_synced_time: - Last synchronization time.
+        """
         if config_drifts is not None:
             pulumi.set(__self__, "config_drifts", config_drifts)
         if ext_id is not None:
@@ -8677,22 +8794,34 @@ class ClusterProfileV2Cluster(dict):
 
     @_builtins.property
     @pulumi.getter(name="configDrifts")
-    def config_drifts(self) -> Optional[_builtins.str]:
+    def config_drifts(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+        """
         return pulumi.get(self, "config_drifts")
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[_builtins.str]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
     @pulumi.getter(name="isCompliant")
     def is_compliant(self) -> Optional[_builtins.bool]:
+        """
+        - Whether the cluster complies with the profile.
+        """
         return pulumi.get(self, "is_compliant")
 
     @_builtins.property
     @pulumi.getter(name="lastSyncedTime")
     def last_synced_time(self) -> Optional[_builtins.str]:
+        """
+        - Last synchronization time.
+        """
         return pulumi.get(self, "last_synced_time")
 
 
@@ -9750,6 +9879,7 @@ class ClusterProfileV2RsyslogServerList(dict):
                | RELP      | RELP protocol      |
         :param _builtins.int port: Port number for the RSYSLOG server.
         :param _builtins.str server_name: Name of the RSYSLOG server.
+        :param _builtins.str ext_id: - Cluster UUID.
         :param Sequence['ClusterProfileV2RsyslogServerListModuleArgs'] modules: List of modules for the RSYSLOG server. Each module object supports:
         """
         pulumi.set(__self__, "ip_address", ip_address)
@@ -9806,6 +9936,9 @@ class ClusterProfileV2RsyslogServerList(dict):
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[_builtins.str]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -10432,6 +10565,7 @@ class ClusterProfileV2SnmpConfig(dict):
                  traps: Optional[Sequence['outputs.ClusterProfileV2SnmpConfigTrap']] = None,
                  users: Optional[Sequence['outputs.ClusterProfileV2SnmpConfigUser']] = None):
         """
+        :param _builtins.str ext_id: - Cluster UUID.
         :param _builtins.bool is_enabled: SNMP status. Whether SNMP is enabled.
         :param Sequence['ClusterProfileV2SnmpConfigTransportArgs'] transports: SNMP transport details. Each transport object supports:
         :param Sequence['ClusterProfileV2SnmpConfigTrapArgs'] traps: SNMP trap details. Each trap object supports:
@@ -10455,6 +10589,9 @@ class ClusterProfileV2SnmpConfig(dict):
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[_builtins.str]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -10616,6 +10753,7 @@ class ClusterProfileV2SnmpConfigTrap(dict):
                | V3        | V3 SNMP version    |
         :param _builtins.str community_string: Community string (plaintext) for SNMP version 2.0.
         :param _builtins.str engine_id: SNMP engine ID (hexadecimal string, e.g. 0x12345678).
+        :param _builtins.str ext_id: - Cluster UUID.
         :param _builtins.int port: SNMP port.
         :param _builtins.str protocol: SNMP protocol type. Allowed values:
                
@@ -10692,6 +10830,9 @@ class ClusterProfileV2SnmpConfigTrap(dict):
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[_builtins.str]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -10949,6 +11090,7 @@ class ClusterProfileV2SnmpConfigUser(dict):
                | SHA384    | SHA-384 SNMP authentication  |
                | SHA512    | SHA-512 SNMP authentication  |
         :param _builtins.str username: SNMP username. Required for SNMP trap v3 version.
+        :param _builtins.str ext_id: - Cluster UUID.
         :param _builtins.str priv_key: SNMP user encryption key (must not contain single quotes).
         :param _builtins.str priv_type: SNMP user encryption type. Allowed values:
                
@@ -11009,6 +11151,9 @@ class ClusterProfileV2SnmpConfigUser(dict):
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> Optional[_builtins.str]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @_builtins.property
@@ -20207,7 +20352,8 @@ class DirectoryServicesV2ServiceAccount(dict):
                  password: _builtins.str,
                  username: _builtins.str):
         """
-        :param _builtins.str password: -(Required) Password to connect to the Directory Service.
+        :param _builtins.str password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Password to connect to the Directory Service.
         :param _builtins.str username: -(Required) Username to connect to the Directory Service.
         """
         pulumi.set(__self__, "password", password)
@@ -20217,7 +20363,8 @@ class DirectoryServicesV2ServiceAccount(dict):
     @pulumi.getter
     def password(self) -> _builtins.str:
         """
-        -(Required) Password to connect to the Directory Service.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Password to connect to the Directory Service.
         """
         return pulumi.get(self, "password")
 
@@ -20264,6 +20411,8 @@ class EntityGroupV2AllowedConfigEntity(dict):
             suggest = "reference_ext_ids"
         elif key == "referenceString":
             suggest = "reference_string"
+        elif key == "selectBy":
+            suggest = "select_by"
         elif key == "selectedBy":
             suggest = "selected_by"
 
@@ -20286,17 +20435,19 @@ class EntityGroupV2AllowedConfigEntity(dict):
                  match_criteria: Optional[_builtins.str] = None,
                  reference_ext_ids: Optional[Sequence[_builtins.str]] = None,
                  reference_string: Optional[_builtins.str] = None,
+                 select_by: Optional[_builtins.str] = None,
                  selected_by: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None):
         """
         :param 'EntityGroupV2AllowedConfigEntityAddressesArgs' addresses: With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s):
-        :param Sequence[_builtins.str] fqdns: List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+        :param Sequence[_builtins.str] fqdns: List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
         :param 'EntityGroupV2AllowedConfigEntityIpRangesArgs' ip_ranges: With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
         :param Sequence[_builtins.str] kube_entities: List of kube entity identifiers. Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
         :param _builtins.str match_criteria: Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
-        :param Sequence[_builtins.str] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
-        :param _builtins.str reference_string: String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
-        :param _builtins.str selected_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        :param Sequence[_builtins.str] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
+        :param _builtins.str reference_string: String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
+        :param _builtins.str select_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        :param _builtins.str selected_by: Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
         :param _builtins.str type: The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
         """
         if addresses is not None:
@@ -20313,6 +20464,8 @@ class EntityGroupV2AllowedConfigEntity(dict):
             pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
         if reference_string is not None:
             pulumi.set(__self__, "reference_string", reference_string)
+        if select_by is not None:
+            pulumi.set(__self__, "select_by", select_by)
         if selected_by is not None:
             pulumi.set(__self__, "selected_by", selected_by)
         if type is not None:
@@ -20330,7 +20483,7 @@ class EntityGroupV2AllowedConfigEntity(dict):
     @pulumi.getter
     def fqdns(self) -> Optional[Sequence[_builtins.str]]:
         """
-        List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+        List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
         """
         return pulumi.get(self, "fqdns")
 
@@ -20362,7 +20515,7 @@ class EntityGroupV2AllowedConfigEntity(dict):
     @pulumi.getter(name="referenceExtIds")
     def reference_ext_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
-        List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+        List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
         """
         return pulumi.get(self, "reference_ext_ids")
 
@@ -20370,15 +20523,24 @@ class EntityGroupV2AllowedConfigEntity(dict):
     @pulumi.getter(name="referenceString")
     def reference_string(self) -> Optional[_builtins.str]:
         """
-        String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+        String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
         """
         return pulumi.get(self, "reference_string")
 
     @_builtins.property
-    @pulumi.getter(name="selectedBy")
-    def selected_by(self) -> Optional[_builtins.str]:
+    @pulumi.getter(name="selectBy")
+    def select_by(self) -> Optional[_builtins.str]:
         """
         The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        """
+        return pulumi.get(self, "select_by")
+
+    @_builtins.property
+    @pulumi.getter(name="selectedBy")
+    @_utilities.deprecated("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
+    def selected_by(self) -> Optional[_builtins.str]:
+        """
+        Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
         """
         return pulumi.get(self, "selected_by")
 
@@ -20574,6 +20736,8 @@ class EntityGroupV2ExceptConfigEntity(dict):
             suggest = "ip_ranges"
         elif key == "referenceExtIds":
             suggest = "reference_ext_ids"
+        elif key == "selectBy":
+            suggest = "select_by"
         elif key == "selectedBy":
             suggest = "selected_by"
 
@@ -20592,13 +20756,15 @@ class EntityGroupV2ExceptConfigEntity(dict):
                  addresses: Optional['outputs.EntityGroupV2ExceptConfigEntityAddresses'] = None,
                  ip_ranges: Optional['outputs.EntityGroupV2ExceptConfigEntityIpRanges'] = None,
                  reference_ext_ids: Optional[Sequence[_builtins.str]] = None,
+                 select_by: Optional[_builtins.str] = None,
                  selected_by: Optional[_builtins.str] = None,
                  type: Optional[_builtins.str] = None):
         """
         :param 'EntityGroupV2ExceptConfigEntityAddressesArgs' addresses: With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s).
         :param 'EntityGroupV2ExceptConfigEntityIpRangesArgs' ip_ranges: With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s).
-        :param Sequence[_builtins.str] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
-        :param _builtins.str selected_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        :param Sequence[_builtins.str] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
+        :param _builtins.str select_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        :param _builtins.str selected_by: Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
         :param _builtins.str type: The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
         """
         if addresses is not None:
@@ -20607,6 +20773,8 @@ class EntityGroupV2ExceptConfigEntity(dict):
             pulumi.set(__self__, "ip_ranges", ip_ranges)
         if reference_ext_ids is not None:
             pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
+        if select_by is not None:
+            pulumi.set(__self__, "select_by", select_by)
         if selected_by is not None:
             pulumi.set(__self__, "selected_by", selected_by)
         if type is not None:
@@ -20632,15 +20800,24 @@ class EntityGroupV2ExceptConfigEntity(dict):
     @pulumi.getter(name="referenceExtIds")
     def reference_ext_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
-        List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+        List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
         """
         return pulumi.get(self, "reference_ext_ids")
 
     @_builtins.property
-    @pulumi.getter(name="selectedBy")
-    def selected_by(self) -> Optional[_builtins.str]:
+    @pulumi.getter(name="selectBy")
+    def select_by(self) -> Optional[_builtins.str]:
         """
         The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        """
+        return pulumi.get(self, "select_by")
+
+    @_builtins.property
+    @pulumi.getter(name="selectedBy")
+    @_utilities.deprecated("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
+    def selected_by(self) -> Optional[_builtins.str]:
+        """
+        Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
         """
         return pulumi.get(self, "selected_by")
 
@@ -27622,8 +27799,9 @@ class FoundationImageNodesBlockNode(dict):
         :param _builtins.str ipmi_ip: - (Required) IPMI IP address.
         :param _builtins.str ipmi_mac: - IPMI MAC address.
         :param _builtins.str ipmi_netmask: - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
-        :param _builtins.str ipmi_password: - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
-        :param _builtins.str ipmi_user: - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        :param _builtins.str ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
+        :param _builtins.str ipmi_user: - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
         :param _builtins.str ipv6_address: - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
         :param _builtins.str ipv6_interface: - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) ipv6 interface.
         :param _builtins.bool mitigate_low_boot_space: - relocate bootbank files to make space for phoenix files.
@@ -27892,7 +28070,8 @@ class FoundationImageNodesBlockNode(dict):
     @pulumi.getter(name="ipmiPassword")
     def ipmi_password(self) -> Optional[_builtins.str]:
         """
-        - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
         """
         return pulumi.get(self, "ipmi_password")
 
@@ -27900,7 +28079,7 @@ class FoundationImageNodesBlockNode(dict):
     @pulumi.getter(name="ipmiUser")
     def ipmi_user(self) -> Optional[_builtins.str]:
         """
-        - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
         """
         return pulumi.get(self, "ipmi_user")
 
@@ -28495,7 +28674,7 @@ class FoundationImageNodesFcSettings(dict):
         """
         :param 'FoundationImageNodesFcSettingsFcMetadataArgs' fc_metadata: - Foundation Central metadata which will be transferred to the newly imaged node.
                * `fc_metadata.fc_ip` :- IP address of foundation central.
-               * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+               * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
         :param _builtins.bool foundation_central: - If this attribute is set to True, FC workflow will be invoked.
         """
         pulumi.set(__self__, "fc_metadata", fc_metadata)
@@ -28507,7 +28686,7 @@ class FoundationImageNodesFcSettings(dict):
         """
         - Foundation Central metadata which will be transferred to the newly imaged node.
         * `fc_metadata.fc_ip` :- IP address of foundation central.
-        * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+        * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
         """
         return pulumi.get(self, "fc_metadata")
 
@@ -28544,12 +28723,18 @@ class FoundationImageNodesFcSettingsFcMetadata(dict):
     def __init__(__self__, *,
                  api_key: _builtins.str,
                  fc_ip: _builtins.str):
+        """
+        :param _builtins.str api_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        """
         pulumi.set(__self__, "api_key", api_key)
         pulumi.set(__self__, "fc_ip", fc_ip)
 
     @_builtins.property
     @pulumi.getter(name="apiKey")
     def api_key(self) -> _builtins.str:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        """
         return pulumi.get(self, "api_key")
 
     @_builtins.property
@@ -30876,7 +31061,8 @@ class KeyManagementServerV2AccessInformationAzureKeyVault(dict):
                  truncated_client_secret: Optional[_builtins.str] = None):
         """
         :param _builtins.str client_id: - (Required) Client identifier for the Azure Key Vault.
-        :param _builtins.str client_secret: - (Required) Client secret for the Azure Key Vault.
+        :param _builtins.str client_secret: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) Client secret for the Azure Key Vault.
         :param _builtins.str credential_expiry_date: - (Required) When the client secret is going to expire.
         :param _builtins.str endpoint_url: - (Required) Endpoint URL for the Azure Key Vault.
         :param _builtins.str key_id: - (Required) Master key identifier for the Azure Key Vault.
@@ -30903,7 +31089,8 @@ class KeyManagementServerV2AccessInformationAzureKeyVault(dict):
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> _builtins.str:
         """
-        - (Required) Client secret for the Azure Key Vault.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) Client secret for the Azure Key Vault.
         """
         return pulumi.get(self, "client_secret")
 
@@ -30980,10 +31167,13 @@ class KeyManagementServerV2AccessInformationKmipKeyVault(dict):
                  private_key: _builtins.str):
         """
         :param _builtins.str ca_name: - (Required) Name of the CA.
-        :param _builtins.str ca_pem: - (Required) CA PEM.
-        :param _builtins.str cert_pem: - (Required) Cert PEM.
+        :param _builtins.str ca_pem: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) CA PEM.
+        :param _builtins.str cert_pem: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) Cert PEM.
         :param Sequence['KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlArgs'] endpoint_urls: - (Required) Endpoint URL for the Azure Key Vault.
-        :param _builtins.str private_key: - (Required) Private key.
+        :param _builtins.str private_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) Private key.
         """
         pulumi.set(__self__, "ca_name", ca_name)
         pulumi.set(__self__, "ca_pem", ca_pem)
@@ -31003,7 +31193,8 @@ class KeyManagementServerV2AccessInformationKmipKeyVault(dict):
     @pulumi.getter(name="caPem")
     def ca_pem(self) -> _builtins.str:
         """
-        - (Required) CA PEM.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) CA PEM.
         """
         return pulumi.get(self, "ca_pem")
 
@@ -31011,7 +31202,8 @@ class KeyManagementServerV2AccessInformationKmipKeyVault(dict):
     @pulumi.getter(name="certPem")
     def cert_pem(self) -> _builtins.str:
         """
-        - (Required) Cert PEM.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) Cert PEM.
         """
         return pulumi.get(self, "cert_pem")
 
@@ -31027,7 +31219,8 @@ class KeyManagementServerV2AccessInformationKmipKeyVault(dict):
     @pulumi.getter(name="privateKey")
     def private_key(self) -> _builtins.str:
         """
-        - (Required) Private key.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) Private key.
         """
         return pulumi.get(self, "private_key")
 
@@ -31479,6 +31672,345 @@ class LcmUpgradeV2ManagementServer(dict):
         Username to login to the management server.
         """
         return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class LocalDomainV2ConnectionStatus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serviceStatuses":
+            suggest = "service_statuses"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LocalDomainV2ConnectionStatus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LocalDomainV2ConnectionStatus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LocalDomainV2ConnectionStatus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 service_statuses: Optional[Sequence['outputs.LocalDomainV2ConnectionStatusServiceStatus']] = None,
+                 status: Optional[_builtins.str] = None):
+        """
+        :param Sequence['LocalDomainV2ConnectionStatusServiceStatusArgs'] service_statuses: - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+        :param _builtins.str status: - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        if service_statuses is not None:
+            pulumi.set(__self__, "service_statuses", service_statuses)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceStatuses")
+    def service_statuses(self) -> Optional[Sequence['outputs.LocalDomainV2ConnectionStatusServiceStatus']]:
+        """
+        - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+        """
+        return pulumi.get(self, "service_statuses")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class LocalDomainV2ConnectionStatusServiceStatus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "serviceName":
+            suggest = "service_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LocalDomainV2ConnectionStatusServiceStatus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LocalDomainV2ConnectionStatusServiceStatus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LocalDomainV2ConnectionStatusServiceStatus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 service_name: Optional[_builtins.str] = None,
+                 status: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str service_name: - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+        :param _builtins.str status: - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[_builtins.str]:
+        """
+        - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+        """
+        return pulumi.get(self, "service_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class LocalDomainV2Credentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apiKey":
+            suggest = "api_key"
+        elif key == "keyId":
+            suggest = "key_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LocalDomainV2Credentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LocalDomainV2Credentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LocalDomainV2Credentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 api_key: _builtins.str,
+                 key_id: _builtins.str):
+        """
+        :param _builtins.str api_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+        :param _builtins.str key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        pulumi.set(__self__, "api_key", api_key)
+        pulumi.set(__self__, "key_id", key_id)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> _builtins.str:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+        """
+        return pulumi.get(self, "api_key")
+
+    @_builtins.property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> _builtins.str:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        return pulumi.get(self, "key_id")
+
+
+@pulumi.output_type
+class LocalDomainV2Location(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "extId":
+            suggest = "ext_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LocalDomainV2Location. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LocalDomainV2Location.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LocalDomainV2Location.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 coordinates: Optional[Sequence['outputs.LocalDomainV2LocationCoordinate']] = None,
+                 country: Optional[_builtins.str] = None,
+                 ext_id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param Sequence['LocalDomainV2LocationCoordinateArgs'] coordinates: - The location coordinates, that is latitude and longitude. See Coordinates below.
+        :param _builtins.str country: - Location Country.
+        :param _builtins.str ext_id: - A globally unique identifier of the location.
+        :param _builtins.str name: - Location name.
+        :param _builtins.str state: - Location state.
+        """
+        if coordinates is not None:
+            pulumi.set(__self__, "coordinates", coordinates)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def coordinates(self) -> Optional[Sequence['outputs.LocalDomainV2LocationCoordinate']]:
+        """
+        - The location coordinates, that is latitude and longitude. See Coordinates below.
+        """
+        return pulumi.get(self, "coordinates")
+
+    @_builtins.property
+    @pulumi.getter
+    def country(self) -> Optional[_builtins.str]:
+        """
+        - Location Country.
+        """
+        return pulumi.get(self, "country")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> Optional[_builtins.str]:
+        """
+        - A globally unique identifier of the location.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        - Location name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        - Location state.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class LocalDomainV2LocationCoordinate(dict):
+    def __init__(__self__, *,
+                 latitude: Optional[_builtins.float] = None,
+                 longitude: Optional[_builtins.float] = None):
+        """
+        :param _builtins.float latitude: - The latitude part of the location.
+        :param _builtins.float longitude: - The longitude part of the location.
+        """
+        if latitude is not None:
+            pulumi.set(__self__, "latitude", latitude)
+        if longitude is not None:
+            pulumi.set(__self__, "longitude", longitude)
+
+    @_builtins.property
+    @pulumi.getter
+    def latitude(self) -> Optional[_builtins.float]:
+        """
+        - The latitude part of the location.
+        """
+        return pulumi.get(self, "latitude")
+
+    @_builtins.property
+    @pulumi.getter
+    def longitude(self) -> Optional[_builtins.float]:
+        """
+        - The longitude part of the location.
+        """
+        return pulumi.get(self, "longitude")
+
+
+@pulumi.output_type
+class LocalDomainV2RegistrationStatus(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "daysToExpiry":
+            suggest = "days_to_expiry"
+        elif key == "errorStage":
+            suggest = "error_stage"
+        elif key == "identityProviderExtId":
+            suggest = "identity_provider_ext_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in LocalDomainV2RegistrationStatus. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        LocalDomainV2RegistrationStatus.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        LocalDomainV2RegistrationStatus.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 days_to_expiry: Optional[_builtins.int] = None,
+                 error_stage: Optional[_builtins.str] = None,
+                 identity_provider_ext_id: Optional[_builtins.str] = None,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int days_to_expiry: - Indicates remaining days to domain credential expiry, 0 means expired.
+        :param _builtins.str error_stage: - The stage for the local domain's register/unregister operation.
+        :param _builtins.str identity_provider_ext_id: - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+        :param _builtins.str state: - Location state.
+        """
+        if days_to_expiry is not None:
+            pulumi.set(__self__, "days_to_expiry", days_to_expiry)
+        if error_stage is not None:
+            pulumi.set(__self__, "error_stage", error_stage)
+        if identity_provider_ext_id is not None:
+            pulumi.set(__self__, "identity_provider_ext_id", identity_provider_ext_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="daysToExpiry")
+    def days_to_expiry(self) -> Optional[_builtins.int]:
+        """
+        - Indicates remaining days to domain credential expiry, 0 means expired.
+        """
+        return pulumi.get(self, "days_to_expiry")
+
+    @_builtins.property
+    @pulumi.getter(name="errorStage")
+    def error_stage(self) -> Optional[_builtins.str]:
+        """
+        - The stage for the local domain's register/unregister operation.
+        """
+        return pulumi.get(self, "error_stage")
+
+    @_builtins.property
+    @pulumi.getter(name="identityProviderExtId")
+    def identity_provider_ext_id(self) -> Optional[_builtins.str]:
+        """
+        - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+        """
+        return pulumi.get(self, "identity_provider_ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        - Location state.
+        """
+        return pulumi.get(self, "state")
 
 
 @pulumi.output_type
@@ -61005,6 +61537,10 @@ class OvaV2VmConfig(dict):
             suggest = "update_time"
         elif key == "vtpmConfigs":
             suggest = "vtpm_configs"
+        elif key == "waitForIpRoutable":
+            suggest = "wait_for_ip_routable"
+        elif key == "waitForIpTimeout":
+            suggest = "wait_for_ip_timeout"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in OvaV2VmConfig. Access the value via the '{suggest}' property getter instead.")
@@ -61062,7 +61598,9 @@ class OvaV2VmConfig(dict):
                  sources: Optional[Sequence['outputs.OvaV2VmConfigSource']] = None,
                  storage_configs: Optional[Sequence['outputs.OvaV2VmConfigStorageConfig']] = None,
                  update_time: Optional[_builtins.str] = None,
-                 vtpm_configs: Optional[Sequence['outputs.OvaV2VmConfigVtpmConfig']] = None):
+                 vtpm_configs: Optional[Sequence['outputs.OvaV2VmConfigVtpmConfig']] = None,
+                 wait_for_ip_routable: Optional[_builtins.bool] = None,
+                 wait_for_ip_timeout: Optional[_builtins.int] = None):
         """
         :param Sequence['OvaV2VmConfigApcConfigArgs'] apc_configs: -(Optional) Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
         :param Sequence['OvaV2VmConfigAvailabilityZoneArgs'] availability_zones: -(Optional) Reference to an availability zone.
@@ -61107,6 +61645,8 @@ class OvaV2VmConfig(dict):
         :param Sequence['OvaV2VmConfigStorageConfigArgs'] storage_configs: -(Optional) Storage configuration for VM.
         :param _builtins.str update_time: -(Optional) VM last updated time.
         :param Sequence['OvaV2VmConfigVtpmConfigArgs'] vtpm_configs: -(Optional) Indicates how the vTPM for the VM should be configured.
+        :param _builtins.bool wait_for_ip_routable: When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        :param _builtins.int wait_for_ip_timeout: Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
         """
         if apc_configs is not None:
             pulumi.set(__self__, "apc_configs", apc_configs)
@@ -61198,6 +61738,10 @@ class OvaV2VmConfig(dict):
             pulumi.set(__self__, "update_time", update_time)
         if vtpm_configs is not None:
             pulumi.set(__self__, "vtpm_configs", vtpm_configs)
+        if wait_for_ip_routable is not None:
+            pulumi.set(__self__, "wait_for_ip_routable", wait_for_ip_routable)
+        if wait_for_ip_timeout is not None:
+            pulumi.set(__self__, "wait_for_ip_timeout", wait_for_ip_timeout)
 
     @_builtins.property
     @pulumi.getter(name="apcConfigs")
@@ -61552,6 +62096,22 @@ class OvaV2VmConfig(dict):
         -(Optional) Indicates how the vTPM for the VM should be configured.
         """
         return pulumi.get(self, "vtpm_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="waitForIpRoutable")
+    def wait_for_ip_routable(self) -> Optional[_builtins.bool]:
+        """
+        When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        """
+        return pulumi.get(self, "wait_for_ip_routable")
+
+    @_builtins.property
+    @pulumi.getter(name="waitForIpTimeout")
+    def wait_for_ip_timeout(self) -> Optional[_builtins.int]:
+        """
+        Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+        """
+        return pulumi.get(self, "wait_for_ip_timeout")
 
 
 @pulumi.output_type
@@ -62233,6 +62793,8 @@ class OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -62254,6 +62816,7 @@ class OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer']] = None):
         if data_sources is not None:
@@ -62264,6 +62827,8 @@ class OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -62288,6 +62853,11 @@ class OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -62720,6 +63290,8 @@ class OvaV2VmConfigCdRomBackingInfo(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -62741,6 +63313,7 @@ class OvaV2VmConfigCdRomBackingInfo(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.OvaV2VmConfigCdRomBackingInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.OvaV2VmConfigCdRomBackingInfoStorageContainer']] = None):
         """
@@ -62759,6 +63332,8 @@ class OvaV2VmConfigCdRomBackingInfo(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -62790,6 +63365,11 @@ class OvaV2VmConfigCdRomBackingInfo(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -63339,6 +63919,8 @@ class OvaV2VmConfigDiskBackingInfoVmDisk(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -63360,6 +63942,7 @@ class OvaV2VmConfigDiskBackingInfoVmDisk(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.OvaV2VmConfigDiskBackingInfoVmDiskStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.OvaV2VmConfigDiskBackingInfoVmDiskStorageContainer']] = None):
         if data_sources is not None:
@@ -63370,6 +63953,8 @@ class OvaV2VmConfigDiskBackingInfoVmDisk(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -63394,6 +63979,11 @@ class OvaV2VmConfigDiskBackingInfoVmDisk(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -67911,6 +68501,8 @@ class OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDisk(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -67932,6 +68524,7 @@ class OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDisk(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageContainer']] = None):
         """
@@ -67947,6 +68540,8 @@ class OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDisk(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -67974,6 +68569,11 @@ class OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDisk(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -72857,8 +73457,10 @@ class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentials(dict)
                  access_key_id: _builtins.str,
                  secret_access_key: _builtins.str):
         """
-        :param _builtins.str access_key_id: -(Required) Access key ID for the object store provided for backup target.
-        :param _builtins.str secret_access_key: -(Required) Secret access key for the object store provided for backup target.
+        :param _builtins.str access_key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Access key ID for the object store provided for backup target.
+        :param _builtins.str secret_access_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "secret_access_key", secret_access_key)
@@ -72867,7 +73469,8 @@ class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentials(dict)
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> _builtins.str:
         """
-        -(Required) Access key ID for the object store provided for backup target.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Access key ID for the object store provided for backup target.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -72875,7 +73478,8 @@ class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentials(dict)
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> _builtins.str:
         """
-        -(Required) Secret access key for the object store provided for backup target.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -73429,7 +74033,8 @@ class PcDeployV2ConfigCredential(dict):
                  password: _builtins.str,
                  username: _builtins.str):
         """
-        :param _builtins.str password: -(Required) Password required for the basic auth scheme.
+        :param _builtins.str password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Password required for the basic auth scheme.
         :param _builtins.str username: -(Required) Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
         """
         pulumi.set(__self__, "password", password)
@@ -73439,7 +74044,8 @@ class PcDeployV2ConfigCredential(dict):
     @pulumi.getter
     def password(self) -> _builtins.str:
         """
-        -(Required) Password required for the basic auth scheme.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Password required for the basic auth scheme.
         """
         return pulumi.get(self, "password")
 
@@ -75833,7 +76439,7 @@ class PcRegistrationV2ConfigCredential(dict):
                  password: _builtins.str,
                  username: _builtins.str):
         """
-        :param _builtins.str password: -(Required)  Password required for the basic auth scheme.
+        :param _builtins.str password: -(Required, WriteOnly)  Password required for the basic auth scheme.
                
                See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param _builtins.str username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
@@ -75845,7 +76451,7 @@ class PcRegistrationV2ConfigCredential(dict):
     @pulumi.getter
     def password(self) -> _builtins.str:
         """
-        -(Required)  Password required for the basic auth scheme.
+        -(Required, WriteOnly)  Password required for the basic auth scheme.
 
         See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
@@ -77982,7 +78588,8 @@ class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsA
                  password: _builtins.str,
                  username: _builtins.str):
         """
-        :param _builtins.str password: -(Required)  Password required for the basic auth scheme.
+        :param _builtins.str password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly)  Password required for the basic auth scheme.
                
                See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param _builtins.str username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
@@ -77994,7 +78601,8 @@ class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsA
     @pulumi.getter
     def password(self) -> _builtins.str:
         """
-        -(Required)  Password required for the basic auth scheme.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly)  Password required for the basic auth scheme.
 
         See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
@@ -78300,7 +78908,8 @@ class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCr
                  password: _builtins.str,
                  username: _builtins.str):
         """
-        :param _builtins.str password: -(Required)  Password required for the basic auth scheme.
+        :param _builtins.str password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly)  Password required for the basic auth scheme.
                
                See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param _builtins.str username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
@@ -78312,7 +78921,8 @@ class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCr
     @pulumi.getter
     def password(self) -> _builtins.str:
         """
-        -(Required)  Password required for the basic auth scheme.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly)  Password required for the basic auth scheme.
 
         See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
@@ -78627,8 +79237,10 @@ class PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentials(dict
                  access_key_id: _builtins.str,
                  secret_access_key: _builtins.str):
         """
-        :param _builtins.str access_key_id: -(Required) Access key ID for the object store provided for backup target.
-        :param _builtins.str secret_access_key: -(Required) Secret access key for the object store provided for backup target.
+        :param _builtins.str access_key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Access key ID for the object store provided for backup target.
+        :param _builtins.str secret_access_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "secret_access_key", secret_access_key)
@@ -78637,7 +79249,8 @@ class PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentials(dict
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> _builtins.str:
         """
-        -(Required) Access key ID for the object store provided for backup target.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Access key ID for the object store provided for backup target.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -78645,7 +79258,8 @@ class PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentials(dict
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> _builtins.str:
         """
-        -(Required) Secret access key for the object store provided for backup target.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -86221,6 +86835,290 @@ class RecoveryPointsV2VolumeGroupRecoveryPointLink(dict):
         - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
         """
         return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class RegisteredDomainV2Link(dict):
+    def __init__(__self__, *,
+                 href: Optional[_builtins.str] = None,
+                 rel: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str href: - The URL at which the entity described by the link can be accessed.
+        :param _builtins.str rel: - A name that identifies the relationship of the link to the object.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> Optional[_builtins.str]:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> Optional[_builtins.str]:
+        """
+        - A name that identifies the relationship of the link to the object.
+        """
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class RegisteredDomainV2PlatformData(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clusterCount":
+            suggest = "cluster_count"
+        elif key == "connectivityStatus":
+            suggest = "connectivity_status"
+        elif key == "pcEnvType":
+            suggest = "pc_env_type"
+        elif key == "pcProviderType":
+            suggest = "pc_provider_type"
+        elif key == "pcVersion":
+            suggest = "pc_version"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RegisteredDomainV2PlatformData. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RegisteredDomainV2PlatformData.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RegisteredDomainV2PlatformData.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cluster_count: Optional[_builtins.int] = None,
+                 connectivity_status: Optional[_builtins.str] = None,
+                 pc_env_type: Optional[_builtins.str] = None,
+                 pc_provider_type: Optional[_builtins.str] = None,
+                 pc_version: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int cluster_count: - (Optional) Number of clusters in the domain.
+        :param _builtins.str connectivity_status: - (Optional) Domain connectivity status.
+        :param _builtins.str pc_env_type: - (Optional) PC Environment Type of the domain.
+        :param _builtins.str pc_provider_type: - (Optional) PC Provider Type of the domain.
+        :param _builtins.str pc_version: - (Optional) PC Version of the domain.
+        """
+        if cluster_count is not None:
+            pulumi.set(__self__, "cluster_count", cluster_count)
+        if connectivity_status is not None:
+            pulumi.set(__self__, "connectivity_status", connectivity_status)
+        if pc_env_type is not None:
+            pulumi.set(__self__, "pc_env_type", pc_env_type)
+        if pc_provider_type is not None:
+            pulumi.set(__self__, "pc_provider_type", pc_provider_type)
+        if pc_version is not None:
+            pulumi.set(__self__, "pc_version", pc_version)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterCount")
+    def cluster_count(self) -> Optional[_builtins.int]:
+        """
+        - (Optional) Number of clusters in the domain.
+        """
+        return pulumi.get(self, "cluster_count")
+
+    @_builtins.property
+    @pulumi.getter(name="connectivityStatus")
+    def connectivity_status(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) Domain connectivity status.
+        """
+        return pulumi.get(self, "connectivity_status")
+
+    @_builtins.property
+    @pulumi.getter(name="pcEnvType")
+    def pc_env_type(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) PC Environment Type of the domain.
+        """
+        return pulumi.get(self, "pc_env_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pcProviderType")
+    def pc_provider_type(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) PC Provider Type of the domain.
+        """
+        return pulumi.get(self, "pc_provider_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pcVersion")
+    def pc_version(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) PC Version of the domain.
+        """
+        return pulumi.get(self, "pc_version")
+
+
+@pulumi.output_type
+class RegisteredDomainV2RegistrationConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "domainExtId":
+            suggest = "domain_ext_id"
+        elif key == "targetUrl":
+            suggest = "target_url"
+        elif key == "tenantExtId":
+            suggest = "tenant_ext_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RegisteredDomainV2RegistrationConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RegisteredDomainV2RegistrationConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RegisteredDomainV2RegistrationConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 credentials: Optional['outputs.RegisteredDomainV2RegistrationConfigCredentials'] = None,
+                 domain_ext_id: Optional[_builtins.str] = None,
+                 target_url: Optional[_builtins.str] = None,
+                 tenant_ext_id: Optional[_builtins.str] = None):
+        """
+        :param 'RegisteredDomainV2RegistrationConfigCredentialsArgs' credentials: - (Optional) Registration credentials. See Credentials.
+        :param _builtins.str domain_ext_id: - (Optional) Unique identifier for the Prism Central.
+        :param _builtins.str target_url: - (Optional) Prism Central should use this URL to communicate with Nutanix Central.
+        :param _builtins.str tenant_ext_id: - (Optional) Unique identifier of the tenant.
+        """
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if domain_ext_id is not None:
+            pulumi.set(__self__, "domain_ext_id", domain_ext_id)
+        if target_url is not None:
+            pulumi.set(__self__, "target_url", target_url)
+        if tenant_ext_id is not None:
+            pulumi.set(__self__, "tenant_ext_id", tenant_ext_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> Optional['outputs.RegisteredDomainV2RegistrationConfigCredentials']:
+        """
+        - (Optional) Registration credentials. See Credentials.
+        """
+        return pulumi.get(self, "credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="domainExtId")
+    def domain_ext_id(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) Unique identifier for the Prism Central.
+        """
+        return pulumi.get(self, "domain_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetUrl")
+    def target_url(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) Prism Central should use this URL to communicate with Nutanix Central.
+        """
+        return pulumi.get(self, "target_url")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantExtId")
+    def tenant_ext_id(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) Unique identifier of the tenant.
+        """
+        return pulumi.get(self, "tenant_ext_id")
+
+
+@pulumi.output_type
+class RegisteredDomainV2RegistrationConfigCredentials(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apiKey":
+            suggest = "api_key"
+        elif key == "keyId":
+            suggest = "key_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RegisteredDomainV2RegistrationConfigCredentials. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RegisteredDomainV2RegistrationConfigCredentials.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RegisteredDomainV2RegistrationConfigCredentials.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 api_key: Optional[_builtins.str] = None,
+                 key_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str api_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Optional, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+        :param _builtins.str key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Optional, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> Optional[_builtins.str]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Optional, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+        """
+        return pulumi.get(self, "api_key")
+
+    @_builtins.property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> Optional[_builtins.str]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Optional, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        return pulumi.get(self, "key_id")
+
+
+@pulumi.output_type
+class RegisteredDomainV2Tunnel(dict):
+    def __init__(__self__, *,
+                 endpoint: Optional[_builtins.str] = None,
+                 provider: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str endpoint: - (Optional) Tunnel endpoint for connectivity. Prism Central make use of this endpoint to reach tunnel.
+        :param _builtins.str provider: - (Optional) Tunnel provider. One of `IKAT`.
+        """
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if provider is not None:
+            pulumi.set(__self__, "provider", provider)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) Tunnel endpoint for connectivity. Prism Central make use of this endpoint to reach tunnel.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def provider(self) -> Optional[_builtins.str]:
+        """
+        - (Optional) Tunnel provider. One of `IKAT`.
+        """
+        return pulumi.get(self, "provider")
 
 
 @pulumi.output_type
@@ -99054,6 +99952,8 @@ class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingSto
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -99075,6 +99975,7 @@ class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingSto
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer']] = None):
         if data_sources is not None:
@@ -99085,6 +99986,8 @@ class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingSto
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -99109,6 +100012,11 @@ class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingSto
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -99553,6 +100461,8 @@ class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -99574,6 +100484,7 @@ class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer']] = None):
         """
@@ -99591,6 +100502,8 @@ class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -99621,6 +100534,11 @@ class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -100203,6 +101121,8 @@ class TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -100224,6 +101144,7 @@ class TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer']] = None):
         if data_sources is not None:
@@ -100234,6 +101155,8 @@ class TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -100258,6 +101181,11 @@ class TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -104388,6 +105316,868 @@ class TemplateV2UpdatedByAdditionalAttributeValueMapOfString(dict):
 
 
 @pulumi.output_type
+class TenantDomainAllocationV2ExternalNetworkConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "extId":
+            suggest = "ext_id"
+        elif key == "stateInfos":
+            suggest = "state_infos"
+        elif key == "tenantId":
+            suggest = "tenant_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantDomainAllocationV2ExternalNetworkConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantDomainAllocationV2ExternalNetworkConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantDomainAllocationV2ExternalNetworkConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 config: Optional['outputs.TenantDomainAllocationV2ExternalNetworkConfigConfig'] = None,
+                 ext_id: Optional[_builtins.str] = None,
+                 state_infos: Optional[Sequence['outputs.TenantDomainAllocationV2ExternalNetworkConfigStateInfo']] = None,
+                 tenant_id: Optional[_builtins.str] = None):
+        """
+        :param 'TenantDomainAllocationV2ExternalNetworkConfigConfigArgs' config: The NAT or no-NAT external network connection configuration.
+        :param _builtins.str ext_id: A globally unique identifier of an instance that is suitable for external consumption.
+        :param Sequence['TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs'] state_infos: The state details of the domain allocation.
+        :param _builtins.str tenant_id: A globally unique identifier that represents the tenant that owns this entity.
+        """
+        if config is not None:
+            pulumi.set(__self__, "config", config)
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if state_infos is not None:
+            pulumi.set(__self__, "state_infos", state_infos)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def config(self) -> Optional['outputs.TenantDomainAllocationV2ExternalNetworkConfigConfig']:
+        """
+        The NAT or no-NAT external network connection configuration.
+        """
+        return pulumi.get(self, "config")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> Optional[_builtins.str]:
+        """
+        A globally unique identifier of an instance that is suitable for external consumption.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="stateInfos")
+    def state_infos(self) -> Optional[Sequence['outputs.TenantDomainAllocationV2ExternalNetworkConfigStateInfo']]:
+        """
+        The state details of the domain allocation.
+        """
+        return pulumi.get(self, "state_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> Optional[_builtins.str]:
+        """
+        A globally unique identifier that represents the tenant that owns this entity.
+        """
+        return pulumi.get(self, "tenant_id")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2ExternalNetworkConfigConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "noNat":
+            suggest = "no_nat"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantDomainAllocationV2ExternalNetworkConfigConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantDomainAllocationV2ExternalNetworkConfigConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantDomainAllocationV2ExternalNetworkConfigConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 nat: Optional['outputs.TenantDomainAllocationV2ExternalNetworkConfigConfigNat'] = None,
+                 no_nat: Optional['outputs.TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat'] = None):
+        """
+        :param 'TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs' nat: NAT configuration.
+        :param 'TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs' no_nat: No-NAT configuration.
+        """
+        if nat is not None:
+            pulumi.set(__self__, "nat", nat)
+        if no_nat is not None:
+            pulumi.set(__self__, "no_nat", no_nat)
+
+    @_builtins.property
+    @pulumi.getter
+    def nat(self) -> Optional['outputs.TenantDomainAllocationV2ExternalNetworkConfigConfigNat']:
+        """
+        NAT configuration.
+        """
+        return pulumi.get(self, "nat")
+
+    @_builtins.property
+    @pulumi.getter(name="noNat")
+    def no_nat(self) -> Optional['outputs.TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat']:
+        """
+        No-NAT configuration.
+        """
+        return pulumi.get(self, "no_nat")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2ExternalNetworkConfigConfigNat(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overlaySubnetExtId":
+            suggest = "overlay_subnet_ext_id"
+        elif key == "transitVpcExtId":
+            suggest = "transit_vpc_ext_id"
+        elif key == "floatingIpCount":
+            suggest = "floating_ip_count"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantDomainAllocationV2ExternalNetworkConfigConfigNat. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantDomainAllocationV2ExternalNetworkConfigConfigNat.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantDomainAllocationV2ExternalNetworkConfigConfigNat.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 overlay_subnet_ext_id: _builtins.str,
+                 transit_vpc_ext_id: _builtins.str,
+                 floating_ip_count: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str overlay_subnet_ext_id: The external identifier of the overlay subnet for NAT configuration.
+        :param _builtins.str transit_vpc_ext_id: The external identifier of the transit VPC for NAT configuration.
+        :param _builtins.int floating_ip_count: Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+        """
+        pulumi.set(__self__, "overlay_subnet_ext_id", overlay_subnet_ext_id)
+        pulumi.set(__self__, "transit_vpc_ext_id", transit_vpc_ext_id)
+        if floating_ip_count is not None:
+            pulumi.set(__self__, "floating_ip_count", floating_ip_count)
+
+    @_builtins.property
+    @pulumi.getter(name="overlaySubnetExtId")
+    def overlay_subnet_ext_id(self) -> _builtins.str:
+        """
+        The external identifier of the overlay subnet for NAT configuration.
+        """
+        return pulumi.get(self, "overlay_subnet_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="transitVpcExtId")
+    def transit_vpc_ext_id(self) -> _builtins.str:
+        """
+        The external identifier of the transit VPC for NAT configuration.
+        """
+        return pulumi.get(self, "transit_vpc_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="floatingIpCount")
+    def floating_ip_count(self) -> Optional[_builtins.int]:
+        """
+        Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+        """
+        return pulumi.get(self, "floating_ip_count")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "overlaySubnetExtId":
+            suggest = "overlay_subnet_ext_id"
+        elif key == "transitVpcExtId":
+            suggest = "transit_vpc_ext_id"
+        elif key == "externallyRoutablePrefixes":
+            suggest = "externally_routable_prefixes"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 overlay_subnet_ext_id: _builtins.str,
+                 transit_vpc_ext_id: _builtins.str,
+                 externally_routable_prefixes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param _builtins.str overlay_subnet_ext_id: The external identifier of the overlay subnet for no-NAT configuration.
+        :param _builtins.str transit_vpc_ext_id: The external identifier of the transit VPC for no-NAT configuration.
+        :param Sequence[_builtins.str] externally_routable_prefixes: Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+        """
+        pulumi.set(__self__, "overlay_subnet_ext_id", overlay_subnet_ext_id)
+        pulumi.set(__self__, "transit_vpc_ext_id", transit_vpc_ext_id)
+        if externally_routable_prefixes is not None:
+            pulumi.set(__self__, "externally_routable_prefixes", externally_routable_prefixes)
+
+    @_builtins.property
+    @pulumi.getter(name="overlaySubnetExtId")
+    def overlay_subnet_ext_id(self) -> _builtins.str:
+        """
+        The external identifier of the overlay subnet for no-NAT configuration.
+        """
+        return pulumi.get(self, "overlay_subnet_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="transitVpcExtId")
+    def transit_vpc_ext_id(self) -> _builtins.str:
+        """
+        The external identifier of the transit VPC for no-NAT configuration.
+        """
+        return pulumi.get(self, "transit_vpc_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="externallyRoutablePrefixes")
+    def externally_routable_prefixes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+        """
+        return pulumi.get(self, "externally_routable_prefixes")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2ExternalNetworkConfigStateInfo(dict):
+    def __init__(__self__, *,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str state: The state of the domain allocation.
+        """
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The state of the domain allocation.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2Link(dict):
+    def __init__(__self__, *,
+                 href: Optional[_builtins.str] = None,
+                 rel: Optional[_builtins.str] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2Project(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "extId":
+            suggest = "ext_id"
+        elif key == "resourceGroup":
+            suggest = "resource_group"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantDomainAllocationV2Project. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantDomainAllocationV2Project.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantDomainAllocationV2Project.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ext_id: Optional[_builtins.str] = None,
+                 name: Optional[_builtins.str] = None,
+                 quota: Optional['outputs.TenantDomainAllocationV2ProjectQuota'] = None,
+                 resource_group: Optional['outputs.TenantDomainAllocationV2ProjectResourceGroup'] = None,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str ext_id: External identifier of the project.
+        :param _builtins.str name: The name of the project.
+        :param 'TenantDomainAllocationV2ProjectQuotaArgs' quota: The resource quota of the project.
+        :param 'TenantDomainAllocationV2ProjectResourceGroupArgs' resource_group: The resource group of the project.
+        :param _builtins.str state: The state of the domain allocation.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if quota is not None:
+            pulumi.set(__self__, "quota", quota)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> Optional[_builtins.str]:
+        """
+        External identifier of the project.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        The name of the project.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def quota(self) -> Optional['outputs.TenantDomainAllocationV2ProjectQuota']:
+        """
+        The resource quota of the project.
+        """
+        return pulumi.get(self, "quota")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> Optional['outputs.TenantDomainAllocationV2ProjectResourceGroup']:
+        """
+        The resource group of the project.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The state of the domain allocation.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2ProjectQuota(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "extId":
+            suggest = "ext_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantDomainAllocationV2ProjectQuota. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantDomainAllocationV2ProjectQuota.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantDomainAllocationV2ProjectQuota.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ext_id: Optional[_builtins.str] = None,
+                 memory: Optional[_builtins.int] = None,
+                 storage: Optional[_builtins.int] = None,
+                 vcpu: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str ext_id: The external identifier of the quota for the placement target.
+        :param _builtins.int memory: The amount of memory allocated as quota, in Giga bytes.
+        :param _builtins.int storage: The amount of storage allocated as quota, in Giga bytes.
+        :param _builtins.int vcpu: The number of vCPUs allocated as quota.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if memory is not None:
+            pulumi.set(__self__, "memory", memory)
+        if storage is not None:
+            pulumi.set(__self__, "storage", storage)
+        if vcpu is not None:
+            pulumi.set(__self__, "vcpu", vcpu)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> Optional[_builtins.str]:
+        """
+        The external identifier of the quota for the placement target.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> Optional[_builtins.int]:
+        """
+        The amount of memory allocated as quota, in Giga bytes.
+        """
+        return pulumi.get(self, "memory")
+
+    @_builtins.property
+    @pulumi.getter
+    def storage(self) -> Optional[_builtins.int]:
+        """
+        The amount of storage allocated as quota, in Giga bytes.
+        """
+        return pulumi.get(self, "storage")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpu(self) -> Optional[_builtins.int]:
+        """
+        The number of vCPUs allocated as quota.
+        """
+        return pulumi.get(self, "vcpu")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2ProjectResourceGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "placementTargets":
+            suggest = "placement_targets"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantDomainAllocationV2ProjectResourceGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantDomainAllocationV2ProjectResourceGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantDomainAllocationV2ProjectResourceGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 placement_targets: Optional[Sequence['outputs.TenantDomainAllocationV2ProjectResourceGroupPlacementTarget']] = None,
+                 uuid: Optional[_builtins.str] = None):
+        """
+        :param Sequence['TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs'] placement_targets: The placement targets of the resource group.
+               - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+               - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+        :param _builtins.str uuid: The UUID of the resource group for the placement target.
+        """
+        if placement_targets is not None:
+            pulumi.set(__self__, "placement_targets", placement_targets)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @_builtins.property
+    @pulumi.getter(name="placementTargets")
+    def placement_targets(self) -> Optional[Sequence['outputs.TenantDomainAllocationV2ProjectResourceGroupPlacementTarget']]:
+        """
+        The placement targets of the resource group.
+        - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+        - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+        """
+        return pulumi.get(self, "placement_targets")
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> Optional[_builtins.str]:
+        """
+        The UUID of the resource group for the placement target.
+        """
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2ProjectResourceGroupPlacementTarget(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clusterUuid":
+            suggest = "cluster_uuid"
+        elif key == "storageContainerUuids":
+            suggest = "storage_container_uuids"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantDomainAllocationV2ProjectResourceGroupPlacementTarget. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantDomainAllocationV2ProjectResourceGroupPlacementTarget.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantDomainAllocationV2ProjectResourceGroupPlacementTarget.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 cluster_uuid: Optional[_builtins.str] = None,
+                 storage_container_uuids: Optional[Sequence[_builtins.str]] = None):
+        if cluster_uuid is not None:
+            pulumi.set(__self__, "cluster_uuid", cluster_uuid)
+        if storage_container_uuids is not None:
+            pulumi.set(__self__, "storage_container_uuids", storage_container_uuids)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterUuid")
+    def cluster_uuid(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "cluster_uuid")
+
+    @_builtins.property
+    @pulumi.getter(name="storageContainerUuids")
+    def storage_container_uuids(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "storage_container_uuids")
+
+
+@pulumi.output_type
+class TenantDomainAllocationV2StateInfo(dict):
+    def __init__(__self__, *,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str state: The state of the domain allocation.
+        """
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The state of the domain allocation.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class TenantMembershipV2IdentityDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "identityProviderExtId":
+            suggest = "identity_provider_ext_id"
+        elif key == "principalValue":
+            suggest = "principal_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantMembershipV2IdentityDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantMembershipV2IdentityDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantMembershipV2IdentityDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 identity_provider_ext_id: _builtins.str,
+                 principal_value: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str identity_provider_ext_id: - (Required) The external identifier of the identity provider.
+        :param _builtins.str principal_value: - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+        :param _builtins.str type: - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+        """
+        pulumi.set(__self__, "identity_provider_ext_id", identity_provider_ext_id)
+        pulumi.set(__self__, "principal_value", principal_value)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="identityProviderExtId")
+    def identity_provider_ext_id(self) -> _builtins.str:
+        """
+        - (Required) The external identifier of the identity provider.
+        """
+        return pulumi.get(self, "identity_provider_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="principalValue")
+    def principal_value(self) -> _builtins.str:
+        """
+        - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+        """
+        return pulumi.get(self, "principal_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class TenantMembershipV2Link(dict):
+    def __init__(__self__, *,
+                 href: Optional[_builtins.str] = None,
+                 rel: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str href: - The URL at which the entity described by the link can be accessed.
+        :param _builtins.str rel: - A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> Optional[_builtins.str]:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> Optional[_builtins.str]:
+        """
+        - A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class TenantMembershipV2StateInfo(dict):
+    def __init__(__self__, *,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str state: - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+        """
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class TenantV2AdminInfo(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "firstName":
+            suggest = "first_name"
+        elif key == "lastName":
+            suggest = "last_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantV2AdminInfo. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantV2AdminInfo.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantV2AdminInfo.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 first_name: _builtins.str,
+                 last_name: _builtins.str,
+                 password: _builtins.str,
+                 username: _builtins.str,
+                 email: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str first_name: The first name of the user.
+        :param _builtins.str last_name: The last name of the user.
+        :param _builtins.str password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               The password of the user.
+        :param _builtins.str username: The username of the user.
+        :param _builtins.str email: The email address of the user.
+        """
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> _builtins.str:
+        """
+        The first name of the user.
+        """
+        return pulumi.get(self, "first_name")
+
+    @_builtins.property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> _builtins.str:
+        """
+        The last name of the user.
+        """
+        return pulumi.get(self, "last_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> _builtins.str:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        The password of the user.
+        """
+        return pulumi.get(self, "password")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        """
+        The username of the user.
+        """
+        return pulumi.get(self, "username")
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> Optional[_builtins.str]:
+        """
+        The email address of the user.
+        """
+        return pulumi.get(self, "email")
+
+
+@pulumi.output_type
+class TenantV2AggregatedQuota(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "extId":
+            suggest = "ext_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TenantV2AggregatedQuota. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TenantV2AggregatedQuota.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TenantV2AggregatedQuota.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 ext_id: Optional[_builtins.str] = None,
+                 memory: Optional[_builtins.int] = None,
+                 storage: Optional[_builtins.int] = None,
+                 vcpu: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str ext_id: The external identifier of the quota for the placement target.
+        :param _builtins.int memory: The amount of memory allocated as quota, in bytes.
+        :param _builtins.int storage: The amount of storage allocated as quota, in bytes.
+        :param _builtins.int vcpu: The number of vCPUs allocated as quota.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if memory is not None:
+            pulumi.set(__self__, "memory", memory)
+        if storage is not None:
+            pulumi.set(__self__, "storage", storage)
+        if vcpu is not None:
+            pulumi.set(__self__, "vcpu", vcpu)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> Optional[_builtins.str]:
+        """
+        The external identifier of the quota for the placement target.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> Optional[_builtins.int]:
+        """
+        The amount of memory allocated as quota, in bytes.
+        """
+        return pulumi.get(self, "memory")
+
+    @_builtins.property
+    @pulumi.getter
+    def storage(self) -> Optional[_builtins.int]:
+        """
+        The amount of storage allocated as quota, in bytes.
+        """
+        return pulumi.get(self, "storage")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpu(self) -> Optional[_builtins.int]:
+        """
+        The number of vCPUs allocated as quota.
+        """
+        return pulumi.get(self, "vcpu")
+
+
+@pulumi.output_type
+class TenantV2Link(dict):
+    def __init__(__self__, *,
+                 href: Optional[_builtins.str] = None,
+                 rel: Optional[_builtins.str] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class TenantV2StateInfo(dict):
+    def __init__(__self__, *,
+                 state: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str state: The state of the tenant.
+        """
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> Optional[_builtins.str]:
+        """
+        The state of the tenant.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
 class UserAccessControlPolicyReferenceList(dict):
     def __init__(__self__, *,
                  kind: Optional[_builtins.str] = None,
@@ -106802,6 +108592,8 @@ class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -106823,9 +108615,11 @@ class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer']] = None):
         """
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
         :param Sequence['VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs'] storage_configs: Storage configuration for VM.
         """
         if data_sources is not None:
@@ -106836,6 +108630,8 @@ class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -106860,6 +108656,14 @@ class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -107311,6 +109115,8 @@ class VirtualMachineV2CdRomBackingInfo(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -107332,11 +109138,13 @@ class VirtualMachineV2CdRomBackingInfo(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.VirtualMachineV2CdRomBackingInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.VirtualMachineV2CdRomBackingInfoStorageContainer']] = None):
         """
         :param Sequence['VirtualMachineV2CdRomBackingInfoDataSourceArgs'] data_sources: A reference to a disk or image that contains the contents of a disk.
         :param _builtins.int disk_size_bytes: Size of the disk in Bytes
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
         :param Sequence['VirtualMachineV2CdRomBackingInfoStorageConfigArgs'] storage_configs: Storage configuration for VM disks
                * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
         :param Sequence['VirtualMachineV2CdRomBackingInfoStorageContainerArgs'] storage_containers: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
@@ -107349,6 +109157,8 @@ class VirtualMachineV2CdRomBackingInfo(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -107379,6 +109189,14 @@ class VirtualMachineV2CdRomBackingInfo(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -107948,6 +109766,8 @@ class VirtualMachineV2DiskBackingInfoVmDisk(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -107969,9 +109789,11 @@ class VirtualMachineV2DiskBackingInfoVmDisk(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.VirtualMachineV2DiskBackingInfoVmDiskStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.VirtualMachineV2DiskBackingInfoVmDiskStorageContainer']] = None):
         """
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
         :param Sequence['VirtualMachineV2DiskBackingInfoVmDiskStorageConfigArgs'] storage_configs: Storage configuration for VM.
         """
         if data_sources is not None:
@@ -107982,6 +109804,8 @@ class VirtualMachineV2DiskBackingInfoVmDisk(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -108006,6 +109830,14 @@ class VirtualMachineV2DiskBackingInfoVmDisk(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -112367,6 +114199,8 @@ class VmCdromInsertEjectV2BackingInfo(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -112388,6 +114222,7 @@ class VmCdromInsertEjectV2BackingInfo(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.VmCdromInsertEjectV2BackingInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.VmCdromInsertEjectV2BackingInfoStorageContainer']] = None):
         """
@@ -112405,6 +114240,8 @@ class VmCdromInsertEjectV2BackingInfo(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -112435,6 +114272,11 @@ class VmCdromInsertEjectV2BackingInfo(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -113452,6 +115294,8 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -113473,6 +115317,7 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer']] = None):
         """
@@ -113490,6 +115335,8 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -113523,6 +115370,11 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -113987,6 +115839,8 @@ class VmCloneV2CdRomBackingInfo(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -114008,6 +115862,7 @@ class VmCloneV2CdRomBackingInfo(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.VmCloneV2CdRomBackingInfoStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.VmCloneV2CdRomBackingInfoStorageContainer']] = None):
         """
@@ -114025,6 +115880,8 @@ class VmCloneV2CdRomBackingInfo(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -114058,6 +115915,11 @@ class VmCloneV2CdRomBackingInfo(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -114642,6 +116504,8 @@ class VmCloneV2DiskBackingInfoVmDisk(dict):
             suggest = "disk_size_bytes"
         elif key == "isMigrationInProgress":
             suggest = "is_migration_in_progress"
+        elif key == "serialId":
+            suggest = "serial_id"
         elif key == "storageConfigs":
             suggest = "storage_configs"
         elif key == "storageContainers":
@@ -114663,6 +116527,7 @@ class VmCloneV2DiskBackingInfoVmDisk(dict):
                  disk_ext_id: Optional[_builtins.str] = None,
                  disk_size_bytes: Optional[_builtins.int] = None,
                  is_migration_in_progress: Optional[_builtins.bool] = None,
+                 serial_id: Optional[_builtins.str] = None,
                  storage_configs: Optional[Sequence['outputs.VmCloneV2DiskBackingInfoVmDiskStorageConfig']] = None,
                  storage_containers: Optional[Sequence['outputs.VmCloneV2DiskBackingInfoVmDiskStorageContainer']] = None):
         """
@@ -114680,6 +116545,8 @@ class VmCloneV2DiskBackingInfoVmDisk(dict):
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -114713,6 +116580,11 @@ class VmCloneV2DiskBackingInfoVmDisk(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> Optional[_builtins.bool]:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> Optional[_builtins.str]:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -127084,12 +128956,12 @@ class GetClusterNodeResult(dict):
 @pulumi.output_type
 class GetClusterProfileV2ClusterResult(dict):
     def __init__(__self__, *,
-                 config_drifts: _builtins.str,
+                 config_drifts: Sequence[_builtins.str],
                  ext_id: _builtins.str,
                  is_compliant: _builtins.bool,
                  last_synced_time: _builtins.str):
         """
-        :param _builtins.str config_drifts: - The configuration drifts of a cluster.
+        :param Sequence[_builtins.str] config_drifts: - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
         :param _builtins.str ext_id: -Represents clusters uuid
         :param _builtins.bool is_compliant: - Indicates if a cluster is compliant with the cluster profile.
         :param _builtins.str last_synced_time: - The last synced time of a cluster.
@@ -127101,9 +128973,9 @@ class GetClusterProfileV2ClusterResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="configDrifts")
-    def config_drifts(self) -> _builtins.str:
+    def config_drifts(self) -> Sequence[_builtins.str]:
         """
-        - The configuration drifts of a cluster.
+        - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
         """
         return pulumi.get(self, "config_drifts")
 
@@ -129040,12 +130912,12 @@ class GetClusterProfilesV2ClusterProfileResult(dict):
 @pulumi.output_type
 class GetClusterProfilesV2ClusterProfileClusterResult(dict):
     def __init__(__self__, *,
-                 config_drifts: _builtins.str,
+                 config_drifts: Sequence[_builtins.str],
                  ext_id: _builtins.str,
                  is_compliant: _builtins.bool,
                  last_synced_time: _builtins.str):
         """
-        :param _builtins.str config_drifts: - The configuration drifts of a cluster.
+        :param Sequence[_builtins.str] config_drifts: - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
         :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param _builtins.bool is_compliant: - Indicates if a cluster is compliant with the cluster profile.
         :param _builtins.str last_synced_time: - The last synced time of a cluster.
@@ -129057,9 +130929,9 @@ class GetClusterProfilesV2ClusterProfileClusterResult(dict):
 
     @_builtins.property
     @pulumi.getter(name="configDrifts")
-    def config_drifts(self) -> _builtins.str:
+    def config_drifts(self) -> Sequence[_builtins.str]:
         """
-        - The configuration drifts of a cluster.
+        - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
         """
         return pulumi.get(self, "config_drifts")
 
@@ -131987,13 +133859,13 @@ class GetClusterV2NetworkManagementServerResult(dict):
                  is_drs_enabled: _builtins.bool,
                  is_in_use: _builtins.bool,
                  is_registered: _builtins.bool,
-                 type: _builtins.bool):
+                 type: _builtins.str):
         """
         :param Sequence['GetClusterV2NetworkManagementServerIpArgs'] ips: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
         :param _builtins.bool is_drs_enabled: - Indicates whether it is DRS enabled or not.
         :param _builtins.bool is_in_use: - Indicates whether the host is managed by an entity or not.
         :param _builtins.bool is_registered: - Indicates whether it is registered or not.
-        :param _builtins.bool type: - Type of management server.
+        :param _builtins.str type: - Type of management server.
                  Valid values are:
                - "VCENTER"   	Vcenter management server.
         """
@@ -132037,7 +133909,7 @@ class GetClusterV2NetworkManagementServerResult(dict):
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> _builtins.bool:
+    def type(self) -> _builtins.str:
         """
         - Type of management server.
           Valid values are:
@@ -135106,13 +136978,13 @@ class GetClustersV2ClusterEntityNetworkManagementServerResult(dict):
                  is_drs_enabled: _builtins.bool,
                  is_in_use: _builtins.bool,
                  is_registered: _builtins.bool,
-                 type: _builtins.bool):
+                 type: _builtins.str):
         """
         :param Sequence['GetClustersV2ClusterEntityNetworkManagementServerIpArgs'] ips: - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
         :param _builtins.bool is_drs_enabled: - Indicates whether it is DRS enabled or not.
         :param _builtins.bool is_in_use: - Indicates whether the host is managed by an entity or not.
         :param _builtins.bool is_registered: - Indicates whether it is registered or not.
-        :param _builtins.bool type: - Type of management server.
+        :param _builtins.str type: - Type of management server.
                  Valid values are:
                - "VCENTER"   	Vcenter management server.
         """
@@ -135156,7 +137028,7 @@ class GetClustersV2ClusterEntityNetworkManagementServerResult(dict):
 
     @_builtins.property
     @pulumi.getter
-    def type(self) -> _builtins.bool:
+    def type(self) -> _builtins.str:
         """
         - Type of management server.
           Valid values are:
@@ -136981,6 +138853,76 @@ class GetDirectoryServicesV2DirectoryServiceServiceAccountResult(dict):
 
 
 @pulumi.output_type
+class GetDomainsV2DomainResult(dict):
+    def __init__(__self__, *,
+                 domain_ext_id: _builtins.str,
+                 ext_id: _builtins.str,
+                 links: Sequence['outputs.GetDomainsV2DomainLinkResult'],
+                 tenant_id: _builtins.str):
+        """
+        :param _builtins.str domain_ext_id: External identifier of the domain.
+        :param _builtins.str ext_id: External identifier of the allowed-domain association.
+        :param Sequence['GetDomainsV2DomainLinkArgs'] links: HATEOAS links for the domain association.
+        :param _builtins.str tenant_id: Identifier of the tenant that owns the domain association.
+        """
+        pulumi.set(__self__, "domain_ext_id", domain_ext_id)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "links", links)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+
+    @_builtins.property
+    @pulumi.getter(name="domainExtId")
+    def domain_ext_id(self) -> _builtins.str:
+        """
+        External identifier of the domain.
+        """
+        return pulumi.get(self, "domain_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        """
+        External identifier of the allowed-domain association.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def links(self) -> Sequence['outputs.GetDomainsV2DomainLinkResult']:
+        """
+        HATEOAS links for the domain association.
+        """
+        return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        """
+        Identifier of the tenant that owns the domain association.
+        """
+        return pulumi.get(self, "tenant_id")
+
+
+@pulumi.output_type
+class GetDomainsV2DomainLinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
 class GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicyResult(dict):
     def __init__(__self__, *,
                  cluster_ext_id: _builtins.str,
@@ -137059,6 +139001,7 @@ class GetEntityGroupV2AllowedConfigEntityResult(dict):
                  match_criteria: _builtins.str,
                  reference_ext_ids: Sequence[_builtins.str],
                  reference_string: _builtins.str,
+                 select_by: _builtins.str,
                  selected_by: _builtins.str,
                  type: _builtins.str):
         """
@@ -137069,7 +139012,8 @@ class GetEntityGroupV2AllowedConfigEntityResult(dict):
         :param _builtins.str match_criteria: Match criteria for regex-based selection (CONTAINS, STARTS_WITH, ENDS_WITH, EQUALS).
         :param Sequence[_builtins.str] reference_ext_ids: List of reference external identifiers.
         :param _builtins.str reference_string: String pattern for matching entities.
-        :param _builtins.str selected_by: The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+        :param _builtins.str select_by: The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+        :param _builtins.str selected_by: Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
         :param _builtins.str type: The type of entity (e.g. VM, ADDRESS_GROUP).
         """
         pulumi.set(__self__, "addresses", addresses)
@@ -137079,6 +139023,7 @@ class GetEntityGroupV2AllowedConfigEntityResult(dict):
         pulumi.set(__self__, "match_criteria", match_criteria)
         pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
         pulumi.set(__self__, "reference_string", reference_string)
+        pulumi.set(__self__, "select_by", select_by)
         pulumi.set(__self__, "selected_by", selected_by)
         pulumi.set(__self__, "type", type)
 
@@ -137139,10 +139084,19 @@ class GetEntityGroupV2AllowedConfigEntityResult(dict):
         return pulumi.get(self, "reference_string")
 
     @_builtins.property
-    @pulumi.getter(name="selectedBy")
-    def selected_by(self) -> _builtins.str:
+    @pulumi.getter(name="selectBy")
+    def select_by(self) -> _builtins.str:
         """
         The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+        """
+        return pulumi.get(self, "select_by")
+
+    @_builtins.property
+    @pulumi.getter(name="selectedBy")
+    @_utilities.deprecated("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
+    def selected_by(self) -> _builtins.str:
+        """
+        Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
         """
         return pulumi.get(self, "selected_by")
 
@@ -137241,18 +139195,21 @@ class GetEntityGroupV2ExceptConfigEntityResult(dict):
                  addresses: Sequence['outputs.GetEntityGroupV2ExceptConfigEntityAddressResult'],
                  ip_ranges: Sequence['outputs.GetEntityGroupV2ExceptConfigEntityIpRangeResult'],
                  reference_ext_ids: Sequence[_builtins.str],
+                 select_by: _builtins.str,
                  selected_by: _builtins.str,
                  type: _builtins.str):
         """
         :param Sequence['GetEntityGroupV2ExceptConfigEntityAddressArgs'] addresses: With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> (value, prefix_length).
         :param Sequence['GetEntityGroupV2ExceptConfigEntityIpRangeArgs'] ip_ranges: With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> (start_ip, end_ip).
         :param Sequence[_builtins.str] reference_ext_ids: List of reference external identifiers.
-        :param _builtins.str selected_by: The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+        :param _builtins.str select_by: The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+        :param _builtins.str selected_by: Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
         :param _builtins.str type: The type of entity (e.g. VM, ADDRESS_GROUP).
         """
         pulumi.set(__self__, "addresses", addresses)
         pulumi.set(__self__, "ip_ranges", ip_ranges)
         pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
+        pulumi.set(__self__, "select_by", select_by)
         pulumi.set(__self__, "selected_by", selected_by)
         pulumi.set(__self__, "type", type)
 
@@ -137281,10 +139238,19 @@ class GetEntityGroupV2ExceptConfigEntityResult(dict):
         return pulumi.get(self, "reference_ext_ids")
 
     @_builtins.property
-    @pulumi.getter(name="selectedBy")
-    def selected_by(self) -> _builtins.str:
+    @pulumi.getter(name="selectBy")
+    def select_by(self) -> _builtins.str:
         """
         The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+        """
+        return pulumi.get(self, "select_by")
+
+    @_builtins.property
+    @pulumi.getter(name="selectedBy")
+    @_utilities.deprecated("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
+    def selected_by(self) -> _builtins.str:
+        """
+        Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
         """
         return pulumi.get(self, "selected_by")
 
@@ -137567,6 +139533,7 @@ class GetEntityGroupsV2EntityGroupAllowedConfigEntityResult(dict):
                  match_criteria: _builtins.str,
                  reference_ext_ids: Sequence[_builtins.str],
                  reference_string: _builtins.str,
+                 select_by: _builtins.str,
                  selected_by: _builtins.str,
                  type: _builtins.str):
         pulumi.set(__self__, "addresses", addresses)
@@ -137576,6 +139543,7 @@ class GetEntityGroupsV2EntityGroupAllowedConfigEntityResult(dict):
         pulumi.set(__self__, "match_criteria", match_criteria)
         pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
         pulumi.set(__self__, "reference_string", reference_string)
+        pulumi.set(__self__, "select_by", select_by)
         pulumi.set(__self__, "selected_by", selected_by)
         pulumi.set(__self__, "type", type)
 
@@ -137615,7 +139583,13 @@ class GetEntityGroupsV2EntityGroupAllowedConfigEntityResult(dict):
         return pulumi.get(self, "reference_string")
 
     @_builtins.property
+    @pulumi.getter(name="selectBy")
+    def select_by(self) -> _builtins.str:
+        return pulumi.get(self, "select_by")
+
+    @_builtins.property
     @pulumi.getter(name="selectedBy")
+    @_utilities.deprecated("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
     def selected_by(self) -> _builtins.str:
         return pulumi.get(self, "selected_by")
 
@@ -137711,11 +139685,13 @@ class GetEntityGroupsV2EntityGroupExceptConfigEntityResult(dict):
                  addresses: Sequence['outputs.GetEntityGroupsV2EntityGroupExceptConfigEntityAddressResult'],
                  ip_ranges: Sequence['outputs.GetEntityGroupsV2EntityGroupExceptConfigEntityIpRangeResult'],
                  reference_ext_ids: Sequence[_builtins.str],
+                 select_by: _builtins.str,
                  selected_by: _builtins.str,
                  type: _builtins.str):
         pulumi.set(__self__, "addresses", addresses)
         pulumi.set(__self__, "ip_ranges", ip_ranges)
         pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
+        pulumi.set(__self__, "select_by", select_by)
         pulumi.set(__self__, "selected_by", selected_by)
         pulumi.set(__self__, "type", type)
 
@@ -137735,7 +139711,13 @@ class GetEntityGroupsV2EntityGroupExceptConfigEntityResult(dict):
         return pulumi.get(self, "reference_ext_ids")
 
     @_builtins.property
+    @pulumi.getter(name="selectBy")
+    def select_by(self) -> _builtins.str:
+        return pulumi.get(self, "select_by")
+
+    @_builtins.property
     @pulumi.getter(name="selectedBy")
+    @_utilities.deprecated("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
     def selected_by(self) -> _builtins.str:
         return pulumi.get(self, "selected_by")
 
@@ -155449,6 +157431,298 @@ class GetLcmStatusV2InProgressOperationResult(dict):
 
 @pulumi.output_type
 class GetLcmStatusV2LinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetLocalDomainV2ConnectionStatusResult(dict):
+    def __init__(__self__, *,
+                 service_statuses: Sequence['outputs.GetLocalDomainV2ConnectionStatusServiceStatusResult'],
+                 status: _builtins.str):
+        """
+        :param Sequence['GetLocalDomainV2ConnectionStatusServiceStatusArgs'] service_statuses: - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+        :param _builtins.str status: - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        pulumi.set(__self__, "service_statuses", service_statuses)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceStatuses")
+    def service_statuses(self) -> Sequence['outputs.GetLocalDomainV2ConnectionStatusServiceStatusResult']:
+        """
+        - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+        """
+        return pulumi.get(self, "service_statuses")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetLocalDomainV2ConnectionStatusServiceStatusResult(dict):
+    def __init__(__self__, *,
+                 service_name: _builtins.str,
+                 status: _builtins.str):
+        """
+        :param _builtins.str service_name: - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+        :param _builtins.str status: - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        pulumi.set(__self__, "service_name", service_name)
+        pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> _builtins.str:
+        """
+        - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+        """
+        return pulumi.get(self, "service_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        return pulumi.get(self, "status")
+
+
+@pulumi.output_type
+class GetLocalDomainV2LocationResult(dict):
+    def __init__(__self__, *,
+                 coordinates: Sequence['outputs.GetLocalDomainV2LocationCoordinateResult'],
+                 country: _builtins.str,
+                 ext_id: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param Sequence['GetLocalDomainV2LocationCoordinateArgs'] coordinates: - The location coordinates, that is latitude and longitude. See Coordinates below.
+        :param _builtins.str country: - Location Country.
+        :param _builtins.str ext_id: - A globally unique identifier of the location.
+        :param _builtins.str name: - Location name.
+        :param _builtins.str state: - Location state.
+        """
+        pulumi.set(__self__, "coordinates", coordinates)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def coordinates(self) -> Sequence['outputs.GetLocalDomainV2LocationCoordinateResult']:
+        """
+        - The location coordinates, that is latitude and longitude. See Coordinates below.
+        """
+        return pulumi.get(self, "coordinates")
+
+    @_builtins.property
+    @pulumi.getter
+    def country(self) -> _builtins.str:
+        """
+        - Location Country.
+        """
+        return pulumi.get(self, "country")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        """
+        - A globally unique identifier of the location.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        - Location name.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        - Location state.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetLocalDomainV2LocationCoordinateResult(dict):
+    def __init__(__self__, *,
+                 latitude: _builtins.float,
+                 longitude: _builtins.float):
+        """
+        :param _builtins.float latitude: - The latitude part of the location.
+        :param _builtins.float longitude: - The longitude part of the location.
+        """
+        pulumi.set(__self__, "latitude", latitude)
+        pulumi.set(__self__, "longitude", longitude)
+
+    @_builtins.property
+    @pulumi.getter
+    def latitude(self) -> _builtins.float:
+        """
+        - The latitude part of the location.
+        """
+        return pulumi.get(self, "latitude")
+
+    @_builtins.property
+    @pulumi.getter
+    def longitude(self) -> _builtins.float:
+        """
+        - The longitude part of the location.
+        """
+        return pulumi.get(self, "longitude")
+
+
+@pulumi.output_type
+class GetLocalDomainV2RegistrationStatusResult(dict):
+    def __init__(__self__, *,
+                 days_to_expiry: _builtins.int,
+                 error_stage: _builtins.str,
+                 identity_provider_ext_id: _builtins.str,
+                 state: _builtins.str):
+        """
+        :param _builtins.int days_to_expiry: - Indicates remaining days to domain credential expiry, 0 means expired.
+        :param _builtins.str error_stage: - The stage for the local domain's register/unregister operation.
+        :param _builtins.str identity_provider_ext_id: - Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+        :param _builtins.str state: - Location state.
+        """
+        pulumi.set(__self__, "days_to_expiry", days_to_expiry)
+        pulumi.set(__self__, "error_stage", error_stage)
+        pulumi.set(__self__, "identity_provider_ext_id", identity_provider_ext_id)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="daysToExpiry")
+    def days_to_expiry(self) -> _builtins.int:
+        """
+        - Indicates remaining days to domain credential expiry, 0 means expired.
+        """
+        return pulumi.get(self, "days_to_expiry")
+
+    @_builtins.property
+    @pulumi.getter(name="errorStage")
+    def error_stage(self) -> _builtins.str:
+        """
+        - The stage for the local domain's register/unregister operation.
+        """
+        return pulumi.get(self, "error_stage")
+
+    @_builtins.property
+    @pulumi.getter(name="identityProviderExtId")
+    def identity_provider_ext_id(self) -> _builtins.str:
+        """
+        - Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+        """
+        return pulumi.get(self, "identity_provider_ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        - Location state.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetLocationsV2LocationResult(dict):
+    def __init__(__self__, *,
+                 coordinates: Sequence['outputs.GetLocationsV2LocationCoordinateResult'],
+                 country: _builtins.str,
+                 ext_id: _builtins.str,
+                 links: Sequence['outputs.GetLocationsV2LocationLinkResult'],
+                 name: _builtins.str,
+                 state: _builtins.str,
+                 tenant_id: _builtins.str):
+        pulumi.set(__self__, "coordinates", coordinates)
+        pulumi.set(__self__, "country", country)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "links", links)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def coordinates(self) -> Sequence['outputs.GetLocationsV2LocationCoordinateResult']:
+        return pulumi.get(self, "coordinates")
+
+    @_builtins.property
+    @pulumi.getter
+    def country(self) -> _builtins.str:
+        return pulumi.get(self, "country")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def links(self) -> Sequence['outputs.GetLocationsV2LocationLinkResult']:
+        return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        return pulumi.get(self, "tenant_id")
+
+
+@pulumi.output_type
+class GetLocationsV2LocationCoordinateResult(dict):
+    def __init__(__self__, *,
+                 latitude: _builtins.float,
+                 longitude: _builtins.float):
+        pulumi.set(__self__, "latitude", latitude)
+        pulumi.set(__self__, "longitude", longitude)
+
+    @_builtins.property
+    @pulumi.getter
+    def latitude(self) -> _builtins.float:
+        return pulumi.get(self, "latitude")
+
+    @_builtins.property
+    @pulumi.getter
+    def longitude(self) -> _builtins.float:
+        return pulumi.get(self, "longitude")
+
+
+@pulumi.output_type
+class GetLocationsV2LocationLinkResult(dict):
     def __init__(__self__, *,
                  href: _builtins.str,
                  rel: _builtins.str):
@@ -181121,7 +183395,9 @@ class GetOvaV2VmConfigResult(dict):
                  gpuses: Optional[Sequence['outputs.GetOvaV2VmConfigGpusResult']] = None,
                  guest_tools: Optional[Sequence['outputs.GetOvaV2VmConfigGuestToolResult']] = None,
                  nics: Optional[Sequence['outputs.GetOvaV2VmConfigNicResult']] = None,
-                 power_state: Optional[_builtins.str] = None):
+                 power_state: Optional[_builtins.str] = None,
+                 wait_for_ip_routable: Optional[_builtins.bool] = None,
+                 wait_for_ip_timeout: Optional[_builtins.int] = None):
         """
         :param Sequence['GetOvaV2VmConfigApcConfigArgs'] apc_configs: Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
         :param Sequence['GetOvaV2VmConfigAvailabilityZoneArgs'] availability_zones: Reference to an availability zone.
@@ -181167,6 +183443,8 @@ class GetOvaV2VmConfigResult(dict):
         :param Sequence['GetOvaV2VmConfigGpusArgs'] gpuses: GPUs attached to the VM.
         :param Sequence['GetOvaV2VmConfigGuestToolArgs'] guest_tools: The details about Nutanix Guest Tools for a VM.
         :param Sequence['GetOvaV2VmConfigNicArgs'] nics: NICs attached to the VM.
+        :param _builtins.bool wait_for_ip_routable: When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        :param _builtins.int wait_for_ip_timeout: Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
         """
         pulumi.set(__self__, "apc_configs", apc_configs)
         pulumi.set(__self__, "availability_zones", availability_zones)
@@ -181219,6 +183497,10 @@ class GetOvaV2VmConfigResult(dict):
             pulumi.set(__self__, "nics", nics)
         if power_state is not None:
             pulumi.set(__self__, "power_state", power_state)
+        if wait_for_ip_routable is not None:
+            pulumi.set(__self__, "wait_for_ip_routable", wait_for_ip_routable)
+        if wait_for_ip_timeout is not None:
+            pulumi.set(__self__, "wait_for_ip_timeout", wait_for_ip_timeout)
 
     @_builtins.property
     @pulumi.getter(name="apcConfigs")
@@ -181576,6 +183858,22 @@ class GetOvaV2VmConfigResult(dict):
     @pulumi.getter(name="powerState")
     def power_state(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "power_state")
+
+    @_builtins.property
+    @pulumi.getter(name="waitForIpRoutable")
+    def wait_for_ip_routable(self) -> Optional[_builtins.bool]:
+        """
+        When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        """
+        return pulumi.get(self, "wait_for_ip_routable")
+
+    @_builtins.property
+    @pulumi.getter(name="waitForIpTimeout")
+    def wait_for_ip_timeout(self) -> Optional[_builtins.int]:
+        """
+        Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+        """
+        return pulumi.get(self, "wait_for_ip_timeout")
 
 
 @pulumi.output_type
@@ -181990,6 +184288,7 @@ class GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoResult(dict
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult']):
         """
@@ -182004,6 +184303,7 @@ class GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoResult(dict
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -182038,6 +184338,11 @@ class GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoResult(dict
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -182320,6 +184625,7 @@ class GetOvaV2VmConfigCdRomBackingInfoResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetOvaV2VmConfigCdRomBackingInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetOvaV2VmConfigCdRomBackingInfoStorageContainerResult']):
         """
@@ -182334,6 +184640,7 @@ class GetOvaV2VmConfigCdRomBackingInfoResult(dict):
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -182368,6 +184675,11 @@ class GetOvaV2VmConfigCdRomBackingInfoResult(dict):
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -182715,6 +185027,7 @@ class GetOvaV2VmConfigDiskBackingInfoVmDiskResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetOvaV2VmConfigDiskBackingInfoVmDiskStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetOvaV2VmConfigDiskBackingInfoVmDiskStorageContainerResult']):
         """
@@ -182729,6 +185042,7 @@ class GetOvaV2VmConfigDiskBackingInfoVmDiskResult(dict):
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -182763,6 +185077,11 @@ class GetOvaV2VmConfigDiskBackingInfoVmDiskResult(dict):
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -186094,11 +188413,15 @@ class GetOvasV2OvaVmConfigResult(dict):
                  gpuses: Optional[Sequence['outputs.GetOvasV2OvaVmConfigGpusResult']] = None,
                  guest_tools: Optional[Sequence['outputs.GetOvasV2OvaVmConfigGuestToolResult']] = None,
                  nics: Optional[Sequence['outputs.GetOvasV2OvaVmConfigNicResult']] = None,
-                 power_state: Optional[_builtins.str] = None):
+                 power_state: Optional[_builtins.str] = None,
+                 wait_for_ip_routable: Optional[_builtins.bool] = None,
+                 wait_for_ip_timeout: Optional[_builtins.int] = None):
         """
         :param _builtins.str create_time: - Time when the OVA was created time.
         :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
         :param _builtins.str name: - Name of the OVA.
+        :param _builtins.bool wait_for_ip_routable: When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        :param _builtins.int wait_for_ip_timeout: Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
         """
         pulumi.set(__self__, "apc_configs", apc_configs)
         pulumi.set(__self__, "availability_zones", availability_zones)
@@ -186151,6 +188474,10 @@ class GetOvasV2OvaVmConfigResult(dict):
             pulumi.set(__self__, "nics", nics)
         if power_state is not None:
             pulumi.set(__self__, "power_state", power_state)
+        if wait_for_ip_routable is not None:
+            pulumi.set(__self__, "wait_for_ip_routable", wait_for_ip_routable)
+        if wait_for_ip_timeout is not None:
+            pulumi.set(__self__, "wait_for_ip_timeout", wait_for_ip_timeout)
 
     @_builtins.property
     @pulumi.getter(name="apcConfigs")
@@ -186385,6 +188712,22 @@ class GetOvasV2OvaVmConfigResult(dict):
     @pulumi.getter(name="powerState")
     def power_state(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "power_state")
+
+    @_builtins.property
+    @pulumi.getter(name="waitForIpRoutable")
+    def wait_for_ip_routable(self) -> Optional[_builtins.bool]:
+        """
+        When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        """
+        return pulumi.get(self, "wait_for_ip_routable")
+
+    @_builtins.property
+    @pulumi.getter(name="waitForIpTimeout")
+    def wait_for_ip_timeout(self) -> Optional[_builtins.int]:
+        """
+        Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+        """
+        return pulumi.get(self, "wait_for_ip_timeout")
 
 
 @pulumi.output_type
@@ -186681,12 +189024,14 @@ class GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoResult(
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -186709,6 +189054,11 @@ class GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoResult(
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -186921,12 +189271,14 @@ class GetOvasV2OvaVmConfigCdRomBackingInfoResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetOvasV2OvaVmConfigCdRomBackingInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetOvasV2OvaVmConfigCdRomBackingInfoStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -186949,6 +189301,11 @@ class GetOvasV2OvaVmConfigCdRomBackingInfoResult(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -187204,12 +189561,14 @@ class GetOvasV2OvaVmConfigDiskBackingInfoVmDiskResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -187232,6 +189591,11 @@ class GetOvasV2OvaVmConfigDiskBackingInfoVmDiskResult(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -206538,6 +208902,453 @@ class GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointLinkResult(dict):
 
 
 @pulumi.output_type
+class GetRegisteredDomainV2LinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        """
+        :param _builtins.str href: - The URL at which the entity described by the link can be accessed.
+        :param _builtins.str rel: - A name that identifies the relationship of the link to the object.
+        """
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        """
+        - A name that identifies the relationship of the link to the object.
+        """
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetRegisteredDomainV2PlatformDataResult(dict):
+    def __init__(__self__, *,
+                 cluster_count: _builtins.int,
+                 connectivity_status: _builtins.str,
+                 pc_env_type: _builtins.str,
+                 pc_provider_type: _builtins.str,
+                 pc_version: _builtins.str):
+        """
+        :param _builtins.int cluster_count: - Number of clusters in the domain.
+        :param _builtins.str connectivity_status: - Domain connectivity status.
+        :param _builtins.str pc_env_type: - PC Environment Type of the domain.
+        :param _builtins.str pc_provider_type: - PC Provider Type of the domain.
+        :param _builtins.str pc_version: - PC Version of the domain.
+        """
+        pulumi.set(__self__, "cluster_count", cluster_count)
+        pulumi.set(__self__, "connectivity_status", connectivity_status)
+        pulumi.set(__self__, "pc_env_type", pc_env_type)
+        pulumi.set(__self__, "pc_provider_type", pc_provider_type)
+        pulumi.set(__self__, "pc_version", pc_version)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterCount")
+    def cluster_count(self) -> _builtins.int:
+        """
+        - Number of clusters in the domain.
+        """
+        return pulumi.get(self, "cluster_count")
+
+    @_builtins.property
+    @pulumi.getter(name="connectivityStatus")
+    def connectivity_status(self) -> _builtins.str:
+        """
+        - Domain connectivity status.
+        """
+        return pulumi.get(self, "connectivity_status")
+
+    @_builtins.property
+    @pulumi.getter(name="pcEnvType")
+    def pc_env_type(self) -> _builtins.str:
+        """
+        - PC Environment Type of the domain.
+        """
+        return pulumi.get(self, "pc_env_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pcProviderType")
+    def pc_provider_type(self) -> _builtins.str:
+        """
+        - PC Provider Type of the domain.
+        """
+        return pulumi.get(self, "pc_provider_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pcVersion")
+    def pc_version(self) -> _builtins.str:
+        """
+        - PC Version of the domain.
+        """
+        return pulumi.get(self, "pc_version")
+
+
+@pulumi.output_type
+class GetRegisteredDomainV2RegistrationConfigResult(dict):
+    def __init__(__self__, *,
+                 credentials: Sequence['outputs.GetRegisteredDomainV2RegistrationConfigCredentialResult'],
+                 domain_ext_id: _builtins.str,
+                 target_url: _builtins.str,
+                 tenant_ext_id: _builtins.str):
+        """
+        :param Sequence['GetRegisteredDomainV2RegistrationConfigCredentialArgs'] credentials: - Registration credentials. See Credentials.
+        :param _builtins.str domain_ext_id: - Unique identifier for the Prism Central.
+        :param _builtins.str target_url: - Prism Central should use this URL to communicate with Nutanix Central.
+        :param _builtins.str tenant_ext_id: - Unique identifier of the tenant.
+        """
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "domain_ext_id", domain_ext_id)
+        pulumi.set(__self__, "target_url", target_url)
+        pulumi.set(__self__, "tenant_ext_id", tenant_ext_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetRegisteredDomainV2RegistrationConfigCredentialResult']:
+        """
+        - Registration credentials. See Credentials.
+        """
+        return pulumi.get(self, "credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="domainExtId")
+    def domain_ext_id(self) -> _builtins.str:
+        """
+        - Unique identifier for the Prism Central.
+        """
+        return pulumi.get(self, "domain_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetUrl")
+    def target_url(self) -> _builtins.str:
+        """
+        - Prism Central should use this URL to communicate with Nutanix Central.
+        """
+        return pulumi.get(self, "target_url")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantExtId")
+    def tenant_ext_id(self) -> _builtins.str:
+        """
+        - Unique identifier of the tenant.
+        """
+        return pulumi.get(self, "tenant_ext_id")
+
+
+@pulumi.output_type
+class GetRegisteredDomainV2RegistrationConfigCredentialResult(dict):
+    def __init__(__self__, *,
+                 api_key: _builtins.str,
+                 key_id: _builtins.str):
+        """
+        :param _builtins.str api_key: - API key which is used by Prism Central as authentication for Nutanix Central communication.
+        :param _builtins.str key_id: - This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        pulumi.set(__self__, "api_key", api_key)
+        pulumi.set(__self__, "key_id", key_id)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> _builtins.str:
+        """
+        - API key which is used by Prism Central as authentication for Nutanix Central communication.
+        """
+        return pulumi.get(self, "api_key")
+
+    @_builtins.property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> _builtins.str:
+        """
+        - This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        return pulumi.get(self, "key_id")
+
+
+@pulumi.output_type
+class GetRegisteredDomainV2TunnelResult(dict):
+    def __init__(__self__, *,
+                 endpoint: _builtins.str,
+                 provider: _builtins.str):
+        """
+        :param _builtins.str endpoint: - Tunnel endpoint for connectivity.
+        :param _builtins.str provider: - Tunnel provider.
+        """
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "provider", provider)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> _builtins.str:
+        """
+        - Tunnel endpoint for connectivity.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def provider(self) -> _builtins.str:
+        """
+        - Tunnel provider.
+        """
+        return pulumi.get(self, "provider")
+
+
+@pulumi.output_type
+class GetRegisteredDomainsV2RegisteredDomainResult(dict):
+    def __init__(__self__, *,
+                 api_credential_status: _builtins.str,
+                 created_by: _builtins.str,
+                 credential_issuer: _builtins.str,
+                 dns_name: _builtins.str,
+                 domain_ext_id: _builtins.str,
+                 ext_id: _builtins.str,
+                 fqdn: _builtins.str,
+                 links: Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainLinkResult'],
+                 location_ext_id: _builtins.str,
+                 name: _builtins.str,
+                 platform_datas: Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainPlatformDataResult'],
+                 registered_time: _builtins.str,
+                 registration_configs: Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainRegistrationConfigResult'],
+                 registration_state: _builtins.str,
+                 tenant_id: _builtins.str,
+                 tunnels: Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainTunnelResult']):
+        pulumi.set(__self__, "api_credential_status", api_credential_status)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "credential_issuer", credential_issuer)
+        pulumi.set(__self__, "dns_name", dns_name)
+        pulumi.set(__self__, "domain_ext_id", domain_ext_id)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "fqdn", fqdn)
+        pulumi.set(__self__, "links", links)
+        pulumi.set(__self__, "location_ext_id", location_ext_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "platform_datas", platform_datas)
+        pulumi.set(__self__, "registered_time", registered_time)
+        pulumi.set(__self__, "registration_configs", registration_configs)
+        pulumi.set(__self__, "registration_state", registration_state)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+        pulumi.set(__self__, "tunnels", tunnels)
+
+    @_builtins.property
+    @pulumi.getter(name="apiCredentialStatus")
+    def api_credential_status(self) -> _builtins.str:
+        return pulumi.get(self, "api_credential_status")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="credentialIssuer")
+    def credential_issuer(self) -> _builtins.str:
+        return pulumi.get(self, "credential_issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="dnsName")
+    def dns_name(self) -> _builtins.str:
+        return pulumi.get(self, "dns_name")
+
+    @_builtins.property
+    @pulumi.getter(name="domainExtId")
+    def domain_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "domain_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def fqdn(self) -> _builtins.str:
+        return pulumi.get(self, "fqdn")
+
+    @_builtins.property
+    @pulumi.getter
+    def links(self) -> Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainLinkResult']:
+        return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter(name="locationExtId")
+    def location_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "location_ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="platformDatas")
+    def platform_datas(self) -> Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainPlatformDataResult']:
+        return pulumi.get(self, "platform_datas")
+
+    @_builtins.property
+    @pulumi.getter(name="registeredTime")
+    def registered_time(self) -> _builtins.str:
+        return pulumi.get(self, "registered_time")
+
+    @_builtins.property
+    @pulumi.getter(name="registrationConfigs")
+    def registration_configs(self) -> Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainRegistrationConfigResult']:
+        return pulumi.get(self, "registration_configs")
+
+    @_builtins.property
+    @pulumi.getter(name="registrationState")
+    def registration_state(self) -> _builtins.str:
+        return pulumi.get(self, "registration_state")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        return pulumi.get(self, "tenant_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def tunnels(self) -> Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainTunnelResult']:
+        return pulumi.get(self, "tunnels")
+
+
+@pulumi.output_type
+class GetRegisteredDomainsV2RegisteredDomainLinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetRegisteredDomainsV2RegisteredDomainPlatformDataResult(dict):
+    def __init__(__self__, *,
+                 cluster_count: _builtins.int,
+                 connectivity_status: _builtins.str,
+                 pc_env_type: _builtins.str,
+                 pc_provider_type: _builtins.str,
+                 pc_version: _builtins.str):
+        pulumi.set(__self__, "cluster_count", cluster_count)
+        pulumi.set(__self__, "connectivity_status", connectivity_status)
+        pulumi.set(__self__, "pc_env_type", pc_env_type)
+        pulumi.set(__self__, "pc_provider_type", pc_provider_type)
+        pulumi.set(__self__, "pc_version", pc_version)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterCount")
+    def cluster_count(self) -> _builtins.int:
+        return pulumi.get(self, "cluster_count")
+
+    @_builtins.property
+    @pulumi.getter(name="connectivityStatus")
+    def connectivity_status(self) -> _builtins.str:
+        return pulumi.get(self, "connectivity_status")
+
+    @_builtins.property
+    @pulumi.getter(name="pcEnvType")
+    def pc_env_type(self) -> _builtins.str:
+        return pulumi.get(self, "pc_env_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pcProviderType")
+    def pc_provider_type(self) -> _builtins.str:
+        return pulumi.get(self, "pc_provider_type")
+
+    @_builtins.property
+    @pulumi.getter(name="pcVersion")
+    def pc_version(self) -> _builtins.str:
+        return pulumi.get(self, "pc_version")
+
+
+@pulumi.output_type
+class GetRegisteredDomainsV2RegisteredDomainRegistrationConfigResult(dict):
+    def __init__(__self__, *,
+                 credentials: Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainRegistrationConfigCredentialResult'],
+                 domain_ext_id: _builtins.str,
+                 target_url: _builtins.str,
+                 tenant_ext_id: _builtins.str):
+        pulumi.set(__self__, "credentials", credentials)
+        pulumi.set(__self__, "domain_ext_id", domain_ext_id)
+        pulumi.set(__self__, "target_url", target_url)
+        pulumi.set(__self__, "tenant_ext_id", tenant_ext_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> Sequence['outputs.GetRegisteredDomainsV2RegisteredDomainRegistrationConfigCredentialResult']:
+        return pulumi.get(self, "credentials")
+
+    @_builtins.property
+    @pulumi.getter(name="domainExtId")
+    def domain_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "domain_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="targetUrl")
+    def target_url(self) -> _builtins.str:
+        return pulumi.get(self, "target_url")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantExtId")
+    def tenant_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "tenant_ext_id")
+
+
+@pulumi.output_type
+class GetRegisteredDomainsV2RegisteredDomainRegistrationConfigCredentialResult(dict):
+    def __init__(__self__, *,
+                 api_key: _builtins.str,
+                 key_id: _builtins.str):
+        pulumi.set(__self__, "api_key", api_key)
+        pulumi.set(__self__, "key_id", key_id)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> _builtins.str:
+        return pulumi.get(self, "api_key")
+
+    @_builtins.property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> _builtins.str:
+        return pulumi.get(self, "key_id")
+
+
+@pulumi.output_type
+class GetRegisteredDomainsV2RegisteredDomainTunnelResult(dict):
+    def __init__(__self__, *,
+                 endpoint: _builtins.str,
+                 provider: _builtins.str):
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "provider", provider)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> _builtins.str:
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def provider(self) -> _builtins.str:
+        return pulumi.get(self, "provider")
+
+
+@pulumi.output_type
 class GetResourceGroupV2CapabilityResult(dict):
     def __init__(__self__, *,
                  name: _builtins.str,
@@ -223249,6 +226060,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBacking
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult']):
         """
@@ -223256,6 +226068,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBacking
         :param _builtins.str disk_ext_id: The globally unique identifier of a VM disk. It should be of type UUID.
         :param _builtins.int disk_size_bytes: Size of the disk in Bytes
         :param _builtins.bool is_migration_in_progress: Indicates if the disk is undergoing migration to another container.
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
         :param Sequence['GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs'] storage_configs: Storage configuration for VM disks
         :param Sequence['GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgs'] storage_containers: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
         """
@@ -223263,6 +226076,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBacking
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -223297,6 +226111,14 @@ class GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBacking
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -223601,6 +226423,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerResult']):
         """
@@ -223608,6 +226431,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoResult(dict):
         :param _builtins.str disk_ext_id: The globally unique identifier of a VM disk. It should be of type UUID.
         :param _builtins.int disk_size_bytes: Size of the disk in Bytes
         :param _builtins.bool is_migration_in_progress: Indicates if the disk is undergoing migration to another container.
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
         :param Sequence['GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArgs'] storage_configs: Storage configuration for VM disks
         :param Sequence['GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArgs'] storage_containers: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
         """
@@ -223615,6 +226439,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoResult(dict):
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -223649,6 +226474,14 @@ class GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoResult(dict):
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -224047,6 +226880,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerResult']):
         """
@@ -224054,6 +226888,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskResult(dict):
         :param _builtins.str disk_ext_id: The globally unique identifier of a VM disk. It should be of type UUID.
         :param _builtins.int disk_size_bytes: Size of the disk in Bytes
         :param _builtins.bool is_migration_in_progress: Indicates if the disk is undergoing migration to another container.
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
         :param Sequence['GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArgs'] storage_configs: Storage configuration for VM disks
         :param Sequence['GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArgs'] storage_containers: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
         """
@@ -224061,6 +226896,7 @@ class GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskResult(dict):
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -224095,6 +226931,14 @@ class GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskResult(dict):
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -229987,12 +232831,14 @@ class GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDevi
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -230015,6 +232861,11 @@ class GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDevi
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -230217,12 +233068,14 @@ class GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoResult(dict
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -230245,6 +233098,11 @@ class GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoResult(dict
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -230509,12 +233367,14 @@ class GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskResult
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -230537,6 +233397,11 @@ class GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskResult
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -232716,6 +235581,1270 @@ class GetTemplatesV2TemplateUpdatedByAdditionalAttributeValueMapOfStringResult(d
     @pulumi.getter
     def map(self) -> Mapping[str, _builtins.str]:
         return pulumi.get(self, "map")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ExternalNetworkConfigResult(dict):
+    def __init__(__self__, *,
+                 configs: Sequence['outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfigResult'],
+                 ext_id: _builtins.str,
+                 state_infos: Sequence['outputs.GetTenantDomainAllocationV2ExternalNetworkConfigStateInfoResult'],
+                 tenant_id: _builtins.str):
+        """
+        :param _builtins.str ext_id: External identifier of the tenant domain allocation.
+        :param Sequence['GetTenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs'] state_infos: The state details of the domain allocation.
+        :param _builtins.str tenant_id: A globally unique identifier that represents the tenant that owns this entity.
+        """
+        pulumi.set(__self__, "configs", configs)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "state_infos", state_infos)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def configs(self) -> Sequence['outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfigResult']:
+        return pulumi.get(self, "configs")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        """
+        External identifier of the tenant domain allocation.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="stateInfos")
+    def state_infos(self) -> Sequence['outputs.GetTenantDomainAllocationV2ExternalNetworkConfigStateInfoResult']:
+        """
+        The state details of the domain allocation.
+        """
+        return pulumi.get(self, "state_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        """
+        A globally unique identifier that represents the tenant that owns this entity.
+        """
+        return pulumi.get(self, "tenant_id")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ExternalNetworkConfigConfigResult(dict):
+    def __init__(__self__, *,
+                 nats: Sequence['outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfigNatResult'],
+                 no_nats: Sequence['outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatResult']):
+        pulumi.set(__self__, "nats", nats)
+        pulumi.set(__self__, "no_nats", no_nats)
+
+    @_builtins.property
+    @pulumi.getter
+    def nats(self) -> Sequence['outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfigNatResult']:
+        return pulumi.get(self, "nats")
+
+    @_builtins.property
+    @pulumi.getter(name="noNats")
+    def no_nats(self) -> Sequence['outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatResult']:
+        return pulumi.get(self, "no_nats")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ExternalNetworkConfigConfigNatResult(dict):
+    def __init__(__self__, *,
+                 floating_ip_count: _builtins.int,
+                 overlay_subnet_ext_id: _builtins.str,
+                 transit_vpc_ext_id: _builtins.str):
+        pulumi.set(__self__, "floating_ip_count", floating_ip_count)
+        pulumi.set(__self__, "overlay_subnet_ext_id", overlay_subnet_ext_id)
+        pulumi.set(__self__, "transit_vpc_ext_id", transit_vpc_ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="floatingIpCount")
+    def floating_ip_count(self) -> _builtins.int:
+        return pulumi.get(self, "floating_ip_count")
+
+    @_builtins.property
+    @pulumi.getter(name="overlaySubnetExtId")
+    def overlay_subnet_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "overlay_subnet_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="transitVpcExtId")
+    def transit_vpc_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "transit_vpc_ext_id")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ExternalNetworkConfigConfigNoNatResult(dict):
+    def __init__(__self__, *,
+                 externally_routable_prefixes: Sequence[_builtins.str],
+                 overlay_subnet_ext_id: _builtins.str,
+                 transit_vpc_ext_id: _builtins.str):
+        pulumi.set(__self__, "externally_routable_prefixes", externally_routable_prefixes)
+        pulumi.set(__self__, "overlay_subnet_ext_id", overlay_subnet_ext_id)
+        pulumi.set(__self__, "transit_vpc_ext_id", transit_vpc_ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="externallyRoutablePrefixes")
+    def externally_routable_prefixes(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "externally_routable_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="overlaySubnetExtId")
+    def overlay_subnet_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "overlay_subnet_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="transitVpcExtId")
+    def transit_vpc_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "transit_vpc_ext_id")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ExternalNetworkConfigStateInfoResult(dict):
+    def __init__(__self__, *,
+                 state: _builtins.str):
+        """
+        :param _builtins.str state: The state of the project.
+        """
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the project.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2LinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ProjectResult(dict):
+    def __init__(__self__, *,
+                 ext_id: _builtins.str,
+                 name: _builtins.str,
+                 quotas: Sequence['outputs.GetTenantDomainAllocationV2ProjectQuotaResult'],
+                 resource_groups: Sequence['outputs.GetTenantDomainAllocationV2ProjectResourceGroupResult'],
+                 state: _builtins.str):
+        """
+        :param _builtins.str ext_id: External identifier of the tenant domain allocation.
+        :param _builtins.str name: The name of the project.
+        :param Sequence['GetTenantDomainAllocationV2ProjectQuotaArgs'] quotas: The resource quota of the project.
+        :param Sequence['GetTenantDomainAllocationV2ProjectResourceGroupArgs'] resource_groups: The resource group of the project.
+        :param _builtins.str state: The state of the project.
+        """
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "quotas", quotas)
+        pulumi.set(__self__, "resource_groups", resource_groups)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        """
+        External identifier of the tenant domain allocation.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        The name of the project.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def quotas(self) -> Sequence['outputs.GetTenantDomainAllocationV2ProjectQuotaResult']:
+        """
+        The resource quota of the project.
+        """
+        return pulumi.get(self, "quotas")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroups")
+    def resource_groups(self) -> Sequence['outputs.GetTenantDomainAllocationV2ProjectResourceGroupResult']:
+        """
+        The resource group of the project.
+        """
+        return pulumi.get(self, "resource_groups")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the project.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ProjectQuotaResult(dict):
+    def __init__(__self__, *,
+                 ext_id: _builtins.str,
+                 memory: _builtins.int,
+                 storage: _builtins.int,
+                 vcpu: _builtins.int):
+        """
+        :param _builtins.str ext_id: External identifier of the tenant domain allocation.
+        """
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "memory", memory)
+        pulumi.set(__self__, "storage", storage)
+        pulumi.set(__self__, "vcpu", vcpu)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        """
+        External identifier of the tenant domain allocation.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> _builtins.int:
+        return pulumi.get(self, "memory")
+
+    @_builtins.property
+    @pulumi.getter
+    def storage(self) -> _builtins.int:
+        return pulumi.get(self, "storage")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpu(self) -> _builtins.int:
+        return pulumi.get(self, "vcpu")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ProjectResourceGroupResult(dict):
+    def __init__(__self__, *,
+                 placement_targets: Sequence['outputs.GetTenantDomainAllocationV2ProjectResourceGroupPlacementTargetResult'],
+                 uuid: _builtins.str):
+        pulumi.set(__self__, "placement_targets", placement_targets)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @_builtins.property
+    @pulumi.getter(name="placementTargets")
+    def placement_targets(self) -> Sequence['outputs.GetTenantDomainAllocationV2ProjectResourceGroupPlacementTargetResult']:
+        return pulumi.get(self, "placement_targets")
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> _builtins.str:
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2ProjectResourceGroupPlacementTargetResult(dict):
+    def __init__(__self__, *,
+                 cluster_uuid: _builtins.str,
+                 storage_container_uuids: Sequence[_builtins.str]):
+        pulumi.set(__self__, "cluster_uuid", cluster_uuid)
+        pulumi.set(__self__, "storage_container_uuids", storage_container_uuids)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterUuid")
+    def cluster_uuid(self) -> _builtins.str:
+        return pulumi.get(self, "cluster_uuid")
+
+    @_builtins.property
+    @pulumi.getter(name="storageContainerUuids")
+    def storage_container_uuids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "storage_container_uuids")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationV2StateInfoResult(dict):
+    def __init__(__self__, *,
+                 state: _builtins.str):
+        """
+        :param _builtins.str state: The state of the project.
+        """
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the project.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationResult(dict):
+    def __init__(__self__, *,
+                 domain_ext_id: _builtins.str,
+                 ext_id: _builtins.str,
+                 external_network_configs: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigResult'],
+                 links: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationLinkResult'],
+                 projects: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationProjectResult'],
+                 state_infos: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationStateInfoResult'],
+                 tenant_ext_id: _builtins.str,
+                 tenant_id: _builtins.str):
+        """
+        :param _builtins.str tenant_ext_id: External identifier of the tenant.
+        """
+        pulumi.set(__self__, "domain_ext_id", domain_ext_id)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "external_network_configs", external_network_configs)
+        pulumi.set(__self__, "links", links)
+        pulumi.set(__self__, "projects", projects)
+        pulumi.set(__self__, "state_infos", state_infos)
+        pulumi.set(__self__, "tenant_ext_id", tenant_ext_id)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+
+    @_builtins.property
+    @pulumi.getter(name="domainExtId")
+    def domain_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "domain_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="externalNetworkConfigs")
+    def external_network_configs(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigResult']:
+        return pulumi.get(self, "external_network_configs")
+
+    @_builtins.property
+    @pulumi.getter
+    def links(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationLinkResult']:
+        return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationProjectResult']:
+        return pulumi.get(self, "projects")
+
+    @_builtins.property
+    @pulumi.getter(name="stateInfos")
+    def state_infos(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationStateInfoResult']:
+        return pulumi.get(self, "state_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantExtId")
+    def tenant_ext_id(self) -> _builtins.str:
+        """
+        External identifier of the tenant.
+        """
+        return pulumi.get(self, "tenant_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        return pulumi.get(self, "tenant_id")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigResult(dict):
+    def __init__(__self__, *,
+                 configs: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigResult'],
+                 ext_id: _builtins.str,
+                 state_infos: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigStateInfoResult'],
+                 tenant_id: _builtins.str):
+        pulumi.set(__self__, "configs", configs)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "state_infos", state_infos)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def configs(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigResult']:
+        return pulumi.get(self, "configs")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="stateInfos")
+    def state_infos(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigStateInfoResult']:
+        return pulumi.get(self, "state_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        return pulumi.get(self, "tenant_id")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigResult(dict):
+    def __init__(__self__, *,
+                 nats: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNatResult'],
+                 no_nats: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNoNatResult']):
+        pulumi.set(__self__, "nats", nats)
+        pulumi.set(__self__, "no_nats", no_nats)
+
+    @_builtins.property
+    @pulumi.getter
+    def nats(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNatResult']:
+        return pulumi.get(self, "nats")
+
+    @_builtins.property
+    @pulumi.getter(name="noNats")
+    def no_nats(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNoNatResult']:
+        return pulumi.get(self, "no_nats")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNatResult(dict):
+    def __init__(__self__, *,
+                 floating_ip_count: _builtins.int,
+                 overlay_subnet_ext_id: _builtins.str,
+                 transit_vpc_ext_id: _builtins.str):
+        pulumi.set(__self__, "floating_ip_count", floating_ip_count)
+        pulumi.set(__self__, "overlay_subnet_ext_id", overlay_subnet_ext_id)
+        pulumi.set(__self__, "transit_vpc_ext_id", transit_vpc_ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="floatingIpCount")
+    def floating_ip_count(self) -> _builtins.int:
+        return pulumi.get(self, "floating_ip_count")
+
+    @_builtins.property
+    @pulumi.getter(name="overlaySubnetExtId")
+    def overlay_subnet_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "overlay_subnet_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="transitVpcExtId")
+    def transit_vpc_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "transit_vpc_ext_id")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNoNatResult(dict):
+    def __init__(__self__, *,
+                 externally_routable_prefixes: Sequence[_builtins.str],
+                 overlay_subnet_ext_id: _builtins.str,
+                 transit_vpc_ext_id: _builtins.str):
+        pulumi.set(__self__, "externally_routable_prefixes", externally_routable_prefixes)
+        pulumi.set(__self__, "overlay_subnet_ext_id", overlay_subnet_ext_id)
+        pulumi.set(__self__, "transit_vpc_ext_id", transit_vpc_ext_id)
+
+    @_builtins.property
+    @pulumi.getter(name="externallyRoutablePrefixes")
+    def externally_routable_prefixes(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "externally_routable_prefixes")
+
+    @_builtins.property
+    @pulumi.getter(name="overlaySubnetExtId")
+    def overlay_subnet_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "overlay_subnet_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="transitVpcExtId")
+    def transit_vpc_ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "transit_vpc_ext_id")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigStateInfoResult(dict):
+    def __init__(__self__, *,
+                 state: _builtins.str):
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationLinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationProjectResult(dict):
+    def __init__(__self__, *,
+                 ext_id: _builtins.str,
+                 name: _builtins.str,
+                 quotas: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationProjectQuotaResult'],
+                 resource_groups: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupResult'],
+                 state: _builtins.str):
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "quotas", quotas)
+        pulumi.set(__self__, "resource_groups", resource_groups)
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def quotas(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationProjectQuotaResult']:
+        return pulumi.get(self, "quotas")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroups")
+    def resource_groups(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupResult']:
+        return pulumi.get(self, "resource_groups")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationProjectQuotaResult(dict):
+    def __init__(__self__, *,
+                 ext_id: _builtins.str,
+                 memory: _builtins.int,
+                 storage: _builtins.int,
+                 vcpu: _builtins.int):
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "memory", memory)
+        pulumi.set(__self__, "storage", storage)
+        pulumi.set(__self__, "vcpu", vcpu)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> _builtins.int:
+        return pulumi.get(self, "memory")
+
+    @_builtins.property
+    @pulumi.getter
+    def storage(self) -> _builtins.int:
+        return pulumi.get(self, "storage")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpu(self) -> _builtins.int:
+        return pulumi.get(self, "vcpu")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupResult(dict):
+    def __init__(__self__, *,
+                 placement_targets: Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupPlacementTargetResult'],
+                 uuid: _builtins.str):
+        pulumi.set(__self__, "placement_targets", placement_targets)
+        pulumi.set(__self__, "uuid", uuid)
+
+    @_builtins.property
+    @pulumi.getter(name="placementTargets")
+    def placement_targets(self) -> Sequence['outputs.GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupPlacementTargetResult']:
+        return pulumi.get(self, "placement_targets")
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> _builtins.str:
+        return pulumi.get(self, "uuid")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupPlacementTargetResult(dict):
+    def __init__(__self__, *,
+                 cluster_uuid: _builtins.str,
+                 storage_container_uuids: Sequence[_builtins.str]):
+        pulumi.set(__self__, "cluster_uuid", cluster_uuid)
+        pulumi.set(__self__, "storage_container_uuids", storage_container_uuids)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterUuid")
+    def cluster_uuid(self) -> _builtins.str:
+        return pulumi.get(self, "cluster_uuid")
+
+    @_builtins.property
+    @pulumi.getter(name="storageContainerUuids")
+    def storage_container_uuids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "storage_container_uuids")
+
+
+@pulumi.output_type
+class GetTenantDomainAllocationsV2DomainAllocationStateInfoResult(dict):
+    def __init__(__self__, *,
+                 state: _builtins.str):
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantMembershipV2IdentityDetailResult(dict):
+    def __init__(__self__, *,
+                 identity_provider_ext_id: _builtins.str,
+                 principal_value: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str identity_provider_ext_id: - The external identifier of the identity provider.
+        :param _builtins.str principal_value: - The unique lookup value for the user, such as a UPN, username, or email address.
+        :param _builtins.str type: - The identity type. Valid values: `"USER"`, `"GROUP"`.
+        """
+        pulumi.set(__self__, "identity_provider_ext_id", identity_provider_ext_id)
+        pulumi.set(__self__, "principal_value", principal_value)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="identityProviderExtId")
+    def identity_provider_ext_id(self) -> _builtins.str:
+        """
+        - The external identifier of the identity provider.
+        """
+        return pulumi.get(self, "identity_provider_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="principalValue")
+    def principal_value(self) -> _builtins.str:
+        """
+        - The unique lookup value for the user, such as a UPN, username, or email address.
+        """
+        return pulumi.get(self, "principal_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        - The identity type. Valid values: `"USER"`, `"GROUP"`.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetTenantMembershipV2LinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        """
+        :param _builtins.str href: - The URL at which the entity described by the link can be accessed.
+        :param _builtins.str rel: - A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        """
+        - A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetTenantMembershipV2StateInfoResult(dict):
+    def __init__(__self__, *,
+                 state: _builtins.str):
+        """
+        :param _builtins.str state: - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+        """
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantMembershipsV2MembershipResult(dict):
+    def __init__(__self__, *,
+                 created_by: _builtins.str,
+                 created_time: _builtins.str,
+                 domain_ext_id: _builtins.str,
+                 ext_id: _builtins.str,
+                 identity_details: Sequence['outputs.GetTenantMembershipsV2MembershipIdentityDetailResult'],
+                 identity_ext_id: _builtins.str,
+                 links: Sequence['outputs.GetTenantMembershipsV2MembershipLinkResult'],
+                 principal: _builtins.str,
+                 role_ext_id: _builtins.str,
+                 state_infos: Sequence['outputs.GetTenantMembershipsV2MembershipStateInfoResult'],
+                 tenant_id: _builtins.str):
+        """
+        :param _builtins.str created_by: - The username of the user who created the membership.
+        :param _builtins.str created_time: - The date and time when the membership was created.
+        :param _builtins.str domain_ext_id: - External identifier of the domain.
+        :param _builtins.str ext_id: - A globally unique identifier of an instance that is suitable for external consumption.
+        :param Sequence['GetTenantMembershipsV2MembershipIdentityDetailArgs'] identity_details: - Details used to resolve an external principal.
+        :param _builtins.str identity_ext_id: - The external identifier of an existing principal entity.
+        :param Sequence['GetTenantMembershipsV2MembershipLinkArgs'] links: - A HATEOAS style link for the response.
+        :param _builtins.str principal: - The resolved principal name associated with this membership.
+        :param _builtins.str role_ext_id: - The external identifier of the role assigned to the principal.
+        :param Sequence['GetTenantMembershipsV2MembershipStateInfoArgs'] state_infos: - The current lifecycle state of the membership.
+        :param _builtins.str tenant_id: - A globally unique identifier that represents the tenant that owns this entity.
+        """
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "created_time", created_time)
+        pulumi.set(__self__, "domain_ext_id", domain_ext_id)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "identity_details", identity_details)
+        pulumi.set(__self__, "identity_ext_id", identity_ext_id)
+        pulumi.set(__self__, "links", links)
+        pulumi.set(__self__, "principal", principal)
+        pulumi.set(__self__, "role_ext_id", role_ext_id)
+        pulumi.set(__self__, "state_infos", state_infos)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        - The username of the user who created the membership.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> _builtins.str:
+        """
+        - The date and time when the membership was created.
+        """
+        return pulumi.get(self, "created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="domainExtId")
+    def domain_ext_id(self) -> _builtins.str:
+        """
+        - External identifier of the domain.
+        """
+        return pulumi.get(self, "domain_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        """
+        - A globally unique identifier of an instance that is suitable for external consumption.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="identityDetails")
+    def identity_details(self) -> Sequence['outputs.GetTenantMembershipsV2MembershipIdentityDetailResult']:
+        """
+        - Details used to resolve an external principal.
+        """
+        return pulumi.get(self, "identity_details")
+
+    @_builtins.property
+    @pulumi.getter(name="identityExtId")
+    def identity_ext_id(self) -> _builtins.str:
+        """
+        - The external identifier of an existing principal entity.
+        """
+        return pulumi.get(self, "identity_ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def links(self) -> Sequence['outputs.GetTenantMembershipsV2MembershipLinkResult']:
+        """
+        - A HATEOAS style link for the response.
+        """
+        return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter
+    def principal(self) -> _builtins.str:
+        """
+        - The resolved principal name associated with this membership.
+        """
+        return pulumi.get(self, "principal")
+
+    @_builtins.property
+    @pulumi.getter(name="roleExtId")
+    def role_ext_id(self) -> _builtins.str:
+        """
+        - The external identifier of the role assigned to the principal.
+        """
+        return pulumi.get(self, "role_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="stateInfos")
+    def state_infos(self) -> Sequence['outputs.GetTenantMembershipsV2MembershipStateInfoResult']:
+        """
+        - The current lifecycle state of the membership.
+        """
+        return pulumi.get(self, "state_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        """
+        - A globally unique identifier that represents the tenant that owns this entity.
+        """
+        return pulumi.get(self, "tenant_id")
+
+
+@pulumi.output_type
+class GetTenantMembershipsV2MembershipIdentityDetailResult(dict):
+    def __init__(__self__, *,
+                 identity_provider_ext_id: _builtins.str,
+                 principal_value: _builtins.str,
+                 type: _builtins.str):
+        """
+        :param _builtins.str identity_provider_ext_id: - The external identifier of the identity provider.
+        :param _builtins.str principal_value: - The unique lookup value for the user, such as a UPN, username, or email address.
+        :param _builtins.str type: - The identity type. Valid values: `"USER"`, `"GROUP"`.
+        """
+        pulumi.set(__self__, "identity_provider_ext_id", identity_provider_ext_id)
+        pulumi.set(__self__, "principal_value", principal_value)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="identityProviderExtId")
+    def identity_provider_ext_id(self) -> _builtins.str:
+        """
+        - The external identifier of the identity provider.
+        """
+        return pulumi.get(self, "identity_provider_ext_id")
+
+    @_builtins.property
+    @pulumi.getter(name="principalValue")
+    def principal_value(self) -> _builtins.str:
+        """
+        - The unique lookup value for the user, such as a UPN, username, or email address.
+        """
+        return pulumi.get(self, "principal_value")
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> _builtins.str:
+        """
+        - The identity type. Valid values: `"USER"`, `"GROUP"`.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetTenantMembershipsV2MembershipLinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        """
+        :param _builtins.str href: - The URL at which the entity described by the link can be accessed.
+        :param _builtins.str rel: - A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        """
+        - A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetTenantMembershipsV2MembershipStateInfoResult(dict):
+    def __init__(__self__, *,
+                 state: _builtins.str):
+        """
+        :param _builtins.str state: - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+        """
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantV2AdminInfoResult(dict):
+    def __init__(__self__, *,
+                 email: _builtins.str,
+                 first_name: _builtins.str,
+                 last_name: _builtins.str,
+                 username: _builtins.str):
+        """
+        :param _builtins.str email: The email address of the user.
+        :param _builtins.str first_name: The first name of the user.
+        :param _builtins.str last_name: The last name of the user.
+        :param _builtins.str username: The username of the user.
+        """
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> _builtins.str:
+        """
+        The email address of the user.
+        """
+        return pulumi.get(self, "email")
+
+    @_builtins.property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> _builtins.str:
+        """
+        The first name of the user.
+        """
+        return pulumi.get(self, "first_name")
+
+    @_builtins.property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> _builtins.str:
+        """
+        The last name of the user.
+        """
+        return pulumi.get(self, "last_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        """
+        The username of the user.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetTenantV2AggregatedQuotaResult(dict):
+    def __init__(__self__, *,
+                 ext_id: _builtins.str,
+                 memory: _builtins.int,
+                 storage: _builtins.int,
+                 vcpu: _builtins.int):
+        """
+        :param _builtins.str ext_id: External identifier of the tenant.
+        :param _builtins.int memory: The amount of memory allocated as quota, in bytes.
+        :param _builtins.int storage: The amount of storage allocated as quota, in bytes.
+        :param _builtins.int vcpu: The number of vCPUs allocated as quota.
+        """
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "memory", memory)
+        pulumi.set(__self__, "storage", storage)
+        pulumi.set(__self__, "vcpu", vcpu)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        """
+        External identifier of the tenant.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> _builtins.int:
+        """
+        The amount of memory allocated as quota, in bytes.
+        """
+        return pulumi.get(self, "memory")
+
+    @_builtins.property
+    @pulumi.getter
+    def storage(self) -> _builtins.int:
+        """
+        The amount of storage allocated as quota, in bytes.
+        """
+        return pulumi.get(self, "storage")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpu(self) -> _builtins.int:
+        """
+        The number of vCPUs allocated as quota.
+        """
+        return pulumi.get(self, "vcpu")
+
+
+@pulumi.output_type
+class GetTenantV2LinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetTenantV2StateInfoResult(dict):
+    def __init__(__self__, *,
+                 state: _builtins.str):
+        """
+        :param _builtins.str state: The state of the tenant.
+        """
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        The state of the tenant.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetTenantsV2TenantResult(dict):
+    def __init__(__self__, *,
+                 added_by: _builtins.str,
+                 admin_infos: Sequence['outputs.GetTenantsV2TenantAdminInfoResult'],
+                 aggregated_quotas: Sequence['outputs.GetTenantsV2TenantAggregatedQuotaResult'],
+                 created_time: _builtins.str,
+                 description: _builtins.str,
+                 domains: Sequence[_builtins.str],
+                 ext_id: _builtins.str,
+                 links: Sequence['outputs.GetTenantsV2TenantLinkResult'],
+                 name: _builtins.str,
+                 state_infos: Sequence['outputs.GetTenantsV2TenantStateInfoResult'],
+                 tenant_id: _builtins.str,
+                 url: _builtins.str):
+        pulumi.set(__self__, "added_by", added_by)
+        pulumi.set(__self__, "admin_infos", admin_infos)
+        pulumi.set(__self__, "aggregated_quotas", aggregated_quotas)
+        pulumi.set(__self__, "created_time", created_time)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "domains", domains)
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "links", links)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state_infos", state_infos)
+        pulumi.set(__self__, "tenant_id", tenant_id)
+        pulumi.set(__self__, "url", url)
+
+    @_builtins.property
+    @pulumi.getter(name="addedBy")
+    def added_by(self) -> _builtins.str:
+        return pulumi.get(self, "added_by")
+
+    @_builtins.property
+    @pulumi.getter(name="adminInfos")
+    def admin_infos(self) -> Sequence['outputs.GetTenantsV2TenantAdminInfoResult']:
+        return pulumi.get(self, "admin_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="aggregatedQuotas")
+    def aggregated_quotas(self) -> Sequence['outputs.GetTenantsV2TenantAggregatedQuotaResult']:
+        return pulumi.get(self, "aggregated_quotas")
+
+    @_builtins.property
+    @pulumi.getter(name="createdTime")
+    def created_time(self) -> _builtins.str:
+        return pulumi.get(self, "created_time")
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> _builtins.str:
+        return pulumi.get(self, "description")
+
+    @_builtins.property
+    @pulumi.getter
+    def domains(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "domains")
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def links(self) -> Sequence['outputs.GetTenantsV2TenantLinkResult']:
+        return pulumi.get(self, "links")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter(name="stateInfos")
+    def state_infos(self) -> Sequence['outputs.GetTenantsV2TenantStateInfoResult']:
+        return pulumi.get(self, "state_infos")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> _builtins.str:
+        return pulumi.get(self, "tenant_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def url(self) -> _builtins.str:
+        return pulumi.get(self, "url")
+
+
+@pulumi.output_type
+class GetTenantsV2TenantAdminInfoResult(dict):
+    def __init__(__self__, *,
+                 email: _builtins.str,
+                 first_name: _builtins.str,
+                 last_name: _builtins.str,
+                 username: _builtins.str):
+        pulumi.set(__self__, "email", email)
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> _builtins.str:
+        return pulumi.get(self, "email")
+
+    @_builtins.property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> _builtins.str:
+        return pulumi.get(self, "first_name")
+
+    @_builtins.property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> _builtins.str:
+        return pulumi.get(self, "last_name")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetTenantsV2TenantAggregatedQuotaResult(dict):
+    def __init__(__self__, *,
+                 ext_id: _builtins.str,
+                 memory: _builtins.int,
+                 storage: _builtins.int,
+                 vcpu: _builtins.int):
+        pulumi.set(__self__, "ext_id", ext_id)
+        pulumi.set(__self__, "memory", memory)
+        pulumi.set(__self__, "storage", storage)
+        pulumi.set(__self__, "vcpu", vcpu)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> _builtins.str:
+        return pulumi.get(self, "ext_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> _builtins.int:
+        return pulumi.get(self, "memory")
+
+    @_builtins.property
+    @pulumi.getter
+    def storage(self) -> _builtins.int:
+        return pulumi.get(self, "storage")
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpu(self) -> _builtins.int:
+        return pulumi.get(self, "vcpu")
+
+
+@pulumi.output_type
+class GetTenantsV2TenantLinkResult(dict):
+    def __init__(__self__, *,
+                 href: _builtins.str,
+                 rel: _builtins.str):
+        pulumi.set(__self__, "href", href)
+        pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> _builtins.str:
+        return pulumi.get(self, "href")
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> _builtins.str:
+        return pulumi.get(self, "rel")
+
+
+@pulumi.output_type
+class GetTenantsV2TenantStateInfoResult(dict):
+    def __init__(__self__, *,
+                 state: _builtins.str):
+        pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        return pulumi.get(self, "state")
 
 
 @pulumi.output_type
@@ -236004,6 +240133,7 @@ class GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoResult(d
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult']):
         """
@@ -236011,6 +240141,7 @@ class GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoResult(d
         :param _builtins.str disk_ext_id: The globally unique identifier of a VM disk. It should be of type UUID.
         :param _builtins.int disk_size_bytes: Size of the disk in Bytes
         :param _builtins.bool is_migration_in_progress: Indicates if the disk is undergoing migration to another container.
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
         :param Sequence['GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs'] storage_configs: Storage configuration for VM disks
         :param Sequence['GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgs'] storage_containers: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
         """
@@ -236018,6 +240149,7 @@ class GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoResult(d
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -236052,6 +240184,14 @@ class GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoResult(d
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -236334,6 +240474,7 @@ class GetVirtualMachineV2CdRomBackingInfoResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetVirtualMachineV2CdRomBackingInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetVirtualMachineV2CdRomBackingInfoStorageContainerResult']):
         """
@@ -236341,6 +240482,7 @@ class GetVirtualMachineV2CdRomBackingInfoResult(dict):
         :param _builtins.str disk_ext_id: The globally unique identifier of a VM disk. It should be of type UUID.
         :param _builtins.int disk_size_bytes: Size of the disk in Bytes
         :param _builtins.bool is_migration_in_progress: Indicates if the disk is undergoing migration to another container.
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
         :param Sequence['GetVirtualMachineV2CdRomBackingInfoStorageConfigArgs'] storage_configs: Storage configuration for VM disks
         :param Sequence['GetVirtualMachineV2CdRomBackingInfoStorageContainerArgs'] storage_containers: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
         """
@@ -236348,6 +240490,7 @@ class GetVirtualMachineV2CdRomBackingInfoResult(dict):
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -236382,6 +240525,14 @@ class GetVirtualMachineV2CdRomBackingInfoResult(dict):
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -236729,6 +240880,7 @@ class GetVirtualMachineV2DiskBackingInfoVmDiskResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetVirtualMachineV2DiskBackingInfoVmDiskStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetVirtualMachineV2DiskBackingInfoVmDiskStorageContainerResult']):
         """
@@ -236736,6 +240888,7 @@ class GetVirtualMachineV2DiskBackingInfoVmDiskResult(dict):
         :param _builtins.str disk_ext_id: The globally unique identifier of a VM disk. It should be of type UUID.
         :param _builtins.int disk_size_bytes: Size of the disk in Bytes
         :param _builtins.bool is_migration_in_progress: Indicates if the disk is undergoing migration to another container.
+        :param _builtins.str serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
         :param Sequence['GetVirtualMachineV2DiskBackingInfoVmDiskStorageConfigArgs'] storage_configs: Storage configuration for VM disks
         :param Sequence['GetVirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs'] storage_containers: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
         """
@@ -236743,6 +240896,7 @@ class GetVirtualMachineV2DiskBackingInfoVmDiskResult(dict):
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -236777,6 +240931,14 @@ class GetVirtualMachineV2DiskBackingInfoVmDiskResult(dict):
         Indicates if the disk is undergoing migration to another container.
         """
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+        """
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -239821,12 +243983,14 @@ class GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoResul
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -239849,6 +244013,11 @@ class GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoResul
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -240037,12 +244206,14 @@ class GetVirtualMachinesV2VmCdRomBackingInfoResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetVirtualMachinesV2VmCdRomBackingInfoStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetVirtualMachinesV2VmCdRomBackingInfoStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -240065,6 +244236,11 @@ class GetVirtualMachinesV2VmCdRomBackingInfoResult(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -240296,12 +244472,14 @@ class GetVirtualMachinesV2VmDiskBackingInfoVmDiskResult(dict):
                  disk_ext_id: _builtins.str,
                  disk_size_bytes: _builtins.int,
                  is_migration_in_progress: _builtins.bool,
+                 serial_id: _builtins.str,
                  storage_configs: Sequence['outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskStorageConfigResult'],
                  storage_containers: Sequence['outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskStorageContainerResult']):
         pulumi.set(__self__, "data_sources", data_sources)
         pulumi.set(__self__, "disk_ext_id", disk_ext_id)
         pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        pulumi.set(__self__, "serial_id", serial_id)
         pulumi.set(__self__, "storage_configs", storage_configs)
         pulumi.set(__self__, "storage_containers", storage_containers)
 
@@ -240324,6 +244502,11 @@ class GetVirtualMachinesV2VmDiskBackingInfoVmDiskResult(dict):
     @pulumi.getter(name="isMigrationInProgress")
     def is_migration_in_progress(self) -> _builtins.bool:
         return pulumi.get(self, "is_migration_in_progress")
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> _builtins.str:
+        return pulumi.get(self, "serial_id")
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")

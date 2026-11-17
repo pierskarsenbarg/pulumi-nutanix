@@ -43,7 +43,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                 new Nutanix.Inputs.EntityGroupV2AllowedConfigEntityArgs
     ///                 {
     ///                     Type = "VM",
-    ///                     SelectedBy = "CATEGORY_EXT_ID",
+    ///                     SelectBy = "CATEGORY_EXT_ID",
     ///                     ReferenceExtIds = new[]
     ///                     {
     ///                         "category-uuid-1",
@@ -53,7 +53,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                 new Nutanix.Inputs.EntityGroupV2AllowedConfigEntityArgs
     ///                 {
     ///                     Type = "ADDRESS_GROUP",
-    ///                     SelectedBy = "IP_VALUES",
+    ///                     SelectBy = "IP_VALUES",
     ///                     Addresses = new Nutanix.Inputs.EntityGroupV2AllowedConfigEntityAddressesArgs
     ///                     {
     ///                         Ipv4Addresses = new[]
@@ -96,11 +96,11 @@ namespace PiersKarsenbarg.Nutanix
     /// ### Conditional Requirements
     /// 
     /// * &lt;span pulumi-lang-nodejs="`kubeEntities`" pulumi-lang-dotnet="`KubeEntities`" pulumi-lang-go="`kubeEntities`" pulumi-lang-python="`kube_entities`" pulumi-lang-yaml="`kubeEntities`" pulumi-lang-java="`kubeEntities`" pulumi-lang-hcl="`kube_entities`"&gt;`kubeEntities`&lt;/span&gt; - Required when &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt; is one of: `KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`. Must not be empty.
-    /// * &lt;span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`"&gt;`referenceExtIds`&lt;/span&gt; - Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `EXT_ID`. Must not be empty.
+    /// * &lt;span pulumi-lang-nodejs="`referenceExtIds`" pulumi-lang-dotnet="`ReferenceExtIds`" pulumi-lang-go="`referenceExtIds`" pulumi-lang-python="`reference_ext_ids`" pulumi-lang-yaml="`referenceExtIds`" pulumi-lang-java="`referenceExtIds`" pulumi-lang-hcl="`reference_ext_ids`"&gt;`referenceExtIds`&lt;/span&gt; - Required when &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt; is `EXT_ID`. Must not be empty.
     /// 
     /// ### Valid Combinations
     /// 
-    /// The combination of &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt; must be one of the following valid pairs:
+    /// The combination of &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt; and &lt;span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`"&gt;`type`&lt;/span&gt; must be one of the following valid pairs:
     /// 
     /// * `(CATEGORY_EXT_ID, VM)`
     /// * `(EXT_ID, VM)`
@@ -118,9 +118,9 @@ namespace PiersKarsenbarg.Nutanix
     /// 
     /// Any other combination will result in a validation error.
     /// 
-    /// ### Duplicate (selected_by, type) Not Allowed
+    /// ### Duplicate (select_by, type) Not Allowed
     /// 
-    /// Within one entity group, you cannot have two entities with the same `(selected_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and&lt;span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges " pulumi-lang-hcl=" ip_ranges "&gt; ipRanges &lt;/span&gt;into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
+    /// Within one entity group, you cannot have two entities with the same `(select_by, type)` pair. For example, two entities both using `IP_VALUES` and `ADDRESS_GROUP` are invalid. Combine all addresses and&lt;span pulumi-lang-nodejs=" ipRanges " pulumi-lang-dotnet=" IpRanges " pulumi-lang-go=" ipRanges " pulumi-lang-python=" ip_ranges " pulumi-lang-yaml=" ipRanges " pulumi-lang-java=" ipRanges " pulumi-lang-hcl=" ip_ranges "&gt; ipRanges &lt;/span&gt;into a single entity block when using `(IP_VALUES, ADDRESS_GROUP)`.
     /// 
     /// ## Import
     /// 

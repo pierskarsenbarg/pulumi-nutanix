@@ -14,14 +14,32 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class ClusterProfileV2ClusterGetArgs : global::Pulumi.ResourceArgs
     {
         [Input("configDrifts")]
-        public Input<string>? ConfigDrifts { get; set; }
+        private InputList<string>? _configDrifts;
 
+        /// <summary>
+        /// - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+        /// </summary>
+        public InputList<string> ConfigDrifts
+        {
+            get => _configDrifts ?? (_configDrifts = new InputList<string>());
+            set => _configDrifts = value;
+        }
+
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        /// <summary>
+        /// - Whether the cluster complies with the profile.
+        /// </summary>
         [Input("isCompliant")]
         public Input<bool>? IsCompliant { get; set; }
 
+        /// <summary>
+        /// - Last synchronization time.
+        /// </summary>
         [Input("lastSyncedTime")]
         public Input<string>? LastSyncedTime { get; set; }
 

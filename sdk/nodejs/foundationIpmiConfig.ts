@@ -9,6 +9,8 @@ import * as utilities from "./utilities";
 /**
  * Configures IPMI IP address on BMC of nodes.
  *
+ * > **WriteOnly credentials:** <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+ *
  * ## Example Usage
  *
  * <!--Start PulumiCodeChooser -->
@@ -103,7 +105,8 @@ export class FoundationIpmiConfig extends pulumi.CustomResource {
      */
     declare public readonly ipmiNetmask: pulumi.Output<string>;
     /**
-     * - (Required) IPMI password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) IPMI password.
      */
     declare public readonly ipmiPassword: pulumi.Output<string>;
     /**
@@ -149,10 +152,12 @@ export class FoundationIpmiConfig extends pulumi.CustomResource {
             resourceInputs["blocks"] = args?.blocks;
             resourceInputs["ipmiGateway"] = args?.ipmiGateway;
             resourceInputs["ipmiNetmask"] = args?.ipmiNetmask;
-            resourceInputs["ipmiPassword"] = args?.ipmiPassword;
+            resourceInputs["ipmiPassword"] = args?.ipmiPassword ? pulumi.secret(args.ipmiPassword) : undefined;
             resourceInputs["ipmiUser"] = args?.ipmiUser;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["ipmiPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(FoundationIpmiConfig.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -174,7 +179,8 @@ export interface FoundationIpmiConfigState {
      */
     ipmiNetmask?: pulumi.Input<string | undefined>;
     /**
-     * - (Required) IPMI password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) IPMI password.
      */
     ipmiPassword?: pulumi.Input<string | undefined>;
     /**
@@ -200,7 +206,8 @@ export interface FoundationIpmiConfigArgs {
      */
     ipmiNetmask: pulumi.Input<string>;
     /**
-     * - (Required) IPMI password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) IPMI password.
      */
     ipmiPassword: pulumi.Input<string>;
     /**

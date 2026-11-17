@@ -14,14 +14,26 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class ClusterProfileV2Cluster
     {
-        public readonly string? ConfigDrifts;
+        /// <summary>
+        /// - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+        /// </summary>
+        public readonly ImmutableArray<string> ConfigDrifts;
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         public readonly string? ExtId;
+        /// <summary>
+        /// - Whether the cluster complies with the profile.
+        /// </summary>
         public readonly bool? IsCompliant;
+        /// <summary>
+        /// - Last synchronization time.
+        /// </summary>
         public readonly string? LastSyncedTime;
 
         [OutputConstructor]
         private ClusterProfileV2Cluster(
-            string? configDrifts,
+            ImmutableArray<string> configDrifts,
 
             string? extId,
 

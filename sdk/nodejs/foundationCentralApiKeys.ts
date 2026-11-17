@@ -108,6 +108,8 @@ export class FoundationCentralApiKeys extends pulumi.CustomResource {
             resourceInputs["keyUuid"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["apiKey"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(FoundationCentralApiKeys.__pulumiType, name, resourceInputs, opts);
     }
 }

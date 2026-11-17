@@ -14,6 +14,8 @@ import (
 
 // Initiate change password request for a system user on a supported product.
 //
+// > **WriteOnly credentials:** <span pulumi-lang-nodejs="`currentPassword`" pulumi-lang-dotnet="`CurrentPassword`" pulumi-lang-go="`currentPassword`" pulumi-lang-python="`current_password`" pulumi-lang-yaml="`currentPassword`" pulumi-lang-java="`currentPassword`" pulumi-lang-hcl="`current_password`">`currentPassword`</span>, <span pulumi-lang-nodejs="`newPassword`" pulumi-lang-dotnet="`NewPassword`" pulumi-lang-go="`newPassword`" pulumi-lang-python="`new_password`" pulumi-lang-yaml="`newPassword`" pulumi-lang-java="`newPassword`" pulumi-lang-hcl="`new_password`">`newPassword`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+//
 // ## Example Usage
 //
 // <!--Start PulumiCodeChooser -->
@@ -46,11 +48,13 @@ import (
 type PasswordChangeRequestV2 struct {
 	pulumi.CustomResourceState
 
-	// -(Optional) Existing password of a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Optional, WriteOnly) Existing password of a user account.
 	CurrentPassword pulumi.StringPtrOutput `pulumi:"currentPassword"`
 	// -(Required) External identifier of the system user password.
 	ExtId pulumi.StringOutput `pulumi:"extId"`
-	// -(Required) New password for a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Required, WriteOnly) New password for a user account.
 	//
 	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword pulumi.StringOutput `pulumi:"newPassword"`
@@ -69,6 +73,17 @@ func NewPasswordChangeRequestV2(ctx *pulumi.Context,
 	if args.NewPassword == nil {
 		return nil, errors.New("invalid value for required argument 'NewPassword'")
 	}
+	if args.CurrentPassword != nil {
+		args.CurrentPassword = pulumi.ToSecret(args.CurrentPassword).(pulumi.StringPtrInput)
+	}
+	if args.NewPassword != nil {
+		args.NewPassword = pulumi.ToSecret(args.NewPassword).(pulumi.StringInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"currentPassword",
+		"newPassword",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource PasswordChangeRequestV2
 	err := ctx.RegisterResource("nutanix:index/passwordChangeRequestV2:PasswordChangeRequestV2", name, args, &resource, opts...)
@@ -92,22 +107,26 @@ func GetPasswordChangeRequestV2(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering PasswordChangeRequestV2 resources.
 type passwordChangeRequestV2State struct {
-	// -(Optional) Existing password of a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Optional, WriteOnly) Existing password of a user account.
 	CurrentPassword *string `pulumi:"currentPassword"`
 	// -(Required) External identifier of the system user password.
 	ExtId *string `pulumi:"extId"`
-	// -(Required) New password for a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Required, WriteOnly) New password for a user account.
 	//
 	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword *string `pulumi:"newPassword"`
 }
 
 type PasswordChangeRequestV2State struct {
-	// -(Optional) Existing password of a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Optional, WriteOnly) Existing password of a user account.
 	CurrentPassword pulumi.StringPtrInput
 	// -(Required) External identifier of the system user password.
 	ExtId pulumi.StringPtrInput
-	// -(Required) New password for a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Required, WriteOnly) New password for a user account.
 	//
 	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword pulumi.StringPtrInput
@@ -124,11 +143,13 @@ func PasswordChangeRequestV2Exists(ctx *pulumi.Context,
 }
 
 type passwordChangeRequestV2Args struct {
-	// -(Optional) Existing password of a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Optional, WriteOnly) Existing password of a user account.
 	CurrentPassword *string `pulumi:"currentPassword"`
 	// -(Required) External identifier of the system user password.
 	ExtId string `pulumi:"extId"`
-	// -(Required) New password for a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Required, WriteOnly) New password for a user account.
 	//
 	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword string `pulumi:"newPassword"`
@@ -136,11 +157,13 @@ type passwordChangeRequestV2Args struct {
 
 // The set of arguments for constructing a PasswordChangeRequestV2 resource.
 type PasswordChangeRequestV2Args struct {
-	// -(Optional) Existing password of a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Optional, WriteOnly) Existing password of a user account.
 	CurrentPassword pulumi.StringPtrInput
 	// -(Required) External identifier of the system user password.
 	ExtId pulumi.StringInput
-	// -(Required) New password for a user account.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Required, WriteOnly) New password for a user account.
 	//
 	// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 	NewPassword pulumi.StringInput
@@ -233,7 +256,8 @@ func (o PasswordChangeRequestV2Output) ToPasswordChangeRequestV2OutputWithContex
 	return o
 }
 
-// -(Optional) Existing password of a user account.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// -(Optional, WriteOnly) Existing password of a user account.
 func (o PasswordChangeRequestV2Output) CurrentPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PasswordChangeRequestV2) pulumi.StringPtrOutput { return v.CurrentPassword }).(pulumi.StringPtrOutput)
 }
@@ -243,7 +267,8 @@ func (o PasswordChangeRequestV2Output) ExtId() pulumi.StringOutput {
 	return o.ApplyT(func(v *PasswordChangeRequestV2) pulumi.StringOutput { return v.ExtId }).(pulumi.StringOutput)
 }
 
-// -(Required) New password for a user account.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// -(Required, WriteOnly) New password for a user account.
 //
 // See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
 func (o PasswordChangeRequestV2Output) NewPassword() pulumi.StringOutput {

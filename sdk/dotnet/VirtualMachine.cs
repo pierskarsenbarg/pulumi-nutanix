@@ -410,6 +410,10 @@ namespace PiersKarsenbarg.Nutanix
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-nutanix",
+                AdditionalSecretOutputs =
+                {
+                    "ngtCredentials",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -643,7 +647,11 @@ namespace PiersKarsenbarg.Nutanix
         public InputMap<string> NgtCredentials
         {
             get => _ngtCredentials ?? (_ngtCredentials = new InputMap<string>());
-            set => _ngtCredentials = value;
+            set
+            {
+                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, string>());
+                _ngtCredentials = Output.All(value, emptySecret).Apply(v => v[0]);
+            }
         }
 
         [Input("ngtEnabledCapabilityLists")]
@@ -1038,7 +1046,11 @@ namespace PiersKarsenbarg.Nutanix
         public InputMap<string> NgtCredentials
         {
             get => _ngtCredentials ?? (_ngtCredentials = new InputMap<string>());
-            set => _ngtCredentials = value;
+            set
+            {
+                var emptySecret = Output.CreateSecret(ImmutableDictionary.Create<string, string>());
+                _ngtCredentials = Output.All(value, emptySecret).Apply(v => v[0]);
+            }
         }
 
         [Input("ngtEnabledCapabilityLists")]

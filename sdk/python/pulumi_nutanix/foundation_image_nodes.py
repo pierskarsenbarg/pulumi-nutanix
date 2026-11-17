@@ -74,26 +74,31 @@ class FoundationImageNodesArgs:
         :param pulumi.Input[_builtins.str] hyperv_product_key: - Hyperv product key.
         :param pulumi.Input[_builtins.bool] hyperv_sku: - Hyperv SKU.
         :param pulumi.Input['FoundationImageNodesHypervisorIsoArgs'] hypervisor_iso: - Hypervisor ISO.
-        :param pulumi.Input[_builtins.str] hypervisor_password: - Hypervisor password.
+        :param pulumi.Input[_builtins.str] hypervisor_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) Hypervisor password.
         :param pulumi.Input[_builtins.str] install_script: - install script.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         :param pulumi.Input[_builtins.str] layout_egg_uuid: - Id of the custom layout which needs to be passed to imaging request.
         :param pulumi.Input[_builtins.bool] skip_hypervisor: - If hypervisor installation should be skipped.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         :param pulumi.Input['FoundationImageNodesTestsArgs'] tests: - Types of tests to be performed.
         :param pulumi.Input[_builtins.str] ucsm_ip: - UCSM IP address.
-        :param pulumi.Input[_builtins.str] ucsm_password: - UCSM password.
+        :param pulumi.Input[_builtins.str] ucsm_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) UCSM password.
         :param pulumi.Input[_builtins.str] ucsm_user: - UCSM username.
-        :param pulumi.Input[_builtins.str] unc_password: - UNC password.
+        :param pulumi.Input[_builtins.str] unc_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) UNC password.
         :param pulumi.Input[_builtins.str] unc_path: - UNC Path.
         :param pulumi.Input[_builtins.str] unc_username: - UNC username.
         :param pulumi.Input[_builtins.str] xen_config_type: - xen config types.
         :param pulumi.Input[_builtins.str] xs_master_ip: - xen server master IP address.
         :param pulumi.Input[_builtins.str] xs_master_label: - xen server master label.
-        :param pulumi.Input[_builtins.str] xs_master_password: - xen server master password.
+        :param pulumi.Input[_builtins.str] xs_master_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) xen server master password.
         :param pulumi.Input[_builtins.str] xs_master_username: - xen server master username.
         """
         pulumi.set(__self__, "blocks", blocks)
@@ -344,7 +349,8 @@ class FoundationImageNodesArgs:
     @pulumi.getter(name="hypervisorPassword")
     def hypervisor_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - Hypervisor password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) Hypervisor password.
         """
         return pulumi.get(self, "hypervisor_password")
 
@@ -392,7 +398,8 @@ class FoundationImageNodesArgs:
     @pulumi.getter(name="ipmiPassword")
     def ipmi_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 
@@ -476,7 +483,8 @@ class FoundationImageNodesArgs:
     @pulumi.getter(name="ucsmPassword")
     def ucsm_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - UCSM password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) UCSM password.
         """
         return pulumi.get(self, "ucsm_password")
 
@@ -500,7 +508,8 @@ class FoundationImageNodesArgs:
     @pulumi.getter(name="uncPassword")
     def unc_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - UNC password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) UNC password.
         """
         return pulumi.get(self, "unc_password")
 
@@ -572,7 +581,8 @@ class FoundationImageNodesArgs:
     @pulumi.getter(name="xsMasterPassword")
     def xs_master_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - xen server master password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) xen server master password.
         """
         return pulumi.get(self, "xs_master_password")
 
@@ -660,11 +670,13 @@ class _FoundationImageNodesState:
         :param pulumi.Input[_builtins.str] hypervisor_gateway: - (Required) Hypervisor gateway.
         :param pulumi.Input['FoundationImageNodesHypervisorIsoArgs'] hypervisor_iso: - Hypervisor ISO.
         :param pulumi.Input[_builtins.str] hypervisor_netmask: - (Required) Hypervisor netmask.
-        :param pulumi.Input[_builtins.str] hypervisor_password: - Hypervisor password.
+        :param pulumi.Input[_builtins.str] hypervisor_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) Hypervisor password.
         :param pulumi.Input[_builtins.str] install_script: - install script.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         :param pulumi.Input[_builtins.str] layout_egg_uuid: - Id of the custom layout which needs to be passed to imaging request.
         :param pulumi.Input[_builtins.str] nos_package: - (Required) NOS package.
@@ -673,15 +685,18 @@ class _FoundationImageNodesState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         :param pulumi.Input['FoundationImageNodesTestsArgs'] tests: - Types of tests to be performed.
         :param pulumi.Input[_builtins.str] ucsm_ip: - UCSM IP address.
-        :param pulumi.Input[_builtins.str] ucsm_password: - UCSM password.
+        :param pulumi.Input[_builtins.str] ucsm_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) UCSM password.
         :param pulumi.Input[_builtins.str] ucsm_user: - UCSM username.
-        :param pulumi.Input[_builtins.str] unc_password: - UNC password.
+        :param pulumi.Input[_builtins.str] unc_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) UNC password.
         :param pulumi.Input[_builtins.str] unc_path: - UNC Path.
         :param pulumi.Input[_builtins.str] unc_username: - UNC username.
         :param pulumi.Input[_builtins.str] xen_config_type: - xen config types.
         :param pulumi.Input[_builtins.str] xs_master_ip: - xen server master IP address.
         :param pulumi.Input[_builtins.str] xs_master_label: - xen server master label.
-        :param pulumi.Input[_builtins.str] xs_master_password: - xen server master password.
+        :param pulumi.Input[_builtins.str] xs_master_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) xen server master password.
         :param pulumi.Input[_builtins.str] xs_master_username: - xen server master username.
         """
         if blocks is not None:
@@ -951,7 +966,8 @@ class _FoundationImageNodesState:
     @pulumi.getter(name="hypervisorPassword")
     def hypervisor_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - Hypervisor password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) Hypervisor password.
         """
         return pulumi.get(self, "hypervisor_password")
 
@@ -999,7 +1015,8 @@ class _FoundationImageNodesState:
     @pulumi.getter(name="ipmiPassword")
     def ipmi_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 
@@ -1107,7 +1124,8 @@ class _FoundationImageNodesState:
     @pulumi.getter(name="ucsmPassword")
     def ucsm_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - UCSM password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) UCSM password.
         """
         return pulumi.get(self, "ucsm_password")
 
@@ -1131,7 +1149,8 @@ class _FoundationImageNodesState:
     @pulumi.getter(name="uncPassword")
     def unc_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - UNC password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) UNC password.
         """
         return pulumi.get(self, "unc_password")
 
@@ -1203,7 +1222,8 @@ class _FoundationImageNodesState:
     @pulumi.getter(name="xsMasterPassword")
     def xs_master_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - xen server master password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) xen server master password.
         """
         return pulumi.get(self, "xs_master_password")
 
@@ -1269,6 +1289,8 @@ class FoundationImageNodes(pulumi.CustomResource):
                  __props__=None):
         """
         Images node(s) and optionally creates clusters.
+
+        > **WriteOnly credentials:** <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span>, <span pulumi-lang-nodejs="`ucsmPassword`" pulumi-lang-dotnet="`UcsmPassword`" pulumi-lang-go="`ucsmPassword`" pulumi-lang-python="`ucsm_password`" pulumi-lang-yaml="`ucsmPassword`" pulumi-lang-java="`ucsmPassword`" pulumi-lang-hcl="`ucsm_password`">`ucsmPassword`</span>, <span pulumi-lang-nodejs="`xsMasterPassword`" pulumi-lang-dotnet="`XsMasterPassword`" pulumi-lang-go="`xsMasterPassword`" pulumi-lang-python="`xs_master_password`" pulumi-lang-yaml="`xsMasterPassword`" pulumi-lang-java="`xsMasterPassword`" pulumi-lang-hcl="`xs_master_password`">`xsMasterPassword`</span>, <span pulumi-lang-nodejs="`hypervisorPassword`" pulumi-lang-dotnet="`HypervisorPassword`" pulumi-lang-go="`hypervisorPassword`" pulumi-lang-python="`hypervisor_password`" pulumi-lang-yaml="`hypervisorPassword`" pulumi-lang-java="`hypervisorPassword`" pulumi-lang-hcl="`hypervisor_password`">`hypervisorPassword`</span>, <span pulumi-lang-nodejs="`uncPassword`" pulumi-lang-dotnet="`UncPassword`" pulumi-lang-go="`uncPassword`" pulumi-lang-python="`unc_password`" pulumi-lang-yaml="`uncPassword`" pulumi-lang-java="`uncPassword`" pulumi-lang-hcl="`unc_password`">`uncPassword`</span>, `fc_settings.fc_metadata.api_key`, and node-level <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
         ## Example Usage
 
@@ -1412,11 +1434,13 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] hypervisor_gateway: - (Required) Hypervisor gateway.
         :param pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict', 'outputs.FoundationImageNodesHypervisorIso']] hypervisor_iso: - Hypervisor ISO.
         :param pulumi.Input[_builtins.str] hypervisor_netmask: - (Required) Hypervisor netmask.
-        :param pulumi.Input[_builtins.str] hypervisor_password: - Hypervisor password.
+        :param pulumi.Input[_builtins.str] hypervisor_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) Hypervisor password.
         :param pulumi.Input[_builtins.str] install_script: - install script.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         :param pulumi.Input[_builtins.str] layout_egg_uuid: - Id of the custom layout which needs to be passed to imaging request.
         :param pulumi.Input[_builtins.str] nos_package: - (Required) NOS package.
@@ -1424,15 +1448,18 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         :param pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict', 'outputs.FoundationImageNodesTests']] tests: - Types of tests to be performed.
         :param pulumi.Input[_builtins.str] ucsm_ip: - UCSM IP address.
-        :param pulumi.Input[_builtins.str] ucsm_password: - UCSM password.
+        :param pulumi.Input[_builtins.str] ucsm_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) UCSM password.
         :param pulumi.Input[_builtins.str] ucsm_user: - UCSM username.
-        :param pulumi.Input[_builtins.str] unc_password: - UNC password.
+        :param pulumi.Input[_builtins.str] unc_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) UNC password.
         :param pulumi.Input[_builtins.str] unc_path: - UNC Path.
         :param pulumi.Input[_builtins.str] unc_username: - UNC username.
         :param pulumi.Input[_builtins.str] xen_config_type: - xen config types.
         :param pulumi.Input[_builtins.str] xs_master_ip: - xen server master IP address.
         :param pulumi.Input[_builtins.str] xs_master_label: - xen server master label.
-        :param pulumi.Input[_builtins.str] xs_master_password: - xen server master password.
+        :param pulumi.Input[_builtins.str] xs_master_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) xen server master password.
         :param pulumi.Input[_builtins.str] xs_master_username: - xen server master username.
         """
         ...
@@ -1443,6 +1470,8 @@ class FoundationImageNodes(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Images node(s) and optionally creates clusters.
+
+        > **WriteOnly credentials:** <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span>, <span pulumi-lang-nodejs="`ucsmPassword`" pulumi-lang-dotnet="`UcsmPassword`" pulumi-lang-go="`ucsmPassword`" pulumi-lang-python="`ucsm_password`" pulumi-lang-yaml="`ucsmPassword`" pulumi-lang-java="`ucsmPassword`" pulumi-lang-hcl="`ucsm_password`">`ucsmPassword`</span>, <span pulumi-lang-nodejs="`xsMasterPassword`" pulumi-lang-dotnet="`XsMasterPassword`" pulumi-lang-go="`xsMasterPassword`" pulumi-lang-python="`xs_master_password`" pulumi-lang-yaml="`xsMasterPassword`" pulumi-lang-java="`xsMasterPassword`" pulumi-lang-hcl="`xs_master_password`">`xsMasterPassword`</span>, <span pulumi-lang-nodejs="`hypervisorPassword`" pulumi-lang-dotnet="`HypervisorPassword`" pulumi-lang-go="`hypervisorPassword`" pulumi-lang-python="`hypervisor_password`" pulumi-lang-yaml="`hypervisorPassword`" pulumi-lang-java="`hypervisorPassword`" pulumi-lang-hcl="`hypervisor_password`">`hypervisorPassword`</span>, <span pulumi-lang-nodejs="`uncPassword`" pulumi-lang-dotnet="`UncPassword`" pulumi-lang-go="`uncPassword`" pulumi-lang-python="`unc_password`" pulumi-lang-yaml="`uncPassword`" pulumi-lang-java="`uncPassword`" pulumi-lang-hcl="`unc_password`">`uncPassword`</span>, `fc_settings.fc_metadata.api_key`, and node-level <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
         ## Example Usage
 
@@ -1655,11 +1684,11 @@ class FoundationImageNodes(pulumi.CustomResource):
             if hypervisor_netmask is None and not opts.urn:
                 raise TypeError("Missing required property 'hypervisor_netmask'")
             __props__.__dict__["hypervisor_netmask"] = hypervisor_netmask
-            __props__.__dict__["hypervisor_password"] = hypervisor_password
+            __props__.__dict__["hypervisor_password"] = None if hypervisor_password is None else pulumi.Output.secret(hypervisor_password)
             __props__.__dict__["install_script"] = install_script
             __props__.__dict__["ipmi_gateway"] = ipmi_gateway
             __props__.__dict__["ipmi_netmask"] = ipmi_netmask
-            __props__.__dict__["ipmi_password"] = ipmi_password
+            __props__.__dict__["ipmi_password"] = None if ipmi_password is None else pulumi.Output.secret(ipmi_password)
             __props__.__dict__["ipmi_user"] = ipmi_user
             __props__.__dict__["layout_egg_uuid"] = layout_egg_uuid
             if nos_package is None and not opts.urn:
@@ -1669,18 +1698,20 @@ class FoundationImageNodes(pulumi.CustomResource):
             __props__.__dict__["svm_rescue_args"] = svm_rescue_args
             __props__.__dict__["tests"] = tests
             __props__.__dict__["ucsm_ip"] = ucsm_ip
-            __props__.__dict__["ucsm_password"] = ucsm_password
+            __props__.__dict__["ucsm_password"] = None if ucsm_password is None else pulumi.Output.secret(ucsm_password)
             __props__.__dict__["ucsm_user"] = ucsm_user
-            __props__.__dict__["unc_password"] = unc_password
+            __props__.__dict__["unc_password"] = None if unc_password is None else pulumi.Output.secret(unc_password)
             __props__.__dict__["unc_path"] = unc_path
             __props__.__dict__["unc_username"] = unc_username
             __props__.__dict__["xen_config_type"] = xen_config_type
             __props__.__dict__["xs_master_ip"] = xs_master_ip
             __props__.__dict__["xs_master_label"] = xs_master_label
-            __props__.__dict__["xs_master_password"] = xs_master_password
+            __props__.__dict__["xs_master_password"] = None if xs_master_password is None else pulumi.Output.secret(xs_master_password)
             __props__.__dict__["xs_master_username"] = xs_master_username
             __props__.__dict__["cluster_urls"] = None
             __props__.__dict__["session_id"] = None
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["hypervisorPassword", "ipmiPassword", "ucsmPassword", "uncPassword", "xsMasterPassword"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(FoundationImageNodes, __self__).__init__(
             'nutanix:index/foundationImageNodes:FoundationImageNodes',
             resource_name,
@@ -1759,11 +1790,13 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] hypervisor_gateway: - (Required) Hypervisor gateway.
         :param pulumi.Input[Union['FoundationImageNodesHypervisorIsoArgs', 'FoundationImageNodesHypervisorIsoArgsDict', 'outputs.FoundationImageNodesHypervisorIso']] hypervisor_iso: - Hypervisor ISO.
         :param pulumi.Input[_builtins.str] hypervisor_netmask: - (Required) Hypervisor netmask.
-        :param pulumi.Input[_builtins.str] hypervisor_password: - Hypervisor password.
+        :param pulumi.Input[_builtins.str] hypervisor_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) Hypervisor password.
         :param pulumi.Input[_builtins.str] install_script: - install script.
         :param pulumi.Input[_builtins.str] ipmi_gateway: - (Required incase using IPMI based imaging either here or inside node spec) default IPMI gateway
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
         :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
         :param pulumi.Input[_builtins.str] layout_egg_uuid: - Id of the custom layout which needs to be passed to imaging request.
         :param pulumi.Input[_builtins.str] nos_package: - (Required) NOS package.
@@ -1772,15 +1805,18 @@ class FoundationImageNodes(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] svm_rescue_args: - Arguments to be passed to<span pulumi-lang-nodejs=" svmRescue " pulumi-lang-dotnet=" SvmRescue " pulumi-lang-go=" svmRescue " pulumi-lang-python=" svm_rescue " pulumi-lang-yaml=" svmRescue " pulumi-lang-java=" svmRescue " pulumi-lang-hcl=" svm_rescue "> svmRescue </span>for AOS installation. Ensure that the arguments provided are supported by the AOS version used for imaging.
         :param pulumi.Input[Union['FoundationImageNodesTestsArgs', 'FoundationImageNodesTestsArgsDict', 'outputs.FoundationImageNodesTests']] tests: - Types of tests to be performed.
         :param pulumi.Input[_builtins.str] ucsm_ip: - UCSM IP address.
-        :param pulumi.Input[_builtins.str] ucsm_password: - UCSM password.
+        :param pulumi.Input[_builtins.str] ucsm_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) UCSM password.
         :param pulumi.Input[_builtins.str] ucsm_user: - UCSM username.
-        :param pulumi.Input[_builtins.str] unc_password: - UNC password.
+        :param pulumi.Input[_builtins.str] unc_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) UNC password.
         :param pulumi.Input[_builtins.str] unc_path: - UNC Path.
         :param pulumi.Input[_builtins.str] unc_username: - UNC username.
         :param pulumi.Input[_builtins.str] xen_config_type: - xen config types.
         :param pulumi.Input[_builtins.str] xs_master_ip: - xen server master IP address.
         :param pulumi.Input[_builtins.str] xs_master_label: - xen server master label.
-        :param pulumi.Input[_builtins.str] xs_master_password: - xen server master password.
+        :param pulumi.Input[_builtins.str] xs_master_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (WriteOnly) xen server master password.
         :param pulumi.Input[_builtins.str] xs_master_username: - xen server master username.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -2039,7 +2075,8 @@ class FoundationImageNodes(pulumi.CustomResource):
     @pulumi.getter(name="hypervisorPassword")
     def hypervisor_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        - Hypervisor password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) Hypervisor password.
         """
         return pulumi.get(self, "hypervisor_password")
 
@@ -2071,7 +2108,8 @@ class FoundationImageNodes(pulumi.CustomResource):
     @pulumi.getter(name="ipmiPassword")
     def ipmi_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
         """
         return pulumi.get(self, "ipmi_password")
 
@@ -2143,7 +2181,8 @@ class FoundationImageNodes(pulumi.CustomResource):
     @pulumi.getter(name="ucsmPassword")
     def ucsm_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        - UCSM password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) UCSM password.
         """
         return pulumi.get(self, "ucsm_password")
 
@@ -2159,7 +2198,8 @@ class FoundationImageNodes(pulumi.CustomResource):
     @pulumi.getter(name="uncPassword")
     def unc_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        - UNC password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) UNC password.
         """
         return pulumi.get(self, "unc_password")
 
@@ -2207,7 +2247,8 @@ class FoundationImageNodes(pulumi.CustomResource):
     @pulumi.getter(name="xsMasterPassword")
     def xs_master_password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        - xen server master password.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (WriteOnly) xen server master password.
         """
         return pulumi.get(self, "xs_master_password")
 

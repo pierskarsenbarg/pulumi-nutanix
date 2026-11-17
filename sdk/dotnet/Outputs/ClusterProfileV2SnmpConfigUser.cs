@@ -31,6 +31,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// | SHA512    | SHA-512 SNMP authentication  |
         /// </summary>
         public readonly string AuthType;
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.ClusterProfileV2SnmpConfigUserLink> Links;
         /// <summary>

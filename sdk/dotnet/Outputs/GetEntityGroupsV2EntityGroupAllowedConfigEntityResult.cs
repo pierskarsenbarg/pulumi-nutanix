@@ -21,6 +21,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string MatchCriteria;
         public readonly ImmutableArray<string> ReferenceExtIds;
         public readonly string ReferenceString;
+        public readonly string SelectBy;
+        [Obsolete(@"Use <span pulumi-lang-nodejs=""`selectBy`"" pulumi-lang-dotnet=""`SelectBy`"" pulumi-lang-go=""`selectBy`"" pulumi-lang-python=""`select_by`"" pulumi-lang-yaml=""`selectBy`"" pulumi-lang-java=""`selectBy`"" pulumi-lang-hcl=""`select_by`"">`selectBy`</span> instead. <span pulumi-lang-nodejs=""`selectedBy`"" pulumi-lang-dotnet=""`SelectedBy`"" pulumi-lang-go=""`selectedBy`"" pulumi-lang-python=""`selected_by`"" pulumi-lang-yaml=""`selectedBy`"" pulumi-lang-java=""`selectedBy`"" pulumi-lang-hcl=""`selected_by`"">`selectedBy`</span> will be removed in a future release.")]
         public readonly string SelectedBy;
         public readonly string Type;
 
@@ -40,6 +42,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string referenceString,
 
+            string selectBy,
+
             string selectedBy,
 
             string type)
@@ -51,7 +55,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             MatchCriteria = matchCriteria;
             ReferenceExtIds = referenceExtIds;
             ReferenceString = referenceString;
+            SelectBy = selectBy;
+#pragma warning disable CS0618
             SelectedBy = selectedBy;
+#pragma warning restore CS0618
             Type = type;
         }
     }

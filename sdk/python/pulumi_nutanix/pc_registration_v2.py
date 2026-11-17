@@ -234,6 +234,8 @@ class PcRegistrationV2(pulumi.CustomResource):
         """
         Provides a resource to Registers a domain manager (Prism Central) instance to other entities like PE and PC. This process is asynchronous, creating a registration task and returning its UUID.
 
+        > **WriteOnly credentials:** remote cluster `authentication.password` is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -252,6 +254,8 @@ class PcRegistrationV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Provides a resource to Registers a domain manager (Prism Central) instance to other entities like PE and PC. This process is asynchronous, creating a registration task and returning its UUID.
+
+        > **WriteOnly credentials:** remote cluster `authentication.password` is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
 
         :param str resource_name: The name of the resource.

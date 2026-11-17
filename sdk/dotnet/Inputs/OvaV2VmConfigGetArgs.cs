@@ -397,6 +397,18 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _vtpmConfigs = value;
         }
 
+        /// <summary>
+        /// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        /// </summary>
+        [Input("waitForIpRoutable")]
+        public Input<bool>? WaitForIpRoutable { get; set; }
+
+        /// <summary>
+        /// Minutes to wait, when the VM is created with&lt;span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "&gt; powerState &lt;/span&gt;= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+        /// </summary>
+        [Input("waitForIpTimeout")]
+        public Input<int>? WaitForIpTimeout { get; set; }
+
         public OvaV2VmConfigGetArgs()
         {
         }
