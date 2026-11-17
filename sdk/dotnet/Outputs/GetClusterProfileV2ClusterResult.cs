@@ -15,9 +15,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class GetClusterProfileV2ClusterResult
     {
         /// <summary>
-        /// - The configuration drifts of a cluster.
+        /// - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
         /// </summary>
-        public readonly string ConfigDrifts;
+        public readonly ImmutableArray<string> ConfigDrifts;
         /// <summary>
         /// -Represents clusters uuid
         /// </summary>
@@ -33,7 +33,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
         [OutputConstructor]
         private GetClusterProfileV2ClusterResult(
-            string configDrifts,
+            ImmutableArray<string> configDrifts,
 
             string extId,
 

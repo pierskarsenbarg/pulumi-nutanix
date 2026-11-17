@@ -15,11 +15,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     public sealed class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentials
     {
         /// <summary>
-        /// -(Required) Access key ID for the object store provided for backup target.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) Access key ID for the object store provided for backup target.
         /// </summary>
         public readonly string AccessKeyId;
         /// <summary>
-        /// -(Required) Secret access key for the object store provided for backup target.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         /// </summary>
         public readonly string SecretAccessKey;
 

@@ -30,6 +30,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Indicates if the disk is undergoing migration to another container.
         /// </summary>
         public readonly bool IsMigrationInProgress;
+        public readonly string SerialId;
         /// <summary>
         /// Storage configuration for VM disks
         /// </summary>
@@ -49,6 +50,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool isMigrationInProgress,
 
+            string serialId,
+
             ImmutableArray<Outputs.GetOvaV2VmConfigDiskBackingInfoVmDiskStorageConfigResult> storageConfigs,
 
             ImmutableArray<Outputs.GetOvaV2VmConfigDiskBackingInfoVmDiskStorageContainerResult> storageContainers)
@@ -57,6 +60,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
             IsMigrationInProgress = isMigrationInProgress;
+            SerialId = serialId;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

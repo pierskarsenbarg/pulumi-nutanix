@@ -34,7 +34,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public InputList<Inputs.PcDeployV2ConfigCredentialArgs> Credentials
         {
             get => _credentials ?? (_credentials = new InputList<Inputs.PcDeployV2ConfigCredentialArgs>());
-            set => _credentials = value;
+            set
+            {
+                var emptySecret = Output.CreateSecret(ImmutableArray.Create<Inputs.PcDeployV2ConfigCredentialArgs>());
+                _credentials = Output.All(value, emptySecret).Apply(v => v[0]);
+            }
         }
 
         /// <summary>

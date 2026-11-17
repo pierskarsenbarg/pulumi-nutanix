@@ -13,6 +13,4797 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetLcmEntityV2AvailableVersionDependency struct {
+	// Information of the dependent entity versions for this available entity.
+	DependentVersions []GetLcmEntityV2AvailableVersionDependencyDependentVersion `pulumi:"dependentVersions"`
+	// LCM entity class.
+	EntityClass string `pulumi:"entityClass"`
+	// LCM entity model.
+	EntityModel string `pulumi:"entityModel"`
+	// Type of an LCM entity.  Enum Values:
+	// * `FIRMWARE`: LCM entity type firmware.
+	// * `SOFTWARE`: LCM entity type software.
+	EntityType string `pulumi:"entityType"`
+	// Current version of an LCM entity.
+	EntityVersion string `pulumi:"entityVersion"`
+	// ExtId of the LCM entity.
+	ExtId string `pulumi:"extId"`
+	// A hardware family for a LCM entity.
+	HardwareFamily string `pulumi:"hardwareFamily"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetLcmEntityV2AvailableVersionDependencyLink `pulumi:"links"`
+	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId string `pulumi:"tenantId"`
+}
+
+// GetLcmEntityV2AvailableVersionDependencyInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyArgs and GetLcmEntityV2AvailableVersionDependencyOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyArgs{...}
+type GetLcmEntityV2AvailableVersionDependencyInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyOutput() GetLcmEntityV2AvailableVersionDependencyOutput
+	ToGetLcmEntityV2AvailableVersionDependencyOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyArgs struct {
+	// Information of the dependent entity versions for this available entity.
+	DependentVersions GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput `pulumi:"dependentVersions"`
+	// LCM entity class.
+	EntityClass pulumi.StringInput `pulumi:"entityClass"`
+	// LCM entity model.
+	EntityModel pulumi.StringInput `pulumi:"entityModel"`
+	// Type of an LCM entity.  Enum Values:
+	// * `FIRMWARE`: LCM entity type firmware.
+	// * `SOFTWARE`: LCM entity type software.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// Current version of an LCM entity.
+	EntityVersion pulumi.StringInput `pulumi:"entityVersion"`
+	// ExtId of the LCM entity.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// A hardware family for a LCM entity.
+	HardwareFamily pulumi.StringInput `pulumi:"hardwareFamily"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links GetLcmEntityV2AvailableVersionDependencyLinkArrayInput `pulumi:"links"`
+	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+}
+
+func (GetLcmEntityV2AvailableVersionDependencyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependency)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyArgs) ToGetLcmEntityV2AvailableVersionDependencyOutput() GetLcmEntityV2AvailableVersionDependencyOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyArgs) ToGetLcmEntityV2AvailableVersionDependencyOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyOutput)
+}
+
+// GetLcmEntityV2AvailableVersionDependencyArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyArray and GetLcmEntityV2AvailableVersionDependencyArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyArrayInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyArray{ GetLcmEntityV2AvailableVersionDependencyArgs{...} }
+type GetLcmEntityV2AvailableVersionDependencyArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyArrayOutput() GetLcmEntityV2AvailableVersionDependencyArrayOutput
+	ToGetLcmEntityV2AvailableVersionDependencyArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyArrayOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyArray []GetLcmEntityV2AvailableVersionDependencyInput
+
+func (GetLcmEntityV2AvailableVersionDependencyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependency)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyArray) ToGetLcmEntityV2AvailableVersionDependencyArrayOutput() GetLcmEntityV2AvailableVersionDependencyArrayOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyArray) ToGetLcmEntityV2AvailableVersionDependencyArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyArrayOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependency)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) ToGetLcmEntityV2AvailableVersionDependencyOutput() GetLcmEntityV2AvailableVersionDependencyOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) ToGetLcmEntityV2AvailableVersionDependencyOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyOutput {
+	return o
+}
+
+// Information of the dependent entity versions for this available entity.
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) DependentVersions() GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) []GetLcmEntityV2AvailableVersionDependencyDependentVersion {
+		return v.DependentVersions
+	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput)
+}
+
+// LCM entity class.
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) EntityClass() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.EntityClass }).(pulumi.StringOutput)
+}
+
+// LCM entity model.
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) EntityModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.EntityModel }).(pulumi.StringOutput)
+}
+
+// Type of an LCM entity.  Enum Values:
+// * `FIRMWARE`: LCM entity type firmware.
+// * `SOFTWARE`: LCM entity type software.
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// Current version of an LCM entity.
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) EntityVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.EntityVersion }).(pulumi.StringOutput)
+}
+
+// ExtId of the LCM entity.
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// A hardware family for a LCM entity.
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) HardwareFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.HardwareFamily }).(pulumi.StringOutput)
+}
+
+// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) Links() GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) []GetLcmEntityV2AvailableVersionDependencyLink {
+		return v.Links
+	}).(GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput)
+}
+
+// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+func (o GetLcmEntityV2AvailableVersionDependencyOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependency)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyArrayOutput() GetLcmEntityV2AvailableVersionDependencyArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependency {
+		return vs[0].([]GetLcmEntityV2AvailableVersionDependency)[vs[1].(int)]
+	}).(GetLcmEntityV2AvailableVersionDependencyOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersion struct {
+	// The key of the key-value pair.
+	Name string `pulumi:"name"`
+	// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
+	Values []GetLcmEntityV2AvailableVersionDependencyDependentVersionValue `pulumi:"values"`
+}
+
+// GetLcmEntityV2AvailableVersionDependencyDependentVersionInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs and GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs{...}
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs struct {
+	// The key of the key-value pair.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
+	Values GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput `pulumi:"values"`
+}
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersion)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput)
+}
+
+// GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionArray and GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyDependentVersionArray{ GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs{...} }
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionArray []GetLcmEntityV2AvailableVersionDependencyDependentVersionInput
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersion)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersion)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
+	return o
+}
+
+// The key of the key-value pair.
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersion) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) Values() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersion) []GetLcmEntityV2AvailableVersionDependencyDependentVersionValue {
+		return v.Values
+	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersion)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependencyDependentVersion {
+		return vs[0].([]GetLcmEntityV2AvailableVersionDependencyDependentVersion)[vs[1].(int)]
+	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValue struct {
+	Boolean      bool                                                                       `pulumi:"boolean"`
+	Integer      int                                                                        `pulumi:"integer"`
+	IntegerLists []int                                                                      `pulumi:"integerLists"`
+	MapOfStrings []GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString `pulumi:"mapOfStrings"`
+	Object       map[string]string                                                          `pulumi:"object"`
+	String       string                                                                     `pulumi:"string"`
+	StringLists  []string                                                                   `pulumi:"stringLists"`
+}
+
+// GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs and GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs{...}
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs struct {
+	Boolean      pulumi.BoolInput                                                                   `pulumi:"boolean"`
+	Integer      pulumi.IntInput                                                                    `pulumi:"integer"`
+	IntegerLists pulumi.IntArrayInput                                                               `pulumi:"integerLists"`
+	MapOfStrings GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput `pulumi:"mapOfStrings"`
+	Object       pulumi.StringMapInput                                                              `pulumi:"object"`
+	String       pulumi.StringInput                                                                 `pulumi:"string"`
+	StringLists  pulumi.StringArrayInput                                                            `pulumi:"stringLists"`
+}
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput)
+}
+
+// GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray and GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray{ GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs{...} }
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray []GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) Boolean() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) bool { return v.Boolean }).(pulumi.BoolOutput)
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) Integer() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) int { return v.Integer }).(pulumi.IntOutput)
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) IntegerLists() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) []int { return v.IntegerLists }).(pulumi.IntArrayOutput)
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) MapOfStrings() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) []GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString {
+		return v.MapOfStrings
+	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput)
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) Object() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) map[string]string {
+		return v.Object
+	}).(pulumi.StringMapOutput)
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) String() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) string { return v.String }).(pulumi.StringOutput)
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) StringLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) []string { return v.StringLists }).(pulumi.StringArrayOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependencyDependentVersionValue {
+		return vs[0].([]GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)[vs[1].(int)]
+	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString struct {
+	Map map[string]string `pulumi:"map"`
+}
+
+// GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs and GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs{...}
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs struct {
+	Map pulumi.StringMapInput `pulumi:"map"`
+}
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput)
+}
+
+// GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray and GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray{ GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs{...} }
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput
+	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray []GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput) Map() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString) map[string]string {
+		return v.Map
+	}).(pulumi.StringMapOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString {
+		return vs[0].([]GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)[vs[1].(int)]
+	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyLink struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetLcmEntityV2AvailableVersionDependencyLinkInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyLinkArgs and GetLcmEntityV2AvailableVersionDependencyLinkOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyLinkInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyLinkArgs{...}
+type GetLcmEntityV2AvailableVersionDependencyLinkInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyLinkOutput() GetLcmEntityV2AvailableVersionDependencyLinkOutput
+	ToGetLcmEntityV2AvailableVersionDependencyLinkOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyLinkOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyLinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetLcmEntityV2AvailableVersionDependencyLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyLink)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyLinkArgs) ToGetLcmEntityV2AvailableVersionDependencyLinkOutput() GetLcmEntityV2AvailableVersionDependencyLinkOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyLinkOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyLinkArgs) ToGetLcmEntityV2AvailableVersionDependencyLinkOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyLinkOutput)
+}
+
+// GetLcmEntityV2AvailableVersionDependencyLinkArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyLinkArray and GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyLinkArrayInput` via:
+//
+//	GetLcmEntityV2AvailableVersionDependencyLinkArray{ GetLcmEntityV2AvailableVersionDependencyLinkArgs{...} }
+type GetLcmEntityV2AvailableVersionDependencyLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutput() GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput
+	ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput
+}
+
+type GetLcmEntityV2AvailableVersionDependencyLinkArray []GetLcmEntityV2AvailableVersionDependencyLinkInput
+
+func (GetLcmEntityV2AvailableVersionDependencyLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyLink)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyLinkArray) ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutput() GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
+	return i.ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2AvailableVersionDependencyLinkArray) ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyLinkOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyLink)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyLinkOutput) ToGetLcmEntityV2AvailableVersionDependencyLinkOutput() GetLcmEntityV2AvailableVersionDependencyLinkOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyLinkOutput) ToGetLcmEntityV2AvailableVersionDependencyLinkOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyLinkOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyLink)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutput() GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependencyLink {
+		return vs[0].([]GetLcmEntityV2AvailableVersionDependencyLink)[vs[1].(int)]
+	}).(GetLcmEntityV2AvailableVersionDependencyLinkOutput)
+}
+
+type GetLcmEntityV2EntityDetail struct {
+	// The key of the key-value pair.
+	Name string `pulumi:"name"`
+	// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
+	Values []GetLcmEntityV2EntityDetailValue `pulumi:"values"`
+}
+
+// GetLcmEntityV2EntityDetailInput is an input type that accepts GetLcmEntityV2EntityDetailArgs and GetLcmEntityV2EntityDetailOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2EntityDetailInput` via:
+//
+//	GetLcmEntityV2EntityDetailArgs{...}
+type GetLcmEntityV2EntityDetailInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2EntityDetailOutput() GetLcmEntityV2EntityDetailOutput
+	ToGetLcmEntityV2EntityDetailOutputWithContext(context.Context) GetLcmEntityV2EntityDetailOutput
+}
+
+type GetLcmEntityV2EntityDetailArgs struct {
+	// The key of the key-value pair.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
+	Values GetLcmEntityV2EntityDetailValueArrayInput `pulumi:"values"`
+}
+
+func (GetLcmEntityV2EntityDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2EntityDetail)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2EntityDetailArgs) ToGetLcmEntityV2EntityDetailOutput() GetLcmEntityV2EntityDetailOutput {
+	return i.ToGetLcmEntityV2EntityDetailOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2EntityDetailArgs) ToGetLcmEntityV2EntityDetailOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailOutput)
+}
+
+// GetLcmEntityV2EntityDetailArrayInput is an input type that accepts GetLcmEntityV2EntityDetailArray and GetLcmEntityV2EntityDetailArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2EntityDetailArrayInput` via:
+//
+//	GetLcmEntityV2EntityDetailArray{ GetLcmEntityV2EntityDetailArgs{...} }
+type GetLcmEntityV2EntityDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2EntityDetailArrayOutput() GetLcmEntityV2EntityDetailArrayOutput
+	ToGetLcmEntityV2EntityDetailArrayOutputWithContext(context.Context) GetLcmEntityV2EntityDetailArrayOutput
+}
+
+type GetLcmEntityV2EntityDetailArray []GetLcmEntityV2EntityDetailInput
+
+func (GetLcmEntityV2EntityDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetail)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2EntityDetailArray) ToGetLcmEntityV2EntityDetailArrayOutput() GetLcmEntityV2EntityDetailArrayOutput {
+	return i.ToGetLcmEntityV2EntityDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2EntityDetailArray) ToGetLcmEntityV2EntityDetailArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailArrayOutput)
+}
+
+type GetLcmEntityV2EntityDetailOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2EntityDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2EntityDetail)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2EntityDetailOutput) ToGetLcmEntityV2EntityDetailOutput() GetLcmEntityV2EntityDetailOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailOutput) ToGetLcmEntityV2EntityDetailOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailOutput {
+	return o
+}
+
+// The key of the key-value pair.
+func (o GetLcmEntityV2EntityDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
+func (o GetLcmEntityV2EntityDetailOutput) Values() GetLcmEntityV2EntityDetailValueArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetail) []GetLcmEntityV2EntityDetailValue { return v.Values }).(GetLcmEntityV2EntityDetailValueArrayOutput)
+}
+
+type GetLcmEntityV2EntityDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2EntityDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetail)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2EntityDetailArrayOutput) ToGetLcmEntityV2EntityDetailArrayOutput() GetLcmEntityV2EntityDetailArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailArrayOutput) ToGetLcmEntityV2EntityDetailArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2EntityDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2EntityDetail {
+		return vs[0].([]GetLcmEntityV2EntityDetail)[vs[1].(int)]
+	}).(GetLcmEntityV2EntityDetailOutput)
+}
+
+type GetLcmEntityV2EntityDetailValue struct {
+	Boolean      bool                                         `pulumi:"boolean"`
+	Integer      int                                          `pulumi:"integer"`
+	IntegerLists []int                                        `pulumi:"integerLists"`
+	MapOfStrings []GetLcmEntityV2EntityDetailValueMapOfString `pulumi:"mapOfStrings"`
+	Object       map[string]string                            `pulumi:"object"`
+	String       string                                       `pulumi:"string"`
+	StringLists  []string                                     `pulumi:"stringLists"`
+}
+
+// GetLcmEntityV2EntityDetailValueInput is an input type that accepts GetLcmEntityV2EntityDetailValueArgs and GetLcmEntityV2EntityDetailValueOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2EntityDetailValueInput` via:
+//
+//	GetLcmEntityV2EntityDetailValueArgs{...}
+type GetLcmEntityV2EntityDetailValueInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2EntityDetailValueOutput() GetLcmEntityV2EntityDetailValueOutput
+	ToGetLcmEntityV2EntityDetailValueOutputWithContext(context.Context) GetLcmEntityV2EntityDetailValueOutput
+}
+
+type GetLcmEntityV2EntityDetailValueArgs struct {
+	Boolean      pulumi.BoolInput                                     `pulumi:"boolean"`
+	Integer      pulumi.IntInput                                      `pulumi:"integer"`
+	IntegerLists pulumi.IntArrayInput                                 `pulumi:"integerLists"`
+	MapOfStrings GetLcmEntityV2EntityDetailValueMapOfStringArrayInput `pulumi:"mapOfStrings"`
+	Object       pulumi.StringMapInput                                `pulumi:"object"`
+	String       pulumi.StringInput                                   `pulumi:"string"`
+	StringLists  pulumi.StringArrayInput                              `pulumi:"stringLists"`
+}
+
+func (GetLcmEntityV2EntityDetailValueArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2EntityDetailValue)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2EntityDetailValueArgs) ToGetLcmEntityV2EntityDetailValueOutput() GetLcmEntityV2EntityDetailValueOutput {
+	return i.ToGetLcmEntityV2EntityDetailValueOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2EntityDetailValueArgs) ToGetLcmEntityV2EntityDetailValueOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailValueOutput)
+}
+
+// GetLcmEntityV2EntityDetailValueArrayInput is an input type that accepts GetLcmEntityV2EntityDetailValueArray and GetLcmEntityV2EntityDetailValueArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2EntityDetailValueArrayInput` via:
+//
+//	GetLcmEntityV2EntityDetailValueArray{ GetLcmEntityV2EntityDetailValueArgs{...} }
+type GetLcmEntityV2EntityDetailValueArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2EntityDetailValueArrayOutput() GetLcmEntityV2EntityDetailValueArrayOutput
+	ToGetLcmEntityV2EntityDetailValueArrayOutputWithContext(context.Context) GetLcmEntityV2EntityDetailValueArrayOutput
+}
+
+type GetLcmEntityV2EntityDetailValueArray []GetLcmEntityV2EntityDetailValueInput
+
+func (GetLcmEntityV2EntityDetailValueArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetailValue)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2EntityDetailValueArray) ToGetLcmEntityV2EntityDetailValueArrayOutput() GetLcmEntityV2EntityDetailValueArrayOutput {
+	return i.ToGetLcmEntityV2EntityDetailValueArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2EntityDetailValueArray) ToGetLcmEntityV2EntityDetailValueArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailValueArrayOutput)
+}
+
+type GetLcmEntityV2EntityDetailValueOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2EntityDetailValueOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2EntityDetailValue)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) ToGetLcmEntityV2EntityDetailValueOutput() GetLcmEntityV2EntityDetailValueOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) ToGetLcmEntityV2EntityDetailValueOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) Boolean() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) bool { return v.Boolean }).(pulumi.BoolOutput)
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) Integer() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) int { return v.Integer }).(pulumi.IntOutput)
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) IntegerLists() pulumi.IntArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) []int { return v.IntegerLists }).(pulumi.IntArrayOutput)
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) MapOfStrings() GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) []GetLcmEntityV2EntityDetailValueMapOfString {
+		return v.MapOfStrings
+	}).(GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput)
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) Object() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) map[string]string { return v.Object }).(pulumi.StringMapOutput)
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) String() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) string { return v.String }).(pulumi.StringOutput)
+}
+
+func (o GetLcmEntityV2EntityDetailValueOutput) StringLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) []string { return v.StringLists }).(pulumi.StringArrayOutput)
+}
+
+type GetLcmEntityV2EntityDetailValueArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2EntityDetailValueArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetailValue)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2EntityDetailValueArrayOutput) ToGetLcmEntityV2EntityDetailValueArrayOutput() GetLcmEntityV2EntityDetailValueArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailValueArrayOutput) ToGetLcmEntityV2EntityDetailValueArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailValueArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2EntityDetailValueOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2EntityDetailValue {
+		return vs[0].([]GetLcmEntityV2EntityDetailValue)[vs[1].(int)]
+	}).(GetLcmEntityV2EntityDetailValueOutput)
+}
+
+type GetLcmEntityV2EntityDetailValueMapOfString struct {
+	Map map[string]string `pulumi:"map"`
+}
+
+// GetLcmEntityV2EntityDetailValueMapOfStringInput is an input type that accepts GetLcmEntityV2EntityDetailValueMapOfStringArgs and GetLcmEntityV2EntityDetailValueMapOfStringOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2EntityDetailValueMapOfStringInput` via:
+//
+//	GetLcmEntityV2EntityDetailValueMapOfStringArgs{...}
+type GetLcmEntityV2EntityDetailValueMapOfStringInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2EntityDetailValueMapOfStringOutput() GetLcmEntityV2EntityDetailValueMapOfStringOutput
+	ToGetLcmEntityV2EntityDetailValueMapOfStringOutputWithContext(context.Context) GetLcmEntityV2EntityDetailValueMapOfStringOutput
+}
+
+type GetLcmEntityV2EntityDetailValueMapOfStringArgs struct {
+	Map pulumi.StringMapInput `pulumi:"map"`
+}
+
+func (GetLcmEntityV2EntityDetailValueMapOfStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2EntityDetailValueMapOfString)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2EntityDetailValueMapOfStringArgs) ToGetLcmEntityV2EntityDetailValueMapOfStringOutput() GetLcmEntityV2EntityDetailValueMapOfStringOutput {
+	return i.ToGetLcmEntityV2EntityDetailValueMapOfStringOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2EntityDetailValueMapOfStringArgs) ToGetLcmEntityV2EntityDetailValueMapOfStringOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueMapOfStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailValueMapOfStringOutput)
+}
+
+// GetLcmEntityV2EntityDetailValueMapOfStringArrayInput is an input type that accepts GetLcmEntityV2EntityDetailValueMapOfStringArray and GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2EntityDetailValueMapOfStringArrayInput` via:
+//
+//	GetLcmEntityV2EntityDetailValueMapOfStringArray{ GetLcmEntityV2EntityDetailValueMapOfStringArgs{...} }
+type GetLcmEntityV2EntityDetailValueMapOfStringArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutput() GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput
+	ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutputWithContext(context.Context) GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput
+}
+
+type GetLcmEntityV2EntityDetailValueMapOfStringArray []GetLcmEntityV2EntityDetailValueMapOfStringInput
+
+func (GetLcmEntityV2EntityDetailValueMapOfStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetailValueMapOfString)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2EntityDetailValueMapOfStringArray) ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutput() GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
+	return i.ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2EntityDetailValueMapOfStringArray) ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput)
+}
+
+type GetLcmEntityV2EntityDetailValueMapOfStringOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2EntityDetailValueMapOfStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2EntityDetailValueMapOfString)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2EntityDetailValueMapOfStringOutput) ToGetLcmEntityV2EntityDetailValueMapOfStringOutput() GetLcmEntityV2EntityDetailValueMapOfStringOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailValueMapOfStringOutput) ToGetLcmEntityV2EntityDetailValueMapOfStringOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueMapOfStringOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailValueMapOfStringOutput) Map() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValueMapOfString) map[string]string { return v.Map }).(pulumi.StringMapOutput)
+}
+
+type GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetailValueMapOfString)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput) ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutput() GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput) ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2EntityDetailValueMapOfStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2EntityDetailValueMapOfString {
+		return vs[0].([]GetLcmEntityV2EntityDetailValueMapOfString)[vs[1].(int)]
+	}).(GetLcmEntityV2EntityDetailValueMapOfStringOutput)
+}
+
+type GetLcmEntityV2Link struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetLcmEntityV2LinkInput is an input type that accepts GetLcmEntityV2LinkArgs and GetLcmEntityV2LinkOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2LinkInput` via:
+//
+//	GetLcmEntityV2LinkArgs{...}
+type GetLcmEntityV2LinkInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2LinkOutput() GetLcmEntityV2LinkOutput
+	ToGetLcmEntityV2LinkOutputWithContext(context.Context) GetLcmEntityV2LinkOutput
+}
+
+type GetLcmEntityV2LinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetLcmEntityV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2Link)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2LinkArgs) ToGetLcmEntityV2LinkOutput() GetLcmEntityV2LinkOutput {
+	return i.ToGetLcmEntityV2LinkOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2LinkArgs) ToGetLcmEntityV2LinkOutputWithContext(ctx context.Context) GetLcmEntityV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2LinkOutput)
+}
+
+// GetLcmEntityV2LinkArrayInput is an input type that accepts GetLcmEntityV2LinkArray and GetLcmEntityV2LinkArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2LinkArrayInput` via:
+//
+//	GetLcmEntityV2LinkArray{ GetLcmEntityV2LinkArgs{...} }
+type GetLcmEntityV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2LinkArrayOutput() GetLcmEntityV2LinkArrayOutput
+	ToGetLcmEntityV2LinkArrayOutputWithContext(context.Context) GetLcmEntityV2LinkArrayOutput
+}
+
+type GetLcmEntityV2LinkArray []GetLcmEntityV2LinkInput
+
+func (GetLcmEntityV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2Link)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2LinkArray) ToGetLcmEntityV2LinkArrayOutput() GetLcmEntityV2LinkArrayOutput {
+	return i.ToGetLcmEntityV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2LinkArray) ToGetLcmEntityV2LinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2LinkArrayOutput)
+}
+
+type GetLcmEntityV2LinkOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2Link)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2LinkOutput) ToGetLcmEntityV2LinkOutput() GetLcmEntityV2LinkOutput {
+	return o
+}
+
+func (o GetLcmEntityV2LinkOutput) ToGetLcmEntityV2LinkOutputWithContext(ctx context.Context) GetLcmEntityV2LinkOutput {
+	return o
+}
+
+func (o GetLcmEntityV2LinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2Link) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetLcmEntityV2LinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2Link) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetLcmEntityV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2Link)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2LinkArrayOutput) ToGetLcmEntityV2LinkArrayOutput() GetLcmEntityV2LinkArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2LinkArrayOutput) ToGetLcmEntityV2LinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2LinkArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2LinkArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2Link {
+		return vs[0].([]GetLcmEntityV2Link)[vs[1].(int)]
+	}).(GetLcmEntityV2LinkOutput)
+}
+
+type GetLcmEntityV2LocationInfo struct {
+	// Scope of entity represented in LCM. This could be either Node or cluster type. Enum Values:
+	// * `PC`: Entity for which the scope is Prism Central wide.
+	// * `NODE`: Entity that belongs to a node in the cluster.
+	// * `CLUSTER`: Entity for which the scope is cluster wide.
+	LocationType string `pulumi:"locationType"`
+	// Location UUID of the resource.
+	Uuid string `pulumi:"uuid"`
+}
+
+// GetLcmEntityV2LocationInfoInput is an input type that accepts GetLcmEntityV2LocationInfoArgs and GetLcmEntityV2LocationInfoOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2LocationInfoInput` via:
+//
+//	GetLcmEntityV2LocationInfoArgs{...}
+type GetLcmEntityV2LocationInfoInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2LocationInfoOutput() GetLcmEntityV2LocationInfoOutput
+	ToGetLcmEntityV2LocationInfoOutputWithContext(context.Context) GetLcmEntityV2LocationInfoOutput
+}
+
+type GetLcmEntityV2LocationInfoArgs struct {
+	// Scope of entity represented in LCM. This could be either Node or cluster type. Enum Values:
+	// * `PC`: Entity for which the scope is Prism Central wide.
+	// * `NODE`: Entity that belongs to a node in the cluster.
+	// * `CLUSTER`: Entity for which the scope is cluster wide.
+	LocationType pulumi.StringInput `pulumi:"locationType"`
+	// Location UUID of the resource.
+	Uuid pulumi.StringInput `pulumi:"uuid"`
+}
+
+func (GetLcmEntityV2LocationInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2LocationInfo)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2LocationInfoArgs) ToGetLcmEntityV2LocationInfoOutput() GetLcmEntityV2LocationInfoOutput {
+	return i.ToGetLcmEntityV2LocationInfoOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2LocationInfoArgs) ToGetLcmEntityV2LocationInfoOutputWithContext(ctx context.Context) GetLcmEntityV2LocationInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2LocationInfoOutput)
+}
+
+// GetLcmEntityV2LocationInfoArrayInput is an input type that accepts GetLcmEntityV2LocationInfoArray and GetLcmEntityV2LocationInfoArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2LocationInfoArrayInput` via:
+//
+//	GetLcmEntityV2LocationInfoArray{ GetLcmEntityV2LocationInfoArgs{...} }
+type GetLcmEntityV2LocationInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2LocationInfoArrayOutput() GetLcmEntityV2LocationInfoArrayOutput
+	ToGetLcmEntityV2LocationInfoArrayOutputWithContext(context.Context) GetLcmEntityV2LocationInfoArrayOutput
+}
+
+type GetLcmEntityV2LocationInfoArray []GetLcmEntityV2LocationInfoInput
+
+func (GetLcmEntityV2LocationInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2LocationInfo)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2LocationInfoArray) ToGetLcmEntityV2LocationInfoArrayOutput() GetLcmEntityV2LocationInfoArrayOutput {
+	return i.ToGetLcmEntityV2LocationInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2LocationInfoArray) ToGetLcmEntityV2LocationInfoArrayOutputWithContext(ctx context.Context) GetLcmEntityV2LocationInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2LocationInfoArrayOutput)
+}
+
+type GetLcmEntityV2LocationInfoOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2LocationInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2LocationInfo)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2LocationInfoOutput) ToGetLcmEntityV2LocationInfoOutput() GetLcmEntityV2LocationInfoOutput {
+	return o
+}
+
+func (o GetLcmEntityV2LocationInfoOutput) ToGetLcmEntityV2LocationInfoOutputWithContext(ctx context.Context) GetLcmEntityV2LocationInfoOutput {
+	return o
+}
+
+// Scope of entity represented in LCM. This could be either Node or cluster type. Enum Values:
+// * `PC`: Entity for which the scope is Prism Central wide.
+// * `NODE`: Entity that belongs to a node in the cluster.
+// * `CLUSTER`: Entity for which the scope is cluster wide.
+func (o GetLcmEntityV2LocationInfoOutput) LocationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2LocationInfo) string { return v.LocationType }).(pulumi.StringOutput)
+}
+
+// Location UUID of the resource.
+func (o GetLcmEntityV2LocationInfoOutput) Uuid() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2LocationInfo) string { return v.Uuid }).(pulumi.StringOutput)
+}
+
+type GetLcmEntityV2LocationInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2LocationInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2LocationInfo)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2LocationInfoArrayOutput) ToGetLcmEntityV2LocationInfoArrayOutput() GetLcmEntityV2LocationInfoArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2LocationInfoArrayOutput) ToGetLcmEntityV2LocationInfoArrayOutputWithContext(ctx context.Context) GetLcmEntityV2LocationInfoArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2LocationInfoArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2LocationInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2LocationInfo {
+		return vs[0].([]GetLcmEntityV2LocationInfo)[vs[1].(int)]
+	}).(GetLcmEntityV2LocationInfoOutput)
+}
+
+type GetLcmEntityV2SubEntity struct {
+	// LCM entity class.
+	EntityClass string `pulumi:"entityClass"`
+	// LCM entity model.
+	EntityModel string `pulumi:"entityModel"`
+	// Type of an LCM entity.  Enum Values:
+	// * `FIRMWARE`: LCM entity type firmware.
+	// * `SOFTWARE`: LCM entity type software.
+	EntityType string `pulumi:"entityType"`
+	// Current version of an LCM entity.
+	EntityVersion string `pulumi:"entityVersion"`
+	// ExtId of the LCM entity.
+	ExtId string `pulumi:"extId"`
+	// A hardware family for a LCM entity.
+	HardwareFamily string `pulumi:"hardwareFamily"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links []GetLcmEntityV2SubEntityLink `pulumi:"links"`
+	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId string `pulumi:"tenantId"`
+}
+
+// GetLcmEntityV2SubEntityInput is an input type that accepts GetLcmEntityV2SubEntityArgs and GetLcmEntityV2SubEntityOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2SubEntityInput` via:
+//
+//	GetLcmEntityV2SubEntityArgs{...}
+type GetLcmEntityV2SubEntityInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2SubEntityOutput() GetLcmEntityV2SubEntityOutput
+	ToGetLcmEntityV2SubEntityOutputWithContext(context.Context) GetLcmEntityV2SubEntityOutput
+}
+
+type GetLcmEntityV2SubEntityArgs struct {
+	// LCM entity class.
+	EntityClass pulumi.StringInput `pulumi:"entityClass"`
+	// LCM entity model.
+	EntityModel pulumi.StringInput `pulumi:"entityModel"`
+	// Type of an LCM entity.  Enum Values:
+	// * `FIRMWARE`: LCM entity type firmware.
+	// * `SOFTWARE`: LCM entity type software.
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	// Current version of an LCM entity.
+	EntityVersion pulumi.StringInput `pulumi:"entityVersion"`
+	// ExtId of the LCM entity.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// A hardware family for a LCM entity.
+	HardwareFamily pulumi.StringInput `pulumi:"hardwareFamily"`
+	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+	Links GetLcmEntityV2SubEntityLinkArrayInput `pulumi:"links"`
+	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+}
+
+func (GetLcmEntityV2SubEntityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2SubEntity)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2SubEntityArgs) ToGetLcmEntityV2SubEntityOutput() GetLcmEntityV2SubEntityOutput {
+	return i.ToGetLcmEntityV2SubEntityOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2SubEntityArgs) ToGetLcmEntityV2SubEntityOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2SubEntityOutput)
+}
+
+// GetLcmEntityV2SubEntityArrayInput is an input type that accepts GetLcmEntityV2SubEntityArray and GetLcmEntityV2SubEntityArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2SubEntityArrayInput` via:
+//
+//	GetLcmEntityV2SubEntityArray{ GetLcmEntityV2SubEntityArgs{...} }
+type GetLcmEntityV2SubEntityArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2SubEntityArrayOutput() GetLcmEntityV2SubEntityArrayOutput
+	ToGetLcmEntityV2SubEntityArrayOutputWithContext(context.Context) GetLcmEntityV2SubEntityArrayOutput
+}
+
+type GetLcmEntityV2SubEntityArray []GetLcmEntityV2SubEntityInput
+
+func (GetLcmEntityV2SubEntityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2SubEntity)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2SubEntityArray) ToGetLcmEntityV2SubEntityArrayOutput() GetLcmEntityV2SubEntityArrayOutput {
+	return i.ToGetLcmEntityV2SubEntityArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2SubEntityArray) ToGetLcmEntityV2SubEntityArrayOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2SubEntityArrayOutput)
+}
+
+type GetLcmEntityV2SubEntityOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2SubEntityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2SubEntity)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2SubEntityOutput) ToGetLcmEntityV2SubEntityOutput() GetLcmEntityV2SubEntityOutput {
+	return o
+}
+
+func (o GetLcmEntityV2SubEntityOutput) ToGetLcmEntityV2SubEntityOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityOutput {
+	return o
+}
+
+// LCM entity class.
+func (o GetLcmEntityV2SubEntityOutput) EntityClass() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.EntityClass }).(pulumi.StringOutput)
+}
+
+// LCM entity model.
+func (o GetLcmEntityV2SubEntityOutput) EntityModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.EntityModel }).(pulumi.StringOutput)
+}
+
+// Type of an LCM entity.  Enum Values:
+// * `FIRMWARE`: LCM entity type firmware.
+// * `SOFTWARE`: LCM entity type software.
+func (o GetLcmEntityV2SubEntityOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+// Current version of an LCM entity.
+func (o GetLcmEntityV2SubEntityOutput) EntityVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.EntityVersion }).(pulumi.StringOutput)
+}
+
+// ExtId of the LCM entity.
+func (o GetLcmEntityV2SubEntityOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// A hardware family for a LCM entity.
+func (o GetLcmEntityV2SubEntityOutput) HardwareFamily() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.HardwareFamily }).(pulumi.StringOutput)
+}
+
+// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
+func (o GetLcmEntityV2SubEntityOutput) Links() GetLcmEntityV2SubEntityLinkArrayOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntity) []GetLcmEntityV2SubEntityLink { return v.Links }).(GetLcmEntityV2SubEntityLinkArrayOutput)
+}
+
+// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
+func (o GetLcmEntityV2SubEntityOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+type GetLcmEntityV2SubEntityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2SubEntityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2SubEntity)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2SubEntityArrayOutput) ToGetLcmEntityV2SubEntityArrayOutput() GetLcmEntityV2SubEntityArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2SubEntityArrayOutput) ToGetLcmEntityV2SubEntityArrayOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2SubEntityArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2SubEntityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2SubEntity {
+		return vs[0].([]GetLcmEntityV2SubEntity)[vs[1].(int)]
+	}).(GetLcmEntityV2SubEntityOutput)
+}
+
+type GetLcmEntityV2SubEntityLink struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetLcmEntityV2SubEntityLinkInput is an input type that accepts GetLcmEntityV2SubEntityLinkArgs and GetLcmEntityV2SubEntityLinkOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2SubEntityLinkInput` via:
+//
+//	GetLcmEntityV2SubEntityLinkArgs{...}
+type GetLcmEntityV2SubEntityLinkInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2SubEntityLinkOutput() GetLcmEntityV2SubEntityLinkOutput
+	ToGetLcmEntityV2SubEntityLinkOutputWithContext(context.Context) GetLcmEntityV2SubEntityLinkOutput
+}
+
+type GetLcmEntityV2SubEntityLinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetLcmEntityV2SubEntityLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2SubEntityLink)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2SubEntityLinkArgs) ToGetLcmEntityV2SubEntityLinkOutput() GetLcmEntityV2SubEntityLinkOutput {
+	return i.ToGetLcmEntityV2SubEntityLinkOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2SubEntityLinkArgs) ToGetLcmEntityV2SubEntityLinkOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2SubEntityLinkOutput)
+}
+
+// GetLcmEntityV2SubEntityLinkArrayInput is an input type that accepts GetLcmEntityV2SubEntityLinkArray and GetLcmEntityV2SubEntityLinkArrayOutput values.
+// You can construct a concrete instance of `GetLcmEntityV2SubEntityLinkArrayInput` via:
+//
+//	GetLcmEntityV2SubEntityLinkArray{ GetLcmEntityV2SubEntityLinkArgs{...} }
+type GetLcmEntityV2SubEntityLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmEntityV2SubEntityLinkArrayOutput() GetLcmEntityV2SubEntityLinkArrayOutput
+	ToGetLcmEntityV2SubEntityLinkArrayOutputWithContext(context.Context) GetLcmEntityV2SubEntityLinkArrayOutput
+}
+
+type GetLcmEntityV2SubEntityLinkArray []GetLcmEntityV2SubEntityLinkInput
+
+func (GetLcmEntityV2SubEntityLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2SubEntityLink)(nil)).Elem()
+}
+
+func (i GetLcmEntityV2SubEntityLinkArray) ToGetLcmEntityV2SubEntityLinkArrayOutput() GetLcmEntityV2SubEntityLinkArrayOutput {
+	return i.ToGetLcmEntityV2SubEntityLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmEntityV2SubEntityLinkArray) ToGetLcmEntityV2SubEntityLinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2SubEntityLinkArrayOutput)
+}
+
+type GetLcmEntityV2SubEntityLinkOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2SubEntityLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmEntityV2SubEntityLink)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2SubEntityLinkOutput) ToGetLcmEntityV2SubEntityLinkOutput() GetLcmEntityV2SubEntityLinkOutput {
+	return o
+}
+
+func (o GetLcmEntityV2SubEntityLinkOutput) ToGetLcmEntityV2SubEntityLinkOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityLinkOutput {
+	return o
+}
+
+func (o GetLcmEntityV2SubEntityLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntityLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetLcmEntityV2SubEntityLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmEntityV2SubEntityLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetLcmEntityV2SubEntityLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmEntityV2SubEntityLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmEntityV2SubEntityLink)(nil)).Elem()
+}
+
+func (o GetLcmEntityV2SubEntityLinkArrayOutput) ToGetLcmEntityV2SubEntityLinkArrayOutput() GetLcmEntityV2SubEntityLinkArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2SubEntityLinkArrayOutput) ToGetLcmEntityV2SubEntityLinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityLinkArrayOutput {
+	return o
+}
+
+func (o GetLcmEntityV2SubEntityLinkArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2SubEntityLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2SubEntityLink {
+		return vs[0].([]GetLcmEntityV2SubEntityLink)[vs[1].(int)]
+	}).(GetLcmEntityV2SubEntityLinkOutput)
+}
+
+type GetLcmStatusV2FrameworkVersion struct {
+	// - LCM framework version present in the LCM URL.
+	AvailableVersion string `pulumi:"availableVersion"`
+	// - Current LCM Version.
+	CurrentVersion string `pulumi:"currentVersion"`
+	// - Boolean that indicates if LCM framework update is needed.
+	IsUpdateNeeded bool `pulumi:"isUpdateNeeded"`
+}
+
+// GetLcmStatusV2FrameworkVersionInput is an input type that accepts GetLcmStatusV2FrameworkVersionArgs and GetLcmStatusV2FrameworkVersionOutput values.
+// You can construct a concrete instance of `GetLcmStatusV2FrameworkVersionInput` via:
+//
+//	GetLcmStatusV2FrameworkVersionArgs{...}
+type GetLcmStatusV2FrameworkVersionInput interface {
+	pulumi.Input
+
+	ToGetLcmStatusV2FrameworkVersionOutput() GetLcmStatusV2FrameworkVersionOutput
+	ToGetLcmStatusV2FrameworkVersionOutputWithContext(context.Context) GetLcmStatusV2FrameworkVersionOutput
+}
+
+type GetLcmStatusV2FrameworkVersionArgs struct {
+	// - LCM framework version present in the LCM URL.
+	AvailableVersion pulumi.StringInput `pulumi:"availableVersion"`
+	// - Current LCM Version.
+	CurrentVersion pulumi.StringInput `pulumi:"currentVersion"`
+	// - Boolean that indicates if LCM framework update is needed.
+	IsUpdateNeeded pulumi.BoolInput `pulumi:"isUpdateNeeded"`
+}
+
+func (GetLcmStatusV2FrameworkVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmStatusV2FrameworkVersion)(nil)).Elem()
+}
+
+func (i GetLcmStatusV2FrameworkVersionArgs) ToGetLcmStatusV2FrameworkVersionOutput() GetLcmStatusV2FrameworkVersionOutput {
+	return i.ToGetLcmStatusV2FrameworkVersionOutputWithContext(context.Background())
+}
+
+func (i GetLcmStatusV2FrameworkVersionArgs) ToGetLcmStatusV2FrameworkVersionOutputWithContext(ctx context.Context) GetLcmStatusV2FrameworkVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2FrameworkVersionOutput)
+}
+
+// GetLcmStatusV2FrameworkVersionArrayInput is an input type that accepts GetLcmStatusV2FrameworkVersionArray and GetLcmStatusV2FrameworkVersionArrayOutput values.
+// You can construct a concrete instance of `GetLcmStatusV2FrameworkVersionArrayInput` via:
+//
+//	GetLcmStatusV2FrameworkVersionArray{ GetLcmStatusV2FrameworkVersionArgs{...} }
+type GetLcmStatusV2FrameworkVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmStatusV2FrameworkVersionArrayOutput() GetLcmStatusV2FrameworkVersionArrayOutput
+	ToGetLcmStatusV2FrameworkVersionArrayOutputWithContext(context.Context) GetLcmStatusV2FrameworkVersionArrayOutput
+}
+
+type GetLcmStatusV2FrameworkVersionArray []GetLcmStatusV2FrameworkVersionInput
+
+func (GetLcmStatusV2FrameworkVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmStatusV2FrameworkVersion)(nil)).Elem()
+}
+
+func (i GetLcmStatusV2FrameworkVersionArray) ToGetLcmStatusV2FrameworkVersionArrayOutput() GetLcmStatusV2FrameworkVersionArrayOutput {
+	return i.ToGetLcmStatusV2FrameworkVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmStatusV2FrameworkVersionArray) ToGetLcmStatusV2FrameworkVersionArrayOutputWithContext(ctx context.Context) GetLcmStatusV2FrameworkVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2FrameworkVersionArrayOutput)
+}
+
+type GetLcmStatusV2FrameworkVersionOutput struct{ *pulumi.OutputState }
+
+func (GetLcmStatusV2FrameworkVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmStatusV2FrameworkVersion)(nil)).Elem()
+}
+
+func (o GetLcmStatusV2FrameworkVersionOutput) ToGetLcmStatusV2FrameworkVersionOutput() GetLcmStatusV2FrameworkVersionOutput {
+	return o
+}
+
+func (o GetLcmStatusV2FrameworkVersionOutput) ToGetLcmStatusV2FrameworkVersionOutputWithContext(ctx context.Context) GetLcmStatusV2FrameworkVersionOutput {
+	return o
+}
+
+// - LCM framework version present in the LCM URL.
+func (o GetLcmStatusV2FrameworkVersionOutput) AvailableVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmStatusV2FrameworkVersion) string { return v.AvailableVersion }).(pulumi.StringOutput)
+}
+
+// - Current LCM Version.
+func (o GetLcmStatusV2FrameworkVersionOutput) CurrentVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmStatusV2FrameworkVersion) string { return v.CurrentVersion }).(pulumi.StringOutput)
+}
+
+// - Boolean that indicates if LCM framework update is needed.
+func (o GetLcmStatusV2FrameworkVersionOutput) IsUpdateNeeded() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetLcmStatusV2FrameworkVersion) bool { return v.IsUpdateNeeded }).(pulumi.BoolOutput)
+}
+
+type GetLcmStatusV2FrameworkVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmStatusV2FrameworkVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmStatusV2FrameworkVersion)(nil)).Elem()
+}
+
+func (o GetLcmStatusV2FrameworkVersionArrayOutput) ToGetLcmStatusV2FrameworkVersionArrayOutput() GetLcmStatusV2FrameworkVersionArrayOutput {
+	return o
+}
+
+func (o GetLcmStatusV2FrameworkVersionArrayOutput) ToGetLcmStatusV2FrameworkVersionArrayOutputWithContext(ctx context.Context) GetLcmStatusV2FrameworkVersionArrayOutput {
+	return o
+}
+
+func (o GetLcmStatusV2FrameworkVersionArrayOutput) Index(i pulumi.IntInput) GetLcmStatusV2FrameworkVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmStatusV2FrameworkVersion {
+		return vs[0].([]GetLcmStatusV2FrameworkVersion)[vs[1].(int)]
+	}).(GetLcmStatusV2FrameworkVersionOutput)
+}
+
+type GetLcmStatusV2InProgressOperation struct {
+	// - Root task UUID of the operation, if it is in running state.
+	OperationId string `pulumi:"operationId"`
+	// - Type of the operation tracked by the task. Values are:
+	// - `PRECHECKS`: Perform LCM prechecks for the intended update operation.
+	// - `INVENTORY`: Perform an LCM inventory operation.
+	// - `UPGRADE`: Perform upgrade operation to a specific target version for discovered LCM entity/entities.
+	// - `NONE`: Indicates that no operation is currently ongoing.
+	OperationType string `pulumi:"operationType"`
+}
+
+// GetLcmStatusV2InProgressOperationInput is an input type that accepts GetLcmStatusV2InProgressOperationArgs and GetLcmStatusV2InProgressOperationOutput values.
+// You can construct a concrete instance of `GetLcmStatusV2InProgressOperationInput` via:
+//
+//	GetLcmStatusV2InProgressOperationArgs{...}
+type GetLcmStatusV2InProgressOperationInput interface {
+	pulumi.Input
+
+	ToGetLcmStatusV2InProgressOperationOutput() GetLcmStatusV2InProgressOperationOutput
+	ToGetLcmStatusV2InProgressOperationOutputWithContext(context.Context) GetLcmStatusV2InProgressOperationOutput
+}
+
+type GetLcmStatusV2InProgressOperationArgs struct {
+	// - Root task UUID of the operation, if it is in running state.
+	OperationId pulumi.StringInput `pulumi:"operationId"`
+	// - Type of the operation tracked by the task. Values are:
+	// - `PRECHECKS`: Perform LCM prechecks for the intended update operation.
+	// - `INVENTORY`: Perform an LCM inventory operation.
+	// - `UPGRADE`: Perform upgrade operation to a specific target version for discovered LCM entity/entities.
+	// - `NONE`: Indicates that no operation is currently ongoing.
+	OperationType pulumi.StringInput `pulumi:"operationType"`
+}
+
+func (GetLcmStatusV2InProgressOperationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmStatusV2InProgressOperation)(nil)).Elem()
+}
+
+func (i GetLcmStatusV2InProgressOperationArgs) ToGetLcmStatusV2InProgressOperationOutput() GetLcmStatusV2InProgressOperationOutput {
+	return i.ToGetLcmStatusV2InProgressOperationOutputWithContext(context.Background())
+}
+
+func (i GetLcmStatusV2InProgressOperationArgs) ToGetLcmStatusV2InProgressOperationOutputWithContext(ctx context.Context) GetLcmStatusV2InProgressOperationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2InProgressOperationOutput)
+}
+
+// GetLcmStatusV2InProgressOperationArrayInput is an input type that accepts GetLcmStatusV2InProgressOperationArray and GetLcmStatusV2InProgressOperationArrayOutput values.
+// You can construct a concrete instance of `GetLcmStatusV2InProgressOperationArrayInput` via:
+//
+//	GetLcmStatusV2InProgressOperationArray{ GetLcmStatusV2InProgressOperationArgs{...} }
+type GetLcmStatusV2InProgressOperationArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmStatusV2InProgressOperationArrayOutput() GetLcmStatusV2InProgressOperationArrayOutput
+	ToGetLcmStatusV2InProgressOperationArrayOutputWithContext(context.Context) GetLcmStatusV2InProgressOperationArrayOutput
+}
+
+type GetLcmStatusV2InProgressOperationArray []GetLcmStatusV2InProgressOperationInput
+
+func (GetLcmStatusV2InProgressOperationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmStatusV2InProgressOperation)(nil)).Elem()
+}
+
+func (i GetLcmStatusV2InProgressOperationArray) ToGetLcmStatusV2InProgressOperationArrayOutput() GetLcmStatusV2InProgressOperationArrayOutput {
+	return i.ToGetLcmStatusV2InProgressOperationArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmStatusV2InProgressOperationArray) ToGetLcmStatusV2InProgressOperationArrayOutputWithContext(ctx context.Context) GetLcmStatusV2InProgressOperationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2InProgressOperationArrayOutput)
+}
+
+type GetLcmStatusV2InProgressOperationOutput struct{ *pulumi.OutputState }
+
+func (GetLcmStatusV2InProgressOperationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmStatusV2InProgressOperation)(nil)).Elem()
+}
+
+func (o GetLcmStatusV2InProgressOperationOutput) ToGetLcmStatusV2InProgressOperationOutput() GetLcmStatusV2InProgressOperationOutput {
+	return o
+}
+
+func (o GetLcmStatusV2InProgressOperationOutput) ToGetLcmStatusV2InProgressOperationOutputWithContext(ctx context.Context) GetLcmStatusV2InProgressOperationOutput {
+	return o
+}
+
+// - Root task UUID of the operation, if it is in running state.
+func (o GetLcmStatusV2InProgressOperationOutput) OperationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmStatusV2InProgressOperation) string { return v.OperationId }).(pulumi.StringOutput)
+}
+
+// - Type of the operation tracked by the task. Values are:
+// - `PRECHECKS`: Perform LCM prechecks for the intended update operation.
+// - `INVENTORY`: Perform an LCM inventory operation.
+// - `UPGRADE`: Perform upgrade operation to a specific target version for discovered LCM entity/entities.
+// - `NONE`: Indicates that no operation is currently ongoing.
+func (o GetLcmStatusV2InProgressOperationOutput) OperationType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmStatusV2InProgressOperation) string { return v.OperationType }).(pulumi.StringOutput)
+}
+
+type GetLcmStatusV2InProgressOperationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmStatusV2InProgressOperationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmStatusV2InProgressOperation)(nil)).Elem()
+}
+
+func (o GetLcmStatusV2InProgressOperationArrayOutput) ToGetLcmStatusV2InProgressOperationArrayOutput() GetLcmStatusV2InProgressOperationArrayOutput {
+	return o
+}
+
+func (o GetLcmStatusV2InProgressOperationArrayOutput) ToGetLcmStatusV2InProgressOperationArrayOutputWithContext(ctx context.Context) GetLcmStatusV2InProgressOperationArrayOutput {
+	return o
+}
+
+func (o GetLcmStatusV2InProgressOperationArrayOutput) Index(i pulumi.IntInput) GetLcmStatusV2InProgressOperationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmStatusV2InProgressOperation {
+		return vs[0].([]GetLcmStatusV2InProgressOperation)[vs[1].(int)]
+	}).(GetLcmStatusV2InProgressOperationOutput)
+}
+
+type GetLcmStatusV2Link struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetLcmStatusV2LinkInput is an input type that accepts GetLcmStatusV2LinkArgs and GetLcmStatusV2LinkOutput values.
+// You can construct a concrete instance of `GetLcmStatusV2LinkInput` via:
+//
+//	GetLcmStatusV2LinkArgs{...}
+type GetLcmStatusV2LinkInput interface {
+	pulumi.Input
+
+	ToGetLcmStatusV2LinkOutput() GetLcmStatusV2LinkOutput
+	ToGetLcmStatusV2LinkOutputWithContext(context.Context) GetLcmStatusV2LinkOutput
+}
+
+type GetLcmStatusV2LinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetLcmStatusV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmStatusV2Link)(nil)).Elem()
+}
+
+func (i GetLcmStatusV2LinkArgs) ToGetLcmStatusV2LinkOutput() GetLcmStatusV2LinkOutput {
+	return i.ToGetLcmStatusV2LinkOutputWithContext(context.Background())
+}
+
+func (i GetLcmStatusV2LinkArgs) ToGetLcmStatusV2LinkOutputWithContext(ctx context.Context) GetLcmStatusV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2LinkOutput)
+}
+
+// GetLcmStatusV2LinkArrayInput is an input type that accepts GetLcmStatusV2LinkArray and GetLcmStatusV2LinkArrayOutput values.
+// You can construct a concrete instance of `GetLcmStatusV2LinkArrayInput` via:
+//
+//	GetLcmStatusV2LinkArray{ GetLcmStatusV2LinkArgs{...} }
+type GetLcmStatusV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToGetLcmStatusV2LinkArrayOutput() GetLcmStatusV2LinkArrayOutput
+	ToGetLcmStatusV2LinkArrayOutputWithContext(context.Context) GetLcmStatusV2LinkArrayOutput
+}
+
+type GetLcmStatusV2LinkArray []GetLcmStatusV2LinkInput
+
+func (GetLcmStatusV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmStatusV2Link)(nil)).Elem()
+}
+
+func (i GetLcmStatusV2LinkArray) ToGetLcmStatusV2LinkArrayOutput() GetLcmStatusV2LinkArrayOutput {
+	return i.ToGetLcmStatusV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetLcmStatusV2LinkArray) ToGetLcmStatusV2LinkArrayOutputWithContext(ctx context.Context) GetLcmStatusV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2LinkArrayOutput)
+}
+
+type GetLcmStatusV2LinkOutput struct{ *pulumi.OutputState }
+
+func (GetLcmStatusV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLcmStatusV2Link)(nil)).Elem()
+}
+
+func (o GetLcmStatusV2LinkOutput) ToGetLcmStatusV2LinkOutput() GetLcmStatusV2LinkOutput {
+	return o
+}
+
+func (o GetLcmStatusV2LinkOutput) ToGetLcmStatusV2LinkOutputWithContext(ctx context.Context) GetLcmStatusV2LinkOutput {
+	return o
+}
+
+func (o GetLcmStatusV2LinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmStatusV2Link) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetLcmStatusV2LinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLcmStatusV2Link) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetLcmStatusV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLcmStatusV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLcmStatusV2Link)(nil)).Elem()
+}
+
+func (o GetLcmStatusV2LinkArrayOutput) ToGetLcmStatusV2LinkArrayOutput() GetLcmStatusV2LinkArrayOutput {
+	return o
+}
+
+func (o GetLcmStatusV2LinkArrayOutput) ToGetLcmStatusV2LinkArrayOutputWithContext(ctx context.Context) GetLcmStatusV2LinkArrayOutput {
+	return o
+}
+
+func (o GetLcmStatusV2LinkArrayOutput) Index(i pulumi.IntInput) GetLcmStatusV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmStatusV2Link {
+		return vs[0].([]GetLcmStatusV2Link)[vs[1].(int)]
+	}).(GetLcmStatusV2LinkOutput)
+}
+
+type GetLocalDomainV2ConnectionStatus struct {
+	// - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+	ServiceStatuses []GetLocalDomainV2ConnectionStatusServiceStatus `pulumi:"serviceStatuses"`
+	// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+	Status string `pulumi:"status"`
+}
+
+// GetLocalDomainV2ConnectionStatusInput is an input type that accepts GetLocalDomainV2ConnectionStatusArgs and GetLocalDomainV2ConnectionStatusOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2ConnectionStatusInput` via:
+//
+//	GetLocalDomainV2ConnectionStatusArgs{...}
+type GetLocalDomainV2ConnectionStatusInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2ConnectionStatusOutput() GetLocalDomainV2ConnectionStatusOutput
+	ToGetLocalDomainV2ConnectionStatusOutputWithContext(context.Context) GetLocalDomainV2ConnectionStatusOutput
+}
+
+type GetLocalDomainV2ConnectionStatusArgs struct {
+	// - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+	ServiceStatuses GetLocalDomainV2ConnectionStatusServiceStatusArrayInput `pulumi:"serviceStatuses"`
+	// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetLocalDomainV2ConnectionStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2ConnectionStatus)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2ConnectionStatusArgs) ToGetLocalDomainV2ConnectionStatusOutput() GetLocalDomainV2ConnectionStatusOutput {
+	return i.ToGetLocalDomainV2ConnectionStatusOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2ConnectionStatusArgs) ToGetLocalDomainV2ConnectionStatusOutputWithContext(ctx context.Context) GetLocalDomainV2ConnectionStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2ConnectionStatusOutput)
+}
+
+// GetLocalDomainV2ConnectionStatusArrayInput is an input type that accepts GetLocalDomainV2ConnectionStatusArray and GetLocalDomainV2ConnectionStatusArrayOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2ConnectionStatusArrayInput` via:
+//
+//	GetLocalDomainV2ConnectionStatusArray{ GetLocalDomainV2ConnectionStatusArgs{...} }
+type GetLocalDomainV2ConnectionStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2ConnectionStatusArrayOutput() GetLocalDomainV2ConnectionStatusArrayOutput
+	ToGetLocalDomainV2ConnectionStatusArrayOutputWithContext(context.Context) GetLocalDomainV2ConnectionStatusArrayOutput
+}
+
+type GetLocalDomainV2ConnectionStatusArray []GetLocalDomainV2ConnectionStatusInput
+
+func (GetLocalDomainV2ConnectionStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2ConnectionStatus)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2ConnectionStatusArray) ToGetLocalDomainV2ConnectionStatusArrayOutput() GetLocalDomainV2ConnectionStatusArrayOutput {
+	return i.ToGetLocalDomainV2ConnectionStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2ConnectionStatusArray) ToGetLocalDomainV2ConnectionStatusArrayOutputWithContext(ctx context.Context) GetLocalDomainV2ConnectionStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2ConnectionStatusArrayOutput)
+}
+
+type GetLocalDomainV2ConnectionStatusOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2ConnectionStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2ConnectionStatus)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2ConnectionStatusOutput) ToGetLocalDomainV2ConnectionStatusOutput() GetLocalDomainV2ConnectionStatusOutput {
+	return o
+}
+
+func (o GetLocalDomainV2ConnectionStatusOutput) ToGetLocalDomainV2ConnectionStatusOutputWithContext(ctx context.Context) GetLocalDomainV2ConnectionStatusOutput {
+	return o
+}
+
+// - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+func (o GetLocalDomainV2ConnectionStatusOutput) ServiceStatuses() GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return o.ApplyT(func(v GetLocalDomainV2ConnectionStatus) []GetLocalDomainV2ConnectionStatusServiceStatus {
+		return v.ServiceStatuses
+	}).(GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput)
+}
+
+// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+func (o GetLocalDomainV2ConnectionStatusOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2ConnectionStatus) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetLocalDomainV2ConnectionStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2ConnectionStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2ConnectionStatus)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2ConnectionStatusArrayOutput) ToGetLocalDomainV2ConnectionStatusArrayOutput() GetLocalDomainV2ConnectionStatusArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2ConnectionStatusArrayOutput) ToGetLocalDomainV2ConnectionStatusArrayOutputWithContext(ctx context.Context) GetLocalDomainV2ConnectionStatusArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2ConnectionStatusArrayOutput) Index(i pulumi.IntInput) GetLocalDomainV2ConnectionStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocalDomainV2ConnectionStatus {
+		return vs[0].([]GetLocalDomainV2ConnectionStatus)[vs[1].(int)]
+	}).(GetLocalDomainV2ConnectionStatusOutput)
+}
+
+type GetLocalDomainV2ConnectionStatusServiceStatus struct {
+	// - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+	ServiceName string `pulumi:"serviceName"`
+	// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+	Status string `pulumi:"status"`
+}
+
+// GetLocalDomainV2ConnectionStatusServiceStatusInput is an input type that accepts GetLocalDomainV2ConnectionStatusServiceStatusArgs and GetLocalDomainV2ConnectionStatusServiceStatusOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2ConnectionStatusServiceStatusInput` via:
+//
+//	GetLocalDomainV2ConnectionStatusServiceStatusArgs{...}
+type GetLocalDomainV2ConnectionStatusServiceStatusInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2ConnectionStatusServiceStatusOutput() GetLocalDomainV2ConnectionStatusServiceStatusOutput
+	ToGetLocalDomainV2ConnectionStatusServiceStatusOutputWithContext(context.Context) GetLocalDomainV2ConnectionStatusServiceStatusOutput
+}
+
+type GetLocalDomainV2ConnectionStatusServiceStatusArgs struct {
+	// - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+	// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+	Status pulumi.StringInput `pulumi:"status"`
+}
+
+func (GetLocalDomainV2ConnectionStatusServiceStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2ConnectionStatusServiceStatus)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2ConnectionStatusServiceStatusArgs) ToGetLocalDomainV2ConnectionStatusServiceStatusOutput() GetLocalDomainV2ConnectionStatusServiceStatusOutput {
+	return i.ToGetLocalDomainV2ConnectionStatusServiceStatusOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2ConnectionStatusServiceStatusArgs) ToGetLocalDomainV2ConnectionStatusServiceStatusOutputWithContext(ctx context.Context) GetLocalDomainV2ConnectionStatusServiceStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2ConnectionStatusServiceStatusOutput)
+}
+
+// GetLocalDomainV2ConnectionStatusServiceStatusArrayInput is an input type that accepts GetLocalDomainV2ConnectionStatusServiceStatusArray and GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2ConnectionStatusServiceStatusArrayInput` via:
+//
+//	GetLocalDomainV2ConnectionStatusServiceStatusArray{ GetLocalDomainV2ConnectionStatusServiceStatusArgs{...} }
+type GetLocalDomainV2ConnectionStatusServiceStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2ConnectionStatusServiceStatusArrayOutput() GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput
+	ToGetLocalDomainV2ConnectionStatusServiceStatusArrayOutputWithContext(context.Context) GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput
+}
+
+type GetLocalDomainV2ConnectionStatusServiceStatusArray []GetLocalDomainV2ConnectionStatusServiceStatusInput
+
+func (GetLocalDomainV2ConnectionStatusServiceStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2ConnectionStatusServiceStatus)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2ConnectionStatusServiceStatusArray) ToGetLocalDomainV2ConnectionStatusServiceStatusArrayOutput() GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return i.ToGetLocalDomainV2ConnectionStatusServiceStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2ConnectionStatusServiceStatusArray) ToGetLocalDomainV2ConnectionStatusServiceStatusArrayOutputWithContext(ctx context.Context) GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput)
+}
+
+type GetLocalDomainV2ConnectionStatusServiceStatusOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2ConnectionStatusServiceStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2ConnectionStatusServiceStatus)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2ConnectionStatusServiceStatusOutput) ToGetLocalDomainV2ConnectionStatusServiceStatusOutput() GetLocalDomainV2ConnectionStatusServiceStatusOutput {
+	return o
+}
+
+func (o GetLocalDomainV2ConnectionStatusServiceStatusOutput) ToGetLocalDomainV2ConnectionStatusServiceStatusOutputWithContext(ctx context.Context) GetLocalDomainV2ConnectionStatusServiceStatusOutput {
+	return o
+}
+
+// - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+func (o GetLocalDomainV2ConnectionStatusServiceStatusOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2ConnectionStatusServiceStatus) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+func (o GetLocalDomainV2ConnectionStatusServiceStatusOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2ConnectionStatusServiceStatus) string { return v.Status }).(pulumi.StringOutput)
+}
+
+type GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2ConnectionStatusServiceStatus)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput) ToGetLocalDomainV2ConnectionStatusServiceStatusArrayOutput() GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput) ToGetLocalDomainV2ConnectionStatusServiceStatusArrayOutputWithContext(ctx context.Context) GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput) Index(i pulumi.IntInput) GetLocalDomainV2ConnectionStatusServiceStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocalDomainV2ConnectionStatusServiceStatus {
+		return vs[0].([]GetLocalDomainV2ConnectionStatusServiceStatus)[vs[1].(int)]
+	}).(GetLocalDomainV2ConnectionStatusServiceStatusOutput)
+}
+
+type GetLocalDomainV2Location struct {
+	// - The location coordinates, that is latitude and longitude. See Coordinates below.
+	Coordinates []GetLocalDomainV2LocationCoordinate `pulumi:"coordinates"`
+	// - Location Country.
+	Country string `pulumi:"country"`
+	// - A globally unique identifier of the location.
+	ExtId string `pulumi:"extId"`
+	// - Location name.
+	Name string `pulumi:"name"`
+	// - Location state.
+	State string `pulumi:"state"`
+}
+
+// GetLocalDomainV2LocationInput is an input type that accepts GetLocalDomainV2LocationArgs and GetLocalDomainV2LocationOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2LocationInput` via:
+//
+//	GetLocalDomainV2LocationArgs{...}
+type GetLocalDomainV2LocationInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2LocationOutput() GetLocalDomainV2LocationOutput
+	ToGetLocalDomainV2LocationOutputWithContext(context.Context) GetLocalDomainV2LocationOutput
+}
+
+type GetLocalDomainV2LocationArgs struct {
+	// - The location coordinates, that is latitude and longitude. See Coordinates below.
+	Coordinates GetLocalDomainV2LocationCoordinateArrayInput `pulumi:"coordinates"`
+	// - Location Country.
+	Country pulumi.StringInput `pulumi:"country"`
+	// - A globally unique identifier of the location.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// - Location name.
+	Name pulumi.StringInput `pulumi:"name"`
+	// - Location state.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetLocalDomainV2LocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2Location)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2LocationArgs) ToGetLocalDomainV2LocationOutput() GetLocalDomainV2LocationOutput {
+	return i.ToGetLocalDomainV2LocationOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2LocationArgs) ToGetLocalDomainV2LocationOutputWithContext(ctx context.Context) GetLocalDomainV2LocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2LocationOutput)
+}
+
+// GetLocalDomainV2LocationArrayInput is an input type that accepts GetLocalDomainV2LocationArray and GetLocalDomainV2LocationArrayOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2LocationArrayInput` via:
+//
+//	GetLocalDomainV2LocationArray{ GetLocalDomainV2LocationArgs{...} }
+type GetLocalDomainV2LocationArrayInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2LocationArrayOutput() GetLocalDomainV2LocationArrayOutput
+	ToGetLocalDomainV2LocationArrayOutputWithContext(context.Context) GetLocalDomainV2LocationArrayOutput
+}
+
+type GetLocalDomainV2LocationArray []GetLocalDomainV2LocationInput
+
+func (GetLocalDomainV2LocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2Location)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2LocationArray) ToGetLocalDomainV2LocationArrayOutput() GetLocalDomainV2LocationArrayOutput {
+	return i.ToGetLocalDomainV2LocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2LocationArray) ToGetLocalDomainV2LocationArrayOutputWithContext(ctx context.Context) GetLocalDomainV2LocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2LocationArrayOutput)
+}
+
+type GetLocalDomainV2LocationOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2LocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2Location)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2LocationOutput) ToGetLocalDomainV2LocationOutput() GetLocalDomainV2LocationOutput {
+	return o
+}
+
+func (o GetLocalDomainV2LocationOutput) ToGetLocalDomainV2LocationOutputWithContext(ctx context.Context) GetLocalDomainV2LocationOutput {
+	return o
+}
+
+// - The location coordinates, that is latitude and longitude. See Coordinates below.
+func (o GetLocalDomainV2LocationOutput) Coordinates() GetLocalDomainV2LocationCoordinateArrayOutput {
+	return o.ApplyT(func(v GetLocalDomainV2Location) []GetLocalDomainV2LocationCoordinate { return v.Coordinates }).(GetLocalDomainV2LocationCoordinateArrayOutput)
+}
+
+// - Location Country.
+func (o GetLocalDomainV2LocationOutput) Country() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2Location) string { return v.Country }).(pulumi.StringOutput)
+}
+
+// - A globally unique identifier of the location.
+func (o GetLocalDomainV2LocationOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2Location) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// - Location name.
+func (o GetLocalDomainV2LocationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2Location) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// - Location state.
+func (o GetLocalDomainV2LocationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2Location) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetLocalDomainV2LocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2LocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2Location)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2LocationArrayOutput) ToGetLocalDomainV2LocationArrayOutput() GetLocalDomainV2LocationArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2LocationArrayOutput) ToGetLocalDomainV2LocationArrayOutputWithContext(ctx context.Context) GetLocalDomainV2LocationArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2LocationArrayOutput) Index(i pulumi.IntInput) GetLocalDomainV2LocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocalDomainV2Location {
+		return vs[0].([]GetLocalDomainV2Location)[vs[1].(int)]
+	}).(GetLocalDomainV2LocationOutput)
+}
+
+type GetLocalDomainV2LocationCoordinate struct {
+	// - The latitude part of the location.
+	Latitude float64 `pulumi:"latitude"`
+	// - The longitude part of the location.
+	Longitude float64 `pulumi:"longitude"`
+}
+
+// GetLocalDomainV2LocationCoordinateInput is an input type that accepts GetLocalDomainV2LocationCoordinateArgs and GetLocalDomainV2LocationCoordinateOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2LocationCoordinateInput` via:
+//
+//	GetLocalDomainV2LocationCoordinateArgs{...}
+type GetLocalDomainV2LocationCoordinateInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2LocationCoordinateOutput() GetLocalDomainV2LocationCoordinateOutput
+	ToGetLocalDomainV2LocationCoordinateOutputWithContext(context.Context) GetLocalDomainV2LocationCoordinateOutput
+}
+
+type GetLocalDomainV2LocationCoordinateArgs struct {
+	// - The latitude part of the location.
+	Latitude pulumi.Float64Input `pulumi:"latitude"`
+	// - The longitude part of the location.
+	Longitude pulumi.Float64Input `pulumi:"longitude"`
+}
+
+func (GetLocalDomainV2LocationCoordinateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2LocationCoordinate)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2LocationCoordinateArgs) ToGetLocalDomainV2LocationCoordinateOutput() GetLocalDomainV2LocationCoordinateOutput {
+	return i.ToGetLocalDomainV2LocationCoordinateOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2LocationCoordinateArgs) ToGetLocalDomainV2LocationCoordinateOutputWithContext(ctx context.Context) GetLocalDomainV2LocationCoordinateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2LocationCoordinateOutput)
+}
+
+// GetLocalDomainV2LocationCoordinateArrayInput is an input type that accepts GetLocalDomainV2LocationCoordinateArray and GetLocalDomainV2LocationCoordinateArrayOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2LocationCoordinateArrayInput` via:
+//
+//	GetLocalDomainV2LocationCoordinateArray{ GetLocalDomainV2LocationCoordinateArgs{...} }
+type GetLocalDomainV2LocationCoordinateArrayInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2LocationCoordinateArrayOutput() GetLocalDomainV2LocationCoordinateArrayOutput
+	ToGetLocalDomainV2LocationCoordinateArrayOutputWithContext(context.Context) GetLocalDomainV2LocationCoordinateArrayOutput
+}
+
+type GetLocalDomainV2LocationCoordinateArray []GetLocalDomainV2LocationCoordinateInput
+
+func (GetLocalDomainV2LocationCoordinateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2LocationCoordinate)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2LocationCoordinateArray) ToGetLocalDomainV2LocationCoordinateArrayOutput() GetLocalDomainV2LocationCoordinateArrayOutput {
+	return i.ToGetLocalDomainV2LocationCoordinateArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2LocationCoordinateArray) ToGetLocalDomainV2LocationCoordinateArrayOutputWithContext(ctx context.Context) GetLocalDomainV2LocationCoordinateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2LocationCoordinateArrayOutput)
+}
+
+type GetLocalDomainV2LocationCoordinateOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2LocationCoordinateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2LocationCoordinate)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2LocationCoordinateOutput) ToGetLocalDomainV2LocationCoordinateOutput() GetLocalDomainV2LocationCoordinateOutput {
+	return o
+}
+
+func (o GetLocalDomainV2LocationCoordinateOutput) ToGetLocalDomainV2LocationCoordinateOutputWithContext(ctx context.Context) GetLocalDomainV2LocationCoordinateOutput {
+	return o
+}
+
+// - The latitude part of the location.
+func (o GetLocalDomainV2LocationCoordinateOutput) Latitude() pulumi.Float64Output {
+	return o.ApplyT(func(v GetLocalDomainV2LocationCoordinate) float64 { return v.Latitude }).(pulumi.Float64Output)
+}
+
+// - The longitude part of the location.
+func (o GetLocalDomainV2LocationCoordinateOutput) Longitude() pulumi.Float64Output {
+	return o.ApplyT(func(v GetLocalDomainV2LocationCoordinate) float64 { return v.Longitude }).(pulumi.Float64Output)
+}
+
+type GetLocalDomainV2LocationCoordinateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2LocationCoordinateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2LocationCoordinate)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2LocationCoordinateArrayOutput) ToGetLocalDomainV2LocationCoordinateArrayOutput() GetLocalDomainV2LocationCoordinateArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2LocationCoordinateArrayOutput) ToGetLocalDomainV2LocationCoordinateArrayOutputWithContext(ctx context.Context) GetLocalDomainV2LocationCoordinateArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2LocationCoordinateArrayOutput) Index(i pulumi.IntInput) GetLocalDomainV2LocationCoordinateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocalDomainV2LocationCoordinate {
+		return vs[0].([]GetLocalDomainV2LocationCoordinate)[vs[1].(int)]
+	}).(GetLocalDomainV2LocationCoordinateOutput)
+}
+
+type GetLocalDomainV2RegistrationStatus struct {
+	// - Indicates remaining days to domain credential expiry, 0 means expired.
+	DaysToExpiry int `pulumi:"daysToExpiry"`
+	// - The stage for the local domain's register/unregister operation.
+	ErrorStage string `pulumi:"errorStage"`
+	// - Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+	IdentityProviderExtId string `pulumi:"identityProviderExtId"`
+	// - Location state.
+	State string `pulumi:"state"`
+}
+
+// GetLocalDomainV2RegistrationStatusInput is an input type that accepts GetLocalDomainV2RegistrationStatusArgs and GetLocalDomainV2RegistrationStatusOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2RegistrationStatusInput` via:
+//
+//	GetLocalDomainV2RegistrationStatusArgs{...}
+type GetLocalDomainV2RegistrationStatusInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2RegistrationStatusOutput() GetLocalDomainV2RegistrationStatusOutput
+	ToGetLocalDomainV2RegistrationStatusOutputWithContext(context.Context) GetLocalDomainV2RegistrationStatusOutput
+}
+
+type GetLocalDomainV2RegistrationStatusArgs struct {
+	// - Indicates remaining days to domain credential expiry, 0 means expired.
+	DaysToExpiry pulumi.IntInput `pulumi:"daysToExpiry"`
+	// - The stage for the local domain's register/unregister operation.
+	ErrorStage pulumi.StringInput `pulumi:"errorStage"`
+	// - Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+	IdentityProviderExtId pulumi.StringInput `pulumi:"identityProviderExtId"`
+	// - Location state.
+	State pulumi.StringInput `pulumi:"state"`
+}
+
+func (GetLocalDomainV2RegistrationStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2RegistrationStatus)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2RegistrationStatusArgs) ToGetLocalDomainV2RegistrationStatusOutput() GetLocalDomainV2RegistrationStatusOutput {
+	return i.ToGetLocalDomainV2RegistrationStatusOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2RegistrationStatusArgs) ToGetLocalDomainV2RegistrationStatusOutputWithContext(ctx context.Context) GetLocalDomainV2RegistrationStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2RegistrationStatusOutput)
+}
+
+// GetLocalDomainV2RegistrationStatusArrayInput is an input type that accepts GetLocalDomainV2RegistrationStatusArray and GetLocalDomainV2RegistrationStatusArrayOutput values.
+// You can construct a concrete instance of `GetLocalDomainV2RegistrationStatusArrayInput` via:
+//
+//	GetLocalDomainV2RegistrationStatusArray{ GetLocalDomainV2RegistrationStatusArgs{...} }
+type GetLocalDomainV2RegistrationStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetLocalDomainV2RegistrationStatusArrayOutput() GetLocalDomainV2RegistrationStatusArrayOutput
+	ToGetLocalDomainV2RegistrationStatusArrayOutputWithContext(context.Context) GetLocalDomainV2RegistrationStatusArrayOutput
+}
+
+type GetLocalDomainV2RegistrationStatusArray []GetLocalDomainV2RegistrationStatusInput
+
+func (GetLocalDomainV2RegistrationStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2RegistrationStatus)(nil)).Elem()
+}
+
+func (i GetLocalDomainV2RegistrationStatusArray) ToGetLocalDomainV2RegistrationStatusArrayOutput() GetLocalDomainV2RegistrationStatusArrayOutput {
+	return i.ToGetLocalDomainV2RegistrationStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocalDomainV2RegistrationStatusArray) ToGetLocalDomainV2RegistrationStatusArrayOutputWithContext(ctx context.Context) GetLocalDomainV2RegistrationStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocalDomainV2RegistrationStatusArrayOutput)
+}
+
+type GetLocalDomainV2RegistrationStatusOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2RegistrationStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocalDomainV2RegistrationStatus)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2RegistrationStatusOutput) ToGetLocalDomainV2RegistrationStatusOutput() GetLocalDomainV2RegistrationStatusOutput {
+	return o
+}
+
+func (o GetLocalDomainV2RegistrationStatusOutput) ToGetLocalDomainV2RegistrationStatusOutputWithContext(ctx context.Context) GetLocalDomainV2RegistrationStatusOutput {
+	return o
+}
+
+// - Indicates remaining days to domain credential expiry, 0 means expired.
+func (o GetLocalDomainV2RegistrationStatusOutput) DaysToExpiry() pulumi.IntOutput {
+	return o.ApplyT(func(v GetLocalDomainV2RegistrationStatus) int { return v.DaysToExpiry }).(pulumi.IntOutput)
+}
+
+// - The stage for the local domain's register/unregister operation.
+func (o GetLocalDomainV2RegistrationStatusOutput) ErrorStage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2RegistrationStatus) string { return v.ErrorStage }).(pulumi.StringOutput)
+}
+
+// - Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+func (o GetLocalDomainV2RegistrationStatusOutput) IdentityProviderExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2RegistrationStatus) string { return v.IdentityProviderExtId }).(pulumi.StringOutput)
+}
+
+// - Location state.
+func (o GetLocalDomainV2RegistrationStatusOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocalDomainV2RegistrationStatus) string { return v.State }).(pulumi.StringOutput)
+}
+
+type GetLocalDomainV2RegistrationStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocalDomainV2RegistrationStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocalDomainV2RegistrationStatus)(nil)).Elem()
+}
+
+func (o GetLocalDomainV2RegistrationStatusArrayOutput) ToGetLocalDomainV2RegistrationStatusArrayOutput() GetLocalDomainV2RegistrationStatusArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2RegistrationStatusArrayOutput) ToGetLocalDomainV2RegistrationStatusArrayOutputWithContext(ctx context.Context) GetLocalDomainV2RegistrationStatusArrayOutput {
+	return o
+}
+
+func (o GetLocalDomainV2RegistrationStatusArrayOutput) Index(i pulumi.IntInput) GetLocalDomainV2RegistrationStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocalDomainV2RegistrationStatus {
+		return vs[0].([]GetLocalDomainV2RegistrationStatus)[vs[1].(int)]
+	}).(GetLocalDomainV2RegistrationStatusOutput)
+}
+
+type GetLocationsV2Location struct {
+	Coordinates []GetLocationsV2LocationCoordinate `pulumi:"coordinates"`
+	Country     string                             `pulumi:"country"`
+	ExtId       string                             `pulumi:"extId"`
+	Links       []GetLocationsV2LocationLink       `pulumi:"links"`
+	Name        string                             `pulumi:"name"`
+	State       string                             `pulumi:"state"`
+	TenantId    string                             `pulumi:"tenantId"`
+}
+
+// GetLocationsV2LocationInput is an input type that accepts GetLocationsV2LocationArgs and GetLocationsV2LocationOutput values.
+// You can construct a concrete instance of `GetLocationsV2LocationInput` via:
+//
+//	GetLocationsV2LocationArgs{...}
+type GetLocationsV2LocationInput interface {
+	pulumi.Input
+
+	ToGetLocationsV2LocationOutput() GetLocationsV2LocationOutput
+	ToGetLocationsV2LocationOutputWithContext(context.Context) GetLocationsV2LocationOutput
+}
+
+type GetLocationsV2LocationArgs struct {
+	Coordinates GetLocationsV2LocationCoordinateArrayInput `pulumi:"coordinates"`
+	Country     pulumi.StringInput                         `pulumi:"country"`
+	ExtId       pulumi.StringInput                         `pulumi:"extId"`
+	Links       GetLocationsV2LocationLinkArrayInput       `pulumi:"links"`
+	Name        pulumi.StringInput                         `pulumi:"name"`
+	State       pulumi.StringInput                         `pulumi:"state"`
+	TenantId    pulumi.StringInput                         `pulumi:"tenantId"`
+}
+
+func (GetLocationsV2LocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocationsV2Location)(nil)).Elem()
+}
+
+func (i GetLocationsV2LocationArgs) ToGetLocationsV2LocationOutput() GetLocationsV2LocationOutput {
+	return i.ToGetLocationsV2LocationOutputWithContext(context.Background())
+}
+
+func (i GetLocationsV2LocationArgs) ToGetLocationsV2LocationOutputWithContext(ctx context.Context) GetLocationsV2LocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocationsV2LocationOutput)
+}
+
+// GetLocationsV2LocationArrayInput is an input type that accepts GetLocationsV2LocationArray and GetLocationsV2LocationArrayOutput values.
+// You can construct a concrete instance of `GetLocationsV2LocationArrayInput` via:
+//
+//	GetLocationsV2LocationArray{ GetLocationsV2LocationArgs{...} }
+type GetLocationsV2LocationArrayInput interface {
+	pulumi.Input
+
+	ToGetLocationsV2LocationArrayOutput() GetLocationsV2LocationArrayOutput
+	ToGetLocationsV2LocationArrayOutputWithContext(context.Context) GetLocationsV2LocationArrayOutput
+}
+
+type GetLocationsV2LocationArray []GetLocationsV2LocationInput
+
+func (GetLocationsV2LocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocationsV2Location)(nil)).Elem()
+}
+
+func (i GetLocationsV2LocationArray) ToGetLocationsV2LocationArrayOutput() GetLocationsV2LocationArrayOutput {
+	return i.ToGetLocationsV2LocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocationsV2LocationArray) ToGetLocationsV2LocationArrayOutputWithContext(ctx context.Context) GetLocationsV2LocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocationsV2LocationArrayOutput)
+}
+
+type GetLocationsV2LocationOutput struct{ *pulumi.OutputState }
+
+func (GetLocationsV2LocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocationsV2Location)(nil)).Elem()
+}
+
+func (o GetLocationsV2LocationOutput) ToGetLocationsV2LocationOutput() GetLocationsV2LocationOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationOutput) ToGetLocationsV2LocationOutputWithContext(ctx context.Context) GetLocationsV2LocationOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationOutput) Coordinates() GetLocationsV2LocationCoordinateArrayOutput {
+	return o.ApplyT(func(v GetLocationsV2Location) []GetLocationsV2LocationCoordinate { return v.Coordinates }).(GetLocationsV2LocationCoordinateArrayOutput)
+}
+
+func (o GetLocationsV2LocationOutput) Country() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocationsV2Location) string { return v.Country }).(pulumi.StringOutput)
+}
+
+func (o GetLocationsV2LocationOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocationsV2Location) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+func (o GetLocationsV2LocationOutput) Links() GetLocationsV2LocationLinkArrayOutput {
+	return o.ApplyT(func(v GetLocationsV2Location) []GetLocationsV2LocationLink { return v.Links }).(GetLocationsV2LocationLinkArrayOutput)
+}
+
+func (o GetLocationsV2LocationOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocationsV2Location) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetLocationsV2LocationOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocationsV2Location) string { return v.State }).(pulumi.StringOutput)
+}
+
+func (o GetLocationsV2LocationOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocationsV2Location) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+type GetLocationsV2LocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocationsV2LocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocationsV2Location)(nil)).Elem()
+}
+
+func (o GetLocationsV2LocationArrayOutput) ToGetLocationsV2LocationArrayOutput() GetLocationsV2LocationArrayOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationArrayOutput) ToGetLocationsV2LocationArrayOutputWithContext(ctx context.Context) GetLocationsV2LocationArrayOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationArrayOutput) Index(i pulumi.IntInput) GetLocationsV2LocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocationsV2Location {
+		return vs[0].([]GetLocationsV2Location)[vs[1].(int)]
+	}).(GetLocationsV2LocationOutput)
+}
+
+type GetLocationsV2LocationCoordinate struct {
+	Latitude  float64 `pulumi:"latitude"`
+	Longitude float64 `pulumi:"longitude"`
+}
+
+// GetLocationsV2LocationCoordinateInput is an input type that accepts GetLocationsV2LocationCoordinateArgs and GetLocationsV2LocationCoordinateOutput values.
+// You can construct a concrete instance of `GetLocationsV2LocationCoordinateInput` via:
+//
+//	GetLocationsV2LocationCoordinateArgs{...}
+type GetLocationsV2LocationCoordinateInput interface {
+	pulumi.Input
+
+	ToGetLocationsV2LocationCoordinateOutput() GetLocationsV2LocationCoordinateOutput
+	ToGetLocationsV2LocationCoordinateOutputWithContext(context.Context) GetLocationsV2LocationCoordinateOutput
+}
+
+type GetLocationsV2LocationCoordinateArgs struct {
+	Latitude  pulumi.Float64Input `pulumi:"latitude"`
+	Longitude pulumi.Float64Input `pulumi:"longitude"`
+}
+
+func (GetLocationsV2LocationCoordinateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocationsV2LocationCoordinate)(nil)).Elem()
+}
+
+func (i GetLocationsV2LocationCoordinateArgs) ToGetLocationsV2LocationCoordinateOutput() GetLocationsV2LocationCoordinateOutput {
+	return i.ToGetLocationsV2LocationCoordinateOutputWithContext(context.Background())
+}
+
+func (i GetLocationsV2LocationCoordinateArgs) ToGetLocationsV2LocationCoordinateOutputWithContext(ctx context.Context) GetLocationsV2LocationCoordinateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocationsV2LocationCoordinateOutput)
+}
+
+// GetLocationsV2LocationCoordinateArrayInput is an input type that accepts GetLocationsV2LocationCoordinateArray and GetLocationsV2LocationCoordinateArrayOutput values.
+// You can construct a concrete instance of `GetLocationsV2LocationCoordinateArrayInput` via:
+//
+//	GetLocationsV2LocationCoordinateArray{ GetLocationsV2LocationCoordinateArgs{...} }
+type GetLocationsV2LocationCoordinateArrayInput interface {
+	pulumi.Input
+
+	ToGetLocationsV2LocationCoordinateArrayOutput() GetLocationsV2LocationCoordinateArrayOutput
+	ToGetLocationsV2LocationCoordinateArrayOutputWithContext(context.Context) GetLocationsV2LocationCoordinateArrayOutput
+}
+
+type GetLocationsV2LocationCoordinateArray []GetLocationsV2LocationCoordinateInput
+
+func (GetLocationsV2LocationCoordinateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocationsV2LocationCoordinate)(nil)).Elem()
+}
+
+func (i GetLocationsV2LocationCoordinateArray) ToGetLocationsV2LocationCoordinateArrayOutput() GetLocationsV2LocationCoordinateArrayOutput {
+	return i.ToGetLocationsV2LocationCoordinateArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocationsV2LocationCoordinateArray) ToGetLocationsV2LocationCoordinateArrayOutputWithContext(ctx context.Context) GetLocationsV2LocationCoordinateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocationsV2LocationCoordinateArrayOutput)
+}
+
+type GetLocationsV2LocationCoordinateOutput struct{ *pulumi.OutputState }
+
+func (GetLocationsV2LocationCoordinateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocationsV2LocationCoordinate)(nil)).Elem()
+}
+
+func (o GetLocationsV2LocationCoordinateOutput) ToGetLocationsV2LocationCoordinateOutput() GetLocationsV2LocationCoordinateOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationCoordinateOutput) ToGetLocationsV2LocationCoordinateOutputWithContext(ctx context.Context) GetLocationsV2LocationCoordinateOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationCoordinateOutput) Latitude() pulumi.Float64Output {
+	return o.ApplyT(func(v GetLocationsV2LocationCoordinate) float64 { return v.Latitude }).(pulumi.Float64Output)
+}
+
+func (o GetLocationsV2LocationCoordinateOutput) Longitude() pulumi.Float64Output {
+	return o.ApplyT(func(v GetLocationsV2LocationCoordinate) float64 { return v.Longitude }).(pulumi.Float64Output)
+}
+
+type GetLocationsV2LocationCoordinateArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocationsV2LocationCoordinateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocationsV2LocationCoordinate)(nil)).Elem()
+}
+
+func (o GetLocationsV2LocationCoordinateArrayOutput) ToGetLocationsV2LocationCoordinateArrayOutput() GetLocationsV2LocationCoordinateArrayOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationCoordinateArrayOutput) ToGetLocationsV2LocationCoordinateArrayOutputWithContext(ctx context.Context) GetLocationsV2LocationCoordinateArrayOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationCoordinateArrayOutput) Index(i pulumi.IntInput) GetLocationsV2LocationCoordinateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocationsV2LocationCoordinate {
+		return vs[0].([]GetLocationsV2LocationCoordinate)[vs[1].(int)]
+	}).(GetLocationsV2LocationCoordinateOutput)
+}
+
+type GetLocationsV2LocationLink struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetLocationsV2LocationLinkInput is an input type that accepts GetLocationsV2LocationLinkArgs and GetLocationsV2LocationLinkOutput values.
+// You can construct a concrete instance of `GetLocationsV2LocationLinkInput` via:
+//
+//	GetLocationsV2LocationLinkArgs{...}
+type GetLocationsV2LocationLinkInput interface {
+	pulumi.Input
+
+	ToGetLocationsV2LocationLinkOutput() GetLocationsV2LocationLinkOutput
+	ToGetLocationsV2LocationLinkOutputWithContext(context.Context) GetLocationsV2LocationLinkOutput
+}
+
+type GetLocationsV2LocationLinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetLocationsV2LocationLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocationsV2LocationLink)(nil)).Elem()
+}
+
+func (i GetLocationsV2LocationLinkArgs) ToGetLocationsV2LocationLinkOutput() GetLocationsV2LocationLinkOutput {
+	return i.ToGetLocationsV2LocationLinkOutputWithContext(context.Background())
+}
+
+func (i GetLocationsV2LocationLinkArgs) ToGetLocationsV2LocationLinkOutputWithContext(ctx context.Context) GetLocationsV2LocationLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocationsV2LocationLinkOutput)
+}
+
+// GetLocationsV2LocationLinkArrayInput is an input type that accepts GetLocationsV2LocationLinkArray and GetLocationsV2LocationLinkArrayOutput values.
+// You can construct a concrete instance of `GetLocationsV2LocationLinkArrayInput` via:
+//
+//	GetLocationsV2LocationLinkArray{ GetLocationsV2LocationLinkArgs{...} }
+type GetLocationsV2LocationLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetLocationsV2LocationLinkArrayOutput() GetLocationsV2LocationLinkArrayOutput
+	ToGetLocationsV2LocationLinkArrayOutputWithContext(context.Context) GetLocationsV2LocationLinkArrayOutput
+}
+
+type GetLocationsV2LocationLinkArray []GetLocationsV2LocationLinkInput
+
+func (GetLocationsV2LocationLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocationsV2LocationLink)(nil)).Elem()
+}
+
+func (i GetLocationsV2LocationLinkArray) ToGetLocationsV2LocationLinkArrayOutput() GetLocationsV2LocationLinkArrayOutput {
+	return i.ToGetLocationsV2LocationLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetLocationsV2LocationLinkArray) ToGetLocationsV2LocationLinkArrayOutputWithContext(ctx context.Context) GetLocationsV2LocationLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetLocationsV2LocationLinkArrayOutput)
+}
+
+type GetLocationsV2LocationLinkOutput struct{ *pulumi.OutputState }
+
+func (GetLocationsV2LocationLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetLocationsV2LocationLink)(nil)).Elem()
+}
+
+func (o GetLocationsV2LocationLinkOutput) ToGetLocationsV2LocationLinkOutput() GetLocationsV2LocationLinkOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationLinkOutput) ToGetLocationsV2LocationLinkOutputWithContext(ctx context.Context) GetLocationsV2LocationLinkOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocationsV2LocationLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetLocationsV2LocationLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetLocationsV2LocationLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetLocationsV2LocationLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetLocationsV2LocationLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetLocationsV2LocationLink)(nil)).Elem()
+}
+
+func (o GetLocationsV2LocationLinkArrayOutput) ToGetLocationsV2LocationLinkArrayOutput() GetLocationsV2LocationLinkArrayOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationLinkArrayOutput) ToGetLocationsV2LocationLinkArrayOutputWithContext(ctx context.Context) GetLocationsV2LocationLinkArrayOutput {
+	return o
+}
+
+func (o GetLocationsV2LocationLinkArrayOutput) Index(i pulumi.IntInput) GetLocationsV2LocationLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLocationsV2LocationLink {
+		return vs[0].([]GetLocationsV2LocationLink)[vs[1].(int)]
+	}).(GetLocationsV2LocationLinkOutput)
+}
+
+type GetNdbCloneDatabaseNode struct {
+	AccessLevel map[string]string `pulumi:"accessLevel"`
+	DatabaseId  string            `pulumi:"databaseId"`
+	// database status
+	DatabaseStatus string `pulumi:"databaseStatus"`
+	// date created for clone
+	DateCreated string `pulumi:"dateCreated"`
+	// last modified date for clone
+	DateModified string            `pulumi:"dateModified"`
+	Dbserver     map[string]string `pulumi:"dbserver"`
+	DbserverId   string            `pulumi:"dbserverId"`
+	// cloned description
+	Description string `pulumi:"description"`
+	// cloned id
+	Id string `pulumi:"id"`
+	// cloned info
+	Infos []GetNdbCloneDatabaseNodeInfo `pulumi:"infos"`
+	// cloned name
+	Name    string `pulumi:"name"`
+	Primary bool   `pulumi:"primary"`
+	// properties of clone
+	Properties             []GetNdbCloneDatabaseNodeProperty         `pulumi:"properties"`
+	ProtectionDomainId     string                                    `pulumi:"protectionDomainId"`
+	ProtectionDomains      []GetNdbCloneDatabaseNodeProtectionDomain `pulumi:"protectionDomains"`
+	SoftwareInstallationId string                                    `pulumi:"softwareInstallationId"`
+	// status of clone
+	Status string `pulumi:"status"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags []GetNdbCloneDatabaseNodeTag `pulumi:"tags"`
+}
+
+// GetNdbCloneDatabaseNodeInput is an input type that accepts GetNdbCloneDatabaseNodeArgs and GetNdbCloneDatabaseNodeOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeInput` via:
+//
+//	GetNdbCloneDatabaseNodeArgs{...}
+type GetNdbCloneDatabaseNodeInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeOutput() GetNdbCloneDatabaseNodeOutput
+	ToGetNdbCloneDatabaseNodeOutputWithContext(context.Context) GetNdbCloneDatabaseNodeOutput
+}
+
+type GetNdbCloneDatabaseNodeArgs struct {
+	AccessLevel pulumi.StringMapInput `pulumi:"accessLevel"`
+	DatabaseId  pulumi.StringInput    `pulumi:"databaseId"`
+	// database status
+	DatabaseStatus pulumi.StringInput `pulumi:"databaseStatus"`
+	// date created for clone
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// last modified date for clone
+	DateModified pulumi.StringInput    `pulumi:"dateModified"`
+	Dbserver     pulumi.StringMapInput `pulumi:"dbserver"`
+	DbserverId   pulumi.StringInput    `pulumi:"dbserverId"`
+	// cloned description
+	Description pulumi.StringInput `pulumi:"description"`
+	// cloned id
+	Id pulumi.StringInput `pulumi:"id"`
+	// cloned info
+	Infos GetNdbCloneDatabaseNodeInfoArrayInput `pulumi:"infos"`
+	// cloned name
+	Name    pulumi.StringInput `pulumi:"name"`
+	Primary pulumi.BoolInput   `pulumi:"primary"`
+	// properties of clone
+	Properties             GetNdbCloneDatabaseNodePropertyArrayInput         `pulumi:"properties"`
+	ProtectionDomainId     pulumi.StringInput                                `pulumi:"protectionDomainId"`
+	ProtectionDomains      GetNdbCloneDatabaseNodeProtectionDomainArrayInput `pulumi:"protectionDomains"`
+	SoftwareInstallationId pulumi.StringInput                                `pulumi:"softwareInstallationId"`
+	// status of clone
+	Status pulumi.StringInput `pulumi:"status"`
+	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+	Tags GetNdbCloneDatabaseNodeTagArrayInput `pulumi:"tags"`
+}
+
+func (GetNdbCloneDatabaseNodeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNode)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeArgs) ToGetNdbCloneDatabaseNodeOutput() GetNdbCloneDatabaseNodeOutput {
+	return i.ToGetNdbCloneDatabaseNodeOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeArgs) ToGetNdbCloneDatabaseNodeOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeOutput)
+}
+
+// GetNdbCloneDatabaseNodeArrayInput is an input type that accepts GetNdbCloneDatabaseNodeArray and GetNdbCloneDatabaseNodeArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeArrayInput` via:
+//
+//	GetNdbCloneDatabaseNodeArray{ GetNdbCloneDatabaseNodeArgs{...} }
+type GetNdbCloneDatabaseNodeArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeArrayOutput() GetNdbCloneDatabaseNodeArrayOutput
+	ToGetNdbCloneDatabaseNodeArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeArrayOutput
+}
+
+type GetNdbCloneDatabaseNodeArray []GetNdbCloneDatabaseNodeInput
+
+func (GetNdbCloneDatabaseNodeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNode)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeArray) ToGetNdbCloneDatabaseNodeArrayOutput() GetNdbCloneDatabaseNodeArrayOutput {
+	return i.ToGetNdbCloneDatabaseNodeArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeArray) ToGetNdbCloneDatabaseNodeArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeArrayOutput)
+}
+
+type GetNdbCloneDatabaseNodeOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNode)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) ToGetNdbCloneDatabaseNodeOutput() GetNdbCloneDatabaseNodeOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) ToGetNdbCloneDatabaseNodeOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) AccessLevel() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) map[string]string { return v.AccessLevel }).(pulumi.StringMapOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// database status
+func (o GetNdbCloneDatabaseNodeOutput) DatabaseStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DatabaseStatus }).(pulumi.StringOutput)
+}
+
+// date created for clone
+func (o GetNdbCloneDatabaseNodeOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+// last modified date for clone
+func (o GetNdbCloneDatabaseNodeOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) Dbserver() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) map[string]string { return v.Dbserver }).(pulumi.StringMapOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) DbserverId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DbserverId }).(pulumi.StringOutput)
+}
+
+// cloned description
+func (o GetNdbCloneDatabaseNodeOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// cloned id
+func (o GetNdbCloneDatabaseNodeOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// cloned info
+func (o GetNdbCloneDatabaseNodeOutput) Infos() GetNdbCloneDatabaseNodeInfoArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) []GetNdbCloneDatabaseNodeInfo { return v.Infos }).(GetNdbCloneDatabaseNodeInfoArrayOutput)
+}
+
+// cloned name
+func (o GetNdbCloneDatabaseNodeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) Primary() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) bool { return v.Primary }).(pulumi.BoolOutput)
+}
+
+// properties of clone
+func (o GetNdbCloneDatabaseNodeOutput) Properties() GetNdbCloneDatabaseNodePropertyArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) []GetNdbCloneDatabaseNodeProperty { return v.Properties }).(GetNdbCloneDatabaseNodePropertyArrayOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) ProtectionDomainId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.ProtectionDomainId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) ProtectionDomains() GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) []GetNdbCloneDatabaseNodeProtectionDomain { return v.ProtectionDomains }).(GetNdbCloneDatabaseNodeProtectionDomainArrayOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeOutput) SoftwareInstallationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.SoftwareInstallationId }).(pulumi.StringOutput)
+}
+
+// status of clone
+func (o GetNdbCloneDatabaseNodeOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
+func (o GetNdbCloneDatabaseNodeOutput) Tags() GetNdbCloneDatabaseNodeTagArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNode) []GetNdbCloneDatabaseNodeTag { return v.Tags }).(GetNdbCloneDatabaseNodeTagArrayOutput)
+}
+
+type GetNdbCloneDatabaseNodeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNode)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeArrayOutput) ToGetNdbCloneDatabaseNodeArrayOutput() GetNdbCloneDatabaseNodeArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeArrayOutput) ToGetNdbCloneDatabaseNodeArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNode {
+		return vs[0].([]GetNdbCloneDatabaseNode)[vs[1].(int)]
+	}).(GetNdbCloneDatabaseNodeOutput)
+}
+
+type GetNdbCloneDatabaseNodeInfo struct {
+	// cloned info
+	Info       map[string]string `pulumi:"info"`
+	SecureInfo map[string]string `pulumi:"secureInfo"`
+}
+
+// GetNdbCloneDatabaseNodeInfoInput is an input type that accepts GetNdbCloneDatabaseNodeInfoArgs and GetNdbCloneDatabaseNodeInfoOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeInfoInput` via:
+//
+//	GetNdbCloneDatabaseNodeInfoArgs{...}
+type GetNdbCloneDatabaseNodeInfoInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeInfoOutput() GetNdbCloneDatabaseNodeInfoOutput
+	ToGetNdbCloneDatabaseNodeInfoOutputWithContext(context.Context) GetNdbCloneDatabaseNodeInfoOutput
+}
+
+type GetNdbCloneDatabaseNodeInfoArgs struct {
+	// cloned info
+	Info       pulumi.StringMapInput `pulumi:"info"`
+	SecureInfo pulumi.StringMapInput `pulumi:"secureInfo"`
+}
+
+func (GetNdbCloneDatabaseNodeInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeInfo)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeInfoArgs) ToGetNdbCloneDatabaseNodeInfoOutput() GetNdbCloneDatabaseNodeInfoOutput {
+	return i.ToGetNdbCloneDatabaseNodeInfoOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeInfoArgs) ToGetNdbCloneDatabaseNodeInfoOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeInfoOutput)
+}
+
+// GetNdbCloneDatabaseNodeInfoArrayInput is an input type that accepts GetNdbCloneDatabaseNodeInfoArray and GetNdbCloneDatabaseNodeInfoArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeInfoArrayInput` via:
+//
+//	GetNdbCloneDatabaseNodeInfoArray{ GetNdbCloneDatabaseNodeInfoArgs{...} }
+type GetNdbCloneDatabaseNodeInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeInfoArrayOutput() GetNdbCloneDatabaseNodeInfoArrayOutput
+	ToGetNdbCloneDatabaseNodeInfoArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeInfoArrayOutput
+}
+
+type GetNdbCloneDatabaseNodeInfoArray []GetNdbCloneDatabaseNodeInfoInput
+
+func (GetNdbCloneDatabaseNodeInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeInfo)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeInfoArray) ToGetNdbCloneDatabaseNodeInfoArrayOutput() GetNdbCloneDatabaseNodeInfoArrayOutput {
+	return i.ToGetNdbCloneDatabaseNodeInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeInfoArray) ToGetNdbCloneDatabaseNodeInfoArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeInfoArrayOutput)
+}
+
+type GetNdbCloneDatabaseNodeInfoOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeInfo)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeInfoOutput) ToGetNdbCloneDatabaseNodeInfoOutput() GetNdbCloneDatabaseNodeInfoOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeInfoOutput) ToGetNdbCloneDatabaseNodeInfoOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeInfoOutput {
+	return o
+}
+
+// cloned info
+func (o GetNdbCloneDatabaseNodeInfoOutput) Info() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeInfo) map[string]string { return v.Info }).(pulumi.StringMapOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeInfoOutput) SecureInfo() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeInfo) map[string]string { return v.SecureInfo }).(pulumi.StringMapOutput)
+}
+
+type GetNdbCloneDatabaseNodeInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeInfo)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeInfoArrayOutput) ToGetNdbCloneDatabaseNodeInfoArrayOutput() GetNdbCloneDatabaseNodeInfoArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeInfoArrayOutput) ToGetNdbCloneDatabaseNodeInfoArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeInfoArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeInfoArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeInfo {
+		return vs[0].([]GetNdbCloneDatabaseNodeInfo)[vs[1].(int)]
+	}).(GetNdbCloneDatabaseNodeInfoOutput)
+}
+
+type GetNdbCloneDatabaseNodeProperty struct {
+	// cloned description
+	Description string `pulumi:"description"`
+	// cloned name
+	Name   string `pulumi:"name"`
+	RefId  string `pulumi:"refId"`
+	Secure bool   `pulumi:"secure"`
+	Value  string `pulumi:"value"`
+}
+
+// GetNdbCloneDatabaseNodePropertyInput is an input type that accepts GetNdbCloneDatabaseNodePropertyArgs and GetNdbCloneDatabaseNodePropertyOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodePropertyInput` via:
+//
+//	GetNdbCloneDatabaseNodePropertyArgs{...}
+type GetNdbCloneDatabaseNodePropertyInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodePropertyOutput() GetNdbCloneDatabaseNodePropertyOutput
+	ToGetNdbCloneDatabaseNodePropertyOutputWithContext(context.Context) GetNdbCloneDatabaseNodePropertyOutput
+}
+
+type GetNdbCloneDatabaseNodePropertyArgs struct {
+	// cloned description
+	Description pulumi.StringInput `pulumi:"description"`
+	// cloned name
+	Name   pulumi.StringInput `pulumi:"name"`
+	RefId  pulumi.StringInput `pulumi:"refId"`
+	Secure pulumi.BoolInput   `pulumi:"secure"`
+	Value  pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbCloneDatabaseNodePropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProperty)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodePropertyArgs) ToGetNdbCloneDatabaseNodePropertyOutput() GetNdbCloneDatabaseNodePropertyOutput {
+	return i.ToGetNdbCloneDatabaseNodePropertyOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodePropertyArgs) ToGetNdbCloneDatabaseNodePropertyOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodePropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodePropertyOutput)
+}
+
+// GetNdbCloneDatabaseNodePropertyArrayInput is an input type that accepts GetNdbCloneDatabaseNodePropertyArray and GetNdbCloneDatabaseNodePropertyArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodePropertyArrayInput` via:
+//
+//	GetNdbCloneDatabaseNodePropertyArray{ GetNdbCloneDatabaseNodePropertyArgs{...} }
+type GetNdbCloneDatabaseNodePropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodePropertyArrayOutput() GetNdbCloneDatabaseNodePropertyArrayOutput
+	ToGetNdbCloneDatabaseNodePropertyArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodePropertyArrayOutput
+}
+
+type GetNdbCloneDatabaseNodePropertyArray []GetNdbCloneDatabaseNodePropertyInput
+
+func (GetNdbCloneDatabaseNodePropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProperty)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodePropertyArray) ToGetNdbCloneDatabaseNodePropertyArrayOutput() GetNdbCloneDatabaseNodePropertyArrayOutput {
+	return i.ToGetNdbCloneDatabaseNodePropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodePropertyArray) ToGetNdbCloneDatabaseNodePropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodePropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodePropertyArrayOutput)
+}
+
+type GetNdbCloneDatabaseNodePropertyOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodePropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProperty)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodePropertyOutput) ToGetNdbCloneDatabaseNodePropertyOutput() GetNdbCloneDatabaseNodePropertyOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodePropertyOutput) ToGetNdbCloneDatabaseNodePropertyOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodePropertyOutput {
+	return o
+}
+
+// cloned description
+func (o GetNdbCloneDatabaseNodePropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// cloned name
+func (o GetNdbCloneDatabaseNodePropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodePropertyOutput) RefId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) string { return v.RefId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodePropertyOutput) Secure() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) bool { return v.Secure }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbCloneDatabaseNodePropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbCloneDatabaseNodePropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodePropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProperty)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodePropertyArrayOutput) ToGetNdbCloneDatabaseNodePropertyArrayOutput() GetNdbCloneDatabaseNodePropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodePropertyArrayOutput) ToGetNdbCloneDatabaseNodePropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodePropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodePropertyArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodePropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeProperty {
+		return vs[0].([]GetNdbCloneDatabaseNodeProperty)[vs[1].(int)]
+	}).(GetNdbCloneDatabaseNodePropertyOutput)
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomain struct {
+	AssocEntities []string `pulumi:"assocEntities"`
+	CloudId       string   `pulumi:"cloudId"`
+	// date created for clone
+	DateCreated string `pulumi:"dateCreated"`
+	// last modified date for clone
+	DateModified string `pulumi:"dateModified"`
+	// cloned description
+	Description string `pulumi:"description"`
+	EraCreated  bool   `pulumi:"eraCreated"`
+	// cloned id
+	Id string `pulumi:"id"`
+	// cloned name
+	Name        string `pulumi:"name"`
+	OwnerId     string `pulumi:"ownerId"`
+	PrimaryHost string `pulumi:"primaryHost"`
+	// properties of clone
+	Properties []GetNdbCloneDatabaseNodeProtectionDomainProperty `pulumi:"properties"`
+	// status of clone
+	Status string `pulumi:"status"`
+	// type
+	Type string `pulumi:"type"`
+}
+
+// GetNdbCloneDatabaseNodeProtectionDomainInput is an input type that accepts GetNdbCloneDatabaseNodeProtectionDomainArgs and GetNdbCloneDatabaseNodeProtectionDomainOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeProtectionDomainInput` via:
+//
+//	GetNdbCloneDatabaseNodeProtectionDomainArgs{...}
+type GetNdbCloneDatabaseNodeProtectionDomainInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeProtectionDomainOutput() GetNdbCloneDatabaseNodeProtectionDomainOutput
+	ToGetNdbCloneDatabaseNodeProtectionDomainOutputWithContext(context.Context) GetNdbCloneDatabaseNodeProtectionDomainOutput
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainArgs struct {
+	AssocEntities pulumi.StringArrayInput `pulumi:"assocEntities"`
+	CloudId       pulumi.StringInput      `pulumi:"cloudId"`
+	// date created for clone
+	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
+	// last modified date for clone
+	DateModified pulumi.StringInput `pulumi:"dateModified"`
+	// cloned description
+	Description pulumi.StringInput `pulumi:"description"`
+	EraCreated  pulumi.BoolInput   `pulumi:"eraCreated"`
+	// cloned id
+	Id pulumi.StringInput `pulumi:"id"`
+	// cloned name
+	Name        pulumi.StringInput `pulumi:"name"`
+	OwnerId     pulumi.StringInput `pulumi:"ownerId"`
+	PrimaryHost pulumi.StringInput `pulumi:"primaryHost"`
+	// properties of clone
+	Properties GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput `pulumi:"properties"`
+	// status of clone
+	Status pulumi.StringInput `pulumi:"status"`
+	// type
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetNdbCloneDatabaseNodeProtectionDomainArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomain)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeProtectionDomainArgs) ToGetNdbCloneDatabaseNodeProtectionDomainOutput() GetNdbCloneDatabaseNodeProtectionDomainOutput {
+	return i.ToGetNdbCloneDatabaseNodeProtectionDomainOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeProtectionDomainArgs) ToGetNdbCloneDatabaseNodeProtectionDomainOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeProtectionDomainOutput)
+}
+
+// GetNdbCloneDatabaseNodeProtectionDomainArrayInput is an input type that accepts GetNdbCloneDatabaseNodeProtectionDomainArray and GetNdbCloneDatabaseNodeProtectionDomainArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeProtectionDomainArrayInput` via:
+//
+//	GetNdbCloneDatabaseNodeProtectionDomainArray{ GetNdbCloneDatabaseNodeProtectionDomainArgs{...} }
+type GetNdbCloneDatabaseNodeProtectionDomainArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainArrayOutput
+	ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeProtectionDomainArrayOutput
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainArray []GetNdbCloneDatabaseNodeProtectionDomainInput
+
+func (GetNdbCloneDatabaseNodeProtectionDomainArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProtectionDomain)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeProtectionDomainArray) ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
+	return i.ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeProtectionDomainArray) ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeProtectionDomainArrayOutput)
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeProtectionDomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomain)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) ToGetNdbCloneDatabaseNodeProtectionDomainOutput() GetNdbCloneDatabaseNodeProtectionDomainOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) ToGetNdbCloneDatabaseNodeProtectionDomainOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) AssocEntities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) []string { return v.AssocEntities }).(pulumi.StringArrayOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) CloudId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.CloudId }).(pulumi.StringOutput)
+}
+
+// date created for clone
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) DateCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.DateCreated }).(pulumi.StringOutput)
+}
+
+// last modified date for clone
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) DateModified() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.DateModified }).(pulumi.StringOutput)
+}
+
+// cloned description
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Description }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) EraCreated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) bool { return v.EraCreated }).(pulumi.BoolOutput)
+}
+
+// cloned id
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// cloned name
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) OwnerId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.OwnerId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) PrimaryHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.PrimaryHost }).(pulumi.StringOutput)
+}
+
+// properties of clone
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Properties() GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) []GetNdbCloneDatabaseNodeProtectionDomainProperty {
+		return v.Properties
+	}).(GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput)
+}
+
+// status of clone
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// type
+func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeProtectionDomainArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProtectionDomain)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainArrayOutput) ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainArrayOutput) ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeProtectionDomainOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeProtectionDomain {
+		return vs[0].([]GetNdbCloneDatabaseNodeProtectionDomain)[vs[1].(int)]
+	}).(GetNdbCloneDatabaseNodeProtectionDomainOutput)
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainProperty struct {
+	// cloned description
+	Description string `pulumi:"description"`
+	// cloned name
+	Name   string `pulumi:"name"`
+	RefId  string `pulumi:"refId"`
+	Secure bool   `pulumi:"secure"`
+	Value  string `pulumi:"value"`
+}
+
+// GetNdbCloneDatabaseNodeProtectionDomainPropertyInput is an input type that accepts GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs and GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeProtectionDomainPropertyInput` via:
+//
+//	GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs{...}
+type GetNdbCloneDatabaseNodeProtectionDomainPropertyInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput
+	ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutputWithContext(context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs struct {
+	// cloned description
+	Description pulumi.StringInput `pulumi:"description"`
+	// cloned name
+	Name   pulumi.StringInput `pulumi:"name"`
+	RefId  pulumi.StringInput `pulumi:"refId"`
+	Secure pulumi.BoolInput   `pulumi:"secure"`
+	Value  pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainProperty)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
+	return i.ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput)
+}
+
+// GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput is an input type that accepts GetNdbCloneDatabaseNodeProtectionDomainPropertyArray and GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput` via:
+//
+//	GetNdbCloneDatabaseNodeProtectionDomainPropertyArray{ GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs{...} }
+type GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput
+	ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainPropertyArray []GetNdbCloneDatabaseNodeProtectionDomainPropertyInput
+
+func (GetNdbCloneDatabaseNodeProtectionDomainPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProtectionDomainProperty)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeProtectionDomainPropertyArray) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
+	return i.ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeProtectionDomainPropertyArray) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput)
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainProperty)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
+	return o
+}
+
+// cloned description
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// cloned name
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) RefId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) string { return v.RefId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) Secure() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) bool { return v.Secure }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProtectionDomainProperty)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeProtectionDomainProperty {
+		return vs[0].([]GetNdbCloneDatabaseNodeProtectionDomainProperty)[vs[1].(int)]
+	}).(GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput)
+}
+
+type GetNdbCloneDatabaseNodeTag struct {
+	EntityId   string `pulumi:"entityId"`
+	EntityType string `pulumi:"entityType"`
+	TagId      string `pulumi:"tagId"`
+	TagName    string `pulumi:"tagName"`
+	Value      string `pulumi:"value"`
+}
+
+// GetNdbCloneDatabaseNodeTagInput is an input type that accepts GetNdbCloneDatabaseNodeTagArgs and GetNdbCloneDatabaseNodeTagOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeTagInput` via:
+//
+//	GetNdbCloneDatabaseNodeTagArgs{...}
+type GetNdbCloneDatabaseNodeTagInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeTagOutput() GetNdbCloneDatabaseNodeTagOutput
+	ToGetNdbCloneDatabaseNodeTagOutputWithContext(context.Context) GetNdbCloneDatabaseNodeTagOutput
+}
+
+type GetNdbCloneDatabaseNodeTagArgs struct {
+	EntityId   pulumi.StringInput `pulumi:"entityId"`
+	EntityType pulumi.StringInput `pulumi:"entityType"`
+	TagId      pulumi.StringInput `pulumi:"tagId"`
+	TagName    pulumi.StringInput `pulumi:"tagName"`
+	Value      pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetNdbCloneDatabaseNodeTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeTag)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeTagArgs) ToGetNdbCloneDatabaseNodeTagOutput() GetNdbCloneDatabaseNodeTagOutput {
+	return i.ToGetNdbCloneDatabaseNodeTagOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeTagArgs) ToGetNdbCloneDatabaseNodeTagOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeTagOutput)
+}
+
+// GetNdbCloneDatabaseNodeTagArrayInput is an input type that accepts GetNdbCloneDatabaseNodeTagArray and GetNdbCloneDatabaseNodeTagArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneDatabaseNodeTagArrayInput` via:
+//
+//	GetNdbCloneDatabaseNodeTagArray{ GetNdbCloneDatabaseNodeTagArgs{...} }
+type GetNdbCloneDatabaseNodeTagArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneDatabaseNodeTagArrayOutput() GetNdbCloneDatabaseNodeTagArrayOutput
+	ToGetNdbCloneDatabaseNodeTagArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeTagArrayOutput
+}
+
+type GetNdbCloneDatabaseNodeTagArray []GetNdbCloneDatabaseNodeTagInput
+
+func (GetNdbCloneDatabaseNodeTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeTag)(nil)).Elem()
+}
+
+func (i GetNdbCloneDatabaseNodeTagArray) ToGetNdbCloneDatabaseNodeTagArrayOutput() GetNdbCloneDatabaseNodeTagArrayOutput {
+	return i.ToGetNdbCloneDatabaseNodeTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneDatabaseNodeTagArray) ToGetNdbCloneDatabaseNodeTagArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeTagArrayOutput)
+}
+
+type GetNdbCloneDatabaseNodeTagOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneDatabaseNodeTag)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeTagOutput) ToGetNdbCloneDatabaseNodeTagOutput() GetNdbCloneDatabaseNodeTagOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeTagOutput) ToGetNdbCloneDatabaseNodeTagOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeTagOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeTagOutput) EntityId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.EntityId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeTagOutput) EntityType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.EntityType }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeTagOutput) TagId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.TagId }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeTagOutput) TagName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.TagName }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneDatabaseNodeTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetNdbCloneDatabaseNodeTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneDatabaseNodeTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeTag)(nil)).Elem()
+}
+
+func (o GetNdbCloneDatabaseNodeTagArrayOutput) ToGetNdbCloneDatabaseNodeTagArrayOutput() GetNdbCloneDatabaseNodeTagArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeTagArrayOutput) ToGetNdbCloneDatabaseNodeTagArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeTagArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneDatabaseNodeTagArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeTag {
+		return vs[0].([]GetNdbCloneDatabaseNodeTag)[vs[1].(int)]
+	}).(GetNdbCloneDatabaseNodeTagOutput)
+}
+
+type GetNdbCloneFilter struct {
+	// Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+	AnyStatus *string `pulumi:"anyStatus"`
+	// Load entities with complete details. Default is false
+	Detailed *string `pulumi:"detailed"`
+	// Load cluster info. Default is false
+	LoadDbserverCluster *string `pulumi:"loadDbserverCluster"`
+	// Default is UTC
+	Timezone *string `pulumi:"timezone"`
+}
+
+// GetNdbCloneFilterInput is an input type that accepts GetNdbCloneFilterArgs and GetNdbCloneFilterOutput values.
+// You can construct a concrete instance of `GetNdbCloneFilterInput` via:
+//
+//	GetNdbCloneFilterArgs{...}
+type GetNdbCloneFilterInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneFilterOutput() GetNdbCloneFilterOutput
+	ToGetNdbCloneFilterOutputWithContext(context.Context) GetNdbCloneFilterOutput
+}
+
+type GetNdbCloneFilterArgs struct {
+	// Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+	AnyStatus pulumi.StringPtrInput `pulumi:"anyStatus"`
+	// Load entities with complete details. Default is false
+	Detailed pulumi.StringPtrInput `pulumi:"detailed"`
+	// Load cluster info. Default is false
+	LoadDbserverCluster pulumi.StringPtrInput `pulumi:"loadDbserverCluster"`
+	// Default is UTC
+	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
+}
+
+func (GetNdbCloneFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneFilter)(nil)).Elem()
+}
+
+func (i GetNdbCloneFilterArgs) ToGetNdbCloneFilterOutput() GetNdbCloneFilterOutput {
+	return i.ToGetNdbCloneFilterOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneFilterArgs) ToGetNdbCloneFilterOutputWithContext(ctx context.Context) GetNdbCloneFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneFilterOutput)
+}
+
+// GetNdbCloneFilterArrayInput is an input type that accepts GetNdbCloneFilterArray and GetNdbCloneFilterArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneFilterArrayInput` via:
+//
+//	GetNdbCloneFilterArray{ GetNdbCloneFilterArgs{...} }
+type GetNdbCloneFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneFilterArrayOutput() GetNdbCloneFilterArrayOutput
+	ToGetNdbCloneFilterArrayOutputWithContext(context.Context) GetNdbCloneFilterArrayOutput
+}
+
+type GetNdbCloneFilterArray []GetNdbCloneFilterInput
+
+func (GetNdbCloneFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneFilter)(nil)).Elem()
+}
+
+func (i GetNdbCloneFilterArray) ToGetNdbCloneFilterArrayOutput() GetNdbCloneFilterArrayOutput {
+	return i.ToGetNdbCloneFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneFilterArray) ToGetNdbCloneFilterArrayOutputWithContext(ctx context.Context) GetNdbCloneFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneFilterArrayOutput)
+}
+
+type GetNdbCloneFilterOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneFilter)(nil)).Elem()
+}
+
+func (o GetNdbCloneFilterOutput) ToGetNdbCloneFilterOutput() GetNdbCloneFilterOutput {
+	return o
+}
+
+func (o GetNdbCloneFilterOutput) ToGetNdbCloneFilterOutputWithContext(ctx context.Context) GetNdbCloneFilterOutput {
+	return o
+}
+
+// Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
+func (o GetNdbCloneFilterOutput) AnyStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNdbCloneFilter) *string { return v.AnyStatus }).(pulumi.StringPtrOutput)
+}
+
+// Load entities with complete details. Default is false
+func (o GetNdbCloneFilterOutput) Detailed() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNdbCloneFilter) *string { return v.Detailed }).(pulumi.StringPtrOutput)
+}
+
+// Load cluster info. Default is false
+func (o GetNdbCloneFilterOutput) LoadDbserverCluster() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNdbCloneFilter) *string { return v.LoadDbserverCluster }).(pulumi.StringPtrOutput)
+}
+
+// Default is UTC
+func (o GetNdbCloneFilterOutput) Timezone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetNdbCloneFilter) *string { return v.Timezone }).(pulumi.StringPtrOutput)
+}
+
+type GetNdbCloneFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneFilter)(nil)).Elem()
+}
+
+func (o GetNdbCloneFilterArrayOutput) ToGetNdbCloneFilterArrayOutput() GetNdbCloneFilterArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneFilterArrayOutput) ToGetNdbCloneFilterArrayOutputWithContext(ctx context.Context) GetNdbCloneFilterArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneFilterArrayOutput) Index(i pulumi.IntInput) GetNdbCloneFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneFilter {
+		return vs[0].([]GetNdbCloneFilter)[vs[1].(int)]
+	}).(GetNdbCloneFilterOutput)
+}
+
+type GetNdbCloneInfo struct {
+	BpgConfigs []GetNdbCloneInfoBpgConfig `pulumi:"bpgConfigs"`
+	SecureInfo map[string]string          `pulumi:"secureInfo"`
+}
+
+// GetNdbCloneInfoInput is an input type that accepts GetNdbCloneInfoArgs and GetNdbCloneInfoOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoInput` via:
+//
+//	GetNdbCloneInfoArgs{...}
+type GetNdbCloneInfoInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoOutput() GetNdbCloneInfoOutput
+	ToGetNdbCloneInfoOutputWithContext(context.Context) GetNdbCloneInfoOutput
+}
+
+type GetNdbCloneInfoArgs struct {
+	BpgConfigs GetNdbCloneInfoBpgConfigArrayInput `pulumi:"bpgConfigs"`
+	SecureInfo pulumi.StringMapInput              `pulumi:"secureInfo"`
+}
+
+func (GetNdbCloneInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfo)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoArgs) ToGetNdbCloneInfoOutput() GetNdbCloneInfoOutput {
+	return i.ToGetNdbCloneInfoOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoArgs) ToGetNdbCloneInfoOutputWithContext(ctx context.Context) GetNdbCloneInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoOutput)
+}
+
+// GetNdbCloneInfoArrayInput is an input type that accepts GetNdbCloneInfoArray and GetNdbCloneInfoArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoArrayInput` via:
+//
+//	GetNdbCloneInfoArray{ GetNdbCloneInfoArgs{...} }
+type GetNdbCloneInfoArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoArrayOutput() GetNdbCloneInfoArrayOutput
+	ToGetNdbCloneInfoArrayOutputWithContext(context.Context) GetNdbCloneInfoArrayOutput
+}
+
+type GetNdbCloneInfoArray []GetNdbCloneInfoInput
+
+func (GetNdbCloneInfoArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfo)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoArray) ToGetNdbCloneInfoArrayOutput() GetNdbCloneInfoArrayOutput {
+	return i.ToGetNdbCloneInfoArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoArray) ToGetNdbCloneInfoArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoArrayOutput)
+}
+
+type GetNdbCloneInfoOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfo)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoOutput) ToGetNdbCloneInfoOutput() GetNdbCloneInfoOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoOutput) ToGetNdbCloneInfoOutputWithContext(ctx context.Context) GetNdbCloneInfoOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoOutput) BpgConfigs() GetNdbCloneInfoBpgConfigArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneInfo) []GetNdbCloneInfoBpgConfig { return v.BpgConfigs }).(GetNdbCloneInfoBpgConfigArrayOutput)
+}
+
+func (o GetNdbCloneInfoOutput) SecureInfo() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNdbCloneInfo) map[string]string { return v.SecureInfo }).(pulumi.StringMapOutput)
+}
+
+type GetNdbCloneInfoArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfo)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoArrayOutput) ToGetNdbCloneInfoArrayOutput() GetNdbCloneInfoArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoArrayOutput) ToGetNdbCloneInfoArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfo {
+		return vs[0].([]GetNdbCloneInfo)[vs[1].(int)]
+	}).(GetNdbCloneInfoOutput)
+}
+
+type GetNdbCloneInfoBpgConfig struct {
+	BpgDbParams  []GetNdbCloneInfoBpgConfigBpgDbParam `pulumi:"bpgDbParams"`
+	Storages     []GetNdbCloneInfoBpgConfigStorage    `pulumi:"storages"`
+	VmProperties []GetNdbCloneInfoBpgConfigVmProperty `pulumi:"vmProperties"`
+}
+
+// GetNdbCloneInfoBpgConfigInput is an input type that accepts GetNdbCloneInfoBpgConfigArgs and GetNdbCloneInfoBpgConfigOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigInput` via:
+//
+//	GetNdbCloneInfoBpgConfigArgs{...}
+type GetNdbCloneInfoBpgConfigInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigOutput() GetNdbCloneInfoBpgConfigOutput
+	ToGetNdbCloneInfoBpgConfigOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigOutput
+}
+
+type GetNdbCloneInfoBpgConfigArgs struct {
+	BpgDbParams  GetNdbCloneInfoBpgConfigBpgDbParamArrayInput `pulumi:"bpgDbParams"`
+	Storages     GetNdbCloneInfoBpgConfigStorageArrayInput    `pulumi:"storages"`
+	VmProperties GetNdbCloneInfoBpgConfigVmPropertyArrayInput `pulumi:"vmProperties"`
+}
+
+func (GetNdbCloneInfoBpgConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfig)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigArgs) ToGetNdbCloneInfoBpgConfigOutput() GetNdbCloneInfoBpgConfigOutput {
+	return i.ToGetNdbCloneInfoBpgConfigOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigArgs) ToGetNdbCloneInfoBpgConfigOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigOutput)
+}
+
+// GetNdbCloneInfoBpgConfigArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigArray and GetNdbCloneInfoBpgConfigArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigArrayInput` via:
+//
+//	GetNdbCloneInfoBpgConfigArray{ GetNdbCloneInfoBpgConfigArgs{...} }
+type GetNdbCloneInfoBpgConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigArrayOutput() GetNdbCloneInfoBpgConfigArrayOutput
+	ToGetNdbCloneInfoBpgConfigArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigArrayOutput
+}
+
+type GetNdbCloneInfoBpgConfigArray []GetNdbCloneInfoBpgConfigInput
+
+func (GetNdbCloneInfoBpgConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfig)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigArray) ToGetNdbCloneInfoBpgConfigArrayOutput() GetNdbCloneInfoBpgConfigArrayOutput {
+	return i.ToGetNdbCloneInfoBpgConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigArray) ToGetNdbCloneInfoBpgConfigArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfig)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigOutput) ToGetNdbCloneInfoBpgConfigOutput() GetNdbCloneInfoBpgConfigOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigOutput) ToGetNdbCloneInfoBpgConfigOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigOutput) BpgDbParams() GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfig) []GetNdbCloneInfoBpgConfigBpgDbParam { return v.BpgDbParams }).(GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigOutput) Storages() GetNdbCloneInfoBpgConfigStorageArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfig) []GetNdbCloneInfoBpgConfigStorage { return v.Storages }).(GetNdbCloneInfoBpgConfigStorageArrayOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigOutput) VmProperties() GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfig) []GetNdbCloneInfoBpgConfigVmProperty { return v.VmProperties }).(GetNdbCloneInfoBpgConfigVmPropertyArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfig)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigArrayOutput) ToGetNdbCloneInfoBpgConfigArrayOutput() GetNdbCloneInfoBpgConfigArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigArrayOutput) ToGetNdbCloneInfoBpgConfigArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfig {
+		return vs[0].([]GetNdbCloneInfoBpgConfig)[vs[1].(int)]
+	}).(GetNdbCloneInfoBpgConfigOutput)
+}
+
+type GetNdbCloneInfoBpgConfigBpgDbParam struct {
+	EffectiveCacheSize          string `pulumi:"effectiveCacheSize"`
+	MaintenanceWorkMem          string `pulumi:"maintenanceWorkMem"`
+	MaxParallelWorkersPerGather string `pulumi:"maxParallelWorkersPerGather"`
+	MaxWorkerProcesses          string `pulumi:"maxWorkerProcesses"`
+	SharedBuffers               string `pulumi:"sharedBuffers"`
+	WorkMem                     string `pulumi:"workMem"`
+}
+
+// GetNdbCloneInfoBpgConfigBpgDbParamInput is an input type that accepts GetNdbCloneInfoBpgConfigBpgDbParamArgs and GetNdbCloneInfoBpgConfigBpgDbParamOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigBpgDbParamInput` via:
+//
+//	GetNdbCloneInfoBpgConfigBpgDbParamArgs{...}
+type GetNdbCloneInfoBpgConfigBpgDbParamInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigBpgDbParamOutput() GetNdbCloneInfoBpgConfigBpgDbParamOutput
+	ToGetNdbCloneInfoBpgConfigBpgDbParamOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigBpgDbParamOutput
+}
+
+type GetNdbCloneInfoBpgConfigBpgDbParamArgs struct {
+	EffectiveCacheSize          pulumi.StringInput `pulumi:"effectiveCacheSize"`
+	MaintenanceWorkMem          pulumi.StringInput `pulumi:"maintenanceWorkMem"`
+	MaxParallelWorkersPerGather pulumi.StringInput `pulumi:"maxParallelWorkersPerGather"`
+	MaxWorkerProcesses          pulumi.StringInput `pulumi:"maxWorkerProcesses"`
+	SharedBuffers               pulumi.StringInput `pulumi:"sharedBuffers"`
+	WorkMem                     pulumi.StringInput `pulumi:"workMem"`
+}
+
+func (GetNdbCloneInfoBpgConfigBpgDbParamArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigBpgDbParam)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigBpgDbParamArgs) ToGetNdbCloneInfoBpgConfigBpgDbParamOutput() GetNdbCloneInfoBpgConfigBpgDbParamOutput {
+	return i.ToGetNdbCloneInfoBpgConfigBpgDbParamOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigBpgDbParamArgs) ToGetNdbCloneInfoBpgConfigBpgDbParamOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigBpgDbParamOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigBpgDbParamOutput)
+}
+
+// GetNdbCloneInfoBpgConfigBpgDbParamArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigBpgDbParamArray and GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigBpgDbParamArrayInput` via:
+//
+//	GetNdbCloneInfoBpgConfigBpgDbParamArray{ GetNdbCloneInfoBpgConfigBpgDbParamArgs{...} }
+type GetNdbCloneInfoBpgConfigBpgDbParamArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutput() GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput
+	ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput
+}
+
+type GetNdbCloneInfoBpgConfigBpgDbParamArray []GetNdbCloneInfoBpgConfigBpgDbParamInput
+
+func (GetNdbCloneInfoBpgConfigBpgDbParamArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigBpgDbParam)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigBpgDbParamArray) ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutput() GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
+	return i.ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigBpgDbParamArray) ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigBpgDbParamOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigBpgDbParamOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigBpgDbParam)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) ToGetNdbCloneInfoBpgConfigBpgDbParamOutput() GetNdbCloneInfoBpgConfigBpgDbParamOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) ToGetNdbCloneInfoBpgConfigBpgDbParamOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigBpgDbParamOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) EffectiveCacheSize() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.EffectiveCacheSize }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) MaintenanceWorkMem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.MaintenanceWorkMem }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) MaxParallelWorkersPerGather() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.MaxParallelWorkersPerGather }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) MaxWorkerProcesses() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.MaxWorkerProcesses }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) SharedBuffers() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.SharedBuffers }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) WorkMem() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.WorkMem }).(pulumi.StringOutput)
+}
+
+type GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigBpgDbParam)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput) ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutput() GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput) ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigBpgDbParamOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigBpgDbParam {
+		return vs[0].([]GetNdbCloneInfoBpgConfigBpgDbParam)[vs[1].(int)]
+	}).(GetNdbCloneInfoBpgConfigBpgDbParamOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorage struct {
+	ArchiveStorages []GetNdbCloneInfoBpgConfigStorageArchiveStorage `pulumi:"archiveStorages"`
+	DataDisks       []GetNdbCloneInfoBpgConfigStorageDataDisk       `pulumi:"dataDisks"`
+	LogDisks        []GetNdbCloneInfoBpgConfigStorageLogDisk        `pulumi:"logDisks"`
+}
+
+// GetNdbCloneInfoBpgConfigStorageInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageArgs and GetNdbCloneInfoBpgConfigStorageOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageInput` via:
+//
+//	GetNdbCloneInfoBpgConfigStorageArgs{...}
+type GetNdbCloneInfoBpgConfigStorageInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigStorageOutput() GetNdbCloneInfoBpgConfigStorageOutput
+	ToGetNdbCloneInfoBpgConfigStorageOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageOutput
+}
+
+type GetNdbCloneInfoBpgConfigStorageArgs struct {
+	ArchiveStorages GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput `pulumi:"archiveStorages"`
+	DataDisks       GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput       `pulumi:"dataDisks"`
+	LogDisks        GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput        `pulumi:"logDisks"`
+}
+
+func (GetNdbCloneInfoBpgConfigStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorage)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageArgs) ToGetNdbCloneInfoBpgConfigStorageOutput() GetNdbCloneInfoBpgConfigStorageOutput {
+	return i.ToGetNdbCloneInfoBpgConfigStorageOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageArgs) ToGetNdbCloneInfoBpgConfigStorageOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageOutput)
+}
+
+// GetNdbCloneInfoBpgConfigStorageArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageArray and GetNdbCloneInfoBpgConfigStorageArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageArrayInput` via:
+//
+//	GetNdbCloneInfoBpgConfigStorageArray{ GetNdbCloneInfoBpgConfigStorageArgs{...} }
+type GetNdbCloneInfoBpgConfigStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArrayOutput
+	ToGetNdbCloneInfoBpgConfigStorageArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageArrayOutput
+}
+
+type GetNdbCloneInfoBpgConfigStorageArray []GetNdbCloneInfoBpgConfigStorageInput
+
+func (GetNdbCloneInfoBpgConfigStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorage)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageArray) ToGetNdbCloneInfoBpgConfigStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArrayOutput {
+	return i.ToGetNdbCloneInfoBpgConfigStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageArray) ToGetNdbCloneInfoBpgConfigStorageArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorageOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorage)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageOutput) ToGetNdbCloneInfoBpgConfigStorageOutput() GetNdbCloneInfoBpgConfigStorageOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageOutput) ToGetNdbCloneInfoBpgConfigStorageOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageOutput) ArchiveStorages() GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorage) []GetNdbCloneInfoBpgConfigStorageArchiveStorage {
+		return v.ArchiveStorages
+	}).(GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageOutput) DataDisks() GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorage) []GetNdbCloneInfoBpgConfigStorageDataDisk { return v.DataDisks }).(GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput)
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageOutput) LogDisks() GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorage) []GetNdbCloneInfoBpgConfigStorageLogDisk { return v.LogDisks }).(GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorage)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArrayOutput) ToGetNdbCloneInfoBpgConfigStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArrayOutput) ToGetNdbCloneInfoBpgConfigStorageArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigStorage {
+		return vs[0].([]GetNdbCloneInfoBpgConfigStorage)[vs[1].(int)]
+	}).(GetNdbCloneInfoBpgConfigStorageOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorageArchiveStorage struct {
+	Size float64 `pulumi:"size"`
+}
+
+// GetNdbCloneInfoBpgConfigStorageArchiveStorageInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs and GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageArchiveStorageInput` via:
+//
+//	GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs{...}
+type GetNdbCloneInfoBpgConfigStorageArchiveStorageInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput
+	ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput
+}
+
+type GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs struct {
+	Size pulumi.Float64Input `pulumi:"size"`
+}
+
+func (GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArchiveStorage)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
+	return i.ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput)
+}
+
+// GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageArchiveStorageArray and GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput` via:
+//
+//	GetNdbCloneInfoBpgConfigStorageArchiveStorageArray{ GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs{...} }
+type GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput
+	ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput
+}
+
+type GetNdbCloneInfoBpgConfigStorageArchiveStorageArray []GetNdbCloneInfoBpgConfigStorageArchiveStorageInput
+
+func (GetNdbCloneInfoBpgConfigStorageArchiveStorageArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageArchiveStorage)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageArchiveStorageArray) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
+	return i.ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageArchiveStorageArray) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArchiveStorage)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput) Size() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorageArchiveStorage) float64 { return v.Size }).(pulumi.Float64Output)
+}
+
+type GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageArchiveStorage)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigStorageArchiveStorage {
+		return vs[0].([]GetNdbCloneInfoBpgConfigStorageArchiveStorage)[vs[1].(int)]
+	}).(GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorageDataDisk struct {
+	Count float64 `pulumi:"count"`
+}
+
+// GetNdbCloneInfoBpgConfigStorageDataDiskInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageDataDiskArgs and GetNdbCloneInfoBpgConfigStorageDataDiskOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageDataDiskInput` via:
+//
+//	GetNdbCloneInfoBpgConfigStorageDataDiskArgs{...}
+type GetNdbCloneInfoBpgConfigStorageDataDiskInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigStorageDataDiskOutput() GetNdbCloneInfoBpgConfigStorageDataDiskOutput
+	ToGetNdbCloneInfoBpgConfigStorageDataDiskOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskOutput
+}
+
+type GetNdbCloneInfoBpgConfigStorageDataDiskArgs struct {
+	Count pulumi.Float64Input `pulumi:"count"`
+}
+
+func (GetNdbCloneInfoBpgConfigStorageDataDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageDataDisk)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageDataDiskArgs) ToGetNdbCloneInfoBpgConfigStorageDataDiskOutput() GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
+	return i.ToGetNdbCloneInfoBpgConfigStorageDataDiskOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageDataDiskArgs) ToGetNdbCloneInfoBpgConfigStorageDataDiskOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageDataDiskOutput)
+}
+
+// GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageDataDiskArray and GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput` via:
+//
+//	GetNdbCloneInfoBpgConfigStorageDataDiskArray{ GetNdbCloneInfoBpgConfigStorageDataDiskArgs{...} }
+type GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput
+	ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput
+}
+
+type GetNdbCloneInfoBpgConfigStorageDataDiskArray []GetNdbCloneInfoBpgConfigStorageDataDiskInput
+
+func (GetNdbCloneInfoBpgConfigStorageDataDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageDataDisk)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageDataDiskArray) ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
+	return i.ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageDataDiskArray) ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorageDataDiskOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigStorageDataDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageDataDisk)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageDataDiskOutput) ToGetNdbCloneInfoBpgConfigStorageDataDiskOutput() GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageDataDiskOutput) ToGetNdbCloneInfoBpgConfigStorageDataDiskOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageDataDiskOutput) Count() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorageDataDisk) float64 { return v.Count }).(pulumi.Float64Output)
+}
+
+type GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageDataDisk)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput) ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput) ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigStorageDataDisk {
+		return vs[0].([]GetNdbCloneInfoBpgConfigStorageDataDisk)[vs[1].(int)]
+	}).(GetNdbCloneInfoBpgConfigStorageDataDiskOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorageLogDisk struct {
+	Count float64 `pulumi:"count"`
+	Size  float64 `pulumi:"size"`
+}
+
+// GetNdbCloneInfoBpgConfigStorageLogDiskInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageLogDiskArgs and GetNdbCloneInfoBpgConfigStorageLogDiskOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageLogDiskInput` via:
+//
+//	GetNdbCloneInfoBpgConfigStorageLogDiskArgs{...}
+type GetNdbCloneInfoBpgConfigStorageLogDiskInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigStorageLogDiskOutput() GetNdbCloneInfoBpgConfigStorageLogDiskOutput
+	ToGetNdbCloneInfoBpgConfigStorageLogDiskOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskOutput
+}
+
+type GetNdbCloneInfoBpgConfigStorageLogDiskArgs struct {
+	Count pulumi.Float64Input `pulumi:"count"`
+	Size  pulumi.Float64Input `pulumi:"size"`
+}
+
+func (GetNdbCloneInfoBpgConfigStorageLogDiskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageLogDisk)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageLogDiskArgs) ToGetNdbCloneInfoBpgConfigStorageLogDiskOutput() GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
+	return i.ToGetNdbCloneInfoBpgConfigStorageLogDiskOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageLogDiskArgs) ToGetNdbCloneInfoBpgConfigStorageLogDiskOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageLogDiskOutput)
+}
+
+// GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageLogDiskArray and GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput` via:
+//
+//	GetNdbCloneInfoBpgConfigStorageLogDiskArray{ GetNdbCloneInfoBpgConfigStorageLogDiskArgs{...} }
+type GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput
+	ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput
+}
+
+type GetNdbCloneInfoBpgConfigStorageLogDiskArray []GetNdbCloneInfoBpgConfigStorageLogDiskInput
+
+func (GetNdbCloneInfoBpgConfigStorageLogDiskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageLogDisk)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageLogDiskArray) ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
+	return i.ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigStorageLogDiskArray) ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigStorageLogDiskOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigStorageLogDiskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageLogDisk)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageLogDiskOutput) ToGetNdbCloneInfoBpgConfigStorageLogDiskOutput() GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageLogDiskOutput) ToGetNdbCloneInfoBpgConfigStorageLogDiskOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageLogDiskOutput) Count() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorageLogDisk) float64 { return v.Count }).(pulumi.Float64Output)
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageLogDiskOutput) Size() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorageLogDisk) float64 { return v.Size }).(pulumi.Float64Output)
+}
+
+type GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageLogDisk)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput) ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput) ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigStorageLogDisk {
+		return vs[0].([]GetNdbCloneInfoBpgConfigStorageLogDisk)[vs[1].(int)]
+	}).(GetNdbCloneInfoBpgConfigStorageLogDiskOutput)
+}
+
+type GetNdbCloneInfoBpgConfigVmProperty struct {
+	DirtyBackgroundRatio    float64 `pulumi:"dirtyBackgroundRatio"`
+	DirtyExpireCentisecs    float64 `pulumi:"dirtyExpireCentisecs"`
+	DirtyRatio              float64 `pulumi:"dirtyRatio"`
+	DirtyWritebackCentisecs float64 `pulumi:"dirtyWritebackCentisecs"`
+	NrHugepages             float64 `pulumi:"nrHugepages"`
+	OvercommitMemory        float64 `pulumi:"overcommitMemory"`
+	Swappiness              float64 `pulumi:"swappiness"`
+}
+
+// GetNdbCloneInfoBpgConfigVmPropertyInput is an input type that accepts GetNdbCloneInfoBpgConfigVmPropertyArgs and GetNdbCloneInfoBpgConfigVmPropertyOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigVmPropertyInput` via:
+//
+//	GetNdbCloneInfoBpgConfigVmPropertyArgs{...}
+type GetNdbCloneInfoBpgConfigVmPropertyInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigVmPropertyOutput() GetNdbCloneInfoBpgConfigVmPropertyOutput
+	ToGetNdbCloneInfoBpgConfigVmPropertyOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigVmPropertyOutput
+}
+
+type GetNdbCloneInfoBpgConfigVmPropertyArgs struct {
+	DirtyBackgroundRatio    pulumi.Float64Input `pulumi:"dirtyBackgroundRatio"`
+	DirtyExpireCentisecs    pulumi.Float64Input `pulumi:"dirtyExpireCentisecs"`
+	DirtyRatio              pulumi.Float64Input `pulumi:"dirtyRatio"`
+	DirtyWritebackCentisecs pulumi.Float64Input `pulumi:"dirtyWritebackCentisecs"`
+	NrHugepages             pulumi.Float64Input `pulumi:"nrHugepages"`
+	OvercommitMemory        pulumi.Float64Input `pulumi:"overcommitMemory"`
+	Swappiness              pulumi.Float64Input `pulumi:"swappiness"`
+}
+
+func (GetNdbCloneInfoBpgConfigVmPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigVmPropertyArgs) ToGetNdbCloneInfoBpgConfigVmPropertyOutput() GetNdbCloneInfoBpgConfigVmPropertyOutput {
+	return i.ToGetNdbCloneInfoBpgConfigVmPropertyOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigVmPropertyArgs) ToGetNdbCloneInfoBpgConfigVmPropertyOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigVmPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigVmPropertyOutput)
+}
+
+// GetNdbCloneInfoBpgConfigVmPropertyArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigVmPropertyArray and GetNdbCloneInfoBpgConfigVmPropertyArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigVmPropertyArrayInput` via:
+//
+//	GetNdbCloneInfoBpgConfigVmPropertyArray{ GetNdbCloneInfoBpgConfigVmPropertyArgs{...} }
+type GetNdbCloneInfoBpgConfigVmPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutput() GetNdbCloneInfoBpgConfigVmPropertyArrayOutput
+	ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigVmPropertyArrayOutput
+}
+
+type GetNdbCloneInfoBpgConfigVmPropertyArray []GetNdbCloneInfoBpgConfigVmPropertyInput
+
+func (GetNdbCloneInfoBpgConfigVmPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
+}
+
+func (i GetNdbCloneInfoBpgConfigVmPropertyArray) ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutput() GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return i.ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneInfoBpgConfigVmPropertyArray) ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigVmPropertyArrayOutput)
+}
+
+type GetNdbCloneInfoBpgConfigVmPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigVmPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) ToGetNdbCloneInfoBpgConfigVmPropertyOutput() GetNdbCloneInfoBpgConfigVmPropertyOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) ToGetNdbCloneInfoBpgConfigVmPropertyOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigVmPropertyOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) DirtyBackgroundRatio() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.DirtyBackgroundRatio }).(pulumi.Float64Output)
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) DirtyExpireCentisecs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.DirtyExpireCentisecs }).(pulumi.Float64Output)
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) DirtyRatio() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.DirtyRatio }).(pulumi.Float64Output)
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) DirtyWritebackCentisecs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.DirtyWritebackCentisecs }).(pulumi.Float64Output)
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) NrHugepages() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.NrHugepages }).(pulumi.Float64Output)
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) OvercommitMemory() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.OvercommitMemory }).(pulumi.Float64Output)
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) Swappiness() pulumi.Float64Output {
+	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.Swappiness }).(pulumi.Float64Output)
+}
+
+type GetNdbCloneInfoBpgConfigVmPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneInfoBpgConfigVmPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyArrayOutput) ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutput() GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyArrayOutput) ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneInfoBpgConfigVmPropertyArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigVmPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigVmProperty {
+		return vs[0].([]GetNdbCloneInfoBpgConfigVmProperty)[vs[1].(int)]
+	}).(GetNdbCloneInfoBpgConfigVmPropertyOutput)
+}
+
+type GetNdbCloneLcmConfig struct {
+	ExpiryDetails      []GetNdbCloneLcmConfigExpiryDetail      `pulumi:"expiryDetails"`
+	PostDeleteCommands []GetNdbCloneLcmConfigPostDeleteCommand `pulumi:"postDeleteCommands"`
+	PreDeleteCommands  []GetNdbCloneLcmConfigPreDeleteCommand  `pulumi:"preDeleteCommands"`
+	RefreshDetails     []GetNdbCloneLcmConfigRefreshDetail     `pulumi:"refreshDetails"`
+}
+
+// GetNdbCloneLcmConfigInput is an input type that accepts GetNdbCloneLcmConfigArgs and GetNdbCloneLcmConfigOutput values.
+// You can construct a concrete instance of `GetNdbCloneLcmConfigInput` via:
+//
+//	GetNdbCloneLcmConfigArgs{...}
+type GetNdbCloneLcmConfigInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneLcmConfigOutput() GetNdbCloneLcmConfigOutput
+	ToGetNdbCloneLcmConfigOutputWithContext(context.Context) GetNdbCloneLcmConfigOutput
+}
+
+type GetNdbCloneLcmConfigArgs struct {
+	ExpiryDetails      GetNdbCloneLcmConfigExpiryDetailArrayInput      `pulumi:"expiryDetails"`
+	PostDeleteCommands GetNdbCloneLcmConfigPostDeleteCommandArrayInput `pulumi:"postDeleteCommands"`
+	PreDeleteCommands  GetNdbCloneLcmConfigPreDeleteCommandArrayInput  `pulumi:"preDeleteCommands"`
+	RefreshDetails     GetNdbCloneLcmConfigRefreshDetailArrayInput     `pulumi:"refreshDetails"`
+}
+
+func (GetNdbCloneLcmConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneLcmConfig)(nil)).Elem()
+}
+
+func (i GetNdbCloneLcmConfigArgs) ToGetNdbCloneLcmConfigOutput() GetNdbCloneLcmConfigOutput {
+	return i.ToGetNdbCloneLcmConfigOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneLcmConfigArgs) ToGetNdbCloneLcmConfigOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneLcmConfigOutput)
+}
+
+// GetNdbCloneLcmConfigArrayInput is an input type that accepts GetNdbCloneLcmConfigArray and GetNdbCloneLcmConfigArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneLcmConfigArrayInput` via:
+//
+//	GetNdbCloneLcmConfigArray{ GetNdbCloneLcmConfigArgs{...} }
+type GetNdbCloneLcmConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneLcmConfigArrayOutput() GetNdbCloneLcmConfigArrayOutput
+	ToGetNdbCloneLcmConfigArrayOutputWithContext(context.Context) GetNdbCloneLcmConfigArrayOutput
+}
+
+type GetNdbCloneLcmConfigArray []GetNdbCloneLcmConfigInput
+
+func (GetNdbCloneLcmConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneLcmConfig)(nil)).Elem()
+}
+
+func (i GetNdbCloneLcmConfigArray) ToGetNdbCloneLcmConfigArrayOutput() GetNdbCloneLcmConfigArrayOutput {
+	return i.ToGetNdbCloneLcmConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneLcmConfigArray) ToGetNdbCloneLcmConfigArrayOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneLcmConfigArrayOutput)
+}
+
+type GetNdbCloneLcmConfigOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneLcmConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneLcmConfig)(nil)).Elem()
+}
+
+func (o GetNdbCloneLcmConfigOutput) ToGetNdbCloneLcmConfigOutput() GetNdbCloneLcmConfigOutput {
+	return o
+}
+
+func (o GetNdbCloneLcmConfigOutput) ToGetNdbCloneLcmConfigOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigOutput {
+	return o
+}
+
+func (o GetNdbCloneLcmConfigOutput) ExpiryDetails() GetNdbCloneLcmConfigExpiryDetailArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfig) []GetNdbCloneLcmConfigExpiryDetail { return v.ExpiryDetails }).(GetNdbCloneLcmConfigExpiryDetailArrayOutput)
+}
+
+func (o GetNdbCloneLcmConfigOutput) PostDeleteCommands() GetNdbCloneLcmConfigPostDeleteCommandArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfig) []GetNdbCloneLcmConfigPostDeleteCommand { return v.PostDeleteCommands }).(GetNdbCloneLcmConfigPostDeleteCommandArrayOutput)
+}
+
+func (o GetNdbCloneLcmConfigOutput) PreDeleteCommands() GetNdbCloneLcmConfigPreDeleteCommandArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfig) []GetNdbCloneLcmConfigPreDeleteCommand { return v.PreDeleteCommands }).(GetNdbCloneLcmConfigPreDeleteCommandArrayOutput)
+}
+
+func (o GetNdbCloneLcmConfigOutput) RefreshDetails() GetNdbCloneLcmConfigRefreshDetailArrayOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfig) []GetNdbCloneLcmConfigRefreshDetail { return v.RefreshDetails }).(GetNdbCloneLcmConfigRefreshDetailArrayOutput)
+}
+
+type GetNdbCloneLcmConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneLcmConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneLcmConfig)(nil)).Elem()
+}
+
+func (o GetNdbCloneLcmConfigArrayOutput) ToGetNdbCloneLcmConfigArrayOutput() GetNdbCloneLcmConfigArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneLcmConfigArrayOutput) ToGetNdbCloneLcmConfigArrayOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneLcmConfigArrayOutput) Index(i pulumi.IntInput) GetNdbCloneLcmConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneLcmConfig {
+		return vs[0].([]GetNdbCloneLcmConfig)[vs[1].(int)]
+	}).(GetNdbCloneLcmConfigOutput)
+}
+
+type GetNdbCloneLcmConfigExpiryDetail struct {
+	DeleteDatabase     bool   `pulumi:"deleteDatabase"`
+	DeleteTimeMachine  bool   `pulumi:"deleteTimeMachine"`
+	DeleteVm           bool   `pulumi:"deleteVm"`
+	EffectiveTimestamp string `pulumi:"effectiveTimestamp"`
+	ExpireInDays       int    `pulumi:"expireInDays"`
+	ExpiryDateTimezone string `pulumi:"expiryDateTimezone"`
+	ExpiryTimestamp    string `pulumi:"expiryTimestamp"`
+	RemindBeforeInDays int    `pulumi:"remindBeforeInDays"`
+	UserCreated        bool   `pulumi:"userCreated"`
+}
+
+// GetNdbCloneLcmConfigExpiryDetailInput is an input type that accepts GetNdbCloneLcmConfigExpiryDetailArgs and GetNdbCloneLcmConfigExpiryDetailOutput values.
+// You can construct a concrete instance of `GetNdbCloneLcmConfigExpiryDetailInput` via:
+//
+//	GetNdbCloneLcmConfigExpiryDetailArgs{...}
+type GetNdbCloneLcmConfigExpiryDetailInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneLcmConfigExpiryDetailOutput() GetNdbCloneLcmConfigExpiryDetailOutput
+	ToGetNdbCloneLcmConfigExpiryDetailOutputWithContext(context.Context) GetNdbCloneLcmConfigExpiryDetailOutput
+}
+
+type GetNdbCloneLcmConfigExpiryDetailArgs struct {
+	DeleteDatabase     pulumi.BoolInput   `pulumi:"deleteDatabase"`
+	DeleteTimeMachine  pulumi.BoolInput   `pulumi:"deleteTimeMachine"`
+	DeleteVm           pulumi.BoolInput   `pulumi:"deleteVm"`
+	EffectiveTimestamp pulumi.StringInput `pulumi:"effectiveTimestamp"`
+	ExpireInDays       pulumi.IntInput    `pulumi:"expireInDays"`
+	ExpiryDateTimezone pulumi.StringInput `pulumi:"expiryDateTimezone"`
+	ExpiryTimestamp    pulumi.StringInput `pulumi:"expiryTimestamp"`
+	RemindBeforeInDays pulumi.IntInput    `pulumi:"remindBeforeInDays"`
+	UserCreated        pulumi.BoolInput   `pulumi:"userCreated"`
+}
+
+func (GetNdbCloneLcmConfigExpiryDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (i GetNdbCloneLcmConfigExpiryDetailArgs) ToGetNdbCloneLcmConfigExpiryDetailOutput() GetNdbCloneLcmConfigExpiryDetailOutput {
+	return i.ToGetNdbCloneLcmConfigExpiryDetailOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneLcmConfigExpiryDetailArgs) ToGetNdbCloneLcmConfigExpiryDetailOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigExpiryDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneLcmConfigExpiryDetailOutput)
+}
+
+// GetNdbCloneLcmConfigExpiryDetailArrayInput is an input type that accepts GetNdbCloneLcmConfigExpiryDetailArray and GetNdbCloneLcmConfigExpiryDetailArrayOutput values.
+// You can construct a concrete instance of `GetNdbCloneLcmConfigExpiryDetailArrayInput` via:
+//
+//	GetNdbCloneLcmConfigExpiryDetailArray{ GetNdbCloneLcmConfigExpiryDetailArgs{...} }
+type GetNdbCloneLcmConfigExpiryDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetNdbCloneLcmConfigExpiryDetailArrayOutput() GetNdbCloneLcmConfigExpiryDetailArrayOutput
+	ToGetNdbCloneLcmConfigExpiryDetailArrayOutputWithContext(context.Context) GetNdbCloneLcmConfigExpiryDetailArrayOutput
+}
+
+type GetNdbCloneLcmConfigExpiryDetailArray []GetNdbCloneLcmConfigExpiryDetailInput
+
+func (GetNdbCloneLcmConfigExpiryDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (i GetNdbCloneLcmConfigExpiryDetailArray) ToGetNdbCloneLcmConfigExpiryDetailArrayOutput() GetNdbCloneLcmConfigExpiryDetailArrayOutput {
+	return i.ToGetNdbCloneLcmConfigExpiryDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetNdbCloneLcmConfigExpiryDetailArray) ToGetNdbCloneLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigExpiryDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneLcmConfigExpiryDetailArrayOutput)
+}
+
+type GetNdbCloneLcmConfigExpiryDetailOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneLcmConfigExpiryDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNdbCloneLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) ToGetNdbCloneLcmConfigExpiryDetailOutput() GetNdbCloneLcmConfigExpiryDetailOutput {
+	return o
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) ToGetNdbCloneLcmConfigExpiryDetailOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigExpiryDetailOutput {
+	return o
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) DeleteDatabase() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) bool { return v.DeleteDatabase }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) DeleteTimeMachine() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) bool { return v.DeleteTimeMachine }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) DeleteVm() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) bool { return v.DeleteVm }).(pulumi.BoolOutput)
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) EffectiveTimestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) string { return v.EffectiveTimestamp }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) ExpireInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) int { return v.ExpireInDays }).(pulumi.IntOutput)
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) ExpiryDateTimezone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) string { return v.ExpiryDateTimezone }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) ExpiryTimestamp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) string { return v.ExpiryTimestamp }).(pulumi.StringOutput)
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) RemindBeforeInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) int { return v.RemindBeforeInDays }).(pulumi.IntOutput)
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailOutput) UserCreated() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) bool { return v.UserCreated }).(pulumi.BoolOutput)
+}
+
+type GetNdbCloneLcmConfigExpiryDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetNdbCloneLcmConfigExpiryDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetNdbCloneLcmConfigExpiryDetail)(nil)).Elem()
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailArrayOutput) ToGetNdbCloneLcmConfigExpiryDetailArrayOutput() GetNdbCloneLcmConfigExpiryDetailArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailArrayOutput) ToGetNdbCloneLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigExpiryDetailArrayOutput {
+	return o
+}
+
+func (o GetNdbCloneLcmConfigExpiryDetailArrayOutput) Index(i pulumi.IntInput) GetNdbCloneLcmConfigExpiryDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneLcmConfigExpiryDetail {
+		return vs[0].([]GetNdbCloneLcmConfigExpiryDetail)[vs[1].(int)]
+	}).(GetNdbCloneLcmConfigExpiryDetailOutput)
+}
+
 type GetNdbCloneLcmConfigPostDeleteCommand struct {
 	Command string `pulumi:"command"`
 }
@@ -58814,4683 +63605,87 @@ func (o GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput) Index(i pulumi.I
 	}).(GetObjectStoresV2ObjectStorePublicNetworkIpOutput)
 }
 
-type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4 struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength *int `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value string `pulumi:"value"`
-}
-
-// GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input is an input type that accepts GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args and GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input` via:
-//
-//	GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args{...}
-type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output
-	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output
-}
-
-type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
-	return i.ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output)
-}
-
-type GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output {
-	return o
-}
-
-// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-// - The IPv4/IPv6 address of the host.
-func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6 struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength *int `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value string `pulumi:"value"`
-}
-
-// GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input is an input type that accepts GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args and GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input` via:
-//
-//	GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args{...}
-type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output
-	ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output
-}
-
-type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
-	return i.ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output)
-}
-
-type GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output() GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) ToGetObjectStoresV2ObjectStorePublicNetworkIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output {
-	return o
-}
-
-// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-// - The IPv4/IPv6 address of the host.
-func (o GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStorePublicNetworkIpIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIp struct {
-	// An unique address that identifies a device on the internet or a local network in IPv4 format.
-	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 `pulumi:"ipv4"`
-	// An unique address that identifies a device on the internet or a local network in IPv6 format.
-	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 `pulumi:"ipv6"`
-}
-
-// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput` via:
-//
-//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{...}
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput
-	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs struct {
-	// An unique address that identifies a device on the internet or a local network in IPv4 format.
-	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input `pulumi:"ipv4"`
-	// An unique address that identifies a device on the internet or a local network in IPv6 format.
-	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input `pulumi:"ipv6"`
-}
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
-	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput)
-}
-
-// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput` via:
-//
-//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray{ GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{...} }
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput
-	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray []GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
-	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
-	return o
-}
-
-// An unique address that identifies a device on the internet or a local network in IPv4 format.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) Ipv4() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIp) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 {
-		return v.Ipv4
-	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output)
-}
-
-// An unique address that identifies a device on the internet or a local network in IPv6 format.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput) Ipv6() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIp) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 {
-		return v.Ipv6
-	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStoreStorageNetworkDnsIp {
-		return vs[0].([]GetObjectStoresV2ObjectStoreStorageNetworkDnsIp)[vs[1].(int)]
-	}).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4 struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength *int `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value string `pulumi:"value"`
-}
-
-// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input` via:
-//
-//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args{...}
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output
-	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
-	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output {
-	return o
-}
-
-// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-// - The IPv4/IPv6 address of the host.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6 struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength *int `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value string `pulumi:"value"`
-}
-
-// GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args and GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input` via:
-//
-//	GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args{...}
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output
-	ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
-	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output {
-	return o
-}
-
-// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-// - The IPv4/IPv6 address of the host.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVip struct {
-	// An unique address that identifies a device on the internet or a local network in IPv4 format.
-	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 `pulumi:"ipv4"`
-	// An unique address that identifies a device on the internet or a local network in IPv6 format.
-	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 `pulumi:"ipv6"`
-}
-
-// GetObjectStoresV2ObjectStoreStorageNetworkVipInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipArgs and GetObjectStoresV2ObjectStoreStorageNetworkVipOutput values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipInput` via:
-//
-//	GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{...}
-type GetObjectStoresV2ObjectStoreStorageNetworkVipInput interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput
-	ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipArgs struct {
-	// An unique address that identifies a device on the internet or a local network in IPv4 format.
-	Ipv4 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input `pulumi:"ipv4"`
-	// An unique address that identifies a device on the internet or a local network in IPv6 format.
-	Ipv6 GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input `pulumi:"ipv6"`
-}
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
-	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArgs) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput)
-}
-
-// GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipArray and GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput` via:
-//
-//	GetObjectStoresV2ObjectStoreStorageNetworkVipArray{ GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{...} }
-type GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput
-	ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipArray []GetObjectStoresV2ObjectStoreStorageNetworkVipInput
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
-	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkVipArray) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipOutput struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
-	return o
-}
-
-// An unique address that identifies a device on the internet or a local network in IPv4 format.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) Ipv4() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVip) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 {
-		return v.Ipv4
-	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output)
-}
-
-// An unique address that identifies a device on the internet or a local network in IPv6 format.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipOutput) Ipv6() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVip) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 {
-		return v.Ipv6
-	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetObjectStoresV2ObjectStoreStorageNetworkVip)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput() GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) ToGetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput) Index(i pulumi.IntInput) GetObjectStoresV2ObjectStoreStorageNetworkVipOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetObjectStoresV2ObjectStoreStorageNetworkVip {
-		return vs[0].([]GetObjectStoresV2ObjectStoreStorageNetworkVip)[vs[1].(int)]
-	}).(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4 struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength *int `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value string `pulumi:"value"`
-}
-
-// GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args and GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input` via:
-//
-//	GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args{...}
-type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output
-	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
-	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv4OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output {
-	return o
-}
-
-// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-// - The IPv4/IPv6 address of the host.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6 struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength *int `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value string `pulumi:"value"`
-}
-
-// GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input is an input type that accepts GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args and GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output values.
-// You can construct a concrete instance of `GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input` via:
-//
-//	GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args{...}
-type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input interface {
-	pulumi.Input
-
-	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output
-	ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args struct {
-	// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
-	// - The IPv4/IPv6 address of the host.
-	Value pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6)(nil)).Elem()
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
-	return i.ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(context.Background())
-}
-
-func (i GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
-	return pulumi.ToOutputWithContext(ctx, i).(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output)
-}
-
-type GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output struct{ *pulumi.OutputState }
-
-func (GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6)(nil)).Elem()
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output() GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
-	return o
-}
-
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) ToGetObjectStoresV2ObjectStoreStorageNetworkVipIpv6OutputWithContext(ctx context.Context) GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output {
-	return o
-}
-
-// - The prefix length of the network to which this host IPv4 address belongs. Default for IPv4 is 32 and for IPv6 is 128.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) PrefixLength() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
-}
-
-// - The IPv4/IPv6 address of the host.
-func (o GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetOperationV2AssociatedEndpointList struct {
-	// Version of the API for the provided associated endpoint.
-	ApiVersion string `pulumi:"apiVersion"`
-	// Endpoint URL.
-	EndpointUrl string `pulumi:"endpointUrl"`
-	// HTTP method for the provided associated endpoint.
-	HttpMethod string `pulumi:"httpMethod"`
-}
-
-// GetOperationV2AssociatedEndpointListInput is an input type that accepts GetOperationV2AssociatedEndpointListArgs and GetOperationV2AssociatedEndpointListOutput values.
-// You can construct a concrete instance of `GetOperationV2AssociatedEndpointListInput` via:
-//
-//	GetOperationV2AssociatedEndpointListArgs{...}
-type GetOperationV2AssociatedEndpointListInput interface {
-	pulumi.Input
-
-	ToGetOperationV2AssociatedEndpointListOutput() GetOperationV2AssociatedEndpointListOutput
-	ToGetOperationV2AssociatedEndpointListOutputWithContext(context.Context) GetOperationV2AssociatedEndpointListOutput
-}
-
-type GetOperationV2AssociatedEndpointListArgs struct {
-	// Version of the API for the provided associated endpoint.
-	ApiVersion pulumi.StringInput `pulumi:"apiVersion"`
-	// Endpoint URL.
-	EndpointUrl pulumi.StringInput `pulumi:"endpointUrl"`
-	// HTTP method for the provided associated endpoint.
-	HttpMethod pulumi.StringInput `pulumi:"httpMethod"`
-}
-
-func (GetOperationV2AssociatedEndpointListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOperationV2AssociatedEndpointList)(nil)).Elem()
-}
-
-func (i GetOperationV2AssociatedEndpointListArgs) ToGetOperationV2AssociatedEndpointListOutput() GetOperationV2AssociatedEndpointListOutput {
-	return i.ToGetOperationV2AssociatedEndpointListOutputWithContext(context.Background())
-}
-
-func (i GetOperationV2AssociatedEndpointListArgs) ToGetOperationV2AssociatedEndpointListOutputWithContext(ctx context.Context) GetOperationV2AssociatedEndpointListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOperationV2AssociatedEndpointListOutput)
-}
-
-// GetOperationV2AssociatedEndpointListArrayInput is an input type that accepts GetOperationV2AssociatedEndpointListArray and GetOperationV2AssociatedEndpointListArrayOutput values.
-// You can construct a concrete instance of `GetOperationV2AssociatedEndpointListArrayInput` via:
-//
-//	GetOperationV2AssociatedEndpointListArray{ GetOperationV2AssociatedEndpointListArgs{...} }
-type GetOperationV2AssociatedEndpointListArrayInput interface {
-	pulumi.Input
-
-	ToGetOperationV2AssociatedEndpointListArrayOutput() GetOperationV2AssociatedEndpointListArrayOutput
-	ToGetOperationV2AssociatedEndpointListArrayOutputWithContext(context.Context) GetOperationV2AssociatedEndpointListArrayOutput
-}
-
-type GetOperationV2AssociatedEndpointListArray []GetOperationV2AssociatedEndpointListInput
-
-func (GetOperationV2AssociatedEndpointListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOperationV2AssociatedEndpointList)(nil)).Elem()
-}
-
-func (i GetOperationV2AssociatedEndpointListArray) ToGetOperationV2AssociatedEndpointListArrayOutput() GetOperationV2AssociatedEndpointListArrayOutput {
-	return i.ToGetOperationV2AssociatedEndpointListArrayOutputWithContext(context.Background())
-}
-
-func (i GetOperationV2AssociatedEndpointListArray) ToGetOperationV2AssociatedEndpointListArrayOutputWithContext(ctx context.Context) GetOperationV2AssociatedEndpointListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOperationV2AssociatedEndpointListArrayOutput)
-}
-
-type GetOperationV2AssociatedEndpointListOutput struct{ *pulumi.OutputState }
-
-func (GetOperationV2AssociatedEndpointListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOperationV2AssociatedEndpointList)(nil)).Elem()
-}
-
-func (o GetOperationV2AssociatedEndpointListOutput) ToGetOperationV2AssociatedEndpointListOutput() GetOperationV2AssociatedEndpointListOutput {
-	return o
-}
-
-func (o GetOperationV2AssociatedEndpointListOutput) ToGetOperationV2AssociatedEndpointListOutputWithContext(ctx context.Context) GetOperationV2AssociatedEndpointListOutput {
-	return o
-}
-
-// Version of the API for the provided associated endpoint.
-func (o GetOperationV2AssociatedEndpointListOutput) ApiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationV2AssociatedEndpointList) string { return v.ApiVersion }).(pulumi.StringOutput)
-}
-
-// Endpoint URL.
-func (o GetOperationV2AssociatedEndpointListOutput) EndpointUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationV2AssociatedEndpointList) string { return v.EndpointUrl }).(pulumi.StringOutput)
-}
-
-// HTTP method for the provided associated endpoint.
-func (o GetOperationV2AssociatedEndpointListOutput) HttpMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationV2AssociatedEndpointList) string { return v.HttpMethod }).(pulumi.StringOutput)
-}
-
-type GetOperationV2AssociatedEndpointListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOperationV2AssociatedEndpointListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOperationV2AssociatedEndpointList)(nil)).Elem()
-}
-
-func (o GetOperationV2AssociatedEndpointListArrayOutput) ToGetOperationV2AssociatedEndpointListArrayOutput() GetOperationV2AssociatedEndpointListArrayOutput {
-	return o
-}
-
-func (o GetOperationV2AssociatedEndpointListArrayOutput) ToGetOperationV2AssociatedEndpointListArrayOutputWithContext(ctx context.Context) GetOperationV2AssociatedEndpointListArrayOutput {
-	return o
-}
-
-func (o GetOperationV2AssociatedEndpointListArrayOutput) Index(i pulumi.IntInput) GetOperationV2AssociatedEndpointListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationV2AssociatedEndpointList {
-		return vs[0].([]GetOperationV2AssociatedEndpointList)[vs[1].(int)]
-	}).(GetOperationV2AssociatedEndpointListOutput)
-}
-
-type GetOperationsV2Operation struct {
-	// List of associated endpoint objects for the Operation.
-	AssociatedEndpointLists []GetOperationsV2OperationAssociatedEndpointList `pulumi:"associatedEndpointLists"`
-	// Client that created the entity.
-	ClientName string `pulumi:"clientName"`
-	// Permission creation time
-	CreatedTime string `pulumi:"createdTime"`
-	// Permission description
-	Description string `pulumi:"description"`
-	// Permission name.
-	DisplayName string `pulumi:"displayName"`
-	// Type of entity associated with this Operation.
-	EntityType string `pulumi:"entityType"`
-	// A globally unique identifier of an instance that is suitable for external consumption.
-	ExtId string `pulumi:"extId"`
-	// Permission last updated time.
-	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
-	// The Operation type. Currently we support INTERNAL, EXTERNAL and SYSTEM_DEFINED_ONLY.
-	OperationType string `pulumi:"operationType"`
-	// List of related Operations. These are the Operations which might need to be given access to, along with the current Operation, for certain workflows to succeed.
-	RelatedOperationLists []string `pulumi:"relatedOperationLists"`
-}
-
-// GetOperationsV2OperationInput is an input type that accepts GetOperationsV2OperationArgs and GetOperationsV2OperationOutput values.
-// You can construct a concrete instance of `GetOperationsV2OperationInput` via:
-//
-//	GetOperationsV2OperationArgs{...}
-type GetOperationsV2OperationInput interface {
-	pulumi.Input
-
-	ToGetOperationsV2OperationOutput() GetOperationsV2OperationOutput
-	ToGetOperationsV2OperationOutputWithContext(context.Context) GetOperationsV2OperationOutput
-}
-
-type GetOperationsV2OperationArgs struct {
-	// List of associated endpoint objects for the Operation.
-	AssociatedEndpointLists GetOperationsV2OperationAssociatedEndpointListArrayInput `pulumi:"associatedEndpointLists"`
-	// Client that created the entity.
-	ClientName pulumi.StringInput `pulumi:"clientName"`
-	// Permission creation time
-	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// Permission description
-	Description pulumi.StringInput `pulumi:"description"`
-	// Permission name.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Type of entity associated with this Operation.
-	EntityType pulumi.StringInput `pulumi:"entityType"`
-	// A globally unique identifier of an instance that is suitable for external consumption.
-	ExtId pulumi.StringInput `pulumi:"extId"`
-	// Permission last updated time.
-	LastUpdatedTime pulumi.StringInput `pulumi:"lastUpdatedTime"`
-	// The Operation type. Currently we support INTERNAL, EXTERNAL and SYSTEM_DEFINED_ONLY.
-	OperationType pulumi.StringInput `pulumi:"operationType"`
-	// List of related Operations. These are the Operations which might need to be given access to, along with the current Operation, for certain workflows to succeed.
-	RelatedOperationLists pulumi.StringArrayInput `pulumi:"relatedOperationLists"`
-}
-
-func (GetOperationsV2OperationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOperationsV2Operation)(nil)).Elem()
-}
-
-func (i GetOperationsV2OperationArgs) ToGetOperationsV2OperationOutput() GetOperationsV2OperationOutput {
-	return i.ToGetOperationsV2OperationOutputWithContext(context.Background())
-}
-
-func (i GetOperationsV2OperationArgs) ToGetOperationsV2OperationOutputWithContext(ctx context.Context) GetOperationsV2OperationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsV2OperationOutput)
-}
-
-// GetOperationsV2OperationArrayInput is an input type that accepts GetOperationsV2OperationArray and GetOperationsV2OperationArrayOutput values.
-// You can construct a concrete instance of `GetOperationsV2OperationArrayInput` via:
-//
-//	GetOperationsV2OperationArray{ GetOperationsV2OperationArgs{...} }
-type GetOperationsV2OperationArrayInput interface {
-	pulumi.Input
-
-	ToGetOperationsV2OperationArrayOutput() GetOperationsV2OperationArrayOutput
-	ToGetOperationsV2OperationArrayOutputWithContext(context.Context) GetOperationsV2OperationArrayOutput
-}
-
-type GetOperationsV2OperationArray []GetOperationsV2OperationInput
-
-func (GetOperationsV2OperationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOperationsV2Operation)(nil)).Elem()
-}
-
-func (i GetOperationsV2OperationArray) ToGetOperationsV2OperationArrayOutput() GetOperationsV2OperationArrayOutput {
-	return i.ToGetOperationsV2OperationArrayOutputWithContext(context.Background())
-}
-
-func (i GetOperationsV2OperationArray) ToGetOperationsV2OperationArrayOutputWithContext(ctx context.Context) GetOperationsV2OperationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsV2OperationArrayOutput)
-}
-
-type GetOperationsV2OperationOutput struct{ *pulumi.OutputState }
-
-func (GetOperationsV2OperationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOperationsV2Operation)(nil)).Elem()
-}
-
-func (o GetOperationsV2OperationOutput) ToGetOperationsV2OperationOutput() GetOperationsV2OperationOutput {
-	return o
-}
-
-func (o GetOperationsV2OperationOutput) ToGetOperationsV2OperationOutputWithContext(ctx context.Context) GetOperationsV2OperationOutput {
-	return o
-}
-
-// List of associated endpoint objects for the Operation.
-func (o GetOperationsV2OperationOutput) AssociatedEndpointLists() GetOperationsV2OperationAssociatedEndpointListArrayOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) []GetOperationsV2OperationAssociatedEndpointList {
-		return v.AssociatedEndpointLists
-	}).(GetOperationsV2OperationAssociatedEndpointListArrayOutput)
-}
-
-// Client that created the entity.
-func (o GetOperationsV2OperationOutput) ClientName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.ClientName }).(pulumi.StringOutput)
-}
-
-// Permission creation time
-func (o GetOperationsV2OperationOutput) CreatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.CreatedTime }).(pulumi.StringOutput)
-}
-
-// Permission description
-func (o GetOperationsV2OperationOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Permission name.
-func (o GetOperationsV2OperationOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Type of entity associated with this Operation.
-func (o GetOperationsV2OperationOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.EntityType }).(pulumi.StringOutput)
-}
-
-// A globally unique identifier of an instance that is suitable for external consumption.
-func (o GetOperationsV2OperationOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-// Permission last updated time.
-func (o GetOperationsV2OperationOutput) LastUpdatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
-}
-
-// The Operation type. Currently we support INTERNAL, EXTERNAL and SYSTEM_DEFINED_ONLY.
-func (o GetOperationsV2OperationOutput) OperationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) string { return v.OperationType }).(pulumi.StringOutput)
-}
-
-// List of related Operations. These are the Operations which might need to be given access to, along with the current Operation, for certain workflows to succeed.
-func (o GetOperationsV2OperationOutput) RelatedOperationLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetOperationsV2Operation) []string { return v.RelatedOperationLists }).(pulumi.StringArrayOutput)
-}
-
-type GetOperationsV2OperationArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOperationsV2OperationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOperationsV2Operation)(nil)).Elem()
-}
-
-func (o GetOperationsV2OperationArrayOutput) ToGetOperationsV2OperationArrayOutput() GetOperationsV2OperationArrayOutput {
-	return o
-}
-
-func (o GetOperationsV2OperationArrayOutput) ToGetOperationsV2OperationArrayOutputWithContext(ctx context.Context) GetOperationsV2OperationArrayOutput {
-	return o
-}
-
-func (o GetOperationsV2OperationArrayOutput) Index(i pulumi.IntInput) GetOperationsV2OperationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationsV2Operation {
-		return vs[0].([]GetOperationsV2Operation)[vs[1].(int)]
-	}).(GetOperationsV2OperationOutput)
-}
-
-type GetOperationsV2OperationAssociatedEndpointList struct {
-	// Version of the API for the provided associated endpoint.
-	ApiVersion string `pulumi:"apiVersion"`
-	// Endpoint URL.
-	EndpointUrl string `pulumi:"endpointUrl"`
-	// HTTP method for the provided associated endpoint.
-	HttpMethod string `pulumi:"httpMethod"`
-}
-
-// GetOperationsV2OperationAssociatedEndpointListInput is an input type that accepts GetOperationsV2OperationAssociatedEndpointListArgs and GetOperationsV2OperationAssociatedEndpointListOutput values.
-// You can construct a concrete instance of `GetOperationsV2OperationAssociatedEndpointListInput` via:
-//
-//	GetOperationsV2OperationAssociatedEndpointListArgs{...}
-type GetOperationsV2OperationAssociatedEndpointListInput interface {
-	pulumi.Input
-
-	ToGetOperationsV2OperationAssociatedEndpointListOutput() GetOperationsV2OperationAssociatedEndpointListOutput
-	ToGetOperationsV2OperationAssociatedEndpointListOutputWithContext(context.Context) GetOperationsV2OperationAssociatedEndpointListOutput
-}
-
-type GetOperationsV2OperationAssociatedEndpointListArgs struct {
-	// Version of the API for the provided associated endpoint.
-	ApiVersion pulumi.StringInput `pulumi:"apiVersion"`
-	// Endpoint URL.
-	EndpointUrl pulumi.StringInput `pulumi:"endpointUrl"`
-	// HTTP method for the provided associated endpoint.
-	HttpMethod pulumi.StringInput `pulumi:"httpMethod"`
-}
-
-func (GetOperationsV2OperationAssociatedEndpointListArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOperationsV2OperationAssociatedEndpointList)(nil)).Elem()
-}
-
-func (i GetOperationsV2OperationAssociatedEndpointListArgs) ToGetOperationsV2OperationAssociatedEndpointListOutput() GetOperationsV2OperationAssociatedEndpointListOutput {
-	return i.ToGetOperationsV2OperationAssociatedEndpointListOutputWithContext(context.Background())
-}
-
-func (i GetOperationsV2OperationAssociatedEndpointListArgs) ToGetOperationsV2OperationAssociatedEndpointListOutputWithContext(ctx context.Context) GetOperationsV2OperationAssociatedEndpointListOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsV2OperationAssociatedEndpointListOutput)
-}
-
-// GetOperationsV2OperationAssociatedEndpointListArrayInput is an input type that accepts GetOperationsV2OperationAssociatedEndpointListArray and GetOperationsV2OperationAssociatedEndpointListArrayOutput values.
-// You can construct a concrete instance of `GetOperationsV2OperationAssociatedEndpointListArrayInput` via:
-//
-//	GetOperationsV2OperationAssociatedEndpointListArray{ GetOperationsV2OperationAssociatedEndpointListArgs{...} }
-type GetOperationsV2OperationAssociatedEndpointListArrayInput interface {
-	pulumi.Input
-
-	ToGetOperationsV2OperationAssociatedEndpointListArrayOutput() GetOperationsV2OperationAssociatedEndpointListArrayOutput
-	ToGetOperationsV2OperationAssociatedEndpointListArrayOutputWithContext(context.Context) GetOperationsV2OperationAssociatedEndpointListArrayOutput
-}
-
-type GetOperationsV2OperationAssociatedEndpointListArray []GetOperationsV2OperationAssociatedEndpointListInput
-
-func (GetOperationsV2OperationAssociatedEndpointListArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOperationsV2OperationAssociatedEndpointList)(nil)).Elem()
-}
-
-func (i GetOperationsV2OperationAssociatedEndpointListArray) ToGetOperationsV2OperationAssociatedEndpointListArrayOutput() GetOperationsV2OperationAssociatedEndpointListArrayOutput {
-	return i.ToGetOperationsV2OperationAssociatedEndpointListArrayOutputWithContext(context.Background())
-}
-
-func (i GetOperationsV2OperationAssociatedEndpointListArray) ToGetOperationsV2OperationAssociatedEndpointListArrayOutputWithContext(ctx context.Context) GetOperationsV2OperationAssociatedEndpointListArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOperationsV2OperationAssociatedEndpointListArrayOutput)
-}
-
-type GetOperationsV2OperationAssociatedEndpointListOutput struct{ *pulumi.OutputState }
-
-func (GetOperationsV2OperationAssociatedEndpointListOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOperationsV2OperationAssociatedEndpointList)(nil)).Elem()
-}
-
-func (o GetOperationsV2OperationAssociatedEndpointListOutput) ToGetOperationsV2OperationAssociatedEndpointListOutput() GetOperationsV2OperationAssociatedEndpointListOutput {
-	return o
-}
-
-func (o GetOperationsV2OperationAssociatedEndpointListOutput) ToGetOperationsV2OperationAssociatedEndpointListOutputWithContext(ctx context.Context) GetOperationsV2OperationAssociatedEndpointListOutput {
-	return o
-}
-
-// Version of the API for the provided associated endpoint.
-func (o GetOperationsV2OperationAssociatedEndpointListOutput) ApiVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2OperationAssociatedEndpointList) string { return v.ApiVersion }).(pulumi.StringOutput)
-}
-
-// Endpoint URL.
-func (o GetOperationsV2OperationAssociatedEndpointListOutput) EndpointUrl() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2OperationAssociatedEndpointList) string { return v.EndpointUrl }).(pulumi.StringOutput)
-}
-
-// HTTP method for the provided associated endpoint.
-func (o GetOperationsV2OperationAssociatedEndpointListOutput) HttpMethod() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOperationsV2OperationAssociatedEndpointList) string { return v.HttpMethod }).(pulumi.StringOutput)
-}
-
-type GetOperationsV2OperationAssociatedEndpointListArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOperationsV2OperationAssociatedEndpointListArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOperationsV2OperationAssociatedEndpointList)(nil)).Elem()
-}
-
-func (o GetOperationsV2OperationAssociatedEndpointListArrayOutput) ToGetOperationsV2OperationAssociatedEndpointListArrayOutput() GetOperationsV2OperationAssociatedEndpointListArrayOutput {
-	return o
-}
-
-func (o GetOperationsV2OperationAssociatedEndpointListArrayOutput) ToGetOperationsV2OperationAssociatedEndpointListArrayOutputWithContext(ctx context.Context) GetOperationsV2OperationAssociatedEndpointListArrayOutput {
-	return o
-}
-
-func (o GetOperationsV2OperationAssociatedEndpointListArrayOutput) Index(i pulumi.IntInput) GetOperationsV2OperationAssociatedEndpointListOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOperationsV2OperationAssociatedEndpointList {
-		return vs[0].([]GetOperationsV2OperationAssociatedEndpointList)[vs[1].(int)]
-	}).(GetOperationsV2OperationAssociatedEndpointListOutput)
-}
-
-type GetOvaV2Checksum struct {
-	// - The SHA1 checksum of the OVA file.
-	OvaSha1Checksums []GetOvaV2ChecksumOvaSha1Checksum `pulumi:"ovaSha1Checksums"`
-	// - The SHA256 checksum of the OVA file.
-	OvaSha256Checksums []GetOvaV2ChecksumOvaSha256Checksum `pulumi:"ovaSha256Checksums"`
-}
-
-// GetOvaV2ChecksumInput is an input type that accepts GetOvaV2ChecksumArgs and GetOvaV2ChecksumOutput values.
-// You can construct a concrete instance of `GetOvaV2ChecksumInput` via:
-//
-//	GetOvaV2ChecksumArgs{...}
-type GetOvaV2ChecksumInput interface {
-	pulumi.Input
-
-	ToGetOvaV2ChecksumOutput() GetOvaV2ChecksumOutput
-	ToGetOvaV2ChecksumOutputWithContext(context.Context) GetOvaV2ChecksumOutput
-}
-
-type GetOvaV2ChecksumArgs struct {
-	// - The SHA1 checksum of the OVA file.
-	OvaSha1Checksums GetOvaV2ChecksumOvaSha1ChecksumArrayInput `pulumi:"ovaSha1Checksums"`
-	// - The SHA256 checksum of the OVA file.
-	OvaSha256Checksums GetOvaV2ChecksumOvaSha256ChecksumArrayInput `pulumi:"ovaSha256Checksums"`
-}
-
-func (GetOvaV2ChecksumArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2Checksum)(nil)).Elem()
-}
-
-func (i GetOvaV2ChecksumArgs) ToGetOvaV2ChecksumOutput() GetOvaV2ChecksumOutput {
-	return i.ToGetOvaV2ChecksumOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2ChecksumArgs) ToGetOvaV2ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOutput)
-}
-
-// GetOvaV2ChecksumArrayInput is an input type that accepts GetOvaV2ChecksumArray and GetOvaV2ChecksumArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2ChecksumArrayInput` via:
-//
-//	GetOvaV2ChecksumArray{ GetOvaV2ChecksumArgs{...} }
-type GetOvaV2ChecksumArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2ChecksumArrayOutput() GetOvaV2ChecksumArrayOutput
-	ToGetOvaV2ChecksumArrayOutputWithContext(context.Context) GetOvaV2ChecksumArrayOutput
-}
-
-type GetOvaV2ChecksumArray []GetOvaV2ChecksumInput
-
-func (GetOvaV2ChecksumArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2Checksum)(nil)).Elem()
-}
-
-func (i GetOvaV2ChecksumArray) ToGetOvaV2ChecksumArrayOutput() GetOvaV2ChecksumArrayOutput {
-	return i.ToGetOvaV2ChecksumArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2ChecksumArray) ToGetOvaV2ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumArrayOutput)
-}
-
-type GetOvaV2ChecksumOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2ChecksumOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2Checksum)(nil)).Elem()
-}
-
-func (o GetOvaV2ChecksumOutput) ToGetOvaV2ChecksumOutput() GetOvaV2ChecksumOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumOutput) ToGetOvaV2ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOutput {
-	return o
-}
-
-// - The SHA1 checksum of the OVA file.
-func (o GetOvaV2ChecksumOutput) OvaSha1Checksums() GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
-	return o.ApplyT(func(v GetOvaV2Checksum) []GetOvaV2ChecksumOvaSha1Checksum { return v.OvaSha1Checksums }).(GetOvaV2ChecksumOvaSha1ChecksumArrayOutput)
-}
-
-// - The SHA256 checksum of the OVA file.
-func (o GetOvaV2ChecksumOutput) OvaSha256Checksums() GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
-	return o.ApplyT(func(v GetOvaV2Checksum) []GetOvaV2ChecksumOvaSha256Checksum { return v.OvaSha256Checksums }).(GetOvaV2ChecksumOvaSha256ChecksumArrayOutput)
-}
-
-type GetOvaV2ChecksumArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2ChecksumArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2Checksum)(nil)).Elem()
-}
-
-func (o GetOvaV2ChecksumArrayOutput) ToGetOvaV2ChecksumArrayOutput() GetOvaV2ChecksumArrayOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumArrayOutput) ToGetOvaV2ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumArrayOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumArrayOutput) Index(i pulumi.IntInput) GetOvaV2ChecksumOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2Checksum {
-		return vs[0].([]GetOvaV2Checksum)[vs[1].(int)]
-	}).(GetOvaV2ChecksumOutput)
-}
-
-type GetOvaV2ChecksumOvaSha1Checksum struct {
-	// - The hexadecimal representation of the checksum.
-	HexDigest string `pulumi:"hexDigest"`
-}
-
-// GetOvaV2ChecksumOvaSha1ChecksumInput is an input type that accepts GetOvaV2ChecksumOvaSha1ChecksumArgs and GetOvaV2ChecksumOvaSha1ChecksumOutput values.
-// You can construct a concrete instance of `GetOvaV2ChecksumOvaSha1ChecksumInput` via:
-//
-//	GetOvaV2ChecksumOvaSha1ChecksumArgs{...}
-type GetOvaV2ChecksumOvaSha1ChecksumInput interface {
-	pulumi.Input
-
-	ToGetOvaV2ChecksumOvaSha1ChecksumOutput() GetOvaV2ChecksumOvaSha1ChecksumOutput
-	ToGetOvaV2ChecksumOvaSha1ChecksumOutputWithContext(context.Context) GetOvaV2ChecksumOvaSha1ChecksumOutput
-}
-
-type GetOvaV2ChecksumOvaSha1ChecksumArgs struct {
-	// - The hexadecimal representation of the checksum.
-	HexDigest pulumi.StringInput `pulumi:"hexDigest"`
-}
-
-func (GetOvaV2ChecksumOvaSha1ChecksumArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2ChecksumOvaSha1Checksum)(nil)).Elem()
-}
-
-func (i GetOvaV2ChecksumOvaSha1ChecksumArgs) ToGetOvaV2ChecksumOvaSha1ChecksumOutput() GetOvaV2ChecksumOvaSha1ChecksumOutput {
-	return i.ToGetOvaV2ChecksumOvaSha1ChecksumOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2ChecksumOvaSha1ChecksumArgs) ToGetOvaV2ChecksumOvaSha1ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha1ChecksumOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOvaSha1ChecksumOutput)
-}
-
-// GetOvaV2ChecksumOvaSha1ChecksumArrayInput is an input type that accepts GetOvaV2ChecksumOvaSha1ChecksumArray and GetOvaV2ChecksumOvaSha1ChecksumArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2ChecksumOvaSha1ChecksumArrayInput` via:
-//
-//	GetOvaV2ChecksumOvaSha1ChecksumArray{ GetOvaV2ChecksumOvaSha1ChecksumArgs{...} }
-type GetOvaV2ChecksumOvaSha1ChecksumArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutput() GetOvaV2ChecksumOvaSha1ChecksumArrayOutput
-	ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutputWithContext(context.Context) GetOvaV2ChecksumOvaSha1ChecksumArrayOutput
-}
-
-type GetOvaV2ChecksumOvaSha1ChecksumArray []GetOvaV2ChecksumOvaSha1ChecksumInput
-
-func (GetOvaV2ChecksumOvaSha1ChecksumArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2ChecksumOvaSha1Checksum)(nil)).Elem()
-}
-
-func (i GetOvaV2ChecksumOvaSha1ChecksumArray) ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutput() GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
-	return i.ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2ChecksumOvaSha1ChecksumArray) ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOvaSha1ChecksumArrayOutput)
-}
-
-type GetOvaV2ChecksumOvaSha1ChecksumOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2ChecksumOvaSha1ChecksumOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2ChecksumOvaSha1Checksum)(nil)).Elem()
-}
-
-func (o GetOvaV2ChecksumOvaSha1ChecksumOutput) ToGetOvaV2ChecksumOvaSha1ChecksumOutput() GetOvaV2ChecksumOvaSha1ChecksumOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumOvaSha1ChecksumOutput) ToGetOvaV2ChecksumOvaSha1ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha1ChecksumOutput {
-	return o
-}
-
-// - The hexadecimal representation of the checksum.
-func (o GetOvaV2ChecksumOvaSha1ChecksumOutput) HexDigest() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2ChecksumOvaSha1Checksum) string { return v.HexDigest }).(pulumi.StringOutput)
-}
-
-type GetOvaV2ChecksumOvaSha1ChecksumArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2ChecksumOvaSha1ChecksumArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2ChecksumOvaSha1Checksum)(nil)).Elem()
-}
-
-func (o GetOvaV2ChecksumOvaSha1ChecksumArrayOutput) ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutput() GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumOvaSha1ChecksumArrayOutput) ToGetOvaV2ChecksumOvaSha1ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha1ChecksumArrayOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumOvaSha1ChecksumArrayOutput) Index(i pulumi.IntInput) GetOvaV2ChecksumOvaSha1ChecksumOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2ChecksumOvaSha1Checksum {
-		return vs[0].([]GetOvaV2ChecksumOvaSha1Checksum)[vs[1].(int)]
-	}).(GetOvaV2ChecksumOvaSha1ChecksumOutput)
-}
-
-type GetOvaV2ChecksumOvaSha256Checksum struct {
-	// - The hexadecimal representation of the checksum.
-	HexDigest string `pulumi:"hexDigest"`
-}
-
-// GetOvaV2ChecksumOvaSha256ChecksumInput is an input type that accepts GetOvaV2ChecksumOvaSha256ChecksumArgs and GetOvaV2ChecksumOvaSha256ChecksumOutput values.
-// You can construct a concrete instance of `GetOvaV2ChecksumOvaSha256ChecksumInput` via:
-//
-//	GetOvaV2ChecksumOvaSha256ChecksumArgs{...}
-type GetOvaV2ChecksumOvaSha256ChecksumInput interface {
-	pulumi.Input
-
-	ToGetOvaV2ChecksumOvaSha256ChecksumOutput() GetOvaV2ChecksumOvaSha256ChecksumOutput
-	ToGetOvaV2ChecksumOvaSha256ChecksumOutputWithContext(context.Context) GetOvaV2ChecksumOvaSha256ChecksumOutput
-}
-
-type GetOvaV2ChecksumOvaSha256ChecksumArgs struct {
-	// - The hexadecimal representation of the checksum.
-	HexDigest pulumi.StringInput `pulumi:"hexDigest"`
-}
-
-func (GetOvaV2ChecksumOvaSha256ChecksumArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2ChecksumOvaSha256Checksum)(nil)).Elem()
-}
-
-func (i GetOvaV2ChecksumOvaSha256ChecksumArgs) ToGetOvaV2ChecksumOvaSha256ChecksumOutput() GetOvaV2ChecksumOvaSha256ChecksumOutput {
-	return i.ToGetOvaV2ChecksumOvaSha256ChecksumOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2ChecksumOvaSha256ChecksumArgs) ToGetOvaV2ChecksumOvaSha256ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha256ChecksumOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOvaSha256ChecksumOutput)
-}
-
-// GetOvaV2ChecksumOvaSha256ChecksumArrayInput is an input type that accepts GetOvaV2ChecksumOvaSha256ChecksumArray and GetOvaV2ChecksumOvaSha256ChecksumArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2ChecksumOvaSha256ChecksumArrayInput` via:
-//
-//	GetOvaV2ChecksumOvaSha256ChecksumArray{ GetOvaV2ChecksumOvaSha256ChecksumArgs{...} }
-type GetOvaV2ChecksumOvaSha256ChecksumArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutput() GetOvaV2ChecksumOvaSha256ChecksumArrayOutput
-	ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutputWithContext(context.Context) GetOvaV2ChecksumOvaSha256ChecksumArrayOutput
-}
-
-type GetOvaV2ChecksumOvaSha256ChecksumArray []GetOvaV2ChecksumOvaSha256ChecksumInput
-
-func (GetOvaV2ChecksumOvaSha256ChecksumArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2ChecksumOvaSha256Checksum)(nil)).Elem()
-}
-
-func (i GetOvaV2ChecksumOvaSha256ChecksumArray) ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutput() GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
-	return i.ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2ChecksumOvaSha256ChecksumArray) ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2ChecksumOvaSha256ChecksumArrayOutput)
-}
-
-type GetOvaV2ChecksumOvaSha256ChecksumOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2ChecksumOvaSha256ChecksumOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2ChecksumOvaSha256Checksum)(nil)).Elem()
-}
-
-func (o GetOvaV2ChecksumOvaSha256ChecksumOutput) ToGetOvaV2ChecksumOvaSha256ChecksumOutput() GetOvaV2ChecksumOvaSha256ChecksumOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumOvaSha256ChecksumOutput) ToGetOvaV2ChecksumOvaSha256ChecksumOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha256ChecksumOutput {
-	return o
-}
-
-// - The hexadecimal representation of the checksum.
-func (o GetOvaV2ChecksumOvaSha256ChecksumOutput) HexDigest() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2ChecksumOvaSha256Checksum) string { return v.HexDigest }).(pulumi.StringOutput)
-}
-
-type GetOvaV2ChecksumOvaSha256ChecksumArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2ChecksumOvaSha256ChecksumArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2ChecksumOvaSha256Checksum)(nil)).Elem()
-}
-
-func (o GetOvaV2ChecksumOvaSha256ChecksumArrayOutput) ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutput() GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumOvaSha256ChecksumArrayOutput) ToGetOvaV2ChecksumOvaSha256ChecksumArrayOutputWithContext(ctx context.Context) GetOvaV2ChecksumOvaSha256ChecksumArrayOutput {
-	return o
-}
-
-func (o GetOvaV2ChecksumOvaSha256ChecksumArrayOutput) Index(i pulumi.IntInput) GetOvaV2ChecksumOvaSha256ChecksumOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2ChecksumOvaSha256Checksum {
-		return vs[0].([]GetOvaV2ChecksumOvaSha256Checksum)[vs[1].(int)]
-	}).(GetOvaV2ChecksumOvaSha256ChecksumOutput)
-}
-
-type GetOvaV2CreatedBy struct {
-	// Any additional attribute for the User.
-	AdditionalAttributes []GetOvaV2CreatedByAdditionalAttribute `pulumi:"additionalAttributes"`
-	BucketsAccessKeys    []GetOvaV2CreatedByBucketsAccessKey    `pulumi:"bucketsAccessKeys"`
-	// - Information of the user.
-	CreatedBy   string `pulumi:"createdBy"`
-	CreatedTime string `pulumi:"createdTime"`
-	// Creation type of the User.
-	// |ENUM |Description |
-	// |---|---|
-	// | PREDEFINED | Predefined creator workflow type is for entity created by the system. |
-	// | SERVICEDEFINED | Service defined creator workflow type is for entity created by the service. |
-	// | USERDEFINED | User defined creator workflow type is for entity created by the users. |
-	CreationType string `pulumi:"creationType"`
-	// VM description
-	Description string `pulumi:"description"`
-	// Display name for the User.
-	DisplayName string `pulumi:"displayName"`
-	// Email Id for the User.
-	EmailId string `pulumi:"emailId"`
-	// -(Required) The external identifier for an OVA.
-	ExtId string `pulumi:"extId"`
-	// First name for the User.
-	FirstName string `pulumi:"firstName"`
-	// Identifier of the IDP for the User.
-	IdpId string `pulumi:"idpId"`
-	// Flag to force the User to reset password.
-	IsForceResetPasswordEnabled bool   `pulumi:"isForceResetPasswordEnabled"`
-	LastLoginTime               string `pulumi:"lastLoginTime"`
-	// Last name for the User.
-	LastName        string `pulumi:"lastName"`
-	LastUpdatedBy   string `pulumi:"lastUpdatedBy"`
-	LastUpdatedTime string `pulumi:"lastUpdatedTime"`
-	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links []GetOvaV2CreatedByLink `pulumi:"links"`
-	// Default locale for the User.
-	Locale string `pulumi:"locale"`
-	// Middle name for the User.
-	MiddleInitial string `pulumi:"middleInitial"`
-	// Default Region for the User.
-	Region string `pulumi:"region"`
-	// Status of the User.
-	Status string `pulumi:"status"`
-	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId string `pulumi:"tenantId"`
-	// Type of the User.
-	UserType string `pulumi:"userType"`
-	// Identifier for the User in the form an email address.
-	Username string `pulumi:"username"`
-}
-
-// GetOvaV2CreatedByInput is an input type that accepts GetOvaV2CreatedByArgs and GetOvaV2CreatedByOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByInput` via:
-//
-//	GetOvaV2CreatedByArgs{...}
-type GetOvaV2CreatedByInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByOutput() GetOvaV2CreatedByOutput
-	ToGetOvaV2CreatedByOutputWithContext(context.Context) GetOvaV2CreatedByOutput
-}
-
-type GetOvaV2CreatedByArgs struct {
-	// Any additional attribute for the User.
-	AdditionalAttributes GetOvaV2CreatedByAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
-	BucketsAccessKeys    GetOvaV2CreatedByBucketsAccessKeyArrayInput    `pulumi:"bucketsAccessKeys"`
-	// - Information of the user.
-	CreatedBy   pulumi.StringInput `pulumi:"createdBy"`
-	CreatedTime pulumi.StringInput `pulumi:"createdTime"`
-	// Creation type of the User.
-	// |ENUM |Description |
-	// |---|---|
-	// | PREDEFINED | Predefined creator workflow type is for entity created by the system. |
-	// | SERVICEDEFINED | Service defined creator workflow type is for entity created by the service. |
-	// | USERDEFINED | User defined creator workflow type is for entity created by the users. |
-	CreationType pulumi.StringInput `pulumi:"creationType"`
-	// VM description
-	Description pulumi.StringInput `pulumi:"description"`
-	// Display name for the User.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Email Id for the User.
-	EmailId pulumi.StringInput `pulumi:"emailId"`
-	// -(Required) The external identifier for an OVA.
-	ExtId pulumi.StringInput `pulumi:"extId"`
-	// First name for the User.
-	FirstName pulumi.StringInput `pulumi:"firstName"`
-	// Identifier of the IDP for the User.
-	IdpId pulumi.StringInput `pulumi:"idpId"`
-	// Flag to force the User to reset password.
-	IsForceResetPasswordEnabled pulumi.BoolInput   `pulumi:"isForceResetPasswordEnabled"`
-	LastLoginTime               pulumi.StringInput `pulumi:"lastLoginTime"`
-	// Last name for the User.
-	LastName        pulumi.StringInput `pulumi:"lastName"`
-	LastUpdatedBy   pulumi.StringInput `pulumi:"lastUpdatedBy"`
-	LastUpdatedTime pulumi.StringInput `pulumi:"lastUpdatedTime"`
-	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links GetOvaV2CreatedByLinkArrayInput `pulumi:"links"`
-	// Default locale for the User.
-	Locale pulumi.StringInput `pulumi:"locale"`
-	// Middle name for the User.
-	MiddleInitial pulumi.StringInput `pulumi:"middleInitial"`
-	// Default Region for the User.
-	Region pulumi.StringInput `pulumi:"region"`
-	// Status of the User.
-	Status pulumi.StringInput `pulumi:"status"`
-	// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId pulumi.StringInput `pulumi:"tenantId"`
-	// Type of the User.
-	UserType pulumi.StringInput `pulumi:"userType"`
-	// Identifier for the User in the form an email address.
-	Username pulumi.StringInput `pulumi:"username"`
-}
-
-func (GetOvaV2CreatedByArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedBy)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByArgs) ToGetOvaV2CreatedByOutput() GetOvaV2CreatedByOutput {
-	return i.ToGetOvaV2CreatedByOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByArgs) ToGetOvaV2CreatedByOutputWithContext(ctx context.Context) GetOvaV2CreatedByOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByOutput)
-}
-
-// GetOvaV2CreatedByArrayInput is an input type that accepts GetOvaV2CreatedByArray and GetOvaV2CreatedByArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByArrayInput` via:
-//
-//	GetOvaV2CreatedByArray{ GetOvaV2CreatedByArgs{...} }
-type GetOvaV2CreatedByArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByArrayOutput() GetOvaV2CreatedByArrayOutput
-	ToGetOvaV2CreatedByArrayOutputWithContext(context.Context) GetOvaV2CreatedByArrayOutput
-}
-
-type GetOvaV2CreatedByArray []GetOvaV2CreatedByInput
-
-func (GetOvaV2CreatedByArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedBy)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByArray) ToGetOvaV2CreatedByArrayOutput() GetOvaV2CreatedByArrayOutput {
-	return i.ToGetOvaV2CreatedByArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByArray) ToGetOvaV2CreatedByArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByArrayOutput)
-}
-
-type GetOvaV2CreatedByOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedBy)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByOutput) ToGetOvaV2CreatedByOutput() GetOvaV2CreatedByOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByOutput) ToGetOvaV2CreatedByOutputWithContext(ctx context.Context) GetOvaV2CreatedByOutput {
-	return o
-}
-
-// Any additional attribute for the User.
-func (o GetOvaV2CreatedByOutput) AdditionalAttributes() GetOvaV2CreatedByAdditionalAttributeArrayOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) []GetOvaV2CreatedByAdditionalAttribute { return v.AdditionalAttributes }).(GetOvaV2CreatedByAdditionalAttributeArrayOutput)
-}
-
-func (o GetOvaV2CreatedByOutput) BucketsAccessKeys() GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) []GetOvaV2CreatedByBucketsAccessKey { return v.BucketsAccessKeys }).(GetOvaV2CreatedByBucketsAccessKeyArrayOutput)
-}
-
-// - Information of the user.
-func (o GetOvaV2CreatedByOutput) CreatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.CreatedBy }).(pulumi.StringOutput)
-}
-
-func (o GetOvaV2CreatedByOutput) CreatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.CreatedTime }).(pulumi.StringOutput)
-}
-
-// Creation type of the User.
-// |ENUM |Description |
-// |---|---|
-// | PREDEFINED | Predefined creator workflow type is for entity created by the system. |
-// | SERVICEDEFINED | Service defined creator workflow type is for entity created by the service. |
-// | USERDEFINED | User defined creator workflow type is for entity created by the users. |
-func (o GetOvaV2CreatedByOutput) CreationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.CreationType }).(pulumi.StringOutput)
-}
-
-// VM description
-func (o GetOvaV2CreatedByOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Display name for the User.
-func (o GetOvaV2CreatedByOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.DisplayName }).(pulumi.StringOutput)
-}
-
-// Email Id for the User.
-func (o GetOvaV2CreatedByOutput) EmailId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.EmailId }).(pulumi.StringOutput)
-}
-
-// -(Required) The external identifier for an OVA.
-func (o GetOvaV2CreatedByOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-// First name for the User.
-func (o GetOvaV2CreatedByOutput) FirstName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.FirstName }).(pulumi.StringOutput)
-}
-
-// Identifier of the IDP for the User.
-func (o GetOvaV2CreatedByOutput) IdpId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.IdpId }).(pulumi.StringOutput)
-}
-
-// Flag to force the User to reset password.
-func (o GetOvaV2CreatedByOutput) IsForceResetPasswordEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) bool { return v.IsForceResetPasswordEnabled }).(pulumi.BoolOutput)
-}
-
-func (o GetOvaV2CreatedByOutput) LastLoginTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.LastLoginTime }).(pulumi.StringOutput)
-}
-
-// Last name for the User.
-func (o GetOvaV2CreatedByOutput) LastName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.LastName }).(pulumi.StringOutput)
-}
-
-func (o GetOvaV2CreatedByOutput) LastUpdatedBy() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.LastUpdatedBy }).(pulumi.StringOutput)
-}
-
-func (o GetOvaV2CreatedByOutput) LastUpdatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.LastUpdatedTime }).(pulumi.StringOutput)
-}
-
-// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-func (o GetOvaV2CreatedByOutput) Links() GetOvaV2CreatedByLinkArrayOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) []GetOvaV2CreatedByLink { return v.Links }).(GetOvaV2CreatedByLinkArrayOutput)
-}
-
-// Default locale for the User.
-func (o GetOvaV2CreatedByOutput) Locale() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Locale }).(pulumi.StringOutput)
-}
-
-// Middle name for the User.
-func (o GetOvaV2CreatedByOutput) MiddleInitial() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.MiddleInitial }).(pulumi.StringOutput)
-}
-
-// Default Region for the User.
-func (o GetOvaV2CreatedByOutput) Region() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Region }).(pulumi.StringOutput)
-}
-
-// Status of the User.
-func (o GetOvaV2CreatedByOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// - A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-func (o GetOvaV2CreatedByOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.TenantId }).(pulumi.StringOutput)
-}
-
-// Type of the User.
-func (o GetOvaV2CreatedByOutput) UserType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.UserType }).(pulumi.StringOutput)
-}
-
-// Identifier for the User in the form an email address.
-func (o GetOvaV2CreatedByOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedBy) string { return v.Username }).(pulumi.StringOutput)
-}
-
-type GetOvaV2CreatedByArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedBy)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByArrayOutput) ToGetOvaV2CreatedByArrayOutput() GetOvaV2CreatedByArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByArrayOutput) ToGetOvaV2CreatedByArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedBy {
-		return vs[0].([]GetOvaV2CreatedBy)[vs[1].(int)]
-	}).(GetOvaV2CreatedByOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttribute struct {
-	// Name of the GPU resource.
-	Name string `pulumi:"name"`
-	// The IPv4 address of the host.
-	Values []GetOvaV2CreatedByAdditionalAttributeValue `pulumi:"values"`
-}
-
-// GetOvaV2CreatedByAdditionalAttributeInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeArgs and GetOvaV2CreatedByAdditionalAttributeOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeInput` via:
-//
-//	GetOvaV2CreatedByAdditionalAttributeArgs{...}
-type GetOvaV2CreatedByAdditionalAttributeInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByAdditionalAttributeOutput() GetOvaV2CreatedByAdditionalAttributeOutput
-	ToGetOvaV2CreatedByAdditionalAttributeOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeOutput
-}
-
-type GetOvaV2CreatedByAdditionalAttributeArgs struct {
-	// Name of the GPU resource.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The IPv4 address of the host.
-	Values GetOvaV2CreatedByAdditionalAttributeValueArrayInput `pulumi:"values"`
-}
-
-func (GetOvaV2CreatedByAdditionalAttributeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttribute)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeArgs) ToGetOvaV2CreatedByAdditionalAttributeOutput() GetOvaV2CreatedByAdditionalAttributeOutput {
-	return i.ToGetOvaV2CreatedByAdditionalAttributeOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeArgs) ToGetOvaV2CreatedByAdditionalAttributeOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeOutput)
-}
-
-// GetOvaV2CreatedByAdditionalAttributeArrayInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeArray and GetOvaV2CreatedByAdditionalAttributeArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeArrayInput` via:
-//
-//	GetOvaV2CreatedByAdditionalAttributeArray{ GetOvaV2CreatedByAdditionalAttributeArgs{...} }
-type GetOvaV2CreatedByAdditionalAttributeArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByAdditionalAttributeArrayOutput() GetOvaV2CreatedByAdditionalAttributeArrayOutput
-	ToGetOvaV2CreatedByAdditionalAttributeArrayOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeArrayOutput
-}
-
-type GetOvaV2CreatedByAdditionalAttributeArray []GetOvaV2CreatedByAdditionalAttributeInput
-
-func (GetOvaV2CreatedByAdditionalAttributeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttribute)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeArray) ToGetOvaV2CreatedByAdditionalAttributeArrayOutput() GetOvaV2CreatedByAdditionalAttributeArrayOutput {
-	return i.ToGetOvaV2CreatedByAdditionalAttributeArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeArray) ToGetOvaV2CreatedByAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeArrayOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttributeOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByAdditionalAttributeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttribute)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeOutput) ToGetOvaV2CreatedByAdditionalAttributeOutput() GetOvaV2CreatedByAdditionalAttributeOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeOutput) ToGetOvaV2CreatedByAdditionalAttributeOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeOutput {
-	return o
-}
-
-// Name of the GPU resource.
-func (o GetOvaV2CreatedByAdditionalAttributeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttribute) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The IPv4 address of the host.
-func (o GetOvaV2CreatedByAdditionalAttributeOutput) Values() GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttribute) []GetOvaV2CreatedByAdditionalAttributeValue {
-		return v.Values
-	}).(GetOvaV2CreatedByAdditionalAttributeValueArrayOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttributeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByAdditionalAttributeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttribute)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeArrayOutput() GetOvaV2CreatedByAdditionalAttributeArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByAdditionalAttributeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByAdditionalAttribute {
-		return vs[0].([]GetOvaV2CreatedByAdditionalAttribute)[vs[1].(int)]
-	}).(GetOvaV2CreatedByAdditionalAttributeOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValue struct {
-	Boolean      bool                                                   `pulumi:"boolean"`
-	Integer      int                                                    `pulumi:"integer"`
-	IntegerLists []int                                                  `pulumi:"integerLists"`
-	MapOfStrings []GetOvaV2CreatedByAdditionalAttributeValueMapOfString `pulumi:"mapOfStrings"`
-	Object       map[string]string                                      `pulumi:"object"`
-	String       string                                                 `pulumi:"string"`
-	StringLists  []string                                               `pulumi:"stringLists"`
-}
-
-// GetOvaV2CreatedByAdditionalAttributeValueInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeValueArgs and GetOvaV2CreatedByAdditionalAttributeValueOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeValueInput` via:
-//
-//	GetOvaV2CreatedByAdditionalAttributeValueArgs{...}
-type GetOvaV2CreatedByAdditionalAttributeValueInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByAdditionalAttributeValueOutput() GetOvaV2CreatedByAdditionalAttributeValueOutput
-	ToGetOvaV2CreatedByAdditionalAttributeValueOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeValueOutput
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueArgs struct {
-	Boolean      pulumi.BoolInput                                               `pulumi:"boolean"`
-	Integer      pulumi.IntInput                                                `pulumi:"integer"`
-	IntegerLists pulumi.IntArrayInput                                           `pulumi:"integerLists"`
-	MapOfStrings GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput `pulumi:"mapOfStrings"`
-	Object       pulumi.StringMapInput                                          `pulumi:"object"`
-	String       pulumi.StringInput                                             `pulumi:"string"`
-	StringLists  pulumi.StringArrayInput                                        `pulumi:"stringLists"`
-}
-
-func (GetOvaV2CreatedByAdditionalAttributeValueArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValue)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeValueArgs) ToGetOvaV2CreatedByAdditionalAttributeValueOutput() GetOvaV2CreatedByAdditionalAttributeValueOutput {
-	return i.ToGetOvaV2CreatedByAdditionalAttributeValueOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeValueArgs) ToGetOvaV2CreatedByAdditionalAttributeValueOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeValueOutput)
-}
-
-// GetOvaV2CreatedByAdditionalAttributeValueArrayInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeValueArray and GetOvaV2CreatedByAdditionalAttributeValueArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeValueArrayInput` via:
-//
-//	GetOvaV2CreatedByAdditionalAttributeValueArray{ GetOvaV2CreatedByAdditionalAttributeValueArgs{...} }
-type GetOvaV2CreatedByAdditionalAttributeValueArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueArrayOutput
-	ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeValueArrayOutput
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueArray []GetOvaV2CreatedByAdditionalAttributeValueInput
-
-func (GetOvaV2CreatedByAdditionalAttributeValueArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttributeValue)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeValueArray) ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
-	return i.ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeValueArray) ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeValueArrayOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByAdditionalAttributeValueOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValue)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) ToGetOvaV2CreatedByAdditionalAttributeValueOutput() GetOvaV2CreatedByAdditionalAttributeValueOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) ToGetOvaV2CreatedByAdditionalAttributeValueOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) Boolean() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) bool { return v.Boolean }).(pulumi.BoolOutput)
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) Integer() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) int { return v.Integer }).(pulumi.IntOutput)
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) IntegerLists() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) []int { return v.IntegerLists }).(pulumi.IntArrayOutput)
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) MapOfStrings() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) []GetOvaV2CreatedByAdditionalAttributeValueMapOfString {
-		return v.MapOfStrings
-	}).(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput)
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) Object() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) map[string]string { return v.Object }).(pulumi.StringMapOutput)
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) String() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) string { return v.String }).(pulumi.StringOutput)
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueOutput) StringLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValue) []string { return v.StringLists }).(pulumi.StringArrayOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByAdditionalAttributeValueArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttributeValue)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeValueArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByAdditionalAttributeValueOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByAdditionalAttributeValue {
-		return vs[0].([]GetOvaV2CreatedByAdditionalAttributeValue)[vs[1].(int)]
-	}).(GetOvaV2CreatedByAdditionalAttributeValueOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueMapOfString struct {
-	Map map[string]string `pulumi:"map"`
-}
-
-// GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs and GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput` via:
-//
-//	GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs{...}
-type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput
-	ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs struct {
-	Map pulumi.StringMapInput `pulumi:"map"`
-}
-
-func (GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueMapOfString)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
-	return i.ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput)
-}
-
-// GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput is an input type that accepts GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray and GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput` via:
-//
-//	GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray{ GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs{...} }
-type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput
-	ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutputWithContext(context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray []GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput
-
-func (GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttributeValueMapOfString)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
-	return i.ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueMapOfString)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput) Map() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByAdditionalAttributeValueMapOfString) map[string]string { return v.Map }).(pulumi.StringMapOutput)
-}
-
-type GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByAdditionalAttributeValueMapOfString)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput() GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput) ToGetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByAdditionalAttributeValueMapOfString {
-		return vs[0].([]GetOvaV2CreatedByAdditionalAttributeValueMapOfString)[vs[1].(int)]
-	}).(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput)
-}
-
-type GetOvaV2CreatedByBucketsAccessKey struct {
-	AccessKeyName string `pulumi:"accessKeyName"`
-	CreatedTime   string `pulumi:"createdTime"`
-	// -(Required) The external identifier for an OVA.
-	ExtId string `pulumi:"extId"`
-	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links           []GetOvaV2CreatedByBucketsAccessKeyLink `pulumi:"links"`
-	SecretAccessKey string                                  `pulumi:"secretAccessKey"`
-	UserId          string                                  `pulumi:"userId"`
-}
-
-// GetOvaV2CreatedByBucketsAccessKeyInput is an input type that accepts GetOvaV2CreatedByBucketsAccessKeyArgs and GetOvaV2CreatedByBucketsAccessKeyOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByBucketsAccessKeyInput` via:
-//
-//	GetOvaV2CreatedByBucketsAccessKeyArgs{...}
-type GetOvaV2CreatedByBucketsAccessKeyInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByBucketsAccessKeyOutput() GetOvaV2CreatedByBucketsAccessKeyOutput
-	ToGetOvaV2CreatedByBucketsAccessKeyOutputWithContext(context.Context) GetOvaV2CreatedByBucketsAccessKeyOutput
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyArgs struct {
-	AccessKeyName pulumi.StringInput `pulumi:"accessKeyName"`
-	CreatedTime   pulumi.StringInput `pulumi:"createdTime"`
-	// -(Required) The external identifier for an OVA.
-	ExtId pulumi.StringInput `pulumi:"extId"`
-	// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links           GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput `pulumi:"links"`
-	SecretAccessKey pulumi.StringInput                              `pulumi:"secretAccessKey"`
-	UserId          pulumi.StringInput                              `pulumi:"userId"`
-}
-
-func (GetOvaV2CreatedByBucketsAccessKeyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKey)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByBucketsAccessKeyArgs) ToGetOvaV2CreatedByBucketsAccessKeyOutput() GetOvaV2CreatedByBucketsAccessKeyOutput {
-	return i.ToGetOvaV2CreatedByBucketsAccessKeyOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByBucketsAccessKeyArgs) ToGetOvaV2CreatedByBucketsAccessKeyOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByBucketsAccessKeyOutput)
-}
-
-// GetOvaV2CreatedByBucketsAccessKeyArrayInput is an input type that accepts GetOvaV2CreatedByBucketsAccessKeyArray and GetOvaV2CreatedByBucketsAccessKeyArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByBucketsAccessKeyArrayInput` via:
-//
-//	GetOvaV2CreatedByBucketsAccessKeyArray{ GetOvaV2CreatedByBucketsAccessKeyArgs{...} }
-type GetOvaV2CreatedByBucketsAccessKeyArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByBucketsAccessKeyArrayOutput() GetOvaV2CreatedByBucketsAccessKeyArrayOutput
-	ToGetOvaV2CreatedByBucketsAccessKeyArrayOutputWithContext(context.Context) GetOvaV2CreatedByBucketsAccessKeyArrayOutput
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyArray []GetOvaV2CreatedByBucketsAccessKeyInput
-
-func (GetOvaV2CreatedByBucketsAccessKeyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByBucketsAccessKey)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByBucketsAccessKeyArray) ToGetOvaV2CreatedByBucketsAccessKeyArrayOutput() GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
-	return i.ToGetOvaV2CreatedByBucketsAccessKeyArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByBucketsAccessKeyArray) ToGetOvaV2CreatedByBucketsAccessKeyArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByBucketsAccessKeyArrayOutput)
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByBucketsAccessKeyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKey)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyOutput) ToGetOvaV2CreatedByBucketsAccessKeyOutput() GetOvaV2CreatedByBucketsAccessKeyOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyOutput) ToGetOvaV2CreatedByBucketsAccessKeyOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyOutput) AccessKeyName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.AccessKeyName }).(pulumi.StringOutput)
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyOutput) CreatedTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.CreatedTime }).(pulumi.StringOutput)
-}
-
-// -(Required) The external identifier for an OVA.
-func (o GetOvaV2CreatedByBucketsAccessKeyOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-// - A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-func (o GetOvaV2CreatedByBucketsAccessKeyOutput) Links() GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) []GetOvaV2CreatedByBucketsAccessKeyLink { return v.Links }).(GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput)
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyOutput) SecretAccessKey() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.SecretAccessKey }).(pulumi.StringOutput)
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyOutput) UserId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKey) string { return v.UserId }).(pulumi.StringOutput)
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByBucketsAccessKeyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByBucketsAccessKey)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyArrayOutput) ToGetOvaV2CreatedByBucketsAccessKeyArrayOutput() GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyArrayOutput) ToGetOvaV2CreatedByBucketsAccessKeyArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByBucketsAccessKeyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByBucketsAccessKey {
-		return vs[0].([]GetOvaV2CreatedByBucketsAccessKey)[vs[1].(int)]
-	}).(GetOvaV2CreatedByBucketsAccessKeyOutput)
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyLink struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href string `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel string `pulumi:"rel"`
-}
-
-// GetOvaV2CreatedByBucketsAccessKeyLinkInput is an input type that accepts GetOvaV2CreatedByBucketsAccessKeyLinkArgs and GetOvaV2CreatedByBucketsAccessKeyLinkOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByBucketsAccessKeyLinkInput` via:
-//
-//	GetOvaV2CreatedByBucketsAccessKeyLinkArgs{...}
-type GetOvaV2CreatedByBucketsAccessKeyLinkInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByBucketsAccessKeyLinkOutput() GetOvaV2CreatedByBucketsAccessKeyLinkOutput
-	ToGetOvaV2CreatedByBucketsAccessKeyLinkOutputWithContext(context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkOutput
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyLinkArgs struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href pulumi.StringInput `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetOvaV2CreatedByBucketsAccessKeyLinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyLink)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByBucketsAccessKeyLinkArgs) ToGetOvaV2CreatedByBucketsAccessKeyLinkOutput() GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
-	return i.ToGetOvaV2CreatedByBucketsAccessKeyLinkOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByBucketsAccessKeyLinkArgs) ToGetOvaV2CreatedByBucketsAccessKeyLinkOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByBucketsAccessKeyLinkOutput)
-}
-
-// GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput is an input type that accepts GetOvaV2CreatedByBucketsAccessKeyLinkArray and GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput` via:
-//
-//	GetOvaV2CreatedByBucketsAccessKeyLinkArray{ GetOvaV2CreatedByBucketsAccessKeyLinkArgs{...} }
-type GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput() GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput
-	ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutputWithContext(context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyLinkArray []GetOvaV2CreatedByBucketsAccessKeyLinkInput
-
-func (GetOvaV2CreatedByBucketsAccessKeyLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByBucketsAccessKeyLink)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByBucketsAccessKeyLinkArray) ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput() GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
-	return i.ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByBucketsAccessKeyLinkArray) ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput)
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyLinkOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByBucketsAccessKeyLinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyLink)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyLinkOutput) ToGetOvaV2CreatedByBucketsAccessKeyLinkOutput() GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyLinkOutput) ToGetOvaV2CreatedByBucketsAccessKeyLinkOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
-	return o
-}
-
-// - The URL at which the entity described by the link can be accessed.
-func (o GetOvaV2CreatedByBucketsAccessKeyLinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKeyLink) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-func (o GetOvaV2CreatedByBucketsAccessKeyLinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByBucketsAccessKeyLink) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByBucketsAccessKeyLink)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput) ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput() GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput) ToGetOvaV2CreatedByBucketsAccessKeyLinkArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByBucketsAccessKeyLinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByBucketsAccessKeyLink {
-		return vs[0].([]GetOvaV2CreatedByBucketsAccessKeyLink)[vs[1].(int)]
-	}).(GetOvaV2CreatedByBucketsAccessKeyLinkOutput)
-}
-
-type GetOvaV2CreatedByLink struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href string `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel string `pulumi:"rel"`
-}
-
-// GetOvaV2CreatedByLinkInput is an input type that accepts GetOvaV2CreatedByLinkArgs and GetOvaV2CreatedByLinkOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByLinkInput` via:
-//
-//	GetOvaV2CreatedByLinkArgs{...}
-type GetOvaV2CreatedByLinkInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByLinkOutput() GetOvaV2CreatedByLinkOutput
-	ToGetOvaV2CreatedByLinkOutputWithContext(context.Context) GetOvaV2CreatedByLinkOutput
-}
-
-type GetOvaV2CreatedByLinkArgs struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href pulumi.StringInput `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetOvaV2CreatedByLinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByLink)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByLinkArgs) ToGetOvaV2CreatedByLinkOutput() GetOvaV2CreatedByLinkOutput {
-	return i.ToGetOvaV2CreatedByLinkOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByLinkArgs) ToGetOvaV2CreatedByLinkOutputWithContext(ctx context.Context) GetOvaV2CreatedByLinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByLinkOutput)
-}
-
-// GetOvaV2CreatedByLinkArrayInput is an input type that accepts GetOvaV2CreatedByLinkArray and GetOvaV2CreatedByLinkArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2CreatedByLinkArrayInput` via:
-//
-//	GetOvaV2CreatedByLinkArray{ GetOvaV2CreatedByLinkArgs{...} }
-type GetOvaV2CreatedByLinkArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2CreatedByLinkArrayOutput() GetOvaV2CreatedByLinkArrayOutput
-	ToGetOvaV2CreatedByLinkArrayOutputWithContext(context.Context) GetOvaV2CreatedByLinkArrayOutput
-}
-
-type GetOvaV2CreatedByLinkArray []GetOvaV2CreatedByLinkInput
-
-func (GetOvaV2CreatedByLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByLink)(nil)).Elem()
-}
-
-func (i GetOvaV2CreatedByLinkArray) ToGetOvaV2CreatedByLinkArrayOutput() GetOvaV2CreatedByLinkArrayOutput {
-	return i.ToGetOvaV2CreatedByLinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2CreatedByLinkArray) ToGetOvaV2CreatedByLinkArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByLinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2CreatedByLinkArrayOutput)
-}
-
-type GetOvaV2CreatedByLinkOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByLinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2CreatedByLink)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByLinkOutput) ToGetOvaV2CreatedByLinkOutput() GetOvaV2CreatedByLinkOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByLinkOutput) ToGetOvaV2CreatedByLinkOutputWithContext(ctx context.Context) GetOvaV2CreatedByLinkOutput {
-	return o
-}
-
-// - The URL at which the entity described by the link can be accessed.
-func (o GetOvaV2CreatedByLinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByLink) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-func (o GetOvaV2CreatedByLinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2CreatedByLink) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetOvaV2CreatedByLinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2CreatedByLinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2CreatedByLink)(nil)).Elem()
-}
-
-func (o GetOvaV2CreatedByLinkArrayOutput) ToGetOvaV2CreatedByLinkArrayOutput() GetOvaV2CreatedByLinkArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByLinkArrayOutput) ToGetOvaV2CreatedByLinkArrayOutputWithContext(ctx context.Context) GetOvaV2CreatedByLinkArrayOutput {
-	return o
-}
-
-func (o GetOvaV2CreatedByLinkArrayOutput) Index(i pulumi.IntInput) GetOvaV2CreatedByLinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2CreatedByLink {
-		return vs[0].([]GetOvaV2CreatedByLink)[vs[1].(int)]
-	}).(GetOvaV2CreatedByLinkOutput)
-}
-
-type GetOvaV2Link struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href string `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel string `pulumi:"rel"`
-}
-
-// GetOvaV2LinkInput is an input type that accepts GetOvaV2LinkArgs and GetOvaV2LinkOutput values.
-// You can construct a concrete instance of `GetOvaV2LinkInput` via:
-//
-//	GetOvaV2LinkArgs{...}
-type GetOvaV2LinkInput interface {
-	pulumi.Input
-
-	ToGetOvaV2LinkOutput() GetOvaV2LinkOutput
-	ToGetOvaV2LinkOutputWithContext(context.Context) GetOvaV2LinkOutput
-}
-
-type GetOvaV2LinkArgs struct {
-	// - The URL at which the entity described by the link can be accessed.
-	Href pulumi.StringInput `pulumi:"href"`
-	// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-	Rel pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetOvaV2LinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2Link)(nil)).Elem()
-}
-
-func (i GetOvaV2LinkArgs) ToGetOvaV2LinkOutput() GetOvaV2LinkOutput {
-	return i.ToGetOvaV2LinkOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2LinkArgs) ToGetOvaV2LinkOutputWithContext(ctx context.Context) GetOvaV2LinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2LinkOutput)
-}
-
-// GetOvaV2LinkArrayInput is an input type that accepts GetOvaV2LinkArray and GetOvaV2LinkArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2LinkArrayInput` via:
-//
-//	GetOvaV2LinkArray{ GetOvaV2LinkArgs{...} }
-type GetOvaV2LinkArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2LinkArrayOutput() GetOvaV2LinkArrayOutput
-	ToGetOvaV2LinkArrayOutputWithContext(context.Context) GetOvaV2LinkArrayOutput
-}
-
-type GetOvaV2LinkArray []GetOvaV2LinkInput
-
-func (GetOvaV2LinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2Link)(nil)).Elem()
-}
-
-func (i GetOvaV2LinkArray) ToGetOvaV2LinkArrayOutput() GetOvaV2LinkArrayOutput {
-	return i.ToGetOvaV2LinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2LinkArray) ToGetOvaV2LinkArrayOutputWithContext(ctx context.Context) GetOvaV2LinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2LinkArrayOutput)
-}
-
-type GetOvaV2LinkOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2LinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2Link)(nil)).Elem()
-}
-
-func (o GetOvaV2LinkOutput) ToGetOvaV2LinkOutput() GetOvaV2LinkOutput {
-	return o
-}
-
-func (o GetOvaV2LinkOutput) ToGetOvaV2LinkOutputWithContext(ctx context.Context) GetOvaV2LinkOutput {
-	return o
-}
-
-// - The URL at which the entity described by the link can be accessed.
-func (o GetOvaV2LinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2Link) string { return v.Href }).(pulumi.StringOutput)
-}
-
-// - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
-func (o GetOvaV2LinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2Link) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetOvaV2LinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2LinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2Link)(nil)).Elem()
-}
-
-func (o GetOvaV2LinkArrayOutput) ToGetOvaV2LinkArrayOutput() GetOvaV2LinkArrayOutput {
-	return o
-}
-
-func (o GetOvaV2LinkArrayOutput) ToGetOvaV2LinkArrayOutputWithContext(ctx context.Context) GetOvaV2LinkArrayOutput {
-	return o
-}
-
-func (o GetOvaV2LinkArrayOutput) Index(i pulumi.IntInput) GetOvaV2LinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2Link {
-		return vs[0].([]GetOvaV2Link)[vs[1].(int)]
-	}).(GetOvaV2LinkOutput)
-}
-
-type GetOvaV2Source struct {
-	// - The source of the OVA file when it is being created from an object lite upload.
-	ObjectLiteSources []GetOvaV2SourceObjectLiteSource `pulumi:"objectLiteSources"`
-	// - The source of the OVA file when it is being created from a URL.
-	OvaUrlSources []GetOvaV2SourceOvaUrlSource `pulumi:"ovaUrlSources"`
-	// - The source of the OVA file when it is being created from a VM.
-	OvaVmSources []GetOvaV2SourceOvaVmSource `pulumi:"ovaVmSources"`
-}
-
-// GetOvaV2SourceInput is an input type that accepts GetOvaV2SourceArgs and GetOvaV2SourceOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceInput` via:
-//
-//	GetOvaV2SourceArgs{...}
-type GetOvaV2SourceInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceOutput() GetOvaV2SourceOutput
-	ToGetOvaV2SourceOutputWithContext(context.Context) GetOvaV2SourceOutput
-}
-
-type GetOvaV2SourceArgs struct {
-	// - The source of the OVA file when it is being created from an object lite upload.
-	ObjectLiteSources GetOvaV2SourceObjectLiteSourceArrayInput `pulumi:"objectLiteSources"`
-	// - The source of the OVA file when it is being created from a URL.
-	OvaUrlSources GetOvaV2SourceOvaUrlSourceArrayInput `pulumi:"ovaUrlSources"`
-	// - The source of the OVA file when it is being created from a VM.
-	OvaVmSources GetOvaV2SourceOvaVmSourceArrayInput `pulumi:"ovaVmSources"`
-}
-
-func (GetOvaV2SourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2Source)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceArgs) ToGetOvaV2SourceOutput() GetOvaV2SourceOutput {
-	return i.ToGetOvaV2SourceOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceArgs) ToGetOvaV2SourceOutputWithContext(ctx context.Context) GetOvaV2SourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOutput)
-}
-
-// GetOvaV2SourceArrayInput is an input type that accepts GetOvaV2SourceArray and GetOvaV2SourceArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceArrayInput` via:
-//
-//	GetOvaV2SourceArray{ GetOvaV2SourceArgs{...} }
-type GetOvaV2SourceArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceArrayOutput() GetOvaV2SourceArrayOutput
-	ToGetOvaV2SourceArrayOutputWithContext(context.Context) GetOvaV2SourceArrayOutput
-}
-
-type GetOvaV2SourceArray []GetOvaV2SourceInput
-
-func (GetOvaV2SourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2Source)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceArray) ToGetOvaV2SourceArrayOutput() GetOvaV2SourceArrayOutput {
-	return i.ToGetOvaV2SourceArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceArray) ToGetOvaV2SourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceArrayOutput)
-}
-
-type GetOvaV2SourceOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2Source)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceOutput) ToGetOvaV2SourceOutput() GetOvaV2SourceOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOutput) ToGetOvaV2SourceOutputWithContext(ctx context.Context) GetOvaV2SourceOutput {
-	return o
-}
-
-// - The source of the OVA file when it is being created from an object lite upload.
-func (o GetOvaV2SourceOutput) ObjectLiteSources() GetOvaV2SourceObjectLiteSourceArrayOutput {
-	return o.ApplyT(func(v GetOvaV2Source) []GetOvaV2SourceObjectLiteSource { return v.ObjectLiteSources }).(GetOvaV2SourceObjectLiteSourceArrayOutput)
-}
-
-// - The source of the OVA file when it is being created from a URL.
-func (o GetOvaV2SourceOutput) OvaUrlSources() GetOvaV2SourceOvaUrlSourceArrayOutput {
-	return o.ApplyT(func(v GetOvaV2Source) []GetOvaV2SourceOvaUrlSource { return v.OvaUrlSources }).(GetOvaV2SourceOvaUrlSourceArrayOutput)
-}
-
-// - The source of the OVA file when it is being created from a VM.
-func (o GetOvaV2SourceOutput) OvaVmSources() GetOvaV2SourceOvaVmSourceArrayOutput {
-	return o.ApplyT(func(v GetOvaV2Source) []GetOvaV2SourceOvaVmSource { return v.OvaVmSources }).(GetOvaV2SourceOvaVmSourceArrayOutput)
-}
-
-type GetOvaV2SourceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2Source)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceArrayOutput) ToGetOvaV2SourceArrayOutput() GetOvaV2SourceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceArrayOutput) ToGetOvaV2SourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2Source {
-		return vs[0].([]GetOvaV2Source)[vs[1].(int)]
-	}).(GetOvaV2SourceOutput)
-}
-
-type GetOvaV2SourceObjectLiteSource struct {
-	// - The identifier of the object from which the OVA file is being created.
-	Key string `pulumi:"key"`
-}
-
-// GetOvaV2SourceObjectLiteSourceInput is an input type that accepts GetOvaV2SourceObjectLiteSourceArgs and GetOvaV2SourceObjectLiteSourceOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceObjectLiteSourceInput` via:
-//
-//	GetOvaV2SourceObjectLiteSourceArgs{...}
-type GetOvaV2SourceObjectLiteSourceInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceObjectLiteSourceOutput() GetOvaV2SourceObjectLiteSourceOutput
-	ToGetOvaV2SourceObjectLiteSourceOutputWithContext(context.Context) GetOvaV2SourceObjectLiteSourceOutput
-}
-
-type GetOvaV2SourceObjectLiteSourceArgs struct {
-	// - The identifier of the object from which the OVA file is being created.
-	Key pulumi.StringInput `pulumi:"key"`
-}
-
-func (GetOvaV2SourceObjectLiteSourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2SourceObjectLiteSource)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceObjectLiteSourceArgs) ToGetOvaV2SourceObjectLiteSourceOutput() GetOvaV2SourceObjectLiteSourceOutput {
-	return i.ToGetOvaV2SourceObjectLiteSourceOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceObjectLiteSourceArgs) ToGetOvaV2SourceObjectLiteSourceOutputWithContext(ctx context.Context) GetOvaV2SourceObjectLiteSourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceObjectLiteSourceOutput)
-}
-
-// GetOvaV2SourceObjectLiteSourceArrayInput is an input type that accepts GetOvaV2SourceObjectLiteSourceArray and GetOvaV2SourceObjectLiteSourceArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceObjectLiteSourceArrayInput` via:
-//
-//	GetOvaV2SourceObjectLiteSourceArray{ GetOvaV2SourceObjectLiteSourceArgs{...} }
-type GetOvaV2SourceObjectLiteSourceArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceObjectLiteSourceArrayOutput() GetOvaV2SourceObjectLiteSourceArrayOutput
-	ToGetOvaV2SourceObjectLiteSourceArrayOutputWithContext(context.Context) GetOvaV2SourceObjectLiteSourceArrayOutput
-}
-
-type GetOvaV2SourceObjectLiteSourceArray []GetOvaV2SourceObjectLiteSourceInput
-
-func (GetOvaV2SourceObjectLiteSourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2SourceObjectLiteSource)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceObjectLiteSourceArray) ToGetOvaV2SourceObjectLiteSourceArrayOutput() GetOvaV2SourceObjectLiteSourceArrayOutput {
-	return i.ToGetOvaV2SourceObjectLiteSourceArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceObjectLiteSourceArray) ToGetOvaV2SourceObjectLiteSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceObjectLiteSourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceObjectLiteSourceArrayOutput)
-}
-
-type GetOvaV2SourceObjectLiteSourceOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceObjectLiteSourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2SourceObjectLiteSource)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceObjectLiteSourceOutput) ToGetOvaV2SourceObjectLiteSourceOutput() GetOvaV2SourceObjectLiteSourceOutput {
-	return o
-}
-
-func (o GetOvaV2SourceObjectLiteSourceOutput) ToGetOvaV2SourceObjectLiteSourceOutputWithContext(ctx context.Context) GetOvaV2SourceObjectLiteSourceOutput {
-	return o
-}
-
-// - The identifier of the object from which the OVA file is being created.
-func (o GetOvaV2SourceObjectLiteSourceOutput) Key() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2SourceObjectLiteSource) string { return v.Key }).(pulumi.StringOutput)
-}
-
-type GetOvaV2SourceObjectLiteSourceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceObjectLiteSourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2SourceObjectLiteSource)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceObjectLiteSourceArrayOutput) ToGetOvaV2SourceObjectLiteSourceArrayOutput() GetOvaV2SourceObjectLiteSourceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceObjectLiteSourceArrayOutput) ToGetOvaV2SourceObjectLiteSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceObjectLiteSourceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceObjectLiteSourceArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceObjectLiteSourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2SourceObjectLiteSource {
-		return vs[0].([]GetOvaV2SourceObjectLiteSource)[vs[1].(int)]
-	}).(GetOvaV2SourceObjectLiteSourceOutput)
-}
-
-type GetOvaV2SourceOvaUrlSource struct {
-	// - Basic authentication credentials for accessing the OVA file.
-	BasicAuths []GetOvaV2SourceOvaUrlSourceBasicAuth `pulumi:"basicAuths"`
-	// - The URL from which the OVA file can be downloaded.
-	Url string `pulumi:"url"`
-}
-
-// GetOvaV2SourceOvaUrlSourceInput is an input type that accepts GetOvaV2SourceOvaUrlSourceArgs and GetOvaV2SourceOvaUrlSourceOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceOvaUrlSourceInput` via:
-//
-//	GetOvaV2SourceOvaUrlSourceArgs{...}
-type GetOvaV2SourceOvaUrlSourceInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceOvaUrlSourceOutput() GetOvaV2SourceOvaUrlSourceOutput
-	ToGetOvaV2SourceOvaUrlSourceOutputWithContext(context.Context) GetOvaV2SourceOvaUrlSourceOutput
-}
-
-type GetOvaV2SourceOvaUrlSourceArgs struct {
-	// - Basic authentication credentials for accessing the OVA file.
-	BasicAuths GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput `pulumi:"basicAuths"`
-	// - The URL from which the OVA file can be downloaded.
-	Url pulumi.StringInput `pulumi:"url"`
-}
-
-func (GetOvaV2SourceOvaUrlSourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2SourceOvaUrlSource)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceOvaUrlSourceArgs) ToGetOvaV2SourceOvaUrlSourceOutput() GetOvaV2SourceOvaUrlSourceOutput {
-	return i.ToGetOvaV2SourceOvaUrlSourceOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceOvaUrlSourceArgs) ToGetOvaV2SourceOvaUrlSourceOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaUrlSourceOutput)
-}
-
-// GetOvaV2SourceOvaUrlSourceArrayInput is an input type that accepts GetOvaV2SourceOvaUrlSourceArray and GetOvaV2SourceOvaUrlSourceArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceOvaUrlSourceArrayInput` via:
-//
-//	GetOvaV2SourceOvaUrlSourceArray{ GetOvaV2SourceOvaUrlSourceArgs{...} }
-type GetOvaV2SourceOvaUrlSourceArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceOvaUrlSourceArrayOutput() GetOvaV2SourceOvaUrlSourceArrayOutput
-	ToGetOvaV2SourceOvaUrlSourceArrayOutputWithContext(context.Context) GetOvaV2SourceOvaUrlSourceArrayOutput
-}
-
-type GetOvaV2SourceOvaUrlSourceArray []GetOvaV2SourceOvaUrlSourceInput
-
-func (GetOvaV2SourceOvaUrlSourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2SourceOvaUrlSource)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceOvaUrlSourceArray) ToGetOvaV2SourceOvaUrlSourceArrayOutput() GetOvaV2SourceOvaUrlSourceArrayOutput {
-	return i.ToGetOvaV2SourceOvaUrlSourceArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceOvaUrlSourceArray) ToGetOvaV2SourceOvaUrlSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaUrlSourceArrayOutput)
-}
-
-type GetOvaV2SourceOvaUrlSourceOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceOvaUrlSourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2SourceOvaUrlSource)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceOvaUrlSourceOutput) ToGetOvaV2SourceOvaUrlSourceOutput() GetOvaV2SourceOvaUrlSourceOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaUrlSourceOutput) ToGetOvaV2SourceOvaUrlSourceOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceOutput {
-	return o
-}
-
-// - Basic authentication credentials for accessing the OVA file.
-func (o GetOvaV2SourceOvaUrlSourceOutput) BasicAuths() GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
-	return o.ApplyT(func(v GetOvaV2SourceOvaUrlSource) []GetOvaV2SourceOvaUrlSourceBasicAuth { return v.BasicAuths }).(GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput)
-}
-
-// - The URL from which the OVA file can be downloaded.
-func (o GetOvaV2SourceOvaUrlSourceOutput) Url() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2SourceOvaUrlSource) string { return v.Url }).(pulumi.StringOutput)
-}
-
-type GetOvaV2SourceOvaUrlSourceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceOvaUrlSourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2SourceOvaUrlSource)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceOvaUrlSourceArrayOutput) ToGetOvaV2SourceOvaUrlSourceArrayOutput() GetOvaV2SourceOvaUrlSourceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaUrlSourceArrayOutput) ToGetOvaV2SourceOvaUrlSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaUrlSourceArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceOvaUrlSourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2SourceOvaUrlSource {
-		return vs[0].([]GetOvaV2SourceOvaUrlSource)[vs[1].(int)]
-	}).(GetOvaV2SourceOvaUrlSourceOutput)
-}
-
-type GetOvaV2SourceOvaUrlSourceBasicAuth struct {
-	// - The password for basic authentication.
-	Password string `pulumi:"password"`
-	// Identifier for the User in the form an email address.
-	Username string `pulumi:"username"`
-}
-
-// GetOvaV2SourceOvaUrlSourceBasicAuthInput is an input type that accepts GetOvaV2SourceOvaUrlSourceBasicAuthArgs and GetOvaV2SourceOvaUrlSourceBasicAuthOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceOvaUrlSourceBasicAuthInput` via:
-//
-//	GetOvaV2SourceOvaUrlSourceBasicAuthArgs{...}
-type GetOvaV2SourceOvaUrlSourceBasicAuthInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceOvaUrlSourceBasicAuthOutput() GetOvaV2SourceOvaUrlSourceBasicAuthOutput
-	ToGetOvaV2SourceOvaUrlSourceBasicAuthOutputWithContext(context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthOutput
-}
-
-type GetOvaV2SourceOvaUrlSourceBasicAuthArgs struct {
-	// - The password for basic authentication.
-	Password pulumi.StringInput `pulumi:"password"`
-	// Identifier for the User in the form an email address.
-	Username pulumi.StringInput `pulumi:"username"`
-}
-
-func (GetOvaV2SourceOvaUrlSourceBasicAuthArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceBasicAuth)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceOvaUrlSourceBasicAuthArgs) ToGetOvaV2SourceOvaUrlSourceBasicAuthOutput() GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
-	return i.ToGetOvaV2SourceOvaUrlSourceBasicAuthOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceOvaUrlSourceBasicAuthArgs) ToGetOvaV2SourceOvaUrlSourceBasicAuthOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaUrlSourceBasicAuthOutput)
-}
-
-// GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput is an input type that accepts GetOvaV2SourceOvaUrlSourceBasicAuthArray and GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput` via:
-//
-//	GetOvaV2SourceOvaUrlSourceBasicAuthArray{ GetOvaV2SourceOvaUrlSourceBasicAuthArgs{...} }
-type GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput() GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput
-	ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutputWithContext(context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput
-}
-
-type GetOvaV2SourceOvaUrlSourceBasicAuthArray []GetOvaV2SourceOvaUrlSourceBasicAuthInput
-
-func (GetOvaV2SourceOvaUrlSourceBasicAuthArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2SourceOvaUrlSourceBasicAuth)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceOvaUrlSourceBasicAuthArray) ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput() GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
-	return i.ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceOvaUrlSourceBasicAuthArray) ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput)
-}
-
-type GetOvaV2SourceOvaUrlSourceBasicAuthOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceOvaUrlSourceBasicAuthOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceBasicAuth)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceOvaUrlSourceBasicAuthOutput) ToGetOvaV2SourceOvaUrlSourceBasicAuthOutput() GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaUrlSourceBasicAuthOutput) ToGetOvaV2SourceOvaUrlSourceBasicAuthOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
-	return o
-}
-
-// - The password for basic authentication.
-func (o GetOvaV2SourceOvaUrlSourceBasicAuthOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2SourceOvaUrlSourceBasicAuth) string { return v.Password }).(pulumi.StringOutput)
-}
-
-// Identifier for the User in the form an email address.
-func (o GetOvaV2SourceOvaUrlSourceBasicAuthOutput) Username() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2SourceOvaUrlSourceBasicAuth) string { return v.Username }).(pulumi.StringOutput)
-}
-
-type GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2SourceOvaUrlSourceBasicAuth)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput) ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput() GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput) ToGetOvaV2SourceOvaUrlSourceBasicAuthArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceOvaUrlSourceBasicAuthOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2SourceOvaUrlSourceBasicAuth {
-		return vs[0].([]GetOvaV2SourceOvaUrlSourceBasicAuth)[vs[1].(int)]
-	}).(GetOvaV2SourceOvaUrlSourceBasicAuthOutput)
-}
-
-type GetOvaV2SourceOvaVmSource struct {
-	// - The disk file format of the VM.
-	DiskFileFormat string `pulumi:"diskFileFormat"`
-	// - The external identifier of the VM from which the OVA file is being created.
-	VmExtId string `pulumi:"vmExtId"`
-}
-
-// GetOvaV2SourceOvaVmSourceInput is an input type that accepts GetOvaV2SourceOvaVmSourceArgs and GetOvaV2SourceOvaVmSourceOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceOvaVmSourceInput` via:
-//
-//	GetOvaV2SourceOvaVmSourceArgs{...}
-type GetOvaV2SourceOvaVmSourceInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceOvaVmSourceOutput() GetOvaV2SourceOvaVmSourceOutput
-	ToGetOvaV2SourceOvaVmSourceOutputWithContext(context.Context) GetOvaV2SourceOvaVmSourceOutput
-}
-
-type GetOvaV2SourceOvaVmSourceArgs struct {
-	// - The disk file format of the VM.
-	DiskFileFormat pulumi.StringInput `pulumi:"diskFileFormat"`
-	// - The external identifier of the VM from which the OVA file is being created.
-	VmExtId pulumi.StringInput `pulumi:"vmExtId"`
-}
-
-func (GetOvaV2SourceOvaVmSourceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2SourceOvaVmSource)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceOvaVmSourceArgs) ToGetOvaV2SourceOvaVmSourceOutput() GetOvaV2SourceOvaVmSourceOutput {
-	return i.ToGetOvaV2SourceOvaVmSourceOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceOvaVmSourceArgs) ToGetOvaV2SourceOvaVmSourceOutputWithContext(ctx context.Context) GetOvaV2SourceOvaVmSourceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaVmSourceOutput)
-}
-
-// GetOvaV2SourceOvaVmSourceArrayInput is an input type that accepts GetOvaV2SourceOvaVmSourceArray and GetOvaV2SourceOvaVmSourceArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2SourceOvaVmSourceArrayInput` via:
-//
-//	GetOvaV2SourceOvaVmSourceArray{ GetOvaV2SourceOvaVmSourceArgs{...} }
-type GetOvaV2SourceOvaVmSourceArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2SourceOvaVmSourceArrayOutput() GetOvaV2SourceOvaVmSourceArrayOutput
-	ToGetOvaV2SourceOvaVmSourceArrayOutputWithContext(context.Context) GetOvaV2SourceOvaVmSourceArrayOutput
-}
-
-type GetOvaV2SourceOvaVmSourceArray []GetOvaV2SourceOvaVmSourceInput
-
-func (GetOvaV2SourceOvaVmSourceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2SourceOvaVmSource)(nil)).Elem()
-}
-
-func (i GetOvaV2SourceOvaVmSourceArray) ToGetOvaV2SourceOvaVmSourceArrayOutput() GetOvaV2SourceOvaVmSourceArrayOutput {
-	return i.ToGetOvaV2SourceOvaVmSourceArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2SourceOvaVmSourceArray) ToGetOvaV2SourceOvaVmSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaVmSourceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2SourceOvaVmSourceArrayOutput)
-}
-
-type GetOvaV2SourceOvaVmSourceOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceOvaVmSourceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2SourceOvaVmSource)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceOvaVmSourceOutput) ToGetOvaV2SourceOvaVmSourceOutput() GetOvaV2SourceOvaVmSourceOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaVmSourceOutput) ToGetOvaV2SourceOvaVmSourceOutputWithContext(ctx context.Context) GetOvaV2SourceOvaVmSourceOutput {
-	return o
-}
-
-// - The disk file format of the VM.
-func (o GetOvaV2SourceOvaVmSourceOutput) DiskFileFormat() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2SourceOvaVmSource) string { return v.DiskFileFormat }).(pulumi.StringOutput)
-}
-
-// - The external identifier of the VM from which the OVA file is being created.
-func (o GetOvaV2SourceOvaVmSourceOutput) VmExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2SourceOvaVmSource) string { return v.VmExtId }).(pulumi.StringOutput)
-}
-
-type GetOvaV2SourceOvaVmSourceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2SourceOvaVmSourceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2SourceOvaVmSource)(nil)).Elem()
-}
-
-func (o GetOvaV2SourceOvaVmSourceArrayOutput) ToGetOvaV2SourceOvaVmSourceArrayOutput() GetOvaV2SourceOvaVmSourceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaVmSourceArrayOutput) ToGetOvaV2SourceOvaVmSourceArrayOutputWithContext(ctx context.Context) GetOvaV2SourceOvaVmSourceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2SourceOvaVmSourceArrayOutput) Index(i pulumi.IntInput) GetOvaV2SourceOvaVmSourceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2SourceOvaVmSource {
-		return vs[0].([]GetOvaV2SourceOvaVmSource)[vs[1].(int)]
-	}).(GetOvaV2SourceOvaVmSourceOutput)
-}
-
-type GetOvaV2VmConfig struct {
-	// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
-	ApcConfigs []GetOvaV2VmConfigApcConfig `pulumi:"apcConfigs"`
-	// Reference to an availability zone.
-	AvailabilityZones []GetOvaV2VmConfigAvailabilityZone `pulumi:"availabilityZones"`
-	// BIOS UUID of the VM. It should be of type UUID.
-	BiosUuid string `pulumi:"biosUuid"`
-	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootConfigs []GetOvaV2VmConfigBootConfig `pulumi:"bootConfigs"`
-	// Categories for the VM.
-	Categories []GetOvaV2VmConfigCategory `pulumi:"categories"`
-	// CD-ROMs attached to the VM.
-	CdRoms []GetOvaV2VmConfigCdRom `pulumi:"cdRoms"`
-	// Reference to a cluster.
-	Clusters []GetOvaV2VmConfigCluster `pulumi:"clusters"`
-	// VM creation time
-	CreateTime string `pulumi:"createTime"`
-	// VM description
-	Description string `pulumi:"description"`
-	// Disks attached to the VM.
-	Disks []GetOvaV2VmConfigDisk `pulumi:"disks"`
-	// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
-	EnabledCpuFeatures []string `pulumi:"enabledCpuFeatures"`
-	// -(Required) The external identifier for an OVA.
-	ExtId string `pulumi:"extId"`
-	// Generation UUID of the VM. It should be of type UUID.
-	GenerationUuid string `pulumi:"generationUuid"`
-	// GPUs attached to the VM.
-	Gpuses []GetOvaV2VmConfigGpus `pulumi:"gpuses"`
-	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
-	GuestCustomizations []GetOvaV2VmConfigGuestCustomization `pulumi:"guestCustomizations"`
-	// The details about Nutanix Guest Tools for a VM.
-	GuestTools []GetOvaV2VmConfigGuestTool `pulumi:"guestTools"`
-	// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-	HardwareClockTimezone string `pulumi:"hardwareClockTimezone"`
-	// Reference to the host, the VM is running on.
-	Hosts []GetOvaV2VmConfigHost `pulumi:"hosts"`
-	// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
-	IsAgentVm bool `pulumi:"isAgentVm"`
-	// Indicates whether to remove AHV branding from VM firmware tables or not.
-	IsBrandingEnabled bool `pulumi:"isBrandingEnabled"`
-	// Indicates whether the VM CPU hotplug is enabled.
-	IsCpuHotplugEnabled bool `pulumi:"isCpuHotplugEnabled"`
-	// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
-	IsCpuPassthroughEnabled bool `pulumi:"isCpuPassthroughEnabled"`
-	// Indicates whether the vGPU console is enabled or not.
-	IsGpuConsoleEnabled bool `pulumi:"isGpuConsoleEnabled"`
-	// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
-	IsMemoryOvercommitEnabled bool `pulumi:"isMemoryOvercommitEnabled"`
-	// Indicates whether the VM SCSI controller is enabled.
-	IsScsiControllerEnabled bool `pulumi:"isScsiControllerEnabled"`
-	// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
-	IsVcpuHardPinningEnabled bool `pulumi:"isVcpuHardPinningEnabled"`
-	// Indicates whether the VGA console should be disabled or not.
-	IsVgaConsoleEnabled bool `pulumi:"isVgaConsoleEnabled"`
-	// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-	MachineType string `pulumi:"machineType"`
-	// Memory size in bytes.
-	MemorySizeBytes int `pulumi:"memorySizeBytes"`
-	// Name of the GPU resource.
-	Name string `pulumi:"name"`
-	// NICs attached to the VM.
-	Nics []GetOvaV2VmConfigNic `pulumi:"nics"`
-	// Number of cores per socket.
-	NumCoresPerSocket int `pulumi:"numCoresPerSocket"`
-	// Number of NUMA nodes. 0 means NUMA is disabled.
-	NumNumaNodes int `pulumi:"numNumaNodes"`
-	// Number of vCPU sockets.
-	NumSockets int `pulumi:"numSockets"`
-	// Number of threads per core
-	NumThreadsPerCore int `pulumi:"numThreadsPerCore"`
-	// Ownership information for the VM.
-	OwnershipInfos []GetOvaV2VmConfigOwnershipInfo `pulumi:"ownershipInfos"`
-	PowerState     *string                         `pulumi:"powerState"`
-	// Reference to a project.
-	Projects []GetOvaV2VmConfigProject `pulumi:"projects"`
-	// Status of protection policy applied to this VM.
-	ProtectionPolicyStates []GetOvaV2VmConfigProtectionPolicyState `pulumi:"protectionPolicyStates"`
-	// The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
-	ProtectionType string `pulumi:"protectionType"`
-	// Serial ports configured on the VM.
-	SerialPorts []GetOvaV2VmConfigSerialPort `pulumi:"serialPorts"`
-	// Reference to an entity that the VM should be cloned or created from
-	Sources []GetOvaV2VmConfigSource `pulumi:"sources"`
-	// Storage configuration for VM disks
-	StorageConfigs []GetOvaV2VmConfigStorageConfig `pulumi:"storageConfigs"`
-	// VM last updated time.
-	UpdateTime string `pulumi:"updateTime"`
-	// Indicates how the vTPM for the VM should be configured.
-	VtpmConfigs []GetOvaV2VmConfigVtpmConfig `pulumi:"vtpmConfigs"`
-}
-
-// GetOvaV2VmConfigInput is an input type that accepts GetOvaV2VmConfigArgs and GetOvaV2VmConfigOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigInput` via:
-//
-//	GetOvaV2VmConfigArgs{...}
-type GetOvaV2VmConfigInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigOutput() GetOvaV2VmConfigOutput
-	ToGetOvaV2VmConfigOutputWithContext(context.Context) GetOvaV2VmConfigOutput
-}
-
-type GetOvaV2VmConfigArgs struct {
-	// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
-	ApcConfigs GetOvaV2VmConfigApcConfigArrayInput `pulumi:"apcConfigs"`
-	// Reference to an availability zone.
-	AvailabilityZones GetOvaV2VmConfigAvailabilityZoneArrayInput `pulumi:"availabilityZones"`
-	// BIOS UUID of the VM. It should be of type UUID.
-	BiosUuid pulumi.StringInput `pulumi:"biosUuid"`
-	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootConfigs GetOvaV2VmConfigBootConfigArrayInput `pulumi:"bootConfigs"`
-	// Categories for the VM.
-	Categories GetOvaV2VmConfigCategoryArrayInput `pulumi:"categories"`
-	// CD-ROMs attached to the VM.
-	CdRoms GetOvaV2VmConfigCdRomArrayInput `pulumi:"cdRoms"`
-	// Reference to a cluster.
-	Clusters GetOvaV2VmConfigClusterArrayInput `pulumi:"clusters"`
-	// VM creation time
-	CreateTime pulumi.StringInput `pulumi:"createTime"`
-	// VM description
-	Description pulumi.StringInput `pulumi:"description"`
-	// Disks attached to the VM.
-	Disks GetOvaV2VmConfigDiskArrayInput `pulumi:"disks"`
-	// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
-	EnabledCpuFeatures pulumi.StringArrayInput `pulumi:"enabledCpuFeatures"`
-	// -(Required) The external identifier for an OVA.
-	ExtId pulumi.StringInput `pulumi:"extId"`
-	// Generation UUID of the VM. It should be of type UUID.
-	GenerationUuid pulumi.StringInput `pulumi:"generationUuid"`
-	// GPUs attached to the VM.
-	Gpuses GetOvaV2VmConfigGpusArrayInput `pulumi:"gpuses"`
-	// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
-	GuestCustomizations GetOvaV2VmConfigGuestCustomizationArrayInput `pulumi:"guestCustomizations"`
-	// The details about Nutanix Guest Tools for a VM.
-	GuestTools GetOvaV2VmConfigGuestToolArrayInput `pulumi:"guestTools"`
-	// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-	HardwareClockTimezone pulumi.StringInput `pulumi:"hardwareClockTimezone"`
-	// Reference to the host, the VM is running on.
-	Hosts GetOvaV2VmConfigHostArrayInput `pulumi:"hosts"`
-	// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
-	IsAgentVm pulumi.BoolInput `pulumi:"isAgentVm"`
-	// Indicates whether to remove AHV branding from VM firmware tables or not.
-	IsBrandingEnabled pulumi.BoolInput `pulumi:"isBrandingEnabled"`
-	// Indicates whether the VM CPU hotplug is enabled.
-	IsCpuHotplugEnabled pulumi.BoolInput `pulumi:"isCpuHotplugEnabled"`
-	// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
-	IsCpuPassthroughEnabled pulumi.BoolInput `pulumi:"isCpuPassthroughEnabled"`
-	// Indicates whether the vGPU console is enabled or not.
-	IsGpuConsoleEnabled pulumi.BoolInput `pulumi:"isGpuConsoleEnabled"`
-	// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
-	IsMemoryOvercommitEnabled pulumi.BoolInput `pulumi:"isMemoryOvercommitEnabled"`
-	// Indicates whether the VM SCSI controller is enabled.
-	IsScsiControllerEnabled pulumi.BoolInput `pulumi:"isScsiControllerEnabled"`
-	// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
-	IsVcpuHardPinningEnabled pulumi.BoolInput `pulumi:"isVcpuHardPinningEnabled"`
-	// Indicates whether the VGA console should be disabled or not.
-	IsVgaConsoleEnabled pulumi.BoolInput `pulumi:"isVgaConsoleEnabled"`
-	// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-	MachineType pulumi.StringInput `pulumi:"machineType"`
-	// Memory size in bytes.
-	MemorySizeBytes pulumi.IntInput `pulumi:"memorySizeBytes"`
-	// Name of the GPU resource.
-	Name pulumi.StringInput `pulumi:"name"`
-	// NICs attached to the VM.
-	Nics GetOvaV2VmConfigNicArrayInput `pulumi:"nics"`
-	// Number of cores per socket.
-	NumCoresPerSocket pulumi.IntInput `pulumi:"numCoresPerSocket"`
-	// Number of NUMA nodes. 0 means NUMA is disabled.
-	NumNumaNodes pulumi.IntInput `pulumi:"numNumaNodes"`
-	// Number of vCPU sockets.
-	NumSockets pulumi.IntInput `pulumi:"numSockets"`
-	// Number of threads per core
-	NumThreadsPerCore pulumi.IntInput `pulumi:"numThreadsPerCore"`
-	// Ownership information for the VM.
-	OwnershipInfos GetOvaV2VmConfigOwnershipInfoArrayInput `pulumi:"ownershipInfos"`
-	PowerState     pulumi.StringPtrInput                   `pulumi:"powerState"`
-	// Reference to a project.
-	Projects GetOvaV2VmConfigProjectArrayInput `pulumi:"projects"`
-	// Status of protection policy applied to this VM.
-	ProtectionPolicyStates GetOvaV2VmConfigProtectionPolicyStateArrayInput `pulumi:"protectionPolicyStates"`
-	// The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
-	ProtectionType pulumi.StringInput `pulumi:"protectionType"`
-	// Serial ports configured on the VM.
-	SerialPorts GetOvaV2VmConfigSerialPortArrayInput `pulumi:"serialPorts"`
-	// Reference to an entity that the VM should be cloned or created from
-	Sources GetOvaV2VmConfigSourceArrayInput `pulumi:"sources"`
-	// Storage configuration for VM disks
-	StorageConfigs GetOvaV2VmConfigStorageConfigArrayInput `pulumi:"storageConfigs"`
-	// VM last updated time.
-	UpdateTime pulumi.StringInput `pulumi:"updateTime"`
-	// Indicates how the vTPM for the VM should be configured.
-	VtpmConfigs GetOvaV2VmConfigVtpmConfigArrayInput `pulumi:"vtpmConfigs"`
-}
-
-func (GetOvaV2VmConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfig)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigArgs) ToGetOvaV2VmConfigOutput() GetOvaV2VmConfigOutput {
-	return i.ToGetOvaV2VmConfigOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigArgs) ToGetOvaV2VmConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigOutput)
-}
-
-// GetOvaV2VmConfigArrayInput is an input type that accepts GetOvaV2VmConfigArray and GetOvaV2VmConfigArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigArrayInput` via:
-//
-//	GetOvaV2VmConfigArray{ GetOvaV2VmConfigArgs{...} }
-type GetOvaV2VmConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigArrayOutput() GetOvaV2VmConfigArrayOutput
-	ToGetOvaV2VmConfigArrayOutputWithContext(context.Context) GetOvaV2VmConfigArrayOutput
-}
-
-type GetOvaV2VmConfigArray []GetOvaV2VmConfigInput
-
-func (GetOvaV2VmConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfig)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigArray) ToGetOvaV2VmConfigArrayOutput() GetOvaV2VmConfigArrayOutput {
-	return i.ToGetOvaV2VmConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigArray) ToGetOvaV2VmConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigArrayOutput)
-}
-
-type GetOvaV2VmConfigOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfig)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigOutput) ToGetOvaV2VmConfigOutput() GetOvaV2VmConfigOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigOutput) ToGetOvaV2VmConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigOutput {
-	return o
-}
-
-// Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
-func (o GetOvaV2VmConfigOutput) ApcConfigs() GetOvaV2VmConfigApcConfigArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigApcConfig { return v.ApcConfigs }).(GetOvaV2VmConfigApcConfigArrayOutput)
-}
-
-// Reference to an availability zone.
-func (o GetOvaV2VmConfigOutput) AvailabilityZones() GetOvaV2VmConfigAvailabilityZoneArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigAvailabilityZone { return v.AvailabilityZones }).(GetOvaV2VmConfigAvailabilityZoneArrayOutput)
-}
-
-// BIOS UUID of the VM. It should be of type UUID.
-func (o GetOvaV2VmConfigOutput) BiosUuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.BiosUuid }).(pulumi.StringOutput)
-}
-
-// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-func (o GetOvaV2VmConfigOutput) BootConfigs() GetOvaV2VmConfigBootConfigArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigBootConfig { return v.BootConfigs }).(GetOvaV2VmConfigBootConfigArrayOutput)
-}
-
-// Categories for the VM.
-func (o GetOvaV2VmConfigOutput) Categories() GetOvaV2VmConfigCategoryArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigCategory { return v.Categories }).(GetOvaV2VmConfigCategoryArrayOutput)
-}
-
-// CD-ROMs attached to the VM.
-func (o GetOvaV2VmConfigOutput) CdRoms() GetOvaV2VmConfigCdRomArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigCdRom { return v.CdRoms }).(GetOvaV2VmConfigCdRomArrayOutput)
-}
-
-// Reference to a cluster.
-func (o GetOvaV2VmConfigOutput) Clusters() GetOvaV2VmConfigClusterArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigCluster { return v.Clusters }).(GetOvaV2VmConfigClusterArrayOutput)
-}
-
-// VM creation time
-func (o GetOvaV2VmConfigOutput) CreateTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.CreateTime }).(pulumi.StringOutput)
-}
-
-// VM description
-func (o GetOvaV2VmConfigOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// Disks attached to the VM.
-func (o GetOvaV2VmConfigOutput) Disks() GetOvaV2VmConfigDiskArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigDisk { return v.Disks }).(GetOvaV2VmConfigDiskArrayOutput)
-}
-
-// The list of additional CPU features to be enabled. HardwareVirtualization: Indicates whether hardware assisted virtualization should be enabled for the Guest OS or not. Once enabled, the Guest OS can deploy a nested hypervisor
-func (o GetOvaV2VmConfigOutput) EnabledCpuFeatures() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []string { return v.EnabledCpuFeatures }).(pulumi.StringArrayOutput)
-}
-
-// -(Required) The external identifier for an OVA.
-func (o GetOvaV2VmConfigOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-// Generation UUID of the VM. It should be of type UUID.
-func (o GetOvaV2VmConfigOutput) GenerationUuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.GenerationUuid }).(pulumi.StringOutput)
-}
-
-// GPUs attached to the VM.
-func (o GetOvaV2VmConfigOutput) Gpuses() GetOvaV2VmConfigGpusArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigGpus { return v.Gpuses }).(GetOvaV2VmConfigGpusArrayOutput)
-}
-
-// Stage a Sysprep or cloud-init configuration file to be used by the guest for the next boot. Note that the Sysprep command must be used to generalize the Windows VMs before triggering this API call.
-func (o GetOvaV2VmConfigOutput) GuestCustomizations() GetOvaV2VmConfigGuestCustomizationArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigGuestCustomization { return v.GuestCustomizations }).(GetOvaV2VmConfigGuestCustomizationArrayOutput)
-}
-
-// The details about Nutanix Guest Tools for a VM.
-func (o GetOvaV2VmConfigOutput) GuestTools() GetOvaV2VmConfigGuestToolArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigGuestTool { return v.GuestTools }).(GetOvaV2VmConfigGuestToolArrayOutput)
-}
-
-// VM hardware clock timezone in IANA TZDB format (America/Los_Angeles).
-func (o GetOvaV2VmConfigOutput) HardwareClockTimezone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.HardwareClockTimezone }).(pulumi.StringOutput)
-}
-
-// Reference to the host, the VM is running on.
-func (o GetOvaV2VmConfigOutput) Hosts() GetOvaV2VmConfigHostArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigHost { return v.Hosts }).(GetOvaV2VmConfigHostArrayOutput)
-}
-
-// Indicates whether the VM is an agent VM or not. When their host enters maintenance mode, once the normal VMs are evacuated, the agent VMs are powered off. When the host is restored, agent VMs are powered on before the normal VMs are restored. In other words, agent VMs cannot be HA-protected or live migrated.
-func (o GetOvaV2VmConfigOutput) IsAgentVm() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsAgentVm }).(pulumi.BoolOutput)
-}
-
-// Indicates whether to remove AHV branding from VM firmware tables or not.
-func (o GetOvaV2VmConfigOutput) IsBrandingEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsBrandingEnabled }).(pulumi.BoolOutput)
-}
-
-// Indicates whether the VM CPU hotplug is enabled.
-func (o GetOvaV2VmConfigOutput) IsCpuHotplugEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsCpuHotplugEnabled }).(pulumi.BoolOutput)
-}
-
-// Indicates whether to passthrough the host CPU features to the guest or not. Enabling this will make VM incapable of live migration.
-func (o GetOvaV2VmConfigOutput) IsCpuPassthroughEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsCpuPassthroughEnabled }).(pulumi.BoolOutput)
-}
-
-// Indicates whether the vGPU console is enabled or not.
-func (o GetOvaV2VmConfigOutput) IsGpuConsoleEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsGpuConsoleEnabled }).(pulumi.BoolOutput)
-}
-
-// Indicates whether the memory overcommit feature should be enabled for the VM or not. If enabled, parts of the VM memory may reside outside of the hypervisor physical memory. Once enabled, it should be expected that the VM may suffer performance degradation.
-func (o GetOvaV2VmConfigOutput) IsMemoryOvercommitEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsMemoryOvercommitEnabled }).(pulumi.BoolOutput)
-}
-
-// Indicates whether the VM SCSI controller is enabled.
-func (o GetOvaV2VmConfigOutput) IsScsiControllerEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsScsiControllerEnabled }).(pulumi.BoolOutput)
-}
-
-// Indicates whether the vCPUs should be hard pinned to specific pCPUs or not.
-func (o GetOvaV2VmConfigOutput) IsVcpuHardPinningEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsVcpuHardPinningEnabled }).(pulumi.BoolOutput)
-}
-
-// Indicates whether the VGA console should be disabled or not.
-func (o GetOvaV2VmConfigOutput) IsVgaConsoleEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) bool { return v.IsVgaConsoleEnabled }).(pulumi.BoolOutput)
-}
-
-// Machine type for the VM. Machine type Q35 is required for secure boot and does not support IDE disks.
-func (o GetOvaV2VmConfigOutput) MachineType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.MachineType }).(pulumi.StringOutput)
-}
-
-// Memory size in bytes.
-func (o GetOvaV2VmConfigOutput) MemorySizeBytes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.MemorySizeBytes }).(pulumi.IntOutput)
-}
-
-// Name of the GPU resource.
-func (o GetOvaV2VmConfigOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// NICs attached to the VM.
-func (o GetOvaV2VmConfigOutput) Nics() GetOvaV2VmConfigNicArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigNic { return v.Nics }).(GetOvaV2VmConfigNicArrayOutput)
-}
-
-// Number of cores per socket.
-func (o GetOvaV2VmConfigOutput) NumCoresPerSocket() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.NumCoresPerSocket }).(pulumi.IntOutput)
-}
-
-// Number of NUMA nodes. 0 means NUMA is disabled.
-func (o GetOvaV2VmConfigOutput) NumNumaNodes() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.NumNumaNodes }).(pulumi.IntOutput)
-}
-
-// Number of vCPU sockets.
-func (o GetOvaV2VmConfigOutput) NumSockets() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.NumSockets }).(pulumi.IntOutput)
-}
-
-// Number of threads per core
-func (o GetOvaV2VmConfigOutput) NumThreadsPerCore() pulumi.IntOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) int { return v.NumThreadsPerCore }).(pulumi.IntOutput)
-}
-
-// Ownership information for the VM.
-func (o GetOvaV2VmConfigOutput) OwnershipInfos() GetOvaV2VmConfigOwnershipInfoArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigOwnershipInfo { return v.OwnershipInfos }).(GetOvaV2VmConfigOwnershipInfoArrayOutput)
-}
-
-func (o GetOvaV2VmConfigOutput) PowerState() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) *string { return v.PowerState }).(pulumi.StringPtrOutput)
-}
-
-// Reference to a project.
-func (o GetOvaV2VmConfigOutput) Projects() GetOvaV2VmConfigProjectArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigProject { return v.Projects }).(GetOvaV2VmConfigProjectArrayOutput)
-}
-
-// Status of protection policy applied to this VM.
-func (o GetOvaV2VmConfigOutput) ProtectionPolicyStates() GetOvaV2VmConfigProtectionPolicyStateArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigProtectionPolicyState { return v.ProtectionPolicyStates }).(GetOvaV2VmConfigProtectionPolicyStateArrayOutput)
-}
-
-// The type of protection applied on a VM. PD_PROTECTED indicates a VM is protected using the Prism Element. RULE_PROTECTED indicates a VM protection using the Prism Central.
-func (o GetOvaV2VmConfigOutput) ProtectionType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.ProtectionType }).(pulumi.StringOutput)
-}
-
-// Serial ports configured on the VM.
-func (o GetOvaV2VmConfigOutput) SerialPorts() GetOvaV2VmConfigSerialPortArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigSerialPort { return v.SerialPorts }).(GetOvaV2VmConfigSerialPortArrayOutput)
-}
-
-// Reference to an entity that the VM should be cloned or created from
-func (o GetOvaV2VmConfigOutput) Sources() GetOvaV2VmConfigSourceArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigSource { return v.Sources }).(GetOvaV2VmConfigSourceArrayOutput)
-}
-
-// Storage configuration for VM disks
-func (o GetOvaV2VmConfigOutput) StorageConfigs() GetOvaV2VmConfigStorageConfigArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigStorageConfig { return v.StorageConfigs }).(GetOvaV2VmConfigStorageConfigArrayOutput)
-}
-
-// VM last updated time.
-func (o GetOvaV2VmConfigOutput) UpdateTime() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) string { return v.UpdateTime }).(pulumi.StringOutput)
-}
-
-// Indicates how the vTPM for the VM should be configured.
-func (o GetOvaV2VmConfigOutput) VtpmConfigs() GetOvaV2VmConfigVtpmConfigArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfig) []GetOvaV2VmConfigVtpmConfig { return v.VtpmConfigs }).(GetOvaV2VmConfigVtpmConfigArrayOutput)
-}
-
-type GetOvaV2VmConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfig)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigArrayOutput) ToGetOvaV2VmConfigArrayOutput() GetOvaV2VmConfigArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigArrayOutput) ToGetOvaV2VmConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfig {
-		return vs[0].([]GetOvaV2VmConfig)[vs[1].(int)]
-	}).(GetOvaV2VmConfigOutput)
-}
-
-type GetOvaV2VmConfigApcConfig struct {
-	// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
-	CpuModels []GetOvaV2VmConfigApcConfigCpuModel `pulumi:"cpuModels"`
-	// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
-	IsApcEnabled bool `pulumi:"isApcEnabled"`
-}
-
-// GetOvaV2VmConfigApcConfigInput is an input type that accepts GetOvaV2VmConfigApcConfigArgs and GetOvaV2VmConfigApcConfigOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigApcConfigInput` via:
-//
-//	GetOvaV2VmConfigApcConfigArgs{...}
-type GetOvaV2VmConfigApcConfigInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigApcConfigOutput() GetOvaV2VmConfigApcConfigOutput
-	ToGetOvaV2VmConfigApcConfigOutputWithContext(context.Context) GetOvaV2VmConfigApcConfigOutput
-}
-
-type GetOvaV2VmConfigApcConfigArgs struct {
-	// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
-	CpuModels GetOvaV2VmConfigApcConfigCpuModelArrayInput `pulumi:"cpuModels"`
-	// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
-	IsApcEnabled pulumi.BoolInput `pulumi:"isApcEnabled"`
-}
-
-func (GetOvaV2VmConfigApcConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigApcConfig)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigApcConfigArgs) ToGetOvaV2VmConfigApcConfigOutput() GetOvaV2VmConfigApcConfigOutput {
-	return i.ToGetOvaV2VmConfigApcConfigOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigApcConfigArgs) ToGetOvaV2VmConfigApcConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigApcConfigOutput)
-}
-
-// GetOvaV2VmConfigApcConfigArrayInput is an input type that accepts GetOvaV2VmConfigApcConfigArray and GetOvaV2VmConfigApcConfigArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigApcConfigArrayInput` via:
-//
-//	GetOvaV2VmConfigApcConfigArray{ GetOvaV2VmConfigApcConfigArgs{...} }
-type GetOvaV2VmConfigApcConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigApcConfigArrayOutput() GetOvaV2VmConfigApcConfigArrayOutput
-	ToGetOvaV2VmConfigApcConfigArrayOutputWithContext(context.Context) GetOvaV2VmConfigApcConfigArrayOutput
-}
-
-type GetOvaV2VmConfigApcConfigArray []GetOvaV2VmConfigApcConfigInput
-
-func (GetOvaV2VmConfigApcConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigApcConfig)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigApcConfigArray) ToGetOvaV2VmConfigApcConfigArrayOutput() GetOvaV2VmConfigApcConfigArrayOutput {
-	return i.ToGetOvaV2VmConfigApcConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigApcConfigArray) ToGetOvaV2VmConfigApcConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigApcConfigArrayOutput)
-}
-
-type GetOvaV2VmConfigApcConfigOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigApcConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigApcConfig)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigApcConfigOutput) ToGetOvaV2VmConfigApcConfigOutput() GetOvaV2VmConfigApcConfigOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigApcConfigOutput) ToGetOvaV2VmConfigApcConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigOutput {
-	return o
-}
-
-// CPU model associated with the VM if Advanced Processor Compatibility(APC) is enabled. If APC is enabled and no CPU model is explicitly set, a default baseline CPU model is picked by the system. See the APC documentation for more information
-func (o GetOvaV2VmConfigApcConfigOutput) CpuModels() GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigApcConfig) []GetOvaV2VmConfigApcConfigCpuModel { return v.CpuModels }).(GetOvaV2VmConfigApcConfigCpuModelArrayOutput)
-}
-
-// If enabled, the selected CPU model will be retained across live and cold migrations of the VM.
-func (o GetOvaV2VmConfigApcConfigOutput) IsApcEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigApcConfig) bool { return v.IsApcEnabled }).(pulumi.BoolOutput)
-}
-
-type GetOvaV2VmConfigApcConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigApcConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigApcConfig)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigApcConfigArrayOutput) ToGetOvaV2VmConfigApcConfigArrayOutput() GetOvaV2VmConfigApcConfigArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigApcConfigArrayOutput) ToGetOvaV2VmConfigApcConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigApcConfigArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigApcConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigApcConfig {
-		return vs[0].([]GetOvaV2VmConfigApcConfig)[vs[1].(int)]
-	}).(GetOvaV2VmConfigApcConfigOutput)
-}
-
-type GetOvaV2VmConfigApcConfigCpuModel struct {
-	// -(Required) The external identifier for an OVA.
-	ExtId string `pulumi:"extId"`
-	// Name of the CPU model associated with the VM.
-	Name string `pulumi:"name"`
-}
-
-// GetOvaV2VmConfigApcConfigCpuModelInput is an input type that accepts GetOvaV2VmConfigApcConfigCpuModelArgs and GetOvaV2VmConfigApcConfigCpuModelOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigApcConfigCpuModelInput` via:
-//
-//	GetOvaV2VmConfigApcConfigCpuModelArgs{...}
-type GetOvaV2VmConfigApcConfigCpuModelInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigApcConfigCpuModelOutput() GetOvaV2VmConfigApcConfigCpuModelOutput
-	ToGetOvaV2VmConfigApcConfigCpuModelOutputWithContext(context.Context) GetOvaV2VmConfigApcConfigCpuModelOutput
-}
-
-type GetOvaV2VmConfigApcConfigCpuModelArgs struct {
-	// -(Required) The external identifier for an OVA.
-	ExtId pulumi.StringInput `pulumi:"extId"`
-	// Name of the CPU model associated with the VM.
-	Name pulumi.StringInput `pulumi:"name"`
-}
-
-func (GetOvaV2VmConfigApcConfigCpuModelArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigApcConfigCpuModel)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigApcConfigCpuModelArgs) ToGetOvaV2VmConfigApcConfigCpuModelOutput() GetOvaV2VmConfigApcConfigCpuModelOutput {
-	return i.ToGetOvaV2VmConfigApcConfigCpuModelOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigApcConfigCpuModelArgs) ToGetOvaV2VmConfigApcConfigCpuModelOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigCpuModelOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigApcConfigCpuModelOutput)
-}
-
-// GetOvaV2VmConfigApcConfigCpuModelArrayInput is an input type that accepts GetOvaV2VmConfigApcConfigCpuModelArray and GetOvaV2VmConfigApcConfigCpuModelArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigApcConfigCpuModelArrayInput` via:
-//
-//	GetOvaV2VmConfigApcConfigCpuModelArray{ GetOvaV2VmConfigApcConfigCpuModelArgs{...} }
-type GetOvaV2VmConfigApcConfigCpuModelArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigApcConfigCpuModelArrayOutput() GetOvaV2VmConfigApcConfigCpuModelArrayOutput
-	ToGetOvaV2VmConfigApcConfigCpuModelArrayOutputWithContext(context.Context) GetOvaV2VmConfigApcConfigCpuModelArrayOutput
-}
-
-type GetOvaV2VmConfigApcConfigCpuModelArray []GetOvaV2VmConfigApcConfigCpuModelInput
-
-func (GetOvaV2VmConfigApcConfigCpuModelArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigApcConfigCpuModel)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigApcConfigCpuModelArray) ToGetOvaV2VmConfigApcConfigCpuModelArrayOutput() GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
-	return i.ToGetOvaV2VmConfigApcConfigCpuModelArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigApcConfigCpuModelArray) ToGetOvaV2VmConfigApcConfigCpuModelArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigApcConfigCpuModelArrayOutput)
-}
-
-type GetOvaV2VmConfigApcConfigCpuModelOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigApcConfigCpuModelOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigApcConfigCpuModel)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigApcConfigCpuModelOutput) ToGetOvaV2VmConfigApcConfigCpuModelOutput() GetOvaV2VmConfigApcConfigCpuModelOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigApcConfigCpuModelOutput) ToGetOvaV2VmConfigApcConfigCpuModelOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigCpuModelOutput {
-	return o
-}
-
-// -(Required) The external identifier for an OVA.
-func (o GetOvaV2VmConfigApcConfigCpuModelOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigApcConfigCpuModel) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-// Name of the CPU model associated with the VM.
-func (o GetOvaV2VmConfigApcConfigCpuModelOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigApcConfigCpuModel) string { return v.Name }).(pulumi.StringOutput)
-}
-
-type GetOvaV2VmConfigApcConfigCpuModelArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigApcConfigCpuModelArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigApcConfigCpuModel)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigApcConfigCpuModelArrayOutput) ToGetOvaV2VmConfigApcConfigCpuModelArrayOutput() GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigApcConfigCpuModelArrayOutput) ToGetOvaV2VmConfigApcConfigCpuModelArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigApcConfigCpuModelArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigApcConfigCpuModelArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigApcConfigCpuModelOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigApcConfigCpuModel {
-		return vs[0].([]GetOvaV2VmConfigApcConfigCpuModel)[vs[1].(int)]
-	}).(GetOvaV2VmConfigApcConfigCpuModelOutput)
-}
-
-type GetOvaV2VmConfigAvailabilityZone struct {
-	// -(Required) The external identifier for an OVA.
-	ExtId string `pulumi:"extId"`
-}
-
-// GetOvaV2VmConfigAvailabilityZoneInput is an input type that accepts GetOvaV2VmConfigAvailabilityZoneArgs and GetOvaV2VmConfigAvailabilityZoneOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigAvailabilityZoneInput` via:
-//
-//	GetOvaV2VmConfigAvailabilityZoneArgs{...}
-type GetOvaV2VmConfigAvailabilityZoneInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigAvailabilityZoneOutput() GetOvaV2VmConfigAvailabilityZoneOutput
-	ToGetOvaV2VmConfigAvailabilityZoneOutputWithContext(context.Context) GetOvaV2VmConfigAvailabilityZoneOutput
-}
-
-type GetOvaV2VmConfigAvailabilityZoneArgs struct {
-	// -(Required) The external identifier for an OVA.
-	ExtId pulumi.StringInput `pulumi:"extId"`
-}
-
-func (GetOvaV2VmConfigAvailabilityZoneArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigAvailabilityZone)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigAvailabilityZoneArgs) ToGetOvaV2VmConfigAvailabilityZoneOutput() GetOvaV2VmConfigAvailabilityZoneOutput {
-	return i.ToGetOvaV2VmConfigAvailabilityZoneOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigAvailabilityZoneArgs) ToGetOvaV2VmConfigAvailabilityZoneOutputWithContext(ctx context.Context) GetOvaV2VmConfigAvailabilityZoneOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigAvailabilityZoneOutput)
-}
-
-// GetOvaV2VmConfigAvailabilityZoneArrayInput is an input type that accepts GetOvaV2VmConfigAvailabilityZoneArray and GetOvaV2VmConfigAvailabilityZoneArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigAvailabilityZoneArrayInput` via:
-//
-//	GetOvaV2VmConfigAvailabilityZoneArray{ GetOvaV2VmConfigAvailabilityZoneArgs{...} }
-type GetOvaV2VmConfigAvailabilityZoneArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigAvailabilityZoneArrayOutput() GetOvaV2VmConfigAvailabilityZoneArrayOutput
-	ToGetOvaV2VmConfigAvailabilityZoneArrayOutputWithContext(context.Context) GetOvaV2VmConfigAvailabilityZoneArrayOutput
-}
-
-type GetOvaV2VmConfigAvailabilityZoneArray []GetOvaV2VmConfigAvailabilityZoneInput
-
-func (GetOvaV2VmConfigAvailabilityZoneArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigAvailabilityZone)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigAvailabilityZoneArray) ToGetOvaV2VmConfigAvailabilityZoneArrayOutput() GetOvaV2VmConfigAvailabilityZoneArrayOutput {
-	return i.ToGetOvaV2VmConfigAvailabilityZoneArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigAvailabilityZoneArray) ToGetOvaV2VmConfigAvailabilityZoneArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigAvailabilityZoneArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigAvailabilityZoneArrayOutput)
-}
-
-type GetOvaV2VmConfigAvailabilityZoneOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigAvailabilityZoneOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigAvailabilityZone)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigAvailabilityZoneOutput) ToGetOvaV2VmConfigAvailabilityZoneOutput() GetOvaV2VmConfigAvailabilityZoneOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigAvailabilityZoneOutput) ToGetOvaV2VmConfigAvailabilityZoneOutputWithContext(ctx context.Context) GetOvaV2VmConfigAvailabilityZoneOutput {
-	return o
-}
-
-// -(Required) The external identifier for an OVA.
-func (o GetOvaV2VmConfigAvailabilityZoneOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigAvailabilityZone) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-type GetOvaV2VmConfigAvailabilityZoneArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigAvailabilityZoneArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigAvailabilityZone)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigAvailabilityZoneArrayOutput) ToGetOvaV2VmConfigAvailabilityZoneArrayOutput() GetOvaV2VmConfigAvailabilityZoneArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigAvailabilityZoneArrayOutput) ToGetOvaV2VmConfigAvailabilityZoneArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigAvailabilityZoneArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigAvailabilityZoneArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigAvailabilityZoneOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigAvailabilityZone {
-		return vs[0].([]GetOvaV2VmConfigAvailabilityZone)[vs[1].(int)]
-	}).(GetOvaV2VmConfigAvailabilityZoneOutput)
-}
-
-type GetOvaV2VmConfigBootConfig struct {
-	// LegacyBoot config Object
-	LegacyBoots []GetOvaV2VmConfigBootConfigLegacyBoot `pulumi:"legacyBoots"`
-	// UefiBoot config Object
-	UefiBoots []GetOvaV2VmConfigBootConfigUefiBoot `pulumi:"uefiBoots"`
-}
-
-// GetOvaV2VmConfigBootConfigInput is an input type that accepts GetOvaV2VmConfigBootConfigArgs and GetOvaV2VmConfigBootConfigOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigInput` via:
-//
-//	GetOvaV2VmConfigBootConfigArgs{...}
-type GetOvaV2VmConfigBootConfigInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigOutput() GetOvaV2VmConfigBootConfigOutput
-	ToGetOvaV2VmConfigBootConfigOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigOutput
-}
-
-type GetOvaV2VmConfigBootConfigArgs struct {
-	// LegacyBoot config Object
-	LegacyBoots GetOvaV2VmConfigBootConfigLegacyBootArrayInput `pulumi:"legacyBoots"`
-	// UefiBoot config Object
-	UefiBoots GetOvaV2VmConfigBootConfigUefiBootArrayInput `pulumi:"uefiBoots"`
-}
-
-func (GetOvaV2VmConfigBootConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfig)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigArgs) ToGetOvaV2VmConfigBootConfigOutput() GetOvaV2VmConfigBootConfigOutput {
-	return i.ToGetOvaV2VmConfigBootConfigOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigArgs) ToGetOvaV2VmConfigBootConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigOutput)
-}
-
-// GetOvaV2VmConfigBootConfigArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigArray and GetOvaV2VmConfigBootConfigArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigArray{ GetOvaV2VmConfigBootConfigArgs{...} }
-type GetOvaV2VmConfigBootConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigArrayOutput() GetOvaV2VmConfigBootConfigArrayOutput
-	ToGetOvaV2VmConfigBootConfigArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigArray []GetOvaV2VmConfigBootConfigInput
-
-func (GetOvaV2VmConfigBootConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfig)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigArray) ToGetOvaV2VmConfigBootConfigArrayOutput() GetOvaV2VmConfigBootConfigArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigArray) ToGetOvaV2VmConfigBootConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfig)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigOutput) ToGetOvaV2VmConfigBootConfigOutput() GetOvaV2VmConfigBootConfigOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigOutput) ToGetOvaV2VmConfigBootConfigOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigOutput {
-	return o
-}
-
-// LegacyBoot config Object
-func (o GetOvaV2VmConfigBootConfigOutput) LegacyBoots() GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfig) []GetOvaV2VmConfigBootConfigLegacyBoot { return v.LegacyBoots }).(GetOvaV2VmConfigBootConfigLegacyBootArrayOutput)
-}
-
-// UefiBoot config Object
-func (o GetOvaV2VmConfigBootConfigOutput) UefiBoots() GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfig) []GetOvaV2VmConfigBootConfigUefiBoot { return v.UefiBoots }).(GetOvaV2VmConfigBootConfigUefiBootArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfig)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigArrayOutput) ToGetOvaV2VmConfigBootConfigArrayOutput() GetOvaV2VmConfigBootConfigArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigArrayOutput) ToGetOvaV2VmConfigBootConfigArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfig {
-		return vs[0].([]GetOvaV2VmConfigBootConfig)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBoot struct {
-	// Boot Device object
-	BootDevices []GetOvaV2VmConfigBootConfigLegacyBootBootDevice `pulumi:"bootDevices"`
-	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootOrders []string `pulumi:"bootOrders"`
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootArgs and GetOvaV2VmConfigBootConfigLegacyBootOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootArgs{...}
-type GetOvaV2VmConfigBootConfigLegacyBootInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootOutput() GetOvaV2VmConfigBootConfigLegacyBootOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootArgs struct {
-	// Boot Device object
-	BootDevices GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput `pulumi:"bootDevices"`
-	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
-}
-
-func (GetOvaV2VmConfigBootConfigLegacyBootArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBoot)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootArgs) ToGetOvaV2VmConfigBootConfigLegacyBootOutput() GetOvaV2VmConfigBootConfigLegacyBootOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootArgs) ToGetOvaV2VmConfigBootConfigLegacyBootOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootOutput)
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootArray and GetOvaV2VmConfigBootConfigLegacyBootArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootArray{ GetOvaV2VmConfigBootConfigLegacyBootArgs{...} }
-type GetOvaV2VmConfigBootConfigLegacyBootArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootArrayOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootArray []GetOvaV2VmConfigBootConfigLegacyBootInput
-
-func (GetOvaV2VmConfigBootConfigLegacyBootArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBoot)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootArray) ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootArray) ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBoot)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootOutput) ToGetOvaV2VmConfigBootConfigLegacyBootOutput() GetOvaV2VmConfigBootConfigLegacyBootOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootOutput) ToGetOvaV2VmConfigBootConfigLegacyBootOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootOutput {
-	return o
-}
-
-// Boot Device object
-func (o GetOvaV2VmConfigBootConfigLegacyBootOutput) BootDevices() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBoot) []GetOvaV2VmConfigBootConfigLegacyBootBootDevice {
-		return v.BootDevices
-	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput)
-}
-
-// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-func (o GetOvaV2VmConfigBootConfigLegacyBootOutput) BootOrders() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBoot)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBoot {
-		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBoot)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigLegacyBootOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDevice struct {
-	// Disk address.
-	BootDeviceDisks []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
-	// Disk Nic address.
-	BootDeviceNics []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic `pulumi:"bootDeviceNics"`
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs{...}
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs struct {
-	// Disk address.
-	BootDeviceDisks GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
-	// Disk Nic address.
-	BootDeviceNics GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput `pulumi:"bootDeviceNics"`
-}
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDevice)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput)
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray{ GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs{...} }
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDevice)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDevice)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
-	return o
-}
-
-// Disk address.
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) BootDeviceDisks() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDevice) []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk {
-		return v.BootDeviceDisks
-	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
-}
-
-// Disk Nic address.
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput) BootDeviceNics() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDevice) []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic {
-		return v.BootDeviceNics
-	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDevice)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBootBootDevice {
-		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBootBootDevice)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk struct {
-	// Virtual Machine disk (VM disk).
-	DiskAddresses []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs{...}
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs struct {
-	// Virtual Machine disk (VM disk).
-	DiskAddresses GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
-}
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput)
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray{ GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs{...} }
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return o
-}
-
-// Virtual Machine disk (VM disk).
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput) DiskAddresses() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk) []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
-		return v.DiskAddresses
-	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk {
-		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDisk)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress struct {
-	// Bus type for the device
-	BusType *string `pulumi:"busType"`
-	// Device index on the bus. This field is ignored unless the bus details are specified.
-	Index *int `pulumi:"index"`
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{...}
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs struct {
-	// Bus type for the device
-	BusType pulumi.StringPtrInput `pulumi:"busType"`
-	// Device index on the bus. This field is ignored unless the bus details are specified.
-	Index pulumi.IntPtrInput `pulumi:"index"`
-}
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput)
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray{ GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{...} }
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return o
-}
-
-// Bus type for the device
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) BusType() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *string {
-		return v.BusType
-	}).(pulumi.StringPtrOutput)
-}
-
-// Device index on the bus. This field is ignored unless the bus details are specified.
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput) Index() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress) *int { return v.Index }).(pulumi.IntPtrOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress {
-		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddress)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic struct {
-	// mac address
-	MacAddress *string `pulumi:"macAddress"`
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs{...}
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs struct {
-	// mac address
-	MacAddress pulumi.StringPtrInput `pulumi:"macAddress"`
-}
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput)
-}
-
-// GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray and GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray{ GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs{...} }
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput
-	ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray []GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return o
-}
-
-// mac address
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput) MacAddress() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic) *string { return v.MacAddress }).(pulumi.StringPtrOutput)
-}
-
-type GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput() GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) ToGetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic {
-		return vs[0].([]GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNic)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBoot struct {
-	// Boot Device object
-	BootDevices []GetOvaV2VmConfigBootConfigUefiBootBootDevice `pulumi:"bootDevices"`
-	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootOrders []string `pulumi:"bootOrders"`
-	// Indicate whether to enable secure boot or not
-	IsSecureBootEnabled bool `pulumi:"isSecureBootEnabled"`
-	// Configuration for NVRAM to be presented to the VM.
-	NvramDevices []GetOvaV2VmConfigBootConfigUefiBootNvramDevice `pulumi:"nvramDevices"`
-}
-
-// GetOvaV2VmConfigBootConfigUefiBootInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootArgs and GetOvaV2VmConfigBootConfigUefiBootOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootInput` via:
-//
-//	GetOvaV2VmConfigBootConfigUefiBootArgs{...}
-type GetOvaV2VmConfigBootConfigUefiBootInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigUefiBootOutput() GetOvaV2VmConfigBootConfigUefiBootOutput
-	ToGetOvaV2VmConfigBootConfigUefiBootOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootOutput
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootArgs struct {
-	// Boot Device object
-	BootDevices GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput `pulumi:"bootDevices"`
-	// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-	BootOrders pulumi.StringArrayInput `pulumi:"bootOrders"`
-	// Indicate whether to enable secure boot or not
-	IsSecureBootEnabled pulumi.BoolInput `pulumi:"isSecureBootEnabled"`
-	// Configuration for NVRAM to be presented to the VM.
-	NvramDevices GetOvaV2VmConfigBootConfigUefiBootNvramDeviceArrayInput `pulumi:"nvramDevices"`
-}
-
-func (GetOvaV2VmConfigBootConfigUefiBootArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBoot)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootArgs) ToGetOvaV2VmConfigBootConfigUefiBootOutput() GetOvaV2VmConfigBootConfigUefiBootOutput {
-	return i.ToGetOvaV2VmConfigBootConfigUefiBootOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootArgs) ToGetOvaV2VmConfigBootConfigUefiBootOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootOutput)
-}
-
-// GetOvaV2VmConfigBootConfigUefiBootArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootArray and GetOvaV2VmConfigBootConfigUefiBootArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigUefiBootArray{ GetOvaV2VmConfigBootConfigUefiBootArgs{...} }
-type GetOvaV2VmConfigBootConfigUefiBootArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigUefiBootArrayOutput() GetOvaV2VmConfigBootConfigUefiBootArrayOutput
-	ToGetOvaV2VmConfigBootConfigUefiBootArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootArray []GetOvaV2VmConfigBootConfigUefiBootInput
-
-func (GetOvaV2VmConfigBootConfigUefiBootArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBoot)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootArray) ToGetOvaV2VmConfigBootConfigUefiBootArrayOutput() GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigUefiBootArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootArray) ToGetOvaV2VmConfigBootConfigUefiBootArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigUefiBootOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBoot)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootOutput) ToGetOvaV2VmConfigBootConfigUefiBootOutput() GetOvaV2VmConfigBootConfigUefiBootOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootOutput) ToGetOvaV2VmConfigBootConfigUefiBootOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootOutput {
-	return o
-}
-
-// Boot Device object
-func (o GetOvaV2VmConfigBootConfigUefiBootOutput) BootDevices() GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBoot) []GetOvaV2VmConfigBootConfigUefiBootBootDevice {
-		return v.BootDevices
-	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput)
-}
-
-// Indicates the order of device types in which the VM should try to boot from. If the boot device order is not provided the system will decide an appropriate boot device order.
-func (o GetOvaV2VmConfigBootConfigUefiBootOutput) BootOrders() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBoot) []string { return v.BootOrders }).(pulumi.StringArrayOutput)
-}
-
-// Indicate whether to enable secure boot or not
-func (o GetOvaV2VmConfigBootConfigUefiBootOutput) IsSecureBootEnabled() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBoot) bool { return v.IsSecureBootEnabled }).(pulumi.BoolOutput)
-}
-
-// Configuration for NVRAM to be presented to the VM.
-func (o GetOvaV2VmConfigBootConfigUefiBootOutput) NvramDevices() GetOvaV2VmConfigBootConfigUefiBootNvramDeviceArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBoot) []GetOvaV2VmConfigBootConfigUefiBootNvramDevice {
-		return v.NvramDevices
-	}).(GetOvaV2VmConfigBootConfigUefiBootNvramDeviceArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigUefiBootArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBoot)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootArrayOutput() GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigUefiBootOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigUefiBoot {
-		return vs[0].([]GetOvaV2VmConfigBootConfigUefiBoot)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigUefiBootOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDevice struct {
-	// Disk address.
-	BootDeviceDisks []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk `pulumi:"bootDeviceDisks"`
-	// Disk Nic address.
-	BootDeviceNics []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic `pulumi:"bootDeviceNics"`
-}
-
-// GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs and GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput` via:
-//
-//	GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs{...}
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput
-	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs struct {
-	// Disk address.
-	BootDeviceDisks GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput `pulumi:"bootDeviceDisks"`
-	// Disk Nic address.
-	BootDeviceNics GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicArrayInput `pulumi:"bootDeviceNics"`
-}
-
-func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDevice)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
-	return i.ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput)
-}
-
-// GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray and GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray{ GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs{...} }
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput
-	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray []GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput
-
-func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBootBootDevice)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDevice)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
-	return o
-}
-
-// Disk address.
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) BootDeviceDisks() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBootBootDevice) []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk {
-		return v.BootDeviceDisks
-	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
-}
-
-// Disk Nic address.
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput) BootDeviceNics() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBootBootDevice) []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNic {
-		return v.BootDeviceNics
-	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceNicArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBootBootDevice)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigUefiBootBootDevice {
-		return vs[0].([]GetOvaV2VmConfigBootConfigUefiBootBootDevice)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk struct {
-	// Virtual Machine disk (VM disk).
-	DiskAddresses []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress `pulumi:"diskAddresses"`
-}
-
-// GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs and GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput` via:
-//
-//	GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs{...}
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput
-	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs struct {
-	// Virtual Machine disk (VM disk).
-	DiskAddresses GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayInput `pulumi:"diskAddresses"`
-}
-
-func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return i.ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput)
-}
-
-// GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput is an input type that accepts GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray and GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput values.
-// You can construct a concrete instance of `GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput` via:
-//
-//	GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray{ GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs{...} }
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput interface {
-	pulumi.Input
-
-	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput
-	ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput
-
-func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return i.ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(context.Background())
-}
-
-func (i GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return o
-}
-
-// Virtual Machine disk (VM disk).
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput) DiskAddresses() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput {
-	return o.ApplyT(func(v GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk) []GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddress {
-		return v.DiskAddresses
-	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskDiskAddressArrayOutput)
-}
-
-type GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)(nil)).Elem()
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput() GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) ToGetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutputWithContext(ctx context.Context) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput {
-	return o
-}
-
-func (o GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput) Index(i pulumi.IntInput) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk {
-		return vs[0].([]GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDisk)[vs[1].(int)]
-	}).(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyLinkInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyLinkArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailInput)(nil)).Elem(), GetLcmEntityV2EntityDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailArrayInput)(nil)).Elem(), GetLcmEntityV2EntityDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailValueInput)(nil)).Elem(), GetLcmEntityV2EntityDetailValueArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailValueArrayInput)(nil)).Elem(), GetLcmEntityV2EntityDetailValueArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailValueMapOfStringInput)(nil)).Elem(), GetLcmEntityV2EntityDetailValueMapOfStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailValueMapOfStringArrayInput)(nil)).Elem(), GetLcmEntityV2EntityDetailValueMapOfStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2LinkInput)(nil)).Elem(), GetLcmEntityV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2LinkArrayInput)(nil)).Elem(), GetLcmEntityV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2LocationInfoInput)(nil)).Elem(), GetLcmEntityV2LocationInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2LocationInfoArrayInput)(nil)).Elem(), GetLcmEntityV2LocationInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2SubEntityInput)(nil)).Elem(), GetLcmEntityV2SubEntityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2SubEntityArrayInput)(nil)).Elem(), GetLcmEntityV2SubEntityArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2SubEntityLinkInput)(nil)).Elem(), GetLcmEntityV2SubEntityLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2SubEntityLinkArrayInput)(nil)).Elem(), GetLcmEntityV2SubEntityLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2FrameworkVersionInput)(nil)).Elem(), GetLcmStatusV2FrameworkVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2FrameworkVersionArrayInput)(nil)).Elem(), GetLcmStatusV2FrameworkVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2InProgressOperationInput)(nil)).Elem(), GetLcmStatusV2InProgressOperationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2InProgressOperationArrayInput)(nil)).Elem(), GetLcmStatusV2InProgressOperationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2LinkInput)(nil)).Elem(), GetLcmStatusV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2LinkArrayInput)(nil)).Elem(), GetLcmStatusV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2ConnectionStatusInput)(nil)).Elem(), GetLocalDomainV2ConnectionStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2ConnectionStatusArrayInput)(nil)).Elem(), GetLocalDomainV2ConnectionStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2ConnectionStatusServiceStatusInput)(nil)).Elem(), GetLocalDomainV2ConnectionStatusServiceStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2ConnectionStatusServiceStatusArrayInput)(nil)).Elem(), GetLocalDomainV2ConnectionStatusServiceStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2LocationInput)(nil)).Elem(), GetLocalDomainV2LocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2LocationArrayInput)(nil)).Elem(), GetLocalDomainV2LocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2LocationCoordinateInput)(nil)).Elem(), GetLocalDomainV2LocationCoordinateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2LocationCoordinateArrayInput)(nil)).Elem(), GetLocalDomainV2LocationCoordinateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2RegistrationStatusInput)(nil)).Elem(), GetLocalDomainV2RegistrationStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocalDomainV2RegistrationStatusArrayInput)(nil)).Elem(), GetLocalDomainV2RegistrationStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocationsV2LocationInput)(nil)).Elem(), GetLocationsV2LocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocationsV2LocationArrayInput)(nil)).Elem(), GetLocationsV2LocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocationsV2LocationCoordinateInput)(nil)).Elem(), GetLocationsV2LocationCoordinateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocationsV2LocationCoordinateArrayInput)(nil)).Elem(), GetLocationsV2LocationCoordinateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocationsV2LocationLinkInput)(nil)).Elem(), GetLocationsV2LocationLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetLocationsV2LocationLinkArrayInput)(nil)).Elem(), GetLocationsV2LocationLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeInput)(nil)).Elem(), GetNdbCloneDatabaseNodeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeInfoInput)(nil)).Elem(), GetNdbCloneDatabaseNodeInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeInfoArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodePropertyInput)(nil)).Elem(), GetNdbCloneDatabaseNodePropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodePropertyArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodePropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainInput)(nil)).Elem(), GetNdbCloneDatabaseNodeProtectionDomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeProtectionDomainArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainPropertyInput)(nil)).Elem(), GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeProtectionDomainPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeTagInput)(nil)).Elem(), GetNdbCloneDatabaseNodeTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeTagArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneFilterInput)(nil)).Elem(), GetNdbCloneFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneFilterArrayInput)(nil)).Elem(), GetNdbCloneFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoInput)(nil)).Elem(), GetNdbCloneInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoArrayInput)(nil)).Elem(), GetNdbCloneInfoArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigBpgDbParamInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigBpgDbParamArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigBpgDbParamArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigBpgDbParamArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArchiveStorageInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageArchiveStorageArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageDataDiskInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageDataDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageDataDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageLogDiskInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageLogDiskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageLogDiskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigVmPropertyInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigVmPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigVmPropertyArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigVmPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigInput)(nil)).Elem(), GetNdbCloneLcmConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigArrayInput)(nil)).Elem(), GetNdbCloneLcmConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigExpiryDetailInput)(nil)).Elem(), GetNdbCloneLcmConfigExpiryDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigExpiryDetailArrayInput)(nil)).Elem(), GetNdbCloneLcmConfigExpiryDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigPostDeleteCommandInput)(nil)).Elem(), GetNdbCloneLcmConfigPostDeleteCommandArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigPostDeleteCommandArrayInput)(nil)).Elem(), GetNdbCloneLcmConfigPostDeleteCommandArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigPreDeleteCommandInput)(nil)).Elem(), GetNdbCloneLcmConfigPreDeleteCommandArgs{})
@@ -64405,80 +64600,86 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreMetadataArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpInput)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipArrayInput)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Input)(nil)).Elem(), GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Args{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationV2AssociatedEndpointListInput)(nil)).Elem(), GetOperationV2AssociatedEndpointListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationV2AssociatedEndpointListArrayInput)(nil)).Elem(), GetOperationV2AssociatedEndpointListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationInput)(nil)).Elem(), GetOperationsV2OperationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationArrayInput)(nil)).Elem(), GetOperationsV2OperationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationAssociatedEndpointListInput)(nil)).Elem(), GetOperationsV2OperationAssociatedEndpointListArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOperationsV2OperationAssociatedEndpointListArrayInput)(nil)).Elem(), GetOperationsV2OperationAssociatedEndpointListArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumInput)(nil)).Elem(), GetOvaV2ChecksumArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumArrayInput)(nil)).Elem(), GetOvaV2ChecksumArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumOvaSha1ChecksumInput)(nil)).Elem(), GetOvaV2ChecksumOvaSha1ChecksumArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumOvaSha1ChecksumArrayInput)(nil)).Elem(), GetOvaV2ChecksumOvaSha1ChecksumArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumOvaSha256ChecksumInput)(nil)).Elem(), GetOvaV2ChecksumOvaSha256ChecksumArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2ChecksumOvaSha256ChecksumArrayInput)(nil)).Elem(), GetOvaV2ChecksumOvaSha256ChecksumArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByInput)(nil)).Elem(), GetOvaV2CreatedByArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByArrayInput)(nil)).Elem(), GetOvaV2CreatedByArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeArrayInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeValueArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueArrayInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeValueArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueMapOfStringInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayInput)(nil)).Elem(), GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyInput)(nil)).Elem(), GetOvaV2CreatedByBucketsAccessKeyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyArrayInput)(nil)).Elem(), GetOvaV2CreatedByBucketsAccessKeyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyLinkInput)(nil)).Elem(), GetOvaV2CreatedByBucketsAccessKeyLinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByBucketsAccessKeyLinkArrayInput)(nil)).Elem(), GetOvaV2CreatedByBucketsAccessKeyLinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByLinkInput)(nil)).Elem(), GetOvaV2CreatedByLinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2CreatedByLinkArrayInput)(nil)).Elem(), GetOvaV2CreatedByLinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2LinkInput)(nil)).Elem(), GetOvaV2LinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2LinkArrayInput)(nil)).Elem(), GetOvaV2LinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceInput)(nil)).Elem(), GetOvaV2SourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceArrayInput)(nil)).Elem(), GetOvaV2SourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceObjectLiteSourceInput)(nil)).Elem(), GetOvaV2SourceObjectLiteSourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceObjectLiteSourceArrayInput)(nil)).Elem(), GetOvaV2SourceObjectLiteSourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceInput)(nil)).Elem(), GetOvaV2SourceOvaUrlSourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceArrayInput)(nil)).Elem(), GetOvaV2SourceOvaUrlSourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceBasicAuthInput)(nil)).Elem(), GetOvaV2SourceOvaUrlSourceBasicAuthArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaUrlSourceBasicAuthArrayInput)(nil)).Elem(), GetOvaV2SourceOvaUrlSourceBasicAuthArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaVmSourceInput)(nil)).Elem(), GetOvaV2SourceOvaVmSourceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2SourceOvaVmSourceArrayInput)(nil)).Elem(), GetOvaV2SourceOvaVmSourceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigInput)(nil)).Elem(), GetOvaV2VmConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigArrayInput)(nil)).Elem(), GetOvaV2VmConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigApcConfigInput)(nil)).Elem(), GetOvaV2VmConfigApcConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigApcConfigArrayInput)(nil)).Elem(), GetOvaV2VmConfigApcConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigApcConfigCpuModelInput)(nil)).Elem(), GetOvaV2VmConfigApcConfigCpuModelArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigApcConfigCpuModelArrayInput)(nil)).Elem(), GetOvaV2VmConfigApcConfigCpuModelArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigAvailabilityZoneInput)(nil)).Elem(), GetOvaV2VmConfigAvailabilityZoneArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigAvailabilityZoneArrayInput)(nil)).Elem(), GetOvaV2VmConfigAvailabilityZoneArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayInput)(nil)).Elem(), GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArray{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyLinkOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailValueOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailValueArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailValueMapOfStringOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2LinkOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2LocationInfoOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2LocationInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2SubEntityOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2SubEntityArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2SubEntityLinkOutput{})
+	pulumi.RegisterOutputType(GetLcmEntityV2SubEntityLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmStatusV2FrameworkVersionOutput{})
+	pulumi.RegisterOutputType(GetLcmStatusV2FrameworkVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmStatusV2InProgressOperationOutput{})
+	pulumi.RegisterOutputType(GetLcmStatusV2InProgressOperationArrayOutput{})
+	pulumi.RegisterOutputType(GetLcmStatusV2LinkOutput{})
+	pulumi.RegisterOutputType(GetLcmStatusV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2ConnectionStatusOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2ConnectionStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2ConnectionStatusServiceStatusOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2ConnectionStatusServiceStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2LocationOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2LocationArrayOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2LocationCoordinateOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2LocationCoordinateArrayOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2RegistrationStatusOutput{})
+	pulumi.RegisterOutputType(GetLocalDomainV2RegistrationStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetLocationsV2LocationOutput{})
+	pulumi.RegisterOutputType(GetLocationsV2LocationArrayOutput{})
+	pulumi.RegisterOutputType(GetLocationsV2LocationCoordinateOutput{})
+	pulumi.RegisterOutputType(GetLocationsV2LocationCoordinateArrayOutput{})
+	pulumi.RegisterOutputType(GetLocationsV2LocationLinkOutput{})
+	pulumi.RegisterOutputType(GetLocationsV2LocationLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeInfoOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodePropertyOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodePropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeProtectionDomainOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeProtectionDomainArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeTagOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeTagArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneFilterOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigBpgDbParamOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageDataDiskOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageLogDiskOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigVmPropertyOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigVmPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneLcmConfigOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneLcmConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneLcmConfigExpiryDetailOutput{})
+	pulumi.RegisterOutputType(GetNdbCloneLcmConfigExpiryDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetNdbCloneLcmConfigPostDeleteCommandOutput{})
 	pulumi.RegisterOutputType(GetNdbCloneLcmConfigPostDeleteCommandArrayOutput{})
 	pulumi.RegisterOutputType(GetNdbCloneLcmConfigPreDeleteCommandOutput{})
@@ -65393,78 +65594,4 @@ func init() {
 	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpOutput{})
 	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpArrayOutput{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpIpv4Output{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStorePublicNetworkIpIpv6Output{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpOutput{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpArrayOutput{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv4Output{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkDnsIpIpv6Output{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipOutput{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipArrayOutput{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv4Output{})
-	pulumi.RegisterOutputType(GetObjectStoresV2ObjectStoreStorageNetworkVipIpv6Output{})
-	pulumi.RegisterOutputType(GetOperationV2AssociatedEndpointListOutput{})
-	pulumi.RegisterOutputType(GetOperationV2AssociatedEndpointListArrayOutput{})
-	pulumi.RegisterOutputType(GetOperationsV2OperationOutput{})
-	pulumi.RegisterOutputType(GetOperationsV2OperationArrayOutput{})
-	pulumi.RegisterOutputType(GetOperationsV2OperationAssociatedEndpointListOutput{})
-	pulumi.RegisterOutputType(GetOperationsV2OperationAssociatedEndpointListArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2ChecksumOutput{})
-	pulumi.RegisterOutputType(GetOvaV2ChecksumArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2ChecksumOvaSha1ChecksumOutput{})
-	pulumi.RegisterOutputType(GetOvaV2ChecksumOvaSha1ChecksumArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2ChecksumOvaSha256ChecksumOutput{})
-	pulumi.RegisterOutputType(GetOvaV2ChecksumOvaSha256ChecksumArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeValueOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeValueArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByAdditionalAttributeValueMapOfStringArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByBucketsAccessKeyOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByBucketsAccessKeyArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByBucketsAccessKeyLinkOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByBucketsAccessKeyLinkArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByLinkOutput{})
-	pulumi.RegisterOutputType(GetOvaV2CreatedByLinkArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2LinkOutput{})
-	pulumi.RegisterOutputType(GetOvaV2LinkArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceObjectLiteSourceOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceObjectLiteSourceArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceOvaUrlSourceOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceOvaUrlSourceArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceOvaUrlSourceBasicAuthOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceOvaUrlSourceBasicAuthArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceOvaVmSourceOutput{})
-	pulumi.RegisterOutputType(GetOvaV2SourceOvaVmSourceArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigApcConfigOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigApcConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigApcConfigCpuModelOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigApcConfigCpuModelArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigAvailabilityZoneOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigAvailabilityZoneArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceDiskDiskAddressArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigLegacyBootBootDeviceBootDeviceNicArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceArrayOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskOutput{})
-	pulumi.RegisterOutputType(GetOvaV2VmConfigBootConfigUefiBootBootDeviceBootDeviceDiskArrayOutput{})
 }

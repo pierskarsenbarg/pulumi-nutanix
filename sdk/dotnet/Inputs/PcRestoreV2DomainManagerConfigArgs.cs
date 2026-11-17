@@ -34,7 +34,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public InputList<Inputs.PcRestoreV2DomainManagerConfigCredentialArgs> Credentials
         {
             get => _credentials ?? (_credentials = new InputList<Inputs.PcRestoreV2DomainManagerConfigCredentialArgs>());
-            set => _credentials = value;
+            set
+            {
+                var emptySecret = Output.CreateSecret(ImmutableArray.Create<Inputs.PcRestoreV2DomainManagerConfigCredentialArgs>());
+                _credentials = Output.All(value, emptySecret).Apply(v => v[0]);
+            }
         }
 
         /// <summary>

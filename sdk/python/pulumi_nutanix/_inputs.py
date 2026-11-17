@@ -43,6 +43,8 @@ __all__ = [
     'AdGroupCategoryMappingV2AdInfoArgsDict',
     'AdGroupCategoryMappingV2LinkArgs',
     'AdGroupCategoryMappingV2LinkArgsDict',
+    'AddDomainV2LinkArgs',
+    'AddDomainV2LinkArgsDict',
     'AddressGroupIpAddressBlockListArgs',
     'AddressGroupIpAddressBlockListArgsDict',
     'AddressGroupsV2IpRangeArgs',
@@ -973,6 +975,18 @@ __all__ = [
     'LcmUpgradeV2EntityUpdateSpecArgsDict',
     'LcmUpgradeV2ManagementServerArgs',
     'LcmUpgradeV2ManagementServerArgsDict',
+    'LocalDomainV2ConnectionStatusArgs',
+    'LocalDomainV2ConnectionStatusArgsDict',
+    'LocalDomainV2ConnectionStatusServiceStatusArgs',
+    'LocalDomainV2ConnectionStatusServiceStatusArgsDict',
+    'LocalDomainV2CredentialsArgs',
+    'LocalDomainV2CredentialsArgsDict',
+    'LocalDomainV2LocationArgs',
+    'LocalDomainV2LocationArgsDict',
+    'LocalDomainV2LocationCoordinateArgs',
+    'LocalDomainV2LocationCoordinateArgsDict',
+    'LocalDomainV2RegistrationStatusArgs',
+    'LocalDomainV2RegistrationStatusArgsDict',
     'NdbCloneActionargumentArgs',
     'NdbCloneActionargumentArgsDict',
     'NdbCloneDatabaseNodeArgs',
@@ -2919,6 +2933,16 @@ __all__ = [
     'RecoveryPointsV2VolumeGroupRecoveryPointDiskRecoveryPointArgsDict',
     'RecoveryPointsV2VolumeGroupRecoveryPointLinkArgs',
     'RecoveryPointsV2VolumeGroupRecoveryPointLinkArgsDict',
+    'RegisteredDomainV2LinkArgs',
+    'RegisteredDomainV2LinkArgsDict',
+    'RegisteredDomainV2PlatformDataArgs',
+    'RegisteredDomainV2PlatformDataArgsDict',
+    'RegisteredDomainV2RegistrationConfigArgs',
+    'RegisteredDomainV2RegistrationConfigArgsDict',
+    'RegisteredDomainV2RegistrationConfigCredentialsArgs',
+    'RegisteredDomainV2RegistrationConfigCredentialsArgsDict',
+    'RegisteredDomainV2TunnelArgs',
+    'RegisteredDomainV2TunnelArgsDict',
     'ResourceGroupV2LinkArgs',
     'ResourceGroupV2LinkArgsDict',
     'ResourceGroupV2PlacementTargetArgs',
@@ -3647,6 +3671,42 @@ __all__ = [
     'TemplateV2UpdatedByAdditionalAttributeValueArgsDict',
     'TemplateV2UpdatedByAdditionalAttributeValueMapOfStringArgs',
     'TemplateV2UpdatedByAdditionalAttributeValueMapOfStringArgsDict',
+    'TenantDomainAllocationV2ExternalNetworkConfigArgs',
+    'TenantDomainAllocationV2ExternalNetworkConfigArgsDict',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfigArgs',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfigArgsDict',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgsDict',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs',
+    'TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgsDict',
+    'TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs',
+    'TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgsDict',
+    'TenantDomainAllocationV2LinkArgs',
+    'TenantDomainAllocationV2LinkArgsDict',
+    'TenantDomainAllocationV2ProjectArgs',
+    'TenantDomainAllocationV2ProjectArgsDict',
+    'TenantDomainAllocationV2ProjectQuotaArgs',
+    'TenantDomainAllocationV2ProjectQuotaArgsDict',
+    'TenantDomainAllocationV2ProjectResourceGroupArgs',
+    'TenantDomainAllocationV2ProjectResourceGroupArgsDict',
+    'TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs',
+    'TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgsDict',
+    'TenantDomainAllocationV2StateInfoArgs',
+    'TenantDomainAllocationV2StateInfoArgsDict',
+    'TenantMembershipV2IdentityDetailsArgs',
+    'TenantMembershipV2IdentityDetailsArgsDict',
+    'TenantMembershipV2LinkArgs',
+    'TenantMembershipV2LinkArgsDict',
+    'TenantMembershipV2StateInfoArgs',
+    'TenantMembershipV2StateInfoArgsDict',
+    'TenantV2AdminInfoArgs',
+    'TenantV2AdminInfoArgsDict',
+    'TenantV2AggregatedQuotaArgs',
+    'TenantV2AggregatedQuotaArgsDict',
+    'TenantV2LinkArgs',
+    'TenantV2LinkArgsDict',
+    'TenantV2StateInfoArgs',
+    'TenantV2StateInfoArgsDict',
     'UserAccessControlPolicyReferenceListArgs',
     'UserAccessControlPolicyReferenceListArgsDict',
     'UserCategoryArgs',
@@ -5404,6 +5464,39 @@ class AdGroupCategoryMappingV2LinkArgsDict(TypedDict):
 
 @pulumi.input_type
 class AdGroupCategoryMappingV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class AddDomainV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class AddDomainV2LinkArgs:
     def __init__(__self__, *,
                  href: pulumi.Input[Optional[_builtins.str]] = None,
                  rel: pulumi.Input[Optional[_builtins.str]] = None):
@@ -8258,18 +8351,36 @@ class ClusterAddNodeV2RemoveNodeParamExtraParamArgs:
 
 
 class ClusterProfileV2ClusterArgsDict(TypedDict):
-    config_drifts: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    config_drifts: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+    """
     ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Cluster UUID.
+    """
     is_compliant: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    - Whether the cluster complies with the profile.
+    """
     last_synced_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Last synchronization time.
+    """
 
 @pulumi.input_type
 class ClusterProfileV2ClusterArgs:
     def __init__(__self__, *,
-                 config_drifts: pulumi.Input[Optional[_builtins.str]] = None,
+                 config_drifts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  is_compliant: pulumi.Input[Optional[_builtins.bool]] = None,
                  last_synced_time: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] config_drifts: - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+        :param pulumi.Input[_builtins.str] ext_id: - Cluster UUID.
+        :param pulumi.Input[_builtins.bool] is_compliant: - Whether the cluster complies with the profile.
+        :param pulumi.Input[_builtins.str] last_synced_time: - Last synchronization time.
+        """
         if config_drifts is not None:
             pulumi.set(__self__, "config_drifts", config_drifts)
         if ext_id is not None:
@@ -8281,16 +8392,22 @@ class ClusterProfileV2ClusterArgs:
 
     @_builtins.property
     @pulumi.getter(name="configDrifts")
-    def config_drifts(self) -> pulumi.Input[Optional[_builtins.str]]:
+    def config_drifts(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+        """
         return pulumi.get(self, "config_drifts")
 
     @config_drifts.setter
-    def config_drifts(self, value: pulumi.Input[Optional[_builtins.str]]):
+    def config_drifts(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "config_drifts", value)
 
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -8300,6 +8417,9 @@ class ClusterProfileV2ClusterArgs:
     @_builtins.property
     @pulumi.getter(name="isCompliant")
     def is_compliant(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        - Whether the cluster complies with the profile.
+        """
         return pulumi.get(self, "is_compliant")
 
     @is_compliant.setter
@@ -8309,6 +8429,9 @@ class ClusterProfileV2ClusterArgs:
     @_builtins.property
     @pulumi.getter(name="lastSyncedTime")
     def last_synced_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Last synchronization time.
+        """
         return pulumi.get(self, "last_synced_time")
 
     @last_synced_time.setter
@@ -9486,6 +9609,9 @@ class ClusterProfileV2RsyslogServerListArgsDict(TypedDict):
     Name of the RSYSLOG server.
     """
     ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Cluster UUID.
+    """
     links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListLinkArgsDict']]]]]
     modules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListModuleArgsDict']]]]]
     """
@@ -9515,6 +9641,7 @@ class ClusterProfileV2RsyslogServerListArgs:
                | RELP      | RELP protocol      |
         :param pulumi.Input[_builtins.int] port: Port number for the RSYSLOG server.
         :param pulumi.Input[_builtins.str] server_name: Name of the RSYSLOG server.
+        :param pulumi.Input[_builtins.str] ext_id: - Cluster UUID.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2RsyslogServerListModuleArgs']]] modules: List of modules for the RSYSLOG server. Each module object supports:
         """
         pulumi.set(__self__, "ip_address", ip_address)
@@ -9587,6 +9714,9 @@ class ClusterProfileV2RsyslogServerListArgs:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -10343,6 +10473,9 @@ class ClusterProfileV2SmtpServerServerIpAddressIpv6Args:
 
 class ClusterProfileV2SnmpConfigArgsDict(TypedDict):
     ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Cluster UUID.
+    """
     is_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     SNMP status. Whether SNMP is enabled.
@@ -10373,6 +10506,7 @@ class ClusterProfileV2SnmpConfigArgs:
                  traps: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2SnmpConfigTrapArgs']]]] = None,
                  users: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2SnmpConfigUserArgs']]]] = None):
         """
+        :param pulumi.Input[_builtins.str] ext_id: - Cluster UUID.
         :param pulumi.Input[_builtins.bool] is_enabled: SNMP status. Whether SNMP is enabled.
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2SnmpConfigTransportArgs']]] transports: SNMP transport details. Each transport object supports:
         :param pulumi.Input[Sequence[pulumi.Input['ClusterProfileV2SnmpConfigTrapArgs']]] traps: SNMP trap details. Each trap object supports:
@@ -10396,6 +10530,9 @@ class ClusterProfileV2SnmpConfigArgs:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -10593,6 +10730,9 @@ class ClusterProfileV2SnmpConfigTrapArgsDict(TypedDict):
     SNMP engine ID (hexadecimal string, e.g. 0x12345678).
     """
     ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Cluster UUID.
+    """
     links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2SnmpConfigTrapLinkArgsDict']]]]]
     port: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
@@ -10648,6 +10788,7 @@ class ClusterProfileV2SnmpConfigTrapArgs:
                | V3        | V3 SNMP version    |
         :param pulumi.Input[_builtins.str] community_string: Community string (plaintext) for SNMP version 2.0.
         :param pulumi.Input[_builtins.str] engine_id: SNMP engine ID (hexadecimal string, e.g. 0x12345678).
+        :param pulumi.Input[_builtins.str] ext_id: - Cluster UUID.
         :param pulumi.Input[_builtins.int] port: SNMP port.
         :param pulumi.Input[_builtins.str] protocol: SNMP protocol type. Allowed values:
                
@@ -10740,6 +10881,9 @@ class ClusterProfileV2SnmpConfigTrapArgs:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -11033,6 +11177,9 @@ class ClusterProfileV2SnmpConfigUserArgsDict(TypedDict):
     SNMP username. Required for SNMP trap v3 version.
     """
     ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Cluster UUID.
+    """
     links: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ClusterProfileV2SnmpConfigUserLinkArgsDict']]]]]
     priv_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -11075,6 +11222,7 @@ class ClusterProfileV2SnmpConfigUserArgs:
                | SHA384    | SHA-384 SNMP authentication  |
                | SHA512    | SHA-512 SNMP authentication  |
         :param pulumi.Input[_builtins.str] username: SNMP username. Required for SNMP trap v3 version.
+        :param pulumi.Input[_builtins.str] ext_id: - Cluster UUID.
         :param pulumi.Input[_builtins.str] priv_key: SNMP user encryption key (must not contain single quotes).
         :param pulumi.Input[_builtins.str] priv_type: SNMP user encryption type. Allowed values:
                
@@ -11147,6 +11295,9 @@ class ClusterProfileV2SnmpConfigUserArgs:
     @_builtins.property
     @pulumi.getter(name="extId")
     def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Cluster UUID.
+        """
         return pulumi.get(self, "ext_id")
 
     @ext_id.setter
@@ -21643,7 +21794,8 @@ class DirectoryServicesV2OpenLdapConfigurationUserGroupConfigurationArgs:
 class DirectoryServicesV2ServiceAccountArgsDict(TypedDict):
     password: pulumi.Input[_builtins.str]
     """
-    -(Required) Password to connect to the Directory Service.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    -(Required, WriteOnly) Password to connect to the Directory Service.
     """
     username: pulumi.Input[_builtins.str]
     """
@@ -21656,7 +21808,8 @@ class DirectoryServicesV2ServiceAccountArgs:
                  password: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] password: -(Required) Password to connect to the Directory Service.
+        :param pulumi.Input[_builtins.str] password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Password to connect to the Directory Service.
         :param pulumi.Input[_builtins.str] username: -(Required) Username to connect to the Directory Service.
         """
         pulumi.set(__self__, "password", password)
@@ -21666,7 +21819,8 @@ class DirectoryServicesV2ServiceAccountArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required) Password to connect to the Directory Service.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Password to connect to the Directory Service.
         """
         return pulumi.get(self, "password")
 
@@ -21723,7 +21877,7 @@ class EntityGroupV2AllowedConfigEntityArgsDict(TypedDict):
     """
     fqdns: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+    List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
     """
     ip_ranges: NotRequired[pulumi.Input[Optional['EntityGroupV2AllowedConfigEntityIpRangesArgsDict']]]
     """
@@ -21739,15 +21893,19 @@ class EntityGroupV2AllowedConfigEntityArgsDict(TypedDict):
     """
     reference_ext_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+    List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
     """
     reference_string: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+    String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
+    """
+    select_by: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
     """
     selected_by: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+    Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
     """
     type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -21764,17 +21922,19 @@ class EntityGroupV2AllowedConfigEntityArgs:
                  match_criteria: pulumi.Input[Optional[_builtins.str]] = None,
                  reference_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  reference_string: pulumi.Input[Optional[_builtins.str]] = None,
+                 select_by: pulumi.Input[Optional[_builtins.str]] = None,
                  selected_by: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['EntityGroupV2AllowedConfigEntityAddressesArgs'] addresses: With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s):
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fqdns: List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] fqdns: List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
         :param pulumi.Input['EntityGroupV2AllowedConfigEntityIpRangesArgs'] ip_ranges: With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] kube_entities: List of kube entity identifiers. Required when <span pulumi-lang-nodejs="`type`" pulumi-lang-dotnet="`Type`" pulumi-lang-go="`type`" pulumi-lang-python="`type`" pulumi-lang-yaml="`type`" pulumi-lang-java="`type`" pulumi-lang-hcl="`type`">`type`</span> is a kube type (`KUBE_NAMESPACE`, `KUBE_SERVICE`, `KUBE_CLUSTER`, or `KUBE_PODS`).
         :param pulumi.Input[_builtins.str] match_criteria: Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
-        :param pulumi.Input[_builtins.str] reference_string: String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
-        :param pulumi.Input[_builtins.str] selected_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
+        :param pulumi.Input[_builtins.str] reference_string: String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
+        :param pulumi.Input[_builtins.str] select_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        :param pulumi.Input[_builtins.str] selected_by: Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
         :param pulumi.Input[_builtins.str] type: The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
         """
         if addresses is not None:
@@ -21791,6 +21951,11 @@ class EntityGroupV2AllowedConfigEntityArgs:
             pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
         if reference_string is not None:
             pulumi.set(__self__, "reference_string", reference_string)
+        if select_by is not None:
+            pulumi.set(__self__, "select_by", select_by)
+        if selected_by is not None:
+            warnings.warn("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""", DeprecationWarning)
+            pulumi.log.warn("""selected_by is deprecated: Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
         if selected_by is not None:
             pulumi.set(__self__, "selected_by", selected_by)
         if type is not None:
@@ -21812,7 +21977,7 @@ class EntityGroupV2AllowedConfigEntityArgs:
     @pulumi.getter
     def fqdns(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+        List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
         """
         return pulumi.get(self, "fqdns")
 
@@ -21860,7 +22025,7 @@ class EntityGroupV2AllowedConfigEntityArgs:
     @pulumi.getter(name="referenceExtIds")
     def reference_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+        List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
         """
         return pulumi.get(self, "reference_ext_ids")
 
@@ -21872,7 +22037,7 @@ class EntityGroupV2AllowedConfigEntityArgs:
     @pulumi.getter(name="referenceString")
     def reference_string(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+        String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
         """
         return pulumi.get(self, "reference_string")
 
@@ -21881,10 +22046,23 @@ class EntityGroupV2AllowedConfigEntityArgs:
         pulumi.set(self, "reference_string", value)
 
     @_builtins.property
-    @pulumi.getter(name="selectedBy")
-    def selected_by(self) -> pulumi.Input[Optional[_builtins.str]]:
+    @pulumi.getter(name="selectBy")
+    def select_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        """
+        return pulumi.get(self, "select_by")
+
+    @select_by.setter
+    def select_by(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "select_by", value)
+
+    @_builtins.property
+    @pulumi.getter(name="selectedBy")
+    @_utilities.deprecated("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
+    def selected_by(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
         """
         return pulumi.get(self, "selected_by")
 
@@ -22080,11 +22258,15 @@ class EntityGroupV2ExceptConfigEntityArgsDict(TypedDict):
     """
     reference_ext_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+    List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
+    """
+    select_by: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
     """
     selected_by: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+    Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
     """
     type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -22097,13 +22279,15 @@ class EntityGroupV2ExceptConfigEntityArgs:
                  addresses: pulumi.Input[Optional['EntityGroupV2ExceptConfigEntityAddressesArgs']] = None,
                  ip_ranges: pulumi.Input[Optional['EntityGroupV2ExceptConfigEntityIpRangesArgs']] = None,
                  reference_ext_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 select_by: pulumi.Input[Optional[_builtins.str]] = None,
                  selected_by: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input['EntityGroupV2ExceptConfigEntityAddressesArgs'] addresses: With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s).
         :param pulumi.Input['EntityGroupV2ExceptConfigEntityIpRangesArgs'] ip_ranges: With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s).
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
-        :param pulumi.Input[_builtins.str] selected_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reference_ext_ids: List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
+        :param pulumi.Input[_builtins.str] select_by: The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        :param pulumi.Input[_builtins.str] selected_by: Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
         :param pulumi.Input[_builtins.str] type: The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
         """
         if addresses is not None:
@@ -22112,6 +22296,11 @@ class EntityGroupV2ExceptConfigEntityArgs:
             pulumi.set(__self__, "ip_ranges", ip_ranges)
         if reference_ext_ids is not None:
             pulumi.set(__self__, "reference_ext_ids", reference_ext_ids)
+        if select_by is not None:
+            pulumi.set(__self__, "select_by", select_by)
+        if selected_by is not None:
+            warnings.warn("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""", DeprecationWarning)
+            pulumi.log.warn("""selected_by is deprecated: Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
         if selected_by is not None:
             pulumi.set(__self__, "selected_by", selected_by)
         if type is not None:
@@ -22145,7 +22334,7 @@ class EntityGroupV2ExceptConfigEntityArgs:
     @pulumi.getter(name="referenceExtIds")
     def reference_ext_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+        List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
         """
         return pulumi.get(self, "reference_ext_ids")
 
@@ -22154,10 +22343,23 @@ class EntityGroupV2ExceptConfigEntityArgs:
         pulumi.set(self, "reference_ext_ids", value)
 
     @_builtins.property
-    @pulumi.getter(name="selectedBy")
-    def selected_by(self) -> pulumi.Input[Optional[_builtins.str]]:
+    @pulumi.getter(name="selectBy")
+    def select_by(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+        """
+        return pulumi.get(self, "select_by")
+
+    @select_by.setter
+    def select_by(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "select_by", value)
+
+    @_builtins.property
+    @pulumi.getter(name="selectedBy")
+    @_utilities.deprecated("""Use <span pulumi-lang-nodejs=\"`selectBy`\" pulumi-lang-dotnet=\"`SelectBy`\" pulumi-lang-go=\"`selectBy`\" pulumi-lang-python=\"`select_by`\" pulumi-lang-yaml=\"`selectBy`\" pulumi-lang-java=\"`selectBy`\" pulumi-lang-hcl=\"`select_by`\">`selectBy`</span> instead. <span pulumi-lang-nodejs=\"`selectedBy`\" pulumi-lang-dotnet=\"`SelectedBy`\" pulumi-lang-go=\"`selectedBy`\" pulumi-lang-python=\"`selected_by`\" pulumi-lang-yaml=\"`selectedBy`\" pulumi-lang-java=\"`selectedBy`\" pulumi-lang-hcl=\"`selected_by`\">`selectedBy`</span> will be removed in a future release.""")
+    def selected_by(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
         """
         return pulumi.get(self, "selected_by")
 
@@ -29989,11 +30191,12 @@ class FoundationImageNodesBlockNodeArgsDict(TypedDict):
     """
     ipmi_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
     """
     ipmi_user: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+    - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
     """
     ipv6_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -30105,8 +30308,9 @@ class FoundationImageNodesBlockNodeArgs:
         :param pulumi.Input[_builtins.str] ipmi_ip: - (Required) IPMI IP address.
         :param pulumi.Input[_builtins.str] ipmi_mac: - IPMI MAC address.
         :param pulumi.Input[_builtins.str] ipmi_netmask: - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
-        :param pulumi.Input[_builtins.str] ipmi_password: - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
-        :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        :param pulumi.Input[_builtins.str] ipmi_password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
+        :param pulumi.Input[_builtins.str] ipmi_user: - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
         :param pulumi.Input[_builtins.str] ipv6_address: - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
         :param pulumi.Input[_builtins.str] ipv6_interface: - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) ipv6 interface.
         :param pulumi.Input[_builtins.bool] mitigate_low_boot_space: - relocate bootbank files to make space for phoenix files.
@@ -30467,7 +30671,8 @@ class FoundationImageNodesBlockNodeArgs:
     @pulumi.getter(name="ipmiPassword")
     def ipmi_password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
         """
         return pulumi.get(self, "ipmi_password")
 
@@ -30479,7 +30684,7 @@ class FoundationImageNodesBlockNodeArgs:
     @pulumi.getter(name="ipmiUser")
     def ipmi_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
         """
         return pulumi.get(self, "ipmi_user")
 
@@ -31193,7 +31398,7 @@ class FoundationImageNodesFcSettingsArgsDict(TypedDict):
     """
     - Foundation Central metadata which will be transferred to the newly imaged node.
     * `fc_metadata.fc_ip` :- IP address of foundation central.
-    * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+    * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
     """
     foundation_central: pulumi.Input[_builtins.bool]
     """
@@ -31208,7 +31413,7 @@ class FoundationImageNodesFcSettingsArgs:
         """
         :param pulumi.Input['FoundationImageNodesFcSettingsFcMetadataArgs'] fc_metadata: - Foundation Central metadata which will be transferred to the newly imaged node.
                * `fc_metadata.fc_ip` :- IP address of foundation central.
-               * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+               * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
         :param pulumi.Input[_builtins.bool] foundation_central: - If this attribute is set to True, FC workflow will be invoked.
         """
         pulumi.set(__self__, "fc_metadata", fc_metadata)
@@ -31220,7 +31425,7 @@ class FoundationImageNodesFcSettingsArgs:
         """
         - Foundation Central metadata which will be transferred to the newly imaged node.
         * `fc_metadata.fc_ip` :- IP address of foundation central.
-        * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+        * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
         """
         return pulumi.get(self, "fc_metadata")
 
@@ -31243,6 +31448,9 @@ class FoundationImageNodesFcSettingsArgs:
 
 class FoundationImageNodesFcSettingsFcMetadataArgsDict(TypedDict):
     api_key: pulumi.Input[_builtins.str]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    """
     fc_ip: pulumi.Input[_builtins.str]
 
 @pulumi.input_type
@@ -31250,12 +31458,18 @@ class FoundationImageNodesFcSettingsFcMetadataArgs:
     def __init__(__self__, *,
                  api_key: pulumi.Input[_builtins.str],
                  fc_ip: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] api_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        """
         pulumi.set(__self__, "api_key", api_key)
         pulumi.set(__self__, "fc_ip", fc_ip)
 
     @_builtins.property
     @pulumi.getter(name="apiKey")
     def api_key(self) -> pulumi.Input[_builtins.str]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        """
         return pulumi.get(self, "api_key")
 
     @api_key.setter
@@ -33952,7 +34166,8 @@ class KeyManagementServerV2AccessInformationAzureKeyVaultArgsDict(TypedDict):
     """
     client_secret: pulumi.Input[_builtins.str]
     """
-    - (Required) Client secret for the Azure Key Vault.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Required, WriteOnly) Client secret for the Azure Key Vault.
     """
     credential_expiry_date: pulumi.Input[_builtins.str]
     """
@@ -33984,7 +34199,8 @@ class KeyManagementServerV2AccessInformationAzureKeyVaultArgs:
                  truncated_client_secret: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] client_id: - (Required) Client identifier for the Azure Key Vault.
-        :param pulumi.Input[_builtins.str] client_secret: - (Required) Client secret for the Azure Key Vault.
+        :param pulumi.Input[_builtins.str] client_secret: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) Client secret for the Azure Key Vault.
         :param pulumi.Input[_builtins.str] credential_expiry_date: - (Required) When the client secret is going to expire.
         :param pulumi.Input[_builtins.str] endpoint_url: - (Required) Endpoint URL for the Azure Key Vault.
         :param pulumi.Input[_builtins.str] key_id: - (Required) Master key identifier for the Azure Key Vault.
@@ -34015,7 +34231,8 @@ class KeyManagementServerV2AccessInformationAzureKeyVaultArgs:
     @pulumi.getter(name="clientSecret")
     def client_secret(self) -> pulumi.Input[_builtins.str]:
         """
-        - (Required) Client secret for the Azure Key Vault.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) Client secret for the Azure Key Vault.
         """
         return pulumi.get(self, "client_secret")
 
@@ -34088,11 +34305,13 @@ class KeyManagementServerV2AccessInformationKmipKeyVaultArgsDict(TypedDict):
     """
     ca_pem: pulumi.Input[_builtins.str]
     """
-    - (Required) CA PEM.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Required, WriteOnly) CA PEM.
     """
     cert_pem: pulumi.Input[_builtins.str]
     """
-    - (Required) Cert PEM.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Required, WriteOnly) Cert PEM.
     """
     endpoint_urls: pulumi.Input[Sequence[pulumi.Input['KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlArgsDict']]]
     """
@@ -34100,7 +34319,8 @@ class KeyManagementServerV2AccessInformationKmipKeyVaultArgsDict(TypedDict):
     """
     private_key: pulumi.Input[_builtins.str]
     """
-    - (Required) Private key.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Required, WriteOnly) Private key.
     """
 
 @pulumi.input_type
@@ -34113,10 +34333,13 @@ class KeyManagementServerV2AccessInformationKmipKeyVaultArgs:
                  private_key: pulumi.Input[_builtins.str]):
         """
         :param pulumi.Input[_builtins.str] ca_name: - (Required) Name of the CA.
-        :param pulumi.Input[_builtins.str] ca_pem: - (Required) CA PEM.
-        :param pulumi.Input[_builtins.str] cert_pem: - (Required) Cert PEM.
+        :param pulumi.Input[_builtins.str] ca_pem: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) CA PEM.
+        :param pulumi.Input[_builtins.str] cert_pem: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) Cert PEM.
         :param pulumi.Input[Sequence[pulumi.Input['KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlArgs']]] endpoint_urls: - (Required) Endpoint URL for the Azure Key Vault.
-        :param pulumi.Input[_builtins.str] private_key: - (Required) Private key.
+        :param pulumi.Input[_builtins.str] private_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) Private key.
         """
         pulumi.set(__self__, "ca_name", ca_name)
         pulumi.set(__self__, "ca_pem", ca_pem)
@@ -34140,7 +34363,8 @@ class KeyManagementServerV2AccessInformationKmipKeyVaultArgs:
     @pulumi.getter(name="caPem")
     def ca_pem(self) -> pulumi.Input[_builtins.str]:
         """
-        - (Required) CA PEM.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) CA PEM.
         """
         return pulumi.get(self, "ca_pem")
 
@@ -34152,7 +34376,8 @@ class KeyManagementServerV2AccessInformationKmipKeyVaultArgs:
     @pulumi.getter(name="certPem")
     def cert_pem(self) -> pulumi.Input[_builtins.str]:
         """
-        - (Required) Cert PEM.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) Cert PEM.
         """
         return pulumi.get(self, "cert_pem")
 
@@ -34176,7 +34401,8 @@ class KeyManagementServerV2AccessInformationKmipKeyVaultArgs:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Input[_builtins.str]:
         """
-        - (Required) Private key.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) Private key.
         """
         return pulumi.get(self, "private_key")
 
@@ -34710,6 +34936,404 @@ class LcmUpgradeV2ManagementServerArgs:
     @username.setter
     def username(self, value: pulumi.Input[_builtins.str]):
         pulumi.set(self, "username", value)
+
+
+class LocalDomainV2ConnectionStatusArgsDict(TypedDict):
+    service_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LocalDomainV2ConnectionStatusServiceStatusArgsDict']]]]]
+    """
+    - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+    """
+
+@pulumi.input_type
+class LocalDomainV2ConnectionStatusArgs:
+    def __init__(__self__, *,
+                 service_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['LocalDomainV2ConnectionStatusServiceStatusArgs']]]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['LocalDomainV2ConnectionStatusServiceStatusArgs']]] service_statuses: - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+        :param pulumi.Input[_builtins.str] status: - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        if service_statuses is not None:
+            pulumi.set(__self__, "service_statuses", service_statuses)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceStatuses")
+    def service_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LocalDomainV2ConnectionStatusServiceStatusArgs']]]]:
+        """
+        - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+        """
+        return pulumi.get(self, "service_statuses")
+
+    @service_statuses.setter
+    def service_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LocalDomainV2ConnectionStatusServiceStatusArgs']]]]):
+        pulumi.set(self, "service_statuses", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+
+class LocalDomainV2ConnectionStatusServiceStatusArgsDict(TypedDict):
+    service_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+    """
+    status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+    """
+
+@pulumi.input_type
+class LocalDomainV2ConnectionStatusServiceStatusArgs:
+    def __init__(__self__, *,
+                 service_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 status: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] service_name: - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+        :param pulumi.Input[_builtins.str] status: - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+
+    @_builtins.property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "service_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+        """
+        return pulumi.get(self, "status")
+
+    @status.setter
+    def status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "status", value)
+
+
+class LocalDomainV2CredentialsArgsDict(TypedDict):
+    api_key: pulumi.Input[_builtins.str]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+    """
+    key_id: pulumi.Input[_builtins.str]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+    """
+
+@pulumi.input_type
+class LocalDomainV2CredentialsArgs:
+    def __init__(__self__, *,
+                 api_key: pulumi.Input[_builtins.str],
+                 key_id: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] api_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+        :param pulumi.Input[_builtins.str] key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        pulumi.set(__self__, "api_key", api_key)
+        pulumi.set(__self__, "key_id", key_id)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> pulumi.Input[_builtins.str]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+        """
+        return pulumi.get(self, "api_key")
+
+    @api_key.setter
+    def api_key(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "api_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        return pulumi.get(self, "key_id")
+
+    @key_id.setter
+    def key_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "key_id", value)
+
+
+class LocalDomainV2LocationArgsDict(TypedDict):
+    coordinates: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['LocalDomainV2LocationCoordinateArgsDict']]]]]
+    """
+    - The location coordinates, that is latitude and longitude. See Coordinates below.
+    """
+    country: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Location Country.
+    """
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - A globally unique identifier of the location.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Location name.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Location state.
+    """
+
+@pulumi.input_type
+class LocalDomainV2LocationArgs:
+    def __init__(__self__, *,
+                 coordinates: pulumi.Input[Optional[Sequence[pulumi.Input['LocalDomainV2LocationCoordinateArgs']]]] = None,
+                 country: pulumi.Input[Optional[_builtins.str]] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['LocalDomainV2LocationCoordinateArgs']]] coordinates: - The location coordinates, that is latitude and longitude. See Coordinates below.
+        :param pulumi.Input[_builtins.str] country: - Location Country.
+        :param pulumi.Input[_builtins.str] ext_id: - A globally unique identifier of the location.
+        :param pulumi.Input[_builtins.str] name: - Location name.
+        :param pulumi.Input[_builtins.str] state: - Location state.
+        """
+        if coordinates is not None:
+            pulumi.set(__self__, "coordinates", coordinates)
+        if country is not None:
+            pulumi.set(__self__, "country", country)
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def coordinates(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['LocalDomainV2LocationCoordinateArgs']]]]:
+        """
+        - The location coordinates, that is latitude and longitude. See Coordinates below.
+        """
+        return pulumi.get(self, "coordinates")
+
+    @coordinates.setter
+    def coordinates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['LocalDomainV2LocationCoordinateArgs']]]]):
+        pulumi.set(self, "coordinates", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def country(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Location Country.
+        """
+        return pulumi.get(self, "country")
+
+    @country.setter
+    def country(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "country", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - A globally unique identifier of the location.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Location name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Location state.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class LocalDomainV2LocationCoordinateArgsDict(TypedDict):
+    latitude: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    - The latitude part of the location.
+    """
+    longitude: NotRequired[pulumi.Input[Optional[_builtins.float]]]
+    """
+    - The longitude part of the location.
+    """
+
+@pulumi.input_type
+class LocalDomainV2LocationCoordinateArgs:
+    def __init__(__self__, *,
+                 latitude: pulumi.Input[Optional[_builtins.float]] = None,
+                 longitude: pulumi.Input[Optional[_builtins.float]] = None):
+        """
+        :param pulumi.Input[_builtins.float] latitude: - The latitude part of the location.
+        :param pulumi.Input[_builtins.float] longitude: - The longitude part of the location.
+        """
+        if latitude is not None:
+            pulumi.set(__self__, "latitude", latitude)
+        if longitude is not None:
+            pulumi.set(__self__, "longitude", longitude)
+
+    @_builtins.property
+    @pulumi.getter
+    def latitude(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        - The latitude part of the location.
+        """
+        return pulumi.get(self, "latitude")
+
+    @latitude.setter
+    def latitude(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "latitude", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def longitude(self) -> pulumi.Input[Optional[_builtins.float]]:
+        """
+        - The longitude part of the location.
+        """
+        return pulumi.get(self, "longitude")
+
+    @longitude.setter
+    def longitude(self, value: pulumi.Input[Optional[_builtins.float]]):
+        pulumi.set(self, "longitude", value)
+
+
+class LocalDomainV2RegistrationStatusArgsDict(TypedDict):
+    days_to_expiry: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    - Indicates remaining days to domain credential expiry, 0 means expired.
+    """
+    error_stage: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - The stage for the local domain's register/unregister operation.
+    """
+    identity_provider_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - Location state.
+    """
+
+@pulumi.input_type
+class LocalDomainV2RegistrationStatusArgs:
+    def __init__(__self__, *,
+                 days_to_expiry: pulumi.Input[Optional[_builtins.int]] = None,
+                 error_stage: pulumi.Input[Optional[_builtins.str]] = None,
+                 identity_provider_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] days_to_expiry: - Indicates remaining days to domain credential expiry, 0 means expired.
+        :param pulumi.Input[_builtins.str] error_stage: - The stage for the local domain's register/unregister operation.
+        :param pulumi.Input[_builtins.str] identity_provider_ext_id: - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+        :param pulumi.Input[_builtins.str] state: - Location state.
+        """
+        if days_to_expiry is not None:
+            pulumi.set(__self__, "days_to_expiry", days_to_expiry)
+        if error_stage is not None:
+            pulumi.set(__self__, "error_stage", error_stage)
+        if identity_provider_ext_id is not None:
+            pulumi.set(__self__, "identity_provider_ext_id", identity_provider_ext_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="daysToExpiry")
+    def days_to_expiry(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        - Indicates remaining days to domain credential expiry, 0 means expired.
+        """
+        return pulumi.get(self, "days_to_expiry")
+
+    @days_to_expiry.setter
+    def days_to_expiry(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "days_to_expiry", value)
+
+    @_builtins.property
+    @pulumi.getter(name="errorStage")
+    def error_stage(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - The stage for the local domain's register/unregister operation.
+        """
+        return pulumi.get(self, "error_stage")
+
+    @error_stage.setter
+    def error_stage(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "error_stage", value)
+
+    @_builtins.property
+    @pulumi.getter(name="identityProviderExtId")
+    def identity_provider_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+        """
+        return pulumi.get(self, "identity_provider_ext_id")
+
+    @identity_provider_ext_id.setter
+    def identity_provider_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "identity_provider_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - Location state.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
 
 
 class NdbCloneActionargumentArgsDict(TypedDict):
@@ -70876,6 +71500,14 @@ class OvaV2VmConfigArgsDict(TypedDict):
     """
     -(Optional) Indicates how the vTPM for the VM should be configured.
     """
+    wait_for_ip_routable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+    """
+    wait_for_ip_timeout: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+    """
 
 @pulumi.input_type
 class OvaV2VmConfigArgs:
@@ -70924,7 +71556,9 @@ class OvaV2VmConfigArgs:
                  sources: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigSourceArgs']]]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigStorageConfigArgs']]]] = None,
                  update_time: pulumi.Input[Optional[_builtins.str]] = None,
-                 vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigVtpmConfigArgs']]]] = None):
+                 vtpm_configs: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigVtpmConfigArgs']]]] = None,
+                 wait_for_ip_routable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 wait_for_ip_timeout: pulumi.Input[Optional[_builtins.int]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['OvaV2VmConfigApcConfigArgs']]] apc_configs: -(Optional) Advanced Processor Compatibility configuration for the VM. Enabling this retains the CPU model for the VM across power cycles and migrations.
         :param pulumi.Input[Sequence[pulumi.Input['OvaV2VmConfigAvailabilityZoneArgs']]] availability_zones: -(Optional) Reference to an availability zone.
@@ -70969,6 +71603,8 @@ class OvaV2VmConfigArgs:
         :param pulumi.Input[Sequence[pulumi.Input['OvaV2VmConfigStorageConfigArgs']]] storage_configs: -(Optional) Storage configuration for VM.
         :param pulumi.Input[_builtins.str] update_time: -(Optional) VM last updated time.
         :param pulumi.Input[Sequence[pulumi.Input['OvaV2VmConfigVtpmConfigArgs']]] vtpm_configs: -(Optional) Indicates how the vTPM for the VM should be configured.
+        :param pulumi.Input[_builtins.bool] wait_for_ip_routable: When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        :param pulumi.Input[_builtins.int] wait_for_ip_timeout: Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
         """
         if apc_configs is not None:
             pulumi.set(__self__, "apc_configs", apc_configs)
@@ -71060,6 +71696,10 @@ class OvaV2VmConfigArgs:
             pulumi.set(__self__, "update_time", update_time)
         if vtpm_configs is not None:
             pulumi.set(__self__, "vtpm_configs", vtpm_configs)
+        if wait_for_ip_routable is not None:
+            pulumi.set(__self__, "wait_for_ip_routable", wait_for_ip_routable)
+        if wait_for_ip_timeout is not None:
+            pulumi.set(__self__, "wait_for_ip_timeout", wait_for_ip_timeout)
 
     @_builtins.property
     @pulumi.getter(name="apcConfigs")
@@ -71594,6 +72234,30 @@ class OvaV2VmConfigArgs:
     @vtpm_configs.setter
     def vtpm_configs(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigVtpmConfigArgs']]]]):
         pulumi.set(self, "vtpm_configs", value)
+
+    @_builtins.property
+    @pulumi.getter(name="waitForIpRoutable")
+    def wait_for_ip_routable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        """
+        return pulumi.get(self, "wait_for_ip_routable")
+
+    @wait_for_ip_routable.setter
+    def wait_for_ip_routable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "wait_for_ip_routable", value)
+
+    @_builtins.property
+    @pulumi.getter(name="waitForIpTimeout")
+    def wait_for_ip_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+        """
+        return pulumi.get(self, "wait_for_ip_timeout")
+
+    @wait_for_ip_timeout.setter
+    def wait_for_ip_timeout(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "wait_for_ip_timeout", value)
 
 
 class OvaV2VmConfigApcConfigArgsDict(TypedDict):
@@ -72218,6 +72882,7 @@ class OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoArgsDict(Typed
     disk_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     disk_size_bytes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgsDict']]]]]
     storage_containers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgsDict']]]]]
 
@@ -72228,6 +72893,7 @@ class OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgs']]]] = None):
         if data_sources is not None:
@@ -72238,6 +72904,8 @@ class OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -72278,6 +72946,15 @@ class OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -72688,6 +73365,7 @@ class OvaV2VmConfigCdRomBackingInfoArgsDict(TypedDict):
     Size of the disk in Bytes
     """
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigCdRomBackingInfoStorageConfigArgsDict']]]]]
     """
     Storage configuration for VM disks
@@ -72705,6 +73383,7 @@ class OvaV2VmConfigCdRomBackingInfoArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigCdRomBackingInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigCdRomBackingInfoStorageContainerArgs']]]] = None):
         """
@@ -72723,6 +73402,8 @@ class OvaV2VmConfigCdRomBackingInfoArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -72770,6 +73451,15 @@ class OvaV2VmConfigCdRomBackingInfoArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -73270,6 +73960,7 @@ class OvaV2VmConfigDiskBackingInfoVmDiskArgsDict(TypedDict):
     disk_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     disk_size_bytes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigDiskBackingInfoVmDiskStorageConfigArgsDict']]]]]
     storage_containers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigDiskBackingInfoVmDiskStorageContainerArgsDict']]]]]
 
@@ -73280,6 +73971,7 @@ class OvaV2VmConfigDiskBackingInfoVmDiskArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigDiskBackingInfoVmDiskStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['OvaV2VmConfigDiskBackingInfoVmDiskStorageContainerArgs']]]] = None):
         if data_sources is not None:
@@ -73290,6 +73982,8 @@ class OvaV2VmConfigDiskBackingInfoVmDiskArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -73330,6 +74024,15 @@ class OvaV2VmConfigDiskBackingInfoVmDiskArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -77999,6 +78702,7 @@ class OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskArgsDict(TypedDict):
     Disk size in bytes.
     """
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageConfigArgsDict']]]]]
     """
     Storage configuration options.
@@ -78015,6 +78719,7 @@ class OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageContainerArgs']]]] = None):
         """
@@ -78030,6 +78735,8 @@ class OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -78073,6 +78780,15 @@ class OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -83085,11 +83801,13 @@ class PcBackupTargetV2LocationObjectStoreLocationProviderConfigArgs:
 class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentialsArgsDict(TypedDict):
     access_key_id: pulumi.Input[_builtins.str]
     """
-    -(Required) Access key ID for the object store provided for backup target.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    -(Required, WriteOnly) Access key ID for the object store provided for backup target.
     """
     secret_access_key: pulumi.Input[_builtins.str]
     """
-    -(Required) Secret access key for the object store provided for backup target.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    -(Required, WriteOnly) Secret access key for the object store provided for backup target.
     """
 
 @pulumi.input_type
@@ -83098,8 +83816,10 @@ class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentialsArgs:
                  access_key_id: pulumi.Input[_builtins.str],
                  secret_access_key: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] access_key_id: -(Required) Access key ID for the object store provided for backup target.
-        :param pulumi.Input[_builtins.str] secret_access_key: -(Required) Secret access key for the object store provided for backup target.
+        :param pulumi.Input[_builtins.str] access_key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Access key ID for the object store provided for backup target.
+        :param pulumi.Input[_builtins.str] secret_access_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "secret_access_key", secret_access_key)
@@ -83108,7 +83828,8 @@ class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentialsArgs:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required) Access key ID for the object store provided for backup target.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Access key ID for the object store provided for backup target.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -83120,7 +83841,8 @@ class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentialsArgs:
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required) Secret access key for the object store provided for backup target.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -83778,7 +84500,8 @@ class PcDeployV2ConfigBuildInfoArgs:
 class PcDeployV2ConfigCredentialArgsDict(TypedDict):
     password: pulumi.Input[_builtins.str]
     """
-    -(Required) Password required for the basic auth scheme.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    -(Required, WriteOnly) Password required for the basic auth scheme.
     """
     username: pulumi.Input[_builtins.str]
     """
@@ -83791,7 +84514,8 @@ class PcDeployV2ConfigCredentialArgs:
                  password: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] password: -(Required) Password required for the basic auth scheme.
+        :param pulumi.Input[_builtins.str] password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Password required for the basic auth scheme.
         :param pulumi.Input[_builtins.str] username: -(Required) Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
         """
         pulumi.set(__self__, "password", password)
@@ -83801,7 +84525,8 @@ class PcDeployV2ConfigCredentialArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required) Password required for the basic auth scheme.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Password required for the basic auth scheme.
         """
         return pulumi.get(self, "password")
 
@@ -86654,7 +87379,7 @@ class PcRegistrationV2ConfigBuildInfoArgs:
 class PcRegistrationV2ConfigCredentialArgsDict(TypedDict):
     password: pulumi.Input[_builtins.str]
     """
-    -(Required)  Password required for the basic auth scheme.
+    -(Required, WriteOnly)  Password required for the basic auth scheme.
 
     See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
     """
@@ -86669,7 +87394,7 @@ class PcRegistrationV2ConfigCredentialArgs:
                  password: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] password: -(Required)  Password required for the basic auth scheme.
+        :param pulumi.Input[_builtins.str] password: -(Required, WriteOnly)  Password required for the basic auth scheme.
                
                See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param pulumi.Input[_builtins.str] username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
@@ -86681,7 +87406,7 @@ class PcRegistrationV2ConfigCredentialArgs:
     @pulumi.getter
     def password(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required)  Password required for the basic auth scheme.
+        -(Required, WriteOnly)  Password required for the basic auth scheme.
 
         See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
@@ -89219,7 +89944,8 @@ class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsA
 class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsAuthenticationArgsDict(TypedDict):
     password: pulumi.Input[_builtins.str]
     """
-    -(Required)  Password required for the basic auth scheme.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    -(Required, WriteOnly)  Password required for the basic auth scheme.
 
     See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
     """
@@ -89234,7 +89960,8 @@ class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsA
                  password: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] password: -(Required)  Password required for the basic auth scheme.
+        :param pulumi.Input[_builtins.str] password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly)  Password required for the basic auth scheme.
                
                See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param pulumi.Input[_builtins.str] username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
@@ -89246,7 +89973,8 @@ class PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsA
     @pulumi.getter
     def password(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required)  Password required for the basic auth scheme.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly)  Password required for the basic auth scheme.
 
         See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
@@ -89614,7 +90342,8 @@ class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCr
 class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCredentialsAuthenticationArgsDict(TypedDict):
     password: pulumi.Input[_builtins.str]
     """
-    -(Required)  Password required for the basic auth scheme.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    -(Required, WriteOnly)  Password required for the basic auth scheme.
 
     See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
     """
@@ -89629,7 +90358,8 @@ class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCr
                  password: pulumi.Input[_builtins.str],
                  username: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] password: -(Required)  Password required for the basic auth scheme.
+        :param pulumi.Input[_builtins.str] password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly)  Password required for the basic auth scheme.
                
                See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         :param pulumi.Input[_builtins.str] username: -(Required)  Username required for the basic auth scheme. As per RFC 2617 usernames might be case sensitive.
@@ -89641,7 +90371,8 @@ class PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCr
     @pulumi.getter
     def password(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required)  Password required for the basic auth scheme.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly)  Password required for the basic auth scheme.
 
         See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
         """
@@ -89962,11 +90693,13 @@ class PcRestoreSourceV2LocationObjectStoreLocationProviderConfigArgs:
 class PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentialsArgsDict(TypedDict):
     access_key_id: pulumi.Input[_builtins.str]
     """
-    -(Required) Access key ID for the object store provided for backup target.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    -(Required, WriteOnly) Access key ID for the object store provided for backup target.
     """
     secret_access_key: pulumi.Input[_builtins.str]
     """
-    -(Required) Secret access key for the object store provided for backup target.
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    -(Required, WriteOnly) Secret access key for the object store provided for backup target.
     """
 
 @pulumi.input_type
@@ -89975,8 +90708,10 @@ class PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentialsArgs:
                  access_key_id: pulumi.Input[_builtins.str],
                  secret_access_key: pulumi.Input[_builtins.str]):
         """
-        :param pulumi.Input[_builtins.str] access_key_id: -(Required) Access key ID for the object store provided for backup target.
-        :param pulumi.Input[_builtins.str] secret_access_key: -(Required) Secret access key for the object store provided for backup target.
+        :param pulumi.Input[_builtins.str] access_key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Access key ID for the object store provided for backup target.
+        :param pulumi.Input[_builtins.str] secret_access_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "secret_access_key", secret_access_key)
@@ -89985,7 +90720,8 @@ class PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentialsArgs:
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required) Access key ID for the object store provided for backup target.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Access key ID for the object store provided for backup target.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -89997,7 +90733,8 @@ class PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentialsArgs:
     @pulumi.getter(name="secretAccessKey")
     def secret_access_key(self) -> pulumi.Input[_builtins.str]:
         """
-        -(Required) Secret access key for the object store provided for backup target.
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        -(Required, WriteOnly) Secret access key for the object store provided for backup target.
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -99317,6 +100054,357 @@ class RecoveryPointsV2VolumeGroupRecoveryPointLinkArgs:
     @rel.setter
     def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rel", value)
+
+
+class RegisteredDomainV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - The URL at which the entity described by the link can be accessed.
+    """
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - A name that identifies the relationship of the link to the object.
+    """
+
+@pulumi.input_type
+class RegisteredDomainV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] href: - The URL at which the entity described by the link can be accessed.
+        :param pulumi.Input[_builtins.str] rel: - A name that identifies the relationship of the link to the object.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - A name that identifies the relationship of the link to the object.
+        """
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class RegisteredDomainV2PlatformDataArgsDict(TypedDict):
+    cluster_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    - (Optional) Number of clusters in the domain.
+    """
+    connectivity_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) Domain connectivity status.
+    """
+    pc_env_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) PC Environment Type of the domain.
+    """
+    pc_provider_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) PC Provider Type of the domain.
+    """
+    pc_version: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) PC Version of the domain.
+    """
+
+@pulumi.input_type
+class RegisteredDomainV2PlatformDataArgs:
+    def __init__(__self__, *,
+                 cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 pc_env_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pc_provider_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 pc_version: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] cluster_count: - (Optional) Number of clusters in the domain.
+        :param pulumi.Input[_builtins.str] connectivity_status: - (Optional) Domain connectivity status.
+        :param pulumi.Input[_builtins.str] pc_env_type: - (Optional) PC Environment Type of the domain.
+        :param pulumi.Input[_builtins.str] pc_provider_type: - (Optional) PC Provider Type of the domain.
+        :param pulumi.Input[_builtins.str] pc_version: - (Optional) PC Version of the domain.
+        """
+        if cluster_count is not None:
+            pulumi.set(__self__, "cluster_count", cluster_count)
+        if connectivity_status is not None:
+            pulumi.set(__self__, "connectivity_status", connectivity_status)
+        if pc_env_type is not None:
+            pulumi.set(__self__, "pc_env_type", pc_env_type)
+        if pc_provider_type is not None:
+            pulumi.set(__self__, "pc_provider_type", pc_provider_type)
+        if pc_version is not None:
+            pulumi.set(__self__, "pc_version", pc_version)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterCount")
+    def cluster_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        - (Optional) Number of clusters in the domain.
+        """
+        return pulumi.get(self, "cluster_count")
+
+    @cluster_count.setter
+    def cluster_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "cluster_count", value)
+
+    @_builtins.property
+    @pulumi.getter(name="connectivityStatus")
+    def connectivity_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Domain connectivity status.
+        """
+        return pulumi.get(self, "connectivity_status")
+
+    @connectivity_status.setter
+    def connectivity_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "connectivity_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pcEnvType")
+    def pc_env_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) PC Environment Type of the domain.
+        """
+        return pulumi.get(self, "pc_env_type")
+
+    @pc_env_type.setter
+    def pc_env_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pc_env_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pcProviderType")
+    def pc_provider_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) PC Provider Type of the domain.
+        """
+        return pulumi.get(self, "pc_provider_type")
+
+    @pc_provider_type.setter
+    def pc_provider_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pc_provider_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pcVersion")
+    def pc_version(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) PC Version of the domain.
+        """
+        return pulumi.get(self, "pc_version")
+
+    @pc_version.setter
+    def pc_version(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "pc_version", value)
+
+
+class RegisteredDomainV2RegistrationConfigArgsDict(TypedDict):
+    credentials: NotRequired[pulumi.Input[Optional['RegisteredDomainV2RegistrationConfigCredentialsArgsDict']]]
+    """
+    - (Optional) Registration credentials. See Credentials.
+    """
+    domain_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) Unique identifier for the Prism Central.
+    """
+    target_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) Prism Central should use this URL to communicate with Nutanix Central.
+    """
+    tenant_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) Unique identifier of the tenant.
+    """
+
+@pulumi.input_type
+class RegisteredDomainV2RegistrationConfigArgs:
+    def __init__(__self__, *,
+                 credentials: pulumi.Input[Optional['RegisteredDomainV2RegistrationConfigCredentialsArgs']] = None,
+                 domain_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 tenant_ext_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input['RegisteredDomainV2RegistrationConfigCredentialsArgs'] credentials: - (Optional) Registration credentials. See Credentials.
+        :param pulumi.Input[_builtins.str] domain_ext_id: - (Optional) Unique identifier for the Prism Central.
+        :param pulumi.Input[_builtins.str] target_url: - (Optional) Prism Central should use this URL to communicate with Nutanix Central.
+        :param pulumi.Input[_builtins.str] tenant_ext_id: - (Optional) Unique identifier of the tenant.
+        """
+        if credentials is not None:
+            pulumi.set(__self__, "credentials", credentials)
+        if domain_ext_id is not None:
+            pulumi.set(__self__, "domain_ext_id", domain_ext_id)
+        if target_url is not None:
+            pulumi.set(__self__, "target_url", target_url)
+        if tenant_ext_id is not None:
+            pulumi.set(__self__, "tenant_ext_id", tenant_ext_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def credentials(self) -> pulumi.Input[Optional['RegisteredDomainV2RegistrationConfigCredentialsArgs']]:
+        """
+        - (Optional) Registration credentials. See Credentials.
+        """
+        return pulumi.get(self, "credentials")
+
+    @credentials.setter
+    def credentials(self, value: pulumi.Input[Optional['RegisteredDomainV2RegistrationConfigCredentialsArgs']]):
+        pulumi.set(self, "credentials", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domainExtId")
+    def domain_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Unique identifier for the Prism Central.
+        """
+        return pulumi.get(self, "domain_ext_id")
+
+    @domain_ext_id.setter
+    def domain_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "domain_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetUrl")
+    def target_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Prism Central should use this URL to communicate with Nutanix Central.
+        """
+        return pulumi.get(self, "target_url")
+
+    @target_url.setter
+    def target_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tenantExtId")
+    def tenant_ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Unique identifier of the tenant.
+        """
+        return pulumi.get(self, "tenant_ext_id")
+
+    @tenant_ext_id.setter
+    def tenant_ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tenant_ext_id", value)
+
+
+class RegisteredDomainV2RegistrationConfigCredentialsArgsDict(TypedDict):
+    api_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Optional, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+    """
+    key_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    - (Optional, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+    """
+
+@pulumi.input_type
+class RegisteredDomainV2RegistrationConfigCredentialsArgs:
+    def __init__(__self__, *,
+                 api_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] api_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Optional, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+        :param pulumi.Input[_builtins.str] key_id: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               - (Optional, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        if api_key is not None:
+            pulumi.set(__self__, "api_key", api_key)
+        if key_id is not None:
+            pulumi.set(__self__, "key_id", key_id)
+
+    @_builtins.property
+    @pulumi.getter(name="apiKey")
+    def api_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Optional, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+        """
+        return pulumi.get(self, "api_key")
+
+    @api_key.setter
+    def api_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "api_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyId")
+    def key_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        - (Optional, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+        """
+        return pulumi.get(self, "key_id")
+
+    @key_id.setter
+    def key_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_id", value)
+
+
+class RegisteredDomainV2TunnelArgsDict(TypedDict):
+    endpoint: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) Tunnel endpoint for connectivity. Prism Central make use of this endpoint to reach tunnel.
+    """
+    provider: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - (Optional) Tunnel provider. One of `IKAT`.
+    """
+
+@pulumi.input_type
+class RegisteredDomainV2TunnelArgs:
+    def __init__(__self__, *,
+                 endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+                 provider: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] endpoint: - (Optional) Tunnel endpoint for connectivity. Prism Central make use of this endpoint to reach tunnel.
+        :param pulumi.Input[_builtins.str] provider: - (Optional) Tunnel provider. One of `IKAT`.
+        """
+        if endpoint is not None:
+            pulumi.set(__self__, "endpoint", endpoint)
+        if provider is not None:
+            pulumi.set(__self__, "provider", provider)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Tunnel endpoint for connectivity. Prism Central make use of this endpoint to reach tunnel.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def provider(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - (Optional) Tunnel provider. One of `IKAT`.
+        """
+        return pulumi.get(self, "provider")
+
+    @provider.setter
+    def provider(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "provider", value)
 
 
 class ResourceGroupV2LinkArgsDict(TypedDict):
@@ -114268,6 +115356,7 @@ class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingSto
     disk_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     disk_size_bytes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgsDict']]]]]
     storage_containers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgsDict']]]]]
 
@@ -114278,6 +115367,7 @@ class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingSto
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgs']]]] = None):
         if data_sources is not None:
@@ -114288,6 +115378,8 @@ class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingSto
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -114328,6 +115420,15 @@ class TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingSto
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -114754,6 +115855,7 @@ class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArgsDict(TypedDict):
     Size of the disk in Bytes
     """
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArgsDict']]]]]
     """
     Storage configuration for VM disks
@@ -114771,6 +115873,7 @@ class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoStorageContainerArgs']]]] = None):
         """
@@ -114788,6 +115891,8 @@ class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -114834,6 +115939,15 @@ class TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfoArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -115384,6 +116498,7 @@ class TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgsDict(TypedDict
     disk_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     disk_size_bytes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArgsDict']]]]]
     storage_containers: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArgsDict']]]]]
 
@@ -115394,6 +116509,7 @@ class TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerArgs']]]] = None):
         if data_sources is not None:
@@ -115404,6 +116520,8 @@ class TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -115444,6 +116562,15 @@ class TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -119782,6 +120909,1058 @@ class TemplateV2UpdatedByAdditionalAttributeValueMapOfStringArgs:
         pulumi.set(self, "map", value)
 
 
+class TenantDomainAllocationV2ExternalNetworkConfigArgsDict(TypedDict):
+    config: NotRequired[pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigArgsDict']]]
+    """
+    The NAT or no-NAT external network connection configuration.
+    """
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A globally unique identifier of an instance that is suitable for external consumption.
+    """
+    state_infos: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgsDict']]]]]
+    """
+    The state details of the domain allocation.
+    """
+    tenant_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    A globally unique identifier that represents the tenant that owns this entity.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2ExternalNetworkConfigArgs:
+    def __init__(__self__, *,
+                 config: pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigArgs']] = None,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 state_infos: pulumi.Input[Optional[Sequence[pulumi.Input['TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs']]]] = None,
+                 tenant_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input['TenantDomainAllocationV2ExternalNetworkConfigConfigArgs'] config: The NAT or no-NAT external network connection configuration.
+        :param pulumi.Input[_builtins.str] ext_id: A globally unique identifier of an instance that is suitable for external consumption.
+        :param pulumi.Input[Sequence[pulumi.Input['TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs']]] state_infos: The state details of the domain allocation.
+        :param pulumi.Input[_builtins.str] tenant_id: A globally unique identifier that represents the tenant that owns this entity.
+        """
+        if config is not None:
+            pulumi.set(__self__, "config", config)
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if state_infos is not None:
+            pulumi.set(__self__, "state_infos", state_infos)
+        if tenant_id is not None:
+            pulumi.set(__self__, "tenant_id", tenant_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def config(self) -> pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigArgs']]:
+        """
+        The NAT or no-NAT external network connection configuration.
+        """
+        return pulumi.get(self, "config")
+
+    @config.setter
+    def config(self, value: pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigArgs']]):
+        pulumi.set(self, "config", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A globally unique identifier of an instance that is suitable for external consumption.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="stateInfos")
+    def state_infos(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs']]]]:
+        """
+        The state details of the domain allocation.
+        """
+        return pulumi.get(self, "state_infos")
+
+    @state_infos.setter
+    def state_infos(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs']]]]):
+        pulumi.set(self, "state_infos", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tenantId")
+    def tenant_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        A globally unique identifier that represents the tenant that owns this entity.
+        """
+        return pulumi.get(self, "tenant_id")
+
+    @tenant_id.setter
+    def tenant_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tenant_id", value)
+
+
+class TenantDomainAllocationV2ExternalNetworkConfigConfigArgsDict(TypedDict):
+    nat: NotRequired[pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgsDict']]]
+    """
+    NAT configuration.
+    """
+    no_nat: NotRequired[pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgsDict']]]
+    """
+    No-NAT configuration.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2ExternalNetworkConfigConfigArgs:
+    def __init__(__self__, *,
+                 nat: pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs']] = None,
+                 no_nat: pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs']] = None):
+        """
+        :param pulumi.Input['TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs'] nat: NAT configuration.
+        :param pulumi.Input['TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs'] no_nat: No-NAT configuration.
+        """
+        if nat is not None:
+            pulumi.set(__self__, "nat", nat)
+        if no_nat is not None:
+            pulumi.set(__self__, "no_nat", no_nat)
+
+    @_builtins.property
+    @pulumi.getter
+    def nat(self) -> pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs']]:
+        """
+        NAT configuration.
+        """
+        return pulumi.get(self, "nat")
+
+    @nat.setter
+    def nat(self, value: pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs']]):
+        pulumi.set(self, "nat", value)
+
+    @_builtins.property
+    @pulumi.getter(name="noNat")
+    def no_nat(self) -> pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs']]:
+        """
+        No-NAT configuration.
+        """
+        return pulumi.get(self, "no_nat")
+
+    @no_nat.setter
+    def no_nat(self, value: pulumi.Input[Optional['TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs']]):
+        pulumi.set(self, "no_nat", value)
+
+
+class TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgsDict(TypedDict):
+    overlay_subnet_ext_id: pulumi.Input[_builtins.str]
+    """
+    The external identifier of the overlay subnet for NAT configuration.
+    """
+    transit_vpc_ext_id: pulumi.Input[_builtins.str]
+    """
+    The external identifier of the transit VPC for NAT configuration.
+    """
+    floating_ip_count: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2ExternalNetworkConfigConfigNatArgs:
+    def __init__(__self__, *,
+                 overlay_subnet_ext_id: pulumi.Input[_builtins.str],
+                 transit_vpc_ext_id: pulumi.Input[_builtins.str],
+                 floating_ip_count: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] overlay_subnet_ext_id: The external identifier of the overlay subnet for NAT configuration.
+        :param pulumi.Input[_builtins.str] transit_vpc_ext_id: The external identifier of the transit VPC for NAT configuration.
+        :param pulumi.Input[_builtins.int] floating_ip_count: Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+        """
+        pulumi.set(__self__, "overlay_subnet_ext_id", overlay_subnet_ext_id)
+        pulumi.set(__self__, "transit_vpc_ext_id", transit_vpc_ext_id)
+        if floating_ip_count is not None:
+            pulumi.set(__self__, "floating_ip_count", floating_ip_count)
+
+    @_builtins.property
+    @pulumi.getter(name="overlaySubnetExtId")
+    def overlay_subnet_ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The external identifier of the overlay subnet for NAT configuration.
+        """
+        return pulumi.get(self, "overlay_subnet_ext_id")
+
+    @overlay_subnet_ext_id.setter
+    def overlay_subnet_ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "overlay_subnet_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="transitVpcExtId")
+    def transit_vpc_ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The external identifier of the transit VPC for NAT configuration.
+        """
+        return pulumi.get(self, "transit_vpc_ext_id")
+
+    @transit_vpc_ext_id.setter
+    def transit_vpc_ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "transit_vpc_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="floatingIpCount")
+    def floating_ip_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+        """
+        return pulumi.get(self, "floating_ip_count")
+
+    @floating_ip_count.setter
+    def floating_ip_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "floating_ip_count", value)
+
+
+class TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgsDict(TypedDict):
+    overlay_subnet_ext_id: pulumi.Input[_builtins.str]
+    """
+    The external identifier of the overlay subnet for no-NAT configuration.
+    """
+    transit_vpc_ext_id: pulumi.Input[_builtins.str]
+    """
+    The external identifier of the transit VPC for no-NAT configuration.
+    """
+    externally_routable_prefixes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2ExternalNetworkConfigConfigNoNatArgs:
+    def __init__(__self__, *,
+                 overlay_subnet_ext_id: pulumi.Input[_builtins.str],
+                 transit_vpc_ext_id: pulumi.Input[_builtins.str],
+                 externally_routable_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.str] overlay_subnet_ext_id: The external identifier of the overlay subnet for no-NAT configuration.
+        :param pulumi.Input[_builtins.str] transit_vpc_ext_id: The external identifier of the transit VPC for no-NAT configuration.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] externally_routable_prefixes: Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+        """
+        pulumi.set(__self__, "overlay_subnet_ext_id", overlay_subnet_ext_id)
+        pulumi.set(__self__, "transit_vpc_ext_id", transit_vpc_ext_id)
+        if externally_routable_prefixes is not None:
+            pulumi.set(__self__, "externally_routable_prefixes", externally_routable_prefixes)
+
+    @_builtins.property
+    @pulumi.getter(name="overlaySubnetExtId")
+    def overlay_subnet_ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The external identifier of the overlay subnet for no-NAT configuration.
+        """
+        return pulumi.get(self, "overlay_subnet_ext_id")
+
+    @overlay_subnet_ext_id.setter
+    def overlay_subnet_ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "overlay_subnet_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="transitVpcExtId")
+    def transit_vpc_ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        The external identifier of the transit VPC for no-NAT configuration.
+        """
+        return pulumi.get(self, "transit_vpc_ext_id")
+
+    @transit_vpc_ext_id.setter
+    def transit_vpc_ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "transit_vpc_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="externallyRoutablePrefixes")
+    def externally_routable_prefixes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+        """
+        return pulumi.get(self, "externally_routable_prefixes")
+
+    @externally_routable_prefixes.setter
+    def externally_routable_prefixes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "externally_routable_prefixes", value)
+
+
+class TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgsDict(TypedDict):
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The state of the domain allocation.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2ExternalNetworkConfigStateInfoArgs:
+    def __init__(__self__, *,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] state: The state of the domain allocation.
+        """
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The state of the domain allocation.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class TenantDomainAllocationV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class TenantDomainAllocationV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class TenantDomainAllocationV2ProjectArgsDict(TypedDict):
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    External identifier of the project.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The name of the project.
+    """
+    quota: NotRequired[pulumi.Input[Optional['TenantDomainAllocationV2ProjectQuotaArgsDict']]]
+    """
+    The resource quota of the project.
+    """
+    resource_group: NotRequired[pulumi.Input[Optional['TenantDomainAllocationV2ProjectResourceGroupArgsDict']]]
+    """
+    The resource group of the project.
+    """
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The state of the domain allocation.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2ProjectArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 quota: pulumi.Input[Optional['TenantDomainAllocationV2ProjectQuotaArgs']] = None,
+                 resource_group: pulumi.Input[Optional['TenantDomainAllocationV2ProjectResourceGroupArgs']] = None,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: External identifier of the project.
+        :param pulumi.Input[_builtins.str] name: The name of the project.
+        :param pulumi.Input['TenantDomainAllocationV2ProjectQuotaArgs'] quota: The resource quota of the project.
+        :param pulumi.Input['TenantDomainAllocationV2ProjectResourceGroupArgs'] resource_group: The resource group of the project.
+        :param pulumi.Input[_builtins.str] state: The state of the domain allocation.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if quota is not None:
+            pulumi.set(__self__, "quota", quota)
+        if resource_group is not None:
+            pulumi.set(__self__, "resource_group", resource_group)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        External identifier of the project.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The name of the project.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def quota(self) -> pulumi.Input[Optional['TenantDomainAllocationV2ProjectQuotaArgs']]:
+        """
+        The resource quota of the project.
+        """
+        return pulumi.get(self, "quota")
+
+    @quota.setter
+    def quota(self, value: pulumi.Input[Optional['TenantDomainAllocationV2ProjectQuotaArgs']]):
+        pulumi.set(self, "quota", value)
+
+    @_builtins.property
+    @pulumi.getter(name="resourceGroup")
+    def resource_group(self) -> pulumi.Input[Optional['TenantDomainAllocationV2ProjectResourceGroupArgs']]:
+        """
+        The resource group of the project.
+        """
+        return pulumi.get(self, "resource_group")
+
+    @resource_group.setter
+    def resource_group(self, value: pulumi.Input[Optional['TenantDomainAllocationV2ProjectResourceGroupArgs']]):
+        pulumi.set(self, "resource_group", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The state of the domain allocation.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class TenantDomainAllocationV2ProjectQuotaArgsDict(TypedDict):
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The external identifier of the quota for the placement target.
+    """
+    memory: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The amount of memory allocated as quota, in Giga bytes.
+    """
+    storage: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The amount of storage allocated as quota, in Giga bytes.
+    """
+    vcpu: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The number of vCPUs allocated as quota.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2ProjectQuotaArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage: pulumi.Input[Optional[_builtins.int]] = None,
+                 vcpu: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: The external identifier of the quota for the placement target.
+        :param pulumi.Input[_builtins.int] memory: The amount of memory allocated as quota, in Giga bytes.
+        :param pulumi.Input[_builtins.int] storage: The amount of storage allocated as quota, in Giga bytes.
+        :param pulumi.Input[_builtins.int] vcpu: The number of vCPUs allocated as quota.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if memory is not None:
+            pulumi.set(__self__, "memory", memory)
+        if storage is not None:
+            pulumi.set(__self__, "storage", storage)
+        if vcpu is not None:
+            pulumi.set(__self__, "vcpu", vcpu)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external identifier of the quota for the placement target.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The amount of memory allocated as quota, in Giga bytes.
+        """
+        return pulumi.get(self, "memory")
+
+    @memory.setter
+    def memory(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "memory", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def storage(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The amount of storage allocated as quota, in Giga bytes.
+        """
+        return pulumi.get(self, "storage")
+
+    @storage.setter
+    def storage(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "storage", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpu(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of vCPUs allocated as quota.
+        """
+        return pulumi.get(self, "vcpu")
+
+    @vcpu.setter
+    def vcpu(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "vcpu", value)
+
+
+class TenantDomainAllocationV2ProjectResourceGroupArgsDict(TypedDict):
+    placement_targets: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgsDict']]]]]
+    """
+    The placement targets of the resource group.
+    - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+    - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+    """
+    uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The UUID of the resource group for the placement target.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2ProjectResourceGroupArgs:
+    def __init__(__self__, *,
+                 placement_targets: pulumi.Input[Optional[Sequence[pulumi.Input['TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs']]]] = None,
+                 uuid: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs']]] placement_targets: The placement targets of the resource group.
+               - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+               - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+        :param pulumi.Input[_builtins.str] uuid: The UUID of the resource group for the placement target.
+        """
+        if placement_targets is not None:
+            pulumi.set(__self__, "placement_targets", placement_targets)
+        if uuid is not None:
+            pulumi.set(__self__, "uuid", uuid)
+
+    @_builtins.property
+    @pulumi.getter(name="placementTargets")
+    def placement_targets(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs']]]]:
+        """
+        The placement targets of the resource group.
+        - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+        - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+        """
+        return pulumi.get(self, "placement_targets")
+
+    @placement_targets.setter
+    def placement_targets(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs']]]]):
+        pulumi.set(self, "placement_targets", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The UUID of the resource group for the placement target.
+        """
+        return pulumi.get(self, "uuid")
+
+    @uuid.setter
+    def uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "uuid", value)
+
+
+class TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgsDict(TypedDict):
+    cluster_uuid: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    storage_container_uuids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+
+@pulumi.input_type
+class TenantDomainAllocationV2ProjectResourceGroupPlacementTargetArgs:
+    def __init__(__self__, *,
+                 cluster_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+                 storage_container_uuids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        if cluster_uuid is not None:
+            pulumi.set(__self__, "cluster_uuid", cluster_uuid)
+        if storage_container_uuids is not None:
+            pulumi.set(__self__, "storage_container_uuids", storage_container_uuids)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterUuid")
+    def cluster_uuid(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "cluster_uuid")
+
+    @cluster_uuid.setter
+    def cluster_uuid(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cluster_uuid", value)
+
+    @_builtins.property
+    @pulumi.getter(name="storageContainerUuids")
+    def storage_container_uuids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        return pulumi.get(self, "storage_container_uuids")
+
+    @storage_container_uuids.setter
+    def storage_container_uuids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "storage_container_uuids", value)
+
+
+class TenantDomainAllocationV2StateInfoArgsDict(TypedDict):
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The state of the domain allocation.
+    """
+
+@pulumi.input_type
+class TenantDomainAllocationV2StateInfoArgs:
+    def __init__(__self__, *,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] state: The state of the domain allocation.
+        """
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The state of the domain allocation.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class TenantMembershipV2IdentityDetailsArgsDict(TypedDict):
+    identity_provider_ext_id: pulumi.Input[_builtins.str]
+    """
+    - (Required) The external identifier of the identity provider.
+    """
+    principal_value: pulumi.Input[_builtins.str]
+    """
+    - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+    """
+    type: pulumi.Input[_builtins.str]
+    """
+    - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+    """
+
+@pulumi.input_type
+class TenantMembershipV2IdentityDetailsArgs:
+    def __init__(__self__, *,
+                 identity_provider_ext_id: pulumi.Input[_builtins.str],
+                 principal_value: pulumi.Input[_builtins.str],
+                 type: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[_builtins.str] identity_provider_ext_id: - (Required) The external identifier of the identity provider.
+        :param pulumi.Input[_builtins.str] principal_value: - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+        :param pulumi.Input[_builtins.str] type: - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+        """
+        pulumi.set(__self__, "identity_provider_ext_id", identity_provider_ext_id)
+        pulumi.set(__self__, "principal_value", principal_value)
+        pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter(name="identityProviderExtId")
+    def identity_provider_ext_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        - (Required) The external identifier of the identity provider.
+        """
+        return pulumi.get(self, "identity_provider_ext_id")
+
+    @identity_provider_ext_id.setter
+    def identity_provider_ext_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "identity_provider_ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="principalValue")
+    def principal_value(self) -> pulumi.Input[_builtins.str]:
+        """
+        - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+        """
+        return pulumi.get(self, "principal_value")
+
+    @principal_value.setter
+    def principal_value(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "principal_value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[_builtins.str]:
+        """
+        - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "type", value)
+
+
+class TenantMembershipV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - The URL at which the entity described by the link can be accessed.
+    """
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - A name that identifies the relationship of the link to the object that is returned by the URL.
+    """
+
+@pulumi.input_type
+class TenantMembershipV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] href: - The URL at which the entity described by the link can be accessed.
+        :param pulumi.Input[_builtins.str] rel: - A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - The URL at which the entity described by the link can be accessed.
+        """
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - A name that identifies the relationship of the link to the object that is returned by the URL.
+        """
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class TenantMembershipV2StateInfoArgsDict(TypedDict):
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+    """
+
+@pulumi.input_type
+class TenantMembershipV2StateInfoArgs:
+    def __init__(__self__, *,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] state: - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+        """
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
+class TenantV2AdminInfoArgsDict(TypedDict):
+    first_name: pulumi.Input[_builtins.str]
+    """
+    The first name of the user.
+    """
+    last_name: pulumi.Input[_builtins.str]
+    """
+    The last name of the user.
+    """
+    password: pulumi.Input[_builtins.str]
+    """
+    **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+    The password of the user.
+    """
+    username: pulumi.Input[_builtins.str]
+    """
+    The username of the user.
+    """
+    email: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The email address of the user.
+    """
+
+@pulumi.input_type
+class TenantV2AdminInfoArgs:
+    def __init__(__self__, *,
+                 first_name: pulumi.Input[_builtins.str],
+                 last_name: pulumi.Input[_builtins.str],
+                 password: pulumi.Input[_builtins.str],
+                 username: pulumi.Input[_builtins.str],
+                 email: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] first_name: The first name of the user.
+        :param pulumi.Input[_builtins.str] last_name: The last name of the user.
+        :param pulumi.Input[_builtins.str] password: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               The password of the user.
+        :param pulumi.Input[_builtins.str] username: The username of the user.
+        :param pulumi.Input[_builtins.str] email: The email address of the user.
+        """
+        pulumi.set(__self__, "first_name", first_name)
+        pulumi.set(__self__, "last_name", last_name)
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "username", username)
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+
+    @_builtins.property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The first name of the user.
+        """
+        return pulumi.get(self, "first_name")
+
+    @first_name.setter
+    def first_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "first_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> pulumi.Input[_builtins.str]:
+        """
+        The last name of the user.
+        """
+        return pulumi.get(self, "last_name")
+
+    @last_name.setter
+    def last_name(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "last_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[_builtins.str]:
+        """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        The password of the user.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[_builtins.str]:
+        """
+        The username of the user.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "username", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The email address of the user.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "email", value)
+
+
+class TenantV2AggregatedQuotaArgsDict(TypedDict):
+    ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The external identifier of the quota for the placement target.
+    """
+    memory: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The amount of memory allocated as quota, in bytes.
+    """
+    storage: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The amount of storage allocated as quota, in bytes.
+    """
+    vcpu: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The number of vCPUs allocated as quota.
+    """
+
+@pulumi.input_type
+class TenantV2AggregatedQuotaArgs:
+    def __init__(__self__, *,
+                 ext_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 storage: pulumi.Input[Optional[_builtins.int]] = None,
+                 vcpu: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] ext_id: The external identifier of the quota for the placement target.
+        :param pulumi.Input[_builtins.int] memory: The amount of memory allocated as quota, in bytes.
+        :param pulumi.Input[_builtins.int] storage: The amount of storage allocated as quota, in bytes.
+        :param pulumi.Input[_builtins.int] vcpu: The number of vCPUs allocated as quota.
+        """
+        if ext_id is not None:
+            pulumi.set(__self__, "ext_id", ext_id)
+        if memory is not None:
+            pulumi.set(__self__, "memory", memory)
+        if storage is not None:
+            pulumi.set(__self__, "storage", storage)
+        if vcpu is not None:
+            pulumi.set(__self__, "vcpu", vcpu)
+
+    @_builtins.property
+    @pulumi.getter(name="extId")
+    def ext_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The external identifier of the quota for the placement target.
+        """
+        return pulumi.get(self, "ext_id")
+
+    @ext_id.setter
+    def ext_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "ext_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def memory(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The amount of memory allocated as quota, in bytes.
+        """
+        return pulumi.get(self, "memory")
+
+    @memory.setter
+    def memory(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "memory", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def storage(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The amount of storage allocated as quota, in bytes.
+        """
+        return pulumi.get(self, "storage")
+
+    @storage.setter
+    def storage(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "storage", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def vcpu(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of vCPUs allocated as quota.
+        """
+        return pulumi.get(self, "vcpu")
+
+    @vcpu.setter
+    def vcpu(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "vcpu", value)
+
+
+class TenantV2LinkArgsDict(TypedDict):
+    href: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    rel: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+
+@pulumi.input_type
+class TenantV2LinkArgs:
+    def __init__(__self__, *,
+                 href: pulumi.Input[Optional[_builtins.str]] = None,
+                 rel: pulumi.Input[Optional[_builtins.str]] = None):
+        if href is not None:
+            pulumi.set(__self__, "href", href)
+        if rel is not None:
+            pulumi.set(__self__, "rel", rel)
+
+    @_builtins.property
+    @pulumi.getter
+    def href(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "href")
+
+    @href.setter
+    def href(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "href", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rel(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "rel")
+
+    @rel.setter
+    def rel(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rel", value)
+
+
+class TenantV2StateInfoArgsDict(TypedDict):
+    state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The state of the tenant.
+    """
+
+@pulumi.input_type
+class TenantV2StateInfoArgs:
+    def __init__(__self__, *,
+                 state: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] state: The state of the tenant.
+        """
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The state of the tenant.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "state", value)
+
+
 class UserAccessControlPolicyReferenceListArgsDict(TypedDict):
     kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -122619,6 +124798,10 @@ class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgsDict(Ty
     disk_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     disk_size_bytes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+    """
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgsDict']]]]]
     """
     Storage configuration for VM.
@@ -122632,9 +124815,11 @@ class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgs']]]] = None):
         """
+        :param pulumi.Input[_builtins.str] serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs']]] storage_configs: Storage configuration for VM.
         """
         if data_sources is not None:
@@ -122645,6 +124830,8 @@ class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -122685,6 +124872,18 @@ class VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+        """
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -123122,6 +125321,10 @@ class VirtualMachineV2CdRomBackingInfoArgsDict(TypedDict):
     Size of the disk in Bytes
     """
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+    """
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomBackingInfoStorageConfigArgsDict']]]]]
     """
     Storage configuration for VM disks
@@ -123139,11 +125342,13 @@ class VirtualMachineV2CdRomBackingInfoArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomBackingInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2CdRomBackingInfoStorageContainerArgs']]]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomBackingInfoDataSourceArgs']]] data_sources: A reference to a disk or image that contains the contents of a disk.
         :param pulumi.Input[_builtins.int] disk_size_bytes: Size of the disk in Bytes
+        :param pulumi.Input[_builtins.str] serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomBackingInfoStorageConfigArgs']]] storage_configs: Storage configuration for VM disks
                * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2CdRomBackingInfoStorageContainerArgs']]] storage_containers: This reference is for disk level storage container preference. This preference specifies the storage container to which this disk belongs.
@@ -123156,6 +125361,8 @@ class VirtualMachineV2CdRomBackingInfoArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -123202,6 +125409,18 @@ class VirtualMachineV2CdRomBackingInfoArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+        """
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -123733,6 +125952,10 @@ class VirtualMachineV2DiskBackingInfoVmDiskArgsDict(TypedDict):
     disk_ext_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     disk_size_bytes: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+    """
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskBackingInfoVmDiskStorageConfigArgsDict']]]]]
     """
     Storage configuration for VM.
@@ -123746,9 +125969,11 @@ class VirtualMachineV2DiskBackingInfoVmDiskArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskBackingInfoVmDiskStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['VirtualMachineV2DiskBackingInfoVmDiskStorageContainerArgs']]]] = None):
         """
+        :param pulumi.Input[_builtins.str] serial_id: The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
         :param pulumi.Input[Sequence[pulumi.Input['VirtualMachineV2DiskBackingInfoVmDiskStorageConfigArgs']]] storage_configs: Storage configuration for VM.
         """
         if data_sources is not None:
@@ -123759,6 +125984,8 @@ class VirtualMachineV2DiskBackingInfoVmDiskArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -123799,6 +126026,18 @@ class VirtualMachineV2DiskBackingInfoVmDiskArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+        """
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -128416,6 +130655,7 @@ class VmCdromInsertEjectV2BackingInfoArgsDict(TypedDict):
     Size of the disk in Bytes
     """
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoStorageConfigArgsDict']]]]]
     """
     Storage configuration for VM disks
@@ -128433,6 +130673,7 @@ class VmCdromInsertEjectV2BackingInfoArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['VmCdromInsertEjectV2BackingInfoStorageContainerArgs']]]] = None):
         """
@@ -128450,6 +130691,8 @@ class VmCdromInsertEjectV2BackingInfoArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -128496,6 +130739,15 @@ class VmCdromInsertEjectV2BackingInfoArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -129457,6 +131709,7 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgsDict(TypedDict
     - (Optional) Size of the disk in Bytes.
     """
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgsDict']]]]]
     """
     - (Optional) Storage configuration for VM disks.
@@ -129473,6 +131726,7 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainerArgs']]]] = None):
         """
@@ -129490,6 +131744,8 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -129539,6 +131795,15 @@ class VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfoArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -129997,6 +132262,7 @@ class VmCloneV2CdRomBackingInfoArgsDict(TypedDict):
     - (Optional) Size of the disk in Bytes.
     """
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2CdRomBackingInfoStorageConfigArgsDict']]]]]
     """
     - (Optional) Storage configuration for VM disks.
@@ -130013,6 +132279,7 @@ class VmCloneV2CdRomBackingInfoArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2CdRomBackingInfoStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2CdRomBackingInfoStorageContainerArgs']]]] = None):
         """
@@ -130030,6 +132297,8 @@ class VmCloneV2CdRomBackingInfoArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -130079,6 +132348,15 @@ class VmCloneV2CdRomBackingInfoArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")
@@ -130644,6 +132922,7 @@ class VmCloneV2DiskBackingInfoVmDiskArgsDict(TypedDict):
     - (Optional) Size of the disk in Bytes.
     """
     is_migration_in_progress: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    serial_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     storage_configs: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2DiskBackingInfoVmDiskStorageConfigArgsDict']]]]]
     """
     - (Optional) Storage configuration for VM disks.
@@ -130660,6 +132939,7 @@ class VmCloneV2DiskBackingInfoVmDiskArgs:
                  disk_ext_id: pulumi.Input[Optional[_builtins.str]] = None,
                  disk_size_bytes: pulumi.Input[Optional[_builtins.int]] = None,
                  is_migration_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+                 serial_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_configs: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2DiskBackingInfoVmDiskStorageConfigArgs']]]] = None,
                  storage_containers: pulumi.Input[Optional[Sequence[pulumi.Input['VmCloneV2DiskBackingInfoVmDiskStorageContainerArgs']]]] = None):
         """
@@ -130677,6 +132957,8 @@ class VmCloneV2DiskBackingInfoVmDiskArgs:
             pulumi.set(__self__, "disk_size_bytes", disk_size_bytes)
         if is_migration_in_progress is not None:
             pulumi.set(__self__, "is_migration_in_progress", is_migration_in_progress)
+        if serial_id is not None:
+            pulumi.set(__self__, "serial_id", serial_id)
         if storage_configs is not None:
             pulumi.set(__self__, "storage_configs", storage_configs)
         if storage_containers is not None:
@@ -130726,6 +133008,15 @@ class VmCloneV2DiskBackingInfoVmDiskArgs:
     @is_migration_in_progress.setter
     def is_migration_in_progress(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_migration_in_progress", value)
+
+    @_builtins.property
+    @pulumi.getter(name="serialId")
+    def serial_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        return pulumi.get(self, "serial_id")
+
+    @serial_id.setter
+    def serial_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "serial_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageConfigs")

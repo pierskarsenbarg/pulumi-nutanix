@@ -28,6 +28,14 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> ApiKey { get; private set; } = null!;
 
         /// <summary>
+        /// Domain name for the Prism Central instance. Used to construct the
+        /// PC endpoint URL as &lt;domain_name&gt;.domains.&lt;nutanix_central_endpoint&gt; for NC Admin and
+        /// Tenant Admin scenarios.
+        /// </summary>
+        [Output("domainName")]
+        public Output<string?> DomainName { get; private set; } = null!;
+
+        /// <summary>
         /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
         /// note, this is never the data services VIP, and should not be an
         /// individual CVM address, as this would cause calls to fail during
@@ -61,6 +69,14 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string?> NdbUsername { get; private set; } = null!;
 
         /// <summary>
+        /// Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+        /// Service Provider Admin scenarios. This is the base domain for NC services
+        /// (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+        /// </summary>
+        [Output("nutanixCentralEndpoint")]
+        public Output<string?> NutanixCentralEndpoint { get; private set; } = null!;
+
+        /// <summary>
         /// Password for provided user name.
         /// </summary>
         [Output("password")]
@@ -74,6 +90,13 @@ namespace PiersKarsenbarg.Nutanix
 
         [Output("proxyUrl")]
         public Output<string?> ProxyUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// Tenant name for Tenant Admin scenarios. Required when operating as
+        /// a Tenant Admin to manage tenant-specific resources.
+        /// </summary>
+        [Output("tenantName")]
+        public Output<string?> TenantName { get; private set; } = null!;
 
         /// <summary>
         /// User name for Nutanix Prism. Could be
@@ -160,6 +183,14 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         /// <summary>
+        /// Domain name for the Prism Central instance. Used to construct the
+        /// PC endpoint URL as &lt;domain_name&gt;.domains.&lt;nutanix_central_endpoint&gt; for NC Admin and
+        /// Tenant Admin scenarios.
+        /// </summary>
+        [Input("domainName")]
+        public Input<string>? DomainName { get; set; }
+
+        /// <summary>
         /// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
         /// note, this is never the data services VIP, and should not be an
         /// individual CVM address, as this would cause calls to fail during
@@ -199,6 +230,14 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? NdbUsername { get; set; }
 
         /// <summary>
+        /// Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+        /// Service Provider Admin scenarios. This is the base domain for NC services
+        /// (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+        /// </summary>
+        [Input("nutanixCentralEndpoint")]
+        public Input<string>? NutanixCentralEndpoint { get; set; }
+
+        /// <summary>
         /// Password for provided user name.
         /// </summary>
         [Input("password")]
@@ -220,6 +259,20 @@ namespace PiersKarsenbarg.Nutanix
         public Input<bool>? SessionAuth { get; set; }
 
         /// <summary>
+        /// Tenant name for Tenant Admin scenarios. Required when operating as
+        /// a Tenant Admin to manage tenant-specific resources.
+        /// </summary>
+        [Input("tenantName")]
+        public Input<string>? TenantName { get; set; }
+
+        /// <summary>
+        /// When true, IAM-related calls use the NC IAM endpoint (iam.services.&lt;nutanix_central_endpoint&gt;)
+        /// instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+        /// </summary>
+        [Input("useNcIam", json: true)]
+        public Input<bool>? UseNcIam { get; set; }
+
+        /// <summary>
         /// User name for Nutanix Prism. Could be
         /// local cluster auth (e.g. 'admin') or directory auth.
         /// </summary>
@@ -227,7 +280,7 @@ namespace PiersKarsenbarg.Nutanix
         public Input<string>? Username { get; set; }
 
         /// <summary>
-        /// Set if you know that the creation o update of a resource may take long time (minutes)
+        /// Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
         /// </summary>
         [Input("waitTimeout", json: true)]
         public Input<int>? WaitTimeout { get; set; }

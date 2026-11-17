@@ -14,6 +14,8 @@ import (
 
 // Images node(s) and optionally creates clusters.
 //
+// > **WriteOnly credentials:** <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span>, <span pulumi-lang-nodejs="`ucsmPassword`" pulumi-lang-dotnet="`UcsmPassword`" pulumi-lang-go="`ucsmPassword`" pulumi-lang-python="`ucsm_password`" pulumi-lang-yaml="`ucsmPassword`" pulumi-lang-java="`ucsmPassword`" pulumi-lang-hcl="`ucsm_password`">`ucsmPassword`</span>, <span pulumi-lang-nodejs="`xsMasterPassword`" pulumi-lang-dotnet="`XsMasterPassword`" pulumi-lang-go="`xsMasterPassword`" pulumi-lang-python="`xs_master_password`" pulumi-lang-yaml="`xsMasterPassword`" pulumi-lang-java="`xsMasterPassword`" pulumi-lang-hcl="`xs_master_password`">`xsMasterPassword`</span>, <span pulumi-lang-nodejs="`hypervisorPassword`" pulumi-lang-dotnet="`HypervisorPassword`" pulumi-lang-go="`hypervisorPassword`" pulumi-lang-python="`hypervisor_password`" pulumi-lang-yaml="`hypervisorPassword`" pulumi-lang-java="`hypervisorPassword`" pulumi-lang-hcl="`hypervisor_password`">`hypervisorPassword`</span>, <span pulumi-lang-nodejs="`uncPassword`" pulumi-lang-dotnet="`UncPassword`" pulumi-lang-go="`uncPassword`" pulumi-lang-python="`unc_password`" pulumi-lang-yaml="`uncPassword`" pulumi-lang-java="`uncPassword`" pulumi-lang-hcl="`unc_password`">`uncPassword`</span>, `fc_settings.fc_metadata.api_key`, and node-level <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+//
 // ## Example Usage
 //
 // <!--Start PulumiCodeChooser -->
@@ -200,7 +202,8 @@ type FoundationImageNodes struct {
 	HypervisorNameserver pulumi.StringPtrOutput                     `pulumi:"hypervisorNameserver"`
 	// - (Required) Hypervisor netmask.
 	HypervisorNetmask pulumi.StringOutput `pulumi:"hypervisorNetmask"`
-	// - Hypervisor password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) Hypervisor password.
 	HypervisorPassword pulumi.StringPtrOutput `pulumi:"hypervisorPassword"`
 	// - install script.
 	InstallScript pulumi.StringPtrOutput `pulumi:"installScript"`
@@ -208,7 +211,8 @@ type FoundationImageNodes struct {
 	IpmiGateway pulumi.StringPtrOutput `pulumi:"ipmiGateway"`
 	// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
 	IpmiNetmask pulumi.StringPtrOutput `pulumi:"ipmiNetmask"`
-	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
 	IpmiPassword pulumi.StringPtrOutput `pulumi:"ipmiPassword"`
 	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
 	IpmiUser pulumi.StringPtrOutput `pulumi:"ipmiUser"`
@@ -226,11 +230,13 @@ type FoundationImageNodes struct {
 	Tests FoundationImageNodesTestsPtrOutput `pulumi:"tests"`
 	// - UCSM IP address.
 	UcsmIp pulumi.StringPtrOutput `pulumi:"ucsmIp"`
-	// - UCSM password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UCSM password.
 	UcsmPassword pulumi.StringPtrOutput `pulumi:"ucsmPassword"`
 	// - UCSM username.
 	UcsmUser pulumi.StringPtrOutput `pulumi:"ucsmUser"`
-	// - UNC password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UNC password.
 	UncPassword pulumi.StringPtrOutput `pulumi:"uncPassword"`
 	// - UNC Path.
 	UncPath pulumi.StringPtrOutput `pulumi:"uncPath"`
@@ -242,7 +248,8 @@ type FoundationImageNodes struct {
 	XsMasterIp pulumi.StringPtrOutput `pulumi:"xsMasterIp"`
 	// - xen server master label.
 	XsMasterLabel pulumi.StringPtrOutput `pulumi:"xsMasterLabel"`
-	// - xen server master password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) xen server master password.
 	XsMasterPassword pulumi.StringPtrOutput `pulumi:"xsMasterPassword"`
 	// - xen server master username.
 	XsMasterUsername pulumi.StringPtrOutput `pulumi:"xsMasterUsername"`
@@ -273,6 +280,29 @@ func NewFoundationImageNodes(ctx *pulumi.Context,
 	if args.NosPackage == nil {
 		return nil, errors.New("invalid value for required argument 'NosPackage'")
 	}
+	if args.HypervisorPassword != nil {
+		args.HypervisorPassword = pulumi.ToSecret(args.HypervisorPassword).(pulumi.StringPtrInput)
+	}
+	if args.IpmiPassword != nil {
+		args.IpmiPassword = pulumi.ToSecret(args.IpmiPassword).(pulumi.StringPtrInput)
+	}
+	if args.UcsmPassword != nil {
+		args.UcsmPassword = pulumi.ToSecret(args.UcsmPassword).(pulumi.StringPtrInput)
+	}
+	if args.UncPassword != nil {
+		args.UncPassword = pulumi.ToSecret(args.UncPassword).(pulumi.StringPtrInput)
+	}
+	if args.XsMasterPassword != nil {
+		args.XsMasterPassword = pulumi.ToSecret(args.XsMasterPassword).(pulumi.StringPtrInput)
+	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"hypervisorPassword",
+		"ipmiPassword",
+		"ucsmPassword",
+		"uncPassword",
+		"xsMasterPassword",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FoundationImageNodes
 	err := ctx.RegisterResource("nutanix:index/foundationImageNodes:FoundationImageNodes", name, args, &resource, opts...)
@@ -334,7 +364,8 @@ type foundationImageNodesState struct {
 	HypervisorNameserver *string                            `pulumi:"hypervisorNameserver"`
 	// - (Required) Hypervisor netmask.
 	HypervisorNetmask *string `pulumi:"hypervisorNetmask"`
-	// - Hypervisor password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) Hypervisor password.
 	HypervisorPassword *string `pulumi:"hypervisorPassword"`
 	// - install script.
 	InstallScript *string `pulumi:"installScript"`
@@ -342,7 +373,8 @@ type foundationImageNodesState struct {
 	IpmiGateway *string `pulumi:"ipmiGateway"`
 	// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
 	IpmiNetmask *string `pulumi:"ipmiNetmask"`
-	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
 	IpmiPassword *string `pulumi:"ipmiPassword"`
 	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
 	IpmiUser *string `pulumi:"ipmiUser"`
@@ -360,11 +392,13 @@ type foundationImageNodesState struct {
 	Tests *FoundationImageNodesTests `pulumi:"tests"`
 	// - UCSM IP address.
 	UcsmIp *string `pulumi:"ucsmIp"`
-	// - UCSM password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UCSM password.
 	UcsmPassword *string `pulumi:"ucsmPassword"`
 	// - UCSM username.
 	UcsmUser *string `pulumi:"ucsmUser"`
-	// - UNC password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UNC password.
 	UncPassword *string `pulumi:"uncPassword"`
 	// - UNC Path.
 	UncPath *string `pulumi:"uncPath"`
@@ -376,7 +410,8 @@ type foundationImageNodesState struct {
 	XsMasterIp *string `pulumi:"xsMasterIp"`
 	// - xen server master label.
 	XsMasterLabel *string `pulumi:"xsMasterLabel"`
-	// - xen server master password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) xen server master password.
 	XsMasterPassword *string `pulumi:"xsMasterPassword"`
 	// - xen server master username.
 	XsMasterUsername *string `pulumi:"xsMasterUsername"`
@@ -421,7 +456,8 @@ type FoundationImageNodesState struct {
 	HypervisorNameserver pulumi.StringPtrInput
 	// - (Required) Hypervisor netmask.
 	HypervisorNetmask pulumi.StringPtrInput
-	// - Hypervisor password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) Hypervisor password.
 	HypervisorPassword pulumi.StringPtrInput
 	// - install script.
 	InstallScript pulumi.StringPtrInput
@@ -429,7 +465,8 @@ type FoundationImageNodesState struct {
 	IpmiGateway pulumi.StringPtrInput
 	// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
 	IpmiNetmask pulumi.StringPtrInput
-	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
 	IpmiPassword pulumi.StringPtrInput
 	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
 	IpmiUser pulumi.StringPtrInput
@@ -447,11 +484,13 @@ type FoundationImageNodesState struct {
 	Tests FoundationImageNodesTestsPtrInput
 	// - UCSM IP address.
 	UcsmIp pulumi.StringPtrInput
-	// - UCSM password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UCSM password.
 	UcsmPassword pulumi.StringPtrInput
 	// - UCSM username.
 	UcsmUser pulumi.StringPtrInput
-	// - UNC password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UNC password.
 	UncPassword pulumi.StringPtrInput
 	// - UNC Path.
 	UncPath pulumi.StringPtrInput
@@ -463,7 +502,8 @@ type FoundationImageNodesState struct {
 	XsMasterIp pulumi.StringPtrInput
 	// - xen server master label.
 	XsMasterLabel pulumi.StringPtrInput
-	// - xen server master password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) xen server master password.
 	XsMasterPassword pulumi.StringPtrInput
 	// - xen server master username.
 	XsMasterUsername pulumi.StringPtrInput
@@ -507,7 +547,8 @@ type foundationImageNodesArgs struct {
 	HypervisorNameserver *string                            `pulumi:"hypervisorNameserver"`
 	// - (Required) Hypervisor netmask.
 	HypervisorNetmask string `pulumi:"hypervisorNetmask"`
-	// - Hypervisor password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) Hypervisor password.
 	HypervisorPassword *string `pulumi:"hypervisorPassword"`
 	// - install script.
 	InstallScript *string `pulumi:"installScript"`
@@ -515,7 +556,8 @@ type foundationImageNodesArgs struct {
 	IpmiGateway *string `pulumi:"ipmiGateway"`
 	// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
 	IpmiNetmask *string `pulumi:"ipmiNetmask"`
-	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
 	IpmiPassword *string `pulumi:"ipmiPassword"`
 	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
 	IpmiUser *string `pulumi:"ipmiUser"`
@@ -531,11 +573,13 @@ type foundationImageNodesArgs struct {
 	Tests *FoundationImageNodesTests `pulumi:"tests"`
 	// - UCSM IP address.
 	UcsmIp *string `pulumi:"ucsmIp"`
-	// - UCSM password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UCSM password.
 	UcsmPassword *string `pulumi:"ucsmPassword"`
 	// - UCSM username.
 	UcsmUser *string `pulumi:"ucsmUser"`
-	// - UNC password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UNC password.
 	UncPassword *string `pulumi:"uncPassword"`
 	// - UNC Path.
 	UncPath *string `pulumi:"uncPath"`
@@ -547,7 +591,8 @@ type foundationImageNodesArgs struct {
 	XsMasterIp *string `pulumi:"xsMasterIp"`
 	// - xen server master label.
 	XsMasterLabel *string `pulumi:"xsMasterLabel"`
-	// - xen server master password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) xen server master password.
 	XsMasterPassword *string `pulumi:"xsMasterPassword"`
 	// - xen server master username.
 	XsMasterUsername *string `pulumi:"xsMasterUsername"`
@@ -582,7 +627,8 @@ type FoundationImageNodesArgs struct {
 	HypervisorNameserver pulumi.StringPtrInput
 	// - (Required) Hypervisor netmask.
 	HypervisorNetmask pulumi.StringInput
-	// - Hypervisor password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) Hypervisor password.
 	HypervisorPassword pulumi.StringPtrInput
 	// - install script.
 	InstallScript pulumi.StringPtrInput
@@ -590,7 +636,8 @@ type FoundationImageNodesArgs struct {
 	IpmiGateway pulumi.StringPtrInput
 	// - (Required incase using IPMI based imaging either here or inside node spec) default IPMI netmask
 	IpmiNetmask pulumi.StringPtrInput
-	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
 	IpmiPassword pulumi.StringPtrInput
 	// - (Required incase using IPMI based imaging either here or inside node spec) IPMI username.
 	IpmiUser pulumi.StringPtrInput
@@ -606,11 +653,13 @@ type FoundationImageNodesArgs struct {
 	Tests FoundationImageNodesTestsPtrInput
 	// - UCSM IP address.
 	UcsmIp pulumi.StringPtrInput
-	// - UCSM password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UCSM password.
 	UcsmPassword pulumi.StringPtrInput
 	// - UCSM username.
 	UcsmUser pulumi.StringPtrInput
-	// - UNC password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) UNC password.
 	UncPassword pulumi.StringPtrInput
 	// - UNC Path.
 	UncPath pulumi.StringPtrInput
@@ -622,7 +671,8 @@ type FoundationImageNodesArgs struct {
 	XsMasterIp pulumi.StringPtrInput
 	// - xen server master label.
 	XsMasterLabel pulumi.StringPtrInput
-	// - xen server master password.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (WriteOnly) xen server master password.
 	XsMasterPassword pulumi.StringPtrInput
 	// - xen server master username.
 	XsMasterUsername pulumi.StringPtrInput
@@ -798,7 +848,8 @@ func (o FoundationImageNodesOutput) HypervisorNetmask() pulumi.StringOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringOutput { return v.HypervisorNetmask }).(pulumi.StringOutput)
 }
 
-// - Hypervisor password.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (WriteOnly) Hypervisor password.
 func (o FoundationImageNodesOutput) HypervisorPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.HypervisorPassword }).(pulumi.StringPtrOutput)
 }
@@ -818,7 +869,8 @@ func (o FoundationImageNodesOutput) IpmiNetmask() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.IpmiNetmask }).(pulumi.StringPtrOutput)
 }
 
-// - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
 func (o FoundationImageNodesOutput) IpmiPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.IpmiPassword }).(pulumi.StringPtrOutput)
 }
@@ -863,7 +915,8 @@ func (o FoundationImageNodesOutput) UcsmIp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.UcsmIp }).(pulumi.StringPtrOutput)
 }
 
-// - UCSM password.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (WriteOnly) UCSM password.
 func (o FoundationImageNodesOutput) UcsmPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.UcsmPassword }).(pulumi.StringPtrOutput)
 }
@@ -873,7 +926,8 @@ func (o FoundationImageNodesOutput) UcsmUser() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.UcsmUser }).(pulumi.StringPtrOutput)
 }
 
-// - UNC password.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (WriteOnly) UNC password.
 func (o FoundationImageNodesOutput) UncPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.UncPassword }).(pulumi.StringPtrOutput)
 }
@@ -903,7 +957,8 @@ func (o FoundationImageNodesOutput) XsMasterLabel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.XsMasterLabel }).(pulumi.StringPtrOutput)
 }
 
-// - xen server master password.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (WriteOnly) xen server master password.
 func (o FoundationImageNodesOutput) XsMasterPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodes) pulumi.StringPtrOutput { return v.XsMasterPassword }).(pulumi.StringPtrOutput)
 }

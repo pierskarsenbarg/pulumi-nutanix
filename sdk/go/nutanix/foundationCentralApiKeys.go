@@ -66,6 +66,10 @@ func NewFoundationCentralApiKeys(ctx *pulumi.Context,
 	if args.Alias == nil {
 		return nil, errors.New("invalid value for required argument 'Alias'")
 	}
+	secrets := pulumi.AdditionalSecretOutputs([]string{
+		"apiKey",
+	})
+	opts = append(opts, secrets)
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource FoundationCentralApiKeys
 	err := ctx.RegisterResource("nutanix:index/foundationCentralApiKeys:FoundationCentralApiKeys", name, args, &resource, opts...)

@@ -193,6 +193,11 @@ export interface AdGroupCategoryMappingV2Link {
     rel: string;
 }
 
+export interface AddDomainV2Link {
+    href: string;
+    rel: string;
+}
+
 export interface AddressGroupIpAddressBlockList {
     /**
      * - (Required) IP of the address block
@@ -792,9 +797,21 @@ export interface ClusterAddNodeV2RemoveNodeParamExtraParam {
 }
 
 export interface ClusterProfileV2Cluster {
-    configDrifts: string;
+    /**
+     * - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+     */
+    configDrifts: string[];
+    /**
+     * - Cluster UUID.
+     */
     extId: string;
+    /**
+     * - Whether the cluster complies with the profile.
+     */
     isCompliant: boolean;
+    /**
+     * - Last synchronization time.
+     */
     lastSyncedTime: string;
 }
 
@@ -1049,6 +1066,9 @@ export interface ClusterProfileV2ResilientCapacityWarningThresholdConfig {
 }
 
 export interface ClusterProfileV2RsyslogServerList {
+    /**
+     * - Cluster UUID.
+     */
     extId: string;
     /**
      * IP address of the RSYSLOG server.
@@ -1253,6 +1273,9 @@ export interface ClusterProfileV2SmtpServerServerIpAddressIpv6 {
 }
 
 export interface ClusterProfileV2SnmpConfig {
+    /**
+     * - Cluster UUID.
+     */
     extId: string;
     /**
      * SNMP status. Whether SNMP is enabled.
@@ -1310,6 +1333,9 @@ export interface ClusterProfileV2SnmpConfigTrap {
      * SNMP engine ID (hexadecimal string, e.g. 0x12345678).
      */
     engineId: string;
+    /**
+     * - Cluster UUID.
+     */
     extId: string;
     links: outputs.ClusterProfileV2SnmpConfigTrapLink[];
     /**
@@ -1407,6 +1433,9 @@ export interface ClusterProfileV2SnmpConfigUser {
      * | SHA512    | SHA-512 SNMP authentication  |
      */
     authType: string;
+    /**
+     * - Cluster UUID.
+     */
     extId: string;
     links: outputs.ClusterProfileV2SnmpConfigUserLink[];
     /**
@@ -3500,7 +3529,8 @@ export interface DirectoryServicesV2OpenLdapConfigurationUserGroupConfiguration 
 
 export interface DirectoryServicesV2ServiceAccount {
     /**
-     * -(Required) Password to connect to the Directory Service.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Password to connect to the Directory Service.
      */
     password: string;
     /**
@@ -3522,7 +3552,7 @@ export interface EntityGroupV2AllowedConfigEntity {
      */
     addresses: outputs.EntityGroupV2AllowedConfigEntityAddresses;
     /**
-     * List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+     * List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
      */
     fqdns: string[];
     /**
@@ -3538,15 +3568,21 @@ export interface EntityGroupV2AllowedConfigEntity {
      */
     matchCriteria: string;
     /**
-     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
      */
     referenceExtIds: string[];
     /**
-     * String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+     * String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
      */
     referenceString: string;
     /**
      * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+     */
+    selectBy: string;
+    /**
+     * Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+     *
+     * @deprecated Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
      */
     selectedBy: string;
     /**
@@ -3602,11 +3638,17 @@ export interface EntityGroupV2ExceptConfigEntity {
      */
     ipRanges: outputs.EntityGroupV2ExceptConfigEntityIpRanges;
     /**
-     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+     * List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
      */
     referenceExtIds: string[];
     /**
      * The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+     */
+    selectBy: string;
+    /**
+     * Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+     *
+     * @deprecated Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
      */
     selectedBy: string;
     /**
@@ -5125,11 +5167,12 @@ export interface FoundationImageNodesBlockNode {
      */
     ipmiNetmask?: string;
     /**
-     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
      */
     ipmiPassword?: string;
     /**
-     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+     * - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
      */
     ipmiUser?: string;
     /**
@@ -5297,7 +5340,7 @@ export interface FoundationImageNodesFcSettings {
     /**
      * - Foundation Central metadata which will be transferred to the newly imaged node.
      * * `fc_metadata.fc_ip` :- IP address of foundation central.
-     * * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+     * * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
      */
     fcMetadata: outputs.FoundationImageNodesFcSettingsFcMetadata;
     /**
@@ -5307,6 +5350,9 @@ export interface FoundationImageNodesFcSettings {
 }
 
 export interface FoundationImageNodesFcSettingsFcMetadata {
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     */
     apiKey: string;
     fcIp: string;
 }
@@ -6741,9 +6787,9 @@ export interface GetClusterNode {
 
 export interface GetClusterProfileV2Cluster {
     /**
-     * - The configuration drifts of a cluster.
+     * - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
      */
-    configDrifts: string;
+    configDrifts: string[];
     /**
      * -Represents clusters uuid
      */
@@ -7449,9 +7495,9 @@ export interface GetClusterProfilesV2ClusterProfile {
 
 export interface GetClusterProfilesV2ClusterProfileCluster {
     /**
-     * - The configuration drifts of a cluster.
+     * - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
      */
-    configDrifts: string;
+    configDrifts: string[];
     /**
      * - A globally unique identifier of an instance that is suitable for external consumption.
      */
@@ -8555,7 +8601,7 @@ export interface GetClusterV2NetworkManagementServer {
      *   Valid values are:
      * - "VCENTER"   	Vcenter management server.
      */
-    type: boolean;
+    type: string;
 }
 
 export interface GetClusterV2NetworkManagementServerIp {
@@ -9701,7 +9747,7 @@ export interface GetClustersV2ClusterEntityNetworkManagementServer {
      *   Valid values are:
      * - "VCENTER"   	Vcenter management server.
      */
-    type: boolean;
+    type: string;
 }
 
 export interface GetClustersV2ClusterEntityNetworkManagementServerIp {
@@ -10354,6 +10400,30 @@ export interface GetDirectoryServicesV2DirectoryServiceServiceAccount {
     username: string;
 }
 
+export interface GetDomainsV2Domain {
+    /**
+     * External identifier of the domain.
+     */
+    domainExtId: string;
+    /**
+     * External identifier of the allowed-domain association.
+     */
+    extId: string;
+    /**
+     * HATEOAS links for the domain association.
+     */
+    links: outputs.GetDomainsV2DomainLink[];
+    /**
+     * Identifier of the tenant that owns the domain association.
+     */
+    tenantId: string;
+}
+
+export interface GetDomainsV2DomainLink {
+    href: string;
+    rel: string;
+}
+
 export interface GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicy {
     /**
      * Cluster external identifier.
@@ -10412,6 +10482,12 @@ export interface GetEntityGroupV2AllowedConfigEntity {
     /**
      * The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
      */
+    selectBy: string;
+    /**
+     * Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
+     *
+     * @deprecated Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+     */
     selectedBy: string;
     /**
      * The type of entity (e.g. VM, ADDRESS_GROUP).
@@ -10459,6 +10535,12 @@ export interface GetEntityGroupV2ExceptConfigEntity {
     referenceExtIds: string[];
     /**
      * The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+     */
+    selectBy: string;
+    /**
+     * Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
+     *
+     * @deprecated Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
      */
     selectedBy: string;
     /**
@@ -10564,6 +10646,10 @@ export interface GetEntityGroupsV2EntityGroupAllowedConfigEntity {
     matchCriteria: string;
     referenceExtIds: string[];
     referenceString: string;
+    selectBy: string;
+    /**
+     * @deprecated Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+     */
     selectedBy: string;
     type: string;
 }
@@ -10597,6 +10683,10 @@ export interface GetEntityGroupsV2EntityGroupExceptConfigEntity {
     addresses: outputs.GetEntityGroupsV2EntityGroupExceptConfigEntityAddress[];
     ipRanges: outputs.GetEntityGroupsV2EntityGroupExceptConfigEntityIpRange[];
     referenceExtIds: string[];
+    selectBy: string;
+    /**
+     * @deprecated Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+     */
     selectedBy: string;
     type: string;
 }
@@ -16509,6 +16599,101 @@ export interface GetLcmStatusV2InProgressOperation {
 }
 
 export interface GetLcmStatusV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetLocalDomainV2ConnectionStatus {
+    /**
+     * - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+     */
+    serviceStatuses: outputs.GetLocalDomainV2ConnectionStatusServiceStatus[];
+    /**
+     * - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+     */
+    status: string;
+}
+
+export interface GetLocalDomainV2ConnectionStatusServiceStatus {
+    /**
+     * - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+     */
+    serviceName: string;
+    /**
+     * - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+     */
+    status: string;
+}
+
+export interface GetLocalDomainV2Location {
+    /**
+     * - The location coordinates, that is latitude and longitude. See Coordinates below.
+     */
+    coordinates: outputs.GetLocalDomainV2LocationCoordinate[];
+    /**
+     * - Location Country.
+     */
+    country: string;
+    /**
+     * - A globally unique identifier of the location.
+     */
+    extId: string;
+    /**
+     * - Location name.
+     */
+    name: string;
+    /**
+     * - Location state.
+     */
+    state: string;
+}
+
+export interface GetLocalDomainV2LocationCoordinate {
+    /**
+     * - The latitude part of the location.
+     */
+    latitude: number;
+    /**
+     * - The longitude part of the location.
+     */
+    longitude: number;
+}
+
+export interface GetLocalDomainV2RegistrationStatus {
+    /**
+     * - Indicates remaining days to domain credential expiry, 0 means expired.
+     */
+    daysToExpiry: number;
+    /**
+     * - The stage for the local domain's register/unregister operation.
+     */
+    errorStage: string;
+    /**
+     * - Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+     */
+    identityProviderExtId: string;
+    /**
+     * - Location state.
+     */
+    state: string;
+}
+
+export interface GetLocationsV2Location {
+    coordinates: outputs.GetLocationsV2LocationCoordinate[];
+    country: string;
+    extId: string;
+    links: outputs.GetLocationsV2LocationLink[];
+    name: string;
+    state: string;
+    tenantId: string;
+}
+
+export interface GetLocationsV2LocationCoordinate {
+    latitude: number;
+    longitude: number;
+}
+
+export interface GetLocationsV2LocationLink {
     href: string;
     rel: string;
 }
@@ -23618,6 +23803,14 @@ export interface GetOvaV2VmConfig {
      * Indicates how the vTPM for the VM should be configured.
      */
     vtpmConfigs: outputs.GetOvaV2VmConfigVtpmConfig[];
+    /**
+     * When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+     */
+    waitForIpRoutable?: boolean;
+    /**
+     * Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+     */
+    waitForIpTimeout?: number;
 }
 
 export interface GetOvaV2VmConfigApcConfig {
@@ -23786,6 +23979,7 @@ export interface GetOvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo
      * Indicates if the disk is undergoing migration to another container.
      */
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * Storage configuration for VM disks
      */
@@ -23911,6 +24105,7 @@ export interface GetOvaV2VmConfigCdRomBackingInfo {
      * Indicates if the disk is undergoing migration to another container.
      */
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * Storage configuration for VM disks
      */
@@ -24061,6 +24256,7 @@ export interface GetOvaV2VmConfigDiskBackingInfoVmDisk {
      * Indicates if the disk is undergoing migration to another container.
      */
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * Storage configuration for VM disks
      */
@@ -25238,6 +25434,14 @@ export interface GetOvasV2OvaVmConfig {
     storageConfigs: outputs.GetOvasV2OvaVmConfigStorageConfig[];
     updateTime: string;
     vtpmConfigs: outputs.GetOvasV2OvaVmConfigVtpmConfig[];
+    /**
+     * When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+     */
+    waitForIpRoutable?: boolean;
+    /**
+     * Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+     */
+    waitForIpTimeout?: number;
 }
 
 export interface GetOvasV2OvaVmConfigApcConfig {
@@ -25325,6 +25529,7 @@ export interface GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorage
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
     storageContainers: outputs.GetOvasV2OvaVmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
 }
@@ -25393,6 +25598,7 @@ export interface GetOvasV2OvaVmConfigCdRomBackingInfo {
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetOvasV2OvaVmConfigCdRomBackingInfoStorageConfig[];
     storageContainers: outputs.GetOvasV2OvaVmConfigCdRomBackingInfoStorageContainer[];
 }
@@ -25474,6 +25680,7 @@ export interface GetOvasV2OvaVmConfigDiskBackingInfoVmDisk {
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageConfig[];
     storageContainers: outputs.GetOvasV2OvaVmConfigDiskBackingInfoVmDiskStorageContainer[];
 }
@@ -31722,6 +31929,130 @@ export interface GetRecoveryPointsV2RecoveryPointVolumeGroupRecoveryPointLink {
     rel: string;
 }
 
+export interface GetRegisteredDomainV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object.
+     */
+    rel: string;
+}
+
+export interface GetRegisteredDomainV2PlatformData {
+    /**
+     * - Number of clusters in the domain.
+     */
+    clusterCount: number;
+    /**
+     * - Domain connectivity status.
+     */
+    connectivityStatus: string;
+    /**
+     * - PC Environment Type of the domain.
+     */
+    pcEnvType: string;
+    /**
+     * - PC Provider Type of the domain.
+     */
+    pcProviderType: string;
+    /**
+     * - PC Version of the domain.
+     */
+    pcVersion: string;
+}
+
+export interface GetRegisteredDomainV2RegistrationConfig {
+    /**
+     * - Registration credentials. See Credentials.
+     */
+    credentials: outputs.GetRegisteredDomainV2RegistrationConfigCredential[];
+    /**
+     * - Unique identifier for the Prism Central.
+     */
+    domainExtId: string;
+    /**
+     * - Prism Central should use this URL to communicate with Nutanix Central.
+     */
+    targetUrl: string;
+    /**
+     * - Unique identifier of the tenant.
+     */
+    tenantExtId: string;
+}
+
+export interface GetRegisteredDomainV2RegistrationConfigCredential {
+    /**
+     * - API key which is used by Prism Central as authentication for Nutanix Central communication.
+     */
+    apiKey: string;
+    /**
+     * - This is used by Prism Central to form authentication token for Nutanix Central communication.
+     */
+    keyId: string;
+}
+
+export interface GetRegisteredDomainV2Tunnel {
+    /**
+     * - Tunnel endpoint for connectivity.
+     */
+    endpoint: string;
+    /**
+     * - Tunnel provider.
+     */
+    provider: string;
+}
+
+export interface GetRegisteredDomainsV2RegisteredDomain {
+    apiCredentialStatus: string;
+    createdBy: string;
+    credentialIssuer: string;
+    dnsName: string;
+    domainExtId: string;
+    extId: string;
+    fqdn: string;
+    links: outputs.GetRegisteredDomainsV2RegisteredDomainLink[];
+    locationExtId: string;
+    name: string;
+    platformDatas: outputs.GetRegisteredDomainsV2RegisteredDomainPlatformData[];
+    registeredTime: string;
+    registrationConfigs: outputs.GetRegisteredDomainsV2RegisteredDomainRegistrationConfig[];
+    registrationState: string;
+    tenantId: string;
+    tunnels: outputs.GetRegisteredDomainsV2RegisteredDomainTunnel[];
+}
+
+export interface GetRegisteredDomainsV2RegisteredDomainLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetRegisteredDomainsV2RegisteredDomainPlatformData {
+    clusterCount: number;
+    connectivityStatus: string;
+    pcEnvType: string;
+    pcProviderType: string;
+    pcVersion: string;
+}
+
+export interface GetRegisteredDomainsV2RegisteredDomainRegistrationConfig {
+    credentials: outputs.GetRegisteredDomainsV2RegisteredDomainRegistrationConfigCredential[];
+    domainExtId: string;
+    targetUrl: string;
+    tenantExtId: string;
+}
+
+export interface GetRegisteredDomainsV2RegisteredDomainRegistrationConfigCredential {
+    apiKey: string;
+    keyId: string;
+}
+
+export interface GetRegisteredDomainsV2RegisteredDomainTunnel {
+    endpoint: string;
+    provider: string;
+}
+
 export interface GetResourceGroupV2Capability {
     /**
      * - Name of the resource group.
@@ -37143,6 +37474,10 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDe
      */
     isMigrationInProgress: boolean;
     /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+     */
+    serialId: string;
+    /**
      * Storage configuration for VM disks
      */
     storageConfigs: outputs.GetTemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
@@ -37275,6 +37610,10 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo {
      * Indicates if the disk is undergoing migration to another container.
      */
     isMigrationInProgress: boolean;
+    /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+     */
+    serialId: string;
     /**
      * Storage configuration for VM disks
      */
@@ -37444,6 +37783,10 @@ export interface GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
      * Indicates if the disk is undergoing migration to another container.
      */
     isMigrationInProgress: boolean;
+    /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+     */
+    serialId: string;
     /**
      * Storage configuration for VM disks
      */
@@ -39099,6 +39442,7 @@ export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBo
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
     storageContainers: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
 }
@@ -39157,6 +39501,7 @@ export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfo
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoStorageConfig[];
     storageContainers: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecCdRomBackingInfoStorageContainer[];
 }
@@ -39233,6 +39578,7 @@ export interface GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoV
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig[];
     storageContainers: outputs.GetTemplatesV2TemplateTemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer[];
 }
@@ -39759,6 +40105,378 @@ export interface GetTemplatesV2TemplateUpdatedByAdditionalAttributeValue {
 
 export interface GetTemplatesV2TemplateUpdatedByAdditionalAttributeValueMapOfString {
     map: {[key: string]: string};
+}
+
+export interface GetTenantDomainAllocationV2ExternalNetworkConfig {
+    configs: outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfig[];
+    /**
+     * External identifier of the tenant domain allocation.
+     */
+    extId: string;
+    /**
+     * The state details of the domain allocation.
+     */
+    stateInfos: outputs.GetTenantDomainAllocationV2ExternalNetworkConfigStateInfo[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetTenantDomainAllocationV2ExternalNetworkConfigConfig {
+    nats: outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfigNat[];
+    noNats: outputs.GetTenantDomainAllocationV2ExternalNetworkConfigConfigNoNat[];
+}
+
+export interface GetTenantDomainAllocationV2ExternalNetworkConfigConfigNat {
+    floatingIpCount: number;
+    overlaySubnetExtId: string;
+    transitVpcExtId: string;
+}
+
+export interface GetTenantDomainAllocationV2ExternalNetworkConfigConfigNoNat {
+    externallyRoutablePrefixes: string[];
+    overlaySubnetExtId: string;
+    transitVpcExtId: string;
+}
+
+export interface GetTenantDomainAllocationV2ExternalNetworkConfigStateInfo {
+    /**
+     * The state of the project.
+     */
+    state: string;
+}
+
+export interface GetTenantDomainAllocationV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetTenantDomainAllocationV2Project {
+    /**
+     * External identifier of the tenant domain allocation.
+     */
+    extId: string;
+    /**
+     * The name of the project.
+     */
+    name: string;
+    /**
+     * The resource quota of the project.
+     */
+    quotas: outputs.GetTenantDomainAllocationV2ProjectQuota[];
+    /**
+     * The resource group of the project.
+     */
+    resourceGroups: outputs.GetTenantDomainAllocationV2ProjectResourceGroup[];
+    /**
+     * The state of the project.
+     */
+    state: string;
+}
+
+export interface GetTenantDomainAllocationV2ProjectQuota {
+    /**
+     * External identifier of the tenant domain allocation.
+     */
+    extId: string;
+    memory: number;
+    storage: number;
+    vcpu: number;
+}
+
+export interface GetTenantDomainAllocationV2ProjectResourceGroup {
+    placementTargets: outputs.GetTenantDomainAllocationV2ProjectResourceGroupPlacementTarget[];
+    uuid: string;
+}
+
+export interface GetTenantDomainAllocationV2ProjectResourceGroupPlacementTarget {
+    clusterUuid: string;
+    storageContainerUuids: string[];
+}
+
+export interface GetTenantDomainAllocationV2StateInfo {
+    /**
+     * The state of the project.
+     */
+    state: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocation {
+    domainExtId: string;
+    extId: string;
+    externalNetworkConfigs: outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfig[];
+    links: outputs.GetTenantDomainAllocationsV2DomainAllocationLink[];
+    projects: outputs.GetTenantDomainAllocationsV2DomainAllocationProject[];
+    stateInfos: outputs.GetTenantDomainAllocationsV2DomainAllocationStateInfo[];
+    /**
+     * External identifier of the tenant.
+     */
+    tenantExtId: string;
+    tenantId: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfig {
+    configs: outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfig[];
+    extId: string;
+    stateInfos: outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigStateInfo[];
+    tenantId: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfig {
+    nats: outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNat[];
+    noNats: outputs.GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNoNat[];
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNat {
+    floatingIpCount: number;
+    overlaySubnetExtId: string;
+    transitVpcExtId: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigConfigNoNat {
+    externallyRoutablePrefixes: string[];
+    overlaySubnetExtId: string;
+    transitVpcExtId: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationExternalNetworkConfigStateInfo {
+    state: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationProject {
+    extId: string;
+    name: string;
+    quotas: outputs.GetTenantDomainAllocationsV2DomainAllocationProjectQuota[];
+    resourceGroups: outputs.GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroup[];
+    state: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationProjectQuota {
+    extId: string;
+    memory: number;
+    storage: number;
+    vcpu: number;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroup {
+    placementTargets: outputs.GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupPlacementTarget[];
+    uuid: string;
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationProjectResourceGroupPlacementTarget {
+    clusterUuid: string;
+    storageContainerUuids: string[];
+}
+
+export interface GetTenantDomainAllocationsV2DomainAllocationStateInfo {
+    state: string;
+}
+
+export interface GetTenantMembershipV2IdentityDetail {
+    /**
+     * - The external identifier of the identity provider.
+     */
+    identityProviderExtId: string;
+    /**
+     * - The unique lookup value for the user, such as a UPN, username, or email address.
+     */
+    principalValue: string;
+    /**
+     * - The identity type. Valid values: `"USER"`, `"GROUP"`.
+     */
+    type: string;
+}
+
+export interface GetTenantMembershipV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
+export interface GetTenantMembershipV2StateInfo {
+    /**
+     * - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+     */
+    state: string;
+}
+
+export interface GetTenantMembershipsV2Membership {
+    /**
+     * - The username of the user who created the membership.
+     */
+    createdBy: string;
+    /**
+     * - The date and time when the membership was created.
+     */
+    createdTime: string;
+    /**
+     * - External identifier of the domain.
+     */
+    domainExtId: string;
+    /**
+     * - A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * - Details used to resolve an external principal.
+     */
+    identityDetails: outputs.GetTenantMembershipsV2MembershipIdentityDetail[];
+    /**
+     * - The external identifier of an existing principal entity.
+     */
+    identityExtId: string;
+    /**
+     * - A HATEOAS style link for the response.
+     */
+    links: outputs.GetTenantMembershipsV2MembershipLink[];
+    /**
+     * - The resolved principal name associated with this membership.
+     */
+    principal: string;
+    /**
+     * - The external identifier of the role assigned to the principal.
+     */
+    roleExtId: string;
+    /**
+     * - The current lifecycle state of the membership.
+     */
+    stateInfos: outputs.GetTenantMembershipsV2MembershipStateInfo[];
+    /**
+     * - A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface GetTenantMembershipsV2MembershipIdentityDetail {
+    /**
+     * - The external identifier of the identity provider.
+     */
+    identityProviderExtId: string;
+    /**
+     * - The unique lookup value for the user, such as a UPN, username, or email address.
+     */
+    principalValue: string;
+    /**
+     * - The identity type. Valid values: `"USER"`, `"GROUP"`.
+     */
+    type: string;
+}
+
+export interface GetTenantMembershipsV2MembershipLink {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
+export interface GetTenantMembershipsV2MembershipStateInfo {
+    /**
+     * - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+     */
+    state: string;
+}
+
+export interface GetTenantV2AdminInfo {
+    /**
+     * The email address of the user.
+     */
+    email: string;
+    /**
+     * The first name of the user.
+     */
+    firstName: string;
+    /**
+     * The last name of the user.
+     */
+    lastName: string;
+    /**
+     * The username of the user.
+     */
+    username: string;
+}
+
+export interface GetTenantV2AggregatedQuota {
+    /**
+     * External identifier of the tenant.
+     */
+    extId: string;
+    /**
+     * The amount of memory allocated as quota, in bytes.
+     */
+    memory: number;
+    /**
+     * The amount of storage allocated as quota, in bytes.
+     */
+    storage: number;
+    /**
+     * The number of vCPUs allocated as quota.
+     */
+    vcpu: number;
+}
+
+export interface GetTenantV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface GetTenantV2StateInfo {
+    /**
+     * The state of the tenant.
+     */
+    state: string;
+}
+
+export interface GetTenantsV2Tenant {
+    addedBy: string;
+    adminInfos: outputs.GetTenantsV2TenantAdminInfo[];
+    aggregatedQuotas: outputs.GetTenantsV2TenantAggregatedQuota[];
+    createdTime: string;
+    description: string;
+    domains: string[];
+    extId: string;
+    links: outputs.GetTenantsV2TenantLink[];
+    name: string;
+    stateInfos: outputs.GetTenantsV2TenantStateInfo[];
+    tenantId: string;
+    url: string;
+}
+
+export interface GetTenantsV2TenantAdminInfo {
+    email: string;
+    firstName: string;
+    lastName: string;
+    username: string;
+}
+
+export interface GetTenantsV2TenantAggregatedQuota {
+    extId: string;
+    memory: number;
+    storage: number;
+    vcpu: number;
+}
+
+export interface GetTenantsV2TenantLink {
+    href: string;
+    rel: string;
+}
+
+export interface GetTenantsV2TenantStateInfo {
+    state: string;
 }
 
 export interface GetUserAccessControlPolicyReferenceList {
@@ -40952,6 +41670,10 @@ export interface GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageI
      */
     isMigrationInProgress: boolean;
     /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+     */
+    serialId: string;
+    /**
      * Storage configuration for VM disks
      */
     storageConfigs: outputs.GetVirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
@@ -41076,6 +41798,10 @@ export interface GetVirtualMachineV2CdRomBackingInfo {
      * Indicates if the disk is undergoing migration to another container.
      */
     isMigrationInProgress: boolean;
+    /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+     */
+    serialId: string;
     /**
      * Storage configuration for VM disks
      */
@@ -41226,6 +41952,10 @@ export interface GetVirtualMachineV2DiskBackingInfoVmDisk {
      * Indicates if the disk is undergoing migration to another container.
      */
     isMigrationInProgress: boolean;
+    /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux.
+     */
+    serialId: string;
     /**
      * Storage configuration for VM disks
      */
@@ -42255,6 +42985,7 @@ export interface GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStora
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
     storageContainers: outputs.GetVirtualMachinesV2VmBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
 }
@@ -42311,6 +43042,7 @@ export interface GetVirtualMachinesV2VmCdRomBackingInfo {
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetVirtualMachinesV2VmCdRomBackingInfoStorageConfig[];
     storageContainers: outputs.GetVirtualMachinesV2VmCdRomBackingInfoStorageContainer[];
 }
@@ -42380,6 +43112,7 @@ export interface GetVirtualMachinesV2VmDiskBackingInfoVmDisk {
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskStorageConfig[];
     storageContainers: outputs.GetVirtualMachinesV2VmDiskBackingInfoVmDiskStorageContainer[];
 }
@@ -45907,7 +46640,8 @@ export interface KeyManagementServerV2AccessInformationAzureKeyVault {
      */
     clientId: string;
     /**
-     * - (Required) Client secret for the Azure Key Vault.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) Client secret for the Azure Key Vault.
      */
     clientSecret: string;
     /**
@@ -45935,11 +46669,13 @@ export interface KeyManagementServerV2AccessInformationKmipKeyVault {
      */
     caName: string;
     /**
-     * - (Required) CA PEM.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) CA PEM.
      */
     caPem: string;
     /**
-     * - (Required) Cert PEM.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) Cert PEM.
      */
     certPem: string;
     /**
@@ -45947,7 +46683,8 @@ export interface KeyManagementServerV2AccessInformationKmipKeyVault {
      */
     endpointUrls: outputs.KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrl[];
     /**
-     * - (Required) Private key.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) Private key.
      */
     privateKey: string;
 }
@@ -46065,6 +46802,94 @@ export interface LcmUpgradeV2ManagementServer {
      * Username to login to the management server.
      */
     username: string;
+}
+
+export interface LocalDomainV2ConnectionStatus {
+    /**
+     * - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+     */
+    serviceStatuses: outputs.LocalDomainV2ConnectionStatusServiceStatus[];
+    /**
+     * - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+     */
+    status: string;
+}
+
+export interface LocalDomainV2ConnectionStatusServiceStatus {
+    /**
+     * - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+     */
+    serviceName: string;
+    /**
+     * - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+     */
+    status: string;
+}
+
+export interface LocalDomainV2Credentials {
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+     */
+    apiKey: string;
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+     */
+    keyId: string;
+}
+
+export interface LocalDomainV2Location {
+    /**
+     * - The location coordinates, that is latitude and longitude. See Coordinates below.
+     */
+    coordinates: outputs.LocalDomainV2LocationCoordinate[];
+    /**
+     * - Location Country.
+     */
+    country: string;
+    /**
+     * - A globally unique identifier of the location.
+     */
+    extId: string;
+    /**
+     * - Location name.
+     */
+    name: string;
+    /**
+     * - Location state.
+     */
+    state: string;
+}
+
+export interface LocalDomainV2LocationCoordinate {
+    /**
+     * - The latitude part of the location.
+     */
+    latitude: number;
+    /**
+     * - The longitude part of the location.
+     */
+    longitude: number;
+}
+
+export interface LocalDomainV2RegistrationStatus {
+    /**
+     * - Indicates remaining days to domain credential expiry, 0 means expired.
+     */
+    daysToExpiry: number;
+    /**
+     * - The stage for the local domain's register/unregister operation.
+     */
+    errorStage: string;
+    /**
+     * - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+     */
+    identityProviderExtId: string;
+    /**
+     * - Location state.
+     */
+    state: string;
 }
 
 export interface NdbCloneActionargument {
@@ -51983,6 +52808,14 @@ export interface OvaV2VmConfig {
      * -(Optional) Indicates how the vTPM for the VM should be configured.
      */
     vtpmConfigs: outputs.OvaV2VmConfigVtpmConfig[];
+    /**
+     * When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+     */
+    waitForIpRoutable?: boolean;
+    /**
+     * Minutes to wait, when the VM is created with<span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "> powerState </span>= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+     */
+    waitForIpTimeout?: number;
 }
 
 export interface OvaV2VmConfigApcConfig {
@@ -52123,6 +52956,7 @@ export interface OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfo {
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
     storageContainers: outputs.OvaV2VmConfigBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
 }
@@ -52217,6 +53051,7 @@ export interface OvaV2VmConfigCdRomBackingInfo {
      */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * Storage configuration for VM disks
      * - `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -52329,6 +53164,7 @@ export interface OvaV2VmConfigDiskBackingInfoVmDisk {
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.OvaV2VmConfigDiskBackingInfoVmDiskStorageConfig[];
     storageContainers: outputs.OvaV2VmConfigDiskBackingInfoVmDiskStorageContainer[];
 }
@@ -53225,6 +54061,7 @@ export interface OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDisk {
      */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * Storage configuration options.
      */
@@ -54259,11 +55096,13 @@ export interface PcBackupTargetV2LocationObjectStoreLocationProviderConfig {
 
 export interface PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentials {
     /**
-     * -(Required) Access key ID for the object store provided for backup target.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Access key ID for the object store provided for backup target.
      */
     accessKeyId: string;
     /**
-     * -(Required) Secret access key for the object store provided for backup target.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Secret access key for the object store provided for backup target.
      */
     secretAccessKey: string;
 }
@@ -54401,7 +55240,8 @@ export interface PcDeployV2ConfigBuildInfo {
 
 export interface PcDeployV2ConfigCredential {
     /**
-     * -(Required) Password required for the basic auth scheme.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Password required for the basic auth scheme.
      */
     password: string;
     /**
@@ -55009,7 +55849,7 @@ export interface PcRegistrationV2ConfigBuildInfo {
 
 export interface PcRegistrationV2ConfigCredential {
     /**
-     * -(Required)  Password required for the basic auth scheme.
+     * -(Required, WriteOnly)  Password required for the basic auth scheme.
      *
      * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
@@ -55546,7 +56386,8 @@ export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterC
 
 export interface PcRegistrationV2RemoteClusterAosRemoteClusterSpecRemoteClusterCredentialsAuthentication {
     /**
-     * -(Required)  Password required for the basic auth scheme.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly)  Password required for the basic auth scheme.
      *
      * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
@@ -55638,7 +56479,8 @@ export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemo
 
 export interface PcRegistrationV2RemoteClusterDomainManagerRemoteClusterSpecRemoteClusterCredentialsAuthentication {
     /**
-     * -(Required)  Password required for the basic auth scheme.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly)  Password required for the basic auth scheme.
      *
      * See detailed information in [Nutanix Register a PC Docs](https://developers.nutanix.com/api-reference?namespace=prism&version=v4.4#tag/DomainManager/operation/register).
      */
@@ -55715,11 +56557,13 @@ export interface PcRestoreSourceV2LocationObjectStoreLocationProviderConfig {
 
 export interface PcRestoreSourceV2LocationObjectStoreLocationProviderConfigCredentials {
     /**
-     * -(Required) Access key ID for the object store provided for backup target.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Access key ID for the object store provided for backup target.
      */
     accessKeyId: string;
     /**
-     * -(Required) Secret access key for the object store provided for backup target.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) Secret access key for the object store provided for backup target.
      */
     secretAccessKey: string;
 }
@@ -57646,6 +58490,83 @@ export interface RecoveryPointsV2VolumeGroupRecoveryPointLink {
      * - A name that identifies the relationship of the link to the object that is returned by the URL. The unique value of "self" identifies the URL for the object.
      */
     rel: string;
+}
+
+export interface RegisteredDomainV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object.
+     */
+    rel: string;
+}
+
+export interface RegisteredDomainV2PlatformData {
+    /**
+     * - (Optional) Number of clusters in the domain.
+     */
+    clusterCount: number;
+    /**
+     * - (Optional) Domain connectivity status.
+     */
+    connectivityStatus: string;
+    /**
+     * - (Optional) PC Environment Type of the domain.
+     */
+    pcEnvType: string;
+    /**
+     * - (Optional) PC Provider Type of the domain.
+     */
+    pcProviderType: string;
+    /**
+     * - (Optional) PC Version of the domain.
+     */
+    pcVersion: string;
+}
+
+export interface RegisteredDomainV2RegistrationConfig {
+    /**
+     * - (Optional) Registration credentials. See Credentials.
+     */
+    credentials?: outputs.RegisteredDomainV2RegistrationConfigCredentials;
+    /**
+     * - (Optional) Unique identifier for the Prism Central.
+     */
+    domainExtId: string;
+    /**
+     * - (Optional) Prism Central should use this URL to communicate with Nutanix Central.
+     */
+    targetUrl: string;
+    /**
+     * - (Optional) Unique identifier of the tenant.
+     */
+    tenantExtId: string;
+}
+
+export interface RegisteredDomainV2RegistrationConfigCredentials {
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Optional, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+     */
+    apiKey?: string;
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Optional, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+     */
+    keyId?: string;
+}
+
+export interface RegisteredDomainV2Tunnel {
+    /**
+     * - (Optional) Tunnel endpoint for connectivity. Prism Central make use of this endpoint to reach tunnel.
+     */
+    endpoint: string;
+    /**
+     * - (Optional) Tunnel provider. One of `IKAT`.
+     */
+    provider: string;
 }
 
 export interface ResourceGroupV2Link {
@@ -60545,6 +61466,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDevic
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
     storageContainers: outputs.TemplateV2TemplateVersionSpecVmSpecBootConfigUefiBootNvramDeviceBackingStorageInfoStorageContainer[];
 }
@@ -60637,6 +61559,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecCdRomBackingInfo {
      */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * Storage configuration for VM disks
      * * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -60753,6 +61676,7 @@ export interface TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDisk {
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     storageConfigs: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig[];
     storageContainers: outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer[];
 }
@@ -61480,6 +62404,233 @@ export interface TemplateV2UpdatedByAdditionalAttributeValueMapOfString {
     map: {[key: string]: string};
 }
 
+export interface TenantDomainAllocationV2ExternalNetworkConfig {
+    /**
+     * The NAT or no-NAT external network connection configuration.
+     */
+    config: outputs.TenantDomainAllocationV2ExternalNetworkConfigConfig;
+    /**
+     * A globally unique identifier of an instance that is suitable for external consumption.
+     */
+    extId: string;
+    /**
+     * The state details of the domain allocation.
+     */
+    stateInfos: outputs.TenantDomainAllocationV2ExternalNetworkConfigStateInfo[];
+    /**
+     * A globally unique identifier that represents the tenant that owns this entity.
+     */
+    tenantId: string;
+}
+
+export interface TenantDomainAllocationV2ExternalNetworkConfigConfig {
+    /**
+     * NAT configuration.
+     */
+    nat?: outputs.TenantDomainAllocationV2ExternalNetworkConfigConfigNat;
+    /**
+     * No-NAT configuration.
+     */
+    noNat?: outputs.TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat;
+}
+
+export interface TenantDomainAllocationV2ExternalNetworkConfigConfigNat {
+    /**
+     * Total floating IPs to allocate. Existing assignments are preserved, and only additional IPs are created. Default is 0.
+     */
+    floatingIpCount: number;
+    /**
+     * The external identifier of the overlay subnet for NAT configuration.
+     */
+    overlaySubnetExtId: string;
+    /**
+     * The external identifier of the transit VPC for NAT configuration.
+     */
+    transitVpcExtId: string;
+}
+
+export interface TenantDomainAllocationV2ExternalNetworkConfigConfigNoNat {
+    /**
+     * Externally Routable Prefix (ERP) CIDRs for no-NAT mode. The list replaces existing values on each request, and CIDRs are normalized.
+     */
+    externallyRoutablePrefixes: string[];
+    /**
+     * The external identifier of the overlay subnet for no-NAT configuration.
+     */
+    overlaySubnetExtId: string;
+    /**
+     * The external identifier of the transit VPC for no-NAT configuration.
+     */
+    transitVpcExtId: string;
+}
+
+export interface TenantDomainAllocationV2ExternalNetworkConfigStateInfo {
+    /**
+     * The state of the domain allocation.
+     */
+    state: string;
+}
+
+export interface TenantDomainAllocationV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface TenantDomainAllocationV2Project {
+    /**
+     * External identifier of the project.
+     */
+    extId: string;
+    /**
+     * The name of the project.
+     */
+    name: string;
+    /**
+     * The resource quota of the project.
+     */
+    quota: outputs.TenantDomainAllocationV2ProjectQuota;
+    /**
+     * The resource group of the project.
+     */
+    resourceGroup: outputs.TenantDomainAllocationV2ProjectResourceGroup;
+    /**
+     * The state of the domain allocation.
+     */
+    state: string;
+}
+
+export interface TenantDomainAllocationV2ProjectQuota {
+    /**
+     * The external identifier of the quota for the placement target.
+     */
+    extId: string;
+    /**
+     * The amount of memory allocated as quota, in Giga bytes.
+     */
+    memory: number;
+    /**
+     * The amount of storage allocated as quota, in Giga bytes.
+     */
+    storage: number;
+    /**
+     * The number of vCPUs allocated as quota.
+     */
+    vcpu: number;
+}
+
+export interface TenantDomainAllocationV2ProjectResourceGroup {
+    /**
+     * The placement targets of the resource group.
+     * - `placement_targets.cluster_uuid`: (Optional) The UUID of the cluster for resource placement.
+     * - `placement_targets.storage_container_uuids`: (Optional) List of storage container UUIDs for the placement target.
+     */
+    placementTargets: outputs.TenantDomainAllocationV2ProjectResourceGroupPlacementTarget[];
+    /**
+     * The UUID of the resource group for the placement target.
+     */
+    uuid: string;
+}
+
+export interface TenantDomainAllocationV2ProjectResourceGroupPlacementTarget {
+    clusterUuid: string;
+    storageContainerUuids: string[];
+}
+
+export interface TenantDomainAllocationV2StateInfo {
+    /**
+     * The state of the domain allocation.
+     */
+    state: string;
+}
+
+export interface TenantMembershipV2IdentityDetails {
+    /**
+     * - (Required) The external identifier of the identity provider.
+     */
+    identityProviderExtId: string;
+    /**
+     * - (Required) The unique lookup value for the user, such as a UPN, username, or email address.
+     */
+    principalValue: string;
+    /**
+     * - (Required) The identity type. Valid values: `"USER"`, `"GROUP"`.
+     */
+    type: string;
+}
+
+export interface TenantMembershipV2Link {
+    /**
+     * - The URL at which the entity described by the link can be accessed.
+     */
+    href: string;
+    /**
+     * - A name that identifies the relationship of the link to the object that is returned by the URL.
+     */
+    rel: string;
+}
+
+export interface TenantMembershipV2StateInfo {
+    /**
+     * - The membership state. Valid values: `"PENDING"`, `"ACTIVE"`, `"ERROR"`, `"DELETING"`.
+     */
+    state: string;
+}
+
+export interface TenantV2AdminInfo {
+    /**
+     * The email address of the user.
+     */
+    email: string;
+    /**
+     * The first name of the user.
+     */
+    firstName: string;
+    /**
+     * The last name of the user.
+     */
+    lastName: string;
+    /**
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * The password of the user.
+     */
+    password: string;
+    /**
+     * The username of the user.
+     */
+    username: string;
+}
+
+export interface TenantV2AggregatedQuota {
+    /**
+     * The external identifier of the quota for the placement target.
+     */
+    extId: string;
+    /**
+     * The amount of memory allocated as quota, in bytes.
+     */
+    memory: number;
+    /**
+     * The amount of storage allocated as quota, in bytes.
+     */
+    storage: number;
+    /**
+     * The number of vCPUs allocated as quota.
+     */
+    vcpu: number;
+}
+
+export interface TenantV2Link {
+    href: string;
+    rel: string;
+}
+
+export interface TenantV2StateInfo {
+    /**
+     * The state of the tenant.
+     */
+    state: string;
+}
+
 export interface UserAccessControlPolicyReferenceList {
     /**
      * - The kind name. (Default depends on the resource you are referencing)
@@ -62086,6 +63237,10 @@ export interface VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfo
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
     /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+     */
+    serialId: string;
+    /**
      * Storage configuration for VM.
      */
     storageConfigs: outputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfig[];
@@ -62190,6 +63345,10 @@ export interface VirtualMachineV2CdRomBackingInfo {
      */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+     */
+    serialId: string;
     /**
      * Storage configuration for VM disks
      * * `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -62313,6 +63472,10 @@ export interface VirtualMachineV2DiskBackingInfoVmDisk {
     diskExtId: string;
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    /**
+     * The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_<serial_id>` on Linux, so it can be used to map a Terraform disk to a guest device.
+     */
+    serialId: string;
     /**
      * Storage configuration for VM.
      */
@@ -63226,6 +64389,7 @@ export interface VmCdromInsertEjectV2BackingInfo {
      */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * Storage configuration for VM disks
      * * `storage_config.is_flash_mode_enabled`: (Required) Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -63449,6 +64613,7 @@ export interface VmCloneV2BootConfigUefiBootNvramDeviceBackingStorageInfo {
      */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * - (Optional) Storage configuration for VM disks.
      */
@@ -63565,6 +64730,7 @@ export interface VmCloneV2CdRomBackingInfo {
      */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * - (Optional) Storage configuration for VM disks.
      */
@@ -63706,6 +64872,7 @@ export interface VmCloneV2DiskBackingInfoVmDisk {
      */
     diskSizeBytes: number;
     isMigrationInProgress: boolean;
+    serialId: string;
     /**
      * - (Optional) Storage configuration for VM disks.
      */

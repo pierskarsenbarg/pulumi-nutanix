@@ -28,7 +28,11 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public InputList<Inputs.PcRegistrationV2ConfigCredentialGetArgs> Credentials
         {
             get => _credentials ?? (_credentials = new InputList<Inputs.PcRegistrationV2ConfigCredentialGetArgs>());
-            set => _credentials = value;
+            set
+            {
+                var emptySecret = Output.CreateSecret(ImmutableArray.Create<Inputs.PcRegistrationV2ConfigCredentialGetArgs>());
+                _credentials = Output.All(value, emptySecret).Apply(v => v[0]);
+            }
         }
 
         [Input("name", required: true)]

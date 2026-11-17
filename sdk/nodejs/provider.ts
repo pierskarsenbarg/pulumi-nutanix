@@ -32,6 +32,12 @@ export class Provider extends pulumi.ProviderResource {
      */
     declare public readonly apiKey: pulumi.Output<string | undefined>;
     /**
+     * Domain name for the Prism Central instance. Used to construct the
+     * PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+     * Tenant Admin scenarios.
+     */
+    declare public readonly domainName: pulumi.Output<string | undefined>;
+    /**
      * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
      * note, this is never the data services VIP, and should not be an
      * individual CVM address, as this would cause calls to fail during
@@ -53,6 +59,12 @@ export class Provider extends pulumi.ProviderResource {
     declare public readonly ndbPassword: pulumi.Output<string | undefined>;
     declare public readonly ndbUsername: pulumi.Output<string | undefined>;
     /**
+     * Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+     * Service Provider Admin scenarios. This is the base domain for NC services
+     * (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+     */
+    declare public readonly nutanixCentralEndpoint: pulumi.Output<string | undefined>;
+    /**
      * Password for provided user name.
      */
     declare public readonly password: pulumi.Output<string | undefined>;
@@ -61,6 +73,11 @@ export class Provider extends pulumi.ProviderResource {
      */
     declare public readonly port: pulumi.Output<string | undefined>;
     declare public readonly proxyUrl: pulumi.Output<string | undefined>;
+    /**
+     * Tenant name for Tenant Admin scenarios. Required when operating as
+     * a Tenant Admin to manage tenant-specific resources.
+     */
+    declare public readonly tenantName: pulumi.Output<string | undefined>;
     /**
      * User name for Nutanix Prism. Could be
      * local cluster auth (e.g. 'admin') or directory auth.
@@ -80,6 +97,7 @@ export class Provider extends pulumi.ProviderResource {
         {
             resourceInputs["apiKey"] = args?.apiKey ? pulumi.secret(args.apiKey) : undefined;
             resourceInputs["customHeaders"] = pulumi.output(args?.customHeaders ? pulumi.secret(args.customHeaders) : undefined).apply(JSON.stringify);
+            resourceInputs["domainName"] = args?.domainName;
             resourceInputs["endpoint"] = args?.endpoint;
             resourceInputs["foundationEndpoint"] = args?.foundationEndpoint;
             resourceInputs["foundationPort"] = args?.foundationPort;
@@ -87,10 +105,13 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["ndbEndpoint"] = args?.ndbEndpoint;
             resourceInputs["ndbPassword"] = args?.ndbPassword;
             resourceInputs["ndbUsername"] = args?.ndbUsername;
+            resourceInputs["nutanixCentralEndpoint"] = args?.nutanixCentralEndpoint;
             resourceInputs["password"] = args?.password;
             resourceInputs["port"] = args?.port;
             resourceInputs["proxyUrl"] = args?.proxyUrl;
             resourceInputs["sessionAuth"] = pulumi.output(args?.sessionAuth).apply(JSON.stringify);
+            resourceInputs["tenantName"] = args?.tenantName;
+            resourceInputs["useNcIam"] = pulumi.output(args?.useNcIam).apply(JSON.stringify);
             resourceInputs["username"] = args?.username;
             resourceInputs["waitTimeout"] = pulumi.output(args?.waitTimeout).apply(JSON.stringify);
         }
@@ -129,6 +150,12 @@ export interface ProviderArgs {
      */
     customHeaders?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
+     * Domain name for the Prism Central instance. Used to construct the
+     * PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+     * Tenant Admin scenarios.
+     */
+    domainName?: pulumi.Input<string | undefined>;
+    /**
      * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
      * note, this is never the data services VIP, and should not be an
      * individual CVM address, as this would cause calls to fail during
@@ -154,6 +181,12 @@ export interface ProviderArgs {
     ndbPassword?: pulumi.Input<string | undefined>;
     ndbUsername?: pulumi.Input<string | undefined>;
     /**
+     * Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+     * Service Provider Admin scenarios. This is the base domain for NC services
+     * (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+     */
+    nutanixCentralEndpoint?: pulumi.Input<string | undefined>;
+    /**
      * Password for provided user name.
      */
     password?: pulumi.Input<string | undefined>;
@@ -167,12 +200,22 @@ export interface ProviderArgs {
      */
     sessionAuth?: pulumi.Input<boolean | undefined>;
     /**
+     * Tenant name for Tenant Admin scenarios. Required when operating as
+     * a Tenant Admin to manage tenant-specific resources.
+     */
+    tenantName?: pulumi.Input<string | undefined>;
+    /**
+     * When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+     * instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+     */
+    useNcIam?: pulumi.Input<boolean | undefined>;
+    /**
      * User name for Nutanix Prism. Could be
      * local cluster auth (e.g. 'admin') or directory auth.
      */
     username?: pulumi.Input<string | undefined>;
     /**
-     * Set if you know that the creation o update of a resource may take long time (minutes)
+     * Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
      */
     waitTimeout?: pulumi.Input<number | undefined>;
 }

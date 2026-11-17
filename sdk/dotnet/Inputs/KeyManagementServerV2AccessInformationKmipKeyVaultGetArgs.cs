@@ -23,7 +23,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private Input<string>? _caPem;
 
         /// <summary>
-        /// - (Required) CA PEM.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) CA PEM.
         /// </summary>
         public Input<string>? CaPem
         {
@@ -39,7 +40,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private Input<string>? _certPem;
 
         /// <summary>
-        /// - (Required) Cert PEM.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) Cert PEM.
         /// </summary>
         public Input<string>? CertPem
         {
@@ -67,7 +69,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private Input<string>? _privateKey;
 
         /// <summary>
-        /// - (Required) Private key.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) Private key.
         /// </summary>
         public Input<string>? PrivateKey
         {

@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Configures IPMI IP address on BMC of nodes.
     /// 
+    /// &gt; **WriteOnly credentials:** &lt;span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`"&gt;`ipmiPassword`&lt;/span&gt; is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+    /// 
     /// ## Example Usage
     /// 
     /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -91,7 +93,8 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> IpmiNetmask { get; private set; } = null!;
 
         /// <summary>
-        /// - (Required) IPMI password.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) IPMI password.
         /// </summary>
         [Output("ipmiPassword")]
         public Output<string> IpmiPassword { get; private set; } = null!;
@@ -126,6 +129,10 @@ namespace PiersKarsenbarg.Nutanix
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-nutanix",
+                AdditionalSecretOutputs =
+                {
+                    "ipmiPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -173,11 +180,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("ipmiNetmask", required: true)]
         public Input<string> IpmiNetmask { get; set; } = null!;
 
-        /// <summary>
-        /// - (Required) IPMI password.
-        /// </summary>
         [Input("ipmiPassword", required: true)]
-        public Input<string> IpmiPassword { get; set; } = null!;
+        private Input<string>? _ipmiPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) IPMI password.
+        /// </summary>
+        public Input<string>? IpmiPassword
+        {
+            get => _ipmiPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _ipmiPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - (Required) IPMI username.
@@ -217,11 +235,22 @@ namespace PiersKarsenbarg.Nutanix
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
-        /// <summary>
-        /// - (Required) IPMI password.
-        /// </summary>
         [Input("ipmiPassword")]
-        public Input<string>? IpmiPassword { get; set; }
+        private Input<string>? _ipmiPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) IPMI password.
+        /// </summary>
+        public Input<string>? IpmiPassword
+        {
+            get => _ipmiPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _ipmiPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// - (Required) IPMI username.

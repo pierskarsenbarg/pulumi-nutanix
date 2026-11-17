@@ -14,7 +14,20 @@ namespace PiersKarsenbarg.Nutanix.Inputs
     public sealed class FoundationImageNodesFcSettingsFcMetadataArgs : global::Pulumi.ResourceArgs
     {
         [Input("apiKey", required: true)]
-        public Input<string> ApiKey { get; set; } = null!;
+        private Input<string>? _apiKey;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// </summary>
+        public Input<string>? ApiKey
+        {
+            get => _apiKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _apiKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("fcIp", required: true)]
         public Input<string> FcIp { get; set; } = null!;

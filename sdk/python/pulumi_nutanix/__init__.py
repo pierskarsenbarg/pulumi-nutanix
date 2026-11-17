@@ -8,6 +8,7 @@ import typing
 # Export this package's modules as members:
 from .access_control_policy import *
 from .ad_group_category_mapping_v2 import *
+from .add_domain_v2 import *
 from .address_group import *
 from .address_groups_v2 import *
 from .associate_category_to_volume_group_v2 import *
@@ -61,6 +62,7 @@ from .get_directory_server_configs_v2 import *
 from .get_directory_service_users_search_v2 import *
 from .get_directory_service_v2 import *
 from .get_directory_services_v2 import *
+from .get_domains_v2 import *
 from .get_effective_image_rate_limit_policies_v2 import *
 from .get_entity_group_v2 import *
 from .get_entity_groups_v2 import *
@@ -103,6 +105,8 @@ from .get_lcm_config_v2 import *
 from .get_lcm_entities_v2 import *
 from .get_lcm_entity_v2 import *
 from .get_lcm_status_v2 import *
+from .get_local_domain_v2 import *
+from .get_locations_v2 import *
 from .get_ndb_clone import *
 from .get_ndb_clones import *
 from .get_ndb_cluster import *
@@ -167,6 +171,8 @@ from .get_recovery_plan import *
 from .get_recovery_plans import *
 from .get_recovery_point_v2 import *
 from .get_recovery_points_v2 import *
+from .get_registered_domain_v2 import *
+from .get_registered_domains_v2 import *
 from .get_resource_group_v2 import *
 from .get_resource_groups_v2 import *
 from .get_restorable_pcs_v2 import *
@@ -210,6 +216,12 @@ from .get_template_placement_policies_v2 import *
 from .get_template_placement_policy_v2 import *
 from .get_template_v2 import *
 from .get_templates_v2 import *
+from .get_tenant_domain_allocation_v2 import *
+from .get_tenant_domain_allocations_v2 import *
+from .get_tenant_membership_v2 import *
+from .get_tenant_memberships_v2 import *
+from .get_tenant_v2 import *
+from .get_tenants_v2 import *
 from .get_user import *
 from .get_user_group import *
 from .get_user_group_v2 import *
@@ -266,6 +278,7 @@ from .lcm_config_v2 import *
 from .lcm_perform_inventory_v2 import *
 from .lcm_prechecks_v2 import *
 from .lcm_upgrade_v2 import *
+from .local_domain_v2 import *
 from .ndb_authorize_dbserver import *
 from .ndb_clone import *
 from .ndb_clone_refresh import *
@@ -321,6 +334,7 @@ from .recovery_plan import *
 from .recovery_point_replicate_v2 import *
 from .recovery_point_restore_v2 import *
 from .recovery_points_v2 import *
+from .registered_domain_v2 import *
 from .resource_group_v2 import *
 from .restore_protected_resource_v2 import *
 from .role import *
@@ -347,6 +361,9 @@ from .subnet_v2 import *
 from .template_guest_os_actions_v2 import *
 from .template_placement_policy_v2 import *
 from .template_v2 import *
+from .tenant_domain_allocation_v2 import *
+from .tenant_membership_v2 import *
+from .tenant_v2 import *
 from .user import *
 from .user_groups import *
 from .user_groups_v2 import *
@@ -401,6 +418,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/adGroupCategoryMappingV2:AdGroupCategoryMappingV2": "AdGroupCategoryMappingV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/addDomainV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/addDomainV2:AddDomainV2": "AddDomainV2"
   }
  },
  {
@@ -697,6 +722,14 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/lcmUpgradeV2:LcmUpgradeV2": "LcmUpgradeV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/localDomainV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/localDomainV2:LocalDomainV2": "LocalDomainV2"
   }
  },
  {
@@ -1133,6 +1166,14 @@ _utilities.register(
  },
  {
   "pkg": "nutanix",
+  "mod": "index/registeredDomainV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/registeredDomainV2:RegisteredDomainV2": "RegisteredDomainV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
   "mod": "index/resourceGroupV2",
   "fqn": "pulumi_nutanix",
   "classes": {
@@ -1337,6 +1378,30 @@ _utilities.register(
   "fqn": "pulumi_nutanix",
   "classes": {
    "nutanix:index/templateV2:TemplateV2": "TemplateV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/tenantDomainAllocationV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/tenantDomainAllocationV2:TenantDomainAllocationV2": "TenantDomainAllocationV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/tenantMembershipV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/tenantMembershipV2:TenantMembershipV2": "TenantMembershipV2"
+  }
+ },
+ {
+  "pkg": "nutanix",
+  "mod": "index/tenantV2",
+  "fqn": "pulumi_nutanix",
+  "classes": {
+   "nutanix:index/tenantV2:TenantV2": "TenantV2"
   }
  },
  {

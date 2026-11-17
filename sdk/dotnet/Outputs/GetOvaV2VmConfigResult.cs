@@ -191,6 +191,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// Indicates how the vTPM for the VM should be configured.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOvaV2VmConfigVtpmConfigResult> VtpmConfigs;
+        /// <summary>
+        /// When waiting for an IP (see wait_for_ip_timeout), ignore IPv4 link-local (APIPA, 169.254.0.0/16) addresses, which a guest can assign itself before DHCP completes. No other check is made (no default gateway test). Set false to accept an APIPA address too.
+        /// </summary>
+        public readonly bool? WaitForIpRoutable;
+        /// <summary>
+        /// Minutes to wait, when the VM is created with&lt;span pulumi-lang-nodejs=" powerState " pulumi-lang-dotnet=" PowerState " pulumi-lang-go=" powerState " pulumi-lang-python=" power_state " pulumi-lang-yaml=" powerState " pulumi-lang-java=" powerState " pulumi-lang-hcl=" power_state "&gt; powerState &lt;/span&gt;= "ON", for it to report a usable IPv4 address. 0 disables the wait; at most 15, so the wait fits within create's 20 minute limit.
+        /// </summary>
+        public readonly int? WaitForIpTimeout;
 
         [OutputConstructor]
         private GetOvaV2VmConfigResult(
@@ -282,7 +290,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string updateTime,
 
-            ImmutableArray<Outputs.GetOvaV2VmConfigVtpmConfigResult> vtpmConfigs)
+            ImmutableArray<Outputs.GetOvaV2VmConfigVtpmConfigResult> vtpmConfigs,
+
+            bool? waitForIpRoutable,
+
+            int? waitForIpTimeout)
         {
             ApcConfigs = apcConfigs;
             AvailabilityZones = availabilityZones;
@@ -329,6 +341,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             StorageConfigs = storageConfigs;
             UpdateTime = updateTime;
             VtpmConfigs = vtpmConfigs;
+            WaitForIpRoutable = waitForIpRoutable;
+            WaitForIpTimeout = waitForIpTimeout;
         }
     }
 }

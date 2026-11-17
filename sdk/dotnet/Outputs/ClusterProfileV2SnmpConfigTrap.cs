@@ -26,6 +26,9 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// SNMP engine ID (hexadecimal string, e.g. 0x12345678).
         /// </summary>
         public readonly string? EngineId;
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         public readonly string? ExtId;
         public readonly ImmutableArray<Outputs.ClusterProfileV2SnmpConfigTrapLink> Links;
         /// <summary>

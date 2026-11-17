@@ -13,17 +13,39 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentialsArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// -(Required) Access key ID for the object store provided for backup target.
-        /// </summary>
         [Input("accessKeyId", required: true)]
-        public Input<string> AccessKeyId { get; set; } = null!;
+        private Input<string>? _accessKeyId;
 
         /// <summary>
-        /// -(Required) Secret access key for the object store provided for backup target.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) Access key ID for the object store provided for backup target.
         /// </summary>
+        public Input<string>? AccessKeyId
+        {
+            get => _accessKeyId;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _accessKeyId = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         [Input("secretAccessKey", required: true)]
-        public Input<string> SecretAccessKey { get; set; } = null!;
+        private Input<string>? _secretAccessKey;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) Secret access key for the object store provided for backup target.
+        /// </summary>
+        public Input<string>? SecretAccessKey
+        {
+            get => _secretAccessKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _secretAccessKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public PcBackupTargetV2LocationObjectStoreLocationProviderConfigCredentialsArgs()
         {

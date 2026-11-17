@@ -598,7 +598,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             allowed_config={
                 "entities": [{
                     "type": "VM",
-                    "selected_by": "CATEGORY_EXT_ID",
+                    "select_by": "CATEGORY_EXT_ID",
                     "reference_ext_ids": [example["id"]],
                 }],
             })
@@ -693,7 +693,7 @@ class NetworkSecurityPolicyV2(pulumi.CustomResource):
             allowed_config={
                 "entities": [{
                     "type": "VM",
-                    "selected_by": "CATEGORY_EXT_ID",
+                    "select_by": "CATEGORY_EXT_ID",
                     "reference_ext_ids": [example["id"]],
                 }],
             })

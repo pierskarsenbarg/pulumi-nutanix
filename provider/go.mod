@@ -1,10 +1,10 @@
 module github.com/pierskarsenbarg/pulumi-nutanix/provider
 
-go 1.27.3
+go 1.27.4
 
 replace (
 	github.com/hashicorp/terraform-plugin-sdk/v2 => github.com/pulumi/terraform-plugin-sdk/v2 v2.0.0-20260318212141-5525259d096b
-	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20261007104921-b5a0f7a680f3
+	github.com/terraform-providers/terraform-provider-nutanix => github.com/nutanix/terraform-provider-nutanix v1.9.6-0.20261112215355-e30028c4ff23
 )
 
 require (
@@ -168,6 +168,7 @@ require (
 	github.com/nutanix/ntnx-api-golang-clients/objects-go-client/v4 v4.1.2 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/prism-go-client/v4 v4.4.2 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/security-go-client/v4 v4.2.1 // indirect
+	github.com/nutanix/ntnx-api-golang-clients/tenancy-go-client/v4 v4.0.2-alpha.1 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/vmm-go-client/v4 v4.3.2 // indirect
 	github.com/nutanix/ntnx-api-golang-clients/volumes-go-client/v4 v4.3.2 // indirect
 	github.com/oklog/run v1.1.0 // indirect

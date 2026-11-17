@@ -21,6 +21,7 @@ class ProviderArgs:
     def __init__(__self__, *,
                  api_key: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
                  endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
@@ -28,10 +29,13 @@ class ProviderArgs:
                  ndb_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  ndb_password: pulumi.Input[Optional[_builtins.str]] = None,
                  ndb_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 nutanix_central_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.str]] = None,
                  proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
                  session_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tenant_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_nc_iam: pulumi.Input[Optional[_builtins.bool]] = None,
                  username: pulumi.Input[Optional[_builtins.str]] = None,
                  wait_timeout: pulumi.Input[Optional[_builtins.int]] = None):
         """
@@ -45,6 +49,9 @@ class ProviderArgs:
                service tokens. Headers can also be set via environment variables with
                the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
                becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+        :param pulumi.Input[_builtins.str] domain_name: Domain name for the Prism Central instance. Used to construct the
+               PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+               Tenant Admin scenarios.
         :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
                note, this is never the data services VIP, and should not be an
                individual CVM address, as this would cause calls to fail during
@@ -53,17 +60,26 @@ class ProviderArgs:
         :param pulumi.Input[_builtins.str] foundation_port: Port for foundation VM
         :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
         :param pulumi.Input[_builtins.str] ndb_endpoint: endpoint for Era VM (era ip)
+        :param pulumi.Input[_builtins.str] nutanix_central_endpoint: Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+               Service Provider Admin scenarios. This is the base domain for NC services
+               (e.g., 'nconprem-10-102-176-12.ccpnx.com').
         :param pulumi.Input[_builtins.str] password: Password for provided user name.
         :param pulumi.Input[_builtins.str] port: Port for Nutanix Prism.
         :param pulumi.Input[_builtins.bool] session_auth: Use session authentification instead of basic auth for each request
+        :param pulumi.Input[_builtins.str] tenant_name: Tenant name for Tenant Admin scenarios. Required when operating as
+               a Tenant Admin to manage tenant-specific resources.
+        :param pulumi.Input[_builtins.bool] use_nc_iam: When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+               instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
         :param pulumi.Input[_builtins.str] username: User name for Nutanix Prism. Could be
                local cluster auth (e.g. 'admin') or directory auth.
-        :param pulumi.Input[_builtins.int] wait_timeout: Set if you know that the creation o update of a resource may take long time (minutes)
+        :param pulumi.Input[_builtins.int] wait_timeout: Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
         """
         if api_key is not None:
             pulumi.set(__self__, "api_key", api_key)
         if custom_headers is not None:
             pulumi.set(__self__, "custom_headers", custom_headers)
+        if domain_name is not None:
+            pulumi.set(__self__, "domain_name", domain_name)
         if endpoint is not None:
             pulumi.set(__self__, "endpoint", endpoint)
         if foundation_endpoint is not None:
@@ -78,6 +94,8 @@ class ProviderArgs:
             pulumi.set(__self__, "ndb_password", ndb_password)
         if ndb_username is not None:
             pulumi.set(__self__, "ndb_username", ndb_username)
+        if nutanix_central_endpoint is not None:
+            pulumi.set(__self__, "nutanix_central_endpoint", nutanix_central_endpoint)
         if password is not None:
             pulumi.set(__self__, "password", password)
         if port is not None:
@@ -86,6 +104,10 @@ class ProviderArgs:
             pulumi.set(__self__, "proxy_url", proxy_url)
         if session_auth is not None:
             pulumi.set(__self__, "session_auth", session_auth)
+        if tenant_name is not None:
+            pulumi.set(__self__, "tenant_name", tenant_name)
+        if use_nc_iam is not None:
+            pulumi.set(__self__, "use_nc_iam", use_nc_iam)
         if username is not None:
             pulumi.set(__self__, "username", username)
         if wait_timeout is not None:
@@ -120,6 +142,20 @@ class ProviderArgs:
     @custom_headers.setter
     def custom_headers(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "custom_headers", value)
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Domain name for the Prism Central instance. Used to construct the
+        PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+        Tenant Admin scenarios.
+        """
+        return pulumi.get(self, "domain_name")
+
+    @domain_name.setter
+    def domain_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "domain_name", value)
 
     @_builtins.property
     @pulumi.getter
@@ -203,6 +239,20 @@ class ProviderArgs:
         pulumi.set(self, "ndb_username", value)
 
     @_builtins.property
+    @pulumi.getter(name="nutanixCentralEndpoint")
+    def nutanix_central_endpoint(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+        Service Provider Admin scenarios. This is the base domain for NC services
+        (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+        """
+        return pulumi.get(self, "nutanix_central_endpoint")
+
+    @nutanix_central_endpoint.setter
+    def nutanix_central_endpoint(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "nutanix_central_endpoint", value)
+
+    @_builtins.property
     @pulumi.getter
     def password(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -248,6 +298,32 @@ class ProviderArgs:
         pulumi.set(self, "session_auth", value)
 
     @_builtins.property
+    @pulumi.getter(name="tenantName")
+    def tenant_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tenant name for Tenant Admin scenarios. Required when operating as
+        a Tenant Admin to manage tenant-specific resources.
+        """
+        return pulumi.get(self, "tenant_name")
+
+    @tenant_name.setter
+    def tenant_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tenant_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="useNcIam")
+    def use_nc_iam(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+        instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+        """
+        return pulumi.get(self, "use_nc_iam")
+
+    @use_nc_iam.setter
+    def use_nc_iam(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "use_nc_iam", value)
+
+    @_builtins.property
     @pulumi.getter
     def username(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -264,7 +340,7 @@ class ProviderArgs:
     @pulumi.getter(name="waitTimeout")
     def wait_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        Set if you know that the creation o update of a resource may take long time (minutes)
+        Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
         """
         return pulumi.get(self, "wait_timeout")
 
@@ -281,6 +357,7 @@ class Provider(pulumi.ProviderResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_key: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
                  endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
@@ -288,10 +365,13 @@ class Provider(pulumi.ProviderResource):
                  ndb_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  ndb_password: pulumi.Input[Optional[_builtins.str]] = None,
                  ndb_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 nutanix_central_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.str]] = None,
                  proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
                  session_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tenant_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_nc_iam: pulumi.Input[Optional[_builtins.bool]] = None,
                  username: pulumi.Input[Optional[_builtins.str]] = None,
                  wait_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
@@ -312,6 +392,9 @@ class Provider(pulumi.ProviderResource):
                service tokens. Headers can also be set via environment variables with
                the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
                becomes Cf-Access-Client-Id). Config values take precedence over env vars.
+        :param pulumi.Input[_builtins.str] domain_name: Domain name for the Prism Central instance. Used to construct the
+               PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+               Tenant Admin scenarios.
         :param pulumi.Input[_builtins.str] endpoint: URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
                note, this is never the data services VIP, and should not be an
                individual CVM address, as this would cause calls to fail during
@@ -320,12 +403,19 @@ class Provider(pulumi.ProviderResource):
         :param pulumi.Input[_builtins.str] foundation_port: Port for foundation VM
         :param pulumi.Input[_builtins.bool] insecure: Explicitly allow the provider to perform "insecure" SSL requests. If omitted,default value is <span pulumi-lang-nodejs="`false`" pulumi-lang-dotnet="`False`" pulumi-lang-go="`false`" pulumi-lang-python="`false`" pulumi-lang-yaml="`false`" pulumi-lang-java="`false`" pulumi-lang-hcl="`false`">`false`</span>
         :param pulumi.Input[_builtins.str] ndb_endpoint: endpoint for Era VM (era ip)
+        :param pulumi.Input[_builtins.str] nutanix_central_endpoint: Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+               Service Provider Admin scenarios. This is the base domain for NC services
+               (e.g., 'nconprem-10-102-176-12.ccpnx.com').
         :param pulumi.Input[_builtins.str] password: Password for provided user name.
         :param pulumi.Input[_builtins.str] port: Port for Nutanix Prism.
         :param pulumi.Input[_builtins.bool] session_auth: Use session authentification instead of basic auth for each request
+        :param pulumi.Input[_builtins.str] tenant_name: Tenant name for Tenant Admin scenarios. Required when operating as
+               a Tenant Admin to manage tenant-specific resources.
+        :param pulumi.Input[_builtins.bool] use_nc_iam: When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+               instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
         :param pulumi.Input[_builtins.str] username: User name for Nutanix Prism. Could be
                local cluster auth (e.g. 'admin') or directory auth.
-        :param pulumi.Input[_builtins.int] wait_timeout: Set if you know that the creation o update of a resource may take long time (minutes)
+        :param pulumi.Input[_builtins.int] wait_timeout: Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
         """
         ...
     @overload
@@ -357,6 +447,7 @@ class Provider(pulumi.ProviderResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  api_key: pulumi.Input[Optional[_builtins.str]] = None,
                  custom_headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 domain_name: pulumi.Input[Optional[_builtins.str]] = None,
                  endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  foundation_port: pulumi.Input[Optional[_builtins.str]] = None,
@@ -364,10 +455,13 @@ class Provider(pulumi.ProviderResource):
                  ndb_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  ndb_password: pulumi.Input[Optional[_builtins.str]] = None,
                  ndb_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 nutanix_central_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.str]] = None,
                  proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
                  session_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+                 tenant_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 use_nc_iam: pulumi.Input[Optional[_builtins.bool]] = None,
                  username: pulumi.Input[Optional[_builtins.str]] = None,
                  wait_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  __props__=None):
@@ -381,6 +475,7 @@ class Provider(pulumi.ProviderResource):
 
             __props__.__dict__["api_key"] = None if api_key is None else pulumi.Output.secret(api_key)
             __props__.__dict__["custom_headers"] = pulumi.Output.secret(custom_headers).apply(pulumi.runtime.to_json) if custom_headers is not None else None
+            __props__.__dict__["domain_name"] = domain_name
             __props__.__dict__["endpoint"] = endpoint
             __props__.__dict__["foundation_endpoint"] = foundation_endpoint
             __props__.__dict__["foundation_port"] = foundation_port
@@ -388,10 +483,13 @@ class Provider(pulumi.ProviderResource):
             __props__.__dict__["ndb_endpoint"] = ndb_endpoint
             __props__.__dict__["ndb_password"] = ndb_password
             __props__.__dict__["ndb_username"] = ndb_username
+            __props__.__dict__["nutanix_central_endpoint"] = nutanix_central_endpoint
             __props__.__dict__["password"] = password
             __props__.__dict__["port"] = port
             __props__.__dict__["proxy_url"] = proxy_url
             __props__.__dict__["session_auth"] = pulumi.Output.from_input(session_auth).apply(pulumi.runtime.to_json) if session_auth is not None else None
+            __props__.__dict__["tenant_name"] = tenant_name
+            __props__.__dict__["use_nc_iam"] = pulumi.Output.from_input(use_nc_iam).apply(pulumi.runtime.to_json) if use_nc_iam is not None else None
             __props__.__dict__["username"] = username
             __props__.__dict__["wait_timeout"] = pulumi.Output.from_input(wait_timeout).apply(pulumi.runtime.to_json) if wait_timeout is not None else None
         secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["apiKey"])
@@ -411,6 +509,16 @@ class Provider(pulumi.ProviderResource):
         will be used instead of Basic Authentication.
         """
         return pulumi.get(self, "api_key")
+
+    @_builtins.property
+    @pulumi.getter(name="domainName")
+    def domain_name(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Domain name for the Prism Central instance. Used to construct the
+        PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+        Tenant Admin scenarios.
+        """
+        return pulumi.get(self, "domain_name")
 
     @_builtins.property
     @pulumi.getter
@@ -458,6 +566,16 @@ class Provider(pulumi.ProviderResource):
         return pulumi.get(self, "ndb_username")
 
     @_builtins.property
+    @pulumi.getter(name="nutanixCentralEndpoint")
+    def nutanix_central_endpoint(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+        Service Provider Admin scenarios. This is the base domain for NC services
+        (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+        """
+        return pulumi.get(self, "nutanix_central_endpoint")
+
+    @_builtins.property
     @pulumi.getter
     def password(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
@@ -477,6 +595,15 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="proxyUrl")
     def proxy_url(self) -> pulumi.Output[Optional[_builtins.str]]:
         return pulumi.get(self, "proxy_url")
+
+    @_builtins.property
+    @pulumi.getter(name="tenantName")
+    def tenant_name(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Tenant name for Tenant Admin scenarios. Required when operating as
+        a Tenant Admin to manage tenant-specific resources.
+        """
+        return pulumi.get(self, "tenant_name")
 
     @_builtins.property
     @pulumi.getter

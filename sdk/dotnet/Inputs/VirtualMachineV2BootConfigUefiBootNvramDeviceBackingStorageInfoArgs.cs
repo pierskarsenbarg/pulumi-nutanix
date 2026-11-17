@@ -30,6 +30,12 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("isMigrationInProgress")]
         public Input<bool>? IsMigrationInProgress { get; set; }
 
+        /// <summary>
+        /// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_&lt;serial_id&gt;` on Linux, so it can be used to map a Terraform disk to a guest device.
+        /// </summary>
+        [Input("serialId")]
+        public Input<string>? SerialId { get; set; }
+
         [Input("storageConfigs")]
         private InputList<Inputs.VirtualMachineV2BootConfigUefiBootNvramDeviceBackingStorageInfoStorageConfigArgs>? _storageConfigs;
 

@@ -13,6 +13,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class ClusterProfileV2SnmpConfigArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 

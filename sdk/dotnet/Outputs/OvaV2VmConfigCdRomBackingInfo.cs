@@ -25,6 +25,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly int? DiskSizeBytes;
         public readonly bool? IsMigrationInProgress;
+        public readonly string? SerialId;
         /// <summary>
         /// Storage configuration for VM disks
         /// - `storage_config.is_flash_mode_enabled`: Indicates whether the virtual disk is pinned to the hot tier or not.
@@ -45,6 +46,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool? isMigrationInProgress,
 
+            string? serialId,
+
             ImmutableArray<Outputs.OvaV2VmConfigCdRomBackingInfoStorageConfig> storageConfigs,
 
             ImmutableArray<Outputs.OvaV2VmConfigCdRomBackingInfoStorageContainer> storageContainers)
@@ -53,6 +56,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
             IsMigrationInProgress = isMigrationInProgress;
+            SerialId = serialId;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

@@ -36,6 +36,19 @@ Object.defineProperty(exports, "customHeaders", {
 });
 
 /**
+ * Domain name for the Prism Central instance. Used to construct the
+ * PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+ * Tenant Admin scenarios.
+ */
+export declare const domainName: string | undefined;
+Object.defineProperty(exports, "domainName", {
+    get() {
+        return __config.get("domainName");
+    },
+    enumerable: true,
+});
+
+/**
  * URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
  * note, this is never the data services VIP, and should not be an
  * individual CVM address, as this would cause calls to fail during
@@ -110,6 +123,19 @@ Object.defineProperty(exports, "ndbUsername", {
 });
 
 /**
+ * Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+ * Service Provider Admin scenarios. This is the base domain for NC services
+ * (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+ */
+export declare const nutanixCentralEndpoint: string | undefined;
+Object.defineProperty(exports, "nutanixCentralEndpoint", {
+    get() {
+        return __config.get("nutanixCentralEndpoint");
+    },
+    enumerable: true,
+});
+
+/**
  * Password for provided user name.
  */
 export declare const password: string | undefined;
@@ -151,6 +177,30 @@ Object.defineProperty(exports, "sessionAuth", {
 });
 
 /**
+ * Tenant name for Tenant Admin scenarios. Required when operating as
+ * a Tenant Admin to manage tenant-specific resources.
+ */
+export declare const tenantName: string | undefined;
+Object.defineProperty(exports, "tenantName", {
+    get() {
+        return __config.get("tenantName");
+    },
+    enumerable: true,
+});
+
+/**
+ * When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+ * instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+ */
+export declare const useNcIam: boolean | undefined;
+Object.defineProperty(exports, "useNcIam", {
+    get() {
+        return __config.getObject<boolean>("useNcIam");
+    },
+    enumerable: true,
+});
+
+/**
  * User name for Nutanix Prism. Could be
  * local cluster auth (e.g. 'admin') or directory auth.
  */
@@ -163,7 +213,7 @@ Object.defineProperty(exports, "username", {
 });
 
 /**
- * Set if you know that the creation o update of a resource may take long time (minutes)
+ * Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
  */
 export declare const waitTimeout: number | undefined;
 Object.defineProperty(exports, "waitTimeout", {

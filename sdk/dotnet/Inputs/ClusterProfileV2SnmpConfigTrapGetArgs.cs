@@ -19,11 +19,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("address", required: true)]
         public Input<Inputs.ClusterProfileV2SnmpConfigTrapAddressGetArgs> Address { get; set; } = null!;
 
+        [Input("communityString")]
+        private Input<string>? _communityString;
+
         /// <summary>
         /// Community string (plaintext) for SNMP version 2.0.
         /// </summary>
-        [Input("communityString")]
-        public Input<string>? CommunityString { get; set; }
+        public Input<string>? CommunityString
+        {
+            get => _communityString;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _communityString = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// SNMP engine ID (hexadecimal string, e.g. 0x12345678).
@@ -31,6 +41,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("engineId")]
         public Input<string>? EngineId { get; set; }
 
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 

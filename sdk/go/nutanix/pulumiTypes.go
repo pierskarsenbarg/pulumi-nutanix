@@ -1811,6 +1811,106 @@ func (o AdGroupCategoryMappingV2LinkArrayOutput) Index(i pulumi.IntInput) AdGrou
 	}).(AdGroupCategoryMappingV2LinkOutput)
 }
 
+type AddDomainV2Link struct {
+	Href *string `pulumi:"href"`
+	Rel  *string `pulumi:"rel"`
+}
+
+// AddDomainV2LinkInput is an input type that accepts AddDomainV2LinkArgs and AddDomainV2LinkOutput values.
+// You can construct a concrete instance of `AddDomainV2LinkInput` via:
+//
+//	AddDomainV2LinkArgs{...}
+type AddDomainV2LinkInput interface {
+	pulumi.Input
+
+	ToAddDomainV2LinkOutput() AddDomainV2LinkOutput
+	ToAddDomainV2LinkOutputWithContext(context.Context) AddDomainV2LinkOutput
+}
+
+type AddDomainV2LinkArgs struct {
+	Href pulumi.StringPtrInput `pulumi:"href"`
+	Rel  pulumi.StringPtrInput `pulumi:"rel"`
+}
+
+func (AddDomainV2LinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddDomainV2Link)(nil)).Elem()
+}
+
+func (i AddDomainV2LinkArgs) ToAddDomainV2LinkOutput() AddDomainV2LinkOutput {
+	return i.ToAddDomainV2LinkOutputWithContext(context.Background())
+}
+
+func (i AddDomainV2LinkArgs) ToAddDomainV2LinkOutputWithContext(ctx context.Context) AddDomainV2LinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddDomainV2LinkOutput)
+}
+
+// AddDomainV2LinkArrayInput is an input type that accepts AddDomainV2LinkArray and AddDomainV2LinkArrayOutput values.
+// You can construct a concrete instance of `AddDomainV2LinkArrayInput` via:
+//
+//	AddDomainV2LinkArray{ AddDomainV2LinkArgs{...} }
+type AddDomainV2LinkArrayInput interface {
+	pulumi.Input
+
+	ToAddDomainV2LinkArrayOutput() AddDomainV2LinkArrayOutput
+	ToAddDomainV2LinkArrayOutputWithContext(context.Context) AddDomainV2LinkArrayOutput
+}
+
+type AddDomainV2LinkArray []AddDomainV2LinkInput
+
+func (AddDomainV2LinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddDomainV2Link)(nil)).Elem()
+}
+
+func (i AddDomainV2LinkArray) ToAddDomainV2LinkArrayOutput() AddDomainV2LinkArrayOutput {
+	return i.ToAddDomainV2LinkArrayOutputWithContext(context.Background())
+}
+
+func (i AddDomainV2LinkArray) ToAddDomainV2LinkArrayOutputWithContext(ctx context.Context) AddDomainV2LinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AddDomainV2LinkArrayOutput)
+}
+
+type AddDomainV2LinkOutput struct{ *pulumi.OutputState }
+
+func (AddDomainV2LinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AddDomainV2Link)(nil)).Elem()
+}
+
+func (o AddDomainV2LinkOutput) ToAddDomainV2LinkOutput() AddDomainV2LinkOutput {
+	return o
+}
+
+func (o AddDomainV2LinkOutput) ToAddDomainV2LinkOutputWithContext(ctx context.Context) AddDomainV2LinkOutput {
+	return o
+}
+
+func (o AddDomainV2LinkOutput) Href() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddDomainV2Link) *string { return v.Href }).(pulumi.StringPtrOutput)
+}
+
+func (o AddDomainV2LinkOutput) Rel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AddDomainV2Link) *string { return v.Rel }).(pulumi.StringPtrOutput)
+}
+
+type AddDomainV2LinkArrayOutput struct{ *pulumi.OutputState }
+
+func (AddDomainV2LinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]AddDomainV2Link)(nil)).Elem()
+}
+
+func (o AddDomainV2LinkArrayOutput) ToAddDomainV2LinkArrayOutput() AddDomainV2LinkArrayOutput {
+	return o
+}
+
+func (o AddDomainV2LinkArrayOutput) ToAddDomainV2LinkArrayOutputWithContext(ctx context.Context) AddDomainV2LinkArrayOutput {
+	return o
+}
+
+func (o AddDomainV2LinkArrayOutput) Index(i pulumi.IntInput) AddDomainV2LinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) AddDomainV2Link {
+		return vs[0].([]AddDomainV2Link)[vs[1].(int)]
+	}).(AddDomainV2LinkOutput)
+}
+
 type AddressGroupIpAddressBlockList struct {
 	// - (Required) IP of the address block
 	Ip string `pulumi:"ip"`
@@ -6817,9 +6917,13 @@ func (o ClusterAddNodeV2RemoveNodeParamExtraParamArrayOutput) Index(i pulumi.Int
 }
 
 type ClusterProfileV2Cluster struct {
-	ConfigDrifts   *string `pulumi:"configDrifts"`
-	ExtId          *string `pulumi:"extId"`
-	IsCompliant    *bool   `pulumi:"isCompliant"`
+	// - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+	ConfigDrifts []string `pulumi:"configDrifts"`
+	// - Cluster UUID.
+	ExtId *string `pulumi:"extId"`
+	// - Whether the cluster complies with the profile.
+	IsCompliant *bool `pulumi:"isCompliant"`
+	// - Last synchronization time.
 	LastSyncedTime *string `pulumi:"lastSyncedTime"`
 }
 
@@ -6835,9 +6939,13 @@ type ClusterProfileV2ClusterInput interface {
 }
 
 type ClusterProfileV2ClusterArgs struct {
-	ConfigDrifts   pulumi.StringPtrInput `pulumi:"configDrifts"`
-	ExtId          pulumi.StringPtrInput `pulumi:"extId"`
-	IsCompliant    pulumi.BoolPtrInput   `pulumi:"isCompliant"`
+	// - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+	ConfigDrifts pulumi.StringArrayInput `pulumi:"configDrifts"`
+	// - Cluster UUID.
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// - Whether the cluster complies with the profile.
+	IsCompliant pulumi.BoolPtrInput `pulumi:"isCompliant"`
+	// - Last synchronization time.
 	LastSyncedTime pulumi.StringPtrInput `pulumi:"lastSyncedTime"`
 }
 
@@ -6892,18 +7000,22 @@ func (o ClusterProfileV2ClusterOutput) ToClusterProfileV2ClusterOutputWithContex
 	return o
 }
 
-func (o ClusterProfileV2ClusterOutput) ConfigDrifts() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ClusterProfileV2Cluster) *string { return v.ConfigDrifts }).(pulumi.StringPtrOutput)
+// - List of configuration types that have drifted from the cluster profile. Empty when no configuration drift is reported.
+func (o ClusterProfileV2ClusterOutput) ConfigDrifts() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ClusterProfileV2Cluster) []string { return v.ConfigDrifts }).(pulumi.StringArrayOutput)
 }
 
+// - Cluster UUID.
 func (o ClusterProfileV2ClusterOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterProfileV2Cluster) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
 
+// - Whether the cluster complies with the profile.
 func (o ClusterProfileV2ClusterOutput) IsCompliant() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ClusterProfileV2Cluster) *bool { return v.IsCompliant }).(pulumi.BoolPtrOutput)
 }
 
+// - Last synchronization time.
 func (o ClusterProfileV2ClusterOutput) LastSyncedTime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterProfileV2Cluster) *string { return v.LastSyncedTime }).(pulumi.StringPtrOutput)
 }
@@ -9646,6 +9758,7 @@ func (o ClusterProfileV2ResilientCapacityWarningThresholdConfigPtrOutput) Resili
 }
 
 type ClusterProfileV2RsyslogServerList struct {
+	// - Cluster UUID.
 	ExtId *string `pulumi:"extId"`
 	// IP address of the RSYSLOG server.
 	IpAddress ClusterProfileV2RsyslogServerListIpAddress `pulumi:"ipAddress"`
@@ -9679,6 +9792,7 @@ type ClusterProfileV2RsyslogServerListInput interface {
 }
 
 type ClusterProfileV2RsyslogServerListArgs struct {
+	// - Cluster UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 	// IP address of the RSYSLOG server.
 	IpAddress ClusterProfileV2RsyslogServerListIpAddressInput `pulumi:"ipAddress"`
@@ -9751,6 +9865,7 @@ func (o ClusterProfileV2RsyslogServerListOutput) ToClusterProfileV2RsyslogServer
 	return o
 }
 
+// - Cluster UUID.
 func (o ClusterProfileV2RsyslogServerListOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterProfileV2RsyslogServerList) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -11297,6 +11412,7 @@ func (o ClusterProfileV2SmtpServerServerIpAddressIpv6ArrayOutput) Index(i pulumi
 }
 
 type ClusterProfileV2SnmpConfig struct {
+	// - Cluster UUID.
 	ExtId *string `pulumi:"extId"`
 	// SNMP status. Whether SNMP is enabled.
 	IsEnabled *bool                            `pulumi:"isEnabled"`
@@ -11322,6 +11438,7 @@ type ClusterProfileV2SnmpConfigInput interface {
 }
 
 type ClusterProfileV2SnmpConfigArgs struct {
+	// - Cluster UUID.
 	ExtId pulumi.StringPtrInput `pulumi:"extId"`
 	// SNMP status. Whether SNMP is enabled.
 	IsEnabled pulumi.BoolPtrInput                      `pulumi:"isEnabled"`
@@ -11412,6 +11529,7 @@ func (o ClusterProfileV2SnmpConfigOutput) ToClusterProfileV2SnmpConfigPtrOutputW
 	}).(ClusterProfileV2SnmpConfigPtrOutput)
 }
 
+// - Cluster UUID.
 func (o ClusterProfileV2SnmpConfigOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterProfileV2SnmpConfig) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -11468,6 +11586,7 @@ func (o ClusterProfileV2SnmpConfigPtrOutput) Elem() ClusterProfileV2SnmpConfigOu
 	}).(ClusterProfileV2SnmpConfigOutput)
 }
 
+// - Cluster UUID.
 func (o ClusterProfileV2SnmpConfigPtrOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ClusterProfileV2SnmpConfig) *string {
 		if v == nil {
@@ -11768,9 +11887,10 @@ type ClusterProfileV2SnmpConfigTrap struct {
 	// Community string (plaintext) for SNMP version 2.0.
 	CommunityString *string `pulumi:"communityString"`
 	// SNMP engine ID (hexadecimal string, e.g. 0x12345678).
-	EngineId *string                              `pulumi:"engineId"`
-	ExtId    *string                              `pulumi:"extId"`
-	Links    []ClusterProfileV2SnmpConfigTrapLink `pulumi:"links"`
+	EngineId *string `pulumi:"engineId"`
+	// - Cluster UUID.
+	ExtId *string                              `pulumi:"extId"`
+	Links []ClusterProfileV2SnmpConfigTrapLink `pulumi:"links"`
 	// SNMP port.
 	Port *int `pulumi:"port"`
 	// SNMP protocol type. Allowed values:
@@ -11815,9 +11935,10 @@ type ClusterProfileV2SnmpConfigTrapArgs struct {
 	// Community string (plaintext) for SNMP version 2.0.
 	CommunityString pulumi.StringPtrInput `pulumi:"communityString"`
 	// SNMP engine ID (hexadecimal string, e.g. 0x12345678).
-	EngineId pulumi.StringPtrInput                        `pulumi:"engineId"`
-	ExtId    pulumi.StringPtrInput                        `pulumi:"extId"`
-	Links    ClusterProfileV2SnmpConfigTrapLinkArrayInput `pulumi:"links"`
+	EngineId pulumi.StringPtrInput `pulumi:"engineId"`
+	// - Cluster UUID.
+	ExtId pulumi.StringPtrInput                        `pulumi:"extId"`
+	Links ClusterProfileV2SnmpConfigTrapLinkArrayInput `pulumi:"links"`
 	// SNMP port.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// SNMP protocol type. Allowed values:
@@ -11911,6 +12032,7 @@ func (o ClusterProfileV2SnmpConfigTrapOutput) EngineId() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v ClusterProfileV2SnmpConfigTrap) *string { return v.EngineId }).(pulumi.StringPtrOutput)
 }
 
+// - Cluster UUID.
 func (o ClusterProfileV2SnmpConfigTrapOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterProfileV2SnmpConfigTrap) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -12375,9 +12497,10 @@ type ClusterProfileV2SnmpConfigUser struct {
 	// | SHA256    | SHA-256 SNMP authentication  |
 	// | SHA384    | SHA-384 SNMP authentication  |
 	// | SHA512    | SHA-512 SNMP authentication  |
-	AuthType string                               `pulumi:"authType"`
-	ExtId    *string                              `pulumi:"extId"`
-	Links    []ClusterProfileV2SnmpConfigUserLink `pulumi:"links"`
+	AuthType string `pulumi:"authType"`
+	// - Cluster UUID.
+	ExtId *string                              `pulumi:"extId"`
+	Links []ClusterProfileV2SnmpConfigUserLink `pulumi:"links"`
 	// SNMP user encryption key (must not contain single quotes).
 	PrivKey *string `pulumi:"privKey"`
 	// SNMP user encryption type. Allowed values:
@@ -12418,9 +12541,10 @@ type ClusterProfileV2SnmpConfigUserArgs struct {
 	// | SHA256    | SHA-256 SNMP authentication  |
 	// | SHA384    | SHA-384 SNMP authentication  |
 	// | SHA512    | SHA-512 SNMP authentication  |
-	AuthType pulumi.StringInput                           `pulumi:"authType"`
-	ExtId    pulumi.StringPtrInput                        `pulumi:"extId"`
-	Links    ClusterProfileV2SnmpConfigUserLinkArrayInput `pulumi:"links"`
+	AuthType pulumi.StringInput `pulumi:"authType"`
+	// - Cluster UUID.
+	ExtId pulumi.StringPtrInput                        `pulumi:"extId"`
+	Links ClusterProfileV2SnmpConfigUserLinkArrayInput `pulumi:"links"`
 	// SNMP user encryption key (must not contain single quotes).
 	PrivKey pulumi.StringPtrInput `pulumi:"privKey"`
 	// SNMP user encryption type. Allowed values:
@@ -12507,6 +12631,7 @@ func (o ClusterProfileV2SnmpConfigUserOutput) AuthType() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterProfileV2SnmpConfigUser) string { return v.AuthType }).(pulumi.StringOutput)
 }
 
+// - Cluster UUID.
 func (o ClusterProfileV2SnmpConfigUserOutput) ExtId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ClusterProfileV2SnmpConfigUser) *string { return v.ExtId }).(pulumi.StringPtrOutput)
 }
@@ -35454,7 +35579,8 @@ func (o DirectoryServicesV2OpenLdapConfigurationUserGroupConfigurationArrayOutpu
 }
 
 type DirectoryServicesV2ServiceAccount struct {
-	// -(Required) Password to connect to the Directory Service.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Required, WriteOnly) Password to connect to the Directory Service.
 	Password string `pulumi:"password"`
 	// -(Required) Username to connect to the Directory Service.
 	Username string `pulumi:"username"`
@@ -35472,7 +35598,8 @@ type DirectoryServicesV2ServiceAccountInput interface {
 }
 
 type DirectoryServicesV2ServiceAccountArgs struct {
-	// -(Required) Password to connect to the Directory Service.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// -(Required, WriteOnly) Password to connect to the Directory Service.
 	Password pulumi.StringInput `pulumi:"password"`
 	// -(Required) Username to connect to the Directory Service.
 	Username pulumi.StringInput `pulumi:"username"`
@@ -35529,7 +35656,8 @@ func (o DirectoryServicesV2ServiceAccountOutput) ToDirectoryServicesV2ServiceAcc
 	return o
 }
 
-// -(Required) Password to connect to the Directory Service.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// -(Required, WriteOnly) Password to connect to the Directory Service.
 func (o DirectoryServicesV2ServiceAccountOutput) Password() pulumi.StringOutput {
 	return o.ApplyT(func(v DirectoryServicesV2ServiceAccount) string { return v.Password }).(pulumi.StringOutput)
 }
@@ -35699,7 +35827,7 @@ func (o EntityGroupV2AllowedConfigPtrOutput) Entities() EntityGroupV2AllowedConf
 type EntityGroupV2AllowedConfigEntity struct {
 	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s):
 	Addresses *EntityGroupV2AllowedConfigEntityAddresses `pulumi:"addresses"`
-	// List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+	// List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
 	Fqdns []string `pulumi:"fqdns"`
 	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
 	IpRanges *EntityGroupV2AllowedConfigEntityIpRanges `pulumi:"ipRanges"`
@@ -35707,11 +35835,15 @@ type EntityGroupV2AllowedConfigEntity struct {
 	KubeEntities []string `pulumi:"kubeEntities"`
 	// Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
 	MatchCriteria *string `pulumi:"matchCriteria"`
-	// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+	// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
 	ReferenceExtIds []string `pulumi:"referenceExtIds"`
-	// String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+	// String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
 	ReferenceString *string `pulumi:"referenceString"`
 	// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+	SelectBy *string `pulumi:"selectBy"`
+	// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+	//
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 	SelectedBy *string `pulumi:"selectedBy"`
 	// The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
 	Type *string `pulumi:"type"`
@@ -35731,7 +35863,7 @@ type EntityGroupV2AllowedConfigEntityInput interface {
 type EntityGroupV2AllowedConfigEntityArgs struct {
 	// With <span pulumi-lang-nodejs="`ipv4Addresses`" pulumi-lang-dotnet="`Ipv4Addresses`" pulumi-lang-go="`ipv4Addresses`" pulumi-lang-python="`ipv4_addresses`" pulumi-lang-yaml="`ipv4Addresses`" pulumi-lang-java="`ipv4Addresses`" pulumi-lang-hcl="`ipv4_addresses`">`ipv4Addresses`</span> block(s):
 	Addresses EntityGroupV2AllowedConfigEntityAddressesPtrInput `pulumi:"addresses"`
-	// List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+	// List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
 	Fqdns pulumi.StringArrayInput `pulumi:"fqdns"`
 	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s):
 	IpRanges EntityGroupV2AllowedConfigEntityIpRangesPtrInput `pulumi:"ipRanges"`
@@ -35739,11 +35871,15 @@ type EntityGroupV2AllowedConfigEntityArgs struct {
 	KubeEntities pulumi.StringArrayInput `pulumi:"kubeEntities"`
 	// Match criteria for regex-based entity selection. Valid values: `CONTAINS`, `STARTS_WITH`, `ENDS_WITH`, `EQUALS`.
 	MatchCriteria pulumi.StringPtrInput `pulumi:"matchCriteria"`
-	// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+	// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
 	ReferenceExtIds pulumi.StringArrayInput `pulumi:"referenceExtIds"`
-	// String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+	// String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
 	ReferenceString pulumi.StringPtrInput `pulumi:"referenceString"`
 	// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+	SelectBy pulumi.StringPtrInput `pulumi:"selectBy"`
+	// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+	//
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 	SelectedBy pulumi.StringPtrInput `pulumi:"selectedBy"`
 	// The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -35807,7 +35943,7 @@ func (o EntityGroupV2AllowedConfigEntityOutput) Addresses() EntityGroupV2Allowed
 	}).(EntityGroupV2AllowedConfigEntityAddressesPtrOutput)
 }
 
-// List of FQDNs. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `FQDN_VALUES`.
+// List of FQDNs. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `FQDN_VALUES`.
 func (o EntityGroupV2AllowedConfigEntityOutput) Fqdns() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v EntityGroupV2AllowedConfigEntity) []string { return v.Fqdns }).(pulumi.StringArrayOutput)
 }
@@ -35827,17 +35963,24 @@ func (o EntityGroupV2AllowedConfigEntityOutput) MatchCriteria() pulumi.StringPtr
 	return o.ApplyT(func(v EntityGroupV2AllowedConfigEntity) *string { return v.MatchCriteria }).(pulumi.StringPtrOutput)
 }
 
-// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
 func (o EntityGroupV2AllowedConfigEntityOutput) ReferenceExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v EntityGroupV2AllowedConfigEntity) []string { return v.ReferenceExtIds }).(pulumi.StringArrayOutput)
 }
 
-// String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `REGEX`.
+// String pattern for matching entities. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `REGEX`.
 func (o EntityGroupV2AllowedConfigEntityOutput) ReferenceString() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EntityGroupV2AllowedConfigEntity) *string { return v.ReferenceString }).(pulumi.StringPtrOutput)
 }
 
 // The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+func (o EntityGroupV2AllowedConfigEntityOutput) SelectBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EntityGroupV2AllowedConfigEntity) *string { return v.SelectBy }).(pulumi.StringPtrOutput)
+}
+
+// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+//
+// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 func (o EntityGroupV2AllowedConfigEntityOutput) SelectedBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EntityGroupV2AllowedConfigEntity) *string { return v.SelectedBy }).(pulumi.StringPtrOutput)
 }
@@ -36491,9 +36634,13 @@ type EntityGroupV2ExceptConfigEntity struct {
 	Addresses *EntityGroupV2ExceptConfigEntityAddresses `pulumi:"addresses"`
 	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s).
 	IpRanges *EntityGroupV2ExceptConfigEntityIpRanges `pulumi:"ipRanges"`
-	// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+	// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
 	ReferenceExtIds []string `pulumi:"referenceExtIds"`
 	// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+	SelectBy *string `pulumi:"selectBy"`
+	// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+	//
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 	SelectedBy *string `pulumi:"selectedBy"`
 	// The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
 	Type *string `pulumi:"type"`
@@ -36515,9 +36662,13 @@ type EntityGroupV2ExceptConfigEntityArgs struct {
 	Addresses EntityGroupV2ExceptConfigEntityAddressesPtrInput `pulumi:"addresses"`
 	// With <span pulumi-lang-nodejs="`ipv4Ranges`" pulumi-lang-dotnet="`Ipv4Ranges`" pulumi-lang-go="`ipv4Ranges`" pulumi-lang-python="`ipv4_ranges`" pulumi-lang-yaml="`ipv4Ranges`" pulumi-lang-java="`ipv4Ranges`" pulumi-lang-hcl="`ipv4_ranges`">`ipv4Ranges`</span> block(s).
 	IpRanges EntityGroupV2ExceptConfigEntityIpRangesPtrInput `pulumi:"ipRanges"`
-	// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+	// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
 	ReferenceExtIds pulumi.StringArrayInput `pulumi:"referenceExtIds"`
 	// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+	SelectBy pulumi.StringPtrInput `pulumi:"selectBy"`
+	// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+	//
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 	SelectedBy pulumi.StringPtrInput `pulumi:"selectedBy"`
 	// The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -36584,12 +36735,19 @@ func (o EntityGroupV2ExceptConfigEntityOutput) IpRanges() EntityGroupV2ExceptCon
 	return o.ApplyT(func(v EntityGroupV2ExceptConfigEntity) *EntityGroupV2ExceptConfigEntityIpRanges { return v.IpRanges }).(EntityGroupV2ExceptConfigEntityIpRangesPtrOutput)
 }
 
-// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> is `EXT_ID`.
+// List of reference external identifiers. Required when <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> is `EXT_ID`.
 func (o EntityGroupV2ExceptConfigEntityOutput) ReferenceExtIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v EntityGroupV2ExceptConfigEntity) []string { return v.ReferenceExtIds }).(pulumi.StringArrayOutput)
 }
 
 // The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
+func (o EntityGroupV2ExceptConfigEntityOutput) SelectBy() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v EntityGroupV2ExceptConfigEntity) *string { return v.SelectBy }).(pulumi.StringPtrOutput)
+}
+
+// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>. Prefer <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>; <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+//
+// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 func (o EntityGroupV2ExceptConfigEntityOutput) SelectedBy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EntityGroupV2ExceptConfigEntity) *string { return v.SelectedBy }).(pulumi.StringPtrOutput)
 }
@@ -50926,9 +51084,10 @@ type FoundationImageNodesBlockNode struct {
 	IpmiMac *string `pulumi:"ipmiMac"`
 	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
 	IpmiNetmask *string `pulumi:"ipmiNetmask"`
-	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
 	IpmiPassword *string `pulumi:"ipmiPassword"`
-	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
 	IpmiUser *string `pulumi:"ipmiUser"`
 	// - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
 	Ipv6Address *string `pulumi:"ipv6Address"`
@@ -51017,9 +51176,10 @@ type FoundationImageNodesBlockNodeArgs struct {
 	IpmiMac pulumi.StringPtrInput `pulumi:"ipmiMac"`
 	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI netmask for this node
 	IpmiNetmask pulumi.StringPtrInput `pulumi:"ipmiNetmask"`
-	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
 	IpmiPassword pulumi.StringPtrInput `pulumi:"ipmiPassword"`
-	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+	// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
 	IpmiUser pulumi.StringPtrInput `pulumi:"ipmiUser"`
 	// - (Required when<span pulumi-lang-nodejs=" deviceHint " pulumi-lang-dotnet=" DeviceHint " pulumi-lang-go=" deviceHint " pulumi-lang-python=" device_hint " pulumi-lang-yaml=" deviceHint " pulumi-lang-java=" deviceHint " pulumi-lang-hcl=" device_hint "> deviceHint </span>= <span pulumi-lang-nodejs=""vmInstaller"" pulumi-lang-dotnet=""VmInstaller"" pulumi-lang-go=""vmInstaller"" pulumi-lang-python=""vm_installer"" pulumi-lang-yaml=""vmInstaller"" pulumi-lang-java=""vmInstaller"" pulumi-lang-hcl=""vm_installer"">"vmInstaller"</span> for imaging using node's existing cvm for imaging) IPV6 address.
 	Ipv6Address pulumi.StringPtrInput `pulumi:"ipv6Address"`
@@ -51213,12 +51373,13 @@ func (o FoundationImageNodesBlockNodeOutput) IpmiNetmask() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *string { return v.IpmiNetmask }).(pulumi.StringPtrOutput)
 }
 
-// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
 func (o FoundationImageNodesBlockNodeOutput) IpmiPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *string { return v.IpmiPassword }).(pulumi.StringPtrOutput)
 }
 
-// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
 func (o FoundationImageNodesBlockNodeOutput) IpmiUser() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FoundationImageNodesBlockNode) *string { return v.IpmiUser }).(pulumi.StringPtrOutput)
 }
@@ -52117,7 +52278,7 @@ func (o FoundationImageNodesEosMetadataPtrOutput) Email() pulumi.StringPtrOutput
 type FoundationImageNodesFcSettings struct {
 	// - Foundation Central metadata which will be transferred to the newly imaged node.
 	// * `fc_metadata.fc_ip` :- IP address of foundation central.
-	// * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+	// * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
 	FcMetadata FoundationImageNodesFcSettingsFcMetadata `pulumi:"fcMetadata"`
 	// - If this attribute is set to True, FC workflow will be invoked.
 	FoundationCentral bool `pulumi:"foundationCentral"`
@@ -52137,7 +52298,7 @@ type FoundationImageNodesFcSettingsInput interface {
 type FoundationImageNodesFcSettingsArgs struct {
 	// - Foundation Central metadata which will be transferred to the newly imaged node.
 	// * `fc_metadata.fc_ip` :- IP address of foundation central.
-	// * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+	// * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
 	FcMetadata FoundationImageNodesFcSettingsFcMetadataInput `pulumi:"fcMetadata"`
 	// - If this attribute is set to True, FC workflow will be invoked.
 	FoundationCentral pulumi.BoolInput `pulumi:"foundationCentral"`
@@ -52222,7 +52383,7 @@ func (o FoundationImageNodesFcSettingsOutput) ToFoundationImageNodesFcSettingsPt
 
 // - Foundation Central metadata which will be transferred to the newly imaged node.
 // * `fc_metadata.fc_ip` :- IP address of foundation central.
-// * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+// * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
 func (o FoundationImageNodesFcSettingsOutput) FcMetadata() FoundationImageNodesFcSettingsFcMetadataOutput {
 	return o.ApplyT(func(v FoundationImageNodesFcSettings) FoundationImageNodesFcSettingsFcMetadata { return v.FcMetadata }).(FoundationImageNodesFcSettingsFcMetadataOutput)
 }
@@ -52258,7 +52419,7 @@ func (o FoundationImageNodesFcSettingsPtrOutput) Elem() FoundationImageNodesFcSe
 
 // - Foundation Central metadata which will be transferred to the newly imaged node.
 // * `fc_metadata.fc_ip` :- IP address of foundation central.
-// * `fc_metadata.api_key` :-<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
+// * `fc_metadata.api_key` :- (WriteOnly)<span pulumi-lang-nodejs=" apiKey " pulumi-lang-dotnet=" ApiKey " pulumi-lang-go=" apiKey " pulumi-lang-python=" api_key " pulumi-lang-yaml=" apiKey " pulumi-lang-java=" apiKey " pulumi-lang-hcl=" api_key "> apiKey </span>which the node uses to register itself with foundation central.
 func (o FoundationImageNodesFcSettingsPtrOutput) FcMetadata() FoundationImageNodesFcSettingsFcMetadataPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesFcSettings) *FoundationImageNodesFcSettingsFcMetadata {
 		if v == nil {
@@ -52279,6 +52440,7 @@ func (o FoundationImageNodesFcSettingsPtrOutput) FoundationCentral() pulumi.Bool
 }
 
 type FoundationImageNodesFcSettingsFcMetadata struct {
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	ApiKey string `pulumi:"apiKey"`
 	FcIp   string `pulumi:"fcIp"`
 }
@@ -52295,6 +52457,7 @@ type FoundationImageNodesFcSettingsFcMetadataInput interface {
 }
 
 type FoundationImageNodesFcSettingsFcMetadataArgs struct {
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 	ApiKey pulumi.StringInput `pulumi:"apiKey"`
 	FcIp   pulumi.StringInput `pulumi:"fcIp"`
 }
@@ -52376,6 +52539,7 @@ func (o FoundationImageNodesFcSettingsFcMetadataOutput) ToFoundationImageNodesFc
 	}).(FoundationImageNodesFcSettingsFcMetadataPtrOutput)
 }
 
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 func (o FoundationImageNodesFcSettingsFcMetadataOutput) ApiKey() pulumi.StringOutput {
 	return o.ApplyT(func(v FoundationImageNodesFcSettingsFcMetadata) string { return v.ApiKey }).(pulumi.StringOutput)
 }
@@ -52408,6 +52572,7 @@ func (o FoundationImageNodesFcSettingsFcMetadataPtrOutput) Elem() FoundationImag
 	}).(FoundationImageNodesFcSettingsFcMetadataOutput)
 }
 
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
 func (o FoundationImageNodesFcSettingsFcMetadataPtrOutput) ApiKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *FoundationImageNodesFcSettingsFcMetadata) *string {
 		if v == nil {
@@ -58985,7 +59150,8 @@ func (o KeyManagementServerV2AccessInformationPtrOutput) KmipKeyVault() KeyManag
 type KeyManagementServerV2AccessInformationAzureKeyVault struct {
 	// - (Required) Client identifier for the Azure Key Vault.
 	ClientId string `pulumi:"clientId"`
-	// - (Required) Client secret for the Azure Key Vault.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) Client secret for the Azure Key Vault.
 	ClientSecret string `pulumi:"clientSecret"`
 	// - (Required) When the client secret is going to expire.
 	CredentialExpiryDate string `pulumi:"credentialExpiryDate"`
@@ -59012,7 +59178,8 @@ type KeyManagementServerV2AccessInformationAzureKeyVaultInput interface {
 type KeyManagementServerV2AccessInformationAzureKeyVaultArgs struct {
 	// - (Required) Client identifier for the Azure Key Vault.
 	ClientId pulumi.StringInput `pulumi:"clientId"`
-	// - (Required) Client secret for the Azure Key Vault.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) Client secret for the Azure Key Vault.
 	ClientSecret pulumi.StringInput `pulumi:"clientSecret"`
 	// - (Required) When the client secret is going to expire.
 	CredentialExpiryDate pulumi.StringInput `pulumi:"credentialExpiryDate"`
@@ -59107,7 +59274,8 @@ func (o KeyManagementServerV2AccessInformationAzureKeyVaultOutput) ClientId() pu
 	return o.ApplyT(func(v KeyManagementServerV2AccessInformationAzureKeyVault) string { return v.ClientId }).(pulumi.StringOutput)
 }
 
-// - (Required) Client secret for the Azure Key Vault.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) Client secret for the Azure Key Vault.
 func (o KeyManagementServerV2AccessInformationAzureKeyVaultOutput) ClientSecret() pulumi.StringOutput {
 	return o.ApplyT(func(v KeyManagementServerV2AccessInformationAzureKeyVault) string { return v.ClientSecret }).(pulumi.StringOutput)
 }
@@ -59170,7 +59338,8 @@ func (o KeyManagementServerV2AccessInformationAzureKeyVaultPtrOutput) ClientId()
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) Client secret for the Azure Key Vault.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) Client secret for the Azure Key Vault.
 func (o KeyManagementServerV2AccessInformationAzureKeyVaultPtrOutput) ClientSecret() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyManagementServerV2AccessInformationAzureKeyVault) *string {
 		if v == nil {
@@ -59232,13 +59401,16 @@ func (o KeyManagementServerV2AccessInformationAzureKeyVaultPtrOutput) TruncatedC
 type KeyManagementServerV2AccessInformationKmipKeyVault struct {
 	// - (Required) Name of the CA.
 	CaName string `pulumi:"caName"`
-	// - (Required) CA PEM.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) CA PEM.
 	CaPem string `pulumi:"caPem"`
-	// - (Required) Cert PEM.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) Cert PEM.
 	CertPem string `pulumi:"certPem"`
 	// - (Required) Endpoint URL for the Azure Key Vault.
 	EndpointUrls []KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrl `pulumi:"endpointUrls"`
-	// - (Required) Private key.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) Private key.
 	PrivateKey string `pulumi:"privateKey"`
 }
 
@@ -59256,13 +59428,16 @@ type KeyManagementServerV2AccessInformationKmipKeyVaultInput interface {
 type KeyManagementServerV2AccessInformationKmipKeyVaultArgs struct {
 	// - (Required) Name of the CA.
 	CaName pulumi.StringInput `pulumi:"caName"`
-	// - (Required) CA PEM.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) CA PEM.
 	CaPem pulumi.StringInput `pulumi:"caPem"`
-	// - (Required) Cert PEM.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) Cert PEM.
 	CertPem pulumi.StringInput `pulumi:"certPem"`
 	// - (Required) Endpoint URL for the Azure Key Vault.
 	EndpointUrls KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlArrayInput `pulumi:"endpointUrls"`
-	// - (Required) Private key.
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) Private key.
 	PrivateKey pulumi.StringInput `pulumi:"privateKey"`
 }
 
@@ -59348,12 +59523,14 @@ func (o KeyManagementServerV2AccessInformationKmipKeyVaultOutput) CaName() pulum
 	return o.ApplyT(func(v KeyManagementServerV2AccessInformationKmipKeyVault) string { return v.CaName }).(pulumi.StringOutput)
 }
 
-// - (Required) CA PEM.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) CA PEM.
 func (o KeyManagementServerV2AccessInformationKmipKeyVaultOutput) CaPem() pulumi.StringOutput {
 	return o.ApplyT(func(v KeyManagementServerV2AccessInformationKmipKeyVault) string { return v.CaPem }).(pulumi.StringOutput)
 }
 
-// - (Required) Cert PEM.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) Cert PEM.
 func (o KeyManagementServerV2AccessInformationKmipKeyVaultOutput) CertPem() pulumi.StringOutput {
 	return o.ApplyT(func(v KeyManagementServerV2AccessInformationKmipKeyVault) string { return v.CertPem }).(pulumi.StringOutput)
 }
@@ -59365,7 +59542,8 @@ func (o KeyManagementServerV2AccessInformationKmipKeyVaultOutput) EndpointUrls()
 	}).(KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlArrayOutput)
 }
 
-// - (Required) Private key.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) Private key.
 func (o KeyManagementServerV2AccessInformationKmipKeyVaultOutput) PrivateKey() pulumi.StringOutput {
 	return o.ApplyT(func(v KeyManagementServerV2AccessInformationKmipKeyVault) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
@@ -59404,7 +59582,8 @@ func (o KeyManagementServerV2AccessInformationKmipKeyVaultPtrOutput) CaName() pu
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) CA PEM.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) CA PEM.
 func (o KeyManagementServerV2AccessInformationKmipKeyVaultPtrOutput) CaPem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyManagementServerV2AccessInformationKmipKeyVault) *string {
 		if v == nil {
@@ -59414,7 +59593,8 @@ func (o KeyManagementServerV2AccessInformationKmipKeyVaultPtrOutput) CaPem() pul
 	}).(pulumi.StringPtrOutput)
 }
 
-// - (Required) Cert PEM.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) Cert PEM.
 func (o KeyManagementServerV2AccessInformationKmipKeyVaultPtrOutput) CertPem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyManagementServerV2AccessInformationKmipKeyVault) *string {
 		if v == nil {
@@ -59434,7 +59614,8 @@ func (o KeyManagementServerV2AccessInformationKmipKeyVaultPtrOutput) EndpointUrl
 	}).(KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrlArrayOutput)
 }
 
-// - (Required) Private key.
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) Private key.
 func (o KeyManagementServerV2AccessInformationKmipKeyVaultPtrOutput) PrivateKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *KeyManagementServerV2AccessInformationKmipKeyVault) *string {
 		if v == nil {
@@ -60666,6 +60847,747 @@ func (o LcmUpgradeV2ManagementServerPtrOutput) Username() pulumi.StringPtrOutput
 		}
 		return &v.Username
 	}).(pulumi.StringPtrOutput)
+}
+
+type LocalDomainV2ConnectionStatus struct {
+	// - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+	ServiceStatuses []LocalDomainV2ConnectionStatusServiceStatus `pulumi:"serviceStatuses"`
+	// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+	Status *string `pulumi:"status"`
+}
+
+// LocalDomainV2ConnectionStatusInput is an input type that accepts LocalDomainV2ConnectionStatusArgs and LocalDomainV2ConnectionStatusOutput values.
+// You can construct a concrete instance of `LocalDomainV2ConnectionStatusInput` via:
+//
+//	LocalDomainV2ConnectionStatusArgs{...}
+type LocalDomainV2ConnectionStatusInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2ConnectionStatusOutput() LocalDomainV2ConnectionStatusOutput
+	ToLocalDomainV2ConnectionStatusOutputWithContext(context.Context) LocalDomainV2ConnectionStatusOutput
+}
+
+type LocalDomainV2ConnectionStatusArgs struct {
+	// - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+	ServiceStatuses LocalDomainV2ConnectionStatusServiceStatusArrayInput `pulumi:"serviceStatuses"`
+	// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (LocalDomainV2ConnectionStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2ConnectionStatus)(nil)).Elem()
+}
+
+func (i LocalDomainV2ConnectionStatusArgs) ToLocalDomainV2ConnectionStatusOutput() LocalDomainV2ConnectionStatusOutput {
+	return i.ToLocalDomainV2ConnectionStatusOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2ConnectionStatusArgs) ToLocalDomainV2ConnectionStatusOutputWithContext(ctx context.Context) LocalDomainV2ConnectionStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2ConnectionStatusOutput)
+}
+
+// LocalDomainV2ConnectionStatusArrayInput is an input type that accepts LocalDomainV2ConnectionStatusArray and LocalDomainV2ConnectionStatusArrayOutput values.
+// You can construct a concrete instance of `LocalDomainV2ConnectionStatusArrayInput` via:
+//
+//	LocalDomainV2ConnectionStatusArray{ LocalDomainV2ConnectionStatusArgs{...} }
+type LocalDomainV2ConnectionStatusArrayInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2ConnectionStatusArrayOutput() LocalDomainV2ConnectionStatusArrayOutput
+	ToLocalDomainV2ConnectionStatusArrayOutputWithContext(context.Context) LocalDomainV2ConnectionStatusArrayOutput
+}
+
+type LocalDomainV2ConnectionStatusArray []LocalDomainV2ConnectionStatusInput
+
+func (LocalDomainV2ConnectionStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2ConnectionStatus)(nil)).Elem()
+}
+
+func (i LocalDomainV2ConnectionStatusArray) ToLocalDomainV2ConnectionStatusArrayOutput() LocalDomainV2ConnectionStatusArrayOutput {
+	return i.ToLocalDomainV2ConnectionStatusArrayOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2ConnectionStatusArray) ToLocalDomainV2ConnectionStatusArrayOutputWithContext(ctx context.Context) LocalDomainV2ConnectionStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2ConnectionStatusArrayOutput)
+}
+
+type LocalDomainV2ConnectionStatusOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2ConnectionStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2ConnectionStatus)(nil)).Elem()
+}
+
+func (o LocalDomainV2ConnectionStatusOutput) ToLocalDomainV2ConnectionStatusOutput() LocalDomainV2ConnectionStatusOutput {
+	return o
+}
+
+func (o LocalDomainV2ConnectionStatusOutput) ToLocalDomainV2ConnectionStatusOutputWithContext(ctx context.Context) LocalDomainV2ConnectionStatusOutput {
+	return o
+}
+
+// - Connectivity status of each dependent service with Nutanix Central. See Service Statuses below.
+func (o LocalDomainV2ConnectionStatusOutput) ServiceStatuses() LocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return o.ApplyT(func(v LocalDomainV2ConnectionStatus) []LocalDomainV2ConnectionStatusServiceStatus {
+		return v.ServiceStatuses
+	}).(LocalDomainV2ConnectionStatusServiceStatusArrayOutput)
+}
+
+// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+func (o LocalDomainV2ConnectionStatusOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2ConnectionStatus) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type LocalDomainV2ConnectionStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2ConnectionStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2ConnectionStatus)(nil)).Elem()
+}
+
+func (o LocalDomainV2ConnectionStatusArrayOutput) ToLocalDomainV2ConnectionStatusArrayOutput() LocalDomainV2ConnectionStatusArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2ConnectionStatusArrayOutput) ToLocalDomainV2ConnectionStatusArrayOutputWithContext(ctx context.Context) LocalDomainV2ConnectionStatusArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2ConnectionStatusArrayOutput) Index(i pulumi.IntInput) LocalDomainV2ConnectionStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LocalDomainV2ConnectionStatus {
+		return vs[0].([]LocalDomainV2ConnectionStatus)[vs[1].(int)]
+	}).(LocalDomainV2ConnectionStatusOutput)
+}
+
+type LocalDomainV2ConnectionStatusServiceStatus struct {
+	// - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+	ServiceName *string `pulumi:"serviceName"`
+	// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+	Status *string `pulumi:"status"`
+}
+
+// LocalDomainV2ConnectionStatusServiceStatusInput is an input type that accepts LocalDomainV2ConnectionStatusServiceStatusArgs and LocalDomainV2ConnectionStatusServiceStatusOutput values.
+// You can construct a concrete instance of `LocalDomainV2ConnectionStatusServiceStatusInput` via:
+//
+//	LocalDomainV2ConnectionStatusServiceStatusArgs{...}
+type LocalDomainV2ConnectionStatusServiceStatusInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2ConnectionStatusServiceStatusOutput() LocalDomainV2ConnectionStatusServiceStatusOutput
+	ToLocalDomainV2ConnectionStatusServiceStatusOutputWithContext(context.Context) LocalDomainV2ConnectionStatusServiceStatusOutput
+}
+
+type LocalDomainV2ConnectionStatusServiceStatusArgs struct {
+	// - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+	// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+	Status pulumi.StringPtrInput `pulumi:"status"`
+}
+
+func (LocalDomainV2ConnectionStatusServiceStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2ConnectionStatusServiceStatus)(nil)).Elem()
+}
+
+func (i LocalDomainV2ConnectionStatusServiceStatusArgs) ToLocalDomainV2ConnectionStatusServiceStatusOutput() LocalDomainV2ConnectionStatusServiceStatusOutput {
+	return i.ToLocalDomainV2ConnectionStatusServiceStatusOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2ConnectionStatusServiceStatusArgs) ToLocalDomainV2ConnectionStatusServiceStatusOutputWithContext(ctx context.Context) LocalDomainV2ConnectionStatusServiceStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2ConnectionStatusServiceStatusOutput)
+}
+
+// LocalDomainV2ConnectionStatusServiceStatusArrayInput is an input type that accepts LocalDomainV2ConnectionStatusServiceStatusArray and LocalDomainV2ConnectionStatusServiceStatusArrayOutput values.
+// You can construct a concrete instance of `LocalDomainV2ConnectionStatusServiceStatusArrayInput` via:
+//
+//	LocalDomainV2ConnectionStatusServiceStatusArray{ LocalDomainV2ConnectionStatusServiceStatusArgs{...} }
+type LocalDomainV2ConnectionStatusServiceStatusArrayInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2ConnectionStatusServiceStatusArrayOutput() LocalDomainV2ConnectionStatusServiceStatusArrayOutput
+	ToLocalDomainV2ConnectionStatusServiceStatusArrayOutputWithContext(context.Context) LocalDomainV2ConnectionStatusServiceStatusArrayOutput
+}
+
+type LocalDomainV2ConnectionStatusServiceStatusArray []LocalDomainV2ConnectionStatusServiceStatusInput
+
+func (LocalDomainV2ConnectionStatusServiceStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2ConnectionStatusServiceStatus)(nil)).Elem()
+}
+
+func (i LocalDomainV2ConnectionStatusServiceStatusArray) ToLocalDomainV2ConnectionStatusServiceStatusArrayOutput() LocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return i.ToLocalDomainV2ConnectionStatusServiceStatusArrayOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2ConnectionStatusServiceStatusArray) ToLocalDomainV2ConnectionStatusServiceStatusArrayOutputWithContext(ctx context.Context) LocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2ConnectionStatusServiceStatusArrayOutput)
+}
+
+type LocalDomainV2ConnectionStatusServiceStatusOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2ConnectionStatusServiceStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2ConnectionStatusServiceStatus)(nil)).Elem()
+}
+
+func (o LocalDomainV2ConnectionStatusServiceStatusOutput) ToLocalDomainV2ConnectionStatusServiceStatusOutput() LocalDomainV2ConnectionStatusServiceStatusOutput {
+	return o
+}
+
+func (o LocalDomainV2ConnectionStatusServiceStatusOutput) ToLocalDomainV2ConnectionStatusServiceStatusOutputWithContext(ctx context.Context) LocalDomainV2ConnectionStatusServiceStatusOutput {
+	return o
+}
+
+// - Local domain dependent service name. One of `TUNNEL_CONNECTION`, `IDENTITY_MANAGEMENT`.
+func (o LocalDomainV2ConnectionStatusServiceStatusOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2ConnectionStatusServiceStatus) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+// - Connectivity status for the service. One of `ACTIVE`, `INACTIVE`.
+func (o LocalDomainV2ConnectionStatusServiceStatusOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2ConnectionStatusServiceStatus) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+type LocalDomainV2ConnectionStatusServiceStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2ConnectionStatusServiceStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2ConnectionStatusServiceStatus)(nil)).Elem()
+}
+
+func (o LocalDomainV2ConnectionStatusServiceStatusArrayOutput) ToLocalDomainV2ConnectionStatusServiceStatusArrayOutput() LocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2ConnectionStatusServiceStatusArrayOutput) ToLocalDomainV2ConnectionStatusServiceStatusArrayOutputWithContext(ctx context.Context) LocalDomainV2ConnectionStatusServiceStatusArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2ConnectionStatusServiceStatusArrayOutput) Index(i pulumi.IntInput) LocalDomainV2ConnectionStatusServiceStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LocalDomainV2ConnectionStatusServiceStatus {
+		return vs[0].([]LocalDomainV2ConnectionStatusServiceStatus)[vs[1].(int)]
+	}).(LocalDomainV2ConnectionStatusServiceStatusOutput)
+}
+
+type LocalDomainV2Credentials struct {
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+	ApiKey string `pulumi:"apiKey"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+	KeyId string `pulumi:"keyId"`
+}
+
+// LocalDomainV2CredentialsInput is an input type that accepts LocalDomainV2CredentialsArgs and LocalDomainV2CredentialsOutput values.
+// You can construct a concrete instance of `LocalDomainV2CredentialsInput` via:
+//
+//	LocalDomainV2CredentialsArgs{...}
+type LocalDomainV2CredentialsInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2CredentialsOutput() LocalDomainV2CredentialsOutput
+	ToLocalDomainV2CredentialsOutputWithContext(context.Context) LocalDomainV2CredentialsOutput
+}
+
+type LocalDomainV2CredentialsArgs struct {
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+	ApiKey pulumi.StringInput `pulumi:"apiKey"`
+	// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+	// - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+}
+
+func (LocalDomainV2CredentialsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2Credentials)(nil)).Elem()
+}
+
+func (i LocalDomainV2CredentialsArgs) ToLocalDomainV2CredentialsOutput() LocalDomainV2CredentialsOutput {
+	return i.ToLocalDomainV2CredentialsOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2CredentialsArgs) ToLocalDomainV2CredentialsOutputWithContext(ctx context.Context) LocalDomainV2CredentialsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2CredentialsOutput)
+}
+
+func (i LocalDomainV2CredentialsArgs) ToLocalDomainV2CredentialsPtrOutput() LocalDomainV2CredentialsPtrOutput {
+	return i.ToLocalDomainV2CredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2CredentialsArgs) ToLocalDomainV2CredentialsPtrOutputWithContext(ctx context.Context) LocalDomainV2CredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2CredentialsOutput).ToLocalDomainV2CredentialsPtrOutputWithContext(ctx)
+}
+
+// LocalDomainV2CredentialsPtrInput is an input type that accepts LocalDomainV2CredentialsArgs, LocalDomainV2CredentialsPtr and LocalDomainV2CredentialsPtrOutput values.
+// You can construct a concrete instance of `LocalDomainV2CredentialsPtrInput` via:
+//
+//	        LocalDomainV2CredentialsArgs{...}
+//
+//	or:
+//
+//	        nil
+type LocalDomainV2CredentialsPtrInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2CredentialsPtrOutput() LocalDomainV2CredentialsPtrOutput
+	ToLocalDomainV2CredentialsPtrOutputWithContext(context.Context) LocalDomainV2CredentialsPtrOutput
+}
+
+type localDomainV2CredentialsPtrType LocalDomainV2CredentialsArgs
+
+func LocalDomainV2CredentialsPtr(v *LocalDomainV2CredentialsArgs) LocalDomainV2CredentialsPtrInput {
+	return (*localDomainV2CredentialsPtrType)(v)
+}
+
+func (*localDomainV2CredentialsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**LocalDomainV2Credentials)(nil)).Elem()
+}
+
+func (i *localDomainV2CredentialsPtrType) ToLocalDomainV2CredentialsPtrOutput() LocalDomainV2CredentialsPtrOutput {
+	return i.ToLocalDomainV2CredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i *localDomainV2CredentialsPtrType) ToLocalDomainV2CredentialsPtrOutputWithContext(ctx context.Context) LocalDomainV2CredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2CredentialsPtrOutput)
+}
+
+type LocalDomainV2CredentialsOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2CredentialsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2Credentials)(nil)).Elem()
+}
+
+func (o LocalDomainV2CredentialsOutput) ToLocalDomainV2CredentialsOutput() LocalDomainV2CredentialsOutput {
+	return o
+}
+
+func (o LocalDomainV2CredentialsOutput) ToLocalDomainV2CredentialsOutputWithContext(ctx context.Context) LocalDomainV2CredentialsOutput {
+	return o
+}
+
+func (o LocalDomainV2CredentialsOutput) ToLocalDomainV2CredentialsPtrOutput() LocalDomainV2CredentialsPtrOutput {
+	return o.ToLocalDomainV2CredentialsPtrOutputWithContext(context.Background())
+}
+
+func (o LocalDomainV2CredentialsOutput) ToLocalDomainV2CredentialsPtrOutputWithContext(ctx context.Context) LocalDomainV2CredentialsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v LocalDomainV2Credentials) *LocalDomainV2Credentials {
+		return &v
+	}).(LocalDomainV2CredentialsPtrOutput)
+}
+
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+func (o LocalDomainV2CredentialsOutput) ApiKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LocalDomainV2Credentials) string { return v.ApiKey }).(pulumi.StringOutput)
+}
+
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+func (o LocalDomainV2CredentialsOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v LocalDomainV2Credentials) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+type LocalDomainV2CredentialsPtrOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2CredentialsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**LocalDomainV2Credentials)(nil)).Elem()
+}
+
+func (o LocalDomainV2CredentialsPtrOutput) ToLocalDomainV2CredentialsPtrOutput() LocalDomainV2CredentialsPtrOutput {
+	return o
+}
+
+func (o LocalDomainV2CredentialsPtrOutput) ToLocalDomainV2CredentialsPtrOutputWithContext(ctx context.Context) LocalDomainV2CredentialsPtrOutput {
+	return o
+}
+
+func (o LocalDomainV2CredentialsPtrOutput) Elem() LocalDomainV2CredentialsOutput {
+	return o.ApplyT(func(v *LocalDomainV2Credentials) LocalDomainV2Credentials {
+		if v != nil {
+			return *v
+		}
+		var ret LocalDomainV2Credentials
+		return ret
+	}).(LocalDomainV2CredentialsOutput)
+}
+
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) API key which is used by Prism Central as authentication for Nutanix Central communication.
+func (o LocalDomainV2CredentialsPtrOutput) ApiKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalDomainV2Credentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ApiKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+// - (Required, WriteOnly) This is used by Prism Central to form authentication token for Nutanix Central communication.
+func (o LocalDomainV2CredentialsPtrOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *LocalDomainV2Credentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.KeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+type LocalDomainV2Location struct {
+	// - The location coordinates, that is latitude and longitude. See Coordinates below.
+	Coordinates []LocalDomainV2LocationCoordinate `pulumi:"coordinates"`
+	// - Location Country.
+	Country *string `pulumi:"country"`
+	// - A globally unique identifier of the location.
+	ExtId *string `pulumi:"extId"`
+	// - Location name.
+	Name *string `pulumi:"name"`
+	// - Location state.
+	State *string `pulumi:"state"`
+}
+
+// LocalDomainV2LocationInput is an input type that accepts LocalDomainV2LocationArgs and LocalDomainV2LocationOutput values.
+// You can construct a concrete instance of `LocalDomainV2LocationInput` via:
+//
+//	LocalDomainV2LocationArgs{...}
+type LocalDomainV2LocationInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2LocationOutput() LocalDomainV2LocationOutput
+	ToLocalDomainV2LocationOutputWithContext(context.Context) LocalDomainV2LocationOutput
+}
+
+type LocalDomainV2LocationArgs struct {
+	// - The location coordinates, that is latitude and longitude. See Coordinates below.
+	Coordinates LocalDomainV2LocationCoordinateArrayInput `pulumi:"coordinates"`
+	// - Location Country.
+	Country pulumi.StringPtrInput `pulumi:"country"`
+	// - A globally unique identifier of the location.
+	ExtId pulumi.StringPtrInput `pulumi:"extId"`
+	// - Location name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// - Location state.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (LocalDomainV2LocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2Location)(nil)).Elem()
+}
+
+func (i LocalDomainV2LocationArgs) ToLocalDomainV2LocationOutput() LocalDomainV2LocationOutput {
+	return i.ToLocalDomainV2LocationOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2LocationArgs) ToLocalDomainV2LocationOutputWithContext(ctx context.Context) LocalDomainV2LocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2LocationOutput)
+}
+
+// LocalDomainV2LocationArrayInput is an input type that accepts LocalDomainV2LocationArray and LocalDomainV2LocationArrayOutput values.
+// You can construct a concrete instance of `LocalDomainV2LocationArrayInput` via:
+//
+//	LocalDomainV2LocationArray{ LocalDomainV2LocationArgs{...} }
+type LocalDomainV2LocationArrayInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2LocationArrayOutput() LocalDomainV2LocationArrayOutput
+	ToLocalDomainV2LocationArrayOutputWithContext(context.Context) LocalDomainV2LocationArrayOutput
+}
+
+type LocalDomainV2LocationArray []LocalDomainV2LocationInput
+
+func (LocalDomainV2LocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2Location)(nil)).Elem()
+}
+
+func (i LocalDomainV2LocationArray) ToLocalDomainV2LocationArrayOutput() LocalDomainV2LocationArrayOutput {
+	return i.ToLocalDomainV2LocationArrayOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2LocationArray) ToLocalDomainV2LocationArrayOutputWithContext(ctx context.Context) LocalDomainV2LocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2LocationArrayOutput)
+}
+
+type LocalDomainV2LocationOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2LocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2Location)(nil)).Elem()
+}
+
+func (o LocalDomainV2LocationOutput) ToLocalDomainV2LocationOutput() LocalDomainV2LocationOutput {
+	return o
+}
+
+func (o LocalDomainV2LocationOutput) ToLocalDomainV2LocationOutputWithContext(ctx context.Context) LocalDomainV2LocationOutput {
+	return o
+}
+
+// - The location coordinates, that is latitude and longitude. See Coordinates below.
+func (o LocalDomainV2LocationOutput) Coordinates() LocalDomainV2LocationCoordinateArrayOutput {
+	return o.ApplyT(func(v LocalDomainV2Location) []LocalDomainV2LocationCoordinate { return v.Coordinates }).(LocalDomainV2LocationCoordinateArrayOutput)
+}
+
+// - Location Country.
+func (o LocalDomainV2LocationOutput) Country() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2Location) *string { return v.Country }).(pulumi.StringPtrOutput)
+}
+
+// - A globally unique identifier of the location.
+func (o LocalDomainV2LocationOutput) ExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2Location) *string { return v.ExtId }).(pulumi.StringPtrOutput)
+}
+
+// - Location name.
+func (o LocalDomainV2LocationOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2Location) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// - Location state.
+func (o LocalDomainV2LocationOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2Location) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type LocalDomainV2LocationArrayOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2LocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2Location)(nil)).Elem()
+}
+
+func (o LocalDomainV2LocationArrayOutput) ToLocalDomainV2LocationArrayOutput() LocalDomainV2LocationArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2LocationArrayOutput) ToLocalDomainV2LocationArrayOutputWithContext(ctx context.Context) LocalDomainV2LocationArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2LocationArrayOutput) Index(i pulumi.IntInput) LocalDomainV2LocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LocalDomainV2Location {
+		return vs[0].([]LocalDomainV2Location)[vs[1].(int)]
+	}).(LocalDomainV2LocationOutput)
+}
+
+type LocalDomainV2LocationCoordinate struct {
+	// - The latitude part of the location.
+	Latitude *float64 `pulumi:"latitude"`
+	// - The longitude part of the location.
+	Longitude *float64 `pulumi:"longitude"`
+}
+
+// LocalDomainV2LocationCoordinateInput is an input type that accepts LocalDomainV2LocationCoordinateArgs and LocalDomainV2LocationCoordinateOutput values.
+// You can construct a concrete instance of `LocalDomainV2LocationCoordinateInput` via:
+//
+//	LocalDomainV2LocationCoordinateArgs{...}
+type LocalDomainV2LocationCoordinateInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2LocationCoordinateOutput() LocalDomainV2LocationCoordinateOutput
+	ToLocalDomainV2LocationCoordinateOutputWithContext(context.Context) LocalDomainV2LocationCoordinateOutput
+}
+
+type LocalDomainV2LocationCoordinateArgs struct {
+	// - The latitude part of the location.
+	Latitude pulumi.Float64PtrInput `pulumi:"latitude"`
+	// - The longitude part of the location.
+	Longitude pulumi.Float64PtrInput `pulumi:"longitude"`
+}
+
+func (LocalDomainV2LocationCoordinateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2LocationCoordinate)(nil)).Elem()
+}
+
+func (i LocalDomainV2LocationCoordinateArgs) ToLocalDomainV2LocationCoordinateOutput() LocalDomainV2LocationCoordinateOutput {
+	return i.ToLocalDomainV2LocationCoordinateOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2LocationCoordinateArgs) ToLocalDomainV2LocationCoordinateOutputWithContext(ctx context.Context) LocalDomainV2LocationCoordinateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2LocationCoordinateOutput)
+}
+
+// LocalDomainV2LocationCoordinateArrayInput is an input type that accepts LocalDomainV2LocationCoordinateArray and LocalDomainV2LocationCoordinateArrayOutput values.
+// You can construct a concrete instance of `LocalDomainV2LocationCoordinateArrayInput` via:
+//
+//	LocalDomainV2LocationCoordinateArray{ LocalDomainV2LocationCoordinateArgs{...} }
+type LocalDomainV2LocationCoordinateArrayInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2LocationCoordinateArrayOutput() LocalDomainV2LocationCoordinateArrayOutput
+	ToLocalDomainV2LocationCoordinateArrayOutputWithContext(context.Context) LocalDomainV2LocationCoordinateArrayOutput
+}
+
+type LocalDomainV2LocationCoordinateArray []LocalDomainV2LocationCoordinateInput
+
+func (LocalDomainV2LocationCoordinateArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2LocationCoordinate)(nil)).Elem()
+}
+
+func (i LocalDomainV2LocationCoordinateArray) ToLocalDomainV2LocationCoordinateArrayOutput() LocalDomainV2LocationCoordinateArrayOutput {
+	return i.ToLocalDomainV2LocationCoordinateArrayOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2LocationCoordinateArray) ToLocalDomainV2LocationCoordinateArrayOutputWithContext(ctx context.Context) LocalDomainV2LocationCoordinateArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2LocationCoordinateArrayOutput)
+}
+
+type LocalDomainV2LocationCoordinateOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2LocationCoordinateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2LocationCoordinate)(nil)).Elem()
+}
+
+func (o LocalDomainV2LocationCoordinateOutput) ToLocalDomainV2LocationCoordinateOutput() LocalDomainV2LocationCoordinateOutput {
+	return o
+}
+
+func (o LocalDomainV2LocationCoordinateOutput) ToLocalDomainV2LocationCoordinateOutputWithContext(ctx context.Context) LocalDomainV2LocationCoordinateOutput {
+	return o
+}
+
+// - The latitude part of the location.
+func (o LocalDomainV2LocationCoordinateOutput) Latitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LocalDomainV2LocationCoordinate) *float64 { return v.Latitude }).(pulumi.Float64PtrOutput)
+}
+
+// - The longitude part of the location.
+func (o LocalDomainV2LocationCoordinateOutput) Longitude() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v LocalDomainV2LocationCoordinate) *float64 { return v.Longitude }).(pulumi.Float64PtrOutput)
+}
+
+type LocalDomainV2LocationCoordinateArrayOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2LocationCoordinateArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2LocationCoordinate)(nil)).Elem()
+}
+
+func (o LocalDomainV2LocationCoordinateArrayOutput) ToLocalDomainV2LocationCoordinateArrayOutput() LocalDomainV2LocationCoordinateArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2LocationCoordinateArrayOutput) ToLocalDomainV2LocationCoordinateArrayOutputWithContext(ctx context.Context) LocalDomainV2LocationCoordinateArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2LocationCoordinateArrayOutput) Index(i pulumi.IntInput) LocalDomainV2LocationCoordinateOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LocalDomainV2LocationCoordinate {
+		return vs[0].([]LocalDomainV2LocationCoordinate)[vs[1].(int)]
+	}).(LocalDomainV2LocationCoordinateOutput)
+}
+
+type LocalDomainV2RegistrationStatus struct {
+	// - Indicates remaining days to domain credential expiry, 0 means expired.
+	DaysToExpiry *int `pulumi:"daysToExpiry"`
+	// - The stage for the local domain's register/unregister operation.
+	ErrorStage *string `pulumi:"errorStage"`
+	// - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+	IdentityProviderExtId *string `pulumi:"identityProviderExtId"`
+	// - Location state.
+	State *string `pulumi:"state"`
+}
+
+// LocalDomainV2RegistrationStatusInput is an input type that accepts LocalDomainV2RegistrationStatusArgs and LocalDomainV2RegistrationStatusOutput values.
+// You can construct a concrete instance of `LocalDomainV2RegistrationStatusInput` via:
+//
+//	LocalDomainV2RegistrationStatusArgs{...}
+type LocalDomainV2RegistrationStatusInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2RegistrationStatusOutput() LocalDomainV2RegistrationStatusOutput
+	ToLocalDomainV2RegistrationStatusOutputWithContext(context.Context) LocalDomainV2RegistrationStatusOutput
+}
+
+type LocalDomainV2RegistrationStatusArgs struct {
+	// - Indicates remaining days to domain credential expiry, 0 means expired.
+	DaysToExpiry pulumi.IntPtrInput `pulumi:"daysToExpiry"`
+	// - The stage for the local domain's register/unregister operation.
+	ErrorStage pulumi.StringPtrInput `pulumi:"errorStage"`
+	// - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+	IdentityProviderExtId pulumi.StringPtrInput `pulumi:"identityProviderExtId"`
+	// - Location state.
+	State pulumi.StringPtrInput `pulumi:"state"`
+}
+
+func (LocalDomainV2RegistrationStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2RegistrationStatus)(nil)).Elem()
+}
+
+func (i LocalDomainV2RegistrationStatusArgs) ToLocalDomainV2RegistrationStatusOutput() LocalDomainV2RegistrationStatusOutput {
+	return i.ToLocalDomainV2RegistrationStatusOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2RegistrationStatusArgs) ToLocalDomainV2RegistrationStatusOutputWithContext(ctx context.Context) LocalDomainV2RegistrationStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2RegistrationStatusOutput)
+}
+
+// LocalDomainV2RegistrationStatusArrayInput is an input type that accepts LocalDomainV2RegistrationStatusArray and LocalDomainV2RegistrationStatusArrayOutput values.
+// You can construct a concrete instance of `LocalDomainV2RegistrationStatusArrayInput` via:
+//
+//	LocalDomainV2RegistrationStatusArray{ LocalDomainV2RegistrationStatusArgs{...} }
+type LocalDomainV2RegistrationStatusArrayInput interface {
+	pulumi.Input
+
+	ToLocalDomainV2RegistrationStatusArrayOutput() LocalDomainV2RegistrationStatusArrayOutput
+	ToLocalDomainV2RegistrationStatusArrayOutputWithContext(context.Context) LocalDomainV2RegistrationStatusArrayOutput
+}
+
+type LocalDomainV2RegistrationStatusArray []LocalDomainV2RegistrationStatusInput
+
+func (LocalDomainV2RegistrationStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2RegistrationStatus)(nil)).Elem()
+}
+
+func (i LocalDomainV2RegistrationStatusArray) ToLocalDomainV2RegistrationStatusArrayOutput() LocalDomainV2RegistrationStatusArrayOutput {
+	return i.ToLocalDomainV2RegistrationStatusArrayOutputWithContext(context.Background())
+}
+
+func (i LocalDomainV2RegistrationStatusArray) ToLocalDomainV2RegistrationStatusArrayOutputWithContext(ctx context.Context) LocalDomainV2RegistrationStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(LocalDomainV2RegistrationStatusArrayOutput)
+}
+
+type LocalDomainV2RegistrationStatusOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2RegistrationStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LocalDomainV2RegistrationStatus)(nil)).Elem()
+}
+
+func (o LocalDomainV2RegistrationStatusOutput) ToLocalDomainV2RegistrationStatusOutput() LocalDomainV2RegistrationStatusOutput {
+	return o
+}
+
+func (o LocalDomainV2RegistrationStatusOutput) ToLocalDomainV2RegistrationStatusOutputWithContext(ctx context.Context) LocalDomainV2RegistrationStatusOutput {
+	return o
+}
+
+// - Indicates remaining days to domain credential expiry, 0 means expired.
+func (o LocalDomainV2RegistrationStatusOutput) DaysToExpiry() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2RegistrationStatus) *int { return v.DaysToExpiry }).(pulumi.IntPtrOutput)
+}
+
+// - The stage for the local domain's register/unregister operation.
+func (o LocalDomainV2RegistrationStatusOutput) ErrorStage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2RegistrationStatus) *string { return v.ErrorStage }).(pulumi.StringPtrOutput)
+}
+
+// - (Required) Identity provider unique identifier. Identity provider can be directory-service or SAML based identity provider.
+func (o LocalDomainV2RegistrationStatusOutput) IdentityProviderExtId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2RegistrationStatus) *string { return v.IdentityProviderExtId }).(pulumi.StringPtrOutput)
+}
+
+// - Location state.
+func (o LocalDomainV2RegistrationStatusOutput) State() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LocalDomainV2RegistrationStatus) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+type LocalDomainV2RegistrationStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (LocalDomainV2RegistrationStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]LocalDomainV2RegistrationStatus)(nil)).Elem()
+}
+
+func (o LocalDomainV2RegistrationStatusArrayOutput) ToLocalDomainV2RegistrationStatusArrayOutput() LocalDomainV2RegistrationStatusArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2RegistrationStatusArrayOutput) ToLocalDomainV2RegistrationStatusArrayOutputWithContext(ctx context.Context) LocalDomainV2RegistrationStatusArrayOutput {
+	return o
+}
+
+func (o LocalDomainV2RegistrationStatusArrayOutput) Index(i pulumi.IntInput) LocalDomainV2RegistrationStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) LocalDomainV2RegistrationStatus {
+		return vs[0].([]LocalDomainV2RegistrationStatus)[vs[1].(int)]
+	}).(LocalDomainV2RegistrationStatusOutput)
 }
 
 type NdbCloneActionargument struct {
@@ -62390,848 +63312,6 @@ func (o NdbCloneInfoBpgConfigStorageLogDiskArrayOutput) Index(i pulumi.IntInput)
 	}).(NdbCloneInfoBpgConfigStorageLogDiskOutput)
 }
 
-type NdbCloneInfoBpgConfigVmProperty struct {
-	DirtyBackgroundRatio    *float64 `pulumi:"dirtyBackgroundRatio"`
-	DirtyExpireCentisecs    *float64 `pulumi:"dirtyExpireCentisecs"`
-	DirtyRatio              *float64 `pulumi:"dirtyRatio"`
-	DirtyWritebackCentisecs *float64 `pulumi:"dirtyWritebackCentisecs"`
-	NrHugepages             *float64 `pulumi:"nrHugepages"`
-	OvercommitMemory        *float64 `pulumi:"overcommitMemory"`
-	Swappiness              *float64 `pulumi:"swappiness"`
-}
-
-// NdbCloneInfoBpgConfigVmPropertyInput is an input type that accepts NdbCloneInfoBpgConfigVmPropertyArgs and NdbCloneInfoBpgConfigVmPropertyOutput values.
-// You can construct a concrete instance of `NdbCloneInfoBpgConfigVmPropertyInput` via:
-//
-//	NdbCloneInfoBpgConfigVmPropertyArgs{...}
-type NdbCloneInfoBpgConfigVmPropertyInput interface {
-	pulumi.Input
-
-	ToNdbCloneInfoBpgConfigVmPropertyOutput() NdbCloneInfoBpgConfigVmPropertyOutput
-	ToNdbCloneInfoBpgConfigVmPropertyOutputWithContext(context.Context) NdbCloneInfoBpgConfigVmPropertyOutput
-}
-
-type NdbCloneInfoBpgConfigVmPropertyArgs struct {
-	DirtyBackgroundRatio    pulumi.Float64PtrInput `pulumi:"dirtyBackgroundRatio"`
-	DirtyExpireCentisecs    pulumi.Float64PtrInput `pulumi:"dirtyExpireCentisecs"`
-	DirtyRatio              pulumi.Float64PtrInput `pulumi:"dirtyRatio"`
-	DirtyWritebackCentisecs pulumi.Float64PtrInput `pulumi:"dirtyWritebackCentisecs"`
-	NrHugepages             pulumi.Float64PtrInput `pulumi:"nrHugepages"`
-	OvercommitMemory        pulumi.Float64PtrInput `pulumi:"overcommitMemory"`
-	Swappiness              pulumi.Float64PtrInput `pulumi:"swappiness"`
-}
-
-func (NdbCloneInfoBpgConfigVmPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
-}
-
-func (i NdbCloneInfoBpgConfigVmPropertyArgs) ToNdbCloneInfoBpgConfigVmPropertyOutput() NdbCloneInfoBpgConfigVmPropertyOutput {
-	return i.ToNdbCloneInfoBpgConfigVmPropertyOutputWithContext(context.Background())
-}
-
-func (i NdbCloneInfoBpgConfigVmPropertyArgs) ToNdbCloneInfoBpgConfigVmPropertyOutputWithContext(ctx context.Context) NdbCloneInfoBpgConfigVmPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneInfoBpgConfigVmPropertyOutput)
-}
-
-// NdbCloneInfoBpgConfigVmPropertyArrayInput is an input type that accepts NdbCloneInfoBpgConfigVmPropertyArray and NdbCloneInfoBpgConfigVmPropertyArrayOutput values.
-// You can construct a concrete instance of `NdbCloneInfoBpgConfigVmPropertyArrayInput` via:
-//
-//	NdbCloneInfoBpgConfigVmPropertyArray{ NdbCloneInfoBpgConfigVmPropertyArgs{...} }
-type NdbCloneInfoBpgConfigVmPropertyArrayInput interface {
-	pulumi.Input
-
-	ToNdbCloneInfoBpgConfigVmPropertyArrayOutput() NdbCloneInfoBpgConfigVmPropertyArrayOutput
-	ToNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(context.Context) NdbCloneInfoBpgConfigVmPropertyArrayOutput
-}
-
-type NdbCloneInfoBpgConfigVmPropertyArray []NdbCloneInfoBpgConfigVmPropertyInput
-
-func (NdbCloneInfoBpgConfigVmPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
-}
-
-func (i NdbCloneInfoBpgConfigVmPropertyArray) ToNdbCloneInfoBpgConfigVmPropertyArrayOutput() NdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return i.ToNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i NdbCloneInfoBpgConfigVmPropertyArray) ToNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(ctx context.Context) NdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneInfoBpgConfigVmPropertyArrayOutput)
-}
-
-type NdbCloneInfoBpgConfigVmPropertyOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneInfoBpgConfigVmPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) ToNdbCloneInfoBpgConfigVmPropertyOutput() NdbCloneInfoBpgConfigVmPropertyOutput {
-	return o
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) ToNdbCloneInfoBpgConfigVmPropertyOutputWithContext(ctx context.Context) NdbCloneInfoBpgConfigVmPropertyOutput {
-	return o
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) DirtyBackgroundRatio() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.DirtyBackgroundRatio }).(pulumi.Float64PtrOutput)
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) DirtyExpireCentisecs() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.DirtyExpireCentisecs }).(pulumi.Float64PtrOutput)
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) DirtyRatio() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.DirtyRatio }).(pulumi.Float64PtrOutput)
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) DirtyWritebackCentisecs() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.DirtyWritebackCentisecs }).(pulumi.Float64PtrOutput)
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) NrHugepages() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.NrHugepages }).(pulumi.Float64PtrOutput)
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) OvercommitMemory() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.OvercommitMemory }).(pulumi.Float64PtrOutput)
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyOutput) Swappiness() pulumi.Float64PtrOutput {
-	return o.ApplyT(func(v NdbCloneInfoBpgConfigVmProperty) *float64 { return v.Swappiness }).(pulumi.Float64PtrOutput)
-}
-
-type NdbCloneInfoBpgConfigVmPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneInfoBpgConfigVmPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyArrayOutput) ToNdbCloneInfoBpgConfigVmPropertyArrayOutput() NdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return o
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyArrayOutput) ToNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(ctx context.Context) NdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return o
-}
-
-func (o NdbCloneInfoBpgConfigVmPropertyArrayOutput) Index(i pulumi.IntInput) NdbCloneInfoBpgConfigVmPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneInfoBpgConfigVmProperty {
-		return vs[0].([]NdbCloneInfoBpgConfigVmProperty)[vs[1].(int)]
-	}).(NdbCloneInfoBpgConfigVmPropertyOutput)
-}
-
-type NdbCloneLcmConfig struct {
-	DatabaseLcmConfigs []NdbCloneLcmConfigDatabaseLcmConfig `pulumi:"databaseLcmConfigs"`
-}
-
-// NdbCloneLcmConfigInput is an input type that accepts NdbCloneLcmConfigArgs and NdbCloneLcmConfigOutput values.
-// You can construct a concrete instance of `NdbCloneLcmConfigInput` via:
-//
-//	NdbCloneLcmConfigArgs{...}
-type NdbCloneLcmConfigInput interface {
-	pulumi.Input
-
-	ToNdbCloneLcmConfigOutput() NdbCloneLcmConfigOutput
-	ToNdbCloneLcmConfigOutputWithContext(context.Context) NdbCloneLcmConfigOutput
-}
-
-type NdbCloneLcmConfigArgs struct {
-	DatabaseLcmConfigs NdbCloneLcmConfigDatabaseLcmConfigArrayInput `pulumi:"databaseLcmConfigs"`
-}
-
-func (NdbCloneLcmConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLcmConfig)(nil)).Elem()
-}
-
-func (i NdbCloneLcmConfigArgs) ToNdbCloneLcmConfigOutput() NdbCloneLcmConfigOutput {
-	return i.ToNdbCloneLcmConfigOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLcmConfigArgs) ToNdbCloneLcmConfigOutputWithContext(ctx context.Context) NdbCloneLcmConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigOutput)
-}
-
-// NdbCloneLcmConfigArrayInput is an input type that accepts NdbCloneLcmConfigArray and NdbCloneLcmConfigArrayOutput values.
-// You can construct a concrete instance of `NdbCloneLcmConfigArrayInput` via:
-//
-//	NdbCloneLcmConfigArray{ NdbCloneLcmConfigArgs{...} }
-type NdbCloneLcmConfigArrayInput interface {
-	pulumi.Input
-
-	ToNdbCloneLcmConfigArrayOutput() NdbCloneLcmConfigArrayOutput
-	ToNdbCloneLcmConfigArrayOutputWithContext(context.Context) NdbCloneLcmConfigArrayOutput
-}
-
-type NdbCloneLcmConfigArray []NdbCloneLcmConfigInput
-
-func (NdbCloneLcmConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLcmConfig)(nil)).Elem()
-}
-
-func (i NdbCloneLcmConfigArray) ToNdbCloneLcmConfigArrayOutput() NdbCloneLcmConfigArrayOutput {
-	return i.ToNdbCloneLcmConfigArrayOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLcmConfigArray) ToNdbCloneLcmConfigArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigArrayOutput)
-}
-
-type NdbCloneLcmConfigOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLcmConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLcmConfig)(nil)).Elem()
-}
-
-func (o NdbCloneLcmConfigOutput) ToNdbCloneLcmConfigOutput() NdbCloneLcmConfigOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigOutput) ToNdbCloneLcmConfigOutputWithContext(ctx context.Context) NdbCloneLcmConfigOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigOutput) DatabaseLcmConfigs() NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfig) []NdbCloneLcmConfigDatabaseLcmConfig { return v.DatabaseLcmConfigs }).(NdbCloneLcmConfigDatabaseLcmConfigArrayOutput)
-}
-
-type NdbCloneLcmConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLcmConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLcmConfig)(nil)).Elem()
-}
-
-func (o NdbCloneLcmConfigArrayOutput) ToNdbCloneLcmConfigArrayOutput() NdbCloneLcmConfigArrayOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigArrayOutput) ToNdbCloneLcmConfigArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigArrayOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigArrayOutput) Index(i pulumi.IntInput) NdbCloneLcmConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLcmConfig {
-		return vs[0].([]NdbCloneLcmConfig)[vs[1].(int)]
-	}).(NdbCloneLcmConfigOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfig struct {
-	ExpiryDetails  []NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail  `pulumi:"expiryDetails"`
-	RefreshDetails []NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail `pulumi:"refreshDetails"`
-}
-
-// NdbCloneLcmConfigDatabaseLcmConfigInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigArgs and NdbCloneLcmConfigDatabaseLcmConfigOutput values.
-// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigInput` via:
-//
-//	NdbCloneLcmConfigDatabaseLcmConfigArgs{...}
-type NdbCloneLcmConfigDatabaseLcmConfigInput interface {
-	pulumi.Input
-
-	ToNdbCloneLcmConfigDatabaseLcmConfigOutput() NdbCloneLcmConfigDatabaseLcmConfigOutput
-	ToNdbCloneLcmConfigDatabaseLcmConfigOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigOutput
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigArgs struct {
-	ExpiryDetails  NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput  `pulumi:"expiryDetails"`
-	RefreshDetails NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput `pulumi:"refreshDetails"`
-}
-
-func (NdbCloneLcmConfigDatabaseLcmConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfig)(nil)).Elem()
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigArgs) ToNdbCloneLcmConfigDatabaseLcmConfigOutput() NdbCloneLcmConfigDatabaseLcmConfigOutput {
-	return i.ToNdbCloneLcmConfigDatabaseLcmConfigOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigArgs) ToNdbCloneLcmConfigDatabaseLcmConfigOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigOutput)
-}
-
-// NdbCloneLcmConfigDatabaseLcmConfigArrayInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigArray and NdbCloneLcmConfigDatabaseLcmConfigArrayOutput values.
-// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigArrayInput` via:
-//
-//	NdbCloneLcmConfigDatabaseLcmConfigArray{ NdbCloneLcmConfigDatabaseLcmConfigArgs{...} }
-type NdbCloneLcmConfigDatabaseLcmConfigArrayInput interface {
-	pulumi.Input
-
-	ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigArrayOutput
-	ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigArrayOutput
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigArray []NdbCloneLcmConfigDatabaseLcmConfigInput
-
-func (NdbCloneLcmConfigDatabaseLcmConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfig)(nil)).Elem()
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigArray) ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
-	return i.ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigArray) ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigArrayOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLcmConfigDatabaseLcmConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfig)(nil)).Elem()
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigOutput) ToNdbCloneLcmConfigDatabaseLcmConfigOutput() NdbCloneLcmConfigDatabaseLcmConfigOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigOutput) ToNdbCloneLcmConfigDatabaseLcmConfigOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigOutput) ExpiryDetails() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfig) []NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail {
-		return v.ExpiryDetails
-	}).(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput)
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigOutput) RefreshDetails() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfig) []NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail {
-		return v.RefreshDetails
-	}).(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLcmConfigDatabaseLcmConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfig)(nil)).Elem()
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigArrayOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigArrayOutput) Index(i pulumi.IntInput) NdbCloneLcmConfigDatabaseLcmConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLcmConfigDatabaseLcmConfig {
-		return vs[0].([]NdbCloneLcmConfigDatabaseLcmConfig)[vs[1].(int)]
-	}).(NdbCloneLcmConfigDatabaseLcmConfigOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail struct {
-	DeleteDatabase     *bool  `pulumi:"deleteDatabase"`
-	ExpireInDays       *int   `pulumi:"expireInDays"`
-	ExpiryDateTimezone string `pulumi:"expiryDateTimezone"`
-}
-
-// NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs and NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput values.
-// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput` via:
-//
-//	NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs{...}
-type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput interface {
-	pulumi.Input
-
-	ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput
-	ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs struct {
-	DeleteDatabase     pulumi.BoolPtrInput `pulumi:"deleteDatabase"`
-	ExpireInDays       pulumi.IntPtrInput  `pulumi:"expireInDays"`
-	ExpiryDateTimezone pulumi.StringInput  `pulumi:"expiryDateTimezone"`
-}
-
-func (NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
-	return i.ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput)
-}
-
-// NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray and NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput values.
-// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput` via:
-//
-//	NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray{ NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs{...} }
-type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput interface {
-	pulumi.Input
-
-	ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput
-	ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray []NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput
-
-func (NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
-	return i.ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) DeleteDatabase() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail) *bool { return v.DeleteDatabase }).(pulumi.BoolPtrOutput)
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ExpireInDays() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail) *int { return v.ExpireInDays }).(pulumi.IntPtrOutput)
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput) ExpiryDateTimezone() pulumi.StringOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail) string { return v.ExpiryDateTimezone }).(pulumi.StringOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput) Index(i pulumi.IntInput) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail {
-		return vs[0].([]NdbCloneLcmConfigDatabaseLcmConfigExpiryDetail)[vs[1].(int)]
-	}).(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail struct {
-	RefreshDateTimezone *string `pulumi:"refreshDateTimezone"`
-	RefreshInDays       *int    `pulumi:"refreshInDays"`
-	RefreshTime         *string `pulumi:"refreshTime"`
-}
-
-// NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs and NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput values.
-// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput` via:
-//
-//	NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs{...}
-type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput interface {
-	pulumi.Input
-
-	ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput
-	ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs struct {
-	RefreshDateTimezone pulumi.StringPtrInput `pulumi:"refreshDateTimezone"`
-	RefreshInDays       pulumi.IntPtrInput    `pulumi:"refreshInDays"`
-	RefreshTime         pulumi.StringPtrInput `pulumi:"refreshTime"`
-}
-
-func (NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)(nil)).Elem()
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
-	return i.ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput)
-}
-
-// NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput is an input type that accepts NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray and NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput values.
-// You can construct a concrete instance of `NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput` via:
-//
-//	NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray{ NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs{...} }
-type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput interface {
-	pulumi.Input
-
-	ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput
-	ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutputWithContext(context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray []NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput
-
-func (NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)(nil)).Elem()
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
-	return i.ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)(nil)).Elem()
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) RefreshDateTimezone() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail) *string { return v.RefreshDateTimezone }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) RefreshInDays() pulumi.IntPtrOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail) *int { return v.RefreshInDays }).(pulumi.IntPtrOutput)
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput) RefreshTime() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail) *string { return v.RefreshTime }).(pulumi.StringPtrOutput)
-}
-
-type NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)(nil)).Elem()
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput() NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput) ToNdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutputWithContext(ctx context.Context) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput {
-	return o
-}
-
-func (o NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput) Index(i pulumi.IntInput) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail {
-		return vs[0].([]NdbCloneLcmConfigDatabaseLcmConfigRefreshDetail)[vs[1].(int)]
-	}).(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput)
-}
-
-type NdbCloneLinkedDatabase struct {
-	// database name
-	DatabaseName   *string `pulumi:"databaseName"`
-	DatabaseStatus *string `pulumi:"databaseStatus"`
-	// date created for clone
-	DateCreated *string `pulumi:"dateCreated"`
-	// last modified date for clone
-	DateModified *string `pulumi:"dateModified"`
-	// database instance description
-	Description *string `pulumi:"description"`
-	Id          *string `pulumi:"id"`
-	// info of clone
-	Infos []NdbCloneLinkedDatabaseInfo `pulumi:"infos"`
-	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
-	Metric map[string]string `pulumi:"metric"`
-	// database instance name
-	Name                   *string `pulumi:"name"`
-	ParentDatabaseId       *string `pulumi:"parentDatabaseId"`
-	ParentLinkedDatabaseId *string `pulumi:"parentLinkedDatabaseId"`
-	// snapshot id from where clone is created
-	SnapshotId *string `pulumi:"snapshotId"`
-	// status of clone
-	Status   *string `pulumi:"status"`
-	Timezone *string `pulumi:"timezone"`
-}
-
-// NdbCloneLinkedDatabaseInput is an input type that accepts NdbCloneLinkedDatabaseArgs and NdbCloneLinkedDatabaseOutput values.
-// You can construct a concrete instance of `NdbCloneLinkedDatabaseInput` via:
-//
-//	NdbCloneLinkedDatabaseArgs{...}
-type NdbCloneLinkedDatabaseInput interface {
-	pulumi.Input
-
-	ToNdbCloneLinkedDatabaseOutput() NdbCloneLinkedDatabaseOutput
-	ToNdbCloneLinkedDatabaseOutputWithContext(context.Context) NdbCloneLinkedDatabaseOutput
-}
-
-type NdbCloneLinkedDatabaseArgs struct {
-	// database name
-	DatabaseName   pulumi.StringPtrInput `pulumi:"databaseName"`
-	DatabaseStatus pulumi.StringPtrInput `pulumi:"databaseStatus"`
-	// date created for clone
-	DateCreated pulumi.StringPtrInput `pulumi:"dateCreated"`
-	// last modified date for clone
-	DateModified pulumi.StringPtrInput `pulumi:"dateModified"`
-	// database instance description
-	Description pulumi.StringPtrInput `pulumi:"description"`
-	Id          pulumi.StringPtrInput `pulumi:"id"`
-	// info of clone
-	Infos NdbCloneLinkedDatabaseInfoArrayInput `pulumi:"infos"`
-	// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
-	Metric pulumi.StringMapInput `pulumi:"metric"`
-	// database instance name
-	Name                   pulumi.StringPtrInput `pulumi:"name"`
-	ParentDatabaseId       pulumi.StringPtrInput `pulumi:"parentDatabaseId"`
-	ParentLinkedDatabaseId pulumi.StringPtrInput `pulumi:"parentLinkedDatabaseId"`
-	// snapshot id from where clone is created
-	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
-	// status of clone
-	Status   pulumi.StringPtrInput `pulumi:"status"`
-	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
-}
-
-func (NdbCloneLinkedDatabaseArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLinkedDatabase)(nil)).Elem()
-}
-
-func (i NdbCloneLinkedDatabaseArgs) ToNdbCloneLinkedDatabaseOutput() NdbCloneLinkedDatabaseOutput {
-	return i.ToNdbCloneLinkedDatabaseOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLinkedDatabaseArgs) ToNdbCloneLinkedDatabaseOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLinkedDatabaseOutput)
-}
-
-// NdbCloneLinkedDatabaseArrayInput is an input type that accepts NdbCloneLinkedDatabaseArray and NdbCloneLinkedDatabaseArrayOutput values.
-// You can construct a concrete instance of `NdbCloneLinkedDatabaseArrayInput` via:
-//
-//	NdbCloneLinkedDatabaseArray{ NdbCloneLinkedDatabaseArgs{...} }
-type NdbCloneLinkedDatabaseArrayInput interface {
-	pulumi.Input
-
-	ToNdbCloneLinkedDatabaseArrayOutput() NdbCloneLinkedDatabaseArrayOutput
-	ToNdbCloneLinkedDatabaseArrayOutputWithContext(context.Context) NdbCloneLinkedDatabaseArrayOutput
-}
-
-type NdbCloneLinkedDatabaseArray []NdbCloneLinkedDatabaseInput
-
-func (NdbCloneLinkedDatabaseArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLinkedDatabase)(nil)).Elem()
-}
-
-func (i NdbCloneLinkedDatabaseArray) ToNdbCloneLinkedDatabaseArrayOutput() NdbCloneLinkedDatabaseArrayOutput {
-	return i.ToNdbCloneLinkedDatabaseArrayOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLinkedDatabaseArray) ToNdbCloneLinkedDatabaseArrayOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLinkedDatabaseArrayOutput)
-}
-
-type NdbCloneLinkedDatabaseOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLinkedDatabaseOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLinkedDatabase)(nil)).Elem()
-}
-
-func (o NdbCloneLinkedDatabaseOutput) ToNdbCloneLinkedDatabaseOutput() NdbCloneLinkedDatabaseOutput {
-	return o
-}
-
-func (o NdbCloneLinkedDatabaseOutput) ToNdbCloneLinkedDatabaseOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseOutput {
-	return o
-}
-
-// database name
-func (o NdbCloneLinkedDatabaseOutput) DatabaseName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbCloneLinkedDatabaseOutput) DatabaseStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.DatabaseStatus }).(pulumi.StringPtrOutput)
-}
-
-// date created for clone
-func (o NdbCloneLinkedDatabaseOutput) DateCreated() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.DateCreated }).(pulumi.StringPtrOutput)
-}
-
-// last modified date for clone
-func (o NdbCloneLinkedDatabaseOutput) DateModified() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.DateModified }).(pulumi.StringPtrOutput)
-}
-
-// database instance description
-func (o NdbCloneLinkedDatabaseOutput) Description() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Description }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbCloneLinkedDatabaseOutput) Id() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Id }).(pulumi.StringPtrOutput)
-}
-
-// info of clone
-func (o NdbCloneLinkedDatabaseOutput) Infos() NdbCloneLinkedDatabaseInfoArrayOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) []NdbCloneLinkedDatabaseInfo { return v.Infos }).(NdbCloneLinkedDatabaseInfoArrayOutput)
-}
-
-// Stores storage info regarding size, allocatedSize, usedSize and unit of calculation that seems to have been fetched from PRISM.
-func (o NdbCloneLinkedDatabaseOutput) Metric() pulumi.StringMapOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) map[string]string { return v.Metric }).(pulumi.StringMapOutput)
-}
-
-// database instance name
-func (o NdbCloneLinkedDatabaseOutput) Name() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbCloneLinkedDatabaseOutput) ParentDatabaseId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.ParentDatabaseId }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbCloneLinkedDatabaseOutput) ParentLinkedDatabaseId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.ParentLinkedDatabaseId }).(pulumi.StringPtrOutput)
-}
-
-// snapshot id from where clone is created
-func (o NdbCloneLinkedDatabaseOutput) SnapshotId() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
-}
-
-// status of clone
-func (o NdbCloneLinkedDatabaseOutput) Status() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Status }).(pulumi.StringPtrOutput)
-}
-
-func (o NdbCloneLinkedDatabaseOutput) Timezone() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabase) *string { return v.Timezone }).(pulumi.StringPtrOutput)
-}
-
-type NdbCloneLinkedDatabaseArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLinkedDatabaseArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLinkedDatabase)(nil)).Elem()
-}
-
-func (o NdbCloneLinkedDatabaseArrayOutput) ToNdbCloneLinkedDatabaseArrayOutput() NdbCloneLinkedDatabaseArrayOutput {
-	return o
-}
-
-func (o NdbCloneLinkedDatabaseArrayOutput) ToNdbCloneLinkedDatabaseArrayOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseArrayOutput {
-	return o
-}
-
-func (o NdbCloneLinkedDatabaseArrayOutput) Index(i pulumi.IntInput) NdbCloneLinkedDatabaseOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLinkedDatabase {
-		return vs[0].([]NdbCloneLinkedDatabase)[vs[1].(int)]
-	}).(NdbCloneLinkedDatabaseOutput)
-}
-
-type NdbCloneLinkedDatabaseInfo struct {
-	// info of clone
-	Info       map[string]string `pulumi:"info"`
-	SecureInfo map[string]string `pulumi:"secureInfo"`
-}
-
-// NdbCloneLinkedDatabaseInfoInput is an input type that accepts NdbCloneLinkedDatabaseInfoArgs and NdbCloneLinkedDatabaseInfoOutput values.
-// You can construct a concrete instance of `NdbCloneLinkedDatabaseInfoInput` via:
-//
-//	NdbCloneLinkedDatabaseInfoArgs{...}
-type NdbCloneLinkedDatabaseInfoInput interface {
-	pulumi.Input
-
-	ToNdbCloneLinkedDatabaseInfoOutput() NdbCloneLinkedDatabaseInfoOutput
-	ToNdbCloneLinkedDatabaseInfoOutputWithContext(context.Context) NdbCloneLinkedDatabaseInfoOutput
-}
-
-type NdbCloneLinkedDatabaseInfoArgs struct {
-	// info of clone
-	Info       pulumi.StringMapInput `pulumi:"info"`
-	SecureInfo pulumi.StringMapInput `pulumi:"secureInfo"`
-}
-
-func (NdbCloneLinkedDatabaseInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLinkedDatabaseInfo)(nil)).Elem()
-}
-
-func (i NdbCloneLinkedDatabaseInfoArgs) ToNdbCloneLinkedDatabaseInfoOutput() NdbCloneLinkedDatabaseInfoOutput {
-	return i.ToNdbCloneLinkedDatabaseInfoOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLinkedDatabaseInfoArgs) ToNdbCloneLinkedDatabaseInfoOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLinkedDatabaseInfoOutput)
-}
-
-// NdbCloneLinkedDatabaseInfoArrayInput is an input type that accepts NdbCloneLinkedDatabaseInfoArray and NdbCloneLinkedDatabaseInfoArrayOutput values.
-// You can construct a concrete instance of `NdbCloneLinkedDatabaseInfoArrayInput` via:
-//
-//	NdbCloneLinkedDatabaseInfoArray{ NdbCloneLinkedDatabaseInfoArgs{...} }
-type NdbCloneLinkedDatabaseInfoArrayInput interface {
-	pulumi.Input
-
-	ToNdbCloneLinkedDatabaseInfoArrayOutput() NdbCloneLinkedDatabaseInfoArrayOutput
-	ToNdbCloneLinkedDatabaseInfoArrayOutputWithContext(context.Context) NdbCloneLinkedDatabaseInfoArrayOutput
-}
-
-type NdbCloneLinkedDatabaseInfoArray []NdbCloneLinkedDatabaseInfoInput
-
-func (NdbCloneLinkedDatabaseInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLinkedDatabaseInfo)(nil)).Elem()
-}
-
-func (i NdbCloneLinkedDatabaseInfoArray) ToNdbCloneLinkedDatabaseInfoArrayOutput() NdbCloneLinkedDatabaseInfoArrayOutput {
-	return i.ToNdbCloneLinkedDatabaseInfoArrayOutputWithContext(context.Background())
-}
-
-func (i NdbCloneLinkedDatabaseInfoArray) ToNdbCloneLinkedDatabaseInfoArrayOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(NdbCloneLinkedDatabaseInfoArrayOutput)
-}
-
-type NdbCloneLinkedDatabaseInfoOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLinkedDatabaseInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*NdbCloneLinkedDatabaseInfo)(nil)).Elem()
-}
-
-func (o NdbCloneLinkedDatabaseInfoOutput) ToNdbCloneLinkedDatabaseInfoOutput() NdbCloneLinkedDatabaseInfoOutput {
-	return o
-}
-
-func (o NdbCloneLinkedDatabaseInfoOutput) ToNdbCloneLinkedDatabaseInfoOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseInfoOutput {
-	return o
-}
-
-// info of clone
-func (o NdbCloneLinkedDatabaseInfoOutput) Info() pulumi.StringMapOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabaseInfo) map[string]string { return v.Info }).(pulumi.StringMapOutput)
-}
-
-func (o NdbCloneLinkedDatabaseInfoOutput) SecureInfo() pulumi.StringMapOutput {
-	return o.ApplyT(func(v NdbCloneLinkedDatabaseInfo) map[string]string { return v.SecureInfo }).(pulumi.StringMapOutput)
-}
-
-type NdbCloneLinkedDatabaseInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (NdbCloneLinkedDatabaseInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]NdbCloneLinkedDatabaseInfo)(nil)).Elem()
-}
-
-func (o NdbCloneLinkedDatabaseInfoArrayOutput) ToNdbCloneLinkedDatabaseInfoArrayOutput() NdbCloneLinkedDatabaseInfoArrayOutput {
-	return o
-}
-
-func (o NdbCloneLinkedDatabaseInfoArrayOutput) ToNdbCloneLinkedDatabaseInfoArrayOutputWithContext(ctx context.Context) NdbCloneLinkedDatabaseInfoArrayOutput {
-	return o
-}
-
-func (o NdbCloneLinkedDatabaseInfoArrayOutput) Index(i pulumi.IntInput) NdbCloneLinkedDatabaseInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NdbCloneLinkedDatabaseInfo {
-		return vs[0].([]NdbCloneLinkedDatabaseInfo)[vs[1].(int)]
-	}).(NdbCloneLinkedDatabaseInfoOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AccessControlPolicyCategoryInput)(nil)).Elem(), AccessControlPolicyCategoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AccessControlPolicyCategoryArrayInput)(nil)).Elem(), AccessControlPolicyCategoryArray{})
@@ -63259,6 +63339,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AdGroupCategoryMappingV2AdInfoPtrInput)(nil)).Elem(), AdGroupCategoryMappingV2AdInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AdGroupCategoryMappingV2LinkInput)(nil)).Elem(), AdGroupCategoryMappingV2LinkArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AdGroupCategoryMappingV2LinkArrayInput)(nil)).Elem(), AdGroupCategoryMappingV2LinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AddDomainV2LinkInput)(nil)).Elem(), AddDomainV2LinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AddDomainV2LinkArrayInput)(nil)).Elem(), AddDomainV2LinkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AddressGroupIpAddressBlockListInput)(nil)).Elem(), AddressGroupIpAddressBlockListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AddressGroupIpAddressBlockListArrayInput)(nil)).Elem(), AddressGroupIpAddressBlockListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AddressGroupsV2IpRangeInput)(nil)).Elem(), AddressGroupsV2IpRangeArgs{})
@@ -64185,6 +64267,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*LcmUpgradeV2EntityUpdateSpecArrayInput)(nil)).Elem(), LcmUpgradeV2EntityUpdateSpecArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LcmUpgradeV2ManagementServerInput)(nil)).Elem(), LcmUpgradeV2ManagementServerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LcmUpgradeV2ManagementServerPtrInput)(nil)).Elem(), LcmUpgradeV2ManagementServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2ConnectionStatusInput)(nil)).Elem(), LocalDomainV2ConnectionStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2ConnectionStatusArrayInput)(nil)).Elem(), LocalDomainV2ConnectionStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2ConnectionStatusServiceStatusInput)(nil)).Elem(), LocalDomainV2ConnectionStatusServiceStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2ConnectionStatusServiceStatusArrayInput)(nil)).Elem(), LocalDomainV2ConnectionStatusServiceStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2CredentialsInput)(nil)).Elem(), LocalDomainV2CredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2CredentialsPtrInput)(nil)).Elem(), LocalDomainV2CredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2LocationInput)(nil)).Elem(), LocalDomainV2LocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2LocationArrayInput)(nil)).Elem(), LocalDomainV2LocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2LocationCoordinateInput)(nil)).Elem(), LocalDomainV2LocationCoordinateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2LocationCoordinateArrayInput)(nil)).Elem(), LocalDomainV2LocationCoordinateArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2RegistrationStatusInput)(nil)).Elem(), LocalDomainV2RegistrationStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*LocalDomainV2RegistrationStatusArrayInput)(nil)).Elem(), LocalDomainV2RegistrationStatusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneActionargumentInput)(nil)).Elem(), NdbCloneActionargumentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneActionargumentArrayInput)(nil)).Elem(), NdbCloneActionargumentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneDatabaseNodeInput)(nil)).Elem(), NdbCloneDatabaseNodeArgs{})
@@ -64213,20 +64307,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneInfoBpgConfigStorageDataDiskArrayInput)(nil)).Elem(), NdbCloneInfoBpgConfigStorageDataDiskArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneInfoBpgConfigStorageLogDiskInput)(nil)).Elem(), NdbCloneInfoBpgConfigStorageLogDiskArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneInfoBpgConfigStorageLogDiskArrayInput)(nil)).Elem(), NdbCloneInfoBpgConfigStorageLogDiskArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneInfoBpgConfigVmPropertyInput)(nil)).Elem(), NdbCloneInfoBpgConfigVmPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneInfoBpgConfigVmPropertyArrayInput)(nil)).Elem(), NdbCloneInfoBpgConfigVmPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigInput)(nil)).Elem(), NdbCloneLcmConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigArrayInput)(nil)).Elem(), NdbCloneLcmConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigArrayInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayInput)(nil)).Elem(), NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLinkedDatabaseInput)(nil)).Elem(), NdbCloneLinkedDatabaseArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLinkedDatabaseArrayInput)(nil)).Elem(), NdbCloneLinkedDatabaseArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLinkedDatabaseInfoInput)(nil)).Elem(), NdbCloneLinkedDatabaseInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*NdbCloneLinkedDatabaseInfoArrayInput)(nil)).Elem(), NdbCloneLinkedDatabaseInfoArray{})
 	pulumi.RegisterOutputType(AccessControlPolicyCategoryOutput{})
 	pulumi.RegisterOutputType(AccessControlPolicyCategoryArrayOutput{})
 	pulumi.RegisterOutputType(AccessControlPolicyContextFilterListOutput{})
@@ -64253,6 +64333,8 @@ func init() {
 	pulumi.RegisterOutputType(AdGroupCategoryMappingV2AdInfoPtrOutput{})
 	pulumi.RegisterOutputType(AdGroupCategoryMappingV2LinkOutput{})
 	pulumi.RegisterOutputType(AdGroupCategoryMappingV2LinkArrayOutput{})
+	pulumi.RegisterOutputType(AddDomainV2LinkOutput{})
+	pulumi.RegisterOutputType(AddDomainV2LinkArrayOutput{})
 	pulumi.RegisterOutputType(AddressGroupIpAddressBlockListOutput{})
 	pulumi.RegisterOutputType(AddressGroupIpAddressBlockListArrayOutput{})
 	pulumi.RegisterOutputType(AddressGroupsV2IpRangeOutput{})
@@ -65179,6 +65261,18 @@ func init() {
 	pulumi.RegisterOutputType(LcmUpgradeV2EntityUpdateSpecArrayOutput{})
 	pulumi.RegisterOutputType(LcmUpgradeV2ManagementServerOutput{})
 	pulumi.RegisterOutputType(LcmUpgradeV2ManagementServerPtrOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2ConnectionStatusOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2ConnectionStatusArrayOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2ConnectionStatusServiceStatusOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2ConnectionStatusServiceStatusArrayOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2CredentialsOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2CredentialsPtrOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2LocationOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2LocationArrayOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2LocationCoordinateOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2LocationCoordinateArrayOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2RegistrationStatusOutput{})
+	pulumi.RegisterOutputType(LocalDomainV2RegistrationStatusArrayOutput{})
 	pulumi.RegisterOutputType(NdbCloneActionargumentOutput{})
 	pulumi.RegisterOutputType(NdbCloneActionargumentArrayOutput{})
 	pulumi.RegisterOutputType(NdbCloneDatabaseNodeOutput{})
@@ -65207,18 +65301,4 @@ func init() {
 	pulumi.RegisterOutputType(NdbCloneInfoBpgConfigStorageDataDiskArrayOutput{})
 	pulumi.RegisterOutputType(NdbCloneInfoBpgConfigStorageLogDiskOutput{})
 	pulumi.RegisterOutputType(NdbCloneInfoBpgConfigStorageLogDiskArrayOutput{})
-	pulumi.RegisterOutputType(NdbCloneInfoBpgConfigVmPropertyOutput{})
-	pulumi.RegisterOutputType(NdbCloneInfoBpgConfigVmPropertyArrayOutput{})
-	pulumi.RegisterOutputType(NdbCloneLcmConfigOutput{})
-	pulumi.RegisterOutputType(NdbCloneLcmConfigArrayOutput{})
-	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigOutput{})
-	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigArrayOutput{})
-	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailOutput{})
-	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigExpiryDetailArrayOutput{})
-	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailOutput{})
-	pulumi.RegisterOutputType(NdbCloneLcmConfigDatabaseLcmConfigRefreshDetailArrayOutput{})
-	pulumi.RegisterOutputType(NdbCloneLinkedDatabaseOutput{})
-	pulumi.RegisterOutputType(NdbCloneLinkedDatabaseArrayOutput{})
-	pulumi.RegisterOutputType(NdbCloneLinkedDatabaseInfoOutput{})
-	pulumi.RegisterOutputType(NdbCloneLinkedDatabaseInfoArrayOutput{})
 }

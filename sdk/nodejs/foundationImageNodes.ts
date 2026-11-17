@@ -9,6 +9,8 @@ import * as utilities from "./utilities";
 /**
  * Images node(s) and optionally creates clusters.
  *
+ * > **WriteOnly credentials:** <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span>, <span pulumi-lang-nodejs="`ucsmPassword`" pulumi-lang-dotnet="`UcsmPassword`" pulumi-lang-go="`ucsmPassword`" pulumi-lang-python="`ucsm_password`" pulumi-lang-yaml="`ucsmPassword`" pulumi-lang-java="`ucsmPassword`" pulumi-lang-hcl="`ucsm_password`">`ucsmPassword`</span>, <span pulumi-lang-nodejs="`xsMasterPassword`" pulumi-lang-dotnet="`XsMasterPassword`" pulumi-lang-go="`xsMasterPassword`" pulumi-lang-python="`xs_master_password`" pulumi-lang-yaml="`xsMasterPassword`" pulumi-lang-java="`xsMasterPassword`" pulumi-lang-hcl="`xs_master_password`">`xsMasterPassword`</span>, <span pulumi-lang-nodejs="`hypervisorPassword`" pulumi-lang-dotnet="`HypervisorPassword`" pulumi-lang-go="`hypervisorPassword`" pulumi-lang-python="`hypervisor_password`" pulumi-lang-yaml="`hypervisorPassword`" pulumi-lang-java="`hypervisorPassword`" pulumi-lang-hcl="`hypervisor_password`">`hypervisorPassword`</span>, <span pulumi-lang-nodejs="`uncPassword`" pulumi-lang-dotnet="`UncPassword`" pulumi-lang-go="`uncPassword`" pulumi-lang-python="`unc_password`" pulumi-lang-yaml="`uncPassword`" pulumi-lang-java="`uncPassword`" pulumi-lang-hcl="`unc_password`">`uncPassword`</span>, `fc_settings.fc_metadata.api_key`, and node-level <span pulumi-lang-nodejs="`ipmiPassword`" pulumi-lang-dotnet="`IpmiPassword`" pulumi-lang-go="`ipmiPassword`" pulumi-lang-python="`ipmi_password`" pulumi-lang-yaml="`ipmiPassword`" pulumi-lang-java="`ipmiPassword`" pulumi-lang-hcl="`ipmi_password`">`ipmiPassword`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+ *
  * ## Example Usage
  *
  * <!--Start PulumiCodeChooser -->
@@ -242,7 +244,8 @@ export class FoundationImageNodes extends pulumi.CustomResource {
      */
     declare public readonly hypervisorNetmask: pulumi.Output<string>;
     /**
-     * - Hypervisor password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) Hypervisor password.
      */
     declare public readonly hypervisorPassword: pulumi.Output<string | undefined>;
     /**
@@ -258,7 +261,8 @@ export class FoundationImageNodes extends pulumi.CustomResource {
      */
     declare public readonly ipmiNetmask: pulumi.Output<string | undefined>;
     /**
-     * - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
      */
     declare public readonly ipmiPassword: pulumi.Output<string | undefined>;
     /**
@@ -294,7 +298,8 @@ export class FoundationImageNodes extends pulumi.CustomResource {
      */
     declare public readonly ucsmIp: pulumi.Output<string | undefined>;
     /**
-     * - UCSM password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) UCSM password.
      */
     declare public readonly ucsmPassword: pulumi.Output<string | undefined>;
     /**
@@ -302,7 +307,8 @@ export class FoundationImageNodes extends pulumi.CustomResource {
      */
     declare public readonly ucsmUser: pulumi.Output<string | undefined>;
     /**
-     * - UNC password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) UNC password.
      */
     declare public readonly uncPassword: pulumi.Output<string | undefined>;
     /**
@@ -326,7 +332,8 @@ export class FoundationImageNodes extends pulumi.CustomResource {
      */
     declare public readonly xsMasterLabel: pulumi.Output<string | undefined>;
     /**
-     * - xen server master password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) xen server master password.
      */
     declare public readonly xsMasterPassword: pulumi.Output<string | undefined>;
     /**
@@ -419,11 +426,11 @@ export class FoundationImageNodes extends pulumi.CustomResource {
             resourceInputs["hypervisorIso"] = args?.hypervisorIso;
             resourceInputs["hypervisorNameserver"] = args?.hypervisorNameserver;
             resourceInputs["hypervisorNetmask"] = args?.hypervisorNetmask;
-            resourceInputs["hypervisorPassword"] = args?.hypervisorPassword;
+            resourceInputs["hypervisorPassword"] = args?.hypervisorPassword ? pulumi.secret(args.hypervisorPassword) : undefined;
             resourceInputs["installScript"] = args?.installScript;
             resourceInputs["ipmiGateway"] = args?.ipmiGateway;
             resourceInputs["ipmiNetmask"] = args?.ipmiNetmask;
-            resourceInputs["ipmiPassword"] = args?.ipmiPassword;
+            resourceInputs["ipmiPassword"] = args?.ipmiPassword ? pulumi.secret(args.ipmiPassword) : undefined;
             resourceInputs["ipmiUser"] = args?.ipmiUser;
             resourceInputs["layoutEggUuid"] = args?.layoutEggUuid;
             resourceInputs["nosPackage"] = args?.nosPackage;
@@ -431,20 +438,22 @@ export class FoundationImageNodes extends pulumi.CustomResource {
             resourceInputs["svmRescueArgs"] = args?.svmRescueArgs;
             resourceInputs["tests"] = args?.tests;
             resourceInputs["ucsmIp"] = args?.ucsmIp;
-            resourceInputs["ucsmPassword"] = args?.ucsmPassword;
+            resourceInputs["ucsmPassword"] = args?.ucsmPassword ? pulumi.secret(args.ucsmPassword) : undefined;
             resourceInputs["ucsmUser"] = args?.ucsmUser;
-            resourceInputs["uncPassword"] = args?.uncPassword;
+            resourceInputs["uncPassword"] = args?.uncPassword ? pulumi.secret(args.uncPassword) : undefined;
             resourceInputs["uncPath"] = args?.uncPath;
             resourceInputs["uncUsername"] = args?.uncUsername;
             resourceInputs["xenConfigType"] = args?.xenConfigType;
             resourceInputs["xsMasterIp"] = args?.xsMasterIp;
             resourceInputs["xsMasterLabel"] = args?.xsMasterLabel;
-            resourceInputs["xsMasterPassword"] = args?.xsMasterPassword;
+            resourceInputs["xsMasterPassword"] = args?.xsMasterPassword ? pulumi.secret(args.xsMasterPassword) : undefined;
             resourceInputs["xsMasterUsername"] = args?.xsMasterUsername;
             resourceInputs["clusterUrls"] = undefined /*out*/;
             resourceInputs["sessionId"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["hypervisorPassword", "ipmiPassword", "ucsmPassword", "uncPassword", "xsMasterPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(FoundationImageNodes.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -520,7 +529,8 @@ export interface FoundationImageNodesState {
      */
     hypervisorNetmask?: pulumi.Input<string | undefined>;
     /**
-     * - Hypervisor password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) Hypervisor password.
      */
     hypervisorPassword?: pulumi.Input<string | undefined>;
     /**
@@ -536,7 +546,8 @@ export interface FoundationImageNodesState {
      */
     ipmiNetmask?: pulumi.Input<string | undefined>;
     /**
-     * - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
      */
     ipmiPassword?: pulumi.Input<string | undefined>;
     /**
@@ -572,7 +583,8 @@ export interface FoundationImageNodesState {
      */
     ucsmIp?: pulumi.Input<string | undefined>;
     /**
-     * - UCSM password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) UCSM password.
      */
     ucsmPassword?: pulumi.Input<string | undefined>;
     /**
@@ -580,7 +592,8 @@ export interface FoundationImageNodesState {
      */
     ucsmUser?: pulumi.Input<string | undefined>;
     /**
-     * - UNC password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) UNC password.
      */
     uncPassword?: pulumi.Input<string | undefined>;
     /**
@@ -604,7 +617,8 @@ export interface FoundationImageNodesState {
      */
     xsMasterLabel?: pulumi.Input<string | undefined>;
     /**
-     * - xen server master password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) xen server master password.
      */
     xsMasterPassword?: pulumi.Input<string | undefined>;
     /**
@@ -671,7 +685,8 @@ export interface FoundationImageNodesArgs {
      */
     hypervisorNetmask: pulumi.Input<string>;
     /**
-     * - Hypervisor password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) Hypervisor password.
      */
     hypervisorPassword?: pulumi.Input<string | undefined>;
     /**
@@ -687,7 +702,8 @@ export interface FoundationImageNodesArgs {
      */
     ipmiNetmask?: pulumi.Input<string | undefined>;
     /**
-     * - (Required incase using IPMI based imaging either here or inside node spec) IPMI password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (Required incase using IPMI based imaging either here or inside node spec, WriteOnly) IPMI password.
      */
     ipmiPassword?: pulumi.Input<string | undefined>;
     /**
@@ -719,7 +735,8 @@ export interface FoundationImageNodesArgs {
      */
     ucsmIp?: pulumi.Input<string | undefined>;
     /**
-     * - UCSM password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) UCSM password.
      */
     ucsmPassword?: pulumi.Input<string | undefined>;
     /**
@@ -727,7 +744,8 @@ export interface FoundationImageNodesArgs {
      */
     ucsmUser?: pulumi.Input<string | undefined>;
     /**
-     * - UNC password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) UNC password.
      */
     uncPassword?: pulumi.Input<string | undefined>;
     /**
@@ -751,7 +769,8 @@ export interface FoundationImageNodesArgs {
      */
     xsMasterLabel?: pulumi.Input<string | undefined>;
     /**
-     * - xen server master password.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * - (WriteOnly) xen server master password.
      */
     xsMasterPassword?: pulumi.Input<string | undefined>;
     /**

@@ -13,11 +13,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
 
     public sealed class ClusterProfileV2SnmpConfigUserArgs : global::Pulumi.ResourceArgs
     {
+        [Input("authKey", required: true)]
+        private Input<string>? _authKey;
+
         /// <summary>
         /// SNMP user authentication key (must not contain single quotes).
         /// </summary>
-        [Input("authKey", required: true)]
-        public Input<string> AuthKey { get; set; } = null!;
+        public Input<string>? AuthKey
+        {
+            get => _authKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _authKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// SNMP user authentication type. Allowed values:
@@ -34,6 +44,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("authType", required: true)]
         public Input<string> AuthType { get; set; } = null!;
 
+        /// <summary>
+        /// - Cluster UUID.
+        /// </summary>
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
@@ -45,11 +58,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
             set => _links = value;
         }
 
+        [Input("privKey")]
+        private Input<string>? _privKey;
+
         /// <summary>
         /// SNMP user encryption key (must not contain single quotes).
         /// </summary>
-        [Input("privKey")]
-        public Input<string>? PrivKey { get; set; }
+        public Input<string>? PrivKey
+        {
+            get => _privKey;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _privKey = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// SNMP user encryption type. Allowed values:

@@ -136,14 +136,25 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("ipmiNetmask")]
         public Input<string>? IpmiNetmask { get; set; }
 
-        /// <summary>
-        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
-        /// </summary>
         [Input("ipmiPassword")]
-        public Input<string>? IpmiPassword { get; set; }
+        private Input<string>? _ipmiPassword;
 
         /// <summary>
-        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
+        /// </summary>
+        public Input<string>? IpmiPassword
+        {
+            get => _ipmiPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _ipmiPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        /// <summary>
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
         /// </summary>
         [Input("ipmiUser")]
         public Input<string>? IpmiUser { get; set; }

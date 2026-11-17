@@ -23,7 +23,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private Input<string>? _clientSecret;
 
         /// <summary>
-        /// - (Required) Client secret for the Azure Key Vault.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) Client secret for the Azure Key Vault.
         /// </summary>
         public Input<string>? ClientSecret
         {
@@ -60,7 +61,16 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         public Input<string> TenantId { get; set; } = null!;
 
         [Input("truncatedClientSecret")]
-        public Input<string>? TruncatedClientSecret { get; set; }
+        private Input<string>? _truncatedClientSecret;
+        public Input<string>? TruncatedClientSecret
+        {
+            get => _truncatedClientSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _truncatedClientSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public KeyManagementServerV2AccessInformationAzureKeyVaultGetArgs()
         {

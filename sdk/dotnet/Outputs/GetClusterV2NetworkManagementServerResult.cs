@@ -35,7 +35,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         ///   Valid values are:
         /// - "VCENTER"   	Vcenter management server.
         /// </summary>
-        public readonly bool Type;
+        public readonly string Type;
 
         [OutputConstructor]
         private GetClusterV2NetworkManagementServerResult(
@@ -47,7 +47,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool isRegistered,
 
-            bool type)
+            string type)
         {
             Ips = ips;
             IsDrsEnabled = isDrsEnabled;

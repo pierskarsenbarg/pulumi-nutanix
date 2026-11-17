@@ -22,6 +22,10 @@ type Provider struct {
 	// alternative to username/password. When set, the X-Ntnx-Api-Key header
 	// will be used instead of Basic Authentication.
 	ApiKey pulumi.StringPtrOutput `pulumi:"apiKey"`
+	// Domain name for the Prism Central instance. Used to construct the
+	// PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+	// Tenant Admin scenarios.
+	DomainName pulumi.StringPtrOutput `pulumi:"domainName"`
 	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 	// note, this is never the data services VIP, and should not be an
 	// individual CVM address, as this would cause calls to fail during
@@ -35,11 +39,18 @@ type Provider struct {
 	NdbEndpoint pulumi.StringPtrOutput `pulumi:"ndbEndpoint"`
 	NdbPassword pulumi.StringPtrOutput `pulumi:"ndbPassword"`
 	NdbUsername pulumi.StringPtrOutput `pulumi:"ndbUsername"`
+	// Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+	// Service Provider Admin scenarios. This is the base domain for NC services
+	// (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+	NutanixCentralEndpoint pulumi.StringPtrOutput `pulumi:"nutanixCentralEndpoint"`
 	// Password for provided user name.
 	Password pulumi.StringPtrOutput `pulumi:"password"`
 	// Port for Nutanix Prism.
 	Port     pulumi.StringPtrOutput `pulumi:"port"`
 	ProxyUrl pulumi.StringPtrOutput `pulumi:"proxyUrl"`
+	// Tenant name for Tenant Admin scenarios. Required when operating as
+	// a Tenant Admin to manage tenant-specific resources.
+	TenantName pulumi.StringPtrOutput `pulumi:"tenantName"`
 	// User name for Nutanix Prism. Could be
 	// local cluster auth (e.g. 'admin') or directory auth.
 	Username pulumi.StringPtrOutput `pulumi:"username"`
@@ -82,6 +93,10 @@ type providerArgs struct {
 	// the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
 	// becomes Cf-Access-Client-Id). Config values take precedence over env vars.
 	CustomHeaders map[string]string `pulumi:"customHeaders"`
+	// Domain name for the Prism Central instance. Used to construct the
+	// PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+	// Tenant Admin scenarios.
+	DomainName *string `pulumi:"domainName"`
 	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 	// note, this is never the data services VIP, and should not be an
 	// individual CVM address, as this would cause calls to fail during
@@ -97,6 +112,10 @@ type providerArgs struct {
 	NdbEndpoint *string `pulumi:"ndbEndpoint"`
 	NdbPassword *string `pulumi:"ndbPassword"`
 	NdbUsername *string `pulumi:"ndbUsername"`
+	// Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+	// Service Provider Admin scenarios. This is the base domain for NC services
+	// (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+	NutanixCentralEndpoint *string `pulumi:"nutanixCentralEndpoint"`
 	// Password for provided user name.
 	Password *string `pulumi:"password"`
 	// Port for Nutanix Prism.
@@ -104,10 +123,16 @@ type providerArgs struct {
 	ProxyUrl *string `pulumi:"proxyUrl"`
 	// Use session authentification instead of basic auth for each request
 	SessionAuth *bool `pulumi:"sessionAuth"`
+	// Tenant name for Tenant Admin scenarios. Required when operating as
+	// a Tenant Admin to manage tenant-specific resources.
+	TenantName *string `pulumi:"tenantName"`
+	// When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+	// instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+	UseNcIam *bool `pulumi:"useNcIam"`
 	// User name for Nutanix Prism. Could be
 	// local cluster auth (e.g. 'admin') or directory auth.
 	Username *string `pulumi:"username"`
-	// Set if you know that the creation o update of a resource may take long time (minutes)
+	// Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
 	WaitTimeout *int `pulumi:"waitTimeout"`
 }
 
@@ -123,6 +148,10 @@ type ProviderArgs struct {
 	// the NUTANIX_HEADER_ prefix (e.g., NUTANIX_HEADER_CF_ACCESS_CLIENT_ID
 	// becomes Cf-Access-Client-Id). Config values take precedence over env vars.
 	CustomHeaders pulumi.StringMapInput
+	// Domain name for the Prism Central instance. Used to construct the
+	// PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+	// Tenant Admin scenarios.
+	DomainName pulumi.StringPtrInput
 	// URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 	// note, this is never the data services VIP, and should not be an
 	// individual CVM address, as this would cause calls to fail during
@@ -138,6 +167,10 @@ type ProviderArgs struct {
 	NdbEndpoint pulumi.StringPtrInput
 	NdbPassword pulumi.StringPtrInput
 	NdbUsername pulumi.StringPtrInput
+	// Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+	// Service Provider Admin scenarios. This is the base domain for NC services
+	// (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+	NutanixCentralEndpoint pulumi.StringPtrInput
 	// Password for provided user name.
 	Password pulumi.StringPtrInput
 	// Port for Nutanix Prism.
@@ -145,10 +178,16 @@ type ProviderArgs struct {
 	ProxyUrl pulumi.StringPtrInput
 	// Use session authentification instead of basic auth for each request
 	SessionAuth pulumi.BoolPtrInput
+	// Tenant name for Tenant Admin scenarios. Required when operating as
+	// a Tenant Admin to manage tenant-specific resources.
+	TenantName pulumi.StringPtrInput
+	// When true, IAM-related calls use the NC IAM endpoint (iam.services.<nutanix_central_endpoint>)
+	// instead of the PC IAM endpoint. Enable this only when an NC Admin needs to use NC IAM features.
+	UseNcIam pulumi.BoolPtrInput
 	// User name for Nutanix Prism. Could be
 	// local cluster auth (e.g. 'admin') or directory auth.
 	Username pulumi.StringPtrInput
-	// Set if you know that the creation o update of a resource may take long time (minutes)
+	// Optional timeout in minutes for long-running resource operations. When set, extends per-resource waits that would otherwise be shorter; it does not shorten longer resource defaults. Can also be set with NUTANIX_WAIT_TIMEOUT.
 	WaitTimeout pulumi.IntPtrInput
 }
 
@@ -219,6 +258,13 @@ func (o ProviderOutput) ApiKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ApiKey }).(pulumi.StringPtrOutput)
 }
 
+// Domain name for the Prism Central instance. Used to construct the
+// PC endpoint URL as <domain_name>.domains.<nutanix_central_endpoint> for NC Admin and
+// Tenant Admin scenarios.
+func (o ProviderOutput) DomainName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.DomainName }).(pulumi.StringPtrOutput)
+}
+
 // URL for Nutanix Prism (e.g IP or FQDN for cluster VIP
 // note, this is never the data services VIP, and should not be an
 // individual CVM address, as this would cause calls to fail during
@@ -250,6 +296,13 @@ func (o ProviderOutput) NdbUsername() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.NdbUsername }).(pulumi.StringPtrOutput)
 }
 
+// Nutanix Cloud (NC) endpoint base. Used for NC Admin, Tenant Admin, and
+// Service Provider Admin scenarios. This is the base domain for NC services
+// (e.g., 'nconprem-10-102-176-12.ccpnx.com').
+func (o ProviderOutput) NutanixCentralEndpoint() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.NutanixCentralEndpoint }).(pulumi.StringPtrOutput)
+}
+
 // Password for provided user name.
 func (o ProviderOutput) Password() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.Password }).(pulumi.StringPtrOutput)
@@ -262,6 +315,12 @@ func (o ProviderOutput) Port() pulumi.StringPtrOutput {
 
 func (o ProviderOutput) ProxyUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.ProxyUrl }).(pulumi.StringPtrOutput)
+}
+
+// Tenant name for Tenant Admin scenarios. Required when operating as
+// a Tenant Admin to manage tenant-specific resources.
+func (o ProviderOutput) TenantName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *Provider) pulumi.StringPtrOutput { return v.TenantName }).(pulumi.StringPtrOutput)
 }
 
 // User name for Nutanix Prism. Could be

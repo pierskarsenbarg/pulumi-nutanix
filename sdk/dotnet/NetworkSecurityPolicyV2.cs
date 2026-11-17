@@ -113,7 +113,7 @@ namespace PiersKarsenbarg.Nutanix
     ///                 new Nutanix.Inputs.EntityGroupV2AllowedConfigEntityArgs
     ///                 {
     ///                     Type = "VM",
-    ///                     SelectedBy = "CATEGORY_EXT_ID",
+    ///                     SelectBy = "CATEGORY_EXT_ID",
     ///                     ReferenceExtIds = new[]
     ///                     {
     ///                         example.Id,

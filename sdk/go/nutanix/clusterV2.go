@@ -13,13 +13,13 @@ import (
 
 // Represents the Cluster entity. Provides the basic infrastructure for compute, storage and networking. This includes the operations that can be carried out on cluster and its subresources - host (node), rsyslog servers etc and actions that can be performed on cluster - add a node, remove a node, attach categories.
 //
-// > **Recommendations:** It is recommended to create and register the cluster with Prism Central as part of the same workflow. Cluster updates, importing, and destruction through Terraform are supported only when the cluster is registered with Prism Central. To register a cluster with Prism Central use Terraform resource nutanix_pc_registration_v2.
+// > **Note:** It is recommended to create and register the cluster with Prism Central as part of the same workflow. Cluster updates, importing, and destruction through Terraform are supported only when the cluster is registered with Prism Central. To register a cluster with Prism Central use Terraform resource nutanix_pc_registration_v2.
 //
-// > **Note:**: Cluster resource supports add/remove node operations. However, these operations require cluster to be registered with Prism Central.
+// > **Note:** Cluster resource supports add/remove node operations. However, these operations require cluster to be registered with Prism Central.
 //
-// > **Note:**: TThe cluster resource supports both associating and disassociating categories, allowing you to attach or detach categories on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+// > **Note:** The cluster resource supports both associating and disassociating categories, allowing you to attach or detach categories on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
 //
-// **Note:**: The cluster resource supports both associating and disassociating cluster profile, allowing you to attach or detach cluster profile on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
+// > **Note:** The cluster resource supports both associating and disassociating cluster profile, allowing you to attach or detach cluster profile on a cluster through Terraform. However, these operations require cluster to be registered with Prism Central.
 //
 // ## Example Usage
 //
@@ -342,7 +342,13 @@ import (
 // ```
 // <!--End PulumiCodeChooser -->
 //
-// ## What happens when you do terraform destroy for nutanix_clusters_v2?  First thing, inorder to destroy the cluster from Terraform it need to be registered.
+// ## Destroy behavior
+//
+// <span pulumi-lang-nodejs="`nutanix.ClusterV2`" pulumi-lang-dotnet="`nutanix.ClusterV2`" pulumi-lang-go="`ClusterV2`" pulumi-lang-python="`ClusterV2`" pulumi-lang-yaml="`nutanix.ClusterV2`" pulumi-lang-java="`nutanix.ClusterV2`" pulumi-lang-hcl="`nutanix_cluster_v2`">`nutanix.ClusterV2`</span> must be registered with Prism Central before Terraform can destroy it.
+//
+// During destroy, the provider invokes Prism Central's cluster delete operation. The cluster and its member nodes are removed from Prism Central inventory, and the cluster configuration is removed from the nodes.
+//
+// The nodes are then available for reconfiguration or reuse.
 //
 // See detailed information in [Nutanix Create Cluster V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/Clusters/operation/createCluster).
 type ClusterV2 struct {

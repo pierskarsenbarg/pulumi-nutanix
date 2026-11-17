@@ -19,11 +19,21 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("enabledAuthentications")]
         public Input<string>? EnabledAuthentications { get; set; }
 
+        [Input("targetSecret")]
+        private Input<string>? _targetSecret;
+
         /// <summary>
         /// Target secret in case of a CHAP authentication. This field must only be provided in case the authentication type is not set to CHAP. This is an optional field and it cannot be retrieved once configured.
         /// </summary>
-        [Input("targetSecret")]
-        public Input<string>? TargetSecret { get; set; }
+        public Input<string>? TargetSecret
+        {
+            get => _targetSecret;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _targetSecret = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public VolumeGroupV2IscsiFeatureArgs()
         {

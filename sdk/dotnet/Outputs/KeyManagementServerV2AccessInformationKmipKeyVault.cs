@@ -19,11 +19,13 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string CaName;
         /// <summary>
-        /// - (Required) CA PEM.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) CA PEM.
         /// </summary>
         public readonly string CaPem;
         /// <summary>
-        /// - (Required) Cert PEM.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) Cert PEM.
         /// </summary>
         public readonly string CertPem;
         /// <summary>
@@ -31,7 +33,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.KeyManagementServerV2AccessInformationKmipKeyVaultEndpointUrl> EndpointUrls;
         /// <summary>
-        /// - (Required) Private key.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required, WriteOnly) Private key.
         /// </summary>
         public readonly string PrivateKey;
 

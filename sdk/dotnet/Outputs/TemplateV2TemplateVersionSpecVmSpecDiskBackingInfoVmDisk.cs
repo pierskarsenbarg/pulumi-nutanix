@@ -18,6 +18,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         public readonly string? DiskExtId;
         public readonly int? DiskSizeBytes;
         public readonly bool? IsMigrationInProgress;
+        public readonly string? SerialId;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig> StorageConfigs;
         public readonly ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer> StorageContainers;
 
@@ -31,6 +32,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool? isMigrationInProgress,
 
+            string? serialId,
+
             ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfig> storageConfigs,
 
             ImmutableArray<Outputs.TemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainer> storageContainers)
@@ -39,6 +42,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
             IsMigrationInProgress = isMigrationInProgress;
+            SerialId = serialId;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

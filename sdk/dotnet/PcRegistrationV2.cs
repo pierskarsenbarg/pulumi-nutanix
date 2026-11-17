@@ -12,6 +12,8 @@ namespace PiersKarsenbarg.Nutanix
 {
     /// <summary>
     /// Provides a resource to Registers a domain manager (Prism Central) instance to other entities like PE and PC. This process is asynchronous, creating a registration task and returning its UUID.
+    /// 
+    /// &gt; **WriteOnly credentials:** remote cluster `authentication.password` is write-only. It is never stored in Terraform state. Re-supply it in configuration on every apply. Do not use `lifecycle.ignore_changes` on this attribute. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
     /// </summary>
     [NutanixResourceType("nutanix:index/pcRegistrationV2:PcRegistrationV2")]
     public partial class PcRegistrationV2 : global::Pulumi.CustomResource

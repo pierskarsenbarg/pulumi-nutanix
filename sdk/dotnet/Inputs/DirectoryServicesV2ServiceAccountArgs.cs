@@ -17,7 +17,8 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         private Input<string>? _password;
 
         /// <summary>
-        /// -(Required) Password to connect to the Directory Service.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) Password to connect to the Directory Service.
         /// </summary>
         public Input<string>? Password
         {

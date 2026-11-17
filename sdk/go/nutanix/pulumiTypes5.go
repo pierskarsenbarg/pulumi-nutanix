@@ -13,6 +13,3483 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetClustersV2ClusterEntityConfigPulseStatus struct {
+	// - (Optional) Flag to indicate if pulse is enabled or not.
+	IsEnabled bool `pulumi:"isEnabled"`
+	// - (Optional) PII scrubbing level.
+	//   Valid values are:
+	// - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
+	// - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
+	PiiScrubbingLevel string `pulumi:"piiScrubbingLevel"`
+}
+
+// GetClustersV2ClusterEntityConfigPulseStatusInput is an input type that accepts GetClustersV2ClusterEntityConfigPulseStatusArgs and GetClustersV2ClusterEntityConfigPulseStatusOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityConfigPulseStatusInput` via:
+//
+//	GetClustersV2ClusterEntityConfigPulseStatusArgs{...}
+type GetClustersV2ClusterEntityConfigPulseStatusInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityConfigPulseStatusOutput() GetClustersV2ClusterEntityConfigPulseStatusOutput
+	ToGetClustersV2ClusterEntityConfigPulseStatusOutputWithContext(context.Context) GetClustersV2ClusterEntityConfigPulseStatusOutput
+}
+
+type GetClustersV2ClusterEntityConfigPulseStatusArgs struct {
+	// - (Optional) Flag to indicate if pulse is enabled or not.
+	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
+	// - (Optional) PII scrubbing level.
+	//   Valid values are:
+	// - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
+	// - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
+	PiiScrubbingLevel pulumi.StringInput `pulumi:"piiScrubbingLevel"`
+}
+
+func (GetClustersV2ClusterEntityConfigPulseStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityConfigPulseStatus)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityConfigPulseStatusArgs) ToGetClustersV2ClusterEntityConfigPulseStatusOutput() GetClustersV2ClusterEntityConfigPulseStatusOutput {
+	return i.ToGetClustersV2ClusterEntityConfigPulseStatusOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityConfigPulseStatusArgs) ToGetClustersV2ClusterEntityConfigPulseStatusOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityConfigPulseStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityConfigPulseStatusOutput)
+}
+
+// GetClustersV2ClusterEntityConfigPulseStatusArrayInput is an input type that accepts GetClustersV2ClusterEntityConfigPulseStatusArray and GetClustersV2ClusterEntityConfigPulseStatusArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityConfigPulseStatusArrayInput` via:
+//
+//	GetClustersV2ClusterEntityConfigPulseStatusArray{ GetClustersV2ClusterEntityConfigPulseStatusArgs{...} }
+type GetClustersV2ClusterEntityConfigPulseStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityConfigPulseStatusArrayOutput() GetClustersV2ClusterEntityConfigPulseStatusArrayOutput
+	ToGetClustersV2ClusterEntityConfigPulseStatusArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityConfigPulseStatusArrayOutput
+}
+
+type GetClustersV2ClusterEntityConfigPulseStatusArray []GetClustersV2ClusterEntityConfigPulseStatusInput
+
+func (GetClustersV2ClusterEntityConfigPulseStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityConfigPulseStatus)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityConfigPulseStatusArray) ToGetClustersV2ClusterEntityConfigPulseStatusArrayOutput() GetClustersV2ClusterEntityConfigPulseStatusArrayOutput {
+	return i.ToGetClustersV2ClusterEntityConfigPulseStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityConfigPulseStatusArray) ToGetClustersV2ClusterEntityConfigPulseStatusArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityConfigPulseStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityConfigPulseStatusArrayOutput)
+}
+
+type GetClustersV2ClusterEntityConfigPulseStatusOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityConfigPulseStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityConfigPulseStatus)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityConfigPulseStatusOutput) ToGetClustersV2ClusterEntityConfigPulseStatusOutput() GetClustersV2ClusterEntityConfigPulseStatusOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityConfigPulseStatusOutput) ToGetClustersV2ClusterEntityConfigPulseStatusOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityConfigPulseStatusOutput {
+	return o
+}
+
+// - (Optional) Flag to indicate if pulse is enabled or not.
+func (o GetClustersV2ClusterEntityConfigPulseStatusOutput) IsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityConfigPulseStatus) bool { return v.IsEnabled }).(pulumi.BoolOutput)
+}
+
+//   - (Optional) PII scrubbing level.
+//     Valid values are:
+//   - "ALL" :	Scrub All PII Information from Pulse including data like entity names and IP addresses.
+//   - "DEFAULT":	Default PII Scrubbing level. Data like entity names and IP addresses will not be scrubbed from Pulse.
+func (o GetClustersV2ClusterEntityConfigPulseStatusOutput) PiiScrubbingLevel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityConfigPulseStatus) string { return v.PiiScrubbingLevel }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityConfigPulseStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityConfigPulseStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityConfigPulseStatus)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityConfigPulseStatusArrayOutput) ToGetClustersV2ClusterEntityConfigPulseStatusArrayOutput() GetClustersV2ClusterEntityConfigPulseStatusArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityConfigPulseStatusArrayOutput) ToGetClustersV2ClusterEntityConfigPulseStatusArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityConfigPulseStatusArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityConfigPulseStatusArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityConfigPulseStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityConfigPulseStatus {
+		return vs[0].([]GetClustersV2ClusterEntityConfigPulseStatus)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityConfigPulseStatusOutput)
+}
+
+type GetClustersV2ClusterEntityLink struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetClustersV2ClusterEntityLinkInput is an input type that accepts GetClustersV2ClusterEntityLinkArgs and GetClustersV2ClusterEntityLinkOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityLinkInput` via:
+//
+//	GetClustersV2ClusterEntityLinkArgs{...}
+type GetClustersV2ClusterEntityLinkInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityLinkOutput() GetClustersV2ClusterEntityLinkOutput
+	ToGetClustersV2ClusterEntityLinkOutputWithContext(context.Context) GetClustersV2ClusterEntityLinkOutput
+}
+
+type GetClustersV2ClusterEntityLinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetClustersV2ClusterEntityLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityLink)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityLinkArgs) ToGetClustersV2ClusterEntityLinkOutput() GetClustersV2ClusterEntityLinkOutput {
+	return i.ToGetClustersV2ClusterEntityLinkOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityLinkArgs) ToGetClustersV2ClusterEntityLinkOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityLinkOutput)
+}
+
+// GetClustersV2ClusterEntityLinkArrayInput is an input type that accepts GetClustersV2ClusterEntityLinkArray and GetClustersV2ClusterEntityLinkArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityLinkArrayInput` via:
+//
+//	GetClustersV2ClusterEntityLinkArray{ GetClustersV2ClusterEntityLinkArgs{...} }
+type GetClustersV2ClusterEntityLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityLinkArrayOutput() GetClustersV2ClusterEntityLinkArrayOutput
+	ToGetClustersV2ClusterEntityLinkArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityLinkArrayOutput
+}
+
+type GetClustersV2ClusterEntityLinkArray []GetClustersV2ClusterEntityLinkInput
+
+func (GetClustersV2ClusterEntityLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityLink)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityLinkArray) ToGetClustersV2ClusterEntityLinkArrayOutput() GetClustersV2ClusterEntityLinkArrayOutput {
+	return i.ToGetClustersV2ClusterEntityLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityLinkArray) ToGetClustersV2ClusterEntityLinkArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityLinkArrayOutput)
+}
+
+type GetClustersV2ClusterEntityLinkOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityLink)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityLinkOutput) ToGetClustersV2ClusterEntityLinkOutput() GetClustersV2ClusterEntityLinkOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityLinkOutput) ToGetClustersV2ClusterEntityLinkOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityLinkOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetClustersV2ClusterEntityLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityLink)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityLinkArrayOutput) ToGetClustersV2ClusterEntityLinkArrayOutput() GetClustersV2ClusterEntityLinkArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityLinkArrayOutput) ToGetClustersV2ClusterEntityLinkArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityLinkArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityLinkArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityLink {
+		return vs[0].([]GetClustersV2ClusterEntityLink)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityLinkOutput)
+}
+
+type GetClustersV2ClusterEntityNetwork struct {
+	// - Params associated to the backplane network segmentation. This is part of payload for cluster create operation only.
+	Backplanes []GetClustersV2ClusterEntityNetworkBackplane `pulumi:"backplanes"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	ExternalAddresses []GetClustersV2ClusterEntityNetworkExternalAddress `pulumi:"externalAddresses"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	ExternalDataServicesIps []GetClustersV2ClusterEntityNetworkExternalDataServicesIp `pulumi:"externalDataServicesIps"`
+	// - Cluster external subnet address.
+	ExternalSubnet string `pulumi:"externalSubnet"`
+	// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+	Fqdn string `pulumi:"fqdn"`
+	// - List of HTTP Proxy server configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+	HttpProxyLists      []GetClustersV2ClusterEntityNetworkHttpProxyList      `pulumi:"httpProxyLists"`
+	HttpProxyWhiteLists []GetClustersV2ClusterEntityNetworkHttpProxyWhiteList `pulumi:"httpProxyWhiteLists"`
+	// - Cluster internal subnet address.
+	InternalSubnet string `pulumi:"internalSubnet"`
+	// - Key management server type.
+	//   Valid values are:
+	// - "PRISM_CENTRAL"	Prism Central management server.
+	// - "EXTERNAL"	External management server.
+	// - "LOCAL"	Local management server.
+	KeyManagementServerType string `pulumi:"keyManagementServerType"`
+	// - Management server information.
+	ManagementServers []GetClustersV2ClusterEntityNetworkManagementServer `pulumi:"managementServers"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	MasqueradingIps []GetClustersV2ClusterEntityNetworkMasqueradingIp `pulumi:"masqueradingIps"`
+	// - The port to connect to the cluster when using masquerading IP.
+	MasqueradingPort string `pulumi:"masqueradingPort"`
+	// - List of name servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently
+	NameServerIpLists   []GetClustersV2ClusterEntityNetworkNameServerIpList `pulumi:"nameServerIpLists"`
+	NfsSubnetWhiteLists []string                                            `pulumi:"nfsSubnetWhiteLists"`
+	// - List of NTP servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+	NtpServerIpLists []GetClustersV2ClusterEntityNetworkNtpServerIpList `pulumi:"ntpServerIpLists"`
+	// - SMTP servers on a cluster. This is part of payload for cluster update operation only.
+	SmtpServers []GetClustersV2ClusterEntityNetworkSmtpServer `pulumi:"smtpServers"`
+}
+
+// GetClustersV2ClusterEntityNetworkInput is an input type that accepts GetClustersV2ClusterEntityNetworkArgs and GetClustersV2ClusterEntityNetworkOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkArgs{...}
+type GetClustersV2ClusterEntityNetworkInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkOutput() GetClustersV2ClusterEntityNetworkOutput
+	ToGetClustersV2ClusterEntityNetworkOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkOutput
+}
+
+type GetClustersV2ClusterEntityNetworkArgs struct {
+	// - Params associated to the backplane network segmentation. This is part of payload for cluster create operation only.
+	Backplanes GetClustersV2ClusterEntityNetworkBackplaneArrayInput `pulumi:"backplanes"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	ExternalAddresses GetClustersV2ClusterEntityNetworkExternalAddressArrayInput `pulumi:"externalAddresses"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	ExternalDataServicesIps GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayInput `pulumi:"externalDataServicesIps"`
+	// - Cluster external subnet address.
+	ExternalSubnet pulumi.StringInput `pulumi:"externalSubnet"`
+	// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+	Fqdn pulumi.StringInput `pulumi:"fqdn"`
+	// - List of HTTP Proxy server configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+	HttpProxyLists      GetClustersV2ClusterEntityNetworkHttpProxyListArrayInput      `pulumi:"httpProxyLists"`
+	HttpProxyWhiteLists GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayInput `pulumi:"httpProxyWhiteLists"`
+	// - Cluster internal subnet address.
+	InternalSubnet pulumi.StringInput `pulumi:"internalSubnet"`
+	// - Key management server type.
+	//   Valid values are:
+	// - "PRISM_CENTRAL"	Prism Central management server.
+	// - "EXTERNAL"	External management server.
+	// - "LOCAL"	Local management server.
+	KeyManagementServerType pulumi.StringInput `pulumi:"keyManagementServerType"`
+	// - Management server information.
+	ManagementServers GetClustersV2ClusterEntityNetworkManagementServerArrayInput `pulumi:"managementServers"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+	MasqueradingIps GetClustersV2ClusterEntityNetworkMasqueradingIpArrayInput `pulumi:"masqueradingIps"`
+	// - The port to connect to the cluster when using masquerading IP.
+	MasqueradingPort pulumi.StringInput `pulumi:"masqueradingPort"`
+	// - List of name servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently
+	NameServerIpLists   GetClustersV2ClusterEntityNetworkNameServerIpListArrayInput `pulumi:"nameServerIpLists"`
+	NfsSubnetWhiteLists pulumi.StringArrayInput                                     `pulumi:"nfsSubnetWhiteLists"`
+	// - List of NTP servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+	NtpServerIpLists GetClustersV2ClusterEntityNetworkNtpServerIpListArrayInput `pulumi:"ntpServerIpLists"`
+	// - SMTP servers on a cluster. This is part of payload for cluster update operation only.
+	SmtpServers GetClustersV2ClusterEntityNetworkSmtpServerArrayInput `pulumi:"smtpServers"`
+}
+
+func (GetClustersV2ClusterEntityNetworkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetwork)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkArgs) ToGetClustersV2ClusterEntityNetworkOutput() GetClustersV2ClusterEntityNetworkOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkArgs) ToGetClustersV2ClusterEntityNetworkOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkArray and GetClustersV2ClusterEntityNetworkArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkArray{ GetClustersV2ClusterEntityNetworkArgs{...} }
+type GetClustersV2ClusterEntityNetworkArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkArrayOutput() GetClustersV2ClusterEntityNetworkArrayOutput
+	ToGetClustersV2ClusterEntityNetworkArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkArray []GetClustersV2ClusterEntityNetworkInput
+
+func (GetClustersV2ClusterEntityNetworkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetwork)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkArray) ToGetClustersV2ClusterEntityNetworkArrayOutput() GetClustersV2ClusterEntityNetworkArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkArray) ToGetClustersV2ClusterEntityNetworkArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetwork)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkOutput) ToGetClustersV2ClusterEntityNetworkOutput() GetClustersV2ClusterEntityNetworkOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkOutput) ToGetClustersV2ClusterEntityNetworkOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkOutput {
+	return o
+}
+
+// - Params associated to the backplane network segmentation. This is part of payload for cluster create operation only.
+func (o GetClustersV2ClusterEntityNetworkOutput) Backplanes() GetClustersV2ClusterEntityNetworkBackplaneArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkBackplane {
+		return v.Backplanes
+	}).(GetClustersV2ClusterEntityNetworkBackplaneArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkOutput) ExternalAddresses() GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkExternalAddress {
+		return v.ExternalAddresses
+	}).(GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkOutput) ExternalDataServicesIps() GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkExternalDataServicesIp {
+		return v.ExternalDataServicesIps
+	}).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput)
+}
+
+// - Cluster external subnet address.
+func (o GetClustersV2ClusterEntityNetworkOutput) ExternalSubnet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) string { return v.ExternalSubnet }).(pulumi.StringOutput)
+}
+
+// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+func (o GetClustersV2ClusterEntityNetworkOutput) Fqdn() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) string { return v.Fqdn }).(pulumi.StringOutput)
+}
+
+// - List of HTTP Proxy server configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+func (o GetClustersV2ClusterEntityNetworkOutput) HttpProxyLists() GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkHttpProxyList {
+		return v.HttpProxyLists
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput)
+}
+
+func (o GetClustersV2ClusterEntityNetworkOutput) HttpProxyWhiteLists() GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkHttpProxyWhiteList {
+		return v.HttpProxyWhiteLists
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput)
+}
+
+// - Cluster internal subnet address.
+func (o GetClustersV2ClusterEntityNetworkOutput) InternalSubnet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) string { return v.InternalSubnet }).(pulumi.StringOutput)
+}
+
+//   - Key management server type.
+//     Valid values are:
+//   - "PRISM_CENTRAL"	Prism Central management server.
+//   - "EXTERNAL"	External management server.
+//   - "LOCAL"	Local management server.
+func (o GetClustersV2ClusterEntityNetworkOutput) KeyManagementServerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) string { return v.KeyManagementServerType }).(pulumi.StringOutput)
+}
+
+// - Management server information.
+func (o GetClustersV2ClusterEntityNetworkOutput) ManagementServers() GetClustersV2ClusterEntityNetworkManagementServerArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkManagementServer {
+		return v.ManagementServers
+	}).(GetClustersV2ClusterEntityNetworkManagementServerArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 or IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkOutput) MasqueradingIps() GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkMasqueradingIp {
+		return v.MasqueradingIps
+	}).(GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput)
+}
+
+// - The port to connect to the cluster when using masquerading IP.
+func (o GetClustersV2ClusterEntityNetworkOutput) MasqueradingPort() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) string { return v.MasqueradingPort }).(pulumi.StringOutput)
+}
+
+// - List of name servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently
+func (o GetClustersV2ClusterEntityNetworkOutput) NameServerIpLists() GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkNameServerIpList {
+		return v.NameServerIpLists
+	}).(GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput)
+}
+
+func (o GetClustersV2ClusterEntityNetworkOutput) NfsSubnetWhiteLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []string { return v.NfsSubnetWhiteLists }).(pulumi.StringArrayOutput)
+}
+
+// - List of NTP servers on a cluster. This is part of payload for both cluster create & update operations. For create operation, only ipv4 address / fqdn values are supported currently.
+func (o GetClustersV2ClusterEntityNetworkOutput) NtpServerIpLists() GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkNtpServerIpList {
+		return v.NtpServerIpLists
+	}).(GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput)
+}
+
+// - SMTP servers on a cluster. This is part of payload for cluster update operation only.
+func (o GetClustersV2ClusterEntityNetworkOutput) SmtpServers() GetClustersV2ClusterEntityNetworkSmtpServerArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetwork) []GetClustersV2ClusterEntityNetworkSmtpServer {
+		return v.SmtpServers
+	}).(GetClustersV2ClusterEntityNetworkSmtpServerArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetwork)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkArrayOutput) ToGetClustersV2ClusterEntityNetworkArrayOutput() GetClustersV2ClusterEntityNetworkArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkArrayOutput) ToGetClustersV2ClusterEntityNetworkArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetwork {
+		return vs[0].([]GetClustersV2ClusterEntityNetwork)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplane struct {
+	// - Flag to indicate if the backplane segmentation needs to be enabled or not.
+	IsSegmentationEnabled bool `pulumi:"isSegmentationEnabled"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Netmasks []GetClustersV2ClusterEntityNetworkBackplaneNetmask `pulumi:"netmasks"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Subnets []GetClustersV2ClusterEntityNetworkBackplaneSubnet `pulumi:"subnets"`
+	// - VLAN Id tagged to the backplane network on the cluster. This is part of cluster create payload.
+	VlanTag int `pulumi:"vlanTag"`
+}
+
+// GetClustersV2ClusterEntityNetworkBackplaneInput is an input type that accepts GetClustersV2ClusterEntityNetworkBackplaneArgs and GetClustersV2ClusterEntityNetworkBackplaneOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkBackplaneInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkBackplaneArgs{...}
+type GetClustersV2ClusterEntityNetworkBackplaneInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkBackplaneOutput() GetClustersV2ClusterEntityNetworkBackplaneOutput
+	ToGetClustersV2ClusterEntityNetworkBackplaneOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkBackplaneOutput
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneArgs struct {
+	// - Flag to indicate if the backplane segmentation needs to be enabled or not.
+	IsSegmentationEnabled pulumi.BoolInput `pulumi:"isSegmentationEnabled"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Netmasks GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayInput `pulumi:"netmasks"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Subnets GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayInput `pulumi:"subnets"`
+	// - VLAN Id tagged to the backplane network on the cluster. This is part of cluster create payload.
+	VlanTag pulumi.IntInput `pulumi:"vlanTag"`
+}
+
+func (GetClustersV2ClusterEntityNetworkBackplaneArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplane)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneArgs) ToGetClustersV2ClusterEntityNetworkBackplaneOutput() GetClustersV2ClusterEntityNetworkBackplaneOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkBackplaneOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneArgs) ToGetClustersV2ClusterEntityNetworkBackplaneOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkBackplaneOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkBackplaneArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkBackplaneArray and GetClustersV2ClusterEntityNetworkBackplaneArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkBackplaneArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkBackplaneArray{ GetClustersV2ClusterEntityNetworkBackplaneArgs{...} }
+type GetClustersV2ClusterEntityNetworkBackplaneArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkBackplaneArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneArrayOutput
+	ToGetClustersV2ClusterEntityNetworkBackplaneArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkBackplaneArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneArray []GetClustersV2ClusterEntityNetworkBackplaneInput
+
+func (GetClustersV2ClusterEntityNetworkBackplaneArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkBackplane)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneArray) ToGetClustersV2ClusterEntityNetworkBackplaneArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkBackplaneArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneArray) ToGetClustersV2ClusterEntityNetworkBackplaneArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkBackplaneArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkBackplaneOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplane)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneOutput) ToGetClustersV2ClusterEntityNetworkBackplaneOutput() GetClustersV2ClusterEntityNetworkBackplaneOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneOutput) ToGetClustersV2ClusterEntityNetworkBackplaneOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneOutput {
+	return o
+}
+
+// - Flag to indicate if the backplane segmentation needs to be enabled or not.
+func (o GetClustersV2ClusterEntityNetworkBackplaneOutput) IsSegmentationEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkBackplane) bool { return v.IsSegmentationEnabled }).(pulumi.BoolOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkBackplaneOutput) Netmasks() GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkBackplane) []GetClustersV2ClusterEntityNetworkBackplaneNetmask {
+		return v.Netmasks
+	}).(GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkBackplaneOutput) Subnets() GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkBackplane) []GetClustersV2ClusterEntityNetworkBackplaneSubnet {
+		return v.Subnets
+	}).(GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput)
+}
+
+// - VLAN Id tagged to the backplane network on the cluster. This is part of cluster create payload.
+func (o GetClustersV2ClusterEntityNetworkBackplaneOutput) VlanTag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkBackplane) int { return v.VlanTag }).(pulumi.IntOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkBackplaneArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkBackplane)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneArrayOutput) ToGetClustersV2ClusterEntityNetworkBackplaneArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneArrayOutput) ToGetClustersV2ClusterEntityNetworkBackplaneArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkBackplaneOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkBackplane {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkBackplane)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkBackplaneOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneNetmask struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkBackplaneNetmaskInput is an input type that accepts GetClustersV2ClusterEntityNetworkBackplaneNetmaskArgs and GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkBackplaneNetmaskInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkBackplaneNetmaskArgs{...}
+type GetClustersV2ClusterEntityNetworkBackplaneNetmaskInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput() GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput
+	ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneNetmaskArgs struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkBackplaneNetmaskArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneNetmask)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneNetmaskArgs) ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput() GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneNetmaskArgs) ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkBackplaneNetmaskArray and GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkBackplaneNetmaskArray{ GetClustersV2ClusterEntityNetworkBackplaneNetmaskArgs{...} }
+type GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput
+	ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneNetmaskArray []GetClustersV2ClusterEntityNetworkBackplaneNetmaskInput
+
+func (GetClustersV2ClusterEntityNetworkBackplaneNetmaskArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkBackplaneNetmask)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneNetmaskArray) ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneNetmaskArray) ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneNetmask)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput) ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput() GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput) ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkBackplaneNetmask) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkBackplaneNetmask) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkBackplaneNetmask)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput) ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput) ToGetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkBackplaneNetmask {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkBackplaneNetmask)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneSubnet struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkBackplaneSubnetInput is an input type that accepts GetClustersV2ClusterEntityNetworkBackplaneSubnetArgs and GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkBackplaneSubnetInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkBackplaneSubnetArgs{...}
+type GetClustersV2ClusterEntityNetworkBackplaneSubnetInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkBackplaneSubnetOutput() GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput
+	ToGetClustersV2ClusterEntityNetworkBackplaneSubnetOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneSubnetArgs struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkBackplaneSubnetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneSubnet)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneSubnetArgs) ToGetClustersV2ClusterEntityNetworkBackplaneSubnetOutput() GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkBackplaneSubnetOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneSubnetArgs) ToGetClustersV2ClusterEntityNetworkBackplaneSubnetOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkBackplaneSubnetArray and GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkBackplaneSubnetArray{ GetClustersV2ClusterEntityNetworkBackplaneSubnetArgs{...} }
+type GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput
+	ToGetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneSubnetArray []GetClustersV2ClusterEntityNetworkBackplaneSubnetInput
+
+func (GetClustersV2ClusterEntityNetworkBackplaneSubnetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkBackplaneSubnet)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneSubnetArray) ToGetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkBackplaneSubnetArray) ToGetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneSubnet)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput) ToGetClustersV2ClusterEntityNetworkBackplaneSubnetOutput() GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput) ToGetClustersV2ClusterEntityNetworkBackplaneSubnetOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput) PrefixLength() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkBackplaneSubnet) int { return v.PrefixLength }).(pulumi.IntOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkBackplaneSubnet) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkBackplaneSubnet)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput) ToGetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput() GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput) ToGetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkBackplaneSubnet {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkBackplaneSubnet)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddress struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s []GetClustersV2ClusterEntityNetworkExternalAddressIpv4 `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s []GetClustersV2ClusterEntityNetworkExternalAddressIpv6 `pulumi:"ipv6s"`
+}
+
+// GetClustersV2ClusterEntityNetworkExternalAddressInput is an input type that accepts GetClustersV2ClusterEntityNetworkExternalAddressArgs and GetClustersV2ClusterEntityNetworkExternalAddressOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalAddressInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalAddressArgs{...}
+type GetClustersV2ClusterEntityNetworkExternalAddressInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalAddressOutput() GetClustersV2ClusterEntityNetworkExternalAddressOutput
+	ToGetClustersV2ClusterEntityNetworkExternalAddressOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalAddressOutput
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressArgs struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayInput `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddress)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressArgs) ToGetClustersV2ClusterEntityNetworkExternalAddressOutput() GetClustersV2ClusterEntityNetworkExternalAddressOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalAddressOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressArgs) ToGetClustersV2ClusterEntityNetworkExternalAddressOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalAddressOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkExternalAddressArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkExternalAddressArray and GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalAddressArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalAddressArray{ GetClustersV2ClusterEntityNetworkExternalAddressArgs{...} }
+type GetClustersV2ClusterEntityNetworkExternalAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalAddressArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput
+	ToGetClustersV2ClusterEntityNetworkExternalAddressArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressArray []GetClustersV2ClusterEntityNetworkExternalAddressInput
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalAddress)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressArray) ToGetClustersV2ClusterEntityNetworkExternalAddressArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressArray) ToGetClustersV2ClusterEntityNetworkExternalAddressArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddress)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressOutput) ToGetClustersV2ClusterEntityNetworkExternalAddressOutput() GetClustersV2ClusterEntityNetworkExternalAddressOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressOutput) ToGetClustersV2ClusterEntityNetworkExternalAddressOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressOutput {
+	return o
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkExternalAddressOutput) Ipv4s() GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalAddress) []GetClustersV2ClusterEntityNetworkExternalAddressIpv4 {
+		return v.Ipv4s
+	}).(GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkExternalAddressOutput) Ipv6s() GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalAddress) []GetClustersV2ClusterEntityNetworkExternalAddressIpv6 {
+		return v.Ipv6s
+	}).(GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalAddress)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalAddressArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalAddressArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkExternalAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkExternalAddress {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkExternalAddress)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkExternalAddressOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv4 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkExternalAddressIpv4Input is an input type that accepts GetClustersV2ClusterEntityNetworkExternalAddressIpv4Args and GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalAddressIpv4Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalAddressIpv4Args{...}
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv4Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4Output() GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output
+	ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressIpv4Args) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4Output() GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressIpv4Args) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output)
+}
+
+// GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkExternalAddressIpv4Array and GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalAddressIpv4Array{ GetClustersV2ClusterEntityNetworkExternalAddressIpv4Args{...} }
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv4Array []GetClustersV2ClusterEntityNetworkExternalAddressIpv4Input
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalAddressIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressIpv4Array) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressIpv4Array) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4Output() GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalAddressIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalAddressIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalAddressIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkExternalAddressIpv4 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkExternalAddressIpv4)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv6 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkExternalAddressIpv6Input is an input type that accepts GetClustersV2ClusterEntityNetworkExternalAddressIpv6Args and GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalAddressIpv6Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalAddressIpv6Args{...}
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv6Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6Output() GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output
+	ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressIpv6Args) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6Output() GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressIpv6Args) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output)
+}
+
+// GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkExternalAddressIpv6Array and GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalAddressIpv6Array{ GetClustersV2ClusterEntityNetworkExternalAddressIpv6Args{...} }
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv6Array []GetClustersV2ClusterEntityNetworkExternalAddressIpv6Input
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalAddressIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressIpv6Array) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalAddressIpv6Array) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6Output() GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalAddressIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalAddressIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkExternalAddressIpv6 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkExternalAddressIpv6)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIp struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s []GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4 `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s []GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6 `pulumi:"ipv6s"`
+}
+
+// GetClustersV2ClusterEntityNetworkExternalDataServicesIpInput is an input type that accepts GetClustersV2ClusterEntityNetworkExternalDataServicesIpArgs and GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalDataServicesIpInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalDataServicesIpArgs{...}
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpArgs struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIp)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpArgs) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpArgs) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkExternalDataServicesIpArray and GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalDataServicesIpArray{ GetClustersV2ClusterEntityNetworkExternalDataServicesIpArgs{...} }
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpArray []GetClustersV2ClusterEntityNetworkExternalDataServicesIpInput
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalDataServicesIp)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpArray) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpArray) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIp)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput {
+	return o
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput) Ipv4s() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalDataServicesIp) []GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4 {
+		return v.Ipv4s
+	}).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput) Ipv6s() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalDataServicesIp) []GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6 {
+		return v.Ipv6s
+	}).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalDataServicesIp)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkExternalDataServicesIp {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkExternalDataServicesIp)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Input is an input type that accepts GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Args and GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Args{...}
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Args) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Args) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output)
+}
+
+// GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Array and GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Array{ GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Args{...} }
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Array []GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Input
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Array) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Array) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Input is an input type that accepts GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Args and GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Args{...}
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Args) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Args) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output)
+}
+
+// GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Array and GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Array{ GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Args{...} }
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Array []GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Input
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Array) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Array) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyList struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+	IpAddresses []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress `pulumi:"ipAddresses"`
+	// - HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+	Name string `pulumi:"name"`
+	// - SMTP server password.
+	Password string `pulumi:"password"`
+	// - SMTP port.
+	Port       int      `pulumi:"port"`
+	ProxyTypes []string `pulumi:"proxyTypes"`
+	// - SMTP server user name.
+	Username string `pulumi:"username"`
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyListInput is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyListArgs and GetClustersV2ClusterEntityNetworkHttpProxyListOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyListInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyListArgs{...}
+type GetClustersV2ClusterEntityNetworkHttpProxyListInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListOutput() GetClustersV2ClusterEntityNetworkHttpProxyListOutput
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListOutput
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListArgs struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+	IpAddresses GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayInput `pulumi:"ipAddresses"`
+	// - HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+	Name pulumi.StringInput `pulumi:"name"`
+	// - SMTP server password.
+	Password pulumi.StringInput `pulumi:"password"`
+	// - SMTP port.
+	Port       pulumi.IntInput         `pulumi:"port"`
+	ProxyTypes pulumi.StringArrayInput `pulumi:"proxyTypes"`
+	// - SMTP server user name.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyList)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListArgs) ToGetClustersV2ClusterEntityNetworkHttpProxyListOutput() GetClustersV2ClusterEntityNetworkHttpProxyListOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyListOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListArgs) ToGetClustersV2ClusterEntityNetworkHttpProxyListOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyListOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyListArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyListArray and GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyListArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyListArray{ GetClustersV2ClusterEntityNetworkHttpProxyListArgs{...} }
+type GetClustersV2ClusterEntityNetworkHttpProxyListArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListArray []GetClustersV2ClusterEntityNetworkHttpProxyListInput
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyList)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListArray) ToGetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyListArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListArray) ToGetClustersV2ClusterEntityNetworkHttpProxyListArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyList)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListOutput() GetClustersV2ClusterEntityNetworkHttpProxyListOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListOutput {
+	return o
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListOutput) IpAddresses() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyList) []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress {
+		return v.IpAddresses
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput)
+}
+
+// - HTTP Proxy server name configuration needed to access a cluster which is hosted behind a HTTP Proxy to not reveal its identity.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyList) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// - SMTP server password.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyList) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// - SMTP port.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyList) int { return v.Port }).(pulumi.IntOutput)
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListOutput) ProxyTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyList) []string { return v.ProxyTypes }).(pulumi.StringArrayOutput)
+}
+
+// - SMTP server user name.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyList) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyList)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkHttpProxyListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkHttpProxyList {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkHttpProxyList)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyListOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4 `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6 `pulumi:"ipv6s"`
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressInput is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArgs and GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArgs{...}
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArgs struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayInput `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArgs) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArgs) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArray and GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArray{ GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArgs{...} }
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArray []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressInput
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArray) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArray) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput {
+	return o
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput) Ipv4s() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress) []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4 {
+		return v.Ipv4s
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput) Ipv6s() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress) []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6 {
+		return v.Ipv6s
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddress)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Input is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Args and GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Args{...}
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Args) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Args) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output)
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Array and GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Array{ GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Args{...} }
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Array []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Input
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Array) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Array) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Input is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Args and GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Args{...}
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Args) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Args) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output)
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Array and GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Array{ GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Args{...} }
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Array []GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Input
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Array) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Array) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyWhiteList struct {
+	// - Target's identifier which is exempted from going through the configured HTTP Proxy.
+	Target string `pulumi:"target"`
+	// - Type of the target which is exempted from going through the configured HTTP Proxy.
+	//   Valid values are:
+	// - "IPV6_ADDRESS"	IPV6 address.
+	// - "HOST_NAME"	Name of the host.
+	// - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
+	// - "IPV4_NETWORK_MASK" Network Mask of the IpV4 family.
+	// - "IPV4_ADDRESS" IPV4 address.
+	TargetType string `pulumi:"targetType"`
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyWhiteListInput is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArgs and GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyWhiteListInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArgs{...}
+type GetClustersV2ClusterEntityNetworkHttpProxyWhiteListInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput() GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput
+	ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArgs struct {
+	// - Target's identifier which is exempted from going through the configured HTTP Proxy.
+	Target pulumi.StringInput `pulumi:"target"`
+	// - Type of the target which is exempted from going through the configured HTTP Proxy.
+	//   Valid values are:
+	// - "IPV6_ADDRESS"	IPV6 address.
+	// - "HOST_NAME"	Name of the host.
+	// - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
+	// - "IPV4_NETWORK_MASK" Network Mask of the IpV4 family.
+	// - "IPV4_ADDRESS" IPV4 address.
+	TargetType pulumi.StringInput `pulumi:"targetType"`
+}
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyWhiteList)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArgs) ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput() GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArgs) ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArray and GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArray{ GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArgs{...} }
+type GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput
+	ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArray []GetClustersV2ClusterEntityNetworkHttpProxyWhiteListInput
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyWhiteList)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArray) ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArray) ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyWhiteList)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput() GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput {
+	return o
+}
+
+// - Target's identifier which is exempted from going through the configured HTTP Proxy.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput) Target() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyWhiteList) string { return v.Target }).(pulumi.StringOutput)
+}
+
+//   - Type of the target which is exempted from going through the configured HTTP Proxy.
+//     Valid values are:
+//   - "IPV6_ADDRESS"	IPV6 address.
+//   - "HOST_NAME"	Name of the host.
+//   - "DOMAIN_NAME_SUFFIX" Domain Name Suffix required for http proxy whitelist.
+//   - "IPV4_NETWORK_MASK" Network Mask of the IpV4 family.
+//   - "IPV4_ADDRESS" IPV4 address.
+func (o GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkHttpProxyWhiteList) string { return v.TargetType }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkHttpProxyWhiteList)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput() GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput) ToGetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkHttpProxyWhiteList {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkHttpProxyWhiteList)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServer struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+	Ips []GetClustersV2ClusterEntityNetworkManagementServerIp `pulumi:"ips"`
+	// - Indicates whether it is DRS enabled or not.
+	IsDrsEnabled bool `pulumi:"isDrsEnabled"`
+	// - Indicates whether the host is managed by an entity or not.
+	IsInUse bool `pulumi:"isInUse"`
+	// - Indicates whether it is registered or not.
+	IsRegistered bool `pulumi:"isRegistered"`
+	// - Type of management server.
+	//   Valid values are:
+	// - "VCENTER"   	Vcenter management server.
+	Type string `pulumi:"type"`
+}
+
+// GetClustersV2ClusterEntityNetworkManagementServerInput is an input type that accepts GetClustersV2ClusterEntityNetworkManagementServerArgs and GetClustersV2ClusterEntityNetworkManagementServerOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkManagementServerInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkManagementServerArgs{...}
+type GetClustersV2ClusterEntityNetworkManagementServerInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkManagementServerOutput() GetClustersV2ClusterEntityNetworkManagementServerOutput
+	ToGetClustersV2ClusterEntityNetworkManagementServerOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkManagementServerOutput
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerArgs struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+	Ips GetClustersV2ClusterEntityNetworkManagementServerIpArrayInput `pulumi:"ips"`
+	// - Indicates whether it is DRS enabled or not.
+	IsDrsEnabled pulumi.BoolInput `pulumi:"isDrsEnabled"`
+	// - Indicates whether the host is managed by an entity or not.
+	IsInUse pulumi.BoolInput `pulumi:"isInUse"`
+	// - Indicates whether it is registered or not.
+	IsRegistered pulumi.BoolInput `pulumi:"isRegistered"`
+	// - Type of management server.
+	//   Valid values are:
+	// - "VCENTER"   	Vcenter management server.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetClustersV2ClusterEntityNetworkManagementServerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServer)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerArgs) ToGetClustersV2ClusterEntityNetworkManagementServerOutput() GetClustersV2ClusterEntityNetworkManagementServerOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkManagementServerOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerArgs) ToGetClustersV2ClusterEntityNetworkManagementServerOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkManagementServerOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkManagementServerArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkManagementServerArray and GetClustersV2ClusterEntityNetworkManagementServerArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkManagementServerArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkManagementServerArray{ GetClustersV2ClusterEntityNetworkManagementServerArgs{...} }
+type GetClustersV2ClusterEntityNetworkManagementServerArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkManagementServerArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerArrayOutput
+	ToGetClustersV2ClusterEntityNetworkManagementServerArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkManagementServerArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerArray []GetClustersV2ClusterEntityNetworkManagementServerInput
+
+func (GetClustersV2ClusterEntityNetworkManagementServerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkManagementServer)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerArray) ToGetClustersV2ClusterEntityNetworkManagementServerArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkManagementServerArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerArray) ToGetClustersV2ClusterEntityNetworkManagementServerArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkManagementServerArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkManagementServerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServer)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerOutput) ToGetClustersV2ClusterEntityNetworkManagementServerOutput() GetClustersV2ClusterEntityNetworkManagementServerOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerOutput) ToGetClustersV2ClusterEntityNetworkManagementServerOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerOutput {
+	return o
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4/IPv6 format or a Fully Qualified Domain Name.
+func (o GetClustersV2ClusterEntityNetworkManagementServerOutput) Ips() GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServer) []GetClustersV2ClusterEntityNetworkManagementServerIp {
+		return v.Ips
+	}).(GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput)
+}
+
+// - Indicates whether it is DRS enabled or not.
+func (o GetClustersV2ClusterEntityNetworkManagementServerOutput) IsDrsEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServer) bool { return v.IsDrsEnabled }).(pulumi.BoolOutput)
+}
+
+// - Indicates whether the host is managed by an entity or not.
+func (o GetClustersV2ClusterEntityNetworkManagementServerOutput) IsInUse() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServer) bool { return v.IsInUse }).(pulumi.BoolOutput)
+}
+
+// - Indicates whether it is registered or not.
+func (o GetClustersV2ClusterEntityNetworkManagementServerOutput) IsRegistered() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServer) bool { return v.IsRegistered }).(pulumi.BoolOutput)
+}
+
+//   - Type of management server.
+//     Valid values are:
+//   - "VCENTER"   	Vcenter management server.
+func (o GetClustersV2ClusterEntityNetworkManagementServerOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServer) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkManagementServerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkManagementServer)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerArrayOutput) ToGetClustersV2ClusterEntityNetworkManagementServerArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerArrayOutput) ToGetClustersV2ClusterEntityNetworkManagementServerArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkManagementServerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkManagementServer {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkManagementServer)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkManagementServerOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIp struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s []GetClustersV2ClusterEntityNetworkManagementServerIpIpv4 `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s []GetClustersV2ClusterEntityNetworkManagementServerIpIpv6 `pulumi:"ipv6s"`
+}
+
+// GetClustersV2ClusterEntityNetworkManagementServerIpInput is an input type that accepts GetClustersV2ClusterEntityNetworkManagementServerIpArgs and GetClustersV2ClusterEntityNetworkManagementServerIpOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkManagementServerIpInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkManagementServerIpArgs{...}
+type GetClustersV2ClusterEntityNetworkManagementServerIpInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpOutput() GetClustersV2ClusterEntityNetworkManagementServerIpOutput
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpOutput
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpArgs struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIp)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpArgs) ToGetClustersV2ClusterEntityNetworkManagementServerIpOutput() GetClustersV2ClusterEntityNetworkManagementServerIpOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkManagementServerIpOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpArgs) ToGetClustersV2ClusterEntityNetworkManagementServerIpOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkManagementServerIpOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkManagementServerIpArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkManagementServerIpArray and GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkManagementServerIpArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkManagementServerIpArray{ GetClustersV2ClusterEntityNetworkManagementServerIpArgs{...} }
+type GetClustersV2ClusterEntityNetworkManagementServerIpArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpArray []GetClustersV2ClusterEntityNetworkManagementServerIpInput
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkManagementServerIp)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpArray) ToGetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkManagementServerIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpArray) ToGetClustersV2ClusterEntityNetworkManagementServerIpArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIp)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpOutput) ToGetClustersV2ClusterEntityNetworkManagementServerIpOutput() GetClustersV2ClusterEntityNetworkManagementServerIpOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpOutput) ToGetClustersV2ClusterEntityNetworkManagementServerIpOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpOutput {
+	return o
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpOutput) Ipv4s() GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServerIp) []GetClustersV2ClusterEntityNetworkManagementServerIpIpv4 {
+		return v.Ipv4s
+	}).(GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpOutput) Ipv6s() GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServerIp) []GetClustersV2ClusterEntityNetworkManagementServerIpIpv6 {
+		return v.Ipv6s
+	}).(GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkManagementServerIp)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput) ToGetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput) ToGetClustersV2ClusterEntityNetworkManagementServerIpArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkManagementServerIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkManagementServerIp {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkManagementServerIp)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkManagementServerIpOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Input is an input type that accepts GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Args and GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Args{...}
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output() GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Args) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output() GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output {
+	return i.ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Args) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output)
+}
+
+// GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Array and GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Array{ GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Args{...} }
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Array []GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Input
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkManagementServerIpIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Array) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Array) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output() GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServerIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServerIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkManagementServerIpIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkManagementServerIpIpv4 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkManagementServerIpIpv4)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Input is an input type that accepts GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Args and GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Args{...}
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output() GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Args) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output() GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output {
+	return i.ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Args) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output)
+}
+
+// GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Array and GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Array{ GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Args{...} }
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Array []GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Input
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkManagementServerIpIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Array) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Array) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output() GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServerIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkManagementServerIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkManagementServerIpIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkManagementServerIpIpv6 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkManagementServerIpIpv6)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIp struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s []GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4 `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s []GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6 `pulumi:"ipv6s"`
+}
+
+// GetClustersV2ClusterEntityNetworkMasqueradingIpInput is an input type that accepts GetClustersV2ClusterEntityNetworkMasqueradingIpArgs and GetClustersV2ClusterEntityNetworkMasqueradingIpOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkMasqueradingIpInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkMasqueradingIpArgs{...}
+type GetClustersV2ClusterEntityNetworkMasqueradingIpInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpOutput
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpOutput
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpArgs struct {
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayInput `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIp)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpArgs) ToGetClustersV2ClusterEntityNetworkMasqueradingIpOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkMasqueradingIpOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpArgs) ToGetClustersV2ClusterEntityNetworkMasqueradingIpOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkMasqueradingIpOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkMasqueradingIpArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkMasqueradingIpArray and GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkMasqueradingIpArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkMasqueradingIpArray{ GetClustersV2ClusterEntityNetworkMasqueradingIpArgs{...} }
+type GetClustersV2ClusterEntityNetworkMasqueradingIpArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpArray []GetClustersV2ClusterEntityNetworkMasqueradingIpInput
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkMasqueradingIp)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpArray) ToGetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpArray) ToGetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIp)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpOutput) ToGetClustersV2ClusterEntityNetworkMasqueradingIpOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpOutput) ToGetClustersV2ClusterEntityNetworkMasqueradingIpOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpOutput {
+	return o
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpOutput) Ipv4s() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkMasqueradingIp) []GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4 {
+		return v.Ipv4s
+	}).(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpOutput) Ipv6s() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkMasqueradingIp) []GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6 {
+		return v.Ipv6s
+	}).(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkMasqueradingIp)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput) ToGetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput) ToGetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkMasqueradingIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkMasqueradingIp {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkMasqueradingIp)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkMasqueradingIpOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Input is an input type that accepts GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Args and GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Args{...}
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Args) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output {
+	return i.ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Args) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output)
+}
+
+// GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Array and GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Array{ GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Args{...} }
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Array []GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Input
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Array) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Array) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Input is an input type that accepts GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Args and GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Args{...}
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Args) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output {
+	return i.ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Args) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output)
+}
+
+// GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Array and GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Array{ GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Args{...} }
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Array []GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Input
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Array) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Array) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpList struct {
+	// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+	Fqdns []GetClustersV2ClusterEntityNetworkNameServerIpListFqdn `pulumi:"fqdns"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s []GetClustersV2ClusterEntityNetworkNameServerIpListIpv4 `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s []GetClustersV2ClusterEntityNetworkNameServerIpListIpv6 `pulumi:"ipv6s"`
+}
+
+// GetClustersV2ClusterEntityNetworkNameServerIpListInput is an input type that accepts GetClustersV2ClusterEntityNetworkNameServerIpListArgs and GetClustersV2ClusterEntityNetworkNameServerIpListOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNameServerIpListInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNameServerIpListArgs{...}
+type GetClustersV2ClusterEntityNetworkNameServerIpListInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListOutput() GetClustersV2ClusterEntityNetworkNameServerIpListOutput
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListArgs struct {
+	// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+	Fqdns GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayInput `pulumi:"fqdns"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayInput `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpList)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListArgs) ToGetClustersV2ClusterEntityNetworkNameServerIpListOutput() GetClustersV2ClusterEntityNetworkNameServerIpListOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNameServerIpListOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListArgs) ToGetClustersV2ClusterEntityNetworkNameServerIpListOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNameServerIpListOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkNameServerIpListArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkNameServerIpListArray and GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNameServerIpListArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNameServerIpListArray{ GetClustersV2ClusterEntityNetworkNameServerIpListArgs{...} }
+type GetClustersV2ClusterEntityNetworkNameServerIpListArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListArray []GetClustersV2ClusterEntityNetworkNameServerIpListInput
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNameServerIpList)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListArray) ToGetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNameServerIpListArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListArray) ToGetClustersV2ClusterEntityNetworkNameServerIpListArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpList)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListOutput() GetClustersV2ClusterEntityNetworkNameServerIpListOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListOutput {
+	return o
+}
+
+// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListOutput) Fqdns() GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNameServerIpList) []GetClustersV2ClusterEntityNetworkNameServerIpListFqdn {
+		return v.Fqdns
+	}).(GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListOutput) Ipv4s() GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNameServerIpList) []GetClustersV2ClusterEntityNetworkNameServerIpListIpv4 {
+		return v.Ipv4s
+	}).(GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListOutput) Ipv6s() GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNameServerIpList) []GetClustersV2ClusterEntityNetworkNameServerIpListIpv6 {
+		return v.Ipv6s
+	}).(GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNameServerIpList)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkNameServerIpListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkNameServerIpList {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkNameServerIpList)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkNameServerIpListOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListFqdn struct {
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkNameServerIpListFqdnInput is an input type that accepts GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArgs and GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNameServerIpListFqdnInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArgs{...}
+type GetClustersV2ClusterEntityNetworkNameServerIpListFqdnInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput() GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArgs struct {
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListFqdn)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArgs) ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput() GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArgs) ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArray and GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArray{ GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArgs{...} }
+type GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArray []GetClustersV2ClusterEntityNetworkNameServerIpListFqdnInput
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNameServerIpListFqdn)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArray) ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArray) ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListFqdn)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput() GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput {
+	return o
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNameServerIpListFqdn) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNameServerIpListFqdn)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkNameServerIpListFqdn {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkNameServerIpListFqdn)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv4 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Input is an input type that accepts GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Args and GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Args{...}
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output() GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Args) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output() GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output {
+	return i.ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Args) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output)
+}
+
+// GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Array and GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Array{ GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Args{...} }
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Array []GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Input
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNameServerIpListIpv4)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Array) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Array) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output() GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNameServerIpListIpv4) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNameServerIpListIpv4) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNameServerIpListIpv4)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkNameServerIpListIpv4 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkNameServerIpListIpv4)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv6 struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength *int `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Input is an input type that accepts GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Args and GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Input` via:
+//
+//	GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Args{...}
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Input interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output() GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6OutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Args struct {
+	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+	PrefixLength pulumi.IntPtrInput `pulumi:"prefixLength"`
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Args) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Args) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output() GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output {
+	return i.ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6OutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Args) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output)
+}
+
+// GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Array and GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Array{ GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Args{...} }
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput
+	ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Array []GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Input
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Array) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNameServerIpListIpv6)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Array) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Array) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output() GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6OutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output {
+	return o
+}
+
+// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output) PrefixLength() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNameServerIpListIpv6) *int { return v.PrefixLength }).(pulumi.IntPtrOutput)
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNameServerIpListIpv6) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNameServerIpListIpv6)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput() GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput) ToGetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkNameServerIpListIpv6 {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkNameServerIpListIpv6)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output)
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpList struct {
+	// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+	Fqdns []GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn `pulumi:"fqdns"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s []GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4 `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s []GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6 `pulumi:"ipv6s"`
+}
+
+// GetClustersV2ClusterEntityNetworkNtpServerIpListInput is an input type that accepts GetClustersV2ClusterEntityNetworkNtpServerIpListArgs and GetClustersV2ClusterEntityNetworkNtpServerIpListOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNtpServerIpListInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNtpServerIpListArgs{...}
+type GetClustersV2ClusterEntityNetworkNtpServerIpListInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNtpServerIpListOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListOutput
+	ToGetClustersV2ClusterEntityNetworkNtpServerIpListOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListArgs struct {
+	// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+	Fqdns GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayInput `pulumi:"fqdns"`
+	// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+	Ipv4s GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4ArrayInput `pulumi:"ipv4s"`
+	// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+	Ipv6s GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6ArrayInput `pulumi:"ipv6s"`
+}
+
+func (GetClustersV2ClusterEntityNetworkNtpServerIpListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpList)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNtpServerIpListArgs) ToGetClustersV2ClusterEntityNetworkNtpServerIpListOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNtpServerIpListOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNtpServerIpListArgs) ToGetClustersV2ClusterEntityNetworkNtpServerIpListOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNtpServerIpListOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkNtpServerIpListArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkNtpServerIpListArray and GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNtpServerIpListArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNtpServerIpListArray{ GetClustersV2ClusterEntityNetworkNtpServerIpListArgs{...} }
+type GetClustersV2ClusterEntityNetworkNtpServerIpListArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput
+	ToGetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListArray []GetClustersV2ClusterEntityNetworkNtpServerIpListInput
+
+func (GetClustersV2ClusterEntityNetworkNtpServerIpListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNtpServerIpList)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNtpServerIpListArray) ToGetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNtpServerIpListArray) ToGetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNtpServerIpListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpList)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListOutput) ToGetClustersV2ClusterEntityNetworkNtpServerIpListOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListOutput) ToGetClustersV2ClusterEntityNetworkNtpServerIpListOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListOutput {
+	return o
+}
+
+// - Cluster fully qualified domain name. This is part of payload for cluster update operation only.
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListOutput) Fqdns() GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNtpServerIpList) []GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn {
+		return v.Fqdns
+	}).(GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv4 format.
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListOutput) Ipv4s() GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNtpServerIpList) []GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4 {
+		return v.Ipv4s
+	}).(GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4ArrayOutput)
+}
+
+// - An unique address that identifies a device on the internet or a local network in IPv6 format.
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListOutput) Ipv6s() GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6ArrayOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNtpServerIpList) []GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6 {
+		return v.Ipv6s
+	}).(GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6ArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNtpServerIpList)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput) ToGetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput) ToGetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkNtpServerIpListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkNtpServerIpList {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkNtpServerIpList)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkNtpServerIpListOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn struct {
+	// - The fully qualified domain name of the host.
+	Value string `pulumi:"value"`
+}
+
+// GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnInput is an input type that accepts GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArgs and GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArgs{...}
+type GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput
+	ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArgs struct {
+	// - The fully qualified domain name of the host.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArgs) ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArgs) ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput)
+}
+
+// GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayInput is an input type that accepts GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArray and GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput values.
+// You can construct a concrete instance of `GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayInput` via:
+//
+//	GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArray{ GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArgs{...} }
+type GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayInput interface {
+	pulumi.Input
+
+	ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput
+	ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutputWithContext(context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArray []GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnInput
+
+func (GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn)(nil)).Elem()
+}
+
+func (i GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArray) ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput {
+	return i.ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutputWithContext(context.Background())
+}
+
+func (i GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArray) ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput) ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput) ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput {
+	return o
+}
+
+// - The fully qualified domain name of the host.
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput struct{ *pulumi.OutputState }
+
+func (GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn)(nil)).Elem()
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput) ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput() GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput) ToGetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutputWithContext(ctx context.Context) GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput {
+	return o
+}
+
+func (o GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput) Index(i pulumi.IntInput) GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn {
+		return vs[0].([]GetClustersV2ClusterEntityNetworkNtpServerIpListFqdn)[vs[1].(int)]
+	}).(GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput)
+}
+
 type GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4 struct {
 	// - The prefix length of the network to which this host IPv4/IPv6 address belongs.
 	PrefixLength *int `pulumi:"prefixLength"`
@@ -4602,6 +8079,230 @@ func (o GetDirectoryServicesV2DirectoryServiceServiceAccountArrayOutput) Index(i
 	}).(GetDirectoryServicesV2DirectoryServiceServiceAccountOutput)
 }
 
+type GetDomainsV2Domain struct {
+	// External identifier of the domain.
+	DomainExtId string `pulumi:"domainExtId"`
+	// External identifier of the allowed-domain association.
+	ExtId string `pulumi:"extId"`
+	// HATEOAS links for the domain association.
+	Links []GetDomainsV2DomainLink `pulumi:"links"`
+	// Identifier of the tenant that owns the domain association.
+	TenantId string `pulumi:"tenantId"`
+}
+
+// GetDomainsV2DomainInput is an input type that accepts GetDomainsV2DomainArgs and GetDomainsV2DomainOutput values.
+// You can construct a concrete instance of `GetDomainsV2DomainInput` via:
+//
+//	GetDomainsV2DomainArgs{...}
+type GetDomainsV2DomainInput interface {
+	pulumi.Input
+
+	ToGetDomainsV2DomainOutput() GetDomainsV2DomainOutput
+	ToGetDomainsV2DomainOutputWithContext(context.Context) GetDomainsV2DomainOutput
+}
+
+type GetDomainsV2DomainArgs struct {
+	// External identifier of the domain.
+	DomainExtId pulumi.StringInput `pulumi:"domainExtId"`
+	// External identifier of the allowed-domain association.
+	ExtId pulumi.StringInput `pulumi:"extId"`
+	// HATEOAS links for the domain association.
+	Links GetDomainsV2DomainLinkArrayInput `pulumi:"links"`
+	// Identifier of the tenant that owns the domain association.
+	TenantId pulumi.StringInput `pulumi:"tenantId"`
+}
+
+func (GetDomainsV2DomainArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsV2Domain)(nil)).Elem()
+}
+
+func (i GetDomainsV2DomainArgs) ToGetDomainsV2DomainOutput() GetDomainsV2DomainOutput {
+	return i.ToGetDomainsV2DomainOutputWithContext(context.Background())
+}
+
+func (i GetDomainsV2DomainArgs) ToGetDomainsV2DomainOutputWithContext(ctx context.Context) GetDomainsV2DomainOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsV2DomainOutput)
+}
+
+// GetDomainsV2DomainArrayInput is an input type that accepts GetDomainsV2DomainArray and GetDomainsV2DomainArrayOutput values.
+// You can construct a concrete instance of `GetDomainsV2DomainArrayInput` via:
+//
+//	GetDomainsV2DomainArray{ GetDomainsV2DomainArgs{...} }
+type GetDomainsV2DomainArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsV2DomainArrayOutput() GetDomainsV2DomainArrayOutput
+	ToGetDomainsV2DomainArrayOutputWithContext(context.Context) GetDomainsV2DomainArrayOutput
+}
+
+type GetDomainsV2DomainArray []GetDomainsV2DomainInput
+
+func (GetDomainsV2DomainArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsV2Domain)(nil)).Elem()
+}
+
+func (i GetDomainsV2DomainArray) ToGetDomainsV2DomainArrayOutput() GetDomainsV2DomainArrayOutput {
+	return i.ToGetDomainsV2DomainArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsV2DomainArray) ToGetDomainsV2DomainArrayOutputWithContext(ctx context.Context) GetDomainsV2DomainArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsV2DomainArrayOutput)
+}
+
+type GetDomainsV2DomainOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsV2DomainOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsV2Domain)(nil)).Elem()
+}
+
+func (o GetDomainsV2DomainOutput) ToGetDomainsV2DomainOutput() GetDomainsV2DomainOutput {
+	return o
+}
+
+func (o GetDomainsV2DomainOutput) ToGetDomainsV2DomainOutputWithContext(ctx context.Context) GetDomainsV2DomainOutput {
+	return o
+}
+
+// External identifier of the domain.
+func (o GetDomainsV2DomainOutput) DomainExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsV2Domain) string { return v.DomainExtId }).(pulumi.StringOutput)
+}
+
+// External identifier of the allowed-domain association.
+func (o GetDomainsV2DomainOutput) ExtId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsV2Domain) string { return v.ExtId }).(pulumi.StringOutput)
+}
+
+// HATEOAS links for the domain association.
+func (o GetDomainsV2DomainOutput) Links() GetDomainsV2DomainLinkArrayOutput {
+	return o.ApplyT(func(v GetDomainsV2Domain) []GetDomainsV2DomainLink { return v.Links }).(GetDomainsV2DomainLinkArrayOutput)
+}
+
+// Identifier of the tenant that owns the domain association.
+func (o GetDomainsV2DomainOutput) TenantId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsV2Domain) string { return v.TenantId }).(pulumi.StringOutput)
+}
+
+type GetDomainsV2DomainArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsV2DomainArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsV2Domain)(nil)).Elem()
+}
+
+func (o GetDomainsV2DomainArrayOutput) ToGetDomainsV2DomainArrayOutput() GetDomainsV2DomainArrayOutput {
+	return o
+}
+
+func (o GetDomainsV2DomainArrayOutput) ToGetDomainsV2DomainArrayOutputWithContext(ctx context.Context) GetDomainsV2DomainArrayOutput {
+	return o
+}
+
+func (o GetDomainsV2DomainArrayOutput) Index(i pulumi.IntInput) GetDomainsV2DomainOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsV2Domain {
+		return vs[0].([]GetDomainsV2Domain)[vs[1].(int)]
+	}).(GetDomainsV2DomainOutput)
+}
+
+type GetDomainsV2DomainLink struct {
+	Href string `pulumi:"href"`
+	Rel  string `pulumi:"rel"`
+}
+
+// GetDomainsV2DomainLinkInput is an input type that accepts GetDomainsV2DomainLinkArgs and GetDomainsV2DomainLinkOutput values.
+// You can construct a concrete instance of `GetDomainsV2DomainLinkInput` via:
+//
+//	GetDomainsV2DomainLinkArgs{...}
+type GetDomainsV2DomainLinkInput interface {
+	pulumi.Input
+
+	ToGetDomainsV2DomainLinkOutput() GetDomainsV2DomainLinkOutput
+	ToGetDomainsV2DomainLinkOutputWithContext(context.Context) GetDomainsV2DomainLinkOutput
+}
+
+type GetDomainsV2DomainLinkArgs struct {
+	Href pulumi.StringInput `pulumi:"href"`
+	Rel  pulumi.StringInput `pulumi:"rel"`
+}
+
+func (GetDomainsV2DomainLinkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsV2DomainLink)(nil)).Elem()
+}
+
+func (i GetDomainsV2DomainLinkArgs) ToGetDomainsV2DomainLinkOutput() GetDomainsV2DomainLinkOutput {
+	return i.ToGetDomainsV2DomainLinkOutputWithContext(context.Background())
+}
+
+func (i GetDomainsV2DomainLinkArgs) ToGetDomainsV2DomainLinkOutputWithContext(ctx context.Context) GetDomainsV2DomainLinkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsV2DomainLinkOutput)
+}
+
+// GetDomainsV2DomainLinkArrayInput is an input type that accepts GetDomainsV2DomainLinkArray and GetDomainsV2DomainLinkArrayOutput values.
+// You can construct a concrete instance of `GetDomainsV2DomainLinkArrayInput` via:
+//
+//	GetDomainsV2DomainLinkArray{ GetDomainsV2DomainLinkArgs{...} }
+type GetDomainsV2DomainLinkArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainsV2DomainLinkArrayOutput() GetDomainsV2DomainLinkArrayOutput
+	ToGetDomainsV2DomainLinkArrayOutputWithContext(context.Context) GetDomainsV2DomainLinkArrayOutput
+}
+
+type GetDomainsV2DomainLinkArray []GetDomainsV2DomainLinkInput
+
+func (GetDomainsV2DomainLinkArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsV2DomainLink)(nil)).Elem()
+}
+
+func (i GetDomainsV2DomainLinkArray) ToGetDomainsV2DomainLinkArrayOutput() GetDomainsV2DomainLinkArrayOutput {
+	return i.ToGetDomainsV2DomainLinkArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainsV2DomainLinkArray) ToGetDomainsV2DomainLinkArrayOutputWithContext(ctx context.Context) GetDomainsV2DomainLinkArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainsV2DomainLinkArrayOutput)
+}
+
+type GetDomainsV2DomainLinkOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsV2DomainLinkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainsV2DomainLink)(nil)).Elem()
+}
+
+func (o GetDomainsV2DomainLinkOutput) ToGetDomainsV2DomainLinkOutput() GetDomainsV2DomainLinkOutput {
+	return o
+}
+
+func (o GetDomainsV2DomainLinkOutput) ToGetDomainsV2DomainLinkOutputWithContext(ctx context.Context) GetDomainsV2DomainLinkOutput {
+	return o
+}
+
+func (o GetDomainsV2DomainLinkOutput) Href() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsV2DomainLink) string { return v.Href }).(pulumi.StringOutput)
+}
+
+func (o GetDomainsV2DomainLinkOutput) Rel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainsV2DomainLink) string { return v.Rel }).(pulumi.StringOutput)
+}
+
+type GetDomainsV2DomainLinkArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainsV2DomainLinkArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainsV2DomainLink)(nil)).Elem()
+}
+
+func (o GetDomainsV2DomainLinkArrayOutput) ToGetDomainsV2DomainLinkArrayOutput() GetDomainsV2DomainLinkArrayOutput {
+	return o
+}
+
+func (o GetDomainsV2DomainLinkArrayOutput) ToGetDomainsV2DomainLinkArrayOutputWithContext(ctx context.Context) GetDomainsV2DomainLinkArrayOutput {
+	return o
+}
+
+func (o GetDomainsV2DomainLinkArrayOutput) Index(i pulumi.IntInput) GetDomainsV2DomainLinkOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainsV2DomainLink {
+		return vs[0].([]GetDomainsV2DomainLink)[vs[1].(int)]
+	}).(GetDomainsV2DomainLinkOutput)
+}
+
 type GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicy struct {
 	// Cluster external identifier.
 	ClusterExtId string `pulumi:"clusterExtId"`
@@ -4839,6 +8540,10 @@ type GetEntityGroupV2AllowedConfigEntity struct {
 	// String pattern for matching entities.
 	ReferenceString string `pulumi:"referenceString"`
 	// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+	SelectBy string `pulumi:"selectBy"`
+	// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
+	//
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 	SelectedBy string `pulumi:"selectedBy"`
 	// The type of entity (e.g. VM, ADDRESS_GROUP).
 	Type string `pulumi:"type"`
@@ -4871,6 +8576,10 @@ type GetEntityGroupV2AllowedConfigEntityArgs struct {
 	// String pattern for matching entities.
 	ReferenceString pulumi.StringInput `pulumi:"referenceString"`
 	// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+	SelectBy pulumi.StringInput `pulumi:"selectBy"`
+	// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
+	//
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 	SelectedBy pulumi.StringInput `pulumi:"selectedBy"`
 	// The type of entity (e.g. VM, ADDRESS_GROUP).
 	Type pulumi.StringInput `pulumi:"type"`
@@ -4967,6 +8676,13 @@ func (o GetEntityGroupV2AllowedConfigEntityOutput) ReferenceString() pulumi.Stri
 }
 
 // The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+func (o GetEntityGroupV2AllowedConfigEntityOutput) SelectBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEntityGroupV2AllowedConfigEntity) string { return v.SelectBy }).(pulumi.StringOutput)
+}
+
+// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
+//
+// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 func (o GetEntityGroupV2AllowedConfigEntityOutput) SelectedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEntityGroupV2AllowedConfigEntity) string { return v.SelectedBy }).(pulumi.StringOutput)
 }
@@ -5493,6 +9209,10 @@ type GetEntityGroupV2ExceptConfigEntity struct {
 	// List of reference external identifiers.
 	ReferenceExtIds []string `pulumi:"referenceExtIds"`
 	// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+	SelectBy string `pulumi:"selectBy"`
+	// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
+	//
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 	SelectedBy string `pulumi:"selectedBy"`
 	// The type of entity (e.g. VM, ADDRESS_GROUP).
 	Type string `pulumi:"type"`
@@ -5517,6 +9237,10 @@ type GetEntityGroupV2ExceptConfigEntityArgs struct {
 	// List of reference external identifiers.
 	ReferenceExtIds pulumi.StringArrayInput `pulumi:"referenceExtIds"`
 	// The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+	SelectBy pulumi.StringInput `pulumi:"selectBy"`
+	// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
+	//
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 	SelectedBy pulumi.StringInput `pulumi:"selectedBy"`
 	// The type of entity (e.g. VM, ADDRESS_GROUP).
 	Type pulumi.StringInput `pulumi:"type"`
@@ -5593,6 +9317,13 @@ func (o GetEntityGroupV2ExceptConfigEntityOutput) ReferenceExtIds() pulumi.Strin
 }
 
 // The selection method (e.g. CATEGORY_EXT_ID, IP_VALUES, REGEX, FQDN_VALUES).
+func (o GetEntityGroupV2ExceptConfigEntityOutput) SelectBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEntityGroupV2ExceptConfigEntity) string { return v.SelectBy }).(pulumi.StringOutput)
+}
+
+// Deprecated alias for <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span>.
+//
+// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 func (o GetEntityGroupV2ExceptConfigEntityOutput) SelectedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEntityGroupV2ExceptConfigEntity) string { return v.SelectedBy }).(pulumi.StringOutput)
 }
@@ -6439,8 +10170,10 @@ type GetEntityGroupsV2EntityGroupAllowedConfigEntity struct {
 	MatchCriteria   string                                                   `pulumi:"matchCriteria"`
 	ReferenceExtIds []string                                                 `pulumi:"referenceExtIds"`
 	ReferenceString string                                                   `pulumi:"referenceString"`
-	SelectedBy      string                                                   `pulumi:"selectedBy"`
-	Type            string                                                   `pulumi:"type"`
+	SelectBy        string                                                   `pulumi:"selectBy"`
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+	SelectedBy string `pulumi:"selectedBy"`
+	Type       string `pulumi:"type"`
 }
 
 // GetEntityGroupsV2EntityGroupAllowedConfigEntityInput is an input type that accepts GetEntityGroupsV2EntityGroupAllowedConfigEntityArgs and GetEntityGroupsV2EntityGroupAllowedConfigEntityOutput values.
@@ -6462,8 +10195,10 @@ type GetEntityGroupsV2EntityGroupAllowedConfigEntityArgs struct {
 	MatchCriteria   pulumi.StringInput                                               `pulumi:"matchCriteria"`
 	ReferenceExtIds pulumi.StringArrayInput                                          `pulumi:"referenceExtIds"`
 	ReferenceString pulumi.StringInput                                               `pulumi:"referenceString"`
-	SelectedBy      pulumi.StringInput                                               `pulumi:"selectedBy"`
-	Type            pulumi.StringInput                                               `pulumi:"type"`
+	SelectBy        pulumi.StringInput                                               `pulumi:"selectBy"`
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+	SelectedBy pulumi.StringInput `pulumi:"selectedBy"`
+	Type       pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetEntityGroupsV2EntityGroupAllowedConfigEntityArgs) ElementType() reflect.Type {
@@ -6549,6 +10284,11 @@ func (o GetEntityGroupsV2EntityGroupAllowedConfigEntityOutput) ReferenceString()
 	return o.ApplyT(func(v GetEntityGroupsV2EntityGroupAllowedConfigEntity) string { return v.ReferenceString }).(pulumi.StringOutput)
 }
 
+func (o GetEntityGroupsV2EntityGroupAllowedConfigEntityOutput) SelectBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEntityGroupsV2EntityGroupAllowedConfigEntity) string { return v.SelectBy }).(pulumi.StringOutput)
+}
+
+// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 func (o GetEntityGroupsV2EntityGroupAllowedConfigEntityOutput) SelectedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEntityGroupsV2EntityGroupAllowedConfigEntity) string { return v.SelectedBy }).(pulumi.StringOutput)
 }
@@ -7072,8 +10812,10 @@ type GetEntityGroupsV2EntityGroupExceptConfigEntity struct {
 	Addresses       []GetEntityGroupsV2EntityGroupExceptConfigEntityAddress `pulumi:"addresses"`
 	IpRanges        []GetEntityGroupsV2EntityGroupExceptConfigEntityIpRange `pulumi:"ipRanges"`
 	ReferenceExtIds []string                                                `pulumi:"referenceExtIds"`
-	SelectedBy      string                                                  `pulumi:"selectedBy"`
-	Type            string                                                  `pulumi:"type"`
+	SelectBy        string                                                  `pulumi:"selectBy"`
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+	SelectedBy string `pulumi:"selectedBy"`
+	Type       string `pulumi:"type"`
 }
 
 // GetEntityGroupsV2EntityGroupExceptConfigEntityInput is an input type that accepts GetEntityGroupsV2EntityGroupExceptConfigEntityArgs and GetEntityGroupsV2EntityGroupExceptConfigEntityOutput values.
@@ -7091,8 +10833,10 @@ type GetEntityGroupsV2EntityGroupExceptConfigEntityArgs struct {
 	Addresses       GetEntityGroupsV2EntityGroupExceptConfigEntityAddressArrayInput `pulumi:"addresses"`
 	IpRanges        GetEntityGroupsV2EntityGroupExceptConfigEntityIpRangeArrayInput `pulumi:"ipRanges"`
 	ReferenceExtIds pulumi.StringArrayInput                                         `pulumi:"referenceExtIds"`
-	SelectedBy      pulumi.StringInput                                              `pulumi:"selectedBy"`
-	Type            pulumi.StringInput                                              `pulumi:"type"`
+	SelectBy        pulumi.StringInput                                              `pulumi:"selectBy"`
+	// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
+	SelectedBy pulumi.StringInput `pulumi:"selectedBy"`
+	Type       pulumi.StringInput `pulumi:"type"`
 }
 
 func (GetEntityGroupsV2EntityGroupExceptConfigEntityArgs) ElementType() reflect.Type {
@@ -7162,6 +10906,11 @@ func (o GetEntityGroupsV2EntityGroupExceptConfigEntityOutput) ReferenceExtIds() 
 	return o.ApplyT(func(v GetEntityGroupsV2EntityGroupExceptConfigEntity) []string { return v.ReferenceExtIds }).(pulumi.StringArrayOutput)
 }
 
+func (o GetEntityGroupsV2EntityGroupExceptConfigEntityOutput) SelectBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetEntityGroupsV2EntityGroupExceptConfigEntity) string { return v.SelectBy }).(pulumi.StringOutput)
+}
+
+// Deprecated: Use <span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`">`selectBy`</span> instead. <span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`">`selectedBy`</span> will be removed in a future release.
 func (o GetEntityGroupsV2EntityGroupExceptConfigEntityOutput) SelectedBy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEntityGroupsV2EntityGroupExceptConfigEntity) string { return v.SelectedBy }).(pulumi.StringOutput)
 }
@@ -55887,3891 +59636,67 @@ func (o GetLcmEntityV2AvailableVersionArrayOutput) Index(i pulumi.IntInput) GetL
 	}).(GetLcmEntityV2AvailableVersionOutput)
 }
 
-type GetLcmEntityV2AvailableVersionDependency struct {
-	// Information of the dependent entity versions for this available entity.
-	DependentVersions []GetLcmEntityV2AvailableVersionDependencyDependentVersion `pulumi:"dependentVersions"`
-	// LCM entity class.
-	EntityClass string `pulumi:"entityClass"`
-	// LCM entity model.
-	EntityModel string `pulumi:"entityModel"`
-	// Type of an LCM entity.  Enum Values:
-	// * `FIRMWARE`: LCM entity type firmware.
-	// * `SOFTWARE`: LCM entity type software.
-	EntityType string `pulumi:"entityType"`
-	// Current version of an LCM entity.
-	EntityVersion string `pulumi:"entityVersion"`
-	// ExtId of the LCM entity.
-	ExtId string `pulumi:"extId"`
-	// A hardware family for a LCM entity.
-	HardwareFamily string `pulumi:"hardwareFamily"`
-	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links []GetLcmEntityV2AvailableVersionDependencyLink `pulumi:"links"`
-	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId string `pulumi:"tenantId"`
-}
-
-// GetLcmEntityV2AvailableVersionDependencyInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyArgs and GetLcmEntityV2AvailableVersionDependencyOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyArgs{...}
-type GetLcmEntityV2AvailableVersionDependencyInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyOutput() GetLcmEntityV2AvailableVersionDependencyOutput
-	ToGetLcmEntityV2AvailableVersionDependencyOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyArgs struct {
-	// Information of the dependent entity versions for this available entity.
-	DependentVersions GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput `pulumi:"dependentVersions"`
-	// LCM entity class.
-	EntityClass pulumi.StringInput `pulumi:"entityClass"`
-	// LCM entity model.
-	EntityModel pulumi.StringInput `pulumi:"entityModel"`
-	// Type of an LCM entity.  Enum Values:
-	// * `FIRMWARE`: LCM entity type firmware.
-	// * `SOFTWARE`: LCM entity type software.
-	EntityType pulumi.StringInput `pulumi:"entityType"`
-	// Current version of an LCM entity.
-	EntityVersion pulumi.StringInput `pulumi:"entityVersion"`
-	// ExtId of the LCM entity.
-	ExtId pulumi.StringInput `pulumi:"extId"`
-	// A hardware family for a LCM entity.
-	HardwareFamily pulumi.StringInput `pulumi:"hardwareFamily"`
-	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links GetLcmEntityV2AvailableVersionDependencyLinkArrayInput `pulumi:"links"`
-	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId pulumi.StringInput `pulumi:"tenantId"`
-}
-
-func (GetLcmEntityV2AvailableVersionDependencyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependency)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyArgs) ToGetLcmEntityV2AvailableVersionDependencyOutput() GetLcmEntityV2AvailableVersionDependencyOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyArgs) ToGetLcmEntityV2AvailableVersionDependencyOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyOutput)
-}
-
-// GetLcmEntityV2AvailableVersionDependencyArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyArray and GetLcmEntityV2AvailableVersionDependencyArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyArrayInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyArray{ GetLcmEntityV2AvailableVersionDependencyArgs{...} }
-type GetLcmEntityV2AvailableVersionDependencyArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyArrayOutput() GetLcmEntityV2AvailableVersionDependencyArrayOutput
-	ToGetLcmEntityV2AvailableVersionDependencyArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyArrayOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyArray []GetLcmEntityV2AvailableVersionDependencyInput
-
-func (GetLcmEntityV2AvailableVersionDependencyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependency)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyArray) ToGetLcmEntityV2AvailableVersionDependencyArrayOutput() GetLcmEntityV2AvailableVersionDependencyArrayOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyArray) ToGetLcmEntityV2AvailableVersionDependencyArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyArrayOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependency)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) ToGetLcmEntityV2AvailableVersionDependencyOutput() GetLcmEntityV2AvailableVersionDependencyOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) ToGetLcmEntityV2AvailableVersionDependencyOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyOutput {
-	return o
-}
-
-// Information of the dependent entity versions for this available entity.
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) DependentVersions() GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) []GetLcmEntityV2AvailableVersionDependencyDependentVersion {
-		return v.DependentVersions
-	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput)
-}
-
-// LCM entity class.
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) EntityClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.EntityClass }).(pulumi.StringOutput)
-}
-
-// LCM entity model.
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) EntityModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.EntityModel }).(pulumi.StringOutput)
-}
-
-// Type of an LCM entity.  Enum Values:
-// * `FIRMWARE`: LCM entity type firmware.
-// * `SOFTWARE`: LCM entity type software.
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.EntityType }).(pulumi.StringOutput)
-}
-
-// Current version of an LCM entity.
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) EntityVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.EntityVersion }).(pulumi.StringOutput)
-}
-
-// ExtId of the LCM entity.
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-// A hardware family for a LCM entity.
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) HardwareFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.HardwareFamily }).(pulumi.StringOutput)
-}
-
-// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) Links() GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) []GetLcmEntityV2AvailableVersionDependencyLink {
-		return v.Links
-	}).(GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput)
-}
-
-// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-func (o GetLcmEntityV2AvailableVersionDependencyOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependency) string { return v.TenantId }).(pulumi.StringOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependency)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyArrayOutput() GetLcmEntityV2AvailableVersionDependencyArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependency {
-		return vs[0].([]GetLcmEntityV2AvailableVersionDependency)[vs[1].(int)]
-	}).(GetLcmEntityV2AvailableVersionDependencyOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersion struct {
-	// The key of the key-value pair.
-	Name string `pulumi:"name"`
-	// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
-	Values []GetLcmEntityV2AvailableVersionDependencyDependentVersionValue `pulumi:"values"`
-}
-
-// GetLcmEntityV2AvailableVersionDependencyDependentVersionInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs and GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs{...}
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs struct {
-	// The key of the key-value pair.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
-	Values GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput `pulumi:"values"`
-}
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersion)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput)
-}
-
-// GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionArray and GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyDependentVersionArray{ GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs{...} }
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionArray []GetLcmEntityV2AvailableVersionDependencyDependentVersionInput
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersion)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersion)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
-	return o
-}
-
-// The key of the key-value pair.
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersion) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput) Values() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersion) []GetLcmEntityV2AvailableVersionDependencyDependentVersionValue {
-		return v.Values
-	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersion)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependencyDependentVersion {
-		return vs[0].([]GetLcmEntityV2AvailableVersionDependencyDependentVersion)[vs[1].(int)]
-	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValue struct {
-	Boolean      bool                                                                       `pulumi:"boolean"`
-	Integer      int                                                                        `pulumi:"integer"`
-	IntegerLists []int                                                                      `pulumi:"integerLists"`
-	MapOfStrings []GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString `pulumi:"mapOfStrings"`
-	Object       map[string]string                                                          `pulumi:"object"`
-	String       string                                                                     `pulumi:"string"`
-	StringLists  []string                                                                   `pulumi:"stringLists"`
-}
-
-// GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs and GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs{...}
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs struct {
-	Boolean      pulumi.BoolInput                                                                   `pulumi:"boolean"`
-	Integer      pulumi.IntInput                                                                    `pulumi:"integer"`
-	IntegerLists pulumi.IntArrayInput                                                               `pulumi:"integerLists"`
-	MapOfStrings GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput `pulumi:"mapOfStrings"`
-	Object       pulumi.StringMapInput                                                              `pulumi:"object"`
-	String       pulumi.StringInput                                                                 `pulumi:"string"`
-	StringLists  pulumi.StringArrayInput                                                            `pulumi:"stringLists"`
-}
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput)
-}
-
-// GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray and GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray{ GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs{...} }
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray []GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) Boolean() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) bool { return v.Boolean }).(pulumi.BoolOutput)
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) Integer() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) int { return v.Integer }).(pulumi.IntOutput)
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) IntegerLists() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) []int { return v.IntegerLists }).(pulumi.IntArrayOutput)
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) MapOfStrings() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) []GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString {
-		return v.MapOfStrings
-	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput)
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) Object() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) map[string]string {
-		return v.Object
-	}).(pulumi.StringMapOutput)
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) String() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) string { return v.String }).(pulumi.StringOutput)
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput) StringLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValue) []string { return v.StringLists }).(pulumi.StringArrayOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependencyDependentVersionValue {
-		return vs[0].([]GetLcmEntityV2AvailableVersionDependencyDependentVersionValue)[vs[1].(int)]
-	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString struct {
-	Map map[string]string `pulumi:"map"`
-}
-
-// GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs and GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs{...}
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs struct {
-	Map pulumi.StringMapInput `pulumi:"map"`
-}
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput)
-}
-
-// GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray and GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray{ GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs{...} }
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput
-	ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray []GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput) Map() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString) map[string]string {
-		return v.Map
-	}).(pulumi.StringMapOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput() GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString {
-		return vs[0].([]GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfString)[vs[1].(int)]
-	}).(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyLink struct {
-	Href string `pulumi:"href"`
-	Rel  string `pulumi:"rel"`
-}
-
-// GetLcmEntityV2AvailableVersionDependencyLinkInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyLinkArgs and GetLcmEntityV2AvailableVersionDependencyLinkOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyLinkInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyLinkArgs{...}
-type GetLcmEntityV2AvailableVersionDependencyLinkInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyLinkOutput() GetLcmEntityV2AvailableVersionDependencyLinkOutput
-	ToGetLcmEntityV2AvailableVersionDependencyLinkOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyLinkOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyLinkArgs struct {
-	Href pulumi.StringInput `pulumi:"href"`
-	Rel  pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetLcmEntityV2AvailableVersionDependencyLinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyLink)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyLinkArgs) ToGetLcmEntityV2AvailableVersionDependencyLinkOutput() GetLcmEntityV2AvailableVersionDependencyLinkOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyLinkOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyLinkArgs) ToGetLcmEntityV2AvailableVersionDependencyLinkOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyLinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyLinkOutput)
-}
-
-// GetLcmEntityV2AvailableVersionDependencyLinkArrayInput is an input type that accepts GetLcmEntityV2AvailableVersionDependencyLinkArray and GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2AvailableVersionDependencyLinkArrayInput` via:
-//
-//	GetLcmEntityV2AvailableVersionDependencyLinkArray{ GetLcmEntityV2AvailableVersionDependencyLinkArgs{...} }
-type GetLcmEntityV2AvailableVersionDependencyLinkArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutput() GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput
-	ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutputWithContext(context.Context) GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput
-}
-
-type GetLcmEntityV2AvailableVersionDependencyLinkArray []GetLcmEntityV2AvailableVersionDependencyLinkInput
-
-func (GetLcmEntityV2AvailableVersionDependencyLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyLink)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyLinkArray) ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutput() GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
-	return i.ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2AvailableVersionDependencyLinkArray) ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyLinkOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyLinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyLink)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyLinkOutput) ToGetLcmEntityV2AvailableVersionDependencyLinkOutput() GetLcmEntityV2AvailableVersionDependencyLinkOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyLinkOutput) ToGetLcmEntityV2AvailableVersionDependencyLinkOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyLinkOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyLinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyLink) string { return v.Href }).(pulumi.StringOutput)
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyLinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2AvailableVersionDependencyLink) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2AvailableVersionDependencyLink)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutput() GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput) ToGetLcmEntityV2AvailableVersionDependencyLinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2AvailableVersionDependencyLinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2AvailableVersionDependencyLink {
-		return vs[0].([]GetLcmEntityV2AvailableVersionDependencyLink)[vs[1].(int)]
-	}).(GetLcmEntityV2AvailableVersionDependencyLinkOutput)
-}
-
-type GetLcmEntityV2EntityDetail struct {
-	// The key of the key-value pair.
-	Name string `pulumi:"name"`
-	// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
-	Values []GetLcmEntityV2EntityDetailValue `pulumi:"values"`
-}
-
-// GetLcmEntityV2EntityDetailInput is an input type that accepts GetLcmEntityV2EntityDetailArgs and GetLcmEntityV2EntityDetailOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2EntityDetailInput` via:
-//
-//	GetLcmEntityV2EntityDetailArgs{...}
-type GetLcmEntityV2EntityDetailInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2EntityDetailOutput() GetLcmEntityV2EntityDetailOutput
-	ToGetLcmEntityV2EntityDetailOutputWithContext(context.Context) GetLcmEntityV2EntityDetailOutput
-}
-
-type GetLcmEntityV2EntityDetailArgs struct {
-	// The key of the key-value pair.
-	Name pulumi.StringInput `pulumi:"name"`
-	// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
-	Values GetLcmEntityV2EntityDetailValueArrayInput `pulumi:"values"`
-}
-
-func (GetLcmEntityV2EntityDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2EntityDetail)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2EntityDetailArgs) ToGetLcmEntityV2EntityDetailOutput() GetLcmEntityV2EntityDetailOutput {
-	return i.ToGetLcmEntityV2EntityDetailOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2EntityDetailArgs) ToGetLcmEntityV2EntityDetailOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailOutput)
-}
-
-// GetLcmEntityV2EntityDetailArrayInput is an input type that accepts GetLcmEntityV2EntityDetailArray and GetLcmEntityV2EntityDetailArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2EntityDetailArrayInput` via:
-//
-//	GetLcmEntityV2EntityDetailArray{ GetLcmEntityV2EntityDetailArgs{...} }
-type GetLcmEntityV2EntityDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2EntityDetailArrayOutput() GetLcmEntityV2EntityDetailArrayOutput
-	ToGetLcmEntityV2EntityDetailArrayOutputWithContext(context.Context) GetLcmEntityV2EntityDetailArrayOutput
-}
-
-type GetLcmEntityV2EntityDetailArray []GetLcmEntityV2EntityDetailInput
-
-func (GetLcmEntityV2EntityDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetail)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2EntityDetailArray) ToGetLcmEntityV2EntityDetailArrayOutput() GetLcmEntityV2EntityDetailArrayOutput {
-	return i.ToGetLcmEntityV2EntityDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2EntityDetailArray) ToGetLcmEntityV2EntityDetailArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailArrayOutput)
-}
-
-type GetLcmEntityV2EntityDetailOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2EntityDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2EntityDetail)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2EntityDetailOutput) ToGetLcmEntityV2EntityDetailOutput() GetLcmEntityV2EntityDetailOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailOutput) ToGetLcmEntityV2EntityDetailOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailOutput {
-	return o
-}
-
-// The key of the key-value pair.
-func (o GetLcmEntityV2EntityDetailOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetail) string { return v.Name }).(pulumi.StringOutput)
-}
-
-// The value associated with the key for this key-value pair, string or integer or boolean or Array of strings or object or Array of MapOfString(objects) or Array of integers
-func (o GetLcmEntityV2EntityDetailOutput) Values() GetLcmEntityV2EntityDetailValueArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetail) []GetLcmEntityV2EntityDetailValue { return v.Values }).(GetLcmEntityV2EntityDetailValueArrayOutput)
-}
-
-type GetLcmEntityV2EntityDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2EntityDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetail)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2EntityDetailArrayOutput) ToGetLcmEntityV2EntityDetailArrayOutput() GetLcmEntityV2EntityDetailArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailArrayOutput) ToGetLcmEntityV2EntityDetailArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2EntityDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2EntityDetail {
-		return vs[0].([]GetLcmEntityV2EntityDetail)[vs[1].(int)]
-	}).(GetLcmEntityV2EntityDetailOutput)
-}
-
-type GetLcmEntityV2EntityDetailValue struct {
-	Boolean      bool                                         `pulumi:"boolean"`
-	Integer      int                                          `pulumi:"integer"`
-	IntegerLists []int                                        `pulumi:"integerLists"`
-	MapOfStrings []GetLcmEntityV2EntityDetailValueMapOfString `pulumi:"mapOfStrings"`
-	Object       map[string]string                            `pulumi:"object"`
-	String       string                                       `pulumi:"string"`
-	StringLists  []string                                     `pulumi:"stringLists"`
-}
-
-// GetLcmEntityV2EntityDetailValueInput is an input type that accepts GetLcmEntityV2EntityDetailValueArgs and GetLcmEntityV2EntityDetailValueOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2EntityDetailValueInput` via:
-//
-//	GetLcmEntityV2EntityDetailValueArgs{...}
-type GetLcmEntityV2EntityDetailValueInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2EntityDetailValueOutput() GetLcmEntityV2EntityDetailValueOutput
-	ToGetLcmEntityV2EntityDetailValueOutputWithContext(context.Context) GetLcmEntityV2EntityDetailValueOutput
-}
-
-type GetLcmEntityV2EntityDetailValueArgs struct {
-	Boolean      pulumi.BoolInput                                     `pulumi:"boolean"`
-	Integer      pulumi.IntInput                                      `pulumi:"integer"`
-	IntegerLists pulumi.IntArrayInput                                 `pulumi:"integerLists"`
-	MapOfStrings GetLcmEntityV2EntityDetailValueMapOfStringArrayInput `pulumi:"mapOfStrings"`
-	Object       pulumi.StringMapInput                                `pulumi:"object"`
-	String       pulumi.StringInput                                   `pulumi:"string"`
-	StringLists  pulumi.StringArrayInput                              `pulumi:"stringLists"`
-}
-
-func (GetLcmEntityV2EntityDetailValueArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2EntityDetailValue)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2EntityDetailValueArgs) ToGetLcmEntityV2EntityDetailValueOutput() GetLcmEntityV2EntityDetailValueOutput {
-	return i.ToGetLcmEntityV2EntityDetailValueOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2EntityDetailValueArgs) ToGetLcmEntityV2EntityDetailValueOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailValueOutput)
-}
-
-// GetLcmEntityV2EntityDetailValueArrayInput is an input type that accepts GetLcmEntityV2EntityDetailValueArray and GetLcmEntityV2EntityDetailValueArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2EntityDetailValueArrayInput` via:
-//
-//	GetLcmEntityV2EntityDetailValueArray{ GetLcmEntityV2EntityDetailValueArgs{...} }
-type GetLcmEntityV2EntityDetailValueArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2EntityDetailValueArrayOutput() GetLcmEntityV2EntityDetailValueArrayOutput
-	ToGetLcmEntityV2EntityDetailValueArrayOutputWithContext(context.Context) GetLcmEntityV2EntityDetailValueArrayOutput
-}
-
-type GetLcmEntityV2EntityDetailValueArray []GetLcmEntityV2EntityDetailValueInput
-
-func (GetLcmEntityV2EntityDetailValueArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetailValue)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2EntityDetailValueArray) ToGetLcmEntityV2EntityDetailValueArrayOutput() GetLcmEntityV2EntityDetailValueArrayOutput {
-	return i.ToGetLcmEntityV2EntityDetailValueArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2EntityDetailValueArray) ToGetLcmEntityV2EntityDetailValueArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailValueArrayOutput)
-}
-
-type GetLcmEntityV2EntityDetailValueOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2EntityDetailValueOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2EntityDetailValue)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) ToGetLcmEntityV2EntityDetailValueOutput() GetLcmEntityV2EntityDetailValueOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) ToGetLcmEntityV2EntityDetailValueOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) Boolean() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) bool { return v.Boolean }).(pulumi.BoolOutput)
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) Integer() pulumi.IntOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) int { return v.Integer }).(pulumi.IntOutput)
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) IntegerLists() pulumi.IntArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) []int { return v.IntegerLists }).(pulumi.IntArrayOutput)
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) MapOfStrings() GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) []GetLcmEntityV2EntityDetailValueMapOfString {
-		return v.MapOfStrings
-	}).(GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput)
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) Object() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) map[string]string { return v.Object }).(pulumi.StringMapOutput)
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) String() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) string { return v.String }).(pulumi.StringOutput)
-}
-
-func (o GetLcmEntityV2EntityDetailValueOutput) StringLists() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValue) []string { return v.StringLists }).(pulumi.StringArrayOutput)
-}
-
-type GetLcmEntityV2EntityDetailValueArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2EntityDetailValueArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetailValue)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2EntityDetailValueArrayOutput) ToGetLcmEntityV2EntityDetailValueArrayOutput() GetLcmEntityV2EntityDetailValueArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailValueArrayOutput) ToGetLcmEntityV2EntityDetailValueArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailValueArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2EntityDetailValueOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2EntityDetailValue {
-		return vs[0].([]GetLcmEntityV2EntityDetailValue)[vs[1].(int)]
-	}).(GetLcmEntityV2EntityDetailValueOutput)
-}
-
-type GetLcmEntityV2EntityDetailValueMapOfString struct {
-	Map map[string]string `pulumi:"map"`
-}
-
-// GetLcmEntityV2EntityDetailValueMapOfStringInput is an input type that accepts GetLcmEntityV2EntityDetailValueMapOfStringArgs and GetLcmEntityV2EntityDetailValueMapOfStringOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2EntityDetailValueMapOfStringInput` via:
-//
-//	GetLcmEntityV2EntityDetailValueMapOfStringArgs{...}
-type GetLcmEntityV2EntityDetailValueMapOfStringInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2EntityDetailValueMapOfStringOutput() GetLcmEntityV2EntityDetailValueMapOfStringOutput
-	ToGetLcmEntityV2EntityDetailValueMapOfStringOutputWithContext(context.Context) GetLcmEntityV2EntityDetailValueMapOfStringOutput
-}
-
-type GetLcmEntityV2EntityDetailValueMapOfStringArgs struct {
-	Map pulumi.StringMapInput `pulumi:"map"`
-}
-
-func (GetLcmEntityV2EntityDetailValueMapOfStringArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2EntityDetailValueMapOfString)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2EntityDetailValueMapOfStringArgs) ToGetLcmEntityV2EntityDetailValueMapOfStringOutput() GetLcmEntityV2EntityDetailValueMapOfStringOutput {
-	return i.ToGetLcmEntityV2EntityDetailValueMapOfStringOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2EntityDetailValueMapOfStringArgs) ToGetLcmEntityV2EntityDetailValueMapOfStringOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueMapOfStringOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailValueMapOfStringOutput)
-}
-
-// GetLcmEntityV2EntityDetailValueMapOfStringArrayInput is an input type that accepts GetLcmEntityV2EntityDetailValueMapOfStringArray and GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2EntityDetailValueMapOfStringArrayInput` via:
-//
-//	GetLcmEntityV2EntityDetailValueMapOfStringArray{ GetLcmEntityV2EntityDetailValueMapOfStringArgs{...} }
-type GetLcmEntityV2EntityDetailValueMapOfStringArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutput() GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput
-	ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutputWithContext(context.Context) GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput
-}
-
-type GetLcmEntityV2EntityDetailValueMapOfStringArray []GetLcmEntityV2EntityDetailValueMapOfStringInput
-
-func (GetLcmEntityV2EntityDetailValueMapOfStringArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetailValueMapOfString)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2EntityDetailValueMapOfStringArray) ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutput() GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
-	return i.ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2EntityDetailValueMapOfStringArray) ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput)
-}
-
-type GetLcmEntityV2EntityDetailValueMapOfStringOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2EntityDetailValueMapOfStringOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2EntityDetailValueMapOfString)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2EntityDetailValueMapOfStringOutput) ToGetLcmEntityV2EntityDetailValueMapOfStringOutput() GetLcmEntityV2EntityDetailValueMapOfStringOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailValueMapOfStringOutput) ToGetLcmEntityV2EntityDetailValueMapOfStringOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueMapOfStringOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailValueMapOfStringOutput) Map() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetLcmEntityV2EntityDetailValueMapOfString) map[string]string { return v.Map }).(pulumi.StringMapOutput)
-}
-
-type GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2EntityDetailValueMapOfString)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput) ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutput() GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput) ToGetLcmEntityV2EntityDetailValueMapOfStringArrayOutputWithContext(ctx context.Context) GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2EntityDetailValueMapOfStringOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2EntityDetailValueMapOfString {
-		return vs[0].([]GetLcmEntityV2EntityDetailValueMapOfString)[vs[1].(int)]
-	}).(GetLcmEntityV2EntityDetailValueMapOfStringOutput)
-}
-
-type GetLcmEntityV2Link struct {
-	Href string `pulumi:"href"`
-	Rel  string `pulumi:"rel"`
-}
-
-// GetLcmEntityV2LinkInput is an input type that accepts GetLcmEntityV2LinkArgs and GetLcmEntityV2LinkOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2LinkInput` via:
-//
-//	GetLcmEntityV2LinkArgs{...}
-type GetLcmEntityV2LinkInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2LinkOutput() GetLcmEntityV2LinkOutput
-	ToGetLcmEntityV2LinkOutputWithContext(context.Context) GetLcmEntityV2LinkOutput
-}
-
-type GetLcmEntityV2LinkArgs struct {
-	Href pulumi.StringInput `pulumi:"href"`
-	Rel  pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetLcmEntityV2LinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2Link)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2LinkArgs) ToGetLcmEntityV2LinkOutput() GetLcmEntityV2LinkOutput {
-	return i.ToGetLcmEntityV2LinkOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2LinkArgs) ToGetLcmEntityV2LinkOutputWithContext(ctx context.Context) GetLcmEntityV2LinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2LinkOutput)
-}
-
-// GetLcmEntityV2LinkArrayInput is an input type that accepts GetLcmEntityV2LinkArray and GetLcmEntityV2LinkArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2LinkArrayInput` via:
-//
-//	GetLcmEntityV2LinkArray{ GetLcmEntityV2LinkArgs{...} }
-type GetLcmEntityV2LinkArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2LinkArrayOutput() GetLcmEntityV2LinkArrayOutput
-	ToGetLcmEntityV2LinkArrayOutputWithContext(context.Context) GetLcmEntityV2LinkArrayOutput
-}
-
-type GetLcmEntityV2LinkArray []GetLcmEntityV2LinkInput
-
-func (GetLcmEntityV2LinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2Link)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2LinkArray) ToGetLcmEntityV2LinkArrayOutput() GetLcmEntityV2LinkArrayOutput {
-	return i.ToGetLcmEntityV2LinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2LinkArray) ToGetLcmEntityV2LinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2LinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2LinkArrayOutput)
-}
-
-type GetLcmEntityV2LinkOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2LinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2Link)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2LinkOutput) ToGetLcmEntityV2LinkOutput() GetLcmEntityV2LinkOutput {
-	return o
-}
-
-func (o GetLcmEntityV2LinkOutput) ToGetLcmEntityV2LinkOutputWithContext(ctx context.Context) GetLcmEntityV2LinkOutput {
-	return o
-}
-
-func (o GetLcmEntityV2LinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2Link) string { return v.Href }).(pulumi.StringOutput)
-}
-
-func (o GetLcmEntityV2LinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2Link) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetLcmEntityV2LinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2LinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2Link)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2LinkArrayOutput) ToGetLcmEntityV2LinkArrayOutput() GetLcmEntityV2LinkArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2LinkArrayOutput) ToGetLcmEntityV2LinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2LinkArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2LinkArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2LinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2Link {
-		return vs[0].([]GetLcmEntityV2Link)[vs[1].(int)]
-	}).(GetLcmEntityV2LinkOutput)
-}
-
-type GetLcmEntityV2LocationInfo struct {
-	// Scope of entity represented in LCM. This could be either Node or cluster type. Enum Values:
-	// * `PC`: Entity for which the scope is Prism Central wide.
-	// * `NODE`: Entity that belongs to a node in the cluster.
-	// * `CLUSTER`: Entity for which the scope is cluster wide.
-	LocationType string `pulumi:"locationType"`
-	// Location UUID of the resource.
-	Uuid string `pulumi:"uuid"`
-}
-
-// GetLcmEntityV2LocationInfoInput is an input type that accepts GetLcmEntityV2LocationInfoArgs and GetLcmEntityV2LocationInfoOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2LocationInfoInput` via:
-//
-//	GetLcmEntityV2LocationInfoArgs{...}
-type GetLcmEntityV2LocationInfoInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2LocationInfoOutput() GetLcmEntityV2LocationInfoOutput
-	ToGetLcmEntityV2LocationInfoOutputWithContext(context.Context) GetLcmEntityV2LocationInfoOutput
-}
-
-type GetLcmEntityV2LocationInfoArgs struct {
-	// Scope of entity represented in LCM. This could be either Node or cluster type. Enum Values:
-	// * `PC`: Entity for which the scope is Prism Central wide.
-	// * `NODE`: Entity that belongs to a node in the cluster.
-	// * `CLUSTER`: Entity for which the scope is cluster wide.
-	LocationType pulumi.StringInput `pulumi:"locationType"`
-	// Location UUID of the resource.
-	Uuid pulumi.StringInput `pulumi:"uuid"`
-}
-
-func (GetLcmEntityV2LocationInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2LocationInfo)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2LocationInfoArgs) ToGetLcmEntityV2LocationInfoOutput() GetLcmEntityV2LocationInfoOutput {
-	return i.ToGetLcmEntityV2LocationInfoOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2LocationInfoArgs) ToGetLcmEntityV2LocationInfoOutputWithContext(ctx context.Context) GetLcmEntityV2LocationInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2LocationInfoOutput)
-}
-
-// GetLcmEntityV2LocationInfoArrayInput is an input type that accepts GetLcmEntityV2LocationInfoArray and GetLcmEntityV2LocationInfoArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2LocationInfoArrayInput` via:
-//
-//	GetLcmEntityV2LocationInfoArray{ GetLcmEntityV2LocationInfoArgs{...} }
-type GetLcmEntityV2LocationInfoArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2LocationInfoArrayOutput() GetLcmEntityV2LocationInfoArrayOutput
-	ToGetLcmEntityV2LocationInfoArrayOutputWithContext(context.Context) GetLcmEntityV2LocationInfoArrayOutput
-}
-
-type GetLcmEntityV2LocationInfoArray []GetLcmEntityV2LocationInfoInput
-
-func (GetLcmEntityV2LocationInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2LocationInfo)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2LocationInfoArray) ToGetLcmEntityV2LocationInfoArrayOutput() GetLcmEntityV2LocationInfoArrayOutput {
-	return i.ToGetLcmEntityV2LocationInfoArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2LocationInfoArray) ToGetLcmEntityV2LocationInfoArrayOutputWithContext(ctx context.Context) GetLcmEntityV2LocationInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2LocationInfoArrayOutput)
-}
-
-type GetLcmEntityV2LocationInfoOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2LocationInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2LocationInfo)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2LocationInfoOutput) ToGetLcmEntityV2LocationInfoOutput() GetLcmEntityV2LocationInfoOutput {
-	return o
-}
-
-func (o GetLcmEntityV2LocationInfoOutput) ToGetLcmEntityV2LocationInfoOutputWithContext(ctx context.Context) GetLcmEntityV2LocationInfoOutput {
-	return o
-}
-
-// Scope of entity represented in LCM. This could be either Node or cluster type. Enum Values:
-// * `PC`: Entity for which the scope is Prism Central wide.
-// * `NODE`: Entity that belongs to a node in the cluster.
-// * `CLUSTER`: Entity for which the scope is cluster wide.
-func (o GetLcmEntityV2LocationInfoOutput) LocationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2LocationInfo) string { return v.LocationType }).(pulumi.StringOutput)
-}
-
-// Location UUID of the resource.
-func (o GetLcmEntityV2LocationInfoOutput) Uuid() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2LocationInfo) string { return v.Uuid }).(pulumi.StringOutput)
-}
-
-type GetLcmEntityV2LocationInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2LocationInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2LocationInfo)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2LocationInfoArrayOutput) ToGetLcmEntityV2LocationInfoArrayOutput() GetLcmEntityV2LocationInfoArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2LocationInfoArrayOutput) ToGetLcmEntityV2LocationInfoArrayOutputWithContext(ctx context.Context) GetLcmEntityV2LocationInfoArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2LocationInfoArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2LocationInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2LocationInfo {
-		return vs[0].([]GetLcmEntityV2LocationInfo)[vs[1].(int)]
-	}).(GetLcmEntityV2LocationInfoOutput)
-}
-
-type GetLcmEntityV2SubEntity struct {
-	// LCM entity class.
-	EntityClass string `pulumi:"entityClass"`
-	// LCM entity model.
-	EntityModel string `pulumi:"entityModel"`
-	// Type of an LCM entity.  Enum Values:
-	// * `FIRMWARE`: LCM entity type firmware.
-	// * `SOFTWARE`: LCM entity type software.
-	EntityType string `pulumi:"entityType"`
-	// Current version of an LCM entity.
-	EntityVersion string `pulumi:"entityVersion"`
-	// ExtId of the LCM entity.
-	ExtId string `pulumi:"extId"`
-	// A hardware family for a LCM entity.
-	HardwareFamily string `pulumi:"hardwareFamily"`
-	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links []GetLcmEntityV2SubEntityLink `pulumi:"links"`
-	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId string `pulumi:"tenantId"`
-}
-
-// GetLcmEntityV2SubEntityInput is an input type that accepts GetLcmEntityV2SubEntityArgs and GetLcmEntityV2SubEntityOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2SubEntityInput` via:
-//
-//	GetLcmEntityV2SubEntityArgs{...}
-type GetLcmEntityV2SubEntityInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2SubEntityOutput() GetLcmEntityV2SubEntityOutput
-	ToGetLcmEntityV2SubEntityOutputWithContext(context.Context) GetLcmEntityV2SubEntityOutput
-}
-
-type GetLcmEntityV2SubEntityArgs struct {
-	// LCM entity class.
-	EntityClass pulumi.StringInput `pulumi:"entityClass"`
-	// LCM entity model.
-	EntityModel pulumi.StringInput `pulumi:"entityModel"`
-	// Type of an LCM entity.  Enum Values:
-	// * `FIRMWARE`: LCM entity type firmware.
-	// * `SOFTWARE`: LCM entity type software.
-	EntityType pulumi.StringInput `pulumi:"entityType"`
-	// Current version of an LCM entity.
-	EntityVersion pulumi.StringInput `pulumi:"entityVersion"`
-	// ExtId of the LCM entity.
-	ExtId pulumi.StringInput `pulumi:"extId"`
-	// A hardware family for a LCM entity.
-	HardwareFamily pulumi.StringInput `pulumi:"hardwareFamily"`
-	// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-	Links GetLcmEntityV2SubEntityLinkArrayInput `pulumi:"links"`
-	// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-	TenantId pulumi.StringInput `pulumi:"tenantId"`
-}
-
-func (GetLcmEntityV2SubEntityArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2SubEntity)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2SubEntityArgs) ToGetLcmEntityV2SubEntityOutput() GetLcmEntityV2SubEntityOutput {
-	return i.ToGetLcmEntityV2SubEntityOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2SubEntityArgs) ToGetLcmEntityV2SubEntityOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2SubEntityOutput)
-}
-
-// GetLcmEntityV2SubEntityArrayInput is an input type that accepts GetLcmEntityV2SubEntityArray and GetLcmEntityV2SubEntityArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2SubEntityArrayInput` via:
-//
-//	GetLcmEntityV2SubEntityArray{ GetLcmEntityV2SubEntityArgs{...} }
-type GetLcmEntityV2SubEntityArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2SubEntityArrayOutput() GetLcmEntityV2SubEntityArrayOutput
-	ToGetLcmEntityV2SubEntityArrayOutputWithContext(context.Context) GetLcmEntityV2SubEntityArrayOutput
-}
-
-type GetLcmEntityV2SubEntityArray []GetLcmEntityV2SubEntityInput
-
-func (GetLcmEntityV2SubEntityArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2SubEntity)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2SubEntityArray) ToGetLcmEntityV2SubEntityArrayOutput() GetLcmEntityV2SubEntityArrayOutput {
-	return i.ToGetLcmEntityV2SubEntityArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2SubEntityArray) ToGetLcmEntityV2SubEntityArrayOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2SubEntityArrayOutput)
-}
-
-type GetLcmEntityV2SubEntityOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2SubEntityOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2SubEntity)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2SubEntityOutput) ToGetLcmEntityV2SubEntityOutput() GetLcmEntityV2SubEntityOutput {
-	return o
-}
-
-func (o GetLcmEntityV2SubEntityOutput) ToGetLcmEntityV2SubEntityOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityOutput {
-	return o
-}
-
-// LCM entity class.
-func (o GetLcmEntityV2SubEntityOutput) EntityClass() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.EntityClass }).(pulumi.StringOutput)
-}
-
-// LCM entity model.
-func (o GetLcmEntityV2SubEntityOutput) EntityModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.EntityModel }).(pulumi.StringOutput)
-}
-
-// Type of an LCM entity.  Enum Values:
-// * `FIRMWARE`: LCM entity type firmware.
-// * `SOFTWARE`: LCM entity type software.
-func (o GetLcmEntityV2SubEntityOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.EntityType }).(pulumi.StringOutput)
-}
-
-// Current version of an LCM entity.
-func (o GetLcmEntityV2SubEntityOutput) EntityVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.EntityVersion }).(pulumi.StringOutput)
-}
-
-// ExtId of the LCM entity.
-func (o GetLcmEntityV2SubEntityOutput) ExtId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.ExtId }).(pulumi.StringOutput)
-}
-
-// A hardware family for a LCM entity.
-func (o GetLcmEntityV2SubEntityOutput) HardwareFamily() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.HardwareFamily }).(pulumi.StringOutput)
-}
-
-// A HATEOAS style link for the response. Each link contains a user-friendly name identifying the link and an address for retrieving the particular resource.
-func (o GetLcmEntityV2SubEntityOutput) Links() GetLcmEntityV2SubEntityLinkArrayOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntity) []GetLcmEntityV2SubEntityLink { return v.Links }).(GetLcmEntityV2SubEntityLinkArrayOutput)
-}
-
-// A globally unique identifier that represents the tenant that owns this entity. The system automatically assigns it, and it and is immutable from an API consumer perspective (some use cases may cause this Id to change - For instance, a use case may require the transfer of ownership of the entity, but these cases are handled automatically on the server).
-func (o GetLcmEntityV2SubEntityOutput) TenantId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntity) string { return v.TenantId }).(pulumi.StringOutput)
-}
-
-type GetLcmEntityV2SubEntityArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2SubEntityArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2SubEntity)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2SubEntityArrayOutput) ToGetLcmEntityV2SubEntityArrayOutput() GetLcmEntityV2SubEntityArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2SubEntityArrayOutput) ToGetLcmEntityV2SubEntityArrayOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2SubEntityArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2SubEntityOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2SubEntity {
-		return vs[0].([]GetLcmEntityV2SubEntity)[vs[1].(int)]
-	}).(GetLcmEntityV2SubEntityOutput)
-}
-
-type GetLcmEntityV2SubEntityLink struct {
-	Href string `pulumi:"href"`
-	Rel  string `pulumi:"rel"`
-}
-
-// GetLcmEntityV2SubEntityLinkInput is an input type that accepts GetLcmEntityV2SubEntityLinkArgs and GetLcmEntityV2SubEntityLinkOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2SubEntityLinkInput` via:
-//
-//	GetLcmEntityV2SubEntityLinkArgs{...}
-type GetLcmEntityV2SubEntityLinkInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2SubEntityLinkOutput() GetLcmEntityV2SubEntityLinkOutput
-	ToGetLcmEntityV2SubEntityLinkOutputWithContext(context.Context) GetLcmEntityV2SubEntityLinkOutput
-}
-
-type GetLcmEntityV2SubEntityLinkArgs struct {
-	Href pulumi.StringInput `pulumi:"href"`
-	Rel  pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetLcmEntityV2SubEntityLinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2SubEntityLink)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2SubEntityLinkArgs) ToGetLcmEntityV2SubEntityLinkOutput() GetLcmEntityV2SubEntityLinkOutput {
-	return i.ToGetLcmEntityV2SubEntityLinkOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2SubEntityLinkArgs) ToGetLcmEntityV2SubEntityLinkOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityLinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2SubEntityLinkOutput)
-}
-
-// GetLcmEntityV2SubEntityLinkArrayInput is an input type that accepts GetLcmEntityV2SubEntityLinkArray and GetLcmEntityV2SubEntityLinkArrayOutput values.
-// You can construct a concrete instance of `GetLcmEntityV2SubEntityLinkArrayInput` via:
-//
-//	GetLcmEntityV2SubEntityLinkArray{ GetLcmEntityV2SubEntityLinkArgs{...} }
-type GetLcmEntityV2SubEntityLinkArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmEntityV2SubEntityLinkArrayOutput() GetLcmEntityV2SubEntityLinkArrayOutput
-	ToGetLcmEntityV2SubEntityLinkArrayOutputWithContext(context.Context) GetLcmEntityV2SubEntityLinkArrayOutput
-}
-
-type GetLcmEntityV2SubEntityLinkArray []GetLcmEntityV2SubEntityLinkInput
-
-func (GetLcmEntityV2SubEntityLinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2SubEntityLink)(nil)).Elem()
-}
-
-func (i GetLcmEntityV2SubEntityLinkArray) ToGetLcmEntityV2SubEntityLinkArrayOutput() GetLcmEntityV2SubEntityLinkArrayOutput {
-	return i.ToGetLcmEntityV2SubEntityLinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmEntityV2SubEntityLinkArray) ToGetLcmEntityV2SubEntityLinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityLinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmEntityV2SubEntityLinkArrayOutput)
-}
-
-type GetLcmEntityV2SubEntityLinkOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2SubEntityLinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmEntityV2SubEntityLink)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2SubEntityLinkOutput) ToGetLcmEntityV2SubEntityLinkOutput() GetLcmEntityV2SubEntityLinkOutput {
-	return o
-}
-
-func (o GetLcmEntityV2SubEntityLinkOutput) ToGetLcmEntityV2SubEntityLinkOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityLinkOutput {
-	return o
-}
-
-func (o GetLcmEntityV2SubEntityLinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntityLink) string { return v.Href }).(pulumi.StringOutput)
-}
-
-func (o GetLcmEntityV2SubEntityLinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmEntityV2SubEntityLink) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetLcmEntityV2SubEntityLinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmEntityV2SubEntityLinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmEntityV2SubEntityLink)(nil)).Elem()
-}
-
-func (o GetLcmEntityV2SubEntityLinkArrayOutput) ToGetLcmEntityV2SubEntityLinkArrayOutput() GetLcmEntityV2SubEntityLinkArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2SubEntityLinkArrayOutput) ToGetLcmEntityV2SubEntityLinkArrayOutputWithContext(ctx context.Context) GetLcmEntityV2SubEntityLinkArrayOutput {
-	return o
-}
-
-func (o GetLcmEntityV2SubEntityLinkArrayOutput) Index(i pulumi.IntInput) GetLcmEntityV2SubEntityLinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmEntityV2SubEntityLink {
-		return vs[0].([]GetLcmEntityV2SubEntityLink)[vs[1].(int)]
-	}).(GetLcmEntityV2SubEntityLinkOutput)
-}
-
-type GetLcmStatusV2FrameworkVersion struct {
-	// - LCM framework version present in the LCM URL.
-	AvailableVersion string `pulumi:"availableVersion"`
-	// - Current LCM Version.
-	CurrentVersion string `pulumi:"currentVersion"`
-	// - Boolean that indicates if LCM framework update is needed.
-	IsUpdateNeeded bool `pulumi:"isUpdateNeeded"`
-}
-
-// GetLcmStatusV2FrameworkVersionInput is an input type that accepts GetLcmStatusV2FrameworkVersionArgs and GetLcmStatusV2FrameworkVersionOutput values.
-// You can construct a concrete instance of `GetLcmStatusV2FrameworkVersionInput` via:
-//
-//	GetLcmStatusV2FrameworkVersionArgs{...}
-type GetLcmStatusV2FrameworkVersionInput interface {
-	pulumi.Input
-
-	ToGetLcmStatusV2FrameworkVersionOutput() GetLcmStatusV2FrameworkVersionOutput
-	ToGetLcmStatusV2FrameworkVersionOutputWithContext(context.Context) GetLcmStatusV2FrameworkVersionOutput
-}
-
-type GetLcmStatusV2FrameworkVersionArgs struct {
-	// - LCM framework version present in the LCM URL.
-	AvailableVersion pulumi.StringInput `pulumi:"availableVersion"`
-	// - Current LCM Version.
-	CurrentVersion pulumi.StringInput `pulumi:"currentVersion"`
-	// - Boolean that indicates if LCM framework update is needed.
-	IsUpdateNeeded pulumi.BoolInput `pulumi:"isUpdateNeeded"`
-}
-
-func (GetLcmStatusV2FrameworkVersionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmStatusV2FrameworkVersion)(nil)).Elem()
-}
-
-func (i GetLcmStatusV2FrameworkVersionArgs) ToGetLcmStatusV2FrameworkVersionOutput() GetLcmStatusV2FrameworkVersionOutput {
-	return i.ToGetLcmStatusV2FrameworkVersionOutputWithContext(context.Background())
-}
-
-func (i GetLcmStatusV2FrameworkVersionArgs) ToGetLcmStatusV2FrameworkVersionOutputWithContext(ctx context.Context) GetLcmStatusV2FrameworkVersionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2FrameworkVersionOutput)
-}
-
-// GetLcmStatusV2FrameworkVersionArrayInput is an input type that accepts GetLcmStatusV2FrameworkVersionArray and GetLcmStatusV2FrameworkVersionArrayOutput values.
-// You can construct a concrete instance of `GetLcmStatusV2FrameworkVersionArrayInput` via:
-//
-//	GetLcmStatusV2FrameworkVersionArray{ GetLcmStatusV2FrameworkVersionArgs{...} }
-type GetLcmStatusV2FrameworkVersionArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmStatusV2FrameworkVersionArrayOutput() GetLcmStatusV2FrameworkVersionArrayOutput
-	ToGetLcmStatusV2FrameworkVersionArrayOutputWithContext(context.Context) GetLcmStatusV2FrameworkVersionArrayOutput
-}
-
-type GetLcmStatusV2FrameworkVersionArray []GetLcmStatusV2FrameworkVersionInput
-
-func (GetLcmStatusV2FrameworkVersionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmStatusV2FrameworkVersion)(nil)).Elem()
-}
-
-func (i GetLcmStatusV2FrameworkVersionArray) ToGetLcmStatusV2FrameworkVersionArrayOutput() GetLcmStatusV2FrameworkVersionArrayOutput {
-	return i.ToGetLcmStatusV2FrameworkVersionArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmStatusV2FrameworkVersionArray) ToGetLcmStatusV2FrameworkVersionArrayOutputWithContext(ctx context.Context) GetLcmStatusV2FrameworkVersionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2FrameworkVersionArrayOutput)
-}
-
-type GetLcmStatusV2FrameworkVersionOutput struct{ *pulumi.OutputState }
-
-func (GetLcmStatusV2FrameworkVersionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmStatusV2FrameworkVersion)(nil)).Elem()
-}
-
-func (o GetLcmStatusV2FrameworkVersionOutput) ToGetLcmStatusV2FrameworkVersionOutput() GetLcmStatusV2FrameworkVersionOutput {
-	return o
-}
-
-func (o GetLcmStatusV2FrameworkVersionOutput) ToGetLcmStatusV2FrameworkVersionOutputWithContext(ctx context.Context) GetLcmStatusV2FrameworkVersionOutput {
-	return o
-}
-
-// - LCM framework version present in the LCM URL.
-func (o GetLcmStatusV2FrameworkVersionOutput) AvailableVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmStatusV2FrameworkVersion) string { return v.AvailableVersion }).(pulumi.StringOutput)
-}
-
-// - Current LCM Version.
-func (o GetLcmStatusV2FrameworkVersionOutput) CurrentVersion() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmStatusV2FrameworkVersion) string { return v.CurrentVersion }).(pulumi.StringOutput)
-}
-
-// - Boolean that indicates if LCM framework update is needed.
-func (o GetLcmStatusV2FrameworkVersionOutput) IsUpdateNeeded() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetLcmStatusV2FrameworkVersion) bool { return v.IsUpdateNeeded }).(pulumi.BoolOutput)
-}
-
-type GetLcmStatusV2FrameworkVersionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmStatusV2FrameworkVersionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmStatusV2FrameworkVersion)(nil)).Elem()
-}
-
-func (o GetLcmStatusV2FrameworkVersionArrayOutput) ToGetLcmStatusV2FrameworkVersionArrayOutput() GetLcmStatusV2FrameworkVersionArrayOutput {
-	return o
-}
-
-func (o GetLcmStatusV2FrameworkVersionArrayOutput) ToGetLcmStatusV2FrameworkVersionArrayOutputWithContext(ctx context.Context) GetLcmStatusV2FrameworkVersionArrayOutput {
-	return o
-}
-
-func (o GetLcmStatusV2FrameworkVersionArrayOutput) Index(i pulumi.IntInput) GetLcmStatusV2FrameworkVersionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmStatusV2FrameworkVersion {
-		return vs[0].([]GetLcmStatusV2FrameworkVersion)[vs[1].(int)]
-	}).(GetLcmStatusV2FrameworkVersionOutput)
-}
-
-type GetLcmStatusV2InProgressOperation struct {
-	// - Root task UUID of the operation, if it is in running state.
-	OperationId string `pulumi:"operationId"`
-	// - Type of the operation tracked by the task. Values are:
-	// - `PRECHECKS`: Perform LCM prechecks for the intended update operation.
-	// - `INVENTORY`: Perform an LCM inventory operation.
-	// - `UPGRADE`: Perform upgrade operation to a specific target version for discovered LCM entity/entities.
-	// - `NONE`: Indicates that no operation is currently ongoing.
-	OperationType string `pulumi:"operationType"`
-}
-
-// GetLcmStatusV2InProgressOperationInput is an input type that accepts GetLcmStatusV2InProgressOperationArgs and GetLcmStatusV2InProgressOperationOutput values.
-// You can construct a concrete instance of `GetLcmStatusV2InProgressOperationInput` via:
-//
-//	GetLcmStatusV2InProgressOperationArgs{...}
-type GetLcmStatusV2InProgressOperationInput interface {
-	pulumi.Input
-
-	ToGetLcmStatusV2InProgressOperationOutput() GetLcmStatusV2InProgressOperationOutput
-	ToGetLcmStatusV2InProgressOperationOutputWithContext(context.Context) GetLcmStatusV2InProgressOperationOutput
-}
-
-type GetLcmStatusV2InProgressOperationArgs struct {
-	// - Root task UUID of the operation, if it is in running state.
-	OperationId pulumi.StringInput `pulumi:"operationId"`
-	// - Type of the operation tracked by the task. Values are:
-	// - `PRECHECKS`: Perform LCM prechecks for the intended update operation.
-	// - `INVENTORY`: Perform an LCM inventory operation.
-	// - `UPGRADE`: Perform upgrade operation to a specific target version for discovered LCM entity/entities.
-	// - `NONE`: Indicates that no operation is currently ongoing.
-	OperationType pulumi.StringInput `pulumi:"operationType"`
-}
-
-func (GetLcmStatusV2InProgressOperationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmStatusV2InProgressOperation)(nil)).Elem()
-}
-
-func (i GetLcmStatusV2InProgressOperationArgs) ToGetLcmStatusV2InProgressOperationOutput() GetLcmStatusV2InProgressOperationOutput {
-	return i.ToGetLcmStatusV2InProgressOperationOutputWithContext(context.Background())
-}
-
-func (i GetLcmStatusV2InProgressOperationArgs) ToGetLcmStatusV2InProgressOperationOutputWithContext(ctx context.Context) GetLcmStatusV2InProgressOperationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2InProgressOperationOutput)
-}
-
-// GetLcmStatusV2InProgressOperationArrayInput is an input type that accepts GetLcmStatusV2InProgressOperationArray and GetLcmStatusV2InProgressOperationArrayOutput values.
-// You can construct a concrete instance of `GetLcmStatusV2InProgressOperationArrayInput` via:
-//
-//	GetLcmStatusV2InProgressOperationArray{ GetLcmStatusV2InProgressOperationArgs{...} }
-type GetLcmStatusV2InProgressOperationArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmStatusV2InProgressOperationArrayOutput() GetLcmStatusV2InProgressOperationArrayOutput
-	ToGetLcmStatusV2InProgressOperationArrayOutputWithContext(context.Context) GetLcmStatusV2InProgressOperationArrayOutput
-}
-
-type GetLcmStatusV2InProgressOperationArray []GetLcmStatusV2InProgressOperationInput
-
-func (GetLcmStatusV2InProgressOperationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmStatusV2InProgressOperation)(nil)).Elem()
-}
-
-func (i GetLcmStatusV2InProgressOperationArray) ToGetLcmStatusV2InProgressOperationArrayOutput() GetLcmStatusV2InProgressOperationArrayOutput {
-	return i.ToGetLcmStatusV2InProgressOperationArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmStatusV2InProgressOperationArray) ToGetLcmStatusV2InProgressOperationArrayOutputWithContext(ctx context.Context) GetLcmStatusV2InProgressOperationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2InProgressOperationArrayOutput)
-}
-
-type GetLcmStatusV2InProgressOperationOutput struct{ *pulumi.OutputState }
-
-func (GetLcmStatusV2InProgressOperationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmStatusV2InProgressOperation)(nil)).Elem()
-}
-
-func (o GetLcmStatusV2InProgressOperationOutput) ToGetLcmStatusV2InProgressOperationOutput() GetLcmStatusV2InProgressOperationOutput {
-	return o
-}
-
-func (o GetLcmStatusV2InProgressOperationOutput) ToGetLcmStatusV2InProgressOperationOutputWithContext(ctx context.Context) GetLcmStatusV2InProgressOperationOutput {
-	return o
-}
-
-// - Root task UUID of the operation, if it is in running state.
-func (o GetLcmStatusV2InProgressOperationOutput) OperationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmStatusV2InProgressOperation) string { return v.OperationId }).(pulumi.StringOutput)
-}
-
-// - Type of the operation tracked by the task. Values are:
-// - `PRECHECKS`: Perform LCM prechecks for the intended update operation.
-// - `INVENTORY`: Perform an LCM inventory operation.
-// - `UPGRADE`: Perform upgrade operation to a specific target version for discovered LCM entity/entities.
-// - `NONE`: Indicates that no operation is currently ongoing.
-func (o GetLcmStatusV2InProgressOperationOutput) OperationType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmStatusV2InProgressOperation) string { return v.OperationType }).(pulumi.StringOutput)
-}
-
-type GetLcmStatusV2InProgressOperationArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmStatusV2InProgressOperationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmStatusV2InProgressOperation)(nil)).Elem()
-}
-
-func (o GetLcmStatusV2InProgressOperationArrayOutput) ToGetLcmStatusV2InProgressOperationArrayOutput() GetLcmStatusV2InProgressOperationArrayOutput {
-	return o
-}
-
-func (o GetLcmStatusV2InProgressOperationArrayOutput) ToGetLcmStatusV2InProgressOperationArrayOutputWithContext(ctx context.Context) GetLcmStatusV2InProgressOperationArrayOutput {
-	return o
-}
-
-func (o GetLcmStatusV2InProgressOperationArrayOutput) Index(i pulumi.IntInput) GetLcmStatusV2InProgressOperationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmStatusV2InProgressOperation {
-		return vs[0].([]GetLcmStatusV2InProgressOperation)[vs[1].(int)]
-	}).(GetLcmStatusV2InProgressOperationOutput)
-}
-
-type GetLcmStatusV2Link struct {
-	Href string `pulumi:"href"`
-	Rel  string `pulumi:"rel"`
-}
-
-// GetLcmStatusV2LinkInput is an input type that accepts GetLcmStatusV2LinkArgs and GetLcmStatusV2LinkOutput values.
-// You can construct a concrete instance of `GetLcmStatusV2LinkInput` via:
-//
-//	GetLcmStatusV2LinkArgs{...}
-type GetLcmStatusV2LinkInput interface {
-	pulumi.Input
-
-	ToGetLcmStatusV2LinkOutput() GetLcmStatusV2LinkOutput
-	ToGetLcmStatusV2LinkOutputWithContext(context.Context) GetLcmStatusV2LinkOutput
-}
-
-type GetLcmStatusV2LinkArgs struct {
-	Href pulumi.StringInput `pulumi:"href"`
-	Rel  pulumi.StringInput `pulumi:"rel"`
-}
-
-func (GetLcmStatusV2LinkArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmStatusV2Link)(nil)).Elem()
-}
-
-func (i GetLcmStatusV2LinkArgs) ToGetLcmStatusV2LinkOutput() GetLcmStatusV2LinkOutput {
-	return i.ToGetLcmStatusV2LinkOutputWithContext(context.Background())
-}
-
-func (i GetLcmStatusV2LinkArgs) ToGetLcmStatusV2LinkOutputWithContext(ctx context.Context) GetLcmStatusV2LinkOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2LinkOutput)
-}
-
-// GetLcmStatusV2LinkArrayInput is an input type that accepts GetLcmStatusV2LinkArray and GetLcmStatusV2LinkArrayOutput values.
-// You can construct a concrete instance of `GetLcmStatusV2LinkArrayInput` via:
-//
-//	GetLcmStatusV2LinkArray{ GetLcmStatusV2LinkArgs{...} }
-type GetLcmStatusV2LinkArrayInput interface {
-	pulumi.Input
-
-	ToGetLcmStatusV2LinkArrayOutput() GetLcmStatusV2LinkArrayOutput
-	ToGetLcmStatusV2LinkArrayOutputWithContext(context.Context) GetLcmStatusV2LinkArrayOutput
-}
-
-type GetLcmStatusV2LinkArray []GetLcmStatusV2LinkInput
-
-func (GetLcmStatusV2LinkArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmStatusV2Link)(nil)).Elem()
-}
-
-func (i GetLcmStatusV2LinkArray) ToGetLcmStatusV2LinkArrayOutput() GetLcmStatusV2LinkArrayOutput {
-	return i.ToGetLcmStatusV2LinkArrayOutputWithContext(context.Background())
-}
-
-func (i GetLcmStatusV2LinkArray) ToGetLcmStatusV2LinkArrayOutputWithContext(ctx context.Context) GetLcmStatusV2LinkArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetLcmStatusV2LinkArrayOutput)
-}
-
-type GetLcmStatusV2LinkOutput struct{ *pulumi.OutputState }
-
-func (GetLcmStatusV2LinkOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetLcmStatusV2Link)(nil)).Elem()
-}
-
-func (o GetLcmStatusV2LinkOutput) ToGetLcmStatusV2LinkOutput() GetLcmStatusV2LinkOutput {
-	return o
-}
-
-func (o GetLcmStatusV2LinkOutput) ToGetLcmStatusV2LinkOutputWithContext(ctx context.Context) GetLcmStatusV2LinkOutput {
-	return o
-}
-
-func (o GetLcmStatusV2LinkOutput) Href() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmStatusV2Link) string { return v.Href }).(pulumi.StringOutput)
-}
-
-func (o GetLcmStatusV2LinkOutput) Rel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetLcmStatusV2Link) string { return v.Rel }).(pulumi.StringOutput)
-}
-
-type GetLcmStatusV2LinkArrayOutput struct{ *pulumi.OutputState }
-
-func (GetLcmStatusV2LinkArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetLcmStatusV2Link)(nil)).Elem()
-}
-
-func (o GetLcmStatusV2LinkArrayOutput) ToGetLcmStatusV2LinkArrayOutput() GetLcmStatusV2LinkArrayOutput {
-	return o
-}
-
-func (o GetLcmStatusV2LinkArrayOutput) ToGetLcmStatusV2LinkArrayOutputWithContext(ctx context.Context) GetLcmStatusV2LinkArrayOutput {
-	return o
-}
-
-func (o GetLcmStatusV2LinkArrayOutput) Index(i pulumi.IntInput) GetLcmStatusV2LinkOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetLcmStatusV2Link {
-		return vs[0].([]GetLcmStatusV2Link)[vs[1].(int)]
-	}).(GetLcmStatusV2LinkOutput)
-}
-
-type GetNdbCloneDatabaseNode struct {
-	AccessLevel map[string]string `pulumi:"accessLevel"`
-	DatabaseId  string            `pulumi:"databaseId"`
-	// database status
-	DatabaseStatus string `pulumi:"databaseStatus"`
-	// date created for clone
-	DateCreated string `pulumi:"dateCreated"`
-	// last modified date for clone
-	DateModified string            `pulumi:"dateModified"`
-	Dbserver     map[string]string `pulumi:"dbserver"`
-	DbserverId   string            `pulumi:"dbserverId"`
-	// cloned description
-	Description string `pulumi:"description"`
-	// cloned id
-	Id string `pulumi:"id"`
-	// cloned info
-	Infos []GetNdbCloneDatabaseNodeInfo `pulumi:"infos"`
-	// cloned name
-	Name    string `pulumi:"name"`
-	Primary bool   `pulumi:"primary"`
-	// properties of clone
-	Properties             []GetNdbCloneDatabaseNodeProperty         `pulumi:"properties"`
-	ProtectionDomainId     string                                    `pulumi:"protectionDomainId"`
-	ProtectionDomains      []GetNdbCloneDatabaseNodeProtectionDomain `pulumi:"protectionDomains"`
-	SoftwareInstallationId string                                    `pulumi:"softwareInstallationId"`
-	// status of clone
-	Status string `pulumi:"status"`
-	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
-	Tags []GetNdbCloneDatabaseNodeTag `pulumi:"tags"`
-}
-
-// GetNdbCloneDatabaseNodeInput is an input type that accepts GetNdbCloneDatabaseNodeArgs and GetNdbCloneDatabaseNodeOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeInput` via:
-//
-//	GetNdbCloneDatabaseNodeArgs{...}
-type GetNdbCloneDatabaseNodeInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeOutput() GetNdbCloneDatabaseNodeOutput
-	ToGetNdbCloneDatabaseNodeOutputWithContext(context.Context) GetNdbCloneDatabaseNodeOutput
-}
-
-type GetNdbCloneDatabaseNodeArgs struct {
-	AccessLevel pulumi.StringMapInput `pulumi:"accessLevel"`
-	DatabaseId  pulumi.StringInput    `pulumi:"databaseId"`
-	// database status
-	DatabaseStatus pulumi.StringInput `pulumi:"databaseStatus"`
-	// date created for clone
-	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
-	// last modified date for clone
-	DateModified pulumi.StringInput    `pulumi:"dateModified"`
-	Dbserver     pulumi.StringMapInput `pulumi:"dbserver"`
-	DbserverId   pulumi.StringInput    `pulumi:"dbserverId"`
-	// cloned description
-	Description pulumi.StringInput `pulumi:"description"`
-	// cloned id
-	Id pulumi.StringInput `pulumi:"id"`
-	// cloned info
-	Infos GetNdbCloneDatabaseNodeInfoArrayInput `pulumi:"infos"`
-	// cloned name
-	Name    pulumi.StringInput `pulumi:"name"`
-	Primary pulumi.BoolInput   `pulumi:"primary"`
-	// properties of clone
-	Properties             GetNdbCloneDatabaseNodePropertyArrayInput         `pulumi:"properties"`
-	ProtectionDomainId     pulumi.StringInput                                `pulumi:"protectionDomainId"`
-	ProtectionDomains      GetNdbCloneDatabaseNodeProtectionDomainArrayInput `pulumi:"protectionDomains"`
-	SoftwareInstallationId pulumi.StringInput                                `pulumi:"softwareInstallationId"`
-	// status of clone
-	Status pulumi.StringInput `pulumi:"status"`
-	// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
-	Tags GetNdbCloneDatabaseNodeTagArrayInput `pulumi:"tags"`
-}
-
-func (GetNdbCloneDatabaseNodeArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNode)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeArgs) ToGetNdbCloneDatabaseNodeOutput() GetNdbCloneDatabaseNodeOutput {
-	return i.ToGetNdbCloneDatabaseNodeOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeArgs) ToGetNdbCloneDatabaseNodeOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeOutput)
-}
-
-// GetNdbCloneDatabaseNodeArrayInput is an input type that accepts GetNdbCloneDatabaseNodeArray and GetNdbCloneDatabaseNodeArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeArrayInput` via:
-//
-//	GetNdbCloneDatabaseNodeArray{ GetNdbCloneDatabaseNodeArgs{...} }
-type GetNdbCloneDatabaseNodeArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeArrayOutput() GetNdbCloneDatabaseNodeArrayOutput
-	ToGetNdbCloneDatabaseNodeArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeArrayOutput
-}
-
-type GetNdbCloneDatabaseNodeArray []GetNdbCloneDatabaseNodeInput
-
-func (GetNdbCloneDatabaseNodeArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNode)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeArray) ToGetNdbCloneDatabaseNodeArrayOutput() GetNdbCloneDatabaseNodeArrayOutput {
-	return i.ToGetNdbCloneDatabaseNodeArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeArray) ToGetNdbCloneDatabaseNodeArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeArrayOutput)
-}
-
-type GetNdbCloneDatabaseNodeOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNode)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) ToGetNdbCloneDatabaseNodeOutput() GetNdbCloneDatabaseNodeOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) ToGetNdbCloneDatabaseNodeOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) AccessLevel() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) map[string]string { return v.AccessLevel }).(pulumi.StringMapOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) DatabaseId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DatabaseId }).(pulumi.StringOutput)
-}
-
-// database status
-func (o GetNdbCloneDatabaseNodeOutput) DatabaseStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DatabaseStatus }).(pulumi.StringOutput)
-}
-
-// date created for clone
-func (o GetNdbCloneDatabaseNodeOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-// last modified date for clone
-func (o GetNdbCloneDatabaseNodeOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) Dbserver() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) map[string]string { return v.Dbserver }).(pulumi.StringMapOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) DbserverId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.DbserverId }).(pulumi.StringOutput)
-}
-
-// cloned description
-func (o GetNdbCloneDatabaseNodeOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// cloned id
-func (o GetNdbCloneDatabaseNodeOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// cloned info
-func (o GetNdbCloneDatabaseNodeOutput) Infos() GetNdbCloneDatabaseNodeInfoArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) []GetNdbCloneDatabaseNodeInfo { return v.Infos }).(GetNdbCloneDatabaseNodeInfoArrayOutput)
-}
-
-// cloned name
-func (o GetNdbCloneDatabaseNodeOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) Primary() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) bool { return v.Primary }).(pulumi.BoolOutput)
-}
-
-// properties of clone
-func (o GetNdbCloneDatabaseNodeOutput) Properties() GetNdbCloneDatabaseNodePropertyArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) []GetNdbCloneDatabaseNodeProperty { return v.Properties }).(GetNdbCloneDatabaseNodePropertyArrayOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) ProtectionDomainId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.ProtectionDomainId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) ProtectionDomains() GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) []GetNdbCloneDatabaseNodeProtectionDomain { return v.ProtectionDomains }).(GetNdbCloneDatabaseNodeProtectionDomainArrayOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeOutput) SoftwareInstallationId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.SoftwareInstallationId }).(pulumi.StringOutput)
-}
-
-// status of clone
-func (o GetNdbCloneDatabaseNodeOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// allows you to assign metadata to entities (clones, time machines, databases, and database servers) by using tags.
-func (o GetNdbCloneDatabaseNodeOutput) Tags() GetNdbCloneDatabaseNodeTagArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNode) []GetNdbCloneDatabaseNodeTag { return v.Tags }).(GetNdbCloneDatabaseNodeTagArrayOutput)
-}
-
-type GetNdbCloneDatabaseNodeArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNode)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeArrayOutput) ToGetNdbCloneDatabaseNodeArrayOutput() GetNdbCloneDatabaseNodeArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeArrayOutput) ToGetNdbCloneDatabaseNodeArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNode {
-		return vs[0].([]GetNdbCloneDatabaseNode)[vs[1].(int)]
-	}).(GetNdbCloneDatabaseNodeOutput)
-}
-
-type GetNdbCloneDatabaseNodeInfo struct {
-	// cloned info
-	Info       map[string]string `pulumi:"info"`
-	SecureInfo map[string]string `pulumi:"secureInfo"`
-}
-
-// GetNdbCloneDatabaseNodeInfoInput is an input type that accepts GetNdbCloneDatabaseNodeInfoArgs and GetNdbCloneDatabaseNodeInfoOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeInfoInput` via:
-//
-//	GetNdbCloneDatabaseNodeInfoArgs{...}
-type GetNdbCloneDatabaseNodeInfoInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeInfoOutput() GetNdbCloneDatabaseNodeInfoOutput
-	ToGetNdbCloneDatabaseNodeInfoOutputWithContext(context.Context) GetNdbCloneDatabaseNodeInfoOutput
-}
-
-type GetNdbCloneDatabaseNodeInfoArgs struct {
-	// cloned info
-	Info       pulumi.StringMapInput `pulumi:"info"`
-	SecureInfo pulumi.StringMapInput `pulumi:"secureInfo"`
-}
-
-func (GetNdbCloneDatabaseNodeInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeInfo)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeInfoArgs) ToGetNdbCloneDatabaseNodeInfoOutput() GetNdbCloneDatabaseNodeInfoOutput {
-	return i.ToGetNdbCloneDatabaseNodeInfoOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeInfoArgs) ToGetNdbCloneDatabaseNodeInfoOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeInfoOutput)
-}
-
-// GetNdbCloneDatabaseNodeInfoArrayInput is an input type that accepts GetNdbCloneDatabaseNodeInfoArray and GetNdbCloneDatabaseNodeInfoArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeInfoArrayInput` via:
-//
-//	GetNdbCloneDatabaseNodeInfoArray{ GetNdbCloneDatabaseNodeInfoArgs{...} }
-type GetNdbCloneDatabaseNodeInfoArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeInfoArrayOutput() GetNdbCloneDatabaseNodeInfoArrayOutput
-	ToGetNdbCloneDatabaseNodeInfoArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeInfoArrayOutput
-}
-
-type GetNdbCloneDatabaseNodeInfoArray []GetNdbCloneDatabaseNodeInfoInput
-
-func (GetNdbCloneDatabaseNodeInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeInfo)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeInfoArray) ToGetNdbCloneDatabaseNodeInfoArrayOutput() GetNdbCloneDatabaseNodeInfoArrayOutput {
-	return i.ToGetNdbCloneDatabaseNodeInfoArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeInfoArray) ToGetNdbCloneDatabaseNodeInfoArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeInfoArrayOutput)
-}
-
-type GetNdbCloneDatabaseNodeInfoOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeInfo)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeInfoOutput) ToGetNdbCloneDatabaseNodeInfoOutput() GetNdbCloneDatabaseNodeInfoOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeInfoOutput) ToGetNdbCloneDatabaseNodeInfoOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeInfoOutput {
-	return o
-}
-
-// cloned info
-func (o GetNdbCloneDatabaseNodeInfoOutput) Info() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeInfo) map[string]string { return v.Info }).(pulumi.StringMapOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeInfoOutput) SecureInfo() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeInfo) map[string]string { return v.SecureInfo }).(pulumi.StringMapOutput)
-}
-
-type GetNdbCloneDatabaseNodeInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeInfo)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeInfoArrayOutput) ToGetNdbCloneDatabaseNodeInfoArrayOutput() GetNdbCloneDatabaseNodeInfoArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeInfoArrayOutput) ToGetNdbCloneDatabaseNodeInfoArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeInfoArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeInfoArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeInfo {
-		return vs[0].([]GetNdbCloneDatabaseNodeInfo)[vs[1].(int)]
-	}).(GetNdbCloneDatabaseNodeInfoOutput)
-}
-
-type GetNdbCloneDatabaseNodeProperty struct {
-	// cloned description
-	Description string `pulumi:"description"`
-	// cloned name
-	Name   string `pulumi:"name"`
-	RefId  string `pulumi:"refId"`
-	Secure bool   `pulumi:"secure"`
-	Value  string `pulumi:"value"`
-}
-
-// GetNdbCloneDatabaseNodePropertyInput is an input type that accepts GetNdbCloneDatabaseNodePropertyArgs and GetNdbCloneDatabaseNodePropertyOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodePropertyInput` via:
-//
-//	GetNdbCloneDatabaseNodePropertyArgs{...}
-type GetNdbCloneDatabaseNodePropertyInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodePropertyOutput() GetNdbCloneDatabaseNodePropertyOutput
-	ToGetNdbCloneDatabaseNodePropertyOutputWithContext(context.Context) GetNdbCloneDatabaseNodePropertyOutput
-}
-
-type GetNdbCloneDatabaseNodePropertyArgs struct {
-	// cloned description
-	Description pulumi.StringInput `pulumi:"description"`
-	// cloned name
-	Name   pulumi.StringInput `pulumi:"name"`
-	RefId  pulumi.StringInput `pulumi:"refId"`
-	Secure pulumi.BoolInput   `pulumi:"secure"`
-	Value  pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbCloneDatabaseNodePropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProperty)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodePropertyArgs) ToGetNdbCloneDatabaseNodePropertyOutput() GetNdbCloneDatabaseNodePropertyOutput {
-	return i.ToGetNdbCloneDatabaseNodePropertyOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodePropertyArgs) ToGetNdbCloneDatabaseNodePropertyOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodePropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodePropertyOutput)
-}
-
-// GetNdbCloneDatabaseNodePropertyArrayInput is an input type that accepts GetNdbCloneDatabaseNodePropertyArray and GetNdbCloneDatabaseNodePropertyArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodePropertyArrayInput` via:
-//
-//	GetNdbCloneDatabaseNodePropertyArray{ GetNdbCloneDatabaseNodePropertyArgs{...} }
-type GetNdbCloneDatabaseNodePropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodePropertyArrayOutput() GetNdbCloneDatabaseNodePropertyArrayOutput
-	ToGetNdbCloneDatabaseNodePropertyArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodePropertyArrayOutput
-}
-
-type GetNdbCloneDatabaseNodePropertyArray []GetNdbCloneDatabaseNodePropertyInput
-
-func (GetNdbCloneDatabaseNodePropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProperty)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodePropertyArray) ToGetNdbCloneDatabaseNodePropertyArrayOutput() GetNdbCloneDatabaseNodePropertyArrayOutput {
-	return i.ToGetNdbCloneDatabaseNodePropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodePropertyArray) ToGetNdbCloneDatabaseNodePropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodePropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodePropertyArrayOutput)
-}
-
-type GetNdbCloneDatabaseNodePropertyOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodePropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProperty)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodePropertyOutput) ToGetNdbCloneDatabaseNodePropertyOutput() GetNdbCloneDatabaseNodePropertyOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodePropertyOutput) ToGetNdbCloneDatabaseNodePropertyOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodePropertyOutput {
-	return o
-}
-
-// cloned description
-func (o GetNdbCloneDatabaseNodePropertyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// cloned name
-func (o GetNdbCloneDatabaseNodePropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodePropertyOutput) RefId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) string { return v.RefId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodePropertyOutput) Secure() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) bool { return v.Secure }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbCloneDatabaseNodePropertyOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProperty) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbCloneDatabaseNodePropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodePropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProperty)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodePropertyArrayOutput) ToGetNdbCloneDatabaseNodePropertyArrayOutput() GetNdbCloneDatabaseNodePropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodePropertyArrayOutput) ToGetNdbCloneDatabaseNodePropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodePropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodePropertyArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodePropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeProperty {
-		return vs[0].([]GetNdbCloneDatabaseNodeProperty)[vs[1].(int)]
-	}).(GetNdbCloneDatabaseNodePropertyOutput)
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomain struct {
-	AssocEntities []string `pulumi:"assocEntities"`
-	CloudId       string   `pulumi:"cloudId"`
-	// date created for clone
-	DateCreated string `pulumi:"dateCreated"`
-	// last modified date for clone
-	DateModified string `pulumi:"dateModified"`
-	// cloned description
-	Description string `pulumi:"description"`
-	EraCreated  bool   `pulumi:"eraCreated"`
-	// cloned id
-	Id string `pulumi:"id"`
-	// cloned name
-	Name        string `pulumi:"name"`
-	OwnerId     string `pulumi:"ownerId"`
-	PrimaryHost string `pulumi:"primaryHost"`
-	// properties of clone
-	Properties []GetNdbCloneDatabaseNodeProtectionDomainProperty `pulumi:"properties"`
-	// status of clone
-	Status string `pulumi:"status"`
-	// type
-	Type string `pulumi:"type"`
-}
-
-// GetNdbCloneDatabaseNodeProtectionDomainInput is an input type that accepts GetNdbCloneDatabaseNodeProtectionDomainArgs and GetNdbCloneDatabaseNodeProtectionDomainOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeProtectionDomainInput` via:
-//
-//	GetNdbCloneDatabaseNodeProtectionDomainArgs{...}
-type GetNdbCloneDatabaseNodeProtectionDomainInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeProtectionDomainOutput() GetNdbCloneDatabaseNodeProtectionDomainOutput
-	ToGetNdbCloneDatabaseNodeProtectionDomainOutputWithContext(context.Context) GetNdbCloneDatabaseNodeProtectionDomainOutput
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainArgs struct {
-	AssocEntities pulumi.StringArrayInput `pulumi:"assocEntities"`
-	CloudId       pulumi.StringInput      `pulumi:"cloudId"`
-	// date created for clone
-	DateCreated pulumi.StringInput `pulumi:"dateCreated"`
-	// last modified date for clone
-	DateModified pulumi.StringInput `pulumi:"dateModified"`
-	// cloned description
-	Description pulumi.StringInput `pulumi:"description"`
-	EraCreated  pulumi.BoolInput   `pulumi:"eraCreated"`
-	// cloned id
-	Id pulumi.StringInput `pulumi:"id"`
-	// cloned name
-	Name        pulumi.StringInput `pulumi:"name"`
-	OwnerId     pulumi.StringInput `pulumi:"ownerId"`
-	PrimaryHost pulumi.StringInput `pulumi:"primaryHost"`
-	// properties of clone
-	Properties GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput `pulumi:"properties"`
-	// status of clone
-	Status pulumi.StringInput `pulumi:"status"`
-	// type
-	Type pulumi.StringInput `pulumi:"type"`
-}
-
-func (GetNdbCloneDatabaseNodeProtectionDomainArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomain)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeProtectionDomainArgs) ToGetNdbCloneDatabaseNodeProtectionDomainOutput() GetNdbCloneDatabaseNodeProtectionDomainOutput {
-	return i.ToGetNdbCloneDatabaseNodeProtectionDomainOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeProtectionDomainArgs) ToGetNdbCloneDatabaseNodeProtectionDomainOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeProtectionDomainOutput)
-}
-
-// GetNdbCloneDatabaseNodeProtectionDomainArrayInput is an input type that accepts GetNdbCloneDatabaseNodeProtectionDomainArray and GetNdbCloneDatabaseNodeProtectionDomainArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeProtectionDomainArrayInput` via:
-//
-//	GetNdbCloneDatabaseNodeProtectionDomainArray{ GetNdbCloneDatabaseNodeProtectionDomainArgs{...} }
-type GetNdbCloneDatabaseNodeProtectionDomainArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainArrayOutput
-	ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeProtectionDomainArrayOutput
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainArray []GetNdbCloneDatabaseNodeProtectionDomainInput
-
-func (GetNdbCloneDatabaseNodeProtectionDomainArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProtectionDomain)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeProtectionDomainArray) ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
-	return i.ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeProtectionDomainArray) ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeProtectionDomainArrayOutput)
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeProtectionDomainOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomain)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) ToGetNdbCloneDatabaseNodeProtectionDomainOutput() GetNdbCloneDatabaseNodeProtectionDomainOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) ToGetNdbCloneDatabaseNodeProtectionDomainOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) AssocEntities() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) []string { return v.AssocEntities }).(pulumi.StringArrayOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) CloudId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.CloudId }).(pulumi.StringOutput)
-}
-
-// date created for clone
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) DateCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.DateCreated }).(pulumi.StringOutput)
-}
-
-// last modified date for clone
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) DateModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.DateModified }).(pulumi.StringOutput)
-}
-
-// cloned description
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Description }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) EraCreated() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) bool { return v.EraCreated }).(pulumi.BoolOutput)
-}
-
-// cloned id
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// cloned name
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) OwnerId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.OwnerId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) PrimaryHost() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.PrimaryHost }).(pulumi.StringOutput)
-}
-
-// properties of clone
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Properties() GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) []GetNdbCloneDatabaseNodeProtectionDomainProperty {
-		return v.Properties
-	}).(GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput)
-}
-
-// status of clone
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// type
-func (o GetNdbCloneDatabaseNodeProtectionDomainOutput) Type() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomain) string { return v.Type }).(pulumi.StringOutput)
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeProtectionDomainArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProtectionDomain)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainArrayOutput) ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainArrayOutput) ToGetNdbCloneDatabaseNodeProtectionDomainArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeProtectionDomainOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeProtectionDomain {
-		return vs[0].([]GetNdbCloneDatabaseNodeProtectionDomain)[vs[1].(int)]
-	}).(GetNdbCloneDatabaseNodeProtectionDomainOutput)
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainProperty struct {
-	// cloned description
-	Description string `pulumi:"description"`
-	// cloned name
-	Name   string `pulumi:"name"`
-	RefId  string `pulumi:"refId"`
-	Secure bool   `pulumi:"secure"`
-	Value  string `pulumi:"value"`
-}
-
-// GetNdbCloneDatabaseNodeProtectionDomainPropertyInput is an input type that accepts GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs and GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeProtectionDomainPropertyInput` via:
-//
-//	GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs{...}
-type GetNdbCloneDatabaseNodeProtectionDomainPropertyInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput
-	ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutputWithContext(context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs struct {
-	// cloned description
-	Description pulumi.StringInput `pulumi:"description"`
-	// cloned name
-	Name   pulumi.StringInput `pulumi:"name"`
-	RefId  pulumi.StringInput `pulumi:"refId"`
-	Secure pulumi.BoolInput   `pulumi:"secure"`
-	Value  pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainProperty)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
-	return i.ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput)
-}
-
-// GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput is an input type that accepts GetNdbCloneDatabaseNodeProtectionDomainPropertyArray and GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput` via:
-//
-//	GetNdbCloneDatabaseNodeProtectionDomainPropertyArray{ GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs{...} }
-type GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput
-	ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainPropertyArray []GetNdbCloneDatabaseNodeProtectionDomainPropertyInput
-
-func (GetNdbCloneDatabaseNodeProtectionDomainPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProtectionDomainProperty)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeProtectionDomainPropertyArray) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
-	return i.ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeProtectionDomainPropertyArray) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput)
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainProperty)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
-	return o
-}
-
-// cloned description
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) string { return v.Description }).(pulumi.StringOutput)
-}
-
-// cloned name
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) RefId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) string { return v.RefId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) Secure() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) bool { return v.Secure }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeProtectionDomainProperty) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeProtectionDomainProperty)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput() GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput) ToGetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeProtectionDomainProperty {
-		return vs[0].([]GetNdbCloneDatabaseNodeProtectionDomainProperty)[vs[1].(int)]
-	}).(GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput)
-}
-
-type GetNdbCloneDatabaseNodeTag struct {
-	EntityId   string `pulumi:"entityId"`
-	EntityType string `pulumi:"entityType"`
-	TagId      string `pulumi:"tagId"`
-	TagName    string `pulumi:"tagName"`
-	Value      string `pulumi:"value"`
-}
-
-// GetNdbCloneDatabaseNodeTagInput is an input type that accepts GetNdbCloneDatabaseNodeTagArgs and GetNdbCloneDatabaseNodeTagOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeTagInput` via:
-//
-//	GetNdbCloneDatabaseNodeTagArgs{...}
-type GetNdbCloneDatabaseNodeTagInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeTagOutput() GetNdbCloneDatabaseNodeTagOutput
-	ToGetNdbCloneDatabaseNodeTagOutputWithContext(context.Context) GetNdbCloneDatabaseNodeTagOutput
-}
-
-type GetNdbCloneDatabaseNodeTagArgs struct {
-	EntityId   pulumi.StringInput `pulumi:"entityId"`
-	EntityType pulumi.StringInput `pulumi:"entityType"`
-	TagId      pulumi.StringInput `pulumi:"tagId"`
-	TagName    pulumi.StringInput `pulumi:"tagName"`
-	Value      pulumi.StringInput `pulumi:"value"`
-}
-
-func (GetNdbCloneDatabaseNodeTagArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeTag)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeTagArgs) ToGetNdbCloneDatabaseNodeTagOutput() GetNdbCloneDatabaseNodeTagOutput {
-	return i.ToGetNdbCloneDatabaseNodeTagOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeTagArgs) ToGetNdbCloneDatabaseNodeTagOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeTagOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeTagOutput)
-}
-
-// GetNdbCloneDatabaseNodeTagArrayInput is an input type that accepts GetNdbCloneDatabaseNodeTagArray and GetNdbCloneDatabaseNodeTagArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneDatabaseNodeTagArrayInput` via:
-//
-//	GetNdbCloneDatabaseNodeTagArray{ GetNdbCloneDatabaseNodeTagArgs{...} }
-type GetNdbCloneDatabaseNodeTagArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneDatabaseNodeTagArrayOutput() GetNdbCloneDatabaseNodeTagArrayOutput
-	ToGetNdbCloneDatabaseNodeTagArrayOutputWithContext(context.Context) GetNdbCloneDatabaseNodeTagArrayOutput
-}
-
-type GetNdbCloneDatabaseNodeTagArray []GetNdbCloneDatabaseNodeTagInput
-
-func (GetNdbCloneDatabaseNodeTagArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeTag)(nil)).Elem()
-}
-
-func (i GetNdbCloneDatabaseNodeTagArray) ToGetNdbCloneDatabaseNodeTagArrayOutput() GetNdbCloneDatabaseNodeTagArrayOutput {
-	return i.ToGetNdbCloneDatabaseNodeTagArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneDatabaseNodeTagArray) ToGetNdbCloneDatabaseNodeTagArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeTagArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneDatabaseNodeTagArrayOutput)
-}
-
-type GetNdbCloneDatabaseNodeTagOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeTagOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneDatabaseNodeTag)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeTagOutput) ToGetNdbCloneDatabaseNodeTagOutput() GetNdbCloneDatabaseNodeTagOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeTagOutput) ToGetNdbCloneDatabaseNodeTagOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeTagOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeTagOutput) EntityId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.EntityId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeTagOutput) EntityType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.EntityType }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeTagOutput) TagId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.TagId }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeTagOutput) TagName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.TagName }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneDatabaseNodeTagOutput) Value() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneDatabaseNodeTag) string { return v.Value }).(pulumi.StringOutput)
-}
-
-type GetNdbCloneDatabaseNodeTagArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneDatabaseNodeTagArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneDatabaseNodeTag)(nil)).Elem()
-}
-
-func (o GetNdbCloneDatabaseNodeTagArrayOutput) ToGetNdbCloneDatabaseNodeTagArrayOutput() GetNdbCloneDatabaseNodeTagArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeTagArrayOutput) ToGetNdbCloneDatabaseNodeTagArrayOutputWithContext(ctx context.Context) GetNdbCloneDatabaseNodeTagArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneDatabaseNodeTagArrayOutput) Index(i pulumi.IntInput) GetNdbCloneDatabaseNodeTagOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneDatabaseNodeTag {
-		return vs[0].([]GetNdbCloneDatabaseNodeTag)[vs[1].(int)]
-	}).(GetNdbCloneDatabaseNodeTagOutput)
-}
-
-type GetNdbCloneFilter struct {
-	// Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
-	AnyStatus *string `pulumi:"anyStatus"`
-	// Load entities with complete details. Default is false
-	Detailed *string `pulumi:"detailed"`
-	// Load cluster info. Default is false
-	LoadDbserverCluster *string `pulumi:"loadDbserverCluster"`
-	// Default is UTC
-	Timezone *string `pulumi:"timezone"`
-}
-
-// GetNdbCloneFilterInput is an input type that accepts GetNdbCloneFilterArgs and GetNdbCloneFilterOutput values.
-// You can construct a concrete instance of `GetNdbCloneFilterInput` via:
-//
-//	GetNdbCloneFilterArgs{...}
-type GetNdbCloneFilterInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneFilterOutput() GetNdbCloneFilterOutput
-	ToGetNdbCloneFilterOutputWithContext(context.Context) GetNdbCloneFilterOutput
-}
-
-type GetNdbCloneFilterArgs struct {
-	// Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
-	AnyStatus pulumi.StringPtrInput `pulumi:"anyStatus"`
-	// Load entities with complete details. Default is false
-	Detailed pulumi.StringPtrInput `pulumi:"detailed"`
-	// Load cluster info. Default is false
-	LoadDbserverCluster pulumi.StringPtrInput `pulumi:"loadDbserverCluster"`
-	// Default is UTC
-	Timezone pulumi.StringPtrInput `pulumi:"timezone"`
-}
-
-func (GetNdbCloneFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneFilter)(nil)).Elem()
-}
-
-func (i GetNdbCloneFilterArgs) ToGetNdbCloneFilterOutput() GetNdbCloneFilterOutput {
-	return i.ToGetNdbCloneFilterOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneFilterArgs) ToGetNdbCloneFilterOutputWithContext(ctx context.Context) GetNdbCloneFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneFilterOutput)
-}
-
-// GetNdbCloneFilterArrayInput is an input type that accepts GetNdbCloneFilterArray and GetNdbCloneFilterArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneFilterArrayInput` via:
-//
-//	GetNdbCloneFilterArray{ GetNdbCloneFilterArgs{...} }
-type GetNdbCloneFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneFilterArrayOutput() GetNdbCloneFilterArrayOutput
-	ToGetNdbCloneFilterArrayOutputWithContext(context.Context) GetNdbCloneFilterArrayOutput
-}
-
-type GetNdbCloneFilterArray []GetNdbCloneFilterInput
-
-func (GetNdbCloneFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneFilter)(nil)).Elem()
-}
-
-func (i GetNdbCloneFilterArray) ToGetNdbCloneFilterArrayOutput() GetNdbCloneFilterArrayOutput {
-	return i.ToGetNdbCloneFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneFilterArray) ToGetNdbCloneFilterArrayOutputWithContext(ctx context.Context) GetNdbCloneFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneFilterArrayOutput)
-}
-
-type GetNdbCloneFilterOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneFilter)(nil)).Elem()
-}
-
-func (o GetNdbCloneFilterOutput) ToGetNdbCloneFilterOutput() GetNdbCloneFilterOutput {
-	return o
-}
-
-func (o GetNdbCloneFilterOutput) ToGetNdbCloneFilterOutputWithContext(ctx context.Context) GetNdbCloneFilterOutput {
-	return o
-}
-
-// Get entity(s) if it satisfies query criteria irrespective of status (retrieve even deleted). Default is false
-func (o GetNdbCloneFilterOutput) AnyStatus() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetNdbCloneFilter) *string { return v.AnyStatus }).(pulumi.StringPtrOutput)
-}
-
-// Load entities with complete details. Default is false
-func (o GetNdbCloneFilterOutput) Detailed() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetNdbCloneFilter) *string { return v.Detailed }).(pulumi.StringPtrOutput)
-}
-
-// Load cluster info. Default is false
-func (o GetNdbCloneFilterOutput) LoadDbserverCluster() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetNdbCloneFilter) *string { return v.LoadDbserverCluster }).(pulumi.StringPtrOutput)
-}
-
-// Default is UTC
-func (o GetNdbCloneFilterOutput) Timezone() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v GetNdbCloneFilter) *string { return v.Timezone }).(pulumi.StringPtrOutput)
-}
-
-type GetNdbCloneFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneFilter)(nil)).Elem()
-}
-
-func (o GetNdbCloneFilterArrayOutput) ToGetNdbCloneFilterArrayOutput() GetNdbCloneFilterArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneFilterArrayOutput) ToGetNdbCloneFilterArrayOutputWithContext(ctx context.Context) GetNdbCloneFilterArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneFilterArrayOutput) Index(i pulumi.IntInput) GetNdbCloneFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneFilter {
-		return vs[0].([]GetNdbCloneFilter)[vs[1].(int)]
-	}).(GetNdbCloneFilterOutput)
-}
-
-type GetNdbCloneInfo struct {
-	BpgConfigs []GetNdbCloneInfoBpgConfig `pulumi:"bpgConfigs"`
-	SecureInfo map[string]string          `pulumi:"secureInfo"`
-}
-
-// GetNdbCloneInfoInput is an input type that accepts GetNdbCloneInfoArgs and GetNdbCloneInfoOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoInput` via:
-//
-//	GetNdbCloneInfoArgs{...}
-type GetNdbCloneInfoInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoOutput() GetNdbCloneInfoOutput
-	ToGetNdbCloneInfoOutputWithContext(context.Context) GetNdbCloneInfoOutput
-}
-
-type GetNdbCloneInfoArgs struct {
-	BpgConfigs GetNdbCloneInfoBpgConfigArrayInput `pulumi:"bpgConfigs"`
-	SecureInfo pulumi.StringMapInput              `pulumi:"secureInfo"`
-}
-
-func (GetNdbCloneInfoArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfo)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoArgs) ToGetNdbCloneInfoOutput() GetNdbCloneInfoOutput {
-	return i.ToGetNdbCloneInfoOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoArgs) ToGetNdbCloneInfoOutputWithContext(ctx context.Context) GetNdbCloneInfoOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoOutput)
-}
-
-// GetNdbCloneInfoArrayInput is an input type that accepts GetNdbCloneInfoArray and GetNdbCloneInfoArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoArrayInput` via:
-//
-//	GetNdbCloneInfoArray{ GetNdbCloneInfoArgs{...} }
-type GetNdbCloneInfoArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoArrayOutput() GetNdbCloneInfoArrayOutput
-	ToGetNdbCloneInfoArrayOutputWithContext(context.Context) GetNdbCloneInfoArrayOutput
-}
-
-type GetNdbCloneInfoArray []GetNdbCloneInfoInput
-
-func (GetNdbCloneInfoArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfo)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoArray) ToGetNdbCloneInfoArrayOutput() GetNdbCloneInfoArrayOutput {
-	return i.ToGetNdbCloneInfoArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoArray) ToGetNdbCloneInfoArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoArrayOutput)
-}
-
-type GetNdbCloneInfoOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfo)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoOutput) ToGetNdbCloneInfoOutput() GetNdbCloneInfoOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoOutput) ToGetNdbCloneInfoOutputWithContext(ctx context.Context) GetNdbCloneInfoOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoOutput) BpgConfigs() GetNdbCloneInfoBpgConfigArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneInfo) []GetNdbCloneInfoBpgConfig { return v.BpgConfigs }).(GetNdbCloneInfoBpgConfigArrayOutput)
-}
-
-func (o GetNdbCloneInfoOutput) SecureInfo() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetNdbCloneInfo) map[string]string { return v.SecureInfo }).(pulumi.StringMapOutput)
-}
-
-type GetNdbCloneInfoArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfo)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoArrayOutput) ToGetNdbCloneInfoArrayOutput() GetNdbCloneInfoArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoArrayOutput) ToGetNdbCloneInfoArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfo {
-		return vs[0].([]GetNdbCloneInfo)[vs[1].(int)]
-	}).(GetNdbCloneInfoOutput)
-}
-
-type GetNdbCloneInfoBpgConfig struct {
-	BpgDbParams  []GetNdbCloneInfoBpgConfigBpgDbParam `pulumi:"bpgDbParams"`
-	Storages     []GetNdbCloneInfoBpgConfigStorage    `pulumi:"storages"`
-	VmProperties []GetNdbCloneInfoBpgConfigVmProperty `pulumi:"vmProperties"`
-}
-
-// GetNdbCloneInfoBpgConfigInput is an input type that accepts GetNdbCloneInfoBpgConfigArgs and GetNdbCloneInfoBpgConfigOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigInput` via:
-//
-//	GetNdbCloneInfoBpgConfigArgs{...}
-type GetNdbCloneInfoBpgConfigInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigOutput() GetNdbCloneInfoBpgConfigOutput
-	ToGetNdbCloneInfoBpgConfigOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigOutput
-}
-
-type GetNdbCloneInfoBpgConfigArgs struct {
-	BpgDbParams  GetNdbCloneInfoBpgConfigBpgDbParamArrayInput `pulumi:"bpgDbParams"`
-	Storages     GetNdbCloneInfoBpgConfigStorageArrayInput    `pulumi:"storages"`
-	VmProperties GetNdbCloneInfoBpgConfigVmPropertyArrayInput `pulumi:"vmProperties"`
-}
-
-func (GetNdbCloneInfoBpgConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfig)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigArgs) ToGetNdbCloneInfoBpgConfigOutput() GetNdbCloneInfoBpgConfigOutput {
-	return i.ToGetNdbCloneInfoBpgConfigOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigArgs) ToGetNdbCloneInfoBpgConfigOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigOutput)
-}
-
-// GetNdbCloneInfoBpgConfigArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigArray and GetNdbCloneInfoBpgConfigArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigArrayInput` via:
-//
-//	GetNdbCloneInfoBpgConfigArray{ GetNdbCloneInfoBpgConfigArgs{...} }
-type GetNdbCloneInfoBpgConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigArrayOutput() GetNdbCloneInfoBpgConfigArrayOutput
-	ToGetNdbCloneInfoBpgConfigArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigArrayOutput
-}
-
-type GetNdbCloneInfoBpgConfigArray []GetNdbCloneInfoBpgConfigInput
-
-func (GetNdbCloneInfoBpgConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfig)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigArray) ToGetNdbCloneInfoBpgConfigArrayOutput() GetNdbCloneInfoBpgConfigArrayOutput {
-	return i.ToGetNdbCloneInfoBpgConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigArray) ToGetNdbCloneInfoBpgConfigArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfig)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigOutput) ToGetNdbCloneInfoBpgConfigOutput() GetNdbCloneInfoBpgConfigOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigOutput) ToGetNdbCloneInfoBpgConfigOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigOutput) BpgDbParams() GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfig) []GetNdbCloneInfoBpgConfigBpgDbParam { return v.BpgDbParams }).(GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigOutput) Storages() GetNdbCloneInfoBpgConfigStorageArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfig) []GetNdbCloneInfoBpgConfigStorage { return v.Storages }).(GetNdbCloneInfoBpgConfigStorageArrayOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigOutput) VmProperties() GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfig) []GetNdbCloneInfoBpgConfigVmProperty { return v.VmProperties }).(GetNdbCloneInfoBpgConfigVmPropertyArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfig)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigArrayOutput) ToGetNdbCloneInfoBpgConfigArrayOutput() GetNdbCloneInfoBpgConfigArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigArrayOutput) ToGetNdbCloneInfoBpgConfigArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfig {
-		return vs[0].([]GetNdbCloneInfoBpgConfig)[vs[1].(int)]
-	}).(GetNdbCloneInfoBpgConfigOutput)
-}
-
-type GetNdbCloneInfoBpgConfigBpgDbParam struct {
-	EffectiveCacheSize          string `pulumi:"effectiveCacheSize"`
-	MaintenanceWorkMem          string `pulumi:"maintenanceWorkMem"`
-	MaxParallelWorkersPerGather string `pulumi:"maxParallelWorkersPerGather"`
-	MaxWorkerProcesses          string `pulumi:"maxWorkerProcesses"`
-	SharedBuffers               string `pulumi:"sharedBuffers"`
-	WorkMem                     string `pulumi:"workMem"`
-}
-
-// GetNdbCloneInfoBpgConfigBpgDbParamInput is an input type that accepts GetNdbCloneInfoBpgConfigBpgDbParamArgs and GetNdbCloneInfoBpgConfigBpgDbParamOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigBpgDbParamInput` via:
-//
-//	GetNdbCloneInfoBpgConfigBpgDbParamArgs{...}
-type GetNdbCloneInfoBpgConfigBpgDbParamInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigBpgDbParamOutput() GetNdbCloneInfoBpgConfigBpgDbParamOutput
-	ToGetNdbCloneInfoBpgConfigBpgDbParamOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigBpgDbParamOutput
-}
-
-type GetNdbCloneInfoBpgConfigBpgDbParamArgs struct {
-	EffectiveCacheSize          pulumi.StringInput `pulumi:"effectiveCacheSize"`
-	MaintenanceWorkMem          pulumi.StringInput `pulumi:"maintenanceWorkMem"`
-	MaxParallelWorkersPerGather pulumi.StringInput `pulumi:"maxParallelWorkersPerGather"`
-	MaxWorkerProcesses          pulumi.StringInput `pulumi:"maxWorkerProcesses"`
-	SharedBuffers               pulumi.StringInput `pulumi:"sharedBuffers"`
-	WorkMem                     pulumi.StringInput `pulumi:"workMem"`
-}
-
-func (GetNdbCloneInfoBpgConfigBpgDbParamArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigBpgDbParam)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigBpgDbParamArgs) ToGetNdbCloneInfoBpgConfigBpgDbParamOutput() GetNdbCloneInfoBpgConfigBpgDbParamOutput {
-	return i.ToGetNdbCloneInfoBpgConfigBpgDbParamOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigBpgDbParamArgs) ToGetNdbCloneInfoBpgConfigBpgDbParamOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigBpgDbParamOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigBpgDbParamOutput)
-}
-
-// GetNdbCloneInfoBpgConfigBpgDbParamArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigBpgDbParamArray and GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigBpgDbParamArrayInput` via:
-//
-//	GetNdbCloneInfoBpgConfigBpgDbParamArray{ GetNdbCloneInfoBpgConfigBpgDbParamArgs{...} }
-type GetNdbCloneInfoBpgConfigBpgDbParamArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutput() GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput
-	ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput
-}
-
-type GetNdbCloneInfoBpgConfigBpgDbParamArray []GetNdbCloneInfoBpgConfigBpgDbParamInput
-
-func (GetNdbCloneInfoBpgConfigBpgDbParamArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigBpgDbParam)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigBpgDbParamArray) ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutput() GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
-	return i.ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigBpgDbParamArray) ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigBpgDbParamOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigBpgDbParamOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigBpgDbParam)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) ToGetNdbCloneInfoBpgConfigBpgDbParamOutput() GetNdbCloneInfoBpgConfigBpgDbParamOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) ToGetNdbCloneInfoBpgConfigBpgDbParamOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigBpgDbParamOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) EffectiveCacheSize() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.EffectiveCacheSize }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) MaintenanceWorkMem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.MaintenanceWorkMem }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) MaxParallelWorkersPerGather() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.MaxParallelWorkersPerGather }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) MaxWorkerProcesses() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.MaxWorkerProcesses }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) SharedBuffers() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.SharedBuffers }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamOutput) WorkMem() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigBpgDbParam) string { return v.WorkMem }).(pulumi.StringOutput)
-}
-
-type GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigBpgDbParam)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput) ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutput() GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput) ToGetNdbCloneInfoBpgConfigBpgDbParamArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigBpgDbParamOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigBpgDbParam {
-		return vs[0].([]GetNdbCloneInfoBpgConfigBpgDbParam)[vs[1].(int)]
-	}).(GetNdbCloneInfoBpgConfigBpgDbParamOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorage struct {
-	ArchiveStorages []GetNdbCloneInfoBpgConfigStorageArchiveStorage `pulumi:"archiveStorages"`
-	DataDisks       []GetNdbCloneInfoBpgConfigStorageDataDisk       `pulumi:"dataDisks"`
-	LogDisks        []GetNdbCloneInfoBpgConfigStorageLogDisk        `pulumi:"logDisks"`
-}
-
-// GetNdbCloneInfoBpgConfigStorageInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageArgs and GetNdbCloneInfoBpgConfigStorageOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageInput` via:
-//
-//	GetNdbCloneInfoBpgConfigStorageArgs{...}
-type GetNdbCloneInfoBpgConfigStorageInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigStorageOutput() GetNdbCloneInfoBpgConfigStorageOutput
-	ToGetNdbCloneInfoBpgConfigStorageOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageOutput
-}
-
-type GetNdbCloneInfoBpgConfigStorageArgs struct {
-	ArchiveStorages GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput `pulumi:"archiveStorages"`
-	DataDisks       GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput       `pulumi:"dataDisks"`
-	LogDisks        GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput        `pulumi:"logDisks"`
-}
-
-func (GetNdbCloneInfoBpgConfigStorageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorage)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageArgs) ToGetNdbCloneInfoBpgConfigStorageOutput() GetNdbCloneInfoBpgConfigStorageOutput {
-	return i.ToGetNdbCloneInfoBpgConfigStorageOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageArgs) ToGetNdbCloneInfoBpgConfigStorageOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageOutput)
-}
-
-// GetNdbCloneInfoBpgConfigStorageArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageArray and GetNdbCloneInfoBpgConfigStorageArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageArrayInput` via:
-//
-//	GetNdbCloneInfoBpgConfigStorageArray{ GetNdbCloneInfoBpgConfigStorageArgs{...} }
-type GetNdbCloneInfoBpgConfigStorageArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArrayOutput
-	ToGetNdbCloneInfoBpgConfigStorageArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageArrayOutput
-}
-
-type GetNdbCloneInfoBpgConfigStorageArray []GetNdbCloneInfoBpgConfigStorageInput
-
-func (GetNdbCloneInfoBpgConfigStorageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorage)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageArray) ToGetNdbCloneInfoBpgConfigStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArrayOutput {
-	return i.ToGetNdbCloneInfoBpgConfigStorageArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageArray) ToGetNdbCloneInfoBpgConfigStorageArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorageOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigStorageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorage)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageOutput) ToGetNdbCloneInfoBpgConfigStorageOutput() GetNdbCloneInfoBpgConfigStorageOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageOutput) ToGetNdbCloneInfoBpgConfigStorageOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageOutput) ArchiveStorages() GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorage) []GetNdbCloneInfoBpgConfigStorageArchiveStorage {
-		return v.ArchiveStorages
-	}).(GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageOutput) DataDisks() GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorage) []GetNdbCloneInfoBpgConfigStorageDataDisk { return v.DataDisks }).(GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput)
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageOutput) LogDisks() GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorage) []GetNdbCloneInfoBpgConfigStorageLogDisk { return v.LogDisks }).(GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigStorageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorage)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArrayOutput) ToGetNdbCloneInfoBpgConfigStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArrayOutput) ToGetNdbCloneInfoBpgConfigStorageArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigStorageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigStorage {
-		return vs[0].([]GetNdbCloneInfoBpgConfigStorage)[vs[1].(int)]
-	}).(GetNdbCloneInfoBpgConfigStorageOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorageArchiveStorage struct {
-	Size float64 `pulumi:"size"`
-}
-
-// GetNdbCloneInfoBpgConfigStorageArchiveStorageInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs and GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageArchiveStorageInput` via:
-//
-//	GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs{...}
-type GetNdbCloneInfoBpgConfigStorageArchiveStorageInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput
-	ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput
-}
-
-type GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs struct {
-	Size pulumi.Float64Input `pulumi:"size"`
-}
-
-func (GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArchiveStorage)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
-	return i.ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput)
-}
-
-// GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageArchiveStorageArray and GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput` via:
-//
-//	GetNdbCloneInfoBpgConfigStorageArchiveStorageArray{ GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs{...} }
-type GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput
-	ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput
-}
-
-type GetNdbCloneInfoBpgConfigStorageArchiveStorageArray []GetNdbCloneInfoBpgConfigStorageArchiveStorageInput
-
-func (GetNdbCloneInfoBpgConfigStorageArchiveStorageArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageArchiveStorage)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageArchiveStorageArray) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
-	return i.ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageArchiveStorageArray) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArchiveStorage)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput) Size() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorageArchiveStorage) float64 { return v.Size }).(pulumi.Float64Output)
-}
-
-type GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageArchiveStorage)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput() GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput) ToGetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigStorageArchiveStorage {
-		return vs[0].([]GetNdbCloneInfoBpgConfigStorageArchiveStorage)[vs[1].(int)]
-	}).(GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorageDataDisk struct {
-	Count float64 `pulumi:"count"`
-}
-
-// GetNdbCloneInfoBpgConfigStorageDataDiskInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageDataDiskArgs and GetNdbCloneInfoBpgConfigStorageDataDiskOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageDataDiskInput` via:
-//
-//	GetNdbCloneInfoBpgConfigStorageDataDiskArgs{...}
-type GetNdbCloneInfoBpgConfigStorageDataDiskInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigStorageDataDiskOutput() GetNdbCloneInfoBpgConfigStorageDataDiskOutput
-	ToGetNdbCloneInfoBpgConfigStorageDataDiskOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskOutput
-}
-
-type GetNdbCloneInfoBpgConfigStorageDataDiskArgs struct {
-	Count pulumi.Float64Input `pulumi:"count"`
-}
-
-func (GetNdbCloneInfoBpgConfigStorageDataDiskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageDataDisk)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageDataDiskArgs) ToGetNdbCloneInfoBpgConfigStorageDataDiskOutput() GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
-	return i.ToGetNdbCloneInfoBpgConfigStorageDataDiskOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageDataDiskArgs) ToGetNdbCloneInfoBpgConfigStorageDataDiskOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageDataDiskOutput)
-}
-
-// GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageDataDiskArray and GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput` via:
-//
-//	GetNdbCloneInfoBpgConfigStorageDataDiskArray{ GetNdbCloneInfoBpgConfigStorageDataDiskArgs{...} }
-type GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput
-	ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput
-}
-
-type GetNdbCloneInfoBpgConfigStorageDataDiskArray []GetNdbCloneInfoBpgConfigStorageDataDiskInput
-
-func (GetNdbCloneInfoBpgConfigStorageDataDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageDataDisk)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageDataDiskArray) ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
-	return i.ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageDataDiskArray) ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorageDataDiskOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigStorageDataDiskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageDataDisk)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageDataDiskOutput) ToGetNdbCloneInfoBpgConfigStorageDataDiskOutput() GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageDataDiskOutput) ToGetNdbCloneInfoBpgConfigStorageDataDiskOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageDataDiskOutput) Count() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorageDataDisk) float64 { return v.Count }).(pulumi.Float64Output)
-}
-
-type GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageDataDisk)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput) ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput) ToGetNdbCloneInfoBpgConfigStorageDataDiskArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigStorageDataDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigStorageDataDisk {
-		return vs[0].([]GetNdbCloneInfoBpgConfigStorageDataDisk)[vs[1].(int)]
-	}).(GetNdbCloneInfoBpgConfigStorageDataDiskOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorageLogDisk struct {
-	Count float64 `pulumi:"count"`
-	Size  float64 `pulumi:"size"`
-}
-
-// GetNdbCloneInfoBpgConfigStorageLogDiskInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageLogDiskArgs and GetNdbCloneInfoBpgConfigStorageLogDiskOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageLogDiskInput` via:
-//
-//	GetNdbCloneInfoBpgConfigStorageLogDiskArgs{...}
-type GetNdbCloneInfoBpgConfigStorageLogDiskInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigStorageLogDiskOutput() GetNdbCloneInfoBpgConfigStorageLogDiskOutput
-	ToGetNdbCloneInfoBpgConfigStorageLogDiskOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskOutput
-}
-
-type GetNdbCloneInfoBpgConfigStorageLogDiskArgs struct {
-	Count pulumi.Float64Input `pulumi:"count"`
-	Size  pulumi.Float64Input `pulumi:"size"`
-}
-
-func (GetNdbCloneInfoBpgConfigStorageLogDiskArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageLogDisk)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageLogDiskArgs) ToGetNdbCloneInfoBpgConfigStorageLogDiskOutput() GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
-	return i.ToGetNdbCloneInfoBpgConfigStorageLogDiskOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageLogDiskArgs) ToGetNdbCloneInfoBpgConfigStorageLogDiskOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageLogDiskOutput)
-}
-
-// GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigStorageLogDiskArray and GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput` via:
-//
-//	GetNdbCloneInfoBpgConfigStorageLogDiskArray{ GetNdbCloneInfoBpgConfigStorageLogDiskArgs{...} }
-type GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput
-	ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput
-}
-
-type GetNdbCloneInfoBpgConfigStorageLogDiskArray []GetNdbCloneInfoBpgConfigStorageLogDiskInput
-
-func (GetNdbCloneInfoBpgConfigStorageLogDiskArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageLogDisk)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageLogDiskArray) ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
-	return i.ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigStorageLogDiskArray) ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigStorageLogDiskOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigStorageLogDiskOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageLogDisk)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageLogDiskOutput) ToGetNdbCloneInfoBpgConfigStorageLogDiskOutput() GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageLogDiskOutput) ToGetNdbCloneInfoBpgConfigStorageLogDiskOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageLogDiskOutput) Count() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorageLogDisk) float64 { return v.Count }).(pulumi.Float64Output)
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageLogDiskOutput) Size() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigStorageLogDisk) float64 { return v.Size }).(pulumi.Float64Output)
-}
-
-type GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigStorageLogDisk)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput) ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput() GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput) ToGetNdbCloneInfoBpgConfigStorageLogDiskArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigStorageLogDiskOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigStorageLogDisk {
-		return vs[0].([]GetNdbCloneInfoBpgConfigStorageLogDisk)[vs[1].(int)]
-	}).(GetNdbCloneInfoBpgConfigStorageLogDiskOutput)
-}
-
-type GetNdbCloneInfoBpgConfigVmProperty struct {
-	DirtyBackgroundRatio    float64 `pulumi:"dirtyBackgroundRatio"`
-	DirtyExpireCentisecs    float64 `pulumi:"dirtyExpireCentisecs"`
-	DirtyRatio              float64 `pulumi:"dirtyRatio"`
-	DirtyWritebackCentisecs float64 `pulumi:"dirtyWritebackCentisecs"`
-	NrHugepages             float64 `pulumi:"nrHugepages"`
-	OvercommitMemory        float64 `pulumi:"overcommitMemory"`
-	Swappiness              float64 `pulumi:"swappiness"`
-}
-
-// GetNdbCloneInfoBpgConfigVmPropertyInput is an input type that accepts GetNdbCloneInfoBpgConfigVmPropertyArgs and GetNdbCloneInfoBpgConfigVmPropertyOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigVmPropertyInput` via:
-//
-//	GetNdbCloneInfoBpgConfigVmPropertyArgs{...}
-type GetNdbCloneInfoBpgConfigVmPropertyInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigVmPropertyOutput() GetNdbCloneInfoBpgConfigVmPropertyOutput
-	ToGetNdbCloneInfoBpgConfigVmPropertyOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigVmPropertyOutput
-}
-
-type GetNdbCloneInfoBpgConfigVmPropertyArgs struct {
-	DirtyBackgroundRatio    pulumi.Float64Input `pulumi:"dirtyBackgroundRatio"`
-	DirtyExpireCentisecs    pulumi.Float64Input `pulumi:"dirtyExpireCentisecs"`
-	DirtyRatio              pulumi.Float64Input `pulumi:"dirtyRatio"`
-	DirtyWritebackCentisecs pulumi.Float64Input `pulumi:"dirtyWritebackCentisecs"`
-	NrHugepages             pulumi.Float64Input `pulumi:"nrHugepages"`
-	OvercommitMemory        pulumi.Float64Input `pulumi:"overcommitMemory"`
-	Swappiness              pulumi.Float64Input `pulumi:"swappiness"`
-}
-
-func (GetNdbCloneInfoBpgConfigVmPropertyArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigVmPropertyArgs) ToGetNdbCloneInfoBpgConfigVmPropertyOutput() GetNdbCloneInfoBpgConfigVmPropertyOutput {
-	return i.ToGetNdbCloneInfoBpgConfigVmPropertyOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigVmPropertyArgs) ToGetNdbCloneInfoBpgConfigVmPropertyOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigVmPropertyOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigVmPropertyOutput)
-}
-
-// GetNdbCloneInfoBpgConfigVmPropertyArrayInput is an input type that accepts GetNdbCloneInfoBpgConfigVmPropertyArray and GetNdbCloneInfoBpgConfigVmPropertyArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneInfoBpgConfigVmPropertyArrayInput` via:
-//
-//	GetNdbCloneInfoBpgConfigVmPropertyArray{ GetNdbCloneInfoBpgConfigVmPropertyArgs{...} }
-type GetNdbCloneInfoBpgConfigVmPropertyArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutput() GetNdbCloneInfoBpgConfigVmPropertyArrayOutput
-	ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(context.Context) GetNdbCloneInfoBpgConfigVmPropertyArrayOutput
-}
-
-type GetNdbCloneInfoBpgConfigVmPropertyArray []GetNdbCloneInfoBpgConfigVmPropertyInput
-
-func (GetNdbCloneInfoBpgConfigVmPropertyArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
-}
-
-func (i GetNdbCloneInfoBpgConfigVmPropertyArray) ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutput() GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return i.ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneInfoBpgConfigVmPropertyArray) ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneInfoBpgConfigVmPropertyArrayOutput)
-}
-
-type GetNdbCloneInfoBpgConfigVmPropertyOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigVmPropertyOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) ToGetNdbCloneInfoBpgConfigVmPropertyOutput() GetNdbCloneInfoBpgConfigVmPropertyOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) ToGetNdbCloneInfoBpgConfigVmPropertyOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigVmPropertyOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) DirtyBackgroundRatio() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.DirtyBackgroundRatio }).(pulumi.Float64Output)
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) DirtyExpireCentisecs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.DirtyExpireCentisecs }).(pulumi.Float64Output)
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) DirtyRatio() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.DirtyRatio }).(pulumi.Float64Output)
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) DirtyWritebackCentisecs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.DirtyWritebackCentisecs }).(pulumi.Float64Output)
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) NrHugepages() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.NrHugepages }).(pulumi.Float64Output)
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) OvercommitMemory() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.OvercommitMemory }).(pulumi.Float64Output)
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyOutput) Swappiness() pulumi.Float64Output {
-	return o.ApplyT(func(v GetNdbCloneInfoBpgConfigVmProperty) float64 { return v.Swappiness }).(pulumi.Float64Output)
-}
-
-type GetNdbCloneInfoBpgConfigVmPropertyArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneInfoBpgConfigVmPropertyArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneInfoBpgConfigVmProperty)(nil)).Elem()
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyArrayOutput) ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutput() GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyArrayOutput) ToGetNdbCloneInfoBpgConfigVmPropertyArrayOutputWithContext(ctx context.Context) GetNdbCloneInfoBpgConfigVmPropertyArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneInfoBpgConfigVmPropertyArrayOutput) Index(i pulumi.IntInput) GetNdbCloneInfoBpgConfigVmPropertyOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneInfoBpgConfigVmProperty {
-		return vs[0].([]GetNdbCloneInfoBpgConfigVmProperty)[vs[1].(int)]
-	}).(GetNdbCloneInfoBpgConfigVmPropertyOutput)
-}
-
-type GetNdbCloneLcmConfig struct {
-	ExpiryDetails      []GetNdbCloneLcmConfigExpiryDetail      `pulumi:"expiryDetails"`
-	PostDeleteCommands []GetNdbCloneLcmConfigPostDeleteCommand `pulumi:"postDeleteCommands"`
-	PreDeleteCommands  []GetNdbCloneLcmConfigPreDeleteCommand  `pulumi:"preDeleteCommands"`
-	RefreshDetails     []GetNdbCloneLcmConfigRefreshDetail     `pulumi:"refreshDetails"`
-}
-
-// GetNdbCloneLcmConfigInput is an input type that accepts GetNdbCloneLcmConfigArgs and GetNdbCloneLcmConfigOutput values.
-// You can construct a concrete instance of `GetNdbCloneLcmConfigInput` via:
-//
-//	GetNdbCloneLcmConfigArgs{...}
-type GetNdbCloneLcmConfigInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneLcmConfigOutput() GetNdbCloneLcmConfigOutput
-	ToGetNdbCloneLcmConfigOutputWithContext(context.Context) GetNdbCloneLcmConfigOutput
-}
-
-type GetNdbCloneLcmConfigArgs struct {
-	ExpiryDetails      GetNdbCloneLcmConfigExpiryDetailArrayInput      `pulumi:"expiryDetails"`
-	PostDeleteCommands GetNdbCloneLcmConfigPostDeleteCommandArrayInput `pulumi:"postDeleteCommands"`
-	PreDeleteCommands  GetNdbCloneLcmConfigPreDeleteCommandArrayInput  `pulumi:"preDeleteCommands"`
-	RefreshDetails     GetNdbCloneLcmConfigRefreshDetailArrayInput     `pulumi:"refreshDetails"`
-}
-
-func (GetNdbCloneLcmConfigArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneLcmConfig)(nil)).Elem()
-}
-
-func (i GetNdbCloneLcmConfigArgs) ToGetNdbCloneLcmConfigOutput() GetNdbCloneLcmConfigOutput {
-	return i.ToGetNdbCloneLcmConfigOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneLcmConfigArgs) ToGetNdbCloneLcmConfigOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneLcmConfigOutput)
-}
-
-// GetNdbCloneLcmConfigArrayInput is an input type that accepts GetNdbCloneLcmConfigArray and GetNdbCloneLcmConfigArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneLcmConfigArrayInput` via:
-//
-//	GetNdbCloneLcmConfigArray{ GetNdbCloneLcmConfigArgs{...} }
-type GetNdbCloneLcmConfigArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneLcmConfigArrayOutput() GetNdbCloneLcmConfigArrayOutput
-	ToGetNdbCloneLcmConfigArrayOutputWithContext(context.Context) GetNdbCloneLcmConfigArrayOutput
-}
-
-type GetNdbCloneLcmConfigArray []GetNdbCloneLcmConfigInput
-
-func (GetNdbCloneLcmConfigArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneLcmConfig)(nil)).Elem()
-}
-
-func (i GetNdbCloneLcmConfigArray) ToGetNdbCloneLcmConfigArrayOutput() GetNdbCloneLcmConfigArrayOutput {
-	return i.ToGetNdbCloneLcmConfigArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneLcmConfigArray) ToGetNdbCloneLcmConfigArrayOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneLcmConfigArrayOutput)
-}
-
-type GetNdbCloneLcmConfigOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneLcmConfigOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneLcmConfig)(nil)).Elem()
-}
-
-func (o GetNdbCloneLcmConfigOutput) ToGetNdbCloneLcmConfigOutput() GetNdbCloneLcmConfigOutput {
-	return o
-}
-
-func (o GetNdbCloneLcmConfigOutput) ToGetNdbCloneLcmConfigOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigOutput {
-	return o
-}
-
-func (o GetNdbCloneLcmConfigOutput) ExpiryDetails() GetNdbCloneLcmConfigExpiryDetailArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfig) []GetNdbCloneLcmConfigExpiryDetail { return v.ExpiryDetails }).(GetNdbCloneLcmConfigExpiryDetailArrayOutput)
-}
-
-func (o GetNdbCloneLcmConfigOutput) PostDeleteCommands() GetNdbCloneLcmConfigPostDeleteCommandArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfig) []GetNdbCloneLcmConfigPostDeleteCommand { return v.PostDeleteCommands }).(GetNdbCloneLcmConfigPostDeleteCommandArrayOutput)
-}
-
-func (o GetNdbCloneLcmConfigOutput) PreDeleteCommands() GetNdbCloneLcmConfigPreDeleteCommandArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfig) []GetNdbCloneLcmConfigPreDeleteCommand { return v.PreDeleteCommands }).(GetNdbCloneLcmConfigPreDeleteCommandArrayOutput)
-}
-
-func (o GetNdbCloneLcmConfigOutput) RefreshDetails() GetNdbCloneLcmConfigRefreshDetailArrayOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfig) []GetNdbCloneLcmConfigRefreshDetail { return v.RefreshDetails }).(GetNdbCloneLcmConfigRefreshDetailArrayOutput)
-}
-
-type GetNdbCloneLcmConfigArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneLcmConfigArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneLcmConfig)(nil)).Elem()
-}
-
-func (o GetNdbCloneLcmConfigArrayOutput) ToGetNdbCloneLcmConfigArrayOutput() GetNdbCloneLcmConfigArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneLcmConfigArrayOutput) ToGetNdbCloneLcmConfigArrayOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneLcmConfigArrayOutput) Index(i pulumi.IntInput) GetNdbCloneLcmConfigOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneLcmConfig {
-		return vs[0].([]GetNdbCloneLcmConfig)[vs[1].(int)]
-	}).(GetNdbCloneLcmConfigOutput)
-}
-
-type GetNdbCloneLcmConfigExpiryDetail struct {
-	DeleteDatabase     bool   `pulumi:"deleteDatabase"`
-	DeleteTimeMachine  bool   `pulumi:"deleteTimeMachine"`
-	DeleteVm           bool   `pulumi:"deleteVm"`
-	EffectiveTimestamp string `pulumi:"effectiveTimestamp"`
-	ExpireInDays       int    `pulumi:"expireInDays"`
-	ExpiryDateTimezone string `pulumi:"expiryDateTimezone"`
-	ExpiryTimestamp    string `pulumi:"expiryTimestamp"`
-	RemindBeforeInDays int    `pulumi:"remindBeforeInDays"`
-	UserCreated        bool   `pulumi:"userCreated"`
-}
-
-// GetNdbCloneLcmConfigExpiryDetailInput is an input type that accepts GetNdbCloneLcmConfigExpiryDetailArgs and GetNdbCloneLcmConfigExpiryDetailOutput values.
-// You can construct a concrete instance of `GetNdbCloneLcmConfigExpiryDetailInput` via:
-//
-//	GetNdbCloneLcmConfigExpiryDetailArgs{...}
-type GetNdbCloneLcmConfigExpiryDetailInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneLcmConfigExpiryDetailOutput() GetNdbCloneLcmConfigExpiryDetailOutput
-	ToGetNdbCloneLcmConfigExpiryDetailOutputWithContext(context.Context) GetNdbCloneLcmConfigExpiryDetailOutput
-}
-
-type GetNdbCloneLcmConfigExpiryDetailArgs struct {
-	DeleteDatabase     pulumi.BoolInput   `pulumi:"deleteDatabase"`
-	DeleteTimeMachine  pulumi.BoolInput   `pulumi:"deleteTimeMachine"`
-	DeleteVm           pulumi.BoolInput   `pulumi:"deleteVm"`
-	EffectiveTimestamp pulumi.StringInput `pulumi:"effectiveTimestamp"`
-	ExpireInDays       pulumi.IntInput    `pulumi:"expireInDays"`
-	ExpiryDateTimezone pulumi.StringInput `pulumi:"expiryDateTimezone"`
-	ExpiryTimestamp    pulumi.StringInput `pulumi:"expiryTimestamp"`
-	RemindBeforeInDays pulumi.IntInput    `pulumi:"remindBeforeInDays"`
-	UserCreated        pulumi.BoolInput   `pulumi:"userCreated"`
-}
-
-func (GetNdbCloneLcmConfigExpiryDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (i GetNdbCloneLcmConfigExpiryDetailArgs) ToGetNdbCloneLcmConfigExpiryDetailOutput() GetNdbCloneLcmConfigExpiryDetailOutput {
-	return i.ToGetNdbCloneLcmConfigExpiryDetailOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneLcmConfigExpiryDetailArgs) ToGetNdbCloneLcmConfigExpiryDetailOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigExpiryDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneLcmConfigExpiryDetailOutput)
-}
-
-// GetNdbCloneLcmConfigExpiryDetailArrayInput is an input type that accepts GetNdbCloneLcmConfigExpiryDetailArray and GetNdbCloneLcmConfigExpiryDetailArrayOutput values.
-// You can construct a concrete instance of `GetNdbCloneLcmConfigExpiryDetailArrayInput` via:
-//
-//	GetNdbCloneLcmConfigExpiryDetailArray{ GetNdbCloneLcmConfigExpiryDetailArgs{...} }
-type GetNdbCloneLcmConfigExpiryDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetNdbCloneLcmConfigExpiryDetailArrayOutput() GetNdbCloneLcmConfigExpiryDetailArrayOutput
-	ToGetNdbCloneLcmConfigExpiryDetailArrayOutputWithContext(context.Context) GetNdbCloneLcmConfigExpiryDetailArrayOutput
-}
-
-type GetNdbCloneLcmConfigExpiryDetailArray []GetNdbCloneLcmConfigExpiryDetailInput
-
-func (GetNdbCloneLcmConfigExpiryDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (i GetNdbCloneLcmConfigExpiryDetailArray) ToGetNdbCloneLcmConfigExpiryDetailArrayOutput() GetNdbCloneLcmConfigExpiryDetailArrayOutput {
-	return i.ToGetNdbCloneLcmConfigExpiryDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetNdbCloneLcmConfigExpiryDetailArray) ToGetNdbCloneLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigExpiryDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetNdbCloneLcmConfigExpiryDetailArrayOutput)
-}
-
-type GetNdbCloneLcmConfigExpiryDetailOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneLcmConfigExpiryDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetNdbCloneLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) ToGetNdbCloneLcmConfigExpiryDetailOutput() GetNdbCloneLcmConfigExpiryDetailOutput {
-	return o
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) ToGetNdbCloneLcmConfigExpiryDetailOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigExpiryDetailOutput {
-	return o
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) DeleteDatabase() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) bool { return v.DeleteDatabase }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) DeleteTimeMachine() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) bool { return v.DeleteTimeMachine }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) DeleteVm() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) bool { return v.DeleteVm }).(pulumi.BoolOutput)
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) EffectiveTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) string { return v.EffectiveTimestamp }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) ExpireInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) int { return v.ExpireInDays }).(pulumi.IntOutput)
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) ExpiryDateTimezone() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) string { return v.ExpiryDateTimezone }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) ExpiryTimestamp() pulumi.StringOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) string { return v.ExpiryTimestamp }).(pulumi.StringOutput)
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) RemindBeforeInDays() pulumi.IntOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) int { return v.RemindBeforeInDays }).(pulumi.IntOutput)
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailOutput) UserCreated() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetNdbCloneLcmConfigExpiryDetail) bool { return v.UserCreated }).(pulumi.BoolOutput)
-}
-
-type GetNdbCloneLcmConfigExpiryDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetNdbCloneLcmConfigExpiryDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetNdbCloneLcmConfigExpiryDetail)(nil)).Elem()
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailArrayOutput) ToGetNdbCloneLcmConfigExpiryDetailArrayOutput() GetNdbCloneLcmConfigExpiryDetailArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailArrayOutput) ToGetNdbCloneLcmConfigExpiryDetailArrayOutputWithContext(ctx context.Context) GetNdbCloneLcmConfigExpiryDetailArrayOutput {
-	return o
-}
-
-func (o GetNdbCloneLcmConfigExpiryDetailArrayOutput) Index(i pulumi.IntInput) GetNdbCloneLcmConfigExpiryDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetNdbCloneLcmConfigExpiryDetail {
-		return vs[0].([]GetNdbCloneLcmConfigExpiryDetail)[vs[1].(int)]
-	}).(GetNdbCloneLcmConfigExpiryDetailOutput)
-}
-
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityConfigPulseStatusInput)(nil)).Elem(), GetClustersV2ClusterEntityConfigPulseStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityConfigPulseStatusArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityConfigPulseStatusArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityLinkInput)(nil)).Elem(), GetClustersV2ClusterEntityLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityLinkArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityLinkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkBackplaneArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkBackplaneArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneNetmaskInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkBackplaneNetmaskArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkBackplaneNetmaskArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneSubnetInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkBackplaneSubnetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkBackplaneSubnetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressIpv4Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalAddressIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalAddressIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressIpv6Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalAddressIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalAddressIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalDataServicesIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalDataServicesIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyWhiteListInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkManagementServerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkManagementServerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkManagementServerIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkManagementServerIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkMasqueradingIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkMasqueradingIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNameServerIpListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNameServerIpListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListFqdnInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Args{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Array{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNtpServerIpListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNtpServerIpListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4Args{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4ArrayInput)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4Array{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6Input)(nil)).Elem(), GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6Args{})
@@ -59852,6 +59777,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserGroupConfigurationArrayInput)(nil)).Elem(), GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserGroupConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectoryServicesV2DirectoryServiceServiceAccountInput)(nil)).Elem(), GetDirectoryServicesV2DirectoryServiceServiceAccountArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDirectoryServicesV2DirectoryServiceServiceAccountArrayInput)(nil)).Elem(), GetDirectoryServicesV2DirectoryServiceServiceAccountArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsV2DomainInput)(nil)).Elem(), GetDomainsV2DomainArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsV2DomainArrayInput)(nil)).Elem(), GetDomainsV2DomainArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsV2DomainLinkInput)(nil)).Elem(), GetDomainsV2DomainLinkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainsV2DomainLinkArrayInput)(nil)).Elem(), GetDomainsV2DomainLinkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicyInput)(nil)).Elem(), GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicyArrayInput)(nil)).Elem(), GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEntityGroupV2AllowedConfigInput)(nil)).Elem(), GetEntityGroupV2AllowedConfigArgs{})
@@ -60706,70 +60635,66 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntitiesV2EntitySubEntityLinkArrayInput)(nil)).Elem(), GetLcmEntitiesV2EntitySubEntityLinkArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyLinkInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyLinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2AvailableVersionDependencyLinkArrayInput)(nil)).Elem(), GetLcmEntityV2AvailableVersionDependencyLinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailInput)(nil)).Elem(), GetLcmEntityV2EntityDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailArrayInput)(nil)).Elem(), GetLcmEntityV2EntityDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailValueInput)(nil)).Elem(), GetLcmEntityV2EntityDetailValueArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailValueArrayInput)(nil)).Elem(), GetLcmEntityV2EntityDetailValueArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailValueMapOfStringInput)(nil)).Elem(), GetLcmEntityV2EntityDetailValueMapOfStringArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2EntityDetailValueMapOfStringArrayInput)(nil)).Elem(), GetLcmEntityV2EntityDetailValueMapOfStringArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2LinkInput)(nil)).Elem(), GetLcmEntityV2LinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2LinkArrayInput)(nil)).Elem(), GetLcmEntityV2LinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2LocationInfoInput)(nil)).Elem(), GetLcmEntityV2LocationInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2LocationInfoArrayInput)(nil)).Elem(), GetLcmEntityV2LocationInfoArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2SubEntityInput)(nil)).Elem(), GetLcmEntityV2SubEntityArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2SubEntityArrayInput)(nil)).Elem(), GetLcmEntityV2SubEntityArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2SubEntityLinkInput)(nil)).Elem(), GetLcmEntityV2SubEntityLinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmEntityV2SubEntityLinkArrayInput)(nil)).Elem(), GetLcmEntityV2SubEntityLinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2FrameworkVersionInput)(nil)).Elem(), GetLcmStatusV2FrameworkVersionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2FrameworkVersionArrayInput)(nil)).Elem(), GetLcmStatusV2FrameworkVersionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2InProgressOperationInput)(nil)).Elem(), GetLcmStatusV2InProgressOperationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2InProgressOperationArrayInput)(nil)).Elem(), GetLcmStatusV2InProgressOperationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2LinkInput)(nil)).Elem(), GetLcmStatusV2LinkArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetLcmStatusV2LinkArrayInput)(nil)).Elem(), GetLcmStatusV2LinkArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeInput)(nil)).Elem(), GetNdbCloneDatabaseNodeArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeInfoInput)(nil)).Elem(), GetNdbCloneDatabaseNodeInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeInfoArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeInfoArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodePropertyInput)(nil)).Elem(), GetNdbCloneDatabaseNodePropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodePropertyArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodePropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainInput)(nil)).Elem(), GetNdbCloneDatabaseNodeProtectionDomainArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeProtectionDomainArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainPropertyInput)(nil)).Elem(), GetNdbCloneDatabaseNodeProtectionDomainPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeProtectionDomainPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeTagInput)(nil)).Elem(), GetNdbCloneDatabaseNodeTagArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneDatabaseNodeTagArrayInput)(nil)).Elem(), GetNdbCloneDatabaseNodeTagArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneFilterInput)(nil)).Elem(), GetNdbCloneFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneFilterArrayInput)(nil)).Elem(), GetNdbCloneFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoInput)(nil)).Elem(), GetNdbCloneInfoArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoArrayInput)(nil)).Elem(), GetNdbCloneInfoArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigBpgDbParamInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigBpgDbParamArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigBpgDbParamArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigBpgDbParamArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArchiveStorageInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageArchiveStorageArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageArchiveStorageArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageDataDiskInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageDataDiskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageDataDiskArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageDataDiskArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageLogDiskInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageLogDiskArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigStorageLogDiskArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigStorageLogDiskArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigVmPropertyInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigVmPropertyArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneInfoBpgConfigVmPropertyArrayInput)(nil)).Elem(), GetNdbCloneInfoBpgConfigVmPropertyArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigInput)(nil)).Elem(), GetNdbCloneLcmConfigArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigArrayInput)(nil)).Elem(), GetNdbCloneLcmConfigArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigExpiryDetailInput)(nil)).Elem(), GetNdbCloneLcmConfigExpiryDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetNdbCloneLcmConfigExpiryDetailArrayInput)(nil)).Elem(), GetNdbCloneLcmConfigExpiryDetailArray{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityConfigPulseStatusOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityConfigPulseStatusArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityLinkOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityLinkArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkBackplaneOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkBackplaneArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkBackplaneNetmaskOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkBackplaneNetmaskArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkBackplaneSubnetOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkBackplaneSubnetArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalAddressOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalAddressIpv4Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalAddressIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalAddressIpv6Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalAddressIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalDataServicesIpOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalDataServicesIpArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkExternalDataServicesIpIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyListOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyListArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyListIpAddressIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyWhiteListOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkHttpProxyWhiteListArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkManagementServerOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkManagementServerArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkManagementServerIpOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkManagementServerIpArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkManagementServerIpIpv4Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkManagementServerIpIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkManagementServerIpIpv6Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkManagementServerIpIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkMasqueradingIpOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkMasqueradingIpArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkMasqueradingIpIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNameServerIpListOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNameServerIpListArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNameServerIpListFqdnOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNameServerIpListFqdnArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNameServerIpListIpv4Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNameServerIpListIpv4ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNameServerIpListIpv6Output{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNameServerIpListIpv6ArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNtpServerIpListOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNtpServerIpListArrayOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnOutput{})
+	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNtpServerIpListFqdnArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4Output{})
 	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNtpServerIpListIpv4ArrayOutput{})
 	pulumi.RegisterOutputType(GetClustersV2ClusterEntityNetworkNtpServerIpListIpv6Output{})
@@ -60850,6 +60775,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDirectoryServicesV2DirectoryServiceOpenLdapConfigurationUserGroupConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDirectoryServicesV2DirectoryServiceServiceAccountOutput{})
 	pulumi.RegisterOutputType(GetDirectoryServicesV2DirectoryServiceServiceAccountArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsV2DomainOutput{})
+	pulumi.RegisterOutputType(GetDomainsV2DomainArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainsV2DomainLinkOutput{})
+	pulumi.RegisterOutputType(GetDomainsV2DomainLinkArrayOutput{})
 	pulumi.RegisterOutputType(GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicyOutput{})
 	pulumi.RegisterOutputType(GetEffectiveImageRateLimitPoliciesV2EffectiveRateLimitPolicyArrayOutput{})
 	pulumi.RegisterOutputType(GetEntityGroupV2AllowedConfigOutput{})
@@ -61704,68 +61633,4 @@ func init() {
 	pulumi.RegisterOutputType(GetLcmEntitiesV2EntitySubEntityLinkArrayOutput{})
 	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionOutput{})
 	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyDependentVersionValueMapOfStringArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyLinkOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2AvailableVersionDependencyLinkArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailValueOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailValueArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailValueMapOfStringOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2EntityDetailValueMapOfStringArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2LinkOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2LinkArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2LocationInfoOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2LocationInfoArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2SubEntityOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2SubEntityArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2SubEntityLinkOutput{})
-	pulumi.RegisterOutputType(GetLcmEntityV2SubEntityLinkArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmStatusV2FrameworkVersionOutput{})
-	pulumi.RegisterOutputType(GetLcmStatusV2FrameworkVersionArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmStatusV2InProgressOperationOutput{})
-	pulumi.RegisterOutputType(GetLcmStatusV2InProgressOperationArrayOutput{})
-	pulumi.RegisterOutputType(GetLcmStatusV2LinkOutput{})
-	pulumi.RegisterOutputType(GetLcmStatusV2LinkArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeInfoOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeInfoArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodePropertyOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodePropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeProtectionDomainOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeProtectionDomainArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeProtectionDomainPropertyOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeProtectionDomainPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeTagOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneDatabaseNodeTagArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneFilterOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigBpgDbParamOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigBpgDbParamArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageArchiveStorageOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageArchiveStorageArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageDataDiskOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageDataDiskArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageLogDiskOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigStorageLogDiskArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigVmPropertyOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneInfoBpgConfigVmPropertyArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneLcmConfigOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneLcmConfigArrayOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneLcmConfigExpiryDetailOutput{})
-	pulumi.RegisterOutputType(GetNdbCloneLcmConfigExpiryDetailArrayOutput{})
 }

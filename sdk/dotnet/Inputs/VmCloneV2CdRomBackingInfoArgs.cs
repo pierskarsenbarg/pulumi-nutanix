@@ -40,6 +40,9 @@ namespace PiersKarsenbarg.Nutanix.Inputs
         [Input("isMigrationInProgress")]
         public Input<bool>? IsMigrationInProgress { get; set; }
 
+        [Input("serialId")]
+        public Input<string>? SerialId { get; set; }
+
         [Input("storageConfigs")]
         private InputList<Inputs.VmCloneV2CdRomBackingInfoStorageConfigArgs>? _storageConfigs;
 

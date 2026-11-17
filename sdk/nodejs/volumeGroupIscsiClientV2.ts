@@ -126,7 +126,7 @@ export class VolumeGroupIscsiClientV2 extends pulumi.CustomResource {
                 throw new Error("Missing required property 'vgExtId'");
             }
             resourceInputs["attachmentSite"] = args?.attachmentSite;
-            resourceInputs["clientSecret"] = args?.clientSecret;
+            resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
             resourceInputs["enabledAuthentications"] = args?.enabledAuthentications;
             resourceInputs["extId"] = args?.extId;
             resourceInputs["iscsiInitiatorName"] = args?.iscsiInitiatorName;
@@ -135,6 +135,8 @@ export class VolumeGroupIscsiClientV2 extends pulumi.CustomResource {
             resourceInputs["vgExtId"] = args?.vgExtId;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["clientSecret"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(VolumeGroupIscsiClientV2.__pulumiType, name, resourceInputs, opts);
     }
 }

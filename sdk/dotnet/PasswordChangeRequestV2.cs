@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Initiate change password request for a system user on a supported product.
     /// 
+    /// &gt; **WriteOnly credentials:** &lt;span pulumi-lang-nodejs="`currentPassword`" pulumi-lang-dotnet="`CurrentPassword`" pulumi-lang-go="`currentPassword`" pulumi-lang-python="`current_password`" pulumi-lang-yaml="`currentPassword`" pulumi-lang-java="`currentPassword`" pulumi-lang-hcl="`current_password`"&gt;`currentPassword`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`newPassword`" pulumi-lang-dotnet="`NewPassword`" pulumi-lang-go="`newPassword`" pulumi-lang-python="`new_password`" pulumi-lang-yaml="`newPassword`" pulumi-lang-java="`newPassword`" pulumi-lang-hcl="`new_password`"&gt;`newPassword`&lt;/span&gt; are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+    /// 
     /// ## Example Usage
     /// 
     /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -39,7 +41,8 @@ namespace PiersKarsenbarg.Nutanix
     public partial class PasswordChangeRequestV2 : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// -(Optional) Existing password of a user account.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Optional, WriteOnly) Existing password of a user account.
         /// </summary>
         [Output("currentPassword")]
         public Output<string?> CurrentPassword { get; private set; } = null!;
@@ -51,7 +54,8 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ExtId { get; private set; } = null!;
 
         /// <summary>
-        /// -(Required) New password for a user account.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) New password for a user account.
         /// 
         /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>
@@ -82,6 +86,11 @@ namespace PiersKarsenbarg.Nutanix
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/pierskarsenbarg/pulumi-nutanix",
+                AdditionalSecretOutputs =
+                {
+                    "currentPassword",
+                    "newPassword",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -105,11 +114,22 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class PasswordChangeRequestV2Args : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// -(Optional) Existing password of a user account.
-        /// </summary>
         [Input("currentPassword")]
-        public Input<string>? CurrentPassword { get; set; }
+        private Input<string>? _currentPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Optional, WriteOnly) Existing password of a user account.
+        /// </summary>
+        public Input<string>? CurrentPassword
+        {
+            get => _currentPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _currentPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// -(Required) External identifier of the system user password.
@@ -117,13 +137,24 @@ namespace PiersKarsenbarg.Nutanix
         [Input("extId", required: true)]
         public Input<string> ExtId { get; set; } = null!;
 
+        [Input("newPassword", required: true)]
+        private Input<string>? _newPassword;
+
         /// <summary>
-        /// -(Required) New password for a user account.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) New password for a user account.
         /// 
         /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>
-        [Input("newPassword", required: true)]
-        public Input<string> NewPassword { get; set; } = null!;
+        public Input<string>? NewPassword
+        {
+            get => _newPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _newPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public PasswordChangeRequestV2Args()
         {
@@ -133,11 +164,22 @@ namespace PiersKarsenbarg.Nutanix
 
     public sealed class PasswordChangeRequestV2State : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// -(Optional) Existing password of a user account.
-        /// </summary>
         [Input("currentPassword")]
-        public Input<string>? CurrentPassword { get; set; }
+        private Input<string>? _currentPassword;
+
+        /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Optional, WriteOnly) Existing password of a user account.
+        /// </summary>
+        public Input<string>? CurrentPassword
+        {
+            get => _currentPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _currentPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         /// <summary>
         /// -(Required) External identifier of the system user password.
@@ -145,13 +187,24 @@ namespace PiersKarsenbarg.Nutanix
         [Input("extId")]
         public Input<string>? ExtId { get; set; }
 
+        [Input("newPassword")]
+        private Input<string>? _newPassword;
+
         /// <summary>
-        /// -(Required) New password for a user account.
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// -(Required, WriteOnly) New password for a user account.
         /// 
         /// See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&amp;version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
         /// </summary>
-        [Input("newPassword")]
-        public Input<string>? NewPassword { get; set; }
+        public Input<string>? NewPassword
+        {
+            get => _newPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _newPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         public PasswordChangeRequestV2State()
         {

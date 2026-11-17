@@ -31,6 +31,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly bool IsMigrationInProgress;
         /// <summary>
+        /// The disk serial ID, used to identify the disk in the hypervisor. The guest OS sees it in the disk's SCSI identity, for example `/dev/disk/by-id/scsi-SNUTANIX_VDISK_&lt;serial_id&gt;` on Linux.
+        /// </summary>
+        public readonly string SerialId;
+        /// <summary>
         /// Storage configuration for VM disks
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigResult> StorageConfigs;
@@ -49,6 +53,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool isMigrationInProgress,
 
+            string serialId,
+
             ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageConfigResult> storageConfigs,
 
             ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecDiskBackingInfoVmDiskStorageContainerResult> storageContainers)
@@ -57,6 +63,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
             IsMigrationInProgress = isMigrationInProgress;
+            SerialId = serialId;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

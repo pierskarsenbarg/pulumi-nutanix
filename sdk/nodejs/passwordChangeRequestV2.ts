@@ -7,6 +7,8 @@ import * as utilities from "./utilities";
 /**
  * Initiate change password request for a system user on a supported product.
  *
+ * > **WriteOnly credentials:** <span pulumi-lang-nodejs="`currentPassword`" pulumi-lang-dotnet="`CurrentPassword`" pulumi-lang-go="`currentPassword`" pulumi-lang-python="`current_password`" pulumi-lang-yaml="`currentPassword`" pulumi-lang-java="`currentPassword`" pulumi-lang-hcl="`current_password`">`currentPassword`</span>, <span pulumi-lang-nodejs="`newPassword`" pulumi-lang-dotnet="`NewPassword`" pulumi-lang-go="`newPassword`" pulumi-lang-python="`new_password`" pulumi-lang-yaml="`newPassword`" pulumi-lang-java="`newPassword`" pulumi-lang-hcl="`new_password`">`newPassword`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+ *
  * ## Example Usage
  *
  * <!--Start PulumiCodeChooser -->
@@ -62,7 +64,8 @@ export class PasswordChangeRequestV2 extends pulumi.CustomResource {
     }
 
     /**
-     * -(Optional) Existing password of a user account.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Optional, WriteOnly) Existing password of a user account.
      */
     declare public readonly currentPassword: pulumi.Output<string | undefined>;
     /**
@@ -70,7 +73,8 @@ export class PasswordChangeRequestV2 extends pulumi.CustomResource {
      */
     declare public readonly extId: pulumi.Output<string>;
     /**
-     * -(Required) New password for a user account.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) New password for a user account.
      *
      * See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
      */
@@ -100,11 +104,13 @@ export class PasswordChangeRequestV2 extends pulumi.CustomResource {
             if (args?.newPassword === undefined && !opts.urn) {
                 throw new Error("Missing required property 'newPassword'");
             }
-            resourceInputs["currentPassword"] = args?.currentPassword;
+            resourceInputs["currentPassword"] = args?.currentPassword ? pulumi.secret(args.currentPassword) : undefined;
             resourceInputs["extId"] = args?.extId;
-            resourceInputs["newPassword"] = args?.newPassword;
+            resourceInputs["newPassword"] = args?.newPassword ? pulumi.secret(args.newPassword) : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["currentPassword", "newPassword"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(PasswordChangeRequestV2.__pulumiType, name, resourceInputs, opts);
     }
 }
@@ -114,7 +120,8 @@ export class PasswordChangeRequestV2 extends pulumi.CustomResource {
  */
 export interface PasswordChangeRequestV2State {
     /**
-     * -(Optional) Existing password of a user account.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Optional, WriteOnly) Existing password of a user account.
      */
     currentPassword?: pulumi.Input<string | undefined>;
     /**
@@ -122,7 +129,8 @@ export interface PasswordChangeRequestV2State {
      */
     extId?: pulumi.Input<string | undefined>;
     /**
-     * -(Required) New password for a user account.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) New password for a user account.
      *
      * See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
      */
@@ -134,7 +142,8 @@ export interface PasswordChangeRequestV2State {
  */
 export interface PasswordChangeRequestV2Args {
     /**
-     * -(Optional) Existing password of a user account.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Optional, WriteOnly) Existing password of a user account.
      */
     currentPassword?: pulumi.Input<string | undefined>;
     /**
@@ -142,7 +151,8 @@ export interface PasswordChangeRequestV2Args {
      */
     extId: pulumi.Input<string>;
     /**
-     * -(Required) New password for a user account.
+     * **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+     * -(Required, WriteOnly) New password for a user account.
      *
      * See detailed information in [Nutanix Initiate password update for a system user V4](https://developers.nutanix.com/api-reference?namespace=clustermgmt&version=v4.3#tag/PasswordManager/operation/changeSystemUserPasswordById).
      */

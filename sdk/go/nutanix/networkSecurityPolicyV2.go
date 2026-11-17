@@ -98,8 +98,8 @@ import (
 //				AllowedConfig: &nutanix.EntityGroupV2AllowedConfigArgs{
 //					Entities: nutanix.EntityGroupV2AllowedConfigEntityArray{
 //						&nutanix.EntityGroupV2AllowedConfigEntityArgs{
-//							Type:       pulumi.String("VM"),
-//							SelectedBy: pulumi.String("CATEGORY_EXT_ID"),
+//							Type:     pulumi.String("VM"),
+//							SelectBy: pulumi.String("CATEGORY_EXT_ID"),
 //							ReferenceExtIds: pulumi.StringArray{
 //								example.Id,
 //							},

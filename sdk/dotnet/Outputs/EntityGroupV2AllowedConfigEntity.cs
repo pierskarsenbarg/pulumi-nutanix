@@ -19,7 +19,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly Outputs.EntityGroupV2AllowedConfigEntityAddresses? Addresses;
         /// <summary>
-        /// List of FQDNs. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `FQDN_VALUES`.
+        /// List of FQDNs. Required when &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt; is `FQDN_VALUES`.
         /// </summary>
         public readonly ImmutableArray<string> Fqdns;
         /// <summary>
@@ -35,16 +35,21 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? MatchCriteria;
         /// <summary>
-        /// List of reference external identifiers. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `EXT_ID`.
+        /// List of reference external identifiers. Required when &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt; is `EXT_ID`.
         /// </summary>
         public readonly ImmutableArray<string> ReferenceExtIds;
         /// <summary>
-        /// String pattern for matching entities. Required when &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; is `REGEX`.
+        /// String pattern for matching entities. Required when &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt; is `REGEX`.
         /// </summary>
         public readonly string? ReferenceString;
         /// <summary>
         /// The selection method for the entity. Valid values: `IP_VALUES`, `EXT_ID`, `CATEGORY_EXT_ID`, `LABELS`, `NAME`, `REGEX`, `FQDN_VALUES`.
         /// </summary>
+        public readonly string? SelectBy;
+        /// <summary>
+        /// Deprecated alias for &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt;. Prefer &lt;span pulumi-lang-nodejs="`selectBy`" pulumi-lang-dotnet="`SelectBy`" pulumi-lang-go="`selectBy`" pulumi-lang-python="`select_by`" pulumi-lang-yaml="`selectBy`" pulumi-lang-java="`selectBy`" pulumi-lang-hcl="`select_by`"&gt;`selectBy`&lt;/span&gt;; &lt;span pulumi-lang-nodejs="`selectedBy`" pulumi-lang-dotnet="`SelectedBy`" pulumi-lang-go="`selectedBy`" pulumi-lang-python="`selected_by`" pulumi-lang-yaml="`selectedBy`" pulumi-lang-java="`selectedBy`" pulumi-lang-hcl="`selected_by`"&gt;`selectedBy`&lt;/span&gt; will be removed in a future release.
+        /// </summary>
+        [Obsolete(@"Use <span pulumi-lang-nodejs=""`selectBy`"" pulumi-lang-dotnet=""`SelectBy`"" pulumi-lang-go=""`selectBy`"" pulumi-lang-python=""`select_by`"" pulumi-lang-yaml=""`selectBy`"" pulumi-lang-java=""`selectBy`"" pulumi-lang-hcl=""`select_by`"">`selectBy`</span> instead. <span pulumi-lang-nodejs=""`selectedBy`"" pulumi-lang-dotnet=""`SelectedBy`"" pulumi-lang-go=""`selectedBy`"" pulumi-lang-python=""`selected_by`"" pulumi-lang-yaml=""`selectedBy`"" pulumi-lang-java=""`selectedBy`"" pulumi-lang-hcl=""`selected_by`"">`selectedBy`</span> will be removed in a future release.")]
         public readonly string? SelectedBy;
         /// <summary>
         /// The type of entity. Valid values: `KUBE_NAMESPACE`, `SUBNET`, `VM`, `VPC`, `KUBE_SERVICE`, `KUBE_CLUSTER`, `KUBE_PODS`, `ADDRESS_GROUP`.
@@ -67,6 +72,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string? referenceString,
 
+            string? selectBy,
+
             string? selectedBy,
 
             string? type)
@@ -78,7 +85,10 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             MatchCriteria = matchCriteria;
             ReferenceExtIds = referenceExtIds;
             ReferenceString = referenceString;
+            SelectBy = selectBy;
+#pragma warning disable CS0618
             SelectedBy = selectedBy;
+#pragma warning restore CS0618
             Type = type;
         }
     }

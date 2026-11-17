@@ -21,6 +21,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly int? DiskSizeBytes;
         public readonly bool? IsMigrationInProgress;
+        public readonly string? SerialId;
         /// <summary>
         /// Storage configuration options.
         /// </summary>
@@ -40,6 +41,8 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             bool? isMigrationInProgress,
 
+            string? serialId,
+
             ImmutableArray<Outputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageConfig> storageConfigs,
 
             ImmutableArray<Outputs.OvaVmDeployV2OverrideVmConfigDiskBackingInfoVmDiskStorageContainer> storageContainers)
@@ -48,6 +51,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
             DiskExtId = diskExtId;
             DiskSizeBytes = diskSizeBytes;
             IsMigrationInProgress = isMigrationInProgress;
+            SerialId = serialId;
             StorageConfigs = storageConfigs;
             StorageContainers = storageContainers;
         }

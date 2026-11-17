@@ -94,11 +94,12 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// </summary>
         public readonly string? IpmiNetmask;
         /// <summary>
-        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+        /// - (Required incase using IPMI based imaging either here or outside blocks, WriteOnly) IPMI password
         /// </summary>
         public readonly string? IpmiPassword;
         /// <summary>
-        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI password
+        /// - (Required incase using IPMI based imaging either here or outside blocks) IPMI username
         /// </summary>
         public readonly string? IpmiUser;
         /// <summary>

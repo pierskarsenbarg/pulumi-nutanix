@@ -13,6 +13,8 @@ namespace PiersKarsenbarg.Nutanix
     /// <summary>
     /// Update the SSL certificate for a specific cluster. To update the SSL certificate for a specific cluster, you must provide a valid certificate payload in `Base64` format. You can either import a new SSL certificate or replace an existing one by supplying all necessary fields, including the Base64-encoded certificate and private key. Alternatively, you can regenerate a self-signed certificate by specifying the privateKeyAlgorithm, noting that only the RSA_2048 algorithm is supported for SSL certificate regeneration. This process helps maintain the security and integrity of your cluster's communications by allowing you to update or regenerate the SSL certificate as needed.
     /// 
+    /// &gt; **WriteOnly credentials:** &lt;span pulumi-lang-nodejs="`passphrase`" pulumi-lang-dotnet="`Passphrase`" pulumi-lang-go="`passphrase`" pulumi-lang-python="`passphrase`" pulumi-lang-yaml="`passphrase`" pulumi-lang-java="`passphrase`" pulumi-lang-hcl="`passphrase`"&gt;`passphrase`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`privateKey`" pulumi-lang-dotnet="`PrivateKey`" pulumi-lang-go="`privateKey`" pulumi-lang-python="`private_key`" pulumi-lang-yaml="`privateKey`" pulumi-lang-java="`privateKey`" pulumi-lang-hcl="`private_key`"&gt;`privateKey`&lt;/span&gt; are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+    /// 
     /// ## Example Usage
     /// 
     /// &lt;!--Start PulumiCodeChooser --&gt;
@@ -68,12 +70,14 @@ namespace PiersKarsenbarg.Nutanix
         public Output<string> ClusterExtId { get; private set; } = null!;
 
         /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         /// — Passphrase used for SSL certificate.
         /// </summary>
         [Output("passphrase")]
         public Output<string?> Passphrase { get; private set; } = null!;
 
         /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         /// — Private Key used for SSL certificate.
         /// </summary>
         [Output("privateKey")]
@@ -171,6 +175,7 @@ namespace PiersKarsenbarg.Nutanix
         private Input<string>? _passphrase;
 
         /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         /// — Passphrase used for SSL certificate.
         /// </summary>
         public Input<string>? Passphrase
@@ -187,6 +192,7 @@ namespace PiersKarsenbarg.Nutanix
         private Input<string>? _privateKey;
 
         /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         /// — Private Key used for SSL certificate.
         /// </summary>
         public Input<string>? PrivateKey
@@ -247,6 +253,7 @@ namespace PiersKarsenbarg.Nutanix
         private Input<string>? _passphrase;
 
         /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         /// — Passphrase used for SSL certificate.
         /// </summary>
         public Input<string>? Passphrase
@@ -263,6 +270,7 @@ namespace PiersKarsenbarg.Nutanix
         private Input<string>? _privateKey;
 
         /// <summary>
+        /// **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         /// — Private Key used for SSL certificate.
         /// </summary>
         public Input<string>? PrivateKey

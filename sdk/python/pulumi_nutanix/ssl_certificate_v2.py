@@ -30,8 +30,10 @@ class SslCertificateV2Args:
 
         :param pulumi.Input[_builtins.str] cluster_ext_id: — UUID of the cluster to which the host NIC belongs.
         :param pulumi.Input[_builtins.str] ca_chain: — Description of the certificate authority (CA) chain.
-        :param pulumi.Input[_builtins.str] passphrase: — Passphrase used for SSL certificate.
-        :param pulumi.Input[_builtins.str] private_key: — Private Key used for SSL certificate.
+        :param pulumi.Input[_builtins.str] passphrase: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               — Passphrase used for SSL certificate.
+        :param pulumi.Input[_builtins.str] private_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               — Private Key used for SSL certificate.
         :param pulumi.Input[_builtins.str] private_key_algorithm: — Private Key Algorithm used for SSL certificate.
                
                | Enum         | Description                                                      |
@@ -87,6 +89,7 @@ class SslCertificateV2Args:
     @pulumi.getter
     def passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         — Passphrase used for SSL certificate.
         """
         return pulumi.get(self, "passphrase")
@@ -99,6 +102,7 @@ class SslCertificateV2Args:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         — Private Key used for SSL certificate.
         """
         return pulumi.get(self, "private_key")
@@ -158,8 +162,10 @@ class _SslCertificateV2State:
 
         :param pulumi.Input[_builtins.str] ca_chain: — Description of the certificate authority (CA) chain.
         :param pulumi.Input[_builtins.str] cluster_ext_id: — UUID of the cluster to which the host NIC belongs.
-        :param pulumi.Input[_builtins.str] passphrase: — Passphrase used for SSL certificate.
-        :param pulumi.Input[_builtins.str] private_key: — Private Key used for SSL certificate.
+        :param pulumi.Input[_builtins.str] passphrase: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               — Passphrase used for SSL certificate.
+        :param pulumi.Input[_builtins.str] private_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               — Private Key used for SSL certificate.
         :param pulumi.Input[_builtins.str] private_key_algorithm: — Private Key Algorithm used for SSL certificate.
                
                | Enum         | Description                                                      |
@@ -216,6 +222,7 @@ class _SslCertificateV2State:
     @pulumi.getter
     def passphrase(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         — Passphrase used for SSL certificate.
         """
         return pulumi.get(self, "passphrase")
@@ -228,6 +235,7 @@ class _SslCertificateV2State:
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         — Private Key used for SSL certificate.
         """
         return pulumi.get(self, "private_key")
@@ -289,6 +297,8 @@ class SslCertificateV2(pulumi.CustomResource):
         """
         Update the SSL certificate for a specific cluster. To update the SSL certificate for a specific cluster, you must provide a valid certificate payload in `Base64` format. You can either import a new SSL certificate or replace an existing one by supplying all necessary fields, including the Base64-encoded certificate and private key. Alternatively, you can regenerate a self-signed certificate by specifying the privateKeyAlgorithm, noting that only the RSA_2048 algorithm is supported for SSL certificate regeneration. This process helps maintain the security and integrity of your cluster's communications by allowing you to update or regenerate the SSL certificate as needed.
 
+        > **WriteOnly credentials:** <span pulumi-lang-nodejs="`passphrase`" pulumi-lang-dotnet="`Passphrase`" pulumi-lang-go="`passphrase`" pulumi-lang-python="`passphrase`" pulumi-lang-yaml="`passphrase`" pulumi-lang-java="`passphrase`" pulumi-lang-hcl="`passphrase`">`passphrase`</span>, <span pulumi-lang-nodejs="`privateKey`" pulumi-lang-dotnet="`PrivateKey`" pulumi-lang-go="`privateKey`" pulumi-lang-python="`private_key`" pulumi-lang-yaml="`privateKey`" pulumi-lang-java="`privateKey`" pulumi-lang-hcl="`private_key`">`privateKey`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
+
         ## Example Usage
 
         <!--Start PulumiCodeChooser -->
@@ -316,8 +326,10 @@ class SslCertificateV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ca_chain: — Description of the certificate authority (CA) chain.
         :param pulumi.Input[_builtins.str] cluster_ext_id: — UUID of the cluster to which the host NIC belongs.
-        :param pulumi.Input[_builtins.str] passphrase: — Passphrase used for SSL certificate.
-        :param pulumi.Input[_builtins.str] private_key: — Private Key used for SSL certificate.
+        :param pulumi.Input[_builtins.str] passphrase: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               — Passphrase used for SSL certificate.
+        :param pulumi.Input[_builtins.str] private_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               — Private Key used for SSL certificate.
         :param pulumi.Input[_builtins.str] private_key_algorithm: — Private Key Algorithm used for SSL certificate.
                
                | Enum         | Description                                                      |
@@ -341,6 +353,8 @@ class SslCertificateV2(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         Update the SSL certificate for a specific cluster. To update the SSL certificate for a specific cluster, you must provide a valid certificate payload in `Base64` format. You can either import a new SSL certificate or replace an existing one by supplying all necessary fields, including the Base64-encoded certificate and private key. Alternatively, you can regenerate a self-signed certificate by specifying the privateKeyAlgorithm, noting that only the RSA_2048 algorithm is supported for SSL certificate regeneration. This process helps maintain the security and integrity of your cluster's communications by allowing you to update or regenerate the SSL certificate as needed.
+
+        > **WriteOnly credentials:** <span pulumi-lang-nodejs="`passphrase`" pulumi-lang-dotnet="`Passphrase`" pulumi-lang-go="`passphrase`" pulumi-lang-python="`passphrase`" pulumi-lang-yaml="`passphrase`" pulumi-lang-java="`passphrase`" pulumi-lang-hcl="`passphrase`">`passphrase`</span>, <span pulumi-lang-nodejs="`privateKey`" pulumi-lang-dotnet="`PrivateKey`" pulumi-lang-go="`privateKey`" pulumi-lang-python="`private_key`" pulumi-lang-yaml="`privateKey`" pulumi-lang-java="`privateKey`" pulumi-lang-hcl="`private_key`">`privateKey`</span> are write-only. They are never stored in Terraform state. Re-supply them in configuration on every apply. Do not use `lifecycle.ignore_changes` on these attributes. See the [WriteOnly Credentials](https://www.terraform.io/docs/providers/nutanix/guides/writeonly_credentials.html) guide for upgrade caveats.
 
         ## Example Usage
 
@@ -430,8 +444,10 @@ class SslCertificateV2(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] ca_chain: — Description of the certificate authority (CA) chain.
         :param pulumi.Input[_builtins.str] cluster_ext_id: — UUID of the cluster to which the host NIC belongs.
-        :param pulumi.Input[_builtins.str] passphrase: — Passphrase used for SSL certificate.
-        :param pulumi.Input[_builtins.str] private_key: — Private Key used for SSL certificate.
+        :param pulumi.Input[_builtins.str] passphrase: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               — Passphrase used for SSL certificate.
+        :param pulumi.Input[_builtins.str] private_key: **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
+               — Private Key used for SSL certificate.
         :param pulumi.Input[_builtins.str] private_key_algorithm: — Private Key Algorithm used for SSL certificate.
                
                | Enum         | Description                                                      |
@@ -497,6 +513,7 @@ class SslCertificateV2(pulumi.CustomResource):
     @pulumi.getter
     def passphrase(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         — Passphrase used for SSL certificate.
         """
         return pulumi.get(self, "passphrase")
@@ -505,6 +522,7 @@ class SslCertificateV2(pulumi.CustomResource):
     @pulumi.getter(name="privateKey")
     def private_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
+        **NOTE:** This field is write-only and its value will not be updated in state as part of read operations.
         — Private Key used for SSL certificate.
         """
         return pulumi.get(self, "private_key")
