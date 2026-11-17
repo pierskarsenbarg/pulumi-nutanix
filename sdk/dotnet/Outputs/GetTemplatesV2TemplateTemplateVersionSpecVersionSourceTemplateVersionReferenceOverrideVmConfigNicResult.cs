@@ -14,9 +14,11 @@ namespace PiersKarsenbarg.Nutanix.Outputs
     [OutputType]
     public sealed class GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicResult
     {
+        [Obsolete(@"The <span pulumi-lang-nodejs=""`backingInfo`"" pulumi-lang-dotnet=""`BackingInfo`"" pulumi-lang-go=""`backingInfo`"" pulumi-lang-python=""`backing_info`"" pulumi-lang-yaml=""`backingInfo`"" pulumi-lang-java=""`backingInfo`"" pulumi-lang-hcl=""`backing_info`"">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs=""`nicBackingInfo`"" pulumi-lang-dotnet=""`NicBackingInfo`"" pulumi-lang-go=""`nicBackingInfo`"" pulumi-lang-python=""`nic_backing_info`"" pulumi-lang-yaml=""`nicBackingInfo`"" pulumi-lang-java=""`nicBackingInfo`"" pulumi-lang-hcl=""`nic_backing_info`"">`nicBackingInfo`</span> instead. This field will be removed in a future release.")]
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicBackingInfoResult> BackingInfos;
         public readonly string ExtId;
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicLinkResult> Links;
+        [Obsolete(@"The <span pulumi-lang-nodejs=""`networkInfo`"" pulumi-lang-dotnet=""`NetworkInfo`"" pulumi-lang-go=""`networkInfo`"" pulumi-lang-python=""`network_info`"" pulumi-lang-yaml=""`networkInfo`"" pulumi-lang-java=""`networkInfo`"" pulumi-lang-hcl=""`network_info`"">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs=""`nicNetworkInfo`"" pulumi-lang-dotnet=""`NicNetworkInfo`"" pulumi-lang-go=""`nicNetworkInfo`"" pulumi-lang-python=""`nic_network_info`"" pulumi-lang-yaml=""`nicNetworkInfo`"" pulumi-lang-java=""`nicNetworkInfo`"" pulumi-lang-hcl=""`nic_network_info`"">`nicNetworkInfo`</span> instead. This field will be removed in a future release.")]
         public readonly ImmutableArray<Outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNetworkInfoResult> NetworkInfos;
         public readonly Outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicBackingInfoResult NicBackingInfo;
         public readonly Outputs.GetTemplatesV2TemplateTemplateVersionSpecVersionSourceTemplateVersionReferenceOverrideVmConfigNicNicNetworkInfoResult NicNetworkInfo;
@@ -38,10 +40,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string tenantId)
         {
+#pragma warning disable CS0618
             BackingInfos = backingInfos;
+#pragma warning restore CS0618
             ExtId = extId;
             Links = links;
+#pragma warning disable CS0618
             NetworkInfos = networkInfos;
+#pragma warning restore CS0618
             NicBackingInfo = nicBackingInfo;
             NicNetworkInfo = nicNetworkInfo;
             TenantId = tenantId;

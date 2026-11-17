@@ -17,6 +17,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// (Deprecated) Use `nic_backing_info.virtual_ethernet_nic` instead.
         /// </summary>
+        [Obsolete(@"The <span pulumi-lang-nodejs=""`backingInfo`"" pulumi-lang-dotnet=""`BackingInfo`"" pulumi-lang-go=""`backingInfo`"" pulumi-lang-python=""`backing_info`"" pulumi-lang-yaml=""`backingInfo`"" pulumi-lang-java=""`backingInfo`"" pulumi-lang-hcl=""`backing_info`"">`backingInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs=""`nicBackingInfo`"" pulumi-lang-dotnet=""`NicBackingInfo`"" pulumi-lang-go=""`nicBackingInfo`"" pulumi-lang-python=""`nic_backing_info`"" pulumi-lang-yaml=""`nicBackingInfo`"" pulumi-lang-java=""`nicBackingInfo`"" pulumi-lang-hcl=""`nic_backing_info`"">`nicBackingInfo`</span> instead. This field will be removed in a future release.")]
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicBackingInfoResult> BackingInfos;
         /// <summary>
         /// The identifier of a Template.
@@ -29,6 +30,7 @@ namespace PiersKarsenbarg.Nutanix.Outputs
         /// <summary>
         /// (Deprecated) Use `nic_network_info.virtual_ethernet_nic_network_info` instead.
         /// </summary>
+        [Obsolete(@"The <span pulumi-lang-nodejs=""`networkInfo`"" pulumi-lang-dotnet=""`NetworkInfo`"" pulumi-lang-go=""`networkInfo`"" pulumi-lang-python=""`network_info`"" pulumi-lang-yaml=""`networkInfo`"" pulumi-lang-java=""`networkInfo`"" pulumi-lang-hcl=""`network_info`"">`networkInfo`</span> attribute is deprecated. Use <span pulumi-lang-nodejs=""`nicNetworkInfo`"" pulumi-lang-dotnet=""`NicNetworkInfo`"" pulumi-lang-go=""`nicNetworkInfo`"" pulumi-lang-python=""`nic_network_info`"" pulumi-lang-yaml=""`nicNetworkInfo`"" pulumi-lang-java=""`nicNetworkInfo`"" pulumi-lang-hcl=""`nic_network_info`"">`nicNetworkInfo`</span> instead. This field will be removed in a future release.")]
         public readonly ImmutableArray<Outputs.GetTemplateV2TemplateVersionSpecVmSpecNicNetworkInfoResult> NetworkInfos;
         /// <summary>
         /// New NIC backing info (v2.4.1+). One of &lt;span pulumi-lang-nodejs="`virtualEthernetNic`" pulumi-lang-dotnet="`VirtualEthernetNic`" pulumi-lang-go="`virtualEthernetNic`" pulumi-lang-python="`virtual_ethernet_nic`" pulumi-lang-yaml="`virtualEthernetNic`" pulumi-lang-java="`virtualEthernetNic`" pulumi-lang-hcl="`virtual_ethernet_nic`"&gt;`virtualEthernetNic`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`sriovNic`" pulumi-lang-dotnet="`SriovNic`" pulumi-lang-go="`sriovNic`" pulumi-lang-python="`sriov_nic`" pulumi-lang-yaml="`sriovNic`" pulumi-lang-java="`sriovNic`" pulumi-lang-hcl="`sriov_nic`"&gt;`sriovNic`&lt;/span&gt;, &lt;span pulumi-lang-nodejs="`dpOffloadNic`" pulumi-lang-dotnet="`DpOffloadNic`" pulumi-lang-go="`dpOffloadNic`" pulumi-lang-python="`dp_offload_nic`" pulumi-lang-yaml="`dpOffloadNic`" pulumi-lang-java="`dpOffloadNic`" pulumi-lang-hcl="`dp_offload_nic`"&gt;`dpOffloadNic`&lt;/span&gt;.
@@ -59,10 +61,14 @@ namespace PiersKarsenbarg.Nutanix.Outputs
 
             string tenantId)
         {
+#pragma warning disable CS0618
             BackingInfos = backingInfos;
+#pragma warning restore CS0618
             ExtId = extId;
             Links = links;
+#pragma warning disable CS0618
             NetworkInfos = networkInfos;
+#pragma warning restore CS0618
             NicBackingInfo = nicBackingInfo;
             NicNetworkInfo = nicNetworkInfo;
             TenantId = tenantId;
