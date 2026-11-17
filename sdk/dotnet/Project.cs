@@ -100,6 +100,7 @@ namespace PiersKarsenbarg.Nutanix
         public Output<ImmutableDictionary<string, string>> ProjectReference { get; private set; } = null!;
 
         [Output("resourceDomain")]
+        [Obsolete(@"Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=""`resourceDomain`"" pulumi-lang-dotnet=""`ResourceDomain`"" pulumi-lang-go=""`resourceDomain`"" pulumi-lang-python=""`resource_domain`"" pulumi-lang-yaml=""`resourceDomain`"" pulumi-lang-java=""`resourceDomain`"" pulumi-lang-hcl=""`resource_domain`"">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.")]
         public Output<Outputs.ProjectResourceDomain?> ResourceDomain { get; private set; } = null!;
 
         [Output("state")]
@@ -311,6 +312,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         [Input("resourceDomain")]
+        [Obsolete(@"Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=""`resourceDomain`"" pulumi-lang-dotnet=""`ResourceDomain`"" pulumi-lang-go=""`resourceDomain`"" pulumi-lang-python=""`resource_domain`"" pulumi-lang-yaml=""`resourceDomain`"" pulumi-lang-java=""`resourceDomain`"" pulumi-lang-hcl=""`resource_domain`"">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.")]
         public Input<Inputs.ProjectResourceDomainArgs>? ResourceDomain { get; set; }
 
         [Input("subnetReferenceLists")]
@@ -522,6 +524,7 @@ namespace PiersKarsenbarg.Nutanix
         }
 
         [Input("resourceDomain")]
+        [Obsolete(@"Deprecated since v2.4.0. Prism Central no longer supports <span pulumi-lang-nodejs=""`resourceDomain`"" pulumi-lang-dotnet=""`ResourceDomain`"" pulumi-lang-go=""`resourceDomain`"" pulumi-lang-python=""`resource_domain`"" pulumi-lang-yaml=""`resourceDomain`"" pulumi-lang-java=""`resourceDomain`"" pulumi-lang-hcl=""`resource_domain`"">`resourceDomain`</span> for projects; remove this block from your configuration/scripts.")]
         public Input<Inputs.ProjectResourceDomainGetArgs>? ResourceDomain { get; set; }
 
         [Input("state")]

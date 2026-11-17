@@ -232,6 +232,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - (Optional) Maximum wait time for the Karbon cluster to provision.
         /// </summary>
         [Output("waitTimeoutMinutes")]
+        [Obsolete(@"use timeouts instead")]
         public Output<int?> WaitTimeoutMinutes { get; private set; } = null!;
 
         [Output("workerNodePool")]
@@ -354,6 +355,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - (Optional) Maximum wait time for the Karbon cluster to provision.
         /// </summary>
         [Input("waitTimeoutMinutes")]
+        [Obsolete(@"use timeouts instead")]
         public Input<int>? WaitTimeoutMinutes { get; set; }
 
         [Input("workerNodePool", required: true)]
@@ -446,6 +448,7 @@ namespace PiersKarsenbarg.Nutanix
         /// - (Optional) Maximum wait time for the Karbon cluster to provision.
         /// </summary>
         [Input("waitTimeoutMinutes")]
+        [Obsolete(@"use timeouts instead")]
         public Input<int>? WaitTimeoutMinutes { get; set; }
 
         [Input("workerNodePool")]
